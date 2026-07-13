@@ -19,6 +19,16 @@
   const componentClass = (score) => score > 0 ? 'positive' : score < 0 ? 'negative' : 'neutral';
   const componentLabel = (score) => score > 0 ? `+${score}` : String(score);
 
+  function showHome(updateHash = true) {
+    document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
+    $('view-home')?.classList.add('active');
+    document.querySelectorAll('#nav button').forEach((button) => button.classList.toggle('active', button.dataset.view === 'home'));
+    $('sidebar')?.classList.remove('open');
+    $('overlay')?.classList.remove('show');
+    if (updateHash) history.replaceState(null, '', '#home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   function renderRiskGauge() {
     const risk = data.commandCentre.risk;
     $('commandRisk').innerHTML = `<article class="card risk-gauge-card">
@@ -156,8 +166,22 @@
       const observer = new MutationObserver(() => requestAnimationFrame(injectProductBias));
       observer.observe(detail, { childList: true, subtree: false });
     }
-    window.addEventListener('hashchange', () => requestAnimationFrame(injectProductBias));
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#home') showHome(false);
+      requestAnimationFrame(injectProductBias);
+    });
+    $('nav')?.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-view="home"]');
+      if (!button) return;
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      showHome();
+    }, true);
     injectProductBias();
+
+    if (!location.hash) showHome(true);
+    else if (location.hash === '#home') showHome(false);
   }
 
   initialise();
