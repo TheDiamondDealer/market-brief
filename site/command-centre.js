@@ -157,6 +157,7 @@
   }
 
   function initialDocumentHash() {
+    if (typeof window.__marketInitialHash === 'string') return window.__marketInitialHash;
     const entry = performance.getEntriesByType('navigation')[0];
     if (!entry?.name) return location.hash;
     try { return new URL(entry.name).hash; } catch { return location.hash; }
