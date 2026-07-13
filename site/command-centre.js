@@ -155,6 +155,12 @@
     renderStockSearch('');
   }
 
+  function initialDocumentHash() {
+    const entry = performance.getEntriesByType('navigation')[0];
+    if (!entry?.name) return location.hash;
+    try { return new URL(entry.name).hash; } catch { return location.hash; }
+  }
+
   function initialise() {
     renderRiskGauge();
     renderCommandSummary();
@@ -180,8 +186,9 @@
     }, true);
     injectProductBias();
 
-    if (!location.hash) showHome(true);
-    else if (location.hash === '#home') showHome(false);
+    const initialHash = initialDocumentHash();
+    if (!initialHash) showHome(true);
+    else if (initialHash === '#home') showHome(false);
   }
 
   initialise();
