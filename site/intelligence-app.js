@@ -1,0 +1,93 @@
+(() => {
+  'use strict';
+  const data = typeof fallback !== 'undefined' ? fallback : null;
+  if (!data) return;
+
+  const $ = (id) => document.getElementById(id);
+  const escapeHtml = (value = '') => String(value)
+    .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+  const keyRows = (pairs = []) => `<div class="key-list">${pairs.map(([key, value]) => `<div class="key-row"><strong>${escapeHtml(key)}</strong><span>${escapeHtml(value)}</span></div>`).join('')}</div>`;
+  const sourceButtons = (links = []) => `<div class="source-buttons">${links.map(([label, url]) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)} ↗</a>`).join('')}</div>`;
+
+  function showView(view, updateHash = true) {
+    document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
+    $(`view-${view}`)?.classList.add('active');
+    document.querySelectorAll('#nav button').forEach((button) => button.classList.toggle('active', button.dataset.view === view));
+    $('sidebar')?.classList.remove('open');
+    $('overlay')?.classList.remove('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (updateHash) history.replaceState(null, '', `#${view}`);
+  }
+
+  let activeNewsFilter = 'All';
+  function renderNews(query = '') {
+    if (!data.newsFeed) return;
+    $('newsDelay').textContent = data.newsFeed.delayNote;
+    const filters = ['All', 'High impact', ...new Set(data.newsFeed.items.map((item) => item.category))];
+    $('newsFilters').innerHTML = filters.map((filter) => `<button class="${filter === activeNewsFilter ? 'active' : ''}" data-news-filter="${escapeHtml(filter)}">${escapeHtml(filter)}</button>`).join('');
+    document.querySelectorAll('[data-news-filter]').forEach((button) => button.addEventListener('click', () => {
+      activeNewsFilter = button.dataset.newsFilter;
+      renderNews($('search').value.trim().toLowerCase());
+    }));
+
+    const normalized = query.toLowerCase();
+    const items = data.newsFeed.items.filter((item) => {
+      const filterMatch = activeNewsFilter === 'All' || (activeNewsFilter === 'High impact' ? item.impact === 'High' : item.category === activeNewsFilter);
+      const haystack = `${item.headline} ${item.summary} ${item.category} ${item.assets.map((asset) => asset.name).join(' ')}`.toLowerCase();
+      return filterMatch && (!normalized || haystack.includes(normalized));
+    });
+
+    $('newsFeed').innerHTML = items.length ? items.map((item) => `<article class="news-card">
+      <div class="news-top"><div class="news-meta"><span class="impact-tag ${item.impact.toLowerCase()}">${escapeHtml(item.impact)} impact</span><span class="state-tag">${escapeHtml(item.status)}</span></div><span class="news-time">${escapeHtml(item.time)}</span></div>
+      <h3>${escapeHtml(item.headline)}</h3><p>${escapeHtml(item.summary)}</p>
+      <div class="asset-watch"><div class="asset-watch-label">Assets to watch</div><div class="asset-chips">${item.assets.map((asset) => `<button class="asset-chip ${escapeHtml(asset.direction)}" title="${escapeHtml(asset.reason)}">${escapeHtml(asset.name)} ${asset.direction === 'up' ? '↑' : asset.direction === 'down' ? '↓' : '→'}</button>`).join('')}</div></div>
+      <div class="impact-explain"><div class="impact-label">Why this impacts markets</div><div class="impact-grid">${item.channels.map(([label, body]) => `<div class="impact-box"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(body)}</span></div>`).join('')}</div></div>
+      <a class="source-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener">Source: ${escapeHtml(item.source)} ↗</a>
+    </article>`).join('') : '<div class="card empty">No news items match that filter.</div>';
+
+    $('newsSidebar').innerHTML = `<article class="card explainer-card"><h3>How to read the feed</h3><p>Direction is expected pressure under the current regime, not a guaranteed move.</p><ul><li><strong>Assets to watch</strong> identifies the first markets likely to react.</li><li><strong>Why this impacts markets</strong> separates first-order and second-order channels.</li><li><strong>Invalidation</strong> tells you what would make the interpretation wrong.</li></ul></article><article class="card explainer-card"><h3>Current sign-flip</h3><p>${escapeHtml(data.regime.meaning)}</p></article><article class="card explainer-card"><h3>Data timing</h3><p>${escapeHtml(data.newsFeed.asOf)}. This build is intentionally delayed and research-led rather than a live headline wire.</p></article>`;
+  }
+
+  let activeTracker = 'trump';
+  function renderTrackers() {
+    if (!data.trackers) return;
+    $('trackerTabs').innerHTML = [['trump','Trump tracker'],['pelosi','Nancy Pelosi tracker']].map(([id, label]) => `<button data-tracker="${id}" class="${id === activeTracker ? 'active' : ''}">${label}</button>`).join('');
+    document.querySelectorAll('[data-tracker]').forEach((button) => button.addEventListener('click', () => {
+      activeTracker = button.dataset.tracker;
+      renderTrackers();
+    }));
+
+    const tracker = data.trackers[activeTracker];
+    const header = `<div class="card disclosure-card"><div class="tracker-head"><div><div class="eyebrow">${activeTracker === 'trump' ? 'Executive branch' : 'Congressional disclosure'}</div><h3>${escapeHtml(tracker.title)}</h3><p>${escapeHtml(tracker.subtitle)}</p></div><span class="tracker-updated">Updated ${escapeHtml(tracker.updated)}</span></div></div><div class="tracker-warning">${escapeHtml(tracker.warning)}</div><div class="grid cols-4">${tracker.stats.map(([label, value]) => `<article class="card stat"><span class="stat-label">${escapeHtml(label)}</span><div class="stat-value" style="font-size:17px">${escapeHtml(value)}</div></article>`).join('')}</div>`;
+
+    if (activeTracker === 'trump') {
+      $('trackerContent').innerHTML = `${header}<div class="section-title"><h3>Policy event feed</h3><span>${escapeHtml(tracker.cadence)}</span></div><div class="card">${tracker.policyEvents.map((event) => `<article class="tracker-event"><div class="tracker-event-head"><div><span class="state-tag">${escapeHtml(event.type)}</span><h4>${escapeHtml(event.title)}</h4></div><span class="news-time">${escapeHtml(event.date)} · ${escapeHtml(event.status)}</span></div><p>${escapeHtml(event.detail)}</p><div class="tracker-assets">${event.assets.map((asset) => `<span>${escapeHtml(asset)}</span>`).join('')}</div><a class="source-link" href="${escapeHtml(event.sourceUrl)}" target="_blank" rel="noopener">Source: ${escapeHtml(event.source)} ↗</a></article>`).join('')}</div><div class="section-title"><h3>Tariff impact playbook</h3><span>Impact map — not a list of active policies</span></div><div class="card table-wrap"><table class="matrix"><thead><tr><th>Target</th><th>FX</th><th>Equities</th><th>Commodities</th></tr></thead><tbody>${tracker.tariffMatrix.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><div class="section-title"><h3>Public financial disclosure</h3><span>Delayed filing data</span></div><article class="card disclosure-card"><h3>${escapeHtml(tracker.disclosure.headline)}</h3><p>${escapeHtml(tracker.disclosure.summary)}</p><div class="product-meta">${tracker.disclosure.labels.map((label) => `<span class="mini-pill">${escapeHtml(label)}</span>`).join('')}</div><a class="source-link" href="${escapeHtml(tracker.disclosure.sourceUrl)}" target="_blank" rel="noopener">Source: ${escapeHtml(tracker.disclosure.source)} ↗</a>${sourceButtons(tracker.sourceLinks)}</article>`;
+    } else {
+      $('trackerContent').innerHTML = `${header}<div class="section-title"><h3>Latest disclosed transactions</h3><span>${escapeHtml(tracker.cadence)}</span></div><div class="card table-wrap"><table class="matrix"><thead><tr><th>Asset</th><th>Transaction</th><th>Owner</th><th>Trade date</th><th>Filed</th><th>Amount range</th></tr></thead><tbody>${tracker.trades.length ? tracker.trades.map((trade) => `<tr><td>${escapeHtml(trade.asset)}</td><td>${escapeHtml(trade.type)}</td><td>${escapeHtml(trade.owner)}</td><td>${escapeHtml(trade.traded)}</td><td>${escapeHtml(trade.filed)}</td><td>${escapeHtml(trade.amount)}</td></tr>`).join('') : `<tr><td colspan="6"><div class="empty-trades">${escapeHtml(tracker.emptyMessage)}</div></td></tr>`}</tbody></table></div><div class="section-title"><h3>How to read the disclosure</h3><span>Avoid look-ahead bias</span></div><article class="card deep-section">${keyRows(tracker.context)}</article><article class="card disclosure-card" style="margin-top:16px"><h3>Data sources</h3><p>Official House disclosures are the primary record. Third-party tools can make the data easier to search, but parsed records should be checked against the filing.</p>${sourceButtons(tracker.sourceLinks)}</article>`;
+    }
+  }
+
+  renderNews();
+  renderTrackers();
+
+  $('nav')?.addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-view]');
+    if (!button || !['news', 'trackers'].includes(button.dataset.view)) return;
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    showView(button.dataset.view);
+  }, true);
+
+  $('search')?.addEventListener('input', () => {
+    if ($('view-news')?.classList.contains('active')) renderNews($('search').value.trim().toLowerCase());
+  });
+
+  const applyExtendedRoute = () => {
+    const route = location.hash.replace(/^#/, '');
+    if (['news', 'trackers'].includes(route)) showView(route, false);
+  };
+  window.addEventListener('hashchange', applyExtendedRoute);
+  applyExtendedRoute();
+})();
