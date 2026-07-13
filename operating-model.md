@@ -13,6 +13,7 @@ Purpose:
 - Lead with breached thresholds.
 - Identify today's and this week's immediate catalysts.
 - Avoid re-deriving durable market structure.
+- Convert the completed research into the dashboard news feed and political trackers.
 
 Reads:
 
@@ -20,11 +21,13 @@ Reads:
 - Live regime state.
 - Live thresholds.
 - Three most recent daily logs.
+- `prompts/site-update.md` for dashboard data rules.
 
 Writes:
 
 - One dated daily brief.
 - A dated regime note only when there is clear evidence of a material shift.
+- An updated `site/intelligence-data.js` containing the interpreted news feed, Trump policy/disclosure tracker and Nancy Pelosi disclosure tracker.
 
 ## Weekly — Operational
 
