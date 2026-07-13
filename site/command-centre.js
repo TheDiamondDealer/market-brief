@@ -31,8 +31,9 @@
 
   function renderRiskGauge() {
     const risk = data.commandCentre.risk;
+    const riskAngle = Math.max(0, Math.min(100, risk.score)) * 3.6;
     $('commandRisk').innerHTML = `<article class="card risk-gauge-card">
-      <div class="risk-ring" style="--risk-score:${Math.max(0, Math.min(100, risk.score))}">
+      <div class="risk-ring" style="--risk-angle:${riskAngle}deg">
         <div class="risk-ring-inner"><strong>${escapeHtml(risk.score)}</strong><span>risk score</span></div>
       </div>
       <div class="risk-copy"><div class="eyebrow">Cross-asset risk gauge</div><h3>${escapeHtml(risk.state)}</h3><p>${escapeHtml(risk.summary)}</p><span class="risk-confidence">${escapeHtml(risk.confidence)} confidence</span></div>
