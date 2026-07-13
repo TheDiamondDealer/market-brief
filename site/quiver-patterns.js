@@ -7,6 +7,7 @@
   let filter = 'All';
   let sort = 'name';
   let busy = false;
+  let scheduled = false;
 
   const save = () => localStorage.setItem('marketBriefWatchedPoliticians', JSON.stringify([...watched]));
   const label = (id) => data.trackers[id]?.displayName || data.trackers[id]?.title || id;
@@ -72,7 +73,9 @@
       if (sort === 'recent') return String(bm.latest).localeCompare(String(am.latest)) || label(a.dataset.tracker).localeCompare(label(b.dataset.tracker));
       return label(a.dataset.tracker).localeCompare(label(b.dataset.tracker));
     });
-    sorted.forEach((button) => tabs.appendChild(button));
+    const currentOrder = buttons.map((button) => button.dataset.tracker).join('|');
+    const desiredOrder = sorted.map((button) => button.dataset.tracker).join('|');
+    if (currentOrder !== desiredOrder) sorted.forEach((button) => tabs.appendChild(button));
     renderBoard();
     busy = false;
   }
@@ -86,6 +89,9 @@
       const tracker = data.trackers[id];
       return filter === 'All' || (filter === 'Watched' && watched.has(id)) || tracker.chamber === filter || (filter === 'Executive' && tracker.kind === 'executive');
     }).sort((a, b) => metrics(b).trades - metrics(a).trades || label(a).localeCompare(label(b)));
+    const signature = JSON.stringify({ filter, rows, watched: [...watched].sort(), metrics: rows.map((id) => metrics(id)) });
+    if (host.dataset.signature === signature) return;
+    host.dataset.signature = signature;
     host.innerHTML = `<div class="section-title compact"><h3>Disclosure activity board</h3><span>Activity ranking, not investment performance</span></div><div class="card table-wrap"><table class="matrix politician-board"><thead><tr><th>Person</th><th>Type</th><th>Trades retained</th><th>Open holdings</th><th>Latest filing</th><th>Watch</th></tr></thead><tbody>${rows.map((id) => { const tracker = data.trackers[id]; const m = metrics(id); return `<tr><td><button class="person-link" data-open-person="${id}">${label(id)}</button></td><td>${tracker.kind === 'executive' ? 'Executive' : (tracker.chamber || 'Congress')}</td><td>${m.trades}</td><td>${m.holdings}</td><td>${m.latest}</td><td><button class="watch-button ${watched.has(id) ? 'active' : ''}" data-board-watch="${id}">${watched.has(id) ? 'Watching' : '+ Watch'}</button></td></tr>`; }).join('')}</tbody></table></div>`;
   }
 
@@ -131,7 +137,17 @@
     }
   }, true);
 
-  const observer = new MutationObserver(() => { ensureControls(); applyDirectory(); enhanceProfile(); });
-  observer.observe(document.body, { childList: true, subtree: true });
+  const observer = new MutationObserver(() => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      ensureControls(); applyDirectory(); enhanceProfile();
+    });
+  });
+  const tabsHost = document.getElementById('trackerTabs');
+  const contentHost = document.getElementById('trackerContent');
+  if (tabsHost) observer.observe(tabsHost, { childList: true, subtree: false });
+  if (contentHost) observer.observe(contentHost, { childList: true, subtree: false });
   ensureControls(); applyDirectory(); enhanceProfile();
 })();
