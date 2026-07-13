@@ -28,7 +28,7 @@ Writes:
 
 ## Weekly — Operational
 
-Schedule: Sunday at 9:05 AM Australia/Melbourne.
+Schedule: Sunday at 9:00 AM Australia/Melbourne.
 
 Sunday is preferred to Saturday because Friday's US close is fully digested and the report can provide a complete week-ahead runway.
 
@@ -54,7 +54,7 @@ Writes:
 
 ## Monthly — Strategic
 
-Schedule: first weekday of each month at 9:10 AM Australia/Melbourne.
+Schedule: first Melbourne business day of each month at 9:00 AM Australia/Melbourne.
 
 Purpose:
 
@@ -67,7 +67,7 @@ Purpose:
 Reads:
 
 - Live approved dossier, regime and thresholds.
-- Last four weekly reports.
+- Last four or five weekly reports.
 
 Writes:
 
