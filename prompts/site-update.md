@@ -2,7 +2,57 @@
 
 Run this as part of every successful daily market brief after the written report is complete.
 
-Update `site/intelligence-data.js` on `main` without changing the application code or styling.
+Update `site/intelligence-data.js` and `site/command-centre-data.js` on `main` without changing the application code or styling.
+
+## Command centre
+
+Refresh `fallback.commandCentre` from the latest verified daily research.
+
+Update:
+
+- `updated` from the successful research run
+- risk `state`, integer `score` from 0 to 100 and confidence label
+- one concise risk summary
+- one important contradiction or divergence
+- three to six transparent risk inputs, each with reading, score and reason
+- two to four conditions that would move the risk state back toward neutral or into a different regime
+- the next high-impact event, Melbourne-readable time and regime-adjusted logic
+- three to six material changes since the previous successful research state
+
+The risk score is an interpretable summary, not a prediction probability. Do not increase precision beyond the quality of the underlying evidence.
+
+## Asset bias engine
+
+Refresh `fallback.assetBiases` for the actively monitored assets.
+
+For each asset include:
+
+- stable `id`, name, group and current research reference
+- directional bias using cautious labels such as Bullish, Bearish, Neutral, Higher yields or Bullish / unstable
+- confidence from 0 to 100
+- integer total score derived from visible component scores
+- primary driver
+- COT or positioning state; explicitly say pending or unavailable when the free source has not updated
+- next relevant event
+- exact condition that would change the bias
+- product link when the asset has a deep-dive page
+- three to five visible components such as Macro, Rates, Physical, Positioning, China, Policy or Cross-asset
+- each component must use a score from -2 to +2 and a one-sentence explanation
+
+The total must equal the sum of the visible components. Confidence is based on agreement, evidence quality and confirmation—not on the absolute score alone. Preserve contradictions rather than forcing every input to agree.
+
+## Trigger proximity
+
+Keep `site/data.js` trigger references synchronized with the approved `thresholds.md` file.
+
+A price touch is a warning unless the confirmation rule is satisfied. Preserve the distinction between:
+
+- warning
+- triggered
+- confirmed
+- invalidated
+
+Never invent a current value. If the value cannot be verified, keep the prior verified value and mark its freshness clearly.
 
 ## News feed
 
@@ -23,6 +73,20 @@ For each story include:
 
 The feed is a delayed daily digest, not a live wire. Do not imitate another platform's wording or visual identity. Apply the live regime and sign-flips from `regime-state.md`.
 
+## Political trackers and stock-first search
+
+The stock-first search reads directly from every tracker's `trades` and `portfolio.holdings` arrays. No separate search index is required.
+
+When importing disclosures:
+
+- keep ticker and company description together where possible, for example `NVDA — NVIDIA Corp`
+- preserve transaction date, filing date, disclosure lag, owner/account, amount range and source URL
+- retain historical records permanently, including late filings
+- update portfolio holdings only from verified annual disclosures and subsequent verified transactions
+- keep member, spouse, joint, dependent, trust and managed-account labels exact
+
+This automatically makes the transaction discoverable from both the politician page and the stock-first reverse search.
+
 ## Trump tracker
 
 Update policy events only when they are verified and market-relevant. Prioritise primary sources:
@@ -38,30 +102,31 @@ Keep the tariff impact matrix structural. Do not mark a matrix row as an active 
 
 For financial transactions, use only public financial disclosures or a licensed data source. State when accounts are third-party managed or discretionary. Never describe disclosure data as real-time or imply personal direction when that is not established.
 
-## Nancy Pelosi tracker
+## Congressional trackers
 
-Check for new official House Periodic Transaction Reports. Use the official filing as the primary source; third-party parsers can assist discovery but must not override the filing.
+Check for new official House and Senate transaction reports and annual disclosures. Use the official filing as the primary source; third-party parsers can assist discovery but must not override the filing.
 
 For each verified transaction include:
 
 - asset/ticker and asset description
 - purchase, sale, exchange or option exercise
-- owner exactly as disclosed: member, spouse, joint or dependent
+- owner exactly as disclosed
 - transaction date
 - filing date
 - statutory amount range
 - source filing URL
 - disclosure lag in calendar days
 
-Do not call a spouse transaction Nancy Pelosi's personal trade. Do not use the filing date as the trade date. Do not calculate performance before the filing became public; avoid look-ahead bias.
+Do not call a spouse transaction the member's personal trade. Do not use the filing date as the trade date. Do not calculate performance before the filing became public; avoid look-ahead bias.
 
-If no new verified filing exists, leave the existing trade history unchanged and update only the checked date.
+If no new verified filing exists, leave the complete trade history and portfolio unchanged and update only the checked date.
 
 ## Safety and quality
 
-- Never invent a trade, amount, date, return, source or ticker.
-- Preserve older verified items unless correcting an error.
-- Keep no more than 30 news items and 50 tracker events in the site file.
+- Never invent a trade, holding, amount, date, return, source, owner, ticker, market price or economic release.
+- Preserve older verified items unless correcting a documented error.
+- Keep no more than 30 news items in the active feed; political transactions use annual archives rather than deletion.
 - Escape apostrophes and maintain valid JavaScript syntax.
+- The repository JavaScript syntax workflow must pass before treating the update as complete.
 - Commit the site-data update to `main`; this triggers GitHub Pages deployment.
 - The dashboard must continue to say that this is research, not financial advice.
