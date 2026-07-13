@@ -49,7 +49,64 @@
     $('newsSidebar').innerHTML = `<article class="card explainer-card"><h3>How to read the feed</h3><p>Direction is expected pressure under the current regime, not a guaranteed move.</p><ul><li><strong>Assets to watch</strong> identifies the first markets likely to react.</li><li><strong>Why this impacts markets</strong> separates first-order and second-order channels.</li><li><strong>Invalidation</strong> tells you what would make the interpretation wrong.</li></ul></article><article class="card explainer-card"><h3>Current sign-flip</h3><p>${escapeHtml(data.regime.meaning)}</p></article><article class="card explainer-card"><h3>Data timing</h3><p>${escapeHtml(data.newsFeed.asOf)}. This build is intentionally delayed and research-led rather than a live headline wire.</p></article>`;
   }
 
+  const tradeLimits = { trump: 100, pelosi: 100 };
   let activeTracker = 'trump';
+
+  function renderPortfolio(tracker) {
+    const portfolio = tracker.portfolio || { holdings: [] };
+    const holdings = Array.isArray(portfolio.holdings) ? portfolio.holdings : [];
+    const positionCount = holdings.length;
+    const openCount = holdings.filter((item) => !String(item.status || '').toLowerCase().includes('closed')).length;
+
+    return `<div class="section-title"><h3>Estimated current portfolio</h3><span>Disclosure-derived, not a brokerage statement</span></div>
+      <div class="portfolio-summary grid cols-4">
+        <article class="card stat"><span class="stat-label">Tracked positions</span><div class="stat-value" style="font-size:18px">${positionCount}</div></article>
+        <article class="card stat"><span class="stat-label">Potentially open</span><div class="stat-value" style="font-size:18px">${openCount}</div></article>
+        <article class="card stat"><span class="stat-label">Ledger status</span><div class="stat-value" style="font-size:15px">${escapeHtml(portfolio.status || 'Reconstruction enabled')}</div></article>
+        <article class="card stat"><span class="stat-label">Updated</span><div class="stat-value" style="font-size:15px">${escapeHtml(portfolio.updated || tracker.updated)}</div></article>
+      </div>
+      <article class="card portfolio-method">
+        <strong>How the portfolio is built</strong>
+        <p>${escapeHtml(portfolio.basis || '')}</p>
+        <p>${escapeHtml(portfolio.valuation || '')}</p>
+        <p>${escapeHtml(portfolio.ownerNote || '')}</p>
+      </article>
+      <div class="card table-wrap"><table class="matrix portfolio-table"><thead><tr><th>Asset</th><th>Owner / account</th><th>Estimated holding</th><th>Status</th><th>Last activity</th><th>Confidence</th></tr></thead><tbody>${holdings.length ? holdings.map((holding) => `<tr>
+        <td>${holding.sourceUrl ? `<a class="table-link" href="${escapeHtml(holding.sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(holding.asset)} ↗</a>` : escapeHtml(holding.asset)}</td>
+        <td>${escapeHtml(holding.owner || 'Not specified')}</td>
+        <td>${escapeHtml(holding.amount || holding.range || 'Range unavailable')}</td>
+        <td>${escapeHtml(holding.status || 'Estimated open')}</td>
+        <td>${escapeHtml(holding.lastActivity || 'Annual disclosure baseline')}</td>
+        <td>${escapeHtml(holding.confidence || 'Medium')}</td>
+      </tr>`).join('') : `<tr><td colspan="6"><div class="empty-trades">${escapeHtml(portfolio.emptyMessage || 'No verified holdings have been imported yet.')}</div></td></tr>`}</tbody></table></div>`;
+  }
+
+  function renderTradeHistory(tracker, trackerId) {
+    const trades = Array.isArray(tracker.trades) ? [...tracker.trades] : [];
+    trades.sort((a, b) => String(b.traded || '').localeCompare(String(a.traded || '')));
+    const visible = trades.slice(0, tradeLimits[trackerId]);
+    const remaining = Math.max(0, trades.length - visible.length);
+    const history = tracker.historyPolicy || {};
+
+    return `<div class="section-title"><h3>Complete disclosed transaction history</h3><span>${trades.length} verified transaction${trades.length === 1 ? '' : 's'} retained</span></div>
+      <article class="card history-policy">${keyRows([
+        ['Retention', history.retention || 'All verified trades are retained.'],
+        ['Trade vs filing date', history.dating || 'Trade and filing dates remain separate.'],
+        ['Late filings', history.lateFilings || 'Late-filed trades are still added.'],
+        ['Large archives', history.archive || 'History is loaded in pages.']
+      ])}</article>
+      <div class="card table-wrap"><table class="matrix trade-history-table"><thead><tr><th>Asset</th><th>Transaction</th><th>Owner</th><th>Trade date</th><th>Filed</th><th>Lag</th><th>Amount range</th></tr></thead><tbody>${visible.length ? visible.map((trade) => `<tr>
+        <td>${trade.sourceUrl ? `<a class="table-link" href="${escapeHtml(trade.sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(trade.asset)} ↗</a>` : escapeHtml(trade.asset)}</td>
+        <td>${escapeHtml(trade.type)}</td>
+        <td>${escapeHtml(trade.owner || 'Not specified')}</td>
+        <td>${escapeHtml(trade.traded)}</td>
+        <td>${escapeHtml(trade.filed)}</td>
+        <td>${escapeHtml(trade.lag || '—')}</td>
+        <td>${escapeHtml(trade.amount || 'Range unavailable')}</td>
+      </tr>`).join('') : `<tr><td colspan="7"><div class="empty-trades">${escapeHtml(tracker.emptyMessage || 'No verified transactions have been imported yet.')}</div></td></tr>`}</tbody></table></div>
+      ${remaining ? `<button class="load-more" data-load-more="${trackerId}">Load 100 more transactions (${remaining} remaining)</button>` : ''}`;
+  }
+
   function renderTrackers() {
     if (!data.trackers) return;
     $('trackerTabs').innerHTML = [['trump','Trump tracker'],['pelosi','Nancy Pelosi tracker']].map(([id, label]) => `<button data-tracker="${id}" class="${id === activeTracker ? 'active' : ''}">${label}</button>`).join('');
@@ -60,12 +117,20 @@
 
     const tracker = data.trackers[activeTracker];
     const header = `<div class="card disclosure-card"><div class="tracker-head"><div><div class="eyebrow">${activeTracker === 'trump' ? 'Executive branch' : 'Congressional disclosure'}</div><h3>${escapeHtml(tracker.title)}</h3><p>${escapeHtml(tracker.subtitle)}</p></div><span class="tracker-updated">Updated ${escapeHtml(tracker.updated)}</span></div></div><div class="tracker-warning">${escapeHtml(tracker.warning)}</div><div class="grid cols-4">${tracker.stats.map(([label, value]) => `<article class="card stat"><span class="stat-label">${escapeHtml(label)}</span><div class="stat-value" style="font-size:17px">${escapeHtml(value)}</div></article>`).join('')}</div>`;
+    const portfolio = renderPortfolio(tracker);
+    const tradeHistory = renderTradeHistory(tracker, activeTracker);
 
     if (activeTracker === 'trump') {
-      $('trackerContent').innerHTML = `${header}<div class="section-title"><h3>Policy event feed</h3><span>${escapeHtml(tracker.cadence)}</span></div><div class="card">${tracker.policyEvents.map((event) => `<article class="tracker-event"><div class="tracker-event-head"><div><span class="state-tag">${escapeHtml(event.type)}</span><h4>${escapeHtml(event.title)}</h4></div><span class="news-time">${escapeHtml(event.date)} · ${escapeHtml(event.status)}</span></div><p>${escapeHtml(event.detail)}</p><div class="tracker-assets">${event.assets.map((asset) => `<span>${escapeHtml(asset)}</span>`).join('')}</div><a class="source-link" href="${escapeHtml(event.sourceUrl)}" target="_blank" rel="noopener">Source: ${escapeHtml(event.source)} ↗</a></article>`).join('')}</div><div class="section-title"><h3>Tariff impact playbook</h3><span>Impact map — not a list of active policies</span></div><div class="card table-wrap"><table class="matrix"><thead><tr><th>Target</th><th>FX</th><th>Equities</th><th>Commodities</th></tr></thead><tbody>${tracker.tariffMatrix.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><div class="section-title"><h3>Public financial disclosure</h3><span>Delayed filing data</span></div><article class="card disclosure-card"><h3>${escapeHtml(tracker.disclosure.headline)}</h3><p>${escapeHtml(tracker.disclosure.summary)}</p><div class="product-meta">${tracker.disclosure.labels.map((label) => `<span class="mini-pill">${escapeHtml(label)}</span>`).join('')}</div><a class="source-link" href="${escapeHtml(tracker.disclosure.sourceUrl)}" target="_blank" rel="noopener">Source: ${escapeHtml(tracker.disclosure.source)} ↗</a>${sourceButtons(tracker.sourceLinks)}</article>`;
+      $('trackerContent').innerHTML = `${header}${portfolio}${tradeHistory}<div class="section-title"><h3>Policy event feed</h3><span>${escapeHtml(tracker.cadence)}</span></div><div class="card">${tracker.policyEvents.map((event) => `<article class="tracker-event"><div class="tracker-event-head"><div><span class="state-tag">${escapeHtml(event.type)}</span><h4>${escapeHtml(event.title)}</h4></div><span class="news-time">${escapeHtml(event.date)} · ${escapeHtml(event.status)}</span></div><p>${escapeHtml(event.detail)}</p><div class="tracker-assets">${event.assets.map((asset) => `<span>${escapeHtml(asset)}</span>`).join('')}</div><a class="source-link" href="${escapeHtml(event.sourceUrl)}" target="_blank" rel="noopener">Source: ${escapeHtml(event.source)} ↗</a></article>`).join('')}</div><div class="section-title"><h3>Tariff impact playbook</h3><span>Impact map — not a list of active policies</span></div><div class="card table-wrap"><table class="matrix"><thead><tr><th>Target</th><th>FX</th><th>Equities</th><th>Commodities</th></tr></thead><tbody>${tracker.tariffMatrix.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><div class="section-title"><h3>Public financial disclosure</h3><span>Delayed filing data</span></div><article class="card disclosure-card"><h3>${escapeHtml(tracker.disclosure.headline)}</h3><p>${escapeHtml(tracker.disclosure.summary)}</p><div class="product-meta">${tracker.disclosure.labels.map((label) => `<span class="mini-pill">${escapeHtml(label)}</span>`).join('')}</div><a class="source-link" href="${escapeHtml(tracker.disclosure.sourceUrl)}" target="_blank" rel="noopener">Source: ${escapeHtml(tracker.disclosure.source)} ↗</a>${sourceButtons(tracker.sourceLinks)}</article>`;
     } else {
-      $('trackerContent').innerHTML = `${header}<div class="section-title"><h3>Latest disclosed transactions</h3><span>${escapeHtml(tracker.cadence)}</span></div><div class="card table-wrap"><table class="matrix"><thead><tr><th>Asset</th><th>Transaction</th><th>Owner</th><th>Trade date</th><th>Filed</th><th>Amount range</th></tr></thead><tbody>${tracker.trades.length ? tracker.trades.map((trade) => `<tr><td>${escapeHtml(trade.asset)}</td><td>${escapeHtml(trade.type)}</td><td>${escapeHtml(trade.owner)}</td><td>${escapeHtml(trade.traded)}</td><td>${escapeHtml(trade.filed)}</td><td>${escapeHtml(trade.amount)}</td></tr>`).join('') : `<tr><td colspan="6"><div class="empty-trades">${escapeHtml(tracker.emptyMessage)}</div></td></tr>`}</tbody></table></div><div class="section-title"><h3>How to read the disclosure</h3><span>Avoid look-ahead bias</span></div><article class="card deep-section">${keyRows(tracker.context)}</article><article class="card disclosure-card" style="margin-top:16px"><h3>Data sources</h3><p>Official House disclosures are the primary record. Third-party tools can make the data easier to search, but parsed records should be checked against the filing.</p>${sourceButtons(tracker.sourceLinks)}</article>`;
+      $('trackerContent').innerHTML = `${header}${portfolio}${tradeHistory}<div class="section-title"><h3>How to read the disclosure</h3><span>Avoid look-ahead bias</span></div><article class="card deep-section">${keyRows(tracker.context)}</article><article class="card disclosure-card" style="margin-top:16px"><h3>Data sources</h3><p>Official House disclosures are the primary record. Third-party tools can make the data easier to search, but parsed records should be checked against the filing.</p>${sourceButtons(tracker.sourceLinks)}</article>`;
     }
+
+    document.querySelector('[data-load-more]')?.addEventListener('click', (event) => {
+      const id = event.currentTarget.dataset.loadMore;
+      tradeLimits[id] += 100;
+      renderTrackers();
+    });
   }
 
   renderNews();
