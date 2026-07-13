@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#071014" />
+  <title>Market Brief Intelligence</title>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+<div class="mobile-overlay" id="overlay"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="mark">M</div><div><h1>Market Brief</h1><p>Intelligence console</p></div></div>
+    <nav class="nav" id="nav">
+      <button class="active" data-view="today"><span class="ico">◉</span>Today</button>
+      <button data-view="week"><span class="ico">◫</span>Week ahead</button>
+      <button data-view="regime"><span class="ico">⌁</span>Regime</button>
+      <button data-view="triggers"><span class="ico">⚑</span>Trigger zones</button>
+      <button data-view="assets"><span class="ico">◆</span>Assets</button>
+      <button data-view="products"><span class="ico">▦</span>Products</button>
+      <button data-view="archive"><span class="ico">▤</span>Archive</button>
+    </nav>
+    <div class="side-note"><strong>Private research system</strong><span>Daily, weekly and monthly intelligence generated from the repository’s approved market framework.</span></div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <button class="menu" id="menu">☰</button>
+      <div class="search"><input id="search" placeholder="Search assets, catalysts, triggers…" /><span class="kbd">⌘ K</span></div>
+      <div class="fresh"><span class="dot"></span><span id="freshness">Loading latest brief…</span></div>
+    </header>
+    <div class="content">
+      <section class="view active" id="view-today">
+        <div class="hero"><div><div class="eyebrow">Daily intelligence</div><h2 id="dailyTitle">Today’s market brief</h2><p id="dailySub">The highest-conviction cross-asset developments, filtered through the approved regime.</p></div><span class="badge" id="dailyBadge">● Loading regime</span></div>
+        <div class="grid cols-4" id="marketStats"></div>
+        <div class="section-title"><h3>Listen</h3><span>Five things that matter</span></div>
+        <div class="card headline-list" id="headlines"></div>
+        <div class="section-title"><h3>Dominant transmission</h3><span>Current causal chain</span></div>
+        <div class="card chain" id="chain"></div>
+      </section>
+
+      <section class="view" id="view-week">
+        <div class="hero"><div><div class="eyebrow">Forward calendar</div><h2>Week ahead</h2><p>Events ranked by their ability to confirm, shift or break the current market regime.</p></div><span class="badge">Melbourne time</span></div>
+        <div class="grid cols-2"><div class="card"><div class="card-pad"><h3>Weekly thesis</h3><div id="weeklyTldr"></div></div></div><div class="card"><div class="card-pad"><h3>Highest-stakes event</h3><p class="muted" id="highStake"></p></div></div></div>
+        <div class="section-title"><h3>Event radar</h3><span>Regime-adjusted logic</span></div><div class="card events" id="events"></div>
+        <div class="section-title"><h3>Verified weekly moves</h3><span>Unverified values stay excluded</span></div><div class="card table-wrap"><table class="trigger-table" id="weeklyMoves"></table></div>
+      </section>
+
+      <section class="view" id="view-regime">
+        <div class="hero"><div><div class="eyebrow">Strategic frame</div><h2>Current regime</h2><p>The interpretation layer used by every daily and weekly report.</p></div></div>
+        <div class="grid cols-2"><div class="card regime-box"><div class="regime-name" id="regimeName"></div><div class="verdict" id="verdict"></div><p id="regimeMeaning"></p></div><div class="card"><div class="card-pad"><h3>What would shift it</h3><div id="shiftRules"></div></div></div></div>
+        <div class="section-title"><h3>Relationship scorecard</h3><span>Latest joint-move classification</span></div><div class="card" id="relationships"></div>
+        <div class="section-title"><h3>Active sign-flips</h3><span>Where textbook intuition is wrong</span></div><div class="grid cols-3" id="signFlips"></div>
+      </section>
+
+      <section class="view" id="view-triggers">
+        <div class="hero"><div><div class="eyebrow">Decision levels</div><h2>Trigger zones</h2><p>A touch is a warning. A trigger only leads the brief after its confirmation rule is satisfied.</p></div><span class="badge">Not trade recommendations</span></div>
+        <div class="card table-wrap"><table class="trigger-table" id="triggersTable"></table></div>
+      </section>
+
+      <section class="view" id="view-assets">
+        <div class="hero"><div><div class="eyebrow">Cross-asset board</div><h2>Assets</h2><p>Current monitoring levels, expected directional logic and the conditions that matter next.</p></div></div>
+        <div class="asset-filter" id="assetFilters"></div><div class="grid cols-3" id="assetCards"></div>
+      </section>
+
+      <section class="view" id="view-products">
+        <div class="hero"><div><div class="eyebrow">Commodity research library</div><h2>Products</h2><p>Select a commodity to open its dedicated research workspace: market structure, benchmarks, supply and demand, producers, catalysts, risks and active trigger levels.</p></div><span class="badge">Click any product</span></div>
+        <div class="product-toolbar"><div class="asset-filter" id="productFilters"></div><span class="product-count" id="productCount"></span></div>
+        <div class="product-grid" id="productCards"></div>
+      </section>
+
+      <section class="view" id="view-product-detail">
+        <button class="back-button" id="productBack">← Back to products</button>
+        <div id="productDetail"></div>
+      </section>
+
+      <section class="view" id="view-archive">
+        <div class="hero"><div><div class="eyebrow">Research memory</div><h2>Archive</h2><p>Daily briefs, weekly reviews and monthly strategic drafts generated by the system.</p></div></div>
+        <div class="archive" id="archiveList"></div>
+      </section>
+      <div class="footer">Market analysis for research and system testing. Not financial advice.</div>
+    </div>
+  </main>
+</div>
+<script src="app.js"></script>
+
+</body>
+</html>
