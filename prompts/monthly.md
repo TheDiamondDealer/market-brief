@@ -38,10 +38,14 @@ Include a one-page “What changed this month” summary first, followed by:
 - the month’s net moves and defining narrative
 - REGIME ASSESSMENT: explicitly classify the regime as intact, shifting or broken versus last month; give evidence and state exactly what would flip the verdict
 - a proposed rewrite of `regime-state.md`, including active sign-flips
-- RESET TRIGGER THRESHOLDS: propose current, decision-useful “lead the brief if breached” levels for at least gold, Brent, ASX 200, policy/hike odds and USD/JPY; explain why each level matters
+- a monthly price-confirmation scorecard: which major regime relationships aligned, diverged or remained inconclusive
+- RESET TRIGGER THRESHOLDS AND RISK ZONES: propose current, decision-useful levels for at least gold, Brent, ASX 200, policy/hike odds and USD/JPY
+- for each proposed risk zone include the warning band or boundary, headline trigger, confirmation condition, invalidation/exit condition, expected direction under the live regime, source and as-of date
+- never create false precision; if evidence supports only a point threshold, use a point and label it accordingly
 - a proposed rewrite of `thresholds.md`
 - structural shifts during the month, including relevant developments such as Simandou, Indonesian quotas, central-bank gold buying and OPEC+ policy
 - one-to-three-month outlook by complex and the key swing factor for each
+- three medium-term macro scenarios—base, upside/inflationary and downside/disinflationary—with regime-adjusted cross-asset transmission, confirmation evidence and invalidation conditions
 - a verified month-ahead major catalyst calendar with consensus and prior where available
 
 ## Mandatory human approval gate
@@ -60,6 +64,7 @@ Clearly label every draft as awaiting human approval. The live files may only be
 ## Delivery
 
 - Post the one-page “What changed this month” summary as the parent message in private Slack channel `#market-brief` (channel ID `C0BGV46RLES`).
+- Include the regime verdict, relationship scorecard, proposed zones and scenario shifts.
 - Post the remaining review as threaded replies with links to all draft files.
 - State clearly that the live baseline, regime and thresholds have not changed and await approval.
 - If the run cannot complete, post a concise warning to Slack when Slack remains available.
