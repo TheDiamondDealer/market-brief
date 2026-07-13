@@ -93,6 +93,9 @@
 
   const $ = (id) => document.getElementById(id);
   const escapeHtml = (value = '') => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+  const currentRegimeMeaning = () => typeof fallback !== 'undefined' && fallback.regime?.meaning
+    ? fallback.regime.meaning
+    : 'Use the latest regime state when interpreting the target.';
 
   function showScenarioView(updateHash = true) {
     document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
@@ -149,7 +152,7 @@
     $('scenarioAssetName').textContent = asset.name;
     $('scenarioReference').textContent = `Latest research reference: ${asset.current.toLocaleString()} ${asset.unit}`;
     $('targetPresets').innerHTML = asset.presets.map((value) => `<button data-target-preset="${value}">${value.toLocaleString()}</button>`).join('');
-    $('targetPrice').value = asset.presets.find((value) => value > asset.current) || asset.presets.at(-1);
+    $('targetPrice').value = asset.presets.find((value) => value > asset.current) || asset.presets[asset.presets.length - 1];
     document.querySelectorAll('[data-target-preset]').forEach((button) => button.addEventListener('click', () => {
       $('targetPrice').value = button.dataset.targetPreset;
       calculateScenario();
@@ -174,7 +177,7 @@
     $('scenarioOutput').innerHTML = `<div class="scenario-result-head"><div><span class="scenario-direction ${direction}">${upside ? 'Upside' : 'Downside'} path</span><h3>What would it take for ${escapeHtml(asset.name)} to reach ${target.toLocaleString()}?</h3><p>A ${Math.abs(distance).toFixed(1)}% move from the latest research reference. This is conditional scenario analysis, not a price prediction.</p></div></div>
       <div class="scenario-driver-list">${drivers.map(([label, body], index) => `<article><span>${index + 1}</span><div><strong>${escapeHtml(label)}</strong><p>${escapeHtml(body)}</p></div></article>`).join('')}</div>
       <div class="scenario-tests"><article><strong>Confirmation test</strong><p>${escapeHtml(confirmation)}</p></article><article><strong>What would invalidate this path</strong><p>${escapeHtml(invalidation)}</p></article></div>
-      <div class="scenario-regime"><strong>Current regime filter</strong><p>${escapeHtml(window.fallback?.regime?.meaning || 'Use the latest regime state when interpreting the target.')}</p></div>`;
+      <div class="scenario-regime"><strong>Current regime filter</strong><p>${escapeHtml(currentRegimeMeaning())}</p></div>`;
   }
 
   function renderFreeWidgets() {
