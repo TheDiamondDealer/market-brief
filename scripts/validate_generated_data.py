@@ -16,6 +16,7 @@ from cot_contracts import validate_registry  # noqa: E402
 from validation_helpers import (  # noqa: E402
     ValidationFailure,
     read_json,
+    validate_equity_market_semantics,
     validate_free_market_semantics,
     validate_political_semantics,
     validate_summary_consistency,
@@ -29,6 +30,10 @@ TARGETS = (
     (
         ROOT / "site" / "data" / "free-market-data.json",
         ROOT / "schemas" / "free-market-data.schema.json",
+    ),
+    (
+        ROOT / "site" / "data" / "equity-market-data.json",
+        ROOT / "schemas" / "equity-market-data.schema.json",
     ),
     (
         ROOT / "site" / "data" / "political-disclosures.json",
@@ -64,14 +69,20 @@ def main() -> int:
     validate_registry(registry)
     if not args.schema_only:
         free_data = loaded["free-market-data.json"]
+        equity_data = loaded["equity-market-data.json"]
         political = loaded["political-disclosures.json"]
         summary = loaded["political-disclosures-summary.json"]
         validate_free_market_semantics(free_data, registry)
+        validate_equity_market_semantics(equity_data)
         validate_political_semantics(political)
         validate_summary_consistency(political, summary)
 
     total = loaded["political-disclosures-summary.json"]["totalTrades"]
-    print(f"Validated COT registry plus 3 generated datasets; retained political trades={total}")
+    equities = len(loaded["equity-market-data.json"]["watchlist"])
+    print(
+        f"Validated COT registry plus 4 generated datasets; "
+        f"equity instruments={equities}; retained political trades={total}"
+    )
     return 0
 
 

@@ -28,6 +28,16 @@ MALFORMED_POLITICAL_MARKERS = (
     "ID Owner Asset",
 )
 
+EQUITY_STATUSES = {
+    "current",
+    "delayed",
+    "stale",
+    "failed",
+    "unavailable",
+    "partial",
+    "unknown",
+}
+
 
 class ValidationFailure(ValueError):
     """Raised when generated data fails a trust or consistency rule."""
@@ -92,6 +102,67 @@ def validate_free_market_semantics(data: dict[str, Any], registry: dict[str, Any
                 raise ValidationFailure(f"Unavailable COT market was emitted: {row.get('id')}")
             if not generated_row_is_verified(row, registry):
                 raise ValidationFailure(f"COT row lacks exact verified identity: {row.get('id', 'unknown')}")
+
+
+def validate_equity_market_semantics(data: dict[str, Any]) -> None:
+    provider = data.get("provider", {})
+    if provider.get("id") != "twelve-data":
+        raise ValidationFailure("Equity market data provider must be Twelve Data")
+    if provider.get("licenseMode") != "private-internal-use-only":
+        raise ValidationFailure("Equity market data must retain the private internal-use boundary")
+
+    rows = data.get("watchlist", [])
+    if not isinstance(rows, list) or not rows:
+        raise ValidationFailure("Equity market watchlist is empty")
+
+    ids = [str(row.get("id", "")) for row in rows]
+    identities = [
+        f"{str(row.get('symbol', '')).upper()}::{str(row.get('exchange', '')).upper()}"
+        for row in rows
+    ]
+    for label, values in (("equity id", ids), ("equity identity", identities)):
+        duplicates = duplicate_values(value for value in values if value)
+        if duplicates:
+            raise ValidationFailure(f"Duplicate {label}s: {', '.join(duplicates[:10])}")
+
+    collection = data.get("collection", {})
+    success_count = collection.get("successCount")
+    failure_count = collection.get("failureCount")
+    if not isinstance(success_count, int) or not isinstance(failure_count, int):
+        raise ValidationFailure("Equity collection counts must be integers")
+    if success_count + failure_count != len(rows):
+        raise ValidationFailure(
+            f"Equity collection counts do not match watchlist: {success_count}+{failure_count}!={len(rows)}"
+        )
+    if collection.get("status") == "current" and success_count != len(rows):
+        raise ValidationFailure("Current equity collection must have a usable price for every configured row")
+    if collection.get("status") == "failed" and success_count != 0:
+        raise ValidationFailure("Failed equity collection cannot report successful rows")
+
+    disabled = collection.get("mode") == "disabled"
+    for row in rows:
+        row_id = row.get("id", "unknown")
+        status = row.get("status")
+        if status not in EQUITY_STATUSES:
+            raise ValidationFailure(f"Unknown equity status for {row_id}: {status}")
+        if status in {"current", "partial"} and row.get("price") is None:
+            raise ValidationFailure(f"Usable equity row has no price: {row_id}")
+        if disabled and (row.get("status") != "unavailable" or row.get("price") is not None):
+            raise ValidationFailure(f"Disabled equity feed must not publish a price: {row_id}")
+
+        history = row.get("history", [])
+        dates = [str(item.get("date", "")) for item in history if isinstance(item, dict)]
+        if dates != sorted(dates):
+            raise ValidationFailure(f"Equity history is not sorted for {row_id}")
+        duplicates = duplicate_values(date for date in dates if date)
+        if duplicates:
+            raise ValidationFailure(f"Duplicate equity history dates for {row_id}: {duplicates[:5]}")
+        if len(history) > 260:
+            raise ValidationFailure(f"Equity history exceeds 260 rows for {row_id}")
+
+    rendered = json.dumps(data, ensure_ascii=False).lower()
+    if "apikey=" in rendered or "twelve_data_api_key" in rendered:
+        raise ValidationFailure("Generated equity data appears to contain an API credential")
 
 
 def political_trade_count(data: dict[str, Any]) -> int:

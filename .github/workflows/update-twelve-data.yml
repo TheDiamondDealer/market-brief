@@ -1,0 +1,170 @@
+name: Update private Twelve Data market feed
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Collection mode
+        required: true
+        default: full
+        type: choice
+        options:
+          - full
+          - snapshot
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update_twelve_data.py'
+      - 'scripts/twelve_data_core.py'
+      - 'scripts/twelve_data_browser.py'
+      - 'scripts/twelve_data_metrics.py'
+      - 'scripts/twelve_data_pipeline.py'
+      - 'scripts/twelve_data_watchlist.json'
+      - 'scripts/validate_generated_data.py'
+      - 'scripts/validation_helpers.py'
+      - 'schemas/equity-market-data.schema.json'
+      - 'tests/test_twelve_data_pipeline.py'
+      - '.github/workflows/update-twelve-data.yml'
+  schedule:
+    # Four snapshots across the US cash session.
+    - cron: '10 14,16,18,20 * * 1-5'
+    # Full daily-history refresh after the US cash close.
+    - cron: '30 21 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generated-data-writer
+  cancel-in-progress: false
+
+jobs:
+  privacy-gate:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.gate.outputs.enabled }}
+    steps:
+      - name: Verify private-use perimeter
+        id: gate
+        env:
+          REPOSITORY_PRIVATE: ${{ github.event.repository.private }}
+          PRIVATE_SITE_ACCESS_CONFIRMED: ${{ vars.PRIVATE_SITE_ACCESS_CONFIRMED }}
+          PRIVATE_MARKET_DATA_ENABLED: ${{ vars.PRIVATE_MARKET_DATA_ENABLED }}
+          TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
+        run: |
+          enabled=true
+          reasons=()
+
+          if [ "$REPOSITORY_PRIVATE" != "true" ]; then
+            enabled=false
+            reasons+=("repository is not private")
+          fi
+          if [ "$PRIVATE_SITE_ACCESS_CONFIRMED" != "true" ]; then
+            enabled=false
+            reasons+=("PRIVATE_SITE_ACCESS_CONFIRMED is not true")
+          fi
+          if [ "$PRIVATE_MARKET_DATA_ENABLED" != "true" ]; then
+            enabled=false
+            reasons+=("PRIVATE_MARKET_DATA_ENABLED is not true")
+          fi
+          if [ -z "$TWELVE_DATA_API_KEY" ]; then
+            enabled=false
+            reasons+=("TWELVE_DATA_API_KEY secret is missing")
+          fi
+
+          echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
+          {
+            echo "## Twelve Data privacy gate"
+            echo
+            if [ "$enabled" = "true" ]; then
+              echo "Credentialed collection is enabled for a private repository and confirmed protected deployment."
+            else
+              echo "Credentialed collection remains dormant."
+              printf -- "- %s\n" "${reasons[@]}"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  update:
+    needs: privacy-gate
+    if: ${{ needs.privacy-gate.outputs.enabled == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Use Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements/validation.txt
+
+      - name: Validate immutable dependency pins
+        run: python scripts/check_ci_pins.py
+
+      - name: Install validation dependency
+        run: |
+          python -m pip install --disable-pip-version-check --requirement requirements/validation.txt
+          python -m pip check
+
+      - name: Select collection mode
+        id: mode
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          REQUESTED_MODE: ${{ inputs.mode }}
+        run: |
+          mode=full
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            mode="${REQUESTED_MODE:-full}"
+          elif [ "$EVENT_SCHEDULE" = "10 14,16,18,20 * * 1-5" ]; then
+            mode=snapshot
+          fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "Selected Twelve Data collection mode: $mode"
+
+      - name: Validate collector and offline fixtures
+        run: |
+          python -m py_compile scripts/update_twelve_data.py scripts/twelve_data_core.py scripts/twelve_data_browser.py scripts/twelve_data_metrics.py scripts/twelve_data_pipeline.py scripts/validate_generated_data.py scripts/validation_helpers.py tests/test_twelve_data_pipeline.py
+          python -m unittest tests/test_twelve_data_pipeline.py -v
+
+      - name: Collect private market prices
+        env:
+          TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
+          TWELVE_DATA_REQUEST_INTERVAL_SECONDS: ${{ vars.TWELVE_DATA_REQUEST_INTERVAL_SECONDS || '8.1' }}
+        run: python scripts/update_twelve_data.py --mode "${{ steps.mode.outputs.mode }}"
+
+      - name: Validate generated output
+        run: |
+          python scripts/validate_generated_data.py
+          node --check site/equity-data.js
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('site/data/equity-market-data.json').read_text())
+          collection = data['collection']
+          print(
+              f"Twelve Data mode={collection['mode']}; status={collection['status']}; "
+              f"usable={collection['successCount']}; failed={collection['failureCount']}; "
+              f"generatedAtUtc={data['generatedAtUtc']}"
+          )
+          PY
+
+      - name: Commit validated private data
+        run: |
+          if git diff --quiet -- site/equity-data.js site/data/equity-market-data.json; then
+            echo 'No private market-data changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site/equity-data.js site/data/equity-market-data.json
+          git commit -m 'Refresh private Twelve Data market feed'
+          git pull --rebase origin main
+          python scripts/validate_generated_data.py
+          node --check site/equity-data.js
+          git push origin HEAD:main

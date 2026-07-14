@@ -1,0 +1,52 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://market-brief.local/schemas/equity-market-data.schema.json",
+  "title":"Private equity market data cache",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schemaVersion","generatedAtUtc","provider","collection","watchlist","sourceStatus","methodology"],
+  "properties":{
+    "schemaVersion":{"const":1},
+    "generatedAtUtc":{"type":"string","format":"date-time"},
+    "provider":{"type":"object","additionalProperties":false,"required":["id","name","sourceUrl","access","licenseMode","status","disclaimer"],"properties":{
+      "id":{"const":"twelve-data"},"name":{"const":"Twelve Data"},"sourceUrl":{"type":"string","format":"uri"},
+      "access":{"const":"credentialed-server-side"},"licenseMode":{"const":"private-internal-use-only"},
+      "status":{"$ref":"#/$defs/status"},"disclaimer":{"type":"string","minLength":1}
+    }},
+    "collection":{"type":"object","additionalProperties":false,"required":["mode","status","expectedCadence","lastSuccessfulAt","successCount","failureCount","errors"],"properties":{
+      "mode":{"enum":["disabled","snapshot","full"]},"status":{"$ref":"#/$defs/status"},"expectedCadence":{"type":"string","minLength":1},
+      "lastSuccessfulAt":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}]},
+      "successCount":{"type":"integer","minimum":0},"failureCount":{"type":"integer","minimum":0},"errors":{"type":"array","items":{"type":"string"}}
+    }},
+    "watchlist":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/instrument"}},
+    "sourceStatus":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["id","source","status","observationDate","lastSuccessfulAt","expectedCadence","detail","error","url"],"properties":{
+      "id":{"type":"string","minLength":1},"source":{"type":"string","minLength":1},"status":{"$ref":"#/$defs/status"},
+      "observationDate":{"anyOf":[{"type":"string"},{"type":"null"}]},"lastSuccessfulAt":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}]},
+      "expectedCadence":{"type":"string","minLength":1},"detail":{"type":"string"},"error":{"anyOf":[{"type":"string"},{"type":"null"}]},"url":{"type":"string","format":"uri"}
+    }}},
+    "methodology":{"type":"object","additionalProperties":false,"required":["price","returns","trend","retention"],"properties":{
+      "price":{"type":"string","minLength":1},"returns":{"type":"string","minLength":1},"trend":{"type":"string","minLength":1},"retention":{"type":"string","minLength":1}
+    }}
+  },
+  "$defs":{
+    "status":{"enum":["current","delayed","stale","failed","unavailable","partial","unknown"]},
+    "nullableNumber":{"anyOf":[{"type":"number"},{"type":"null"}]},
+    "nullableInteger":{"anyOf":[{"type":"integer"},{"type":"null"}]},
+    "historyRow":{"type":"object","additionalProperties":false,"required":["date","open","high","low","close","volume"],"properties":{
+      "date":{"type":"string","format":"date"},"open":{"$ref":"#/$defs/nullableNumber"},"high":{"$ref":"#/$defs/nullableNumber"},"low":{"$ref":"#/$defs/nullableNumber"},"close":{"type":"number"},"volume":{"$ref":"#/$defs/nullableInteger"}
+    }},
+    "instrument":{"type":"object","additionalProperties":false,"required":["id","symbol","name","exchange","group","currency","status","observedAt","collectedAt","price","sourceUrl","error"],"properties":{
+      "id":{"type":"string","pattern":"^[a-z0-9-]+$"},"symbol":{"type":"string","minLength":1},"name":{"type":"string","minLength":1},"exchange":{"type":"string","minLength":1},
+      "group":{"type":"string","minLength":1},"currency":{"type":"string","minLength":3,"maxLength":3},"status":{"$ref":"#/$defs/status"},
+      "observedAt":{"anyOf":[{"type":"string"},{"type":"null"}]},"collectedAt":{"type":"string","format":"date-time"},"price":{"$ref":"#/$defs/nullableNumber"},
+      "previousClose":{"$ref":"#/$defs/nullableNumber"},"change":{"$ref":"#/$defs/nullableNumber"},"percentChange":{"$ref":"#/$defs/nullableNumber"},
+      "volume":{"$ref":"#/$defs/nullableInteger"},"averageVolume20":{"$ref":"#/$defs/nullableInteger"},"volumeRatio20":{"$ref":"#/$defs/nullableNumber"},
+      "returns":{"type":"object","additionalProperties":false,"required":["day","week","month","threeMonth","year"],"properties":{"day":{"$ref":"#/$defs/nullableNumber"},"week":{"$ref":"#/$defs/nullableNumber"},"month":{"$ref":"#/$defs/nullableNumber"},"threeMonth":{"$ref":"#/$defs/nullableNumber"},"year":{"$ref":"#/$defs/nullableNumber"}}},
+      "movingAverages":{"type":"object","additionalProperties":false,"required":["day20","day50","day200"],"properties":{"day20":{"$ref":"#/$defs/nullableNumber"},"day50":{"$ref":"#/$defs/nullableNumber"},"day200":{"$ref":"#/$defs/nullableNumber"}}},
+      "distanceFromMovingAverages":{"type":"object","additionalProperties":false,"required":["day20","day50","day200"],"properties":{"day20":{"$ref":"#/$defs/nullableNumber"},"day50":{"$ref":"#/$defs/nullableNumber"},"day200":{"$ref":"#/$defs/nullableNumber"}}},
+      "range52Week":{"type":"object","additionalProperties":false,"required":["low","high","positionPercent"],"properties":{"low":{"$ref":"#/$defs/nullableNumber"},"high":{"$ref":"#/$defs/nullableNumber"},"positionPercent":{"$ref":"#/$defs/nullableNumber"}}},
+      "trend":{"type":"object","additionalProperties":false,"required":["state","detail"],"properties":{"state":{"enum":["bullish","bearish","mixed","insufficient"]},"detail":{"type":"string","minLength":1}}},
+      "history":{"type":"array","maxItems":260,"items":{"$ref":"#/$defs/historyRow"}},"sourceUrl":{"type":"string","format":"uri"},"error":{"anyOf":[{"type":"string"},{"type":"null"}]}
+    }}
+  }
+}
