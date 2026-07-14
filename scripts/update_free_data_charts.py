@@ -13,6 +13,7 @@ import sys
 import update_free_data as collector
 import update_free_data_api  # noqa: F401 - installs the current official CFTC API collector
 
+CHART_HISTORY_WEEKS = 52
 _original_summarise_market = collector.summarise_market
 
 
@@ -24,7 +25,7 @@ def summarise_market_with_history(market_id, label, observations):
     deduped = {}
     for observation in observations:
         deduped[observation.date] = observation
-    ordered = sorted(deduped.values(), key=lambda item: item.date)[-52:]
+    ordered = sorted(deduped.values(), key=lambda item: item.date)[-CHART_HISTORY_WEEKS:]
 
     summary["history52"] = [
         {
