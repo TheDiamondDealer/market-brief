@@ -85,6 +85,14 @@
     refreshEvidencePanel();
   }
 
+  function loadCotChart() {
+    if (document.querySelector('script[src="cot-chart.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'cot-chart.js';
+    script.async = true;
+    document.head.appendChild(script);
+  }
+
   function initialise() {
     updateProductReferences();
     updateBiasEngine();
@@ -95,6 +103,7 @@
     }
     window.addEventListener('hashchange', () => requestAnimationFrame(() => requestAnimationFrame(refreshEnergyDetail)));
     refreshEnergyDetail();
+    loadCotChart();
   }
 
   initialise();
