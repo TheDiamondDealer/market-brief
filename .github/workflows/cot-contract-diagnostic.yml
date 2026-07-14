@@ -21,6 +21,7 @@ jobs:
           import urllib.parse
           import urllib.request
           from collections import defaultdict
+          from pathlib import Path
 
           HEADERS = {'User-Agent': 'MarketBriefBR06Diagnostic/1.0'}
 
@@ -29,23 +30,23 @@ jobs:
               with urllib.request.urlopen(request, timeout=90) as response:
                   return json.load(response)
 
+          result = {'catalog': [], 'queries': []}
           catalog_url = 'https://api.us.socrata.com/api/catalog/v1?' + urllib.parse.urlencode({
               'search_context': 'publicreporting.cftc.gov',
               'q': 'Commitments of Traders futures only',
               'limit': '100',
           })
           catalog = get_json(catalog_url)
-          print('=== CFTC catalog datasets ===')
           for item in catalog.get('results', []):
               resource = item.get('resource', {})
               name = str(resource.get('name', ''))
               if any(term in name.lower() for term in ('disaggregated', 'traders in financial', 'legacy')):
-                  print(json.dumps({
+                  result['catalog'].append({
                       'id': resource.get('id'),
                       'name': name,
-                      'description': str(resource.get('description', ''))[:180],
+                      'description': str(resource.get('description', '')),
                       'updatedAt': resource.get('updatedAt'),
-                  }, sort_keys=True))
+                  })
 
           datasets = {
               'disaggregated': '72hh-3qpy',
@@ -70,7 +71,7 @@ jobs:
                   '$where': where,
               })
               rows = get_json(f"https://publicreporting.cftc.gov/resource/{datasets[report]}.json?{params}")
-              identities = defaultdict(lambda: {'latest': '', 'openInterest': 0})
+              identities = defaultdict(lambda: {'latest': '', 'openInterest': 0, 'sample': {}})
               for row in rows:
                   code = str(row.get('cftc_contract_market_code', '')).strip()
                   name = str(row.get('market_and_exchange_names', '')).strip()
@@ -80,19 +81,38 @@ jobs:
                   except (TypeError, ValueError):
                       oi = 0
                   identity = identities[(code, name)]
-                  identity['latest'] = max(identity['latest'], date)
+                  if date >= identity['latest']:
+                      identity['latest'] = date
+                      identity['sample'] = row
                   identity['openInterest'] = max(identity['openInterest'], oi)
 
               ranked = sorted(
                   identities.items(),
                   key=lambda item: (item[1]['latest'], item[1]['openInterest'], item[0][0]),
                   reverse=True,
-              )[:12]
-              print(f"=== {report}: {search} ===")
-              for (code, name), meta in ranked:
-                  print(json.dumps({
-                      'code': code,
-                      'name': name,
-                      'latest': meta['latest'],
-                      'maxOpenInterest': round(meta['openInterest']),
-                  }, sort_keys=True))
+              )
+              result['queries'].append({
+                  'report': report,
+                  'search': search,
+                  'identities': [
+                      {
+                          'code': code,
+                          'name': name,
+                          'latest': meta['latest'],
+                          'maxOpenInterest': round(meta['openInterest']),
+                          'sample': meta['sample'],
+                      }
+                      for (code, name), meta in ranked
+                  ],
+              })
+
+          Path('cot-diagnostic.json').write_text(json.dumps(result, indent=2, sort_keys=True), encoding='utf-8')
+          print(f"Wrote catalog={len(result['catalog'])}; queries={len(result['queries'])}")
+
+      - name: Upload CFTC diagnostic
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: cot-contract-diagnostic
+          path: cot-diagnostic.json
+          if-no-files-found: error
+          retention-days: 1
