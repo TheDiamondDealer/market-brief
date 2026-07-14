@@ -29,62 +29,61 @@ class CotContractRegistryTests(unittest.TestCase):
         identities = {(item["reportType"], item["cftcContractCode"]) for item in verified}
         self.assertEqual(len(identities), len(verified))
         unavailable = {item["id"]: item for item in cot_contracts.unavailable_contracts(self.registry)}
-        self.assertEqual(set(unavailable), {"oil-brent", "gas-uk"})
+        self.assertEqual(set(unavailable), {"oil-wti", "oil-brent", "gas-us", "gas-uk"})
         self.assertTrue(all(item["acceptedNames"] == [] for item in unavailable.values()))
         self.assertTrue(all(item["cftcContractCode"] is None for item in unavailable.values()))
 
-    def test_wti_requires_exact_nymex_code_and_name(self) -> None:
-        contract = self.contracts["oil-wti"]
-        exact = self.rows["oil-wti"]
-        self.assertTrue(cot_contracts.contract_accepts_row(contract, exact))
+    def test_unavailable_energy_benchmarks_reject_current_alternatives(self) -> None:
+        wti = self.contracts["oil-wti"]
+        gas = self.contracts["gas-us"]
+        self.assertFalse(cot_contracts.contract_accepts_row(wti, self.rows["oil-wti-ice"]))
+        self.assertFalse(cot_contracts.contract_accepts_row(wti, self.rows["oil-wti-financial"]))
+        self.assertFalse(cot_contracts.contract_accepts_row(gas, self.rows["gas-us-last-day-financial"]))
+        self.assertFalse(cot_contracts.contract_accepts_row(gas, self.rows["gas-us-different-size"]))
 
-        ice_substitute = copy.deepcopy(exact)
-        ice_substitute["market_and_exchange_names"] = "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE"
-        self.assertFalse(cot_contracts.contract_accepts_row(contract, ice_substitute))
+    def test_unavailable_energy_benchmarks_are_not_queried(self) -> None:
+        verified_ids = {contract["id"] for contract in cot_contracts.verified_contracts(self.registry)}
+        self.assertNotIn("oil-wti", verified_ids)
+        self.assertNotIn("gas-us", verified_ids)
 
-        wrong_code = copy.deepcopy(exact)
-        wrong_code["cftc_contract_market_code"] = "000000"
-        self.assertFalse(cot_contracts.contract_accepts_row(contract, wrong_code))
-
-    def test_henry_hub_financial_contract_is_not_accepted(self) -> None:
-        contract = self.contracts["gas-us"]
-        exact = self.rows["gas-us"]
-        self.assertTrue(cot_contracts.contract_accepts_row(contract, exact))
-        financial = copy.deepcopy(exact)
-        financial["market_and_exchange_names"] = "HENRY HUB LAST DAY FIN - NEW YORK MERCANTILE EXCHANGE"
-        self.assertFalse(cot_contracts.contract_accepts_row(contract, financial))
-
-    def test_ten_year_notes_reject_ultra_treasury(self) -> None:
+    def test_ten_year_notes_accept_current_and_historical_names_but_reject_ultra(self) -> None:
         contract = self.contracts["us10y-futures"]
-        exact = self.rows["us10y-futures"]
-        self.assertTrue(cot_contracts.contract_accepts_row(contract, exact))
-        ultra = copy.deepcopy(exact)
-        ultra["market_and_exchange_names"] = "ULTRA 10-YEAR U.S. TREASURY NOTE - CHICAGO BOARD OF TRADE"
-        self.assertFalse(cot_contracts.contract_accepts_row(contract, ultra))
+        current = self.rows["us10y-futures"]
+        self.assertTrue(cot_contracts.contract_accepts_row(contract, current))
+
+        historical_name = copy.deepcopy(current)
+        historical_name["market_and_exchange_names"] = "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE"
+        self.assertTrue(cot_contracts.contract_accepts_row(contract, historical_name))
+
+        self.assertFalse(cot_contracts.contract_accepts_row(contract, self.rows["us10y-ultra"]))
+
+    def test_registry_accepts_official_alphanumeric_contract_codes(self) -> None:
+        registry = copy.deepcopy(self.registry)
+        gold = next(contract for contract in registry["contracts"] if contract["id"] == "gold")
+        gold["cftcContractCode"] = "06765A"
+        cot_contracts.validate_registry(registry)
 
     def test_api_query_is_bound_to_contract_code_not_name_search(self) -> None:
-        contract = self.contracts["oil-wti"]
+        contract = self.contracts["us10y-futures"]
         with mock.patch.object(api.collector, "fetch_bytes", return_value=b"[]") as fetch:
             self.assertEqual(api.api_rows(contract), [])
         url = fetch.call_args.args[0]
         self.assertIn("cftc_contract_market_code", url)
-        self.assertIn("067651", url)
-        self.assertNotIn("LIGHT+SWEET", url)
+        self.assertIn("043602", url)
+        self.assertNotIn("UST+10Y", url)
 
     def test_exact_observation_emits_verified_identity(self) -> None:
-        contract = self.contracts["oil-wti"]
-        observations = api.observations_from_rows(contract, [self.rows["oil-wti"]])
+        contract = self.contracts["us10y-futures"]
+        observations = api.observations_from_rows(contract, [self.rows["us10y-futures"]])
         summary = api.collector.summarise_market(contract["id"], contract["label"], observations)
         summary["contract"] = cot_contracts.contract_metadata(contract, summary["market"])
-        self.assertEqual(summary["net"], 65000)
+        self.assertEqual(summary["net"], -2004023)
         self.assertTrue(cot_contracts.generated_row_is_verified(summary, self.registry))
 
-    def test_similar_only_rows_leave_market_unavailable(self) -> None:
-        contract = self.contracts["oil-wti"]
-        substitute = copy.deepcopy(self.rows["oil-wti"])
-        substitute["market_and_exchange_names"] = "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE"
+    def test_similar_only_treasury_row_leaves_market_unavailable(self) -> None:
+        contract = self.contracts["us10y-futures"]
         with self.assertRaisesRegex(ValueError, "no exact registered contract"):
-            api.observations_from_rows(contract, [substitute])
+            api.observations_from_rows(contract, [self.rows["us10y-ultra"]])
 
     def test_freshness_uses_contract_specific_maximum_age(self) -> None:
         as_of = datetime(2026, 7, 14, tzinfo=timezone.utc)
