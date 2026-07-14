@@ -57,10 +57,12 @@ jobs:
       - name: Commit imported data or diagnostics
         if: always()
         run: |
-          if git diff --quiet -- site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json; then
+          CHANGES="$(git status --porcelain -- site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json)"
+          if [ -z "$CHANGES" ]; then
             echo 'No disclosure changes to commit.'
             exit 0
           fi
+          echo "$CHANGES"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json
