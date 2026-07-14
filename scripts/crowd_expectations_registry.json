@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "provider": {
+    "id": "polymarket",
+    "name": "Polymarket",
+    "marketEndpoint": "https://gamma-api.polymarket.com/markets",
+    "documentationUrl": "https://docs.polymarket.com/market-data/overview",
+    "geoblockUrl": "https://docs.polymarket.com/api-reference/geoblock",
+    "readOnly": true,
+    "jurisdictionNote": "Australia is close-only for order placement. This project consumes public market data only and contains no wallet, authentication or order code."
+  },
+  "discovery": {
+    "pageSize": 100,
+    "maxPages": 10,
+    "maxMarkets": 48,
+    "minLiquidity": 2500,
+    "minVolume24h": 500,
+    "minQualityScore": 45,
+    "historyDays": 90,
+    "shockPoints24h": 5,
+    "shockMinQualityScore": 65
+  },
+  "excludeTerms": [
+    "world cup",
+    "team to advance",
+    "champion",
+    "championship",
+    "nba",
+    "nfl",
+    "mlb",
+    "nhl",
+    "soccer",
+    "football match",
+    "basketball",
+    "baseball",
+    "tennis",
+    "ufc",
+    "formula 1",
+    "f1 drivers",
+    "f1 constructors",
+    "cricket",
+    "golf",
+    "oscars",
+    "grammys",
+    "box office",
+    "celebrity",
+    "album",
+    "movie",
+    "tv show",
+    "bitcoin price",
+    "ethereum price",
+    "solana price",
+    "btc price",
+    "eth price"
+  ],
+  "categories": [
+    {
+      "id": "monetary-policy",
+      "name": "Monetary Policy & Macro",
+      "keywords": [
+        "federal reserve",
+        "fed rate",
+        "fomc",
+        "rate cut",
+        "rate hike",
+        "interest rate",
+        "jerome powell",
+        "inflation",
+        "cpi",
+        "pce",
+        "recession",
+        "unemployment",
+        "payroll",
+        "jobs report",
+        "gdp",
+        "government shutdown",
+        "debt ceiling"
+      ],
+      "assets": [
+        "gold",
+        "silver",
+        "us-dollar",
+        "rates",
+        "semiconductors"
+      ]
+    },
+    {
+      "id": "trade-industrial-policy",
+      "name": "Trade & Industrial Policy",
+      "keywords": [
+        "tariff",
+        "export control",
+        "export restriction",
+        "chip restriction",
+        "semiconductor restriction",
+        "chips act",
+        "rare earth",
+        "critical mineral",
+        "industrial policy",
+        "sanction",
+        "trade deal",
+        "trade war"
+      ],
+      "assets": [
+        "semiconductors",
+        "rare-earths",
+        "copper",
+        "us-dollar"
+      ]
+    },
+    {
+      "id": "geopolitics-security",
+      "name": "Geopolitics & Security",
+      "keywords": [
+        "taiwan",
+        "ukraine",
+        "russia",
+        "iran",
+        "israel",
+        "gaza",
+        "middle east",
+        "red sea",
+        "strait of hormuz",
+        "ceasefire",
+        "military strike",
+        "invasion",
+        "nato",
+        "south china sea",
+        "sanctions"
+      ],
+      "assets": [
+        "gold",
+        "brent",
+        "wti",
+        "gas-uk",
+        "semiconductors",
+        "rare-earths",
+        "us-dollar"
+      ]
+    },
+    {
+      "id": "energy-commodities",
+      "name": "Energy & Commodities",
+      "keywords": [
+        "opec",
+        "oil production",
+        "oil price",
+        "brent",
+        "wti",
+        "crude oil",
+        "natural gas",
+        "lng",
+        "uranium",
+        "copper",
+        "gold price",
+        "silver price",
+        "rare earth",
+        "critical mineral",
+        "mining ban",
+        "commodity export"
+      ],
+      "assets": [
+        "brent",
+        "wti",
+        "gas-us",
+        "gas-uk",
+        "gold",
+        "silver",
+        "copper",
+        "rare-earths"
+      ]
+    },
+    {
+      "id": "technology-ai",
+      "name": "Technology & AI",
+      "keywords": [
+        "nvidia",
+        "amd",
+        "intel",
+        "tsmc",
+        "asml",
+        "semiconductor",
+        "chip export",
+        "artificial intelligence",
+        "openai",
+        "anthropic",
+        "ai model",
+        "ai regulation",
+        "data center",
+        "data centre"
+      ],
+      "assets": [
+        "semiconductors",
+        "copper",
+        "rare-earths",
+        "rates"
+      ]
+    },
+    {
+      "id": "us-policy-elections",
+      "name": "US Policy & Elections",
+      "keywords": [
+        "president",
+        "presidential election",
+        "congress",
+        "senate",
+        "house of representatives",
+        "executive order",
+        "supreme court",
+        "government shutdown",
+        "debt ceiling",
+        "treasury secretary",
+        "commerce secretary"
+      ],
+      "assets": [
+        "us-dollar",
+        "rates",
+        "gold",
+        "semiconductors"
+      ]
+    }
+  ]
+}

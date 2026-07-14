@@ -1,0 +1,518 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thediamonddealer.github.io/market-brief/schemas/crowd-expectations.schema.json",
+  "title": "Market Brief crowd expectations",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "generatedAtUtc",
+    "provider",
+    "collection",
+    "categories",
+    "markets",
+    "shocks",
+    "methodology",
+    "sourceStatus"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "generatedAtUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "marketEndpoint",
+        "documentationUrl",
+        "geoblockUrl",
+        "readOnly",
+        "jurisdictionNote"
+      ],
+      "properties": {
+        "id": {
+          "const": "polymarket"
+        },
+        "name": {
+          "type": "string"
+        },
+        "marketEndpoint": {
+          "type": "string",
+          "format": "uri"
+        },
+        "documentationUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "geoblockUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "readOnly": {
+          "const": true
+        },
+        "jurisdictionNote": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "rawMarketCount",
+        "selectedMarketCount",
+        "lastSuccessfulAt",
+        "error"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "current",
+            "partial",
+            "stale",
+            "failed",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "rawMarketCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "selectedMarketCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lastSuccessfulAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "count"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "markets": {
+      "type": "array",
+      "maxItems": 48,
+      "items": {
+        "$ref": "#/$defs/market"
+      }
+    },
+    "shocks": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "$ref": "#/$defs/shock"
+      }
+    },
+    "methodology": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "sourceStatus": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source",
+          "status",
+          "observationDate",
+          "lastSuccessfulAt",
+          "expectedCadence",
+          "detail",
+          "error",
+          "url"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "current",
+              "partial",
+              "stale",
+              "failed",
+              "unavailable",
+              "unknown"
+            ]
+          },
+          "observationDate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lastSuccessfulAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "expectedCadence": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "historyPoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "date",
+        "observedAt",
+        "probability"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "market": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "slug",
+        "question",
+        "eventTitle",
+        "categoryId",
+        "category",
+        "probability",
+        "probabilityPercent",
+        "probabilitySource",
+        "change24hPoints",
+        "change7dPoints",
+        "bestBid",
+        "bestAsk",
+        "spread",
+        "liquidity",
+        "volume24h",
+        "volumeTotal",
+        "openInterest",
+        "qualityScore",
+        "qualityGrade",
+        "qualityReasons",
+        "relevanceScore",
+        "assets",
+        "resolutionSource",
+        "description",
+        "endDate",
+        "updatedAt",
+        "collectedAt",
+        "sourceUrl",
+        "restricted",
+        "acceptingOrders",
+        "readOnly",
+        "history",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "eventTitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "categoryId": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "probabilityPercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "probabilitySource": {
+          "type": "string"
+        },
+        "change24hPoints": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "change7dPoints": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "bestBid": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "bestAsk": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "spread": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "liquidity": {
+          "type": "number",
+          "minimum": 0
+        },
+        "volume24h": {
+          "type": "number",
+          "minimum": 0
+        },
+        "volumeTotal": {
+          "type": "number",
+          "minimum": 0
+        },
+        "openInterest": {
+          "type": "number",
+          "minimum": 0
+        },
+        "qualityScore": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "qualityGrade": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        "qualityReasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "relevanceScore": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "resolutionSource": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updatedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "collectedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "restricted": {
+          "type": "boolean"
+        },
+        "acceptingOrders": {
+          "type": "boolean"
+        },
+        "readOnly": {
+          "const": true
+        },
+        "history": {
+          "type": "array",
+          "maxItems": 90,
+          "items": {
+            "$ref": "#/$defs/historyPoint"
+          }
+        },
+        "status": {
+          "enum": [
+            "current",
+            "stale",
+            "partial"
+          ]
+        }
+      }
+    },
+    "shock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "marketId",
+        "question",
+        "probabilityPercent",
+        "change24hPoints",
+        "qualityGrade",
+        "qualityScore",
+        "assets",
+        "sourceUrl"
+      ],
+      "properties": {
+        "marketId": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "probabilityPercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "change24hPoints": {
+          "type": "number"
+        },
+        "qualityGrade": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        "qualityScore": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}

@@ -73,7 +73,9 @@ jobs:
         run: find site tests/js -type f -name '*.js' -print0 | xargs -0 -n1 node --check
 
       - name: Validate generated schemas and semantics
-        run: python scripts/validate_generated_data.py
+        run: |
+          python scripts/validate_generated_data.py
+          python scripts/validate_crowd_expectations.py
 
       - name: Audit static performance, accessibility and payloads
         run: python scripts/audit_static_site.py

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-07-15T00:00:00Z",
+  "provider": {
+    "id": "polymarket",
+    "name": "Polymarket",
+    "marketEndpoint": "https://gamma-api.polymarket.com/markets",
+    "documentationUrl": "https://docs.polymarket.com/market-data/overview",
+    "geoblockUrl": "https://docs.polymarket.com/api-reference/geoblock",
+    "readOnly": true,
+    "jurisdictionNote": "Australia is close-only for order placement. This project consumes public market data only and contains no wallet, authentication or order code."
+  },
+  "collection": {
+    "status": "unavailable",
+    "rawMarketCount": 0,
+    "selectedMarketCount": 0,
+    "lastSuccessfulAt": null,
+    "error": "Collector has not completed its first validated run."
+  },
+  "categories": [
+    {
+      "id": "monetary-policy",
+      "name": "Monetary Policy & Macro",
+      "count": 0
+    },
+    {
+      "id": "trade-industrial-policy",
+      "name": "Trade & Industrial Policy",
+      "count": 0
+    },
+    {
+      "id": "geopolitics-security",
+      "name": "Geopolitics & Security",
+      "count": 0
+    },
+    {
+      "id": "energy-commodities",
+      "name": "Energy & Commodities",
+      "count": 0
+    },
+    {
+      "id": "technology-ai",
+      "name": "Technology & AI",
+      "count": 0
+    },
+    {
+      "id": "us-policy-elections",
+      "name": "US Policy & Elections",
+      "count": 0
+    }
+  ],
+  "markets": [],
+  "shocks": [],
+  "methodology": {
+    "interpretation": "Prices are crowd-implied event probabilities, not forecasts, truth estimates or trade recommendations.",
+    "price": "Use the YES bid-ask midpoint when available and the spread is no wider than 10 probability points; otherwise use the last trade, then the Gamma outcome price.",
+    "quality": "Quality combines liquidity, 24-hour volume, spread, resolution-source clarity, market activity, time remaining and relevance.",
+    "history": "One verified snapshot per UTC day is retained for up to 90 days.",
+    "selection": "Sports, entertainment, celebrity and standalone cryptocurrency-price markets are excluded. Only market-relevant macro, policy, geopolitical, energy, commodity and technology questions are retained.",
+    "jurisdiction": "Read-only public market data. No wallet, authentication, deposits or order endpoints are implemented. Australia is close-only for Polymarket order placement."
+  },
+  "sourceStatus": [
+    {
+      "id": "polymarket-public-market-data",
+      "source": "Polymarket public market data",
+      "status": "unavailable",
+      "observationDate": null,
+      "lastSuccessfulAt": null,
+      "expectedCadence": "Every six hours",
+      "detail": "Awaiting the first validated collection run.",
+      "error": "Collector has not completed its first validated run.",
+      "url": "https://docs.polymarket.com/market-data/overview"
+    }
+  ]
+}
