@@ -70,8 +70,8 @@ class MacroMonitorTests(unittest.TestCase):
     def test_mobile_accessibility_contract(self) -> None:
         self.assertIn("@media(max-width:700px)", self.styles)
         self.assertIn("grid-template-columns:1fr", self.styles)
+        self.assertIn("flex-direction:column", self.styles)
         self.assertIn("prefers-reduced-motion", self.styles)
-        self.assertIn("overflow", self.styles or "")
 
 
 if __name__ == "__main__":
