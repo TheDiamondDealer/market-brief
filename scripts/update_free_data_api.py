@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Collect COT data from the CFTC public reporting API.
 
-Only explicitly recognised, recent primary contracts are accepted. Similar
-micro, mini, financial, index, cross-rate, ICE and ultra contracts are rejected
-rather than silently substituted. Missing or stale markets remain unavailable.
+Only explicitly recognised, recent benchmark contracts are accepted. Similar
+micro, mini, index, basis, cross-rate and ultra contracts are rejected rather
+than silently substituted. Missing or stale markets remain unavailable.
 """
 
 from __future__ import annotations
@@ -39,15 +39,22 @@ MARKETS = {
         "label": "Copper", "report": "disagg", "query": "COPPER",
         "must": ["COPPER", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
     },
-    "oil": {
-        "label": "WTI crude oil", "report": "disagg", "query": "CRUDE OIL",
-        "must": ["LIGHT SWEET", "NEW YORK MERCANTILE"],
-        "avoid": ["E-MINI", "MICRO", "ICE FUTURES", "FINANCIAL", "INDEX"],
+    "oil-wti": {
+        "label": "WTI crude oil", "report": "disagg", "query": "CRUDE OIL, LIGHT SWEET",
+        "must": ["CRUDE OIL", "LIGHT SWEET"],
+        "avoid": ["E-MINI", "MICRO", "FINANCIAL", "INDEX"],
     },
-    "natural-gas": {
-        "label": "Natural gas", "report": "disagg", "query": "NATURAL GAS",
-        "must": ["NATURAL GAS", "NEW YORK MERCANTILE"],
-        "avoid": ["E-MINI", "MICRO", "INDEX", "SWAP", "BASIS"],
+    "oil-brent": {
+        "label": "Brent crude oil", "report": "disagg", "query": "BRENT",
+        "must": ["BRENT"], "avoid": ["E-MINI", "MICRO", "INDEX", "BASIS", "SPREAD"],
+    },
+    "gas-us": {
+        "label": "US Henry Hub natural gas", "report": "disagg", "query": "HENRY HUB",
+        "must": ["HENRY HUB"], "avoid": ["E-MINI", "MICRO", "INDEX", "BASIS", "SWAP"],
+    },
+    "gas-uk": {
+        "label": "UK NBP natural gas", "report": "disagg", "query": "NBP",
+        "must": ["NBP"], "avoid": ["E-MINI", "MICRO", "INDEX", "BASIS", "SWAP"],
     },
     "yen": {
         "label": "Japanese yen", "report": "tff", "query": "JAPANESE YEN",
@@ -102,7 +109,6 @@ def recognised_contract(name: str, config: dict[str, Any]) -> bool:
 def position_keys(report: str) -> tuple[str, str]:
     if report == "disagg":
         return "m_money_positions_long_all", "m_money_positions_short_all"
-    # The TFF public reporting API omits the `_all` suffix used by ZIP files.
     return "lev_money_positions_long", "lev_money_positions_short"
 
 
@@ -125,9 +131,12 @@ def choose_candidate(rows: list[dict[str, Any]], config: dict[str, Any]) -> tupl
             (collector.safe_float(row.get(short_key)) or 0) != 0
             for row in latest_rows
         )
-        ranked.append((latest, usable, name, values))
+        # Prefer the largest current open-interest contract where several
+        # recognised versions share the same latest date.
+        latest_open_interest = max((collector.safe_float(row.get("open_interest_all")) or 0) for row in latest_rows)
+        ranked.append((latest, usable, latest_open_interest, name, values))
     ranked.sort(reverse=True)
-    for _, usable, name, values in ranked:
+    for _, usable, _, name, values in ranked:
         if usable:
             return name, values
     return None
@@ -140,7 +149,7 @@ def candidate_diagnostic(rows: list[dict[str, Any]]) -> str:
         date = report_date(row)
         if name and date and date > grouped.get(name, ""):
             grouped[name] = date
-    candidates = sorted(((date, name) for name, date in grouped.items()), reverse=True)[:3]
+    candidates = sorted(((date, name) for name, date in grouped.items()), reverse=True)[:4]
     return f"nearest candidates={candidates}"
 
 
@@ -148,7 +157,7 @@ def observations_for(config: dict[str, Any]) -> list[collector.Observation]:
     rows = api_rows(DATASETS[config["report"]], config["query"])
     selected = choose_candidate(rows, config)
     if not selected:
-        raise ValueError("no recognised current primary contract; " + candidate_diagnostic(rows))
+        raise ValueError("no recognised current benchmark contract; " + candidate_diagnostic(rows))
     market_name, values = selected
     output: list[collector.Observation] = []
     long_key, short_key = position_keys(config["report"])
@@ -190,17 +199,22 @@ def fetch_cot_api() -> tuple[list[dict[str, Any]], list[str]]:
                 errors.append(f"{market_id}: no usable rows")
                 continue
             if not is_recent(str(summary.get("reportDate", ""))):
-                errors.append(f"{market_id}: latest recognised primary contract is stale ({summary.get('reportDate')}); excluded")
+                errors.append(f"{market_id}: latest recognised benchmark contract is stale ({summary.get('reportDate')}); excluded")
                 continue
             summary["dataMethod"] = "CFTC public reporting API"
             summaries.append(summary)
         except Exception as exc:
             errors.append(f"{market_id}: {exc}")
 
+    # Keep the legacy fallback only for non-energy IDs whose contract identity
+    # remains unambiguous and whose report is current.
     fallback, fallback_errors = ZIP_FALLBACK()
+    legacy_id_map = {"yen": "yen", "us10y-futures": "us10y-futures", "usd-index": "usd-index"}
     existing = {row["id"] for row in summaries}
     for row in fallback:
-        if row["id"] not in existing and is_recent(str(row.get("reportDate", ""))):
+        mapped_id = legacy_id_map.get(row.get("id"))
+        if mapped_id and mapped_id not in existing and is_recent(str(row.get("reportDate", ""))):
+            row["id"] = mapped_id
             row["dataMethod"] = "CFTC annual ZIP fallback"
             summaries.append(row)
     errors.extend(f"ZIP fallback: {error}" for error in fallback_errors[:2])
