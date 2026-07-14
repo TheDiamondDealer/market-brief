@@ -94,7 +94,7 @@ def verify_contract_files() -> list[str]:
         if not path.exists():
             errors.append(f"Mandatory contract missing: {relative}")
     registry = json.loads((ROOT / "scripts" / "cot_contracts.json").read_text(encoding="utf-8"))
-    unavailable = {item["id"] for item in registry.get("contracts", []) if item.get("availability") == "unavailable"}
+    unavailable = {item["id"] for item in registry.get("contracts", []) if item.get("status") == "unavailable"}
     expected = {"oil-wti", "oil-brent", "gas-us", "gas-uk"}
     if unavailable != expected:
         errors.append(f"COT unavailable set changed: expected {sorted(expected)}, got {sorted(unavailable)}")
