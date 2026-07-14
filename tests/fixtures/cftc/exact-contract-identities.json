@@ -1,25 +1,56 @@
 {
-  "source": "CFTC Public Reporting Environment; reduced to identity fields used by the selector",
+  "source": "CFTC Public Reporting Environment current Futures-Only responses captured by the BR-06 diagnostic; reduced to identity and positioning fields used by tests",
   "rows": [
     {
-      "id": "oil-wti",
+      "id": "oil-wti-ice",
       "datasetId": "72hh-3qpy",
       "row": {
-        "cftc_contract_market_code": "067651",
-        "market_and_exchange_names": "CRUDE OIL, LIGHT SWEET - NEW YORK MERCANTILE EXCHANGE",
+        "cftc_contract_market_code": "067411",
+        "market_and_exchange_names": "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE",
         "report_date_as_yyyy_mm_dd": "2026-07-07T00:00:00.000",
-        "m_money_positions_long_all": "210000",
-        "m_money_positions_short_all": "145000",
-        "open_interest_all": "1200000"
+        "m_money_positions_long_all": "5080",
+        "m_money_positions_short_all": "20497",
+        "open_interest_all": "801410",
+        "contract_units": "(CONTRACTS OF 1,000 BARRELS)"
       }
     },
     {
-      "id": "gas-us",
+      "id": "oil-wti-financial",
       "datasetId": "72hh-3qpy",
       "row": {
-        "cftc_contract_market_code": "023651",
-        "market_and_exchange_names": "NATURAL GAS - NEW YORK MERCANTILE EXCHANGE",
-        "report_date_as_yyyy_mm_dd": "2026-07-07T00:00:00.000"
+        "cftc_contract_market_code": "06765A",
+        "market_and_exchange_names": "WTI FINANCIAL CRUDE OIL - NEW YORK MERCANTILE EXCHANGE",
+        "report_date_as_yyyy_mm_dd": "2026-07-07T00:00:00.000",
+        "m_money_positions_long_all": "0",
+        "m_money_positions_short_all": "0",
+        "open_interest_all": "193493",
+        "contract_units": "(CONTRACTS OF 1,000 BARRELS)"
+      }
+    },
+    {
+      "id": "gas-us-last-day-financial",
+      "datasetId": "72hh-3qpy",
+      "row": {
+        "cftc_contract_market_code": "023A55",
+        "market_and_exchange_names": "HENRY HUB LAST DAY FIN - NEW YORK MERCANTILE EXCHANGE",
+        "report_date_as_yyyy_mm_dd": "2026-07-07T00:00:00.000",
+        "m_money_positions_long_all": "44534",
+        "m_money_positions_short_all": "12041",
+        "open_interest_all": "406069",
+        "contract_units": "(Contracts of 10,000 MMBTU'S)"
+      }
+    },
+    {
+      "id": "gas-us-different-size",
+      "datasetId": "72hh-3qpy",
+      "row": {
+        "cftc_contract_market_code": "03565B",
+        "market_and_exchange_names": "HENRY HUB - NEW YORK MERCANTILE EXCHANGE",
+        "report_date_as_yyyy_mm_dd": "2026-07-07T00:00:00.000",
+        "m_money_positions_long_all": "0",
+        "m_money_positions_short_all": "6740",
+        "open_interest_all": "389405",
+        "contract_units": "(Contracts of 2,500  MMBTU'S)"
       }
     },
     {
@@ -27,8 +58,25 @@
       "datasetId": "gpe5-46if",
       "row": {
         "cftc_contract_market_code": "043602",
-        "market_and_exchange_names": "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE",
-        "report_date_as_yyyy_mm_dd": "2026-07-07T00:00:00.000"
+        "market_and_exchange_names": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+        "report_date_as_yyyy_mm_dd": "2026-07-07T00:00:00.000",
+        "lev_money_positions_long": "417214",
+        "lev_money_positions_short": "2421237",
+        "open_interest_all": "5315630",
+        "contract_units": "(CONTRACTS OF $100,000 FACE VALUE)"
+      }
+    },
+    {
+      "id": "us10y-ultra",
+      "datasetId": "gpe5-46if",
+      "row": {
+        "cftc_contract_market_code": "043607",
+        "market_and_exchange_names": "ULTRA UST 10Y - CHICAGO BOARD OF TRADE",
+        "report_date_as_yyyy_mm_dd": "2026-07-07T00:00:00.000",
+        "lev_money_positions_long": "132606",
+        "lev_money_positions_short": "484106",
+        "open_interest_all": "2456400",
+        "contract_units": "(CONTRACTS OF $100,000 FACE VALUE)"
       }
     }
   ]
