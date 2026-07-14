@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any, Iterable
 
 REGISTRY_PATH = Path(__file__).with_name("cot_contracts.json")
 CODE_KEYS = ("cftc_contract_market_code", "CFTC_Contract_Market_Code")
 NAME_KEYS = ("market_and_exchange_names", "Market_and_Exchange_Names")
+CODE_RE = re.compile(r"^[0-9A-Z+]{6}$")
 
 
 class ContractRegistryError(ValueError):
@@ -55,7 +57,7 @@ def validate_registry(registry: dict[str, Any]) -> None:
             names = contract.get("acceptedNames")
             exchange = _text(contract.get("expectedExchange"))
             dataset_id = _text(contract.get("datasetId"))
-            if len(code) != 6 or not code.isdigit() or not exchange or not dataset_id:
+            if not CODE_RE.fullmatch(code) or not exchange or not dataset_id:
                 raise ContractRegistryError(f"Incomplete verified identity for {contract_id}")
             if not isinstance(names, list) or not names or any(not _text(name) for name in names):
                 raise ContractRegistryError(f"Verified contract {contract_id} needs acceptedNames")
