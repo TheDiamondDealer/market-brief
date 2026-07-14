@@ -7,6 +7,19 @@ on:
       - 'site/**'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
+    inputs:
+      ref:
+        description: Git ref to deploy
+        required: false
+        default: main
+        type: string
+  workflow_call:
+    inputs:
+      ref:
+        description: Git ref to deploy
+        required: false
+        default: main
+        type: string
 
 permissions:
   contents: read
@@ -24,14 +37,27 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out requested revision
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+          fetch-depth: 1
+
+      - name: Record deployed commit
+        id: revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload dashboard
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Report deployment revision
+        run: echo "Deployed ${{ steps.revision.outputs.sha }} to ${{ steps.deployment.outputs.page_url }}"
