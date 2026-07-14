@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "parserVersion": "political-ptr-v2",
+  "updatedAt": "2026-07-13T00:00:00+00:00",
+  "filings": {
+    "house:pelosi:20025001": {
+      "trackerId": "pelosi",
+      "chamber": "House",
+      "filingId": "20025001",
+      "filed": "2025-06-01",
+      "reportUrl": "https://disclosures-clerk.house.gov/example.pdf",
+      "year": 2025,
+      "state": "parsed",
+      "parserVersion": "political-ptr-v2",
+      "contentHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "tradeCount": 4,
+      "attempts": 1
+    },
+    "house:tim-moore:20026002": {
+      "trackerId": "tim-moore",
+      "chamber": "House",
+      "filingId": "20026002",
+      "filed": "2026-06-15",
+      "reportUrl": "https://disclosures-clerk.house.gov/partial.pdf",
+      "year": 2026,
+      "state": "partial",
+      "parserVersion": "political-ptr-v3",
+      "contentHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "tradeCount": 2,
+      "attempts": 2,
+      "lastError": "one page used an unsupported table layout"
+    },
+    "senate:sheldon-whitehouse:efd-26003": {
+      "trackerId": "sheldon-whitehouse",
+      "chamber": "Senate",
+      "filingId": "efd-26003",
+      "filed": "2026-07-01",
+      "reportUrl": "https://efdsearch.senate.gov/search/view/ptr/efd-26003/",
+      "year": 2026,
+      "state": "failed",
+      "attempts": 3,
+      "lastError": "official report returned an invalid table"
+    }
+  }
+}
