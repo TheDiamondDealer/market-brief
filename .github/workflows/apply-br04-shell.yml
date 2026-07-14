@@ -29,7 +29,16 @@ jobs:
           fetch-depth: 0
 
       - name: Apply shell markup
-        run: python scripts/apply_br04_shell.py
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/apply_br04_shell.py')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace("'  <script src=\"command-centre.js\"></script>\\n'", "'<script src=\"command-centre.js\"></script>\\n'")
+          text = text.replace("'  <script src=\"command-centre.js\"></script>\\n  <script src=\"shell.js\"></script>\\n'", "'<script src=\"command-centre.js\"></script>\\n<script src=\"shell.js\"></script>\\n'")
+          path.write_text(text, encoding='utf-8')
+          PY
+          python scripts/apply_br04_shell.py
 
       - name: Validate migrated document and shell script
         run: |
