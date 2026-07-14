@@ -1,6 +1,6 @@
 {
-  "generatedAt": "14 July 2026, 10:23 AM AEST",
-  "generatedAtUtc": "2026-07-14T00:23:39+00:00",
+  "generatedAt": "14 July 2026, 10:25 AM AEST",
+  "generatedAtUtc": "2026-07-14T00:25:44+00:00",
   "rates": [
     {
       "id": "DGS2",
@@ -196,6 +196,63 @@
       "dataMethod": "CFTC public reporting API"
     },
     {
+      "id": "oil-wti",
+      "name": "WTI crude oil",
+      "market": "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE",
+      "category": "Managed money",
+      "reportDate": "2026-07-07",
+      "long": 5080,
+      "short": 20497,
+      "net": -15417,
+      "weekChange": -760,
+      "fourWeekChange": 12151,
+      "openInterest": 801410,
+      "netPercentile5y": 65.4,
+      "crowding": "Mid-range",
+      "historyCount": 260,
+      "source": "CFTC Commitments of Traders",
+      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "dataMethod": "CFTC public reporting API"
+    },
+    {
+      "id": "oil-brent",
+      "name": "Brent crude oil",
+      "market": "BRENT LAST DAY - NEW YORK MERCANTILE EXCHANGE",
+      "category": "Managed money",
+      "reportDate": "2026-07-07",
+      "long": 13100,
+      "short": 744,
+      "net": 12356,
+      "weekChange": 5858,
+      "fourWeekChange": 4601,
+      "openInterest": 241351,
+      "netPercentile5y": 72.3,
+      "crowding": "Mid-range",
+      "historyCount": 231,
+      "source": "CFTC Commitments of Traders",
+      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "dataMethod": "CFTC public reporting API"
+    },
+    {
+      "id": "gas-us",
+      "name": "US Henry Hub natural gas",
+      "market": "HENRY HUB LAST DAY FIN - NEW YORK MERCANTILE EXCHANGE",
+      "category": "Managed money",
+      "reportDate": "2026-07-07",
+      "long": 44534,
+      "short": 12041,
+      "net": 32493,
+      "weekChange": -4265,
+      "fourWeekChange": -12724,
+      "openInterest": 406069,
+      "netPercentile5y": 50.8,
+      "crowding": "Mid-range",
+      "historyCount": 260,
+      "source": "CFTC Commitments of Traders",
+      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "dataMethod": "CFTC public reporting API"
+    },
+    {
       "id": "yen",
       "name": "Japanese yen",
       "market": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
@@ -244,7 +301,7 @@
     {
       "source": "CFTC Commitments of Traders",
       "status": "partial",
-      "detail": "oil: latest recognised primary contract is stale (2022-02-01); excluded; natural-gas: latest recognised primary contract is stale (2022-02-01); excluded; us10y-futures: latest recognised primary contract is stale (2022-02-01); excluded",
+      "detail": "gas-uk: no recognised current benchmark contract; nearest candidates=[]; us10y-futures: latest recognised benchmark contract is stale (2022-02-01); excluded",
       "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
     }
   ],
