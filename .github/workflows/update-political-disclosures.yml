@@ -4,19 +4,26 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths-ignore:
-      - 'site/political-data.js'
-      - 'site/data/political-disclosures.json'
-      - 'site/data/political-disclosures-summary.json'
+    paths:
+      - 'scripts/update_political_disclosures.py'
+      - 'scripts/update_political_disclosures_strict.py'
+      - 'scripts/validate_generated_data.py'
+      - 'scripts/validation_helpers.py'
+      - 'schemas/political-disclosures.schema.json'
+      - 'schemas/political-disclosures-summary.schema.json'
+      - '.github/workflows/update-political-disclosures.yml'
+      - '.github/workflows/deploy-pages.yml'
   schedule:
     # Weekday morning refresh in Melbourne. Runs at 08:15 AEST / 09:15 AEDT.
     - cron: '15 22 * * 0-4'
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: update-political-disclosures
+  group: generated-data-writer
   cancel-in-progress: false
 
 jobs:
@@ -28,38 +35,46 @@ jobs:
       POLITICAL_DISCLOSURE_TIMEOUT: '60'
       POLITICAL_REQUIRE_TRADES: '1'
     steps:
-      - name: Check out repository
+      - name: Check out latest main
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Use Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Install parser dependencies
-        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pdfplumber
+      - name: Install parser and validation dependencies
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pdfplumber jsonschema
 
-      - name: Validate collector
-        run: python -m py_compile scripts/update_political_disclosures.py scripts/update_political_disclosures_strict.py
+      - name: Validate collectors
+        run: python -m py_compile scripts/update_political_disclosures.py scripts/update_political_disclosures_strict.py scripts/validate_generated_data.py scripts/validation_helpers.py
 
       - name: Collect official disclosures
-        id: collect
-        continue-on-error: true
         run: python scripts/update_political_disclosures_strict.py
 
-      - name: Validate generated file syntax
-        if: always()
+      - name: Validate generated output before commit
         run: |
-          python -m json.tool site/data/political-disclosures.json >/dev/null
-          python -m json.tool site/data/political-disclosures-summary.json >/dev/null
+          python scripts/validate_generated_data.py
           node --check site/political-data.js
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path('site/data/political-disclosures-summary.json').read_text())
+          pelosi = summary.get('trackers', {}).get('pelosi', {}).get('trades', 0)
+          print(f"Generated political trades={summary.get('totalTrades')}; Pelosi={pelosi}; generatedAt={summary.get('generatedAt')}")
+          PY
 
-      - name: Commit imported data or diagnostics
-        if: always()
+      - name: Commit validated data
+        id: commit
         run: |
           CHANGES="$(git status --porcelain -- site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json)"
           if [ -z "$CHANGES" ]; then
             echo 'No disclosure changes to commit.'
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           echo "$CHANGES"
@@ -68,27 +83,15 @@ jobs:
           git add site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json
           git commit -m 'Refresh official political disclosures'
           git pull --rebase origin main
-          git push
+          python scripts/validate_generated_data.py
+          node --check site/political-data.js
+          git push origin HEAD:main
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Enforce verified historical import
-        if: always()
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          data = json.loads(Path('site/data/political-disclosures.json').read_text())
-          pelosi = data.get('trackers', {}).get('pelosi', {}).get('trades', [])
-          total = sum(len(item.get('trades', [])) for item in data.get('trackers', {}).values())
-          malformed = [
-              trade for item in data.get('trackers', {}).values() for trade in item.get('trades', [])
-              if '\x00' in str(trade.get('asset', ''))
-              or 'Name: Hon.' in str(trade.get('asset', ''))
-              or 'State/District:' in str(trade.get('asset', ''))
-          ]
-          if not pelosi:
-              print(json.dumps(data.get('sourceStatus', {}), indent=2))
-              raise SystemExit('Validation failed: Pelosi should have historical PTR records, but none were parsed.')
-          if malformed:
-              raise SystemExit(f'Validation failed: {len(malformed)} malformed asset rows remain.')
-          print(f'Validated {total} retained political transactions; Pelosi={len(pelosi)}; malformed=0')
-          PY
+  deploy:
+    needs: update
+    if: ${{ needs.update.result == 'success' }}
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      ref: main
