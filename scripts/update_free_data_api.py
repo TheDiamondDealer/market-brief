@@ -19,6 +19,8 @@ from typing import Any
 import update_free_data as collector
 import update_free_data_strict as strict_collector  # applies strict fallback config
 
+ZIP_FALLBACK = collector.fetch_cot
+
 DATASETS = {
     "disagg": "72hh-3qpy",
     "tff": "gpe5-46if",
@@ -62,9 +64,10 @@ MARKETS = {
 
 def api_rows(dataset: str, search_text: str) -> list[dict[str, Any]]:
     start_date = (datetime.now(timezone.utc) - timedelta(days=366 * 6)).date().isoformat()
+    escaped_search = search_text.replace("'", "''")
     where = (
         f"report_date_as_yyyy_mm_dd >= '{start_date}T00:00:00.000' "
-        f"AND market_and_exchange_names like '%{search_text.replace("'", "''")}%'"
+        f"AND market_and_exchange_names like '%{escaped_search}%'"
     )
     params = urllib.parse.urlencode({
         "$limit": "5000",
@@ -172,7 +175,7 @@ def fetch_cot_api() -> tuple[list[dict[str, Any]], list[str]]:
             errors.append(f"{market_id}: {exc}")
 
     if len(summaries) < 5:
-        fallback, fallback_errors = strict_collector.collector.fetch_cot()
+        fallback, fallback_errors = ZIP_FALLBACK()
         existing = {row["id"] for row in summaries}
         summaries.extend(row for row in fallback if row["id"] not in existing)
         errors.extend(f"ZIP fallback: {error}" for error in fallback_errors[:3])
