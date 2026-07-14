@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thediamonddealer.github.io/market-brief/schemas/calendar-events.schema.json",
+  "title": "Market Brief economic event calendar",
+  "type": "object",
+  "required": ["schemaVersion", "timezone", "generatedAt", "events"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "timezone": {"const": "Australia/Melbourne"},
+    "generatedAt": {"type": ["string", "null"]},
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "importance", "scheduledLabel", "scheduledAt", "timeStatus", "state", "source", "assets", "previous", "consensus", "actual", "scenarios", "reactions", "verdict"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "name": {"type": "string", "minLength": 1},
+          "importance": {"enum": ["research-priority", "standard"]},
+          "scheduledLabel": {"type": "string", "minLength": 1},
+          "scheduledAt": {"type": ["string", "null"]},
+          "timeStatus": {"enum": ["verified-melbourne", "needs-verification"]},
+          "state": {"enum": ["upcoming", "released", "reaction-complete"]},
+          "source": {
+            "type": "object",
+            "required": ["name", "url"],
+            "properties": {"name": {"type": "string", "minLength": 1}, "url": {"type": ["string", "null"]}},
+            "additionalProperties": false
+          },
+          "assets": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "previous": {"$ref": "#/$defs/value"},
+          "consensus": {"$ref": "#/$defs/value"},
+          "actual": {"$ref": "#/$defs/value"},
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label", "interpretation"],
+              "properties": {"label": {"type": "string", "minLength": 1}, "interpretation": {"type": "string", "minLength": 1}},
+              "additionalProperties": false
+            }
+          },
+          "reactions": {
+            "type": "object",
+            "required": ["immediate", "close", "day1", "day5"],
+            "properties": {
+              "immediate": {"$ref": "#/$defs/reaction"},
+              "close": {"$ref": "#/$defs/reaction"},
+              "day1": {"$ref": "#/$defs/reaction"},
+              "day5": {"$ref": "#/$defs/reaction"}
+            },
+            "additionalProperties": false
+          },
+          "verdict": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "value": {
+      "type": "object",
+      "required": ["value", "status", "source"],
+      "properties": {
+        "value": {"type": ["string", "number", "null"]},
+        "status": {"enum": ["pending", "sourced", "not-sourced"]},
+        "source": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "reaction": {
+      "type": "object",
+      "required": ["label", "value", "status", "observedAt"],
+      "properties": {
+        "label": {"type": "string", "minLength": 1},
+        "value": {"type": "string", "minLength": 1},
+        "status": {"enum": ["pending", "observed"]},
+        "observedAt": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
