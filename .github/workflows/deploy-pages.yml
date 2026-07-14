@@ -32,6 +32,10 @@ concurrency:
 
 jobs:
   deploy:
+    # Once the credentialed private feed is activated, Cloudflare Pages becomes
+    # the deployment path. This prevents refreshed private data from reaching the
+    # legacy public GitHub Pages origin.
+    if: ${{ vars.PRIVATE_MARKET_DATA_ENABLED != 'true' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

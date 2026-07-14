@@ -111,6 +111,50 @@
     return rows;
   }
 
+  function equityRecords() {
+    const data = core.adapters?.equities?.() || window.equityMarketData || {};
+    const generatedAt = data.generatedAtUtc;
+    const rows = [];
+    for (const source of data.sourceStatus || []) {
+      rows.push(record({
+        id: `market-price-source:${source.id || rows.length}`,
+        family: 'market-prices',
+        name: source.source || 'Twelve Data private market feed',
+        sourceObservedAt: source.observationDate,
+        collectedAt: generatedAt,
+        generatedAt,
+        expectedCadence: source.expectedCadence || 'Intraday snapshots plus daily full history',
+        expectedCadenceDays: 3,
+        lastSuccessfulAt: source.lastSuccessfulAt,
+        status: source.status,
+        detail: source.detail || '',
+        error: source.error || null,
+        url: source.url || data.provider?.sourceUrl || null
+      }));
+    }
+    for (const item of data.watchlist || []) {
+      const price = item.price === null || item.price === undefined ? 'price unavailable' : `${item.price} ${item.currency || ''}`.trim();
+      const day = item.percentChange === null || item.percentChange === undefined ? 'day move unavailable' : `${Number(item.percentChange) > 0 ? '+' : ''}${item.percentChange}% day`;
+      const acceptedStatus = item.status === 'current' ? cadenceStatus(item.observedAt, 3) : item.status;
+      rows.push(record({
+        id: `market-price:${item.id}`,
+        family: 'market-prices',
+        name: `${item.symbol} — ${item.name}`,
+        sourceObservedAt: item.observedAt,
+        collectedAt: item.collectedAt || generatedAt,
+        generatedAt,
+        expectedCadence: 'Intraday quote snapshot; daily history refresh',
+        expectedCadenceDays: 3,
+        lastSuccessfulAt: data.collection?.lastSuccessfulAt,
+        status: acceptedStatus,
+        detail: `${price} · ${day} · ${item.exchange || 'exchange unavailable'}`,
+        error: item.error || null,
+        url: item.sourceUrl || data.provider?.sourceUrl || null
+      }));
+    }
+    return rows;
+  }
+
   function politicalRecords() {
     const data = window.politicalDisclosureSummary || store?.getSlice('politicalSummary') || {};
     const generatedAt = data.generatedAt;
@@ -149,7 +193,7 @@
   }
 
   function build() {
-    const records = [...officialRecords(), ...politicalRecords(), ...researchRecords()];
+    const records = [...officialRecords(), ...equityRecords(), ...politicalRecords(), ...researchRecords()];
     const counts = Object.fromEntries(STATUS.map((status) => [status, records.filter((item) => item.status === status).length]));
     return Object.freeze({ schemaVersion: 1, generatedAt: new Date().toISOString(), statuses: STATUS, counts: Object.freeze(counts), records: Object.freeze(records) });
   }
@@ -175,8 +219,9 @@
 
   core.freshness = Object.freeze({ STATUS, ageDays, all, build, cadenceStatus, failures, forId, get, normalizeStatus, parseDate, refresh });
   store?.subscribe((change) => {
-    if (change.name && change.name !== 'sourceHealth' && ['impactFeed', 'calendar', 'politicalSummary'].includes(change.name)) window.setTimeout(refresh, 0);
+    if (change.name && change.name !== 'sourceHealth' && ['impactFeed', 'calendar', 'politicalSummary', 'equities'].includes(change.name)) window.setTimeout(refresh, 0);
   });
+  window.addEventListener('marketbrief:equity-data', () => window.setTimeout(refresh, 0));
   refresh();
   window.addEventListener('load', refresh, { once: true });
 })();

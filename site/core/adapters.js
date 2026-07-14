@@ -14,6 +14,15 @@
   const EMPTY_OFFICIAL = Object.freeze({ rates: [], curveSpreads: [], cot: [], sourceStatus: [], methodology: {} });
   const EMPTY_EVIDENCE = Object.freeze({ physicalChecklists: {}, eventReactions: [] });
   const EMPTY_SCENARIOS = Object.freeze({});
+  const EMPTY_EQUITIES = Object.freeze({
+    schemaVersion: 1,
+    generatedAtUtc: null,
+    provider: { id: 'twelve-data', name: 'Twelve Data', status: 'unavailable' },
+    collection: { mode: 'disabled', status: 'unavailable', successCount: 0, failureCount: 0, errors: [] },
+    watchlist: [],
+    sourceStatus: [],
+    methodology: {}
+  });
 
   function readLegacyResearch() {
     return typeof fallback !== 'undefined' && fallback ? fallback : EMPTY_RESEARCH;
@@ -31,16 +40,22 @@
     return window.scenarioAssets || EMPTY_SCENARIOS;
   }
 
+  function readEquityData() {
+    return window.equityMarketData || EMPTY_EQUITIES;
+  }
+
   function refresh() {
     const research = readLegacyResearch();
     const official = readOfficialData();
     const evidence = readEvidenceData();
     const scenarios = readScenarioData();
+    const equities = readEquityData();
     store?.setSlice('research', research, { source: 'legacy:fallback' });
     store?.setSlice('official', official, { source: 'legacy:freeMarketData' });
     store?.setSlice('evidence', evidence, { source: 'legacy:marketResearchData' });
     store?.setSlice('scenarios', scenarios, { source: 'legacy:scenarioAssets' });
-    return { research, official, evidence, scenarios };
+    store?.setSlice('equities', equities, { source: 'generated:equityMarketData' });
+    return { research, official, evidence, scenarios, equities };
   }
 
   function research() {
@@ -61,6 +76,14 @@
       store?.setSlice('scenarios', current, { source: 'legacy:scenarioAssets' });
     }
     return store?.getSlice('scenarios') || current;
+  }
+
+  function equities() {
+    const current = readEquityData();
+    if (current !== EMPTY_EQUITIES && current !== store?.getSlice('equities')) {
+      store?.setSlice('equities', current, { source: 'generated:equityMarketData' });
+    }
+    return store?.getSlice('equities') || current;
   }
 
   function closeNavigation() {
@@ -93,8 +116,15 @@
   }
 
   const views = Object.freeze({ activate: activateView, active: activeView, closeNavigation });
-  const legacy = Object.freeze({ evidence: readEvidenceData, official: readOfficialData, research: readLegacyResearch, scenarios: readScenarioData });
+  const legacy = Object.freeze({
+    evidence: readEvidenceData,
+    equities: readEquityData,
+    official: readOfficialData,
+    research: readLegacyResearch,
+    scenarios: readScenarioData
+  });
 
-  core.adapters = Object.freeze({ evidence, legacy, official, refresh, research, scenarios, views });
+  core.adapters = Object.freeze({ evidence, equities, legacy, official, refresh, research, scenarios, views });
   refresh();
+  window.addEventListener('marketbrief:equity-data', () => equities());
 })();

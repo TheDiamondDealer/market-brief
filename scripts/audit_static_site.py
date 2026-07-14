@@ -16,6 +16,7 @@ LOADER = SITE / "core" / "feature-loader.js"
 FILE_BUDGETS = {
     "index.html": 250_000,
     "political-data.js": 1_500_000,
+    "equity-data.js": 2_000_000,
     "core/feature-loader.js": 50_000,
     "core/freshness.js": 80_000,
 }
@@ -24,8 +25,10 @@ TOTAL_RUNTIME_BUDGET = 4_000_000
 GENERATED_RUNTIME_EXCLUSIONS = {
     SITE / "free-data.js",
     SITE / "political-data.js",
+    SITE / "equity-data.js",
     SITE / "data" / "political-disclosures.json",
     SITE / "data" / "free-market-data.json",
+    SITE / "data" / "equity-market-data.json",
 }
 
 
@@ -139,6 +142,8 @@ def audit_manifest() -> list[str]:
     feature_position = text.find("Promise.all(manifest.map(loadEntry))")
     if hardening_position < 0 or feature_position < 0:
         errors.append("Global hardening stylesheet is not in the ordered feature bootstrap")
+    if "equity-data.js" not in text or "features/market-watch/market-watch-page.js" not in text:
+        errors.append("Private equity feed is not connected through the ordered feature manifest")
     return errors
 
 
@@ -161,6 +166,19 @@ def audit_css_contract() -> list[str]:
     ):
         if marker not in css:
             errors.append(f"Hardening CSS is missing {marker}")
+    return errors
+
+
+def audit_private_feed() -> list[str]:
+    errors: list[str] = []
+    for relative in ("equity-data.js", "data/equity-market-data.json"):
+        path = SITE / relative
+        if not path.exists():
+            errors.append(f"Private market-data cache is missing: {relative}")
+            continue
+        text = path.read_text(encoding="utf-8").lower()
+        if "apikey=" in text or "twelve_data_api_key" in text:
+            errors.append(f"Private market-data cache appears to contain a credential: {relative}")
     return errors
 
 
@@ -191,7 +209,13 @@ def audit_payloads() -> list[str]:
 
 
 def main() -> int:
-    errors = [*audit_shell(), *audit_manifest(), *audit_css_contract(), *audit_payloads()]
+    errors = [
+        *audit_shell(),
+        *audit_manifest(),
+        *audit_css_contract(),
+        *audit_private_feed(),
+        *audit_payloads(),
+    ]
     if errors:
         print("Static production audit failed:")
         for error in errors:
@@ -200,6 +224,7 @@ def main() -> int:
     print("Static production audit passed")
     print(f"- index: {INDEX.stat().st_size:,} bytes")
     print(f"- political bootstrap: {(SITE / 'political-data.js').stat().st_size:,} bytes")
+    print(f"- equity bootstrap: {(SITE / 'equity-data.js').stat().st_size:,} bytes")
     print(f"- feature assets: {sum(len(group) for group in manifest_assets())}")
     return 0
 
