@@ -44,10 +44,46 @@
           "net": {"type": "number"},
           "source": {"type": "string", "minLength": 1},
           "sourceUrl": {"type": "string", "minLength": 1},
-          "history52": {"type": "array"}
+          "history52": {"type": "array"},
+          "contract": {
+            "type": "object",
+            "required": ["registryVersion", "identityStatus", "cftcContractCode", "reportType", "category", "exchange", "marketName"],
+            "properties": {
+              "registryVersion": {"const": 1},
+              "identityStatus": {"const": "verified"},
+              "cftcContractCode": {"type": "string", "pattern": "^[0-9]{6}$"},
+              "reportType": {"enum": ["disaggregated", "traders-in-financial-futures"]},
+              "category": {"enum": ["Managed money", "Leveraged funds"]},
+              "exchange": {"type": "string", "minLength": 1},
+              "marketName": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          }
         },
         "additionalProperties": true
       }
+    },
+    "cotContractRegistry": {
+      "type": "object",
+      "required": ["schemaVersion", "verifiedIds", "unavailable"],
+      "properties": {
+        "schemaVersion": {"const": 1},
+        "verifiedIds": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "unavailable": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "reason"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "label": {"type": "string", "minLength": 1},
+              "reason": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     },
     "sourceStatus": {"type": "array"},
     "methodology": {"type": "object"}

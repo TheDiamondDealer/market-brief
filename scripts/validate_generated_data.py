@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate committed generated data without using the network."""
+"""Validate committed generated data and the COT registry without network access."""
 
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from cot_contracts import validate_registry  # noqa: E402
 from validation_helpers import (  # noqa: E402
     ValidationFailure,
     read_json,
@@ -21,6 +22,10 @@ from validation_helpers import (  # noqa: E402
 )
 
 TARGETS = (
+    (
+        ROOT / "scripts" / "cot_contracts.json",
+        ROOT / "schemas" / "cot-contract-registry.schema.json",
+    ),
     (
         ROOT / "site" / "data" / "free-market-data.json",
         ROOT / "schemas" / "free-market-data.schema.json",
@@ -55,16 +60,18 @@ def main() -> int:
     args = parser.parse_args()
 
     loaded = {path.name: validate_schema(path, schema) for path, schema in TARGETS}
+    registry = loaded["cot_contracts.json"]
+    validate_registry(registry)
     if not args.schema_only:
         free_data = loaded["free-market-data.json"]
         political = loaded["political-disclosures.json"]
         summary = loaded["political-disclosures-summary.json"]
-        validate_free_market_semantics(free_data)
+        validate_free_market_semantics(free_data, registry)
         validate_political_semantics(political)
         validate_summary_consistency(political, summary)
 
     total = loaded["political-disclosures-summary.json"]["totalTrades"]
-    print(f"Validated 3 generated datasets; retained political trades={total}")
+    print(f"Validated COT registry plus 3 generated datasets; retained political trades={total}")
     return 0
 
 

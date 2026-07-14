@@ -5,6 +5,8 @@ on:
   push:
     branches: [main]
     paths:
+      - 'scripts/cot_contracts.json'
+      - 'scripts/cot_contracts.py'
       - 'scripts/update_free_data.py'
       - 'scripts/update_free_data_strict.py'
       - 'scripts/update_free_data_api.py'
@@ -12,6 +14,7 @@ on:
       - 'scripts/validate_generated_data.py'
       - 'scripts/validation_helpers.py'
       - 'scripts/check_ci_pins.py'
+      - 'schemas/cot-contract-registry.schema.json'
       - 'schemas/free-market-data.schema.json'
       - 'requirements/validation.txt'
       - '.github/workflows/update-free-market-data.yml'
@@ -58,7 +61,7 @@ jobs:
           python -m pip check
 
       - name: Validate collectors
-        run: python -m py_compile scripts/update_free_data.py scripts/update_free_data_strict.py scripts/update_free_data_api.py scripts/update_free_data_charts.py scripts/validate_generated_data.py scripts/validation_helpers.py scripts/check_ci_pins.py
+        run: python -m py_compile scripts/cot_contracts.py scripts/update_free_data.py scripts/update_free_data_strict.py scripts/update_free_data_api.py scripts/update_free_data_charts.py scripts/validate_generated_data.py scripts/validation_helpers.py scripts/check_ci_pins.py
 
       - name: Collect official free data
         run: python scripts/update_free_data_charts.py
@@ -71,7 +74,9 @@ jobs:
           import json
           from pathlib import Path
           data = json.loads(Path('site/data/free-market-data.json').read_text())
-          print(f"Generated rates={len(data.get('rates', []))}; COT markets={len(data.get('cot', []))}; generatedAtUtc={data.get('generatedAtUtc')}")
+          verified = sum(1 for row in data.get('cot', []) if row.get('contract', {}).get('identityStatus') == 'verified')
+          unavailable = len(data.get('cotContractRegistry', {}).get('unavailable', []))
+          print(f"Generated rates={len(data.get('rates', []))}; COT markets={len(data.get('cot', []))}; verified identities={verified}; unavailable benchmarks={unavailable}; generatedAtUtc={data.get('generatedAtUtc')}")
           PY
 
       - name: Commit validated data
