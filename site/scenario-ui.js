@@ -23,11 +23,14 @@
     const asset = assets[selected];
     if (!host || !asset || renderedWidgetFor === selected) return;
     renderedWidgetFor = selected;
+    const chartHeight = window.innerWidth <= 780 ? 360 : 440;
+    host.style.height = `${chartHeight}px`;
+    host.style.minHeight = `${chartHeight}px`;
     host.innerHTML = '<div class="tradingview-widget-container__widget"></div>';
     const script = document.createElement('script');
     script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
     script.async = true;
-    script.textContent = JSON.stringify({ autosize:true, symbol:asset.symbol, interval:'60', timezone:'Australia/Sydney', theme:'dark', style:'1', locale:'en', backgroundColor:'rgba(7, 16, 20, 1)', gridColor:'rgba(33, 52, 61, 0.45)', hide_top_toolbar:false, allow_symbol_change:true, save_image:false, calendar:false, support_host:'https://www.tradingview.com' });
+    script.textContent = JSON.stringify({ autosize:false, width:'100%', height:chartHeight, symbol:asset.symbol, interval:'60', timezone:'Australia/Sydney', theme:'dark', style:'1', locale:'en', backgroundColor:'rgba(7, 16, 20, 1)', gridColor:'rgba(33, 52, 61, 0.45)', hide_top_toolbar:false, allow_symbol_change:true, save_image:false, calendar:false, support_host:'https://www.tradingview.com' });
     host.appendChild(script);
   }
 
