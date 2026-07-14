@@ -47,7 +47,8 @@
     Object.freeze({ route: 'asset', styles: ['features/asset-workspace/asset-page.css'], scripts: ['features/asset-workspace/asset-page.js'] }),
     Object.freeze({ route: 'home', styles: ['features/command-centre/command-page.css'], scripts: ['features/command-centre/command-page.js'] }),
     Object.freeze({ route: 'calendar', styles: ['features/calendar/calendar-page.css'], scripts: ['features/calendar/calendar-data.js', 'features/calendar/calendar-page.js'] }),
-    Object.freeze({ route: 'macro', styles: ['features/macro-monitor/macro-page.css'], scripts: ['features/macro-monitor/macro-page.js'] })
+    Object.freeze({ route: 'macro', styles: ['features/macro-monitor/macro-page.css'], scripts: ['features/macro-monitor/macro-page.js'] }),
+    Object.freeze({ route: 'sources', styles: ['features/source-health/source-health-page.css'], scripts: ['features/source-health/source-health-page.js'] })
   ]);
 
   async function loadEntry(entry) {
@@ -55,9 +56,11 @@
     for (const src of entry.scripts) await script(src);
   }
 
-  Promise.all(manifest.map(loadEntry)).catch((error) => {
-    console.error('Market Brief feature asset load failed', error);
-  });
+  script('core/freshness.js')
+    .then(() => Promise.all(manifest.map(loadEntry)))
+    .catch((error) => {
+      console.error('Market Brief feature asset load failed', error);
+    });
 
   core.features = Object.freeze({ manifest, script, stylesheet });
 })();
