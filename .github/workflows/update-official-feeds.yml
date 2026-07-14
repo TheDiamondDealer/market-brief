@@ -58,7 +58,7 @@ jobs:
 
       - name: Collect official sources
         env:
-          OFFICIAL_FEEDS_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+          OFFICIAL_FEEDS_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'MarketBriefResearch/2.0 (+https://github.com/TheDiamondDealer/market-brief)' }}
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
           BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
           BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
