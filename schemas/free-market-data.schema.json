@@ -51,7 +51,7 @@
             "properties": {
               "registryVersion": {"const": 1},
               "identityStatus": {"const": "verified"},
-              "cftcContractCode": {"type": "string", "pattern": "^[0-9]{6}$"},
+              "cftcContractCode": {"type": "string", "pattern": "^[0-9A-Z+]{6}$"},
               "reportType": {"enum": ["disaggregated", "traders-in-financial-futures"]},
               "category": {"enum": ["Managed money", "Leveraged funds"]},
               "exchange": {"type": "string", "minLength": 1},
