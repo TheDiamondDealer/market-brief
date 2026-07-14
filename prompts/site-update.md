@@ -2,7 +2,23 @@
 
 Run this as part of every successful daily market brief after the written report is complete.
 
-Update `site/intelligence-data.js` and `site/command-centre-data.js` on `main` without changing the application code or styling.
+Update `site/intelligence-data.js`, `site/command-centre-data.js` and the research-controlled sections of `site/research-data.js` on `main` without changing application code or styling.
+
+Do **not** manually overwrite `site/free-data.js` or `site/data/free-market-data.json`. Those files are produced by the free official-data workflow.
+
+## Source hierarchy
+
+Use this order of evidence:
+
+1. official government, regulator, exchange, central-bank or company release
+2. primary filing, report, speech or dataset
+3. high-quality wire or financial publication for context
+4. specialist commodity or industry publication
+5. social media only as an unconfirmed discovery lead
+
+For market-moving geopolitical or policy claims, prefer an official announcement or two independent reliable sources. Distinguish clearly between announced, proposed, enacted, effective, delayed, reversed and price-confirmed.
+
+TradingView widgets are an external discovery layer only. Do not copy, scrape, parse or treat TradingView headlines, chart values or indicators as inputs to the bias engine. Independently verify any story discovered there.
 
 ## Command centre
 
@@ -32,7 +48,7 @@ For each asset include:
 - confidence from 0 to 100
 - integer total score derived from visible component scores
 - primary driver
-- COT or positioning state; explicitly say pending or unavailable when the free source has not updated
+- COT or positioning state from `window.freeMarketData` when current; explicitly say stale, pending or unavailable otherwise
 - next relevant event
 - exact condition that would change the bias
 - product link when the asset has a deep-dive page
@@ -40,6 +56,82 @@ For each asset include:
 - each component must use a score from -2 to +2 and a one-sentence explanation
 
 The total must equal the sum of the visible components. Confidence is based on agreement, evidence quality and confirmation—not on the absolute score alone. Preserve contradictions rather than forcing every input to agree.
+
+Do not mechanically treat high COT percentile as bullish or low percentile as bearish. Decide whether positioning confirms momentum or creates contrarian crowding/liquidation risk.
+
+## Rates and liquidity interpretation
+
+Read the latest successful values from the free official-data cache. At minimum review:
+
+- US 2-year, 5-year, 10-year and 30-year yields
+- US 10-year real yield
+- US 10-year inflation breakeven
+- 2s10s and 5s30s curve spreads
+- high-yield credit spread
+- effective federal funds rate and SOFR
+- trade-weighted US dollar
+
+Classify the dominant reason yields moved:
+
+- stronger or weaker growth
+- inflation or inflation-risk premium
+- tighter or easier policy expectations
+- bond supply or term premium
+- risk-off demand or forced deleveraging
+
+Do not give a yield move one universal equity, gold or currency interpretation without identifying its cause.
+
+## Physical commodity confirmation
+
+Update the non-automatic readings in `window.marketResearchData.physicalChecklists` when verified evidence changes. Preserve automatic FRED and CFTC readings for the application to populate.
+
+A futures-price move alone is not physical confirmation.
+
+### Gold
+
+Review real yields, US dollar, COT positioning, ETF flows, central-bank demand and regional physical premiums.
+
+### Oil
+
+Review Brent/WTI time spreads, gasoline and diesel cracks, commercial inventories, tanker/export flows, refinery utilisation, OPEC+ supply and managed-money positioning.
+
+### Copper
+
+Review LME/COMEX/Shanghai inventories, treatment charges, regional premiums, China grid/manufacturing demand, mine disruptions, scrap response and COT positioning.
+
+### Silver
+
+Review the gold/rates channel, industrial metals and manufacturing, COT, exchange inventories, physical premiums and ETF/bar-and-coin flows.
+
+### Rare earths
+
+Review individual NdPr, dysprosium and terbium prices, Chinese quotas/export controls, China versus ex-China premiums, magnet prices/lead times and ex-China project milestones.
+
+For each updated item retain the exact source, observation date/freshness and one-sentence interpretation. If no dependable value is available, leave it pending rather than estimate it.
+
+## Event reaction lifecycle
+
+Maintain `window.marketResearchData.eventReactions` for the highest-impact scheduled and completed events.
+
+Before the event record:
+
+- official release name and Melbourne-readable time
+- previous value
+- consensus only when sourced from a reliable public source; otherwise state that no dependable free consensus is available
+- upside, neutral/mixed and downside scenarios
+- assets expected to react and current-regime transmission
+
+After the event record:
+
+- actual value and revisions
+- surprise versus a verified consensus when available
+- immediate reaction
+- market-close reaction
+- one-session reaction
+- five-session reaction
+- verdict: confirmed, faded, reversed, structural or too early
+
+Do not fill future reaction windows early. Preserve the original pre-event scenario so later reviews can test whether the logic was correct.
 
 ## Trigger proximity
 
@@ -123,10 +215,10 @@ If no new verified filing exists, leave the complete trade history and portfolio
 
 ## Safety and quality
 
-- Never invent a trade, holding, amount, date, return, source, owner, ticker, market price or economic release.
+- Never invent a trade, holding, amount, date, return, source, owner, ticker, market price, physical-market reading or economic release.
 - Preserve older verified items unless correcting a documented error.
 - Keep no more than 30 news items in the active feed; political transactions use annual archives rather than deletion.
 - Escape apostrophes and maintain valid JavaScript syntax.
-- The repository JavaScript syntax workflow must pass before treating the update as complete.
-- Commit the site-data update to `main`; this triggers GitHub Pages deployment.
+- The repository JavaScript and free-data validation workflows must pass before treating the update as complete.
+- Commit the research-data update to `main`; this triggers GitHub Pages deployment.
 - The dashboard must continue to say that this is research, not financial advice.
