@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/update_official_feeds.py'
+      - 'scripts/update_official_feeds_resilient.py'
       - 'scripts/validate_official_feeds.py'
       - 'scripts/official_feeds_registry.json'
       - 'schemas/official-feeds.schema.json'
@@ -53,17 +54,17 @@ jobs:
 
       - name: Validate collector and fixtures
         run: |
-          python -m py_compile scripts/update_official_feeds.py scripts/validate_official_feeds.py tests/test_official_feeds.py
+          python -m py_compile scripts/update_official_feeds.py scripts/update_official_feeds_resilient.py scripts/validate_official_feeds.py tests/test_official_feeds.py
           python -m unittest tests/test_official_feeds.py -v
 
       - name: Collect official sources
         env:
-          OFFICIAL_FEEDS_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'MarketBriefResearch/2.0 (+https://github.com/TheDiamondDealer/market-brief)' }}
+          OFFICIAL_FEEDS_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'MarketBriefResearch/2.1 contact: https://github.com/TheDiamondDealer/market-brief/issues' }}
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
           BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
           BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
-        run: python scripts/update_official_feeds.py
+        run: python scripts/update_official_feeds_resilient.py
 
       - name: Validate generated output
         run: |

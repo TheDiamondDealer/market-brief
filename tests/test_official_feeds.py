@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import update_official_feeds as official  # noqa: E402
+import update_official_feeds_resilient as resilient  # noqa: E402
 
 
 class OfficialFeedCollectorTests(unittest.TestCase):
@@ -22,6 +23,11 @@ class OfficialFeedCollectorTests(unittest.TestCase):
         key, value = official.numeric_field({"period": "2026-07-10", "series-description": "Weekly stocks", "value": "123.4", "value-units": "thousand barrels"})
         self.assertEqual(key, "value")
         self.assertEqual(value, 123.4)
+
+    def test_sec_acceptance_timestamp_is_normalized(self) -> None:
+        self.assertEqual(resilient.accepted_at("20260714123456"), "2026-07-14T12:34:56Z")
+        self.assertEqual(resilient.accepted_at("2026-07-14T12:34:56Z"), "2026-07-14T12:34:56Z")
+        self.assertIsNone(resilient.accepted_at(None))
 
     def test_failure_retains_prior_verified_records_as_stale(self) -> None:
         previous = {"sources": [{"id": "eia-energy", "records": [{"id": "verified-row"}], "observedAt": "2026-07-10", "collectedAt": "2026-07-11T00:00:00Z", "lastSuccessfulAt": "2026-07-11T00:00:00Z"}]}
@@ -37,7 +43,7 @@ class OfficialFeedCollectorTests(unittest.TestCase):
         self.assertEqual(result["status"], "unavailable")
         self.assertEqual(result["records"], [])
 
-    def test_committed_seed_validates(self) -> None:
+    def test_committed_cache_validates(self) -> None:
         subprocess.run(["python", "scripts/validate_official_feeds.py"], cwd=ROOT, check=True, capture_output=True, text=True)
 
 
@@ -53,14 +59,17 @@ class OfficialFeedIntegrationTests(unittest.TestCase):
         workflow = (ROOT / ".github" / "workflows" / "update-official-feeds.yml").read_text(encoding="utf-8")
         for name in ("EIA_API_KEY", "BLS_API_KEY", "BEA_API_KEY", "CENSUS_API_KEY"):
             self.assertIn(f"secrets.{name}", workflow)
-        self.assertIn("python scripts/update_official_feeds.py", workflow)
+        self.assertIn("python scripts/update_official_feeds_resilient.py", workflow)
         self.assertIn("python scripts/validate_official_feeds.py", workflow)
         self.assertNotIn("echo $EIA_API_KEY", workflow)
 
-    def test_registry_covers_six_agencies(self) -> None:
+    def test_registry_covers_six_agencies_and_pinned_ciks(self) -> None:
         registry = json.loads((ROOT / "scripts" / "official_feeds_registry.json").read_text(encoding="utf-8"))
         self.assertEqual(set(registry) - {"schemaVersion"}, {"sec", "bls", "eia", "bea", "census", "usgs"})
         self.assertGreaterEqual(len(registry["sec"]["tickers"]), 20)
+        self.assertGreaterEqual(len(registry["sec"]["companies"]), 19)
+        self.assertEqual(len({row["ticker"] for row in registry["sec"]["companies"]}), len(registry["sec"]["companies"]))
+        self.assertTrue(all(int(row["cik"]) > 0 for row in registry["sec"]["companies"]))
         self.assertGreaterEqual(len(registry["bls"]["series"]), 8)
         self.assertGreaterEqual(len(registry["eia"]["series"]), 7)
 

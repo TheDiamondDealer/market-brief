@@ -18,8 +18,9 @@ This pipeline expands Market Brief with primary government observations that com
 ```text
 Official agency API/page
         ↓
-scripts/update_official_feeds.py
-        ├── independent adapter per agency
+scripts/update_official_feeds_resilient.py
+        ├── CIK-pinned SEC submissions adapter
+        ├── independent adapter per remaining agency
         ├── source-specific identity checks
         ├── timestamp and cadence preservation
         ├── previous verified record retention
@@ -34,7 +35,7 @@ The browser never calls credentialed agency APIs. GitHub Actions performs collec
 
 ## What works without configuration
 
-SEC, BLS and USGS can run without secrets. SEC uses the official company-ticker map and submissions endpoints. BLS uses the public Version 2 timeseries endpoint. USGS detects the current annual Mineral Commodity Summaries edition and does not OCR the PDF.
+SEC, BLS and USGS can run without secrets. SEC uses a versioned ticker-to-CIK registry and the official `data.sec.gov/submissions` endpoint. Every response must confirm the expected ticker before filings are accepted. This avoids depending on the separate SEC ticker-directory file, which can reject cloud runners. BLS uses the public Version 2 timeseries endpoint. USGS detects the current annual Mineral Commodity Summaries edition and does not OCR the PDF.
 
 ## Free keys to add
 
@@ -72,32 +73,40 @@ Do not place a credential in that variable.
 - a partial agency response is visible as `partial`;
 - source observation, collection and last-success times remain separate;
 - no market consensus is inferred from official actuals;
-- unsafe or ambiguous series identities are rejected rather than substituted.
+- unsafe or ambiguous series and company identities are rejected rather than substituted.
 
 ## Source-specific notes
 
 ### SEC
-Priority forms include 8-K, 10-Q, 10-K, 6-K, 20-F, Form 4, offering documents and beneficial-ownership filings. Each record keeps its accession, filed date, accepted time, report period and official archive URL.
+
+Priority forms include 8-K, 10-Q, 10-K, 6-K, 20-F, Form 4, offering documents and beneficial-ownership filings. Each configured company has a pinned CIK. The returned submissions payload must list the configured ticker; a mismatch is rejected and reported. Each accepted record keeps its accession, filed date, accepted time, report period and official archive URL.
+
+The desired ticker list may be broader than the CIK-verified list. New or uncertain companies remain outside collection until their official CIK identity is added and verified.
 
 ### BLS
+
 Series IDs are versioned in `scripts/official_feeds_registry.json`. Annual-average period `M13` is excluded so it cannot replace a monthly observation.
 
 ### EIA
+
 The registry uses exact legacy series identifiers through EIA API v2's `seriesid` compatibility route. The returned official description must include configured identity terms.
 
 ### BEA
+
 The collector requests official NIPA tables and matches configured line descriptions. If a table changes and descriptions no longer match, the table becomes partial rather than selecting an arbitrary line.
 
 ### Census
+
 The first implementation preserves official data-type and category codes and does not guess a human-readable meaning. A later verified dictionary join can improve labels.
 
 ### USGS
+
 The initial connection tracks the official annual release and source document. Individual mineral values require a structured official data join; PDF OCR is intentionally not used.
 
 ## Validation
 
 ```bash
-python -m py_compile scripts/update_official_feeds.py scripts/validate_official_feeds.py
+python -m py_compile scripts/update_official_feeds.py scripts/update_official_feeds_resilient.py scripts/validate_official_feeds.py
 python -m unittest tests/test_official_feeds.py -v
 python scripts/validate_official_feeds.py
 node --check site/features/official-feeds/official-feeds-data.js
