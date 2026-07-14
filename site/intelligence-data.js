@@ -1,174 +1,19 @@
 fallback.newsFeed = {
-  asOf: '13 July 2026, Melbourne close',
-  delayNote: 'Delayed daily digest — refreshed after the research run, not a real-time wire.',
+  asOf: '15 July 2026, 08:30 AEST',
+  delayNote: 'Delayed daily digest — researched at publication, not a real-time wire.',
   items: [
-    {
-      id: 'hormuz-oil-rates',
-      category: 'Energy',
-      impact: 'High',
-      status: 'Developing',
-      time: '13 Jul 2026',
-      headline: 'Hormuz risk is transmitting through oil, inflation and rates',
-      summary: 'Renewed US–Iran escalation and the closure claim lifted crude. The important second-order effect is higher inflation and tighter-policy pricing rather than a simple safe-haven move.',
-      source: 'Reuters',
-      sourceUrl: 'https://www.reuters.com/business/media-telecom/global-markets-global-markets-2026-07-13/',
-      assets: [
-        { name: 'Brent', direction: 'up', reason: 'Physical-flow risk and a larger geopolitical premium.' },
-        { name: 'US 10Y', direction: 'up', reason: 'Higher energy inflation preserves tightening risk.' },
-        { name: 'DXY', direction: 'up', reason: 'Higher relative US yields support the dollar.' },
-        { name: 'Gold', direction: 'down', reason: 'Dollar and yield pressure is overpowering haven demand.' },
-        { name: 'Nasdaq', direction: 'down', reason: 'Higher discount rates pressure long-duration equities.' }
-      ],
-      channels: [
-        ['First order', 'Oil and refined products rise on supply risk.'],
-        ['Second order', 'Inflation expectations and Fed-hike pricing rise.'],
-        ['Cross asset', 'Yields and USD firm; gold and duration assets weaken.'],
-        ['Invalidation', 'Gulf flows improve and Brent closes back below the de-escalation level.']
-      ]
-    },
-    {
-      id: 'gold-haven-failure',
-      category: 'Precious',
-      impact: 'High',
-      status: 'Price-confirmed',
-      time: '13 Jul 2026',
-      headline: 'Gold failed the textbook safe-haven test',
-      summary: 'Gold fell during geopolitical escalation because the market treated the shock as inflationary and hawkish. This confirms the active sign-flip in the regime model.',
-      source: 'Reuters',
-      sourceUrl: 'https://www.reuters.com/world/india/gold-slides-over-1-oil-surges-strait-hormuz-closure-fears-2026-07-13/',
-      assets: [
-        { name: 'Gold', direction: 'down', reason: 'Higher nominal and real yields raise the opportunity cost.' },
-        { name: 'Silver', direction: 'down', reason: 'Higher beta plus industrial-risk exposure.' },
-        { name: 'DXY', direction: 'up', reason: 'Safe-haven dollar demand and rate support.' },
-        { name: 'Bonds', direction: 'down', reason: 'Higher inflation expectations lift yields and lower prices.' }
-      ],
-      channels: [
-        ['Rates', 'Higher yields reduce the appeal of non-yielding precious metals.'],
-        ['Currency', 'A stronger USD makes dollar-priced metals more expensive offshore.'],
-        ['Positioning', 'Crowded haven positioning can liquidate when the expected reaction fails.'],
-        ['Override test', 'Gold rising with oil, DXY and yields for two sessions would challenge this read.']
-      ]
-    },
-    {
-      id: 'asia-semis',
-      category: 'Equities',
-      impact: 'High',
-      status: 'Price-confirmed',
-      time: '13 Jul 2026',
-      headline: 'Asian semiconductors became the liquidity source',
-      summary: 'The oil and rate shock hit crowded semiconductor exposure. AI enthusiasm did not insulate the most duration-sensitive parts of the market.',
-      source: 'Reuters',
-      sourceUrl: 'https://www.reuters.com/business/media-telecom/global-markets-global-markets-2026-07-13/',
-      assets: [
-        { name: 'Nikkei', direction: 'down', reason: 'Weak yen benefits are offset by imported inflation and higher global yields.' },
-        { name: 'KOSPI', direction: 'down', reason: 'Concentrated semiconductor exposure amplifies risk reduction.' },
-        { name: 'Nasdaq', direction: 'down', reason: 'Long-duration multiples are sensitive to the discount-rate shock.' },
-        { name: 'VIX', direction: 'up', reason: 'Geopolitical and policy uncertainty lift hedging demand.' }
-      ],
-      channels: [
-        ['Valuation', 'Higher yields compress long-duration equity multiples.'],
-        ['Crowding', 'Popular AI positions are sold first when investors need liquidity.'],
-        ['Margins', 'Higher energy and freight costs threaten downstream earnings.'],
-        ['Next test', 'Breadth and credit spreads determine whether this is rotation or broader stress.']
-      ]
-    },
-    {
-      id: 'asx-aud-divergence',
-      category: 'Macro',
-      impact: 'Medium',
-      status: 'Diverging',
-      time: '13 Jul 2026',
-      headline: 'ASX resilience and a weaker AUD are telling different stories',
-      summary: 'Energy and resources cushioned the index while the currency weakened. The equity level looks resilient, but AUD still signals global risk aversion and imported-inflation pressure.',
-      source: 'Australian market report',
-      sourceUrl: 'https://www.theaustralian.com.au/business/markets/asx-200-to-open-higher-as-usiran-middle-east-strikes-continue-corp-travels-new-low/live-coverage/125fed1deba2237f23b495b7823f5b32',
-      assets: [
-        { name: 'ASX 200', direction: 'up', reason: 'Energy and materials weight cushions the headline index.' },
-        { name: 'AUD/USD', direction: 'down', reason: 'Global risk aversion and stronger USD dominate.' },
-        { name: 'Energy stocks', direction: 'up', reason: 'Higher realised oil prices support earnings.' },
-        { name: 'Rate-sensitive stocks', direction: 'down', reason: 'Imported inflation keeps domestic rates restrictive.' }
-      ],
-      channels: [
-        ['Index mix', 'Resources can lift the ASX even when the broader risk tone is weak.'],
-        ['Currency', 'A softer AUD boosts translated offshore revenue but raises import costs.'],
-        ['Inflation', 'Energy imports can extend RBA tightening pressure.'],
-        ['Confirmation', 'Banks, materials and energy breadth must support the index move.']
-      ]
-    }
+    { id:'us-cpi-countershock', category:'Macro', impact:'High', status:'Price-confirmed', time:'14 Jul 2026', headline:'Soft US CPI broke the rates-dollar confirmation loop', summary:'June CPI fell 0.4% m/m and core was flat. Hike odds, nominal yields, real yields and DXY fell while gold and duration assets recovered.', source:'US BLS / Reuters', sourceUrl:'https://www.bls.gov/news.release/cpi.nr0.htm', assets:[{name:'US 10Y',direction:'down',reason:'Inflation and hike pricing eased.'},{name:'DXY',direction:'down',reason:'Relative-rate support weakened.'},{name:'Gold',direction:'up',reason:'Real yields and the dollar fell.'},{name:'Nasdaq',direction:'up',reason:'Lower discount rates supported duration.'}], channels:[['First order','Headline and core inflation undershot.'],['Policy','September hike odds fell to roughly 53%.'],['Cross asset','Yields and USD fell; gold and equities rose.'],['Invalidation','Hot PPI or renewed energy pass-through restores the hawkish loop.']] },
+    { id:'energy-decouples', category:'Energy', impact:'High', status:'Price-confirmed', time:'14 Jul 2026', headline:'Brent and European gas strengthened through the CPI relief', summary:'Brent closed at $84.73 and TTF held above €52 as impaired Gulf traffic preserved a physical premium.', source:'Reuters / EIA', sourceUrl:'https://www.reuters.com/world/china/global-markets-global-markets-2026-07-14/', assets:[{name:'Brent',direction:'up',reason:'Physical Hormuz risk remains active.'},{name:'TTF',direction:'up',reason:'LNG-route risk is concentrated in Europe.'},{name:'US 10Y',direction:'up',reason:'Future energy inflation can offset soft CPI.'},{name:'Consumer margins',direction:'down',reason:'Higher fuel costs can squeeze demand and margins.'}], channels:[['Physical','Traffic disruption validates more than rhetoric.'],['Regional split','TTF rose while Henry Hub stayed near $2.90.'],['Inflation','June CPI reflects a prior energy decline, not current oil prices.'],['Invalidation','Brent below $76 with improving flows.']] },
+    { id:'china-metals-preposition', category:'Battery & Bulk', impact:'High', status:'Too early', time:'15 Jul 2026', headline:'Copper and iron ore pre-positioned for China data', summary:'Copper cleared $6.30 and iron ore returned above CNY760, but GDP, production, retail and investment composition must confirm physical demand.', source:'Reuters / market data', sourceUrl:'https://www.reuters.com/world/china/chinas-q2-growth-set-lose-steam-stimulus-remain-calibrated-2026-07-14/', assets:[{name:'Copper',direction:'up',reason:'Lower USD and China anticipation.'},{name:'Iron ore',direction:'up',reason:'Bearish threshold invalidated.'},{name:'AUD',direction:'up',reason:'Commodity and risk relief.'},{name:'Lithium',direction:'flat',reason:'No broad battery-material confirmation.'}], channels:[['Macro','Lower DXY eased conditions.'],['China','Q2 consensus is 4.5% y/y.'],['Physical','Inventories and premiums remain unverified.'],['Next test','Broad data upside must align copper, ore, AUD and CNH.']] },
+    { id:'yen-trigger-divergence', category:'FX', impact:'Medium', status:'Diverging', time:'14 Jul 2026', headline:'USD/JPY held above 162 without fresh yield confirmation', summary:'The yen remains weak, but lower US yields and DXY make the breakout unstable and intervention-sensitive.', source:'Reuters', sourceUrl:'https://www.reuters.com/world/china/global-markets-global-markets-2026-07-14/', assets:[{name:'USD/JPY',direction:'up',reason:'Structural policy differential persists.'},{name:'AUD/JPY',direction:'up',reason:'Risk relief and firm AUD lifted the cross.'},{name:'Nikkei',direction:'up',reason:'Weak yen can support exporters.'},{name:'Global risk',direction:'down',reason:'A rapid yen reversal could unwind carry.'}], channels:[['Rates','Fresh US-yield confirmation is absent.'],['Policy','Intervention risk rises above 162.'],['Carry','The dangerous signal is a fast close below 160.'],['Invalidation','Verified intervention or close below 160.']] }
   ]
 };
 
-fallback.trackers = {
-  trump: {
-    title: 'Trump policy & disclosure tracker',
-    subtitle: 'Market-moving policy, tariff actions and public financial disclosures.',
-    updated: '13 July 2026',
-    cadence: 'Policy checked daily; financial disclosures update when filed',
-    warning: 'Policy events can be tracked daily. Personal portfolio information is disclosure-based, delayed and may reflect third-party discretionary accounts rather than Trump-directed trades.',
-    stats: [
-      ['Tracker type', 'Policy + disclosures'],
-      ['Policy lag', 'Daily digest'],
-      ['Trade data', 'Public filings only'],
-      ['Current regime link', 'Oil → inflation → rates']
-    ],
-    policyEvents: [
-      {
-        date: '13 Jul 2026',
-        type: 'Geopolitics',
-        status: 'Developing',
-        title: 'US–Iran escalation keeps the Hormuz risk premium active',
-        detail: 'The market channel is oil higher, inflation risk higher, yields and USD firmer, with pressure on gold-duration behaviour and equities.',
-        assets: ['Brent ↑', 'US 10Y ↑', 'DXY ↑', 'Gold ↓', 'Nasdaq ↓'],
-        source: 'Reuters',
-        sourceUrl: 'https://www.reuters.com/business/media-telecom/global-markets-global-markets-2026-07-13/'
-      }
-    ],
-    tariffMatrix: [
-      ['China', 'CNH/AUD downside; USD support', 'Technology and manufacturing split', 'Copper/soybeans pressured; gold depends on rates'],
-      ['EU', 'EUR downside; USD support', 'European autos and luxury exposed', 'Risk-off support for gold unless yields dominate'],
-      ['Canada', 'CAD downside', 'Energy, lumber and autos exposed', 'Oil mixed; lumber sensitive'],
-      ['Mexico', 'MXN downside', 'Auto supply chains pressured; nearshoring beneficiaries', 'Industrial inputs and transport costs'],
-      ['Steel / aluminium', 'Limited direct FX effect', 'Domestic producers benefit; users face margin pressure', 'Steel/aluminium prices higher'],
-      ['Universal', 'Broad USD support; EM FX pressure', 'Risk-off with domestic substitution winners', 'Copper pressure; inflation and gold channels compete']
-    ],
-    disclosure: {
-      headline: '2025 annual disclosure shows unusually high transaction volume',
-      summary: 'Public reporting released in July 2026 was described as containing 21,285 stock trades across third-party-managed discretionary accounts. A transaction-level import is not yet connected to this dashboard.',
-      labels: ['21,285 reported trades', 'Third-party discretionary accounts', 'Not real time', 'Transaction import pending'],
-      source: 'Business Insider summary',
-      sourceUrl: 'https://www.businessinsider.com/trump-portfolio-stock-trades-beat-market-analysis-2026-7'
-    },
-    sourceLinks: [
-      ['White House presidential actions', 'https://www.whitehouse.gov/presidential-actions/'],
-      ['Quiver Trump tracker', 'https://www.quiverquant.com/Donald-Trump-Stock-Trades/'],
-      ['Quiver API', 'https://api.quiverquant.com/']
-    ]
-  },
-  pelosi: {
-    title: 'Nancy Pelosi disclosure tracker',
-    subtitle: 'Periodic transaction reports, owner, filing lag and market context.',
-    updated: '13 July 2026',
-    cadence: 'Checked daily; updates only when a verified disclosure appears',
-    warning: 'Congressional transaction reports are delayed disclosures, often filed weeks after the trade. Owner may be the member, spouse or dependent. Do not treat the filing date as the trade date.',
-    stats: [
-      ['Source', 'House PTR disclosures'],
-      ['Legal framework', 'STOCK Act'],
-      ['Maximum common lag', 'Up to 45 days'],
-      ['Portfolio note', 'Spouse activity must be labelled']
-    ],
-    trades: [],
-    emptyMessage: 'No new verified Pelosi PTR has been imported into this seeded build. The table and daily update rules are ready; the next official filing can be added without redesigning the page.',
-    context: [
-      ['Trade date', 'When the transaction occurred.'],
-      ['Filed date', 'When the disclosure became public.'],
-      ['Owner', 'Member, spouse, joint or dependent.'],
-      ['Amount', 'Reported as a statutory range, not an exact value.'],
-      ['Market impact', 'We calculate the move only after the disclosure became public to avoid look-ahead bias.']
-    ],
-    sourceLinks: [
-      ['House financial disclosures', 'https://disclosures-clerk.house.gov/FinancialDisclosure'],
-      ['Quiver Pelosi profile', 'https://www.quiverquant.com/congresstrading/politician/Nancy%20Pelosi-P000197'],
-      ['Quiver API', 'https://api.quiverquant.com/']
-    ]
-  }
-};
+fallback.trackers = fallback.trackers || {};
+fallback.trackers.trump = Object.assign({}, fallback.trackers.trump || {}, {
+  title:'Trump policy & disclosure tracker', subtitle:'Market-moving policy, tariff actions and public financial disclosures.', updated:'15 July 2026', cadence:'Policy checked daily; disclosures update when filed', warning:'Policy is checked daily. Financial disclosures are delayed and may reflect third-party discretionary accounts.',
+  stats:[['Tracker type','Policy + disclosures'],['Policy lag','Daily digest'],['Trade data','Public filings only'],['Current regime link','Hormuz → energy → inflation']],
+  policyEvents:[{date:'14 Jul 2026',type:'Geopolitics',status:'Developing',title:'Administration stepped back from a proposed Hormuz transit fee',detail:'The softer fee stance did not remove physical shipping constraints or the crude risk premium.',assets:['Brent ↑','WTI ↑','TTF ↑','US inflation risk ↑'],source:'Reuters',sourceUrl:'https://www.reuters.com/world/china/global-markets-global-markets-2026-07-14/'}],
+  sourceLinks:[['White House presidential actions','https://www.whitehouse.gov/presidential-actions/'],['Reuters markets','https://www.reuters.com/world/china/global-markets-global-markets-2026-07-14/']]
+});
+fallback.trackers.pelosi = Object.assign({}, fallback.trackers.pelosi || {}, { title:'Nancy Pelosi disclosure tracker', subtitle:'Periodic transaction reports, owner, filing lag and market context.', updated:'15 July 2026', cadence:'Checked daily; updates only on verified disclosure', warning:'No new verified transaction was identified in this research pass. Filing date and trade date must not be conflated.', stats:[['Source','House PTR disclosures'],['Legal framework','STOCK Act'],['Common maximum lag','Up to 45 days'],['Status','No new verified import']], trades:[], emptyMessage:'No new verified Pelosi PTR imported today.', context:[['Trade date','When the transaction occurred.'],['Filed date','When it became public.'],['Owner','Member, spouse, joint or dependent.'],['Amount','Statutory range, not an exact value.']], sourceLinks:[['House financial disclosures','https://disclosures-clerk.house.gov/FinancialDisclosure']] });
