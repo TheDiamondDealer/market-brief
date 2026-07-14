@@ -1,6 +1,6 @@
 {
-  "generatedAt": "14 July 2026, 8:21 PM AEST",
-  "generatedAtUtc": "2026-07-14T10:21:31+00:00",
+  "generatedAt": "14 July 2026, 9:22 PM AEST",
+  "generatedAtUtc": "2026-07-14T11:22:19+00:00",
   "rates": [
     {
       "id": "DGS2",
@@ -154,7 +154,7 @@
       "crowding": "Mid-range",
       "historyCount": 260,
       "source": "CFTC Commitments of Traders",
-      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "sourceUrl": "https://publicreporting.cftc.gov/resource/72hh-3qpy.json",
       "history52": [
         {
           "date": "2025-07-15",
@@ -469,7 +469,16 @@
           "net": 116161
         }
       ],
-      "dataMethod": "CFTC public reporting API"
+      "contract": {
+        "registryVersion": 1,
+        "identityStatus": "verified",
+        "cftcContractCode": "088691",
+        "reportType": "disaggregated",
+        "category": "Managed money",
+        "exchange": "COMMODITY EXCHANGE INC.",
+        "marketName": "GOLD - COMMODITY EXCHANGE INC."
+      },
+      "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
       "id": "silver",
@@ -487,7 +496,7 @@
       "crowding": "Mid-range",
       "historyCount": 260,
       "source": "CFTC Commitments of Traders",
-      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "sourceUrl": "https://publicreporting.cftc.gov/resource/72hh-3qpy.json",
       "history52": [
         {
           "date": "2025-07-15",
@@ -802,7 +811,16 @@
           "net": 13201
         }
       ],
-      "dataMethod": "CFTC public reporting API"
+      "contract": {
+        "registryVersion": 1,
+        "identityStatus": "verified",
+        "cftcContractCode": "084691",
+        "reportType": "disaggregated",
+        "category": "Managed money",
+        "exchange": "COMMODITY EXCHANGE INC.",
+        "marketName": "SILVER - COMMODITY EXCHANGE INC."
+      },
+      "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
       "id": "copper",
@@ -820,7 +838,7 @@
       "crowding": "Elevated long",
       "historyCount": 231,
       "source": "CFTC Commitments of Traders",
-      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "sourceUrl": "https://publicreporting.cftc.gov/resource/72hh-3qpy.json",
       "history52": [
         {
           "date": "2025-07-15",
@@ -1135,1006 +1153,16 @@
           "net": 58784
         }
       ],
-      "dataMethod": "CFTC public reporting API"
-    },
-    {
-      "id": "oil-wti",
-      "name": "WTI crude oil",
-      "market": "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE",
-      "category": "Managed money",
-      "reportDate": "2026-07-07",
-      "long": 5080,
-      "short": 20497,
-      "net": -15417,
-      "weekChange": -760,
-      "fourWeekChange": 12151,
-      "openInterest": 801410,
-      "netPercentile5y": 65.4,
-      "crowding": "Mid-range",
-      "historyCount": 260,
-      "source": "CFTC Commitments of Traders",
-      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
-      "history52": [
-        {
-          "date": "2025-07-15",
-          "long": 4289,
-          "short": 65431,
-          "net": -61142
-        },
-        {
-          "date": "2025-07-22",
-          "long": 3337,
-          "short": 64969,
-          "net": -61632
-        },
-        {
-          "date": "2025-07-29",
-          "long": 3932,
-          "short": 62552,
-          "net": -58620
-        },
-        {
-          "date": "2025-08-05",
-          "long": 6073,
-          "short": 65526,
-          "net": -59453
-        },
-        {
-          "date": "2025-08-12",
-          "long": 3965,
-          "short": 61501,
-          "net": -57536
-        },
-        {
-          "date": "2025-08-19",
-          "long": 2545,
-          "short": 47002,
-          "net": -44457
-        },
-        {
-          "date": "2025-08-26",
-          "long": 4451,
-          "short": 45313,
-          "net": -40862
-        },
-        {
-          "date": "2025-09-02",
-          "long": 3017,
-          "short": 43796,
-          "net": -40779
-        },
-        {
-          "date": "2025-09-09",
-          "long": 2951,
-          "short": 43537,
-          "net": -40586
-        },
-        {
-          "date": "2025-09-16",
-          "long": 3113,
-          "short": 39000,
-          "net": -35887
-        },
-        {
-          "date": "2025-09-23",
-          "long": 2741,
-          "short": 36935,
-          "net": -34194
-        },
-        {
-          "date": "2025-09-30",
-          "long": 5559,
-          "short": 36458,
-          "net": -30899
-        },
-        {
-          "date": "2025-10-07",
-          "long": 6720,
-          "short": 36259,
-          "net": -29539
-        },
-        {
-          "date": "2025-10-14",
-          "long": 7550,
-          "short": 35753,
-          "net": -28203
-        },
-        {
-          "date": "2025-10-21",
-          "long": 8008,
-          "short": 38801,
-          "net": -30793
-        },
-        {
-          "date": "2025-10-28",
-          "long": 10593,
-          "short": 41680,
-          "net": -31087
-        },
-        {
-          "date": "2025-11-04",
-          "long": 14525,
-          "short": 44220,
-          "net": -29695
-        },
-        {
-          "date": "2025-11-10",
-          "long": 16213,
-          "short": 42196,
-          "net": -25983
-        },
-        {
-          "date": "2025-11-18",
-          "long": 13986,
-          "short": 42985,
-          "net": -28999
-        },
-        {
-          "date": "2025-11-25",
-          "long": 13312,
-          "short": 40446,
-          "net": -27134
-        },
-        {
-          "date": "2025-12-02",
-          "long": 13343,
-          "short": 37061,
-          "net": -23718
-        },
-        {
-          "date": "2025-12-09",
-          "long": 12975,
-          "short": 37784,
-          "net": -24809
-        },
-        {
-          "date": "2025-12-16",
-          "long": 3584,
-          "short": 38192,
-          "net": -34608
-        },
-        {
-          "date": "2025-12-23",
-          "long": 4255,
-          "short": 37992,
-          "net": -33737
-        },
-        {
-          "date": "2025-12-30",
-          "long": 3903,
-          "short": 40425,
-          "net": -36522
-        },
-        {
-          "date": "2026-01-06",
-          "long": 4898,
-          "short": 42973,
-          "net": -38075
-        },
-        {
-          "date": "2026-01-13",
-          "long": 9692,
-          "short": 47067,
-          "net": -37375
-        },
-        {
-          "date": "2026-01-20",
-          "long": 6900,
-          "short": 45222,
-          "net": -38322
-        },
-        {
-          "date": "2026-01-27",
-          "long": 6784,
-          "short": 45502,
-          "net": -38718
-        },
-        {
-          "date": "2026-02-03",
-          "long": 19371,
-          "short": 41173,
-          "net": -21802
-        },
-        {
-          "date": "2026-02-10",
-          "long": 18177,
-          "short": 38694,
-          "net": -20517
-        },
-        {
-          "date": "2026-02-17",
-          "long": 26757,
-          "short": 46236,
-          "net": -19479
-        },
-        {
-          "date": "2026-02-24",
-          "long": 12583,
-          "short": 35967,
-          "net": -23384
-        },
-        {
-          "date": "2026-03-03",
-          "long": 18682,
-          "short": 35771,
-          "net": -17089
-        },
-        {
-          "date": "2026-03-10",
-          "long": 7879,
-          "short": 36024,
-          "net": -28145
-        },
-        {
-          "date": "2026-03-17",
-          "long": 7867,
-          "short": 39154,
-          "net": -31287
-        },
-        {
-          "date": "2026-03-24",
-          "long": 7849,
-          "short": 37129,
-          "net": -29280
-        },
-        {
-          "date": "2026-03-31",
-          "long": 7191,
-          "short": 41005,
-          "net": -33814
-        },
-        {
-          "date": "2026-04-07",
-          "long": 7883,
-          "short": 43573,
-          "net": -35690
-        },
-        {
-          "date": "2026-04-14",
-          "long": 8233,
-          "short": 53467,
-          "net": -45234
-        },
-        {
-          "date": "2026-04-21",
-          "long": 8184,
-          "short": 49155,
-          "net": -40971
-        },
-        {
-          "date": "2026-04-28",
-          "long": 10674,
-          "short": 48507,
-          "net": -37833
-        },
-        {
-          "date": "2026-05-05",
-          "long": 9415,
-          "short": 46736,
-          "net": -37321
-        },
-        {
-          "date": "2026-05-12",
-          "long": 4410,
-          "short": 48201,
-          "net": -43791
-        },
-        {
-          "date": "2026-05-19",
-          "long": 4519,
-          "short": 39396,
-          "net": -34877
-        },
-        {
-          "date": "2026-05-26",
-          "long": 5081,
-          "short": 35939,
-          "net": -30858
-        },
-        {
-          "date": "2026-06-02",
-          "long": 6038,
-          "short": 32732,
-          "net": -26694
-        },
-        {
-          "date": "2026-06-09",
-          "long": 5871,
-          "short": 33439,
-          "net": -27568
-        },
-        {
-          "date": "2026-06-16",
-          "long": 3458,
-          "short": 27124,
-          "net": -23666
-        },
-        {
-          "date": "2026-06-23",
-          "long": 3786,
-          "short": 22173,
-          "net": -18387
-        },
-        {
-          "date": "2026-06-30",
-          "long": 3826,
-          "short": 18483,
-          "net": -14657
-        },
-        {
-          "date": "2026-07-07",
-          "long": 5080,
-          "short": 20497,
-          "net": -15417
-        }
-      ],
-      "dataMethod": "CFTC public reporting API"
-    },
-    {
-      "id": "oil-brent",
-      "name": "Brent crude oil",
-      "market": "BRENT LAST DAY - NEW YORK MERCANTILE EXCHANGE",
-      "category": "Managed money",
-      "reportDate": "2026-07-07",
-      "long": 13100,
-      "short": 744,
-      "net": 12356,
-      "weekChange": 5858,
-      "fourWeekChange": 4601,
-      "openInterest": 241351,
-      "netPercentile5y": 72.3,
-      "crowding": "Mid-range",
-      "historyCount": 231,
-      "source": "CFTC Commitments of Traders",
-      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
-      "history52": [
-        {
-          "date": "2025-07-15",
-          "long": 7484,
-          "short": 2777,
-          "net": 4707
-        },
-        {
-          "date": "2025-07-22",
-          "long": 6811,
-          "short": 2626,
-          "net": 4185
-        },
-        {
-          "date": "2025-07-29",
-          "long": 6361,
-          "short": 2043,
-          "net": 4318
-        },
-        {
-          "date": "2025-08-05",
-          "long": 5590,
-          "short": 3150,
-          "net": 2440
-        },
-        {
-          "date": "2025-08-12",
-          "long": 3346,
-          "short": 3415,
-          "net": -69
-        },
-        {
-          "date": "2025-08-19",
-          "long": 4069,
-          "short": 4345,
-          "net": -276
-        },
-        {
-          "date": "2025-08-26",
-          "long": 3668,
-          "short": 5271,
-          "net": -1603
-        },
-        {
-          "date": "2025-09-02",
-          "long": 8939,
-          "short": 4230,
-          "net": 4709
-        },
-        {
-          "date": "2025-09-09",
-          "long": 8347,
-          "short": 4143,
-          "net": 4204
-        },
-        {
-          "date": "2025-09-16",
-          "long": 9267,
-          "short": 3852,
-          "net": 5415
-        },
-        {
-          "date": "2025-09-23",
-          "long": 9130,
-          "short": 3673,
-          "net": 5457
-        },
-        {
-          "date": "2025-09-30",
-          "long": 10537,
-          "short": 4421,
-          "net": 6116
-        },
-        {
-          "date": "2025-10-07",
-          "long": 12672,
-          "short": 2062,
-          "net": 10610
-        },
-        {
-          "date": "2025-10-14",
-          "long": 11810,
-          "short": 3379,
-          "net": 8431
-        },
-        {
-          "date": "2025-10-21",
-          "long": 13637,
-          "short": 2637,
-          "net": 11000
-        },
-        {
-          "date": "2025-10-28",
-          "long": 13747,
-          "short": 2394,
-          "net": 11353
-        },
-        {
-          "date": "2025-11-04",
-          "long": 18689,
-          "short": 69,
-          "net": 18620
-        },
-        {
-          "date": "2025-11-10",
-          "long": 18538,
-          "short": 50,
-          "net": 18488
-        },
-        {
-          "date": "2025-11-18",
-          "long": 16814,
-          "short": 76,
-          "net": 16738
-        },
-        {
-          "date": "2025-11-25",
-          "long": 13949,
-          "short": 2,
-          "net": 13947
-        },
-        {
-          "date": "2025-12-02",
-          "long": 15436,
-          "short": 2,
-          "net": 15434
-        },
-        {
-          "date": "2025-12-09",
-          "long": 16399,
-          "short": 1570,
-          "net": 14829
-        },
-        {
-          "date": "2025-12-16",
-          "long": 12729,
-          "short": 1805,
-          "net": 10924
-        },
-        {
-          "date": "2025-12-23",
-          "long": 15080,
-          "short": 130,
-          "net": 14950
-        },
-        {
-          "date": "2025-12-30",
-          "long": 15774,
-          "short": 121,
-          "net": 15653
-        },
-        {
-          "date": "2026-01-06",
-          "long": 16606,
-          "short": 122,
-          "net": 16484
-        },
-        {
-          "date": "2026-01-13",
-          "long": 17950,
-          "short": 237,
-          "net": 17713
-        },
-        {
-          "date": "2026-01-20",
-          "long": 14777,
-          "short": 557,
-          "net": 14220
-        },
-        {
-          "date": "2026-01-27",
-          "long": 18088,
-          "short": 983,
-          "net": 17105
-        },
-        {
-          "date": "2026-02-03",
-          "long": 13706,
-          "short": 425,
-          "net": 13281
-        },
-        {
-          "date": "2026-02-10",
-          "long": 14543,
-          "short": 305,
-          "net": 14238
-        },
-        {
-          "date": "2026-02-17",
-          "long": 11480,
-          "short": 644,
-          "net": 10836
-        },
-        {
-          "date": "2026-02-24",
-          "long": 11481,
-          "short": 433,
-          "net": 11048
-        },
-        {
-          "date": "2026-03-03",
-          "long": 16858,
-          "short": 1759,
-          "net": 15099
-        },
-        {
-          "date": "2026-03-10",
-          "long": 15344,
-          "short": 1150,
-          "net": 14194
-        },
-        {
-          "date": "2026-03-17",
-          "long": 15451,
-          "short": 2134,
-          "net": 13317
-        },
-        {
-          "date": "2026-03-24",
-          "long": 24375,
-          "short": 2098,
-          "net": 22277
-        },
-        {
-          "date": "2026-03-31",
-          "long": 21649,
-          "short": 1768,
-          "net": 19881
-        },
-        {
-          "date": "2026-04-07",
-          "long": 17164,
-          "short": 1544,
-          "net": 15620
-        },
-        {
-          "date": "2026-04-14",
-          "long": 16196,
-          "short": 1873,
-          "net": 14323
-        },
-        {
-          "date": "2026-04-21",
-          "long": 16874,
-          "short": 3443,
-          "net": 13431
-        },
-        {
-          "date": "2026-04-28",
-          "long": 17694,
-          "short": 3882,
-          "net": 13812
-        },
-        {
-          "date": "2026-05-05",
-          "long": 18871,
-          "short": 1822,
-          "net": 17049
-        },
-        {
-          "date": "2026-05-12",
-          "long": 19082,
-          "short": 4019,
-          "net": 15063
-        },
-        {
-          "date": "2026-05-19",
-          "long": 16948,
-          "short": 4018,
-          "net": 12930
-        },
-        {
-          "date": "2026-05-26",
-          "long": 14232,
-          "short": 4664,
-          "net": 9568
-        },
-        {
-          "date": "2026-06-02",
-          "long": 10216,
-          "short": 3417,
-          "net": 6799
-        },
-        {
-          "date": "2026-06-09",
-          "long": 10586,
-          "short": 2831,
-          "net": 7755
-        },
-        {
-          "date": "2026-06-16",
-          "long": 11351,
-          "short": 3221,
-          "net": 8130
-        },
-        {
-          "date": "2026-06-23",
-          "long": 11544,
-          "short": 4721,
-          "net": 6823
-        },
-        {
-          "date": "2026-06-30",
-          "long": 11162,
-          "short": 4664,
-          "net": 6498
-        },
-        {
-          "date": "2026-07-07",
-          "long": 13100,
-          "short": 744,
-          "net": 12356
-        }
-      ],
-      "dataMethod": "CFTC public reporting API"
-    },
-    {
-      "id": "gas-us",
-      "name": "US Henry Hub natural gas",
-      "market": "HENRY HUB LAST DAY FIN - NEW YORK MERCANTILE EXCHANGE",
-      "category": "Managed money",
-      "reportDate": "2026-07-07",
-      "long": 44534,
-      "short": 12041,
-      "net": 32493,
-      "weekChange": -4265,
-      "fourWeekChange": -12724,
-      "openInterest": 406069,
-      "netPercentile5y": 50.8,
-      "crowding": "Mid-range",
-      "historyCount": 260,
-      "source": "CFTC Commitments of Traders",
-      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
-      "history52": [
-        {
-          "date": "2025-07-15",
-          "long": 33263,
-          "short": 8197,
-          "net": 25066
-        },
-        {
-          "date": "2025-07-22",
-          "long": 31671,
-          "short": 8590,
-          "net": 23081
-        },
-        {
-          "date": "2025-07-29",
-          "long": 30419,
-          "short": 9713,
-          "net": 20706
-        },
-        {
-          "date": "2025-08-05",
-          "long": 27155,
-          "short": 7919,
-          "net": 19236
-        },
-        {
-          "date": "2025-08-12",
-          "long": 28292,
-          "short": 9539,
-          "net": 18753
-        },
-        {
-          "date": "2025-08-19",
-          "long": 26522,
-          "short": 10854,
-          "net": 15668
-        },
-        {
-          "date": "2025-08-26",
-          "long": 28314,
-          "short": 11712,
-          "net": 16602
-        },
-        {
-          "date": "2025-09-02",
-          "long": 22507,
-          "short": 10536,
-          "net": 11971
-        },
-        {
-          "date": "2025-09-09",
-          "long": 22306,
-          "short": 10857,
-          "net": 11449
-        },
-        {
-          "date": "2025-09-16",
-          "long": 22224,
-          "short": 12205,
-          "net": 10019
-        },
-        {
-          "date": "2025-09-23",
-          "long": 22188,
-          "short": 10164,
-          "net": 12024
-        },
-        {
-          "date": "2025-09-30",
-          "long": 21019,
-          "short": 10818,
-          "net": 10201
-        },
-        {
-          "date": "2025-10-07",
-          "long": 21386,
-          "short": 9327,
-          "net": 12059
-        },
-        {
-          "date": "2025-10-14",
-          "long": 18065,
-          "short": 11697,
-          "net": 6368
-        },
-        {
-          "date": "2025-10-21",
-          "long": 18067,
-          "short": 12256,
-          "net": 5811
-        },
-        {
-          "date": "2025-10-28",
-          "long": 19949,
-          "short": 10460,
-          "net": 9489
-        },
-        {
-          "date": "2025-11-04",
-          "long": 16569,
-          "short": 12950,
-          "net": 3619
-        },
-        {
-          "date": "2025-11-10",
-          "long": 17759,
-          "short": 12673,
-          "net": 5086
-        },
-        {
-          "date": "2025-11-18",
-          "long": 24822,
-          "short": 7275,
-          "net": 17547
-        },
-        {
-          "date": "2025-11-25",
-          "long": 24091,
-          "short": 9205,
-          "net": 14886
-        },
-        {
-          "date": "2025-12-02",
-          "long": 17646,
-          "short": 8463,
-          "net": 9183
-        },
-        {
-          "date": "2025-12-09",
-          "long": 19142,
-          "short": 6559,
-          "net": 12583
-        },
-        {
-          "date": "2025-12-16",
-          "long": 46488,
-          "short": 6991,
-          "net": 39497
-        },
-        {
-          "date": "2025-12-23",
-          "long": 49744,
-          "short": 12150,
-          "net": 37594
-        },
-        {
-          "date": "2025-12-30",
-          "long": 57251,
-          "short": 6566,
-          "net": 50685
-        },
-        {
-          "date": "2026-01-06",
-          "long": 56841,
-          "short": 6589,
-          "net": 50252
-        },
-        {
-          "date": "2026-01-13",
-          "long": 55849,
-          "short": 9484,
-          "net": 46365
-        },
-        {
-          "date": "2026-01-20",
-          "long": 57240,
-          "short": 10294,
-          "net": 46946
-        },
-        {
-          "date": "2026-01-27",
-          "long": 52818,
-          "short": 12137,
-          "net": 40681
-        },
-        {
-          "date": "2026-02-03",
-          "long": 36192,
-          "short": 12347,
-          "net": 23845
-        },
-        {
-          "date": "2026-02-10",
-          "long": 43093,
-          "short": 8755,
-          "net": 34338
-        },
-        {
-          "date": "2026-02-17",
-          "long": 49013,
-          "short": 10344,
-          "net": 38669
-        },
-        {
-          "date": "2026-02-24",
-          "long": 51780,
-          "short": 12939,
-          "net": 38841
-        },
-        {
-          "date": "2026-03-03",
-          "long": 55094,
-          "short": 6274,
-          "net": 48820
-        },
-        {
-          "date": "2026-03-10",
-          "long": 56603,
-          "short": 6266,
-          "net": 50337
-        },
-        {
-          "date": "2026-03-17",
-          "long": 59180,
-          "short": 5658,
-          "net": 53522
-        },
-        {
-          "date": "2026-03-24",
-          "long": 54418,
-          "short": 8126,
-          "net": 46292
-        },
-        {
-          "date": "2026-03-31",
-          "long": 50264,
-          "short": 3617,
-          "net": 46647
-        },
-        {
-          "date": "2026-04-07",
-          "long": 54640,
-          "short": 4293,
-          "net": 50347
-        },
-        {
-          "date": "2026-04-14",
-          "long": 54363,
-          "short": 5317,
-          "net": 49046
-        },
-        {
-          "date": "2026-04-21",
-          "long": 55893,
-          "short": 8085,
-          "net": 47808
-        },
-        {
-          "date": "2026-04-28",
-          "long": 51072,
-          "short": 10093,
-          "net": 40979
-        },
-        {
-          "date": "2026-05-05",
-          "long": 49371,
-          "short": 2686,
-          "net": 46685
-        },
-        {
-          "date": "2026-05-12",
-          "long": 50595,
-          "short": 2615,
-          "net": 47980
-        },
-        {
-          "date": "2026-05-19",
-          "long": 56160,
-          "short": 1363,
-          "net": 54797
-        },
-        {
-          "date": "2026-05-26",
-          "long": 58597,
-          "short": 3548,
-          "net": 55049
-        },
-        {
-          "date": "2026-06-02",
-          "long": 47108,
-          "short": 3507,
-          "net": 43601
-        },
-        {
-          "date": "2026-06-09",
-          "long": 48620,
-          "short": 3403,
-          "net": 45217
-        },
-        {
-          "date": "2026-06-16",
-          "long": 48243,
-          "short": 5567,
-          "net": 42676
-        },
-        {
-          "date": "2026-06-23",
-          "long": 55281,
-          "short": 9196,
-          "net": 46085
-        },
-        {
-          "date": "2026-06-30",
-          "long": 46248,
-          "short": 9490,
-          "net": 36758
-        },
-        {
-          "date": "2026-07-07",
-          "long": 44534,
-          "short": 12041,
-          "net": 32493
-        }
-      ],
-      "dataMethod": "CFTC public reporting API"
+      "contract": {
+        "registryVersion": 1,
+        "identityStatus": "verified",
+        "cftcContractCode": "085692",
+        "reportType": "disaggregated",
+        "category": "Managed money",
+        "exchange": "COMMODITY EXCHANGE INC.",
+        "marketName": "COPPER- #1 - COMMODITY EXCHANGE INC."
+      },
+      "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
       "id": "yen",
@@ -2152,7 +1180,7 @@
       "crowding": "Crowded short",
       "historyCount": 260,
       "source": "CFTC Commitments of Traders",
-      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "sourceUrl": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "history52": [
         {
           "date": "2025-07-15",
@@ -2467,7 +1495,16 @@
           "net": -90083
         }
       ],
-      "dataMethod": "CFTC public reporting API"
+      "contract": {
+        "registryVersion": 1,
+        "identityStatus": "verified",
+        "cftcContractCode": "097741",
+        "reportType": "traders-in-financial-futures",
+        "category": "Leveraged funds",
+        "exchange": "CHICAGO MERCANTILE EXCHANGE",
+        "marketName": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE"
+      },
+      "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
       "id": "usd-index",
@@ -2485,7 +1522,7 @@
       "crowding": "Mid-range",
       "historyCount": 231,
       "source": "CFTC Commitments of Traders",
-      "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "sourceUrl": "https://publicreporting.cftc.gov/resource/gpe5-46if.json",
       "history52": [
         {
           "date": "2025-07-15",
@@ -2800,7 +1837,16 @@
           "net": -4454
         }
       ],
-      "dataMethod": "CFTC public reporting API"
+      "contract": {
+        "registryVersion": 1,
+        "identityStatus": "verified",
+        "cftcContractCode": "098662",
+        "reportType": "traders-in-financial-futures",
+        "category": "Leveraged funds",
+        "exchange": "ICE FUTURES U.S.",
+        "marketName": "USD INDEX - ICE FUTURES U.S."
+      },
+      "dataMethod": "CFTC public reporting API exact contract registry"
     }
   ],
   "sourceStatus": [
@@ -2813,13 +1859,39 @@
     {
       "source": "CFTC Commitments of Traders",
       "status": "partial",
-      "detail": "gas-uk: no recognised current benchmark contract; nearest candidates=[]; us10y-futures: latest recognised benchmark contract is stale (2022-02-01); excluded",
+      "detail": "oil-wti: exact contract 067651 is stale (2022-02-01); excluded; gas-us: exact contract 023651 is stale (2022-02-01); excluded; us10y-futures: exact contract 043602 is stale (2022-02-01); excluded",
       "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
     }
   ],
   "methodology": {
     "rates": "Latest non-missing public FRED observations. Basis-point changes compare with the previous available observation.",
     "cot": "CFTC futures-only reports. Commodities use Managed Money; currencies and Treasury futures use Leveraged Funds. Percentiles use up to 260 weekly observations.",
-    "warning": "COT reflects Tuesday positions normally released Friday. It is positioning context, not a real-time signal or proof of trader intent."
+    "warning": "COT reflects Tuesday positions normally released Friday. It is positioning context, not a real-time signal or proof of trader intent.",
+    "cotRegistry": "Rows require an exact CFTC contract-market code and exact approved market/exchange name. Unapproved benchmarks remain unavailable; no open-interest ranking or similar-name substitution is used."
+  },
+  "cotContractRegistry": {
+    "schemaVersion": 1,
+    "verifiedIds": [
+      "gold",
+      "silver",
+      "copper",
+      "oil-wti",
+      "gas-us",
+      "yen",
+      "us10y-futures",
+      "usd-index"
+    ],
+    "unavailable": [
+      {
+        "id": "oil-brent",
+        "label": "Brent crude oil",
+        "reason": "No exact CFTC contract has been approved as the ICE Brent benchmark. NYMEX Brent Last Day must not be substituted."
+      },
+      {
+        "id": "gas-uk",
+        "label": "UK NBP natural gas",
+        "reason": "No exact CFTC contract has been approved as the UK NBP benchmark. Another gas contract must not be substituted."
+      }
+    ]
   }
 }
