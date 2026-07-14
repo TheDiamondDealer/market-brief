@@ -31,6 +31,24 @@ jobs:
       - name: Apply core migration
         run: python scripts/apply_br05_core.py
 
+      - name: Correct energy adapter splice
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          path = Path('site/energy-data-ui.js')
+          text = path.read_text(encoding='utf-8')
+          text, count = re.subn(
+              r"; net \$\{signed\(row\.net\)\}; \$\{percentile\(row\)\}; report \$\{row\.reportDate\}`\n    : 'No verified current benchmark contract is mapped\. Older or similarly named contracts are excluded\.';",
+              ';',
+              text,
+              count=1,
+          )
+          if count != 1:
+              raise SystemExit(f'energy splice corrections={count}')
+          path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Validate migrated JavaScript
         id: validate
         shell: bash
