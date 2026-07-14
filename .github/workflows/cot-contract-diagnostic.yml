@@ -56,15 +56,13 @@ jobs:
               ('disaggregated', 'CRUDE OIL'),
               ('disaggregated', 'HENRY HUB'),
               ('disaggregated', 'NATURAL GAS'),
-              ('tff', '10-YEAR'),
-              ('tff', 'TREASURY NOTES'),
+              ('tff', ''),
           ]
 
           for report, search in queries:
-              where = (
-                  "report_date_as_yyyy_mm_dd >= '2026-01-01T00:00:00.000' "
-                  f"AND market_and_exchange_names like '%{search.replace("'", "''")}%'"
-              )
+              where = "report_date_as_yyyy_mm_dd >= '2026-01-01T00:00:00.000'"
+              if search:
+                  where += f" AND market_and_exchange_names like '%{search.replace("'", "''")}%'"
               params = urllib.parse.urlencode({
                   '$limit': '5000',
                   '$order': 'report_date_as_yyyy_mm_dd DESC',
@@ -93,7 +91,7 @@ jobs:
               )
               result['queries'].append({
                   'report': report,
-                  'search': search,
+                  'search': search or 'ALL CURRENT IDENTITIES',
                   'identities': [
                       {
                           'code': code,
