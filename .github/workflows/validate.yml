@@ -35,7 +35,21 @@ jobs:
           show-progress: false
 
       - name: Validate immutable dependency pins
-        run: python scripts/check_ci_pins.py
+        run: |
+          python scripts/check_ci_pins.py > ci-pin-diagnostics.txt 2>&1 || {
+            cat ci-pin-diagnostics.txt
+            exit 1
+          }
+          cat ci-pin-diagnostics.txt
+
+      - name: Upload pin diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: ci-pin-diagnostics
+          path: ci-pin-diagnostics.txt
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Use Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
