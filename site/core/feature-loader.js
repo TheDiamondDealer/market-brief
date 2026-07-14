@@ -46,7 +46,8 @@
     Object.freeze({ route: 'news', styles: ['features/impact-feed/impact-page.css'], scripts: ['features/impact-feed/impact-data.js', 'features/impact-feed/impact-page.js'] }),
     Object.freeze({ route: 'asset', styles: ['features/asset-workspace/asset-page.css'], scripts: ['features/asset-workspace/asset-page.js'] }),
     Object.freeze({ route: 'home', styles: ['features/command-centre/command-page.css'], scripts: ['features/command-centre/command-page.js'] }),
-    Object.freeze({ route: 'calendar', styles: ['features/calendar/calendar-page.css'], scripts: ['features/calendar/calendar-data.js', 'features/calendar/calendar-page.js'] })
+    Object.freeze({ route: 'calendar', styles: ['features/calendar/calendar-page.css'], scripts: ['features/calendar/calendar-data.js', 'features/calendar/calendar-page.js'] }),
+    Object.freeze({ route: 'macro', styles: ['features/macro-monitor/macro-page.css'], scripts: ['features/macro-monitor/macro-page.js'] })
   ]);
 
   async function loadEntry(entry) {
