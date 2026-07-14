@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-07-15T00:00:00Z",
+  "collection": {
+    "status": "unavailable",
+    "successCount": 0,
+    "failureCount": 0,
+    "unavailableCount": 6,
+    "lastSuccessfulAt": null,
+    "errors": [
+      "SEC EDGAR company filings: Collector has not completed its first scheduled run.",
+      "BLS labour and inflation series: Collector has not completed its first scheduled run.",
+      "EIA oil and natural-gas fundamentals: EIA_API_KEY is not configured.",
+      "BEA national accounts: BEA_API_KEY is not configured.",
+      "Census economic indicators: CENSUS_API_KEY is not configured.",
+      "USGS Mineral Commodity Summaries: Collector has not completed its first scheduled run."
+    ]
+  },
+  "sources": [
+    {"id":"sec-edgar","name":"SEC EDGAR company filings","family":"Company Filings","access":"No API key","status":"unavailable","observedAt":null,"collectedAt":"2026-07-15T00:00:00Z","lastSuccessfulAt":null,"expectedCadence":"Throughout each US business day","sourceUrl":"https://www.sec.gov/search-filings/edgar-application-programming-interfaces","detail":"Awaiting the first validated collector run.","error":"Collector has not completed its first scheduled run.","records":[]},
+    {"id":"bls-public-data","name":"BLS labour and inflation series","family":"Macro","access":"No key required; free registration key optional","status":"unavailable","observedAt":null,"collectedAt":"2026-07-15T00:00:00Z","lastSuccessfulAt":null,"expectedCadence":"Monthly releases","sourceUrl":"https://www.bls.gov/developers/api_signature_v2.htm","detail":"Awaiting the first validated collector run.","error":"Collector has not completed its first scheduled run.","records":[]},
+    {"id":"eia-energy","name":"EIA oil and natural-gas fundamentals","family":"Energy","access":"Free API key required","status":"unavailable","observedAt":null,"collectedAt":"2026-07-15T00:00:00Z","lastSuccessfulAt":null,"expectedCadence":"Weekly and monthly, series dependent","sourceUrl":"https://www.eia.gov/opendata/","detail":"Awaiting the first validated collector run.","error":"EIA_API_KEY is not configured.","records":[]},
+    {"id":"bea-nipa","name":"BEA national accounts","family":"Macro","access":"Free API key required","status":"unavailable","observedAt":null,"collectedAt":"2026-07-15T00:00:00Z","lastSuccessfulAt":null,"expectedCadence":"Monthly or quarterly, table dependent","sourceUrl":"https://apps.bea.gov/api/","detail":"Awaiting the first validated collector run.","error":"BEA_API_KEY is not configured.","records":[]},
+    {"id":"census-eits","name":"Census economic indicators","family":"Macro","access":"Free API key required","status":"unavailable","observedAt":null,"collectedAt":"2026-07-15T00:00:00Z","lastSuccessfulAt":null,"expectedCadence":"Monthly or quarterly, dataset dependent","sourceUrl":"https://www.census.gov/data/developers/data-sets/economic-indicators.html","detail":"Awaiting the first validated collector run.","error":"CENSUS_API_KEY is not configured.","records":[]},
+    {"id":"usgs-minerals","name":"USGS Mineral Commodity Summaries","family":"Critical Minerals","access":"No API key","status":"unavailable","observedAt":null,"collectedAt":"2026-07-15T00:00:00Z","lastSuccessfulAt":null,"expectedCadence":"Annual","sourceUrl":"https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries","detail":"Awaiting the first validated collector run.","error":"Collector has not completed its first scheduled run.","records":[]}
+  ],
+  "methodology": {
+    "observations": "Each agency keeps its own observation period, collection time, cadence and failure state.",
+    "retention": "A temporary source failure retains previously verified records as stale; it never silently replaces populated history with an empty result.",
+    "keys": "EIA, BEA and Census use free API keys stored only in GitHub Actions Secrets. BLS can run without a key; SEC and USGS require no key.",
+    "consensus": "No market consensus estimates are created by these official feeds.",
+    "censusCodes": "Census records preserve official data-type and category codes until a verified dictionary join is available.",
+    "usgs": "USGS integration tracks the official annual release and does not OCR or estimate values from PDF tables."
+  }
+}
