@@ -1,16 +1,24 @@
 (() => {
   'use strict';
-  const data = typeof fallback !== 'undefined' ? fallback : null;
+  const core = window.MarketBriefCore || {};
+  const router = core.router;
+  const views = core.adapters?.views;
+  const data = core.adapters?.research() || (typeof fallback !== 'undefined' ? fallback : null);
   if (!data) return;
 
   const $ = (id) => document.getElementById(id);
-  const escapeHtml = (value = '') => String(value)
+  const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value)
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+    .replaceAll('\"', '&quot;').replaceAll("'", '&#039;'));
   const keyRows = (pairs = []) => `<div class="key-list">${pairs.map(([key, value]) => `<div class="key-row"><strong>${escapeHtml(key)}</strong><span>${escapeHtml(value)}</span></div>`).join('')}</div>`;
   const sourceButtons = (links = []) => `<div class="source-buttons">${links.map(([label, url]) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)} ↗</a>`).join('')}</div>`;
 
   function showView(view, updateHash = true) {
+    if (updateHash && router) {
+      router.navigate(view, { replace: true });
+      return;
+    }
+    if (views?.activate(view)) return;
     document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
     $(`view-${view}`)?.classList.add('active');
     document.querySelectorAll('#nav button').forEach((button) => button.classList.toggle('active', button.dataset.view === view));
@@ -156,10 +164,15 @@
     if ($('view-news')?.classList.contains('active')) renderNews($('search').value.trim().toLowerCase());
   });
 
-  const applyExtendedRoute = () => {
-    const route = location.hash.replace(/^#/, '');
-    if (['news', 'trackers'].includes(route)) showView(route, false);
-  };
-  window.addEventListener('hashchange', applyExtendedRoute);
-  applyExtendedRoute();
+  if (router) {
+    router.register('news', () => showView('news', false));
+    router.register('trackers', () => showView('trackers', false));
+  } else {
+    const applyExtendedRoute = () => {
+      const route = location.hash.replace(/^#/, '');
+      if (['news', 'trackers'].includes(route)) showView(route, false);
+    };
+    window.addEventListener('hashchange', applyExtendedRoute);
+    applyExtendedRoute();
+  }
 })();

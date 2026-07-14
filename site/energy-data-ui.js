@@ -1,30 +1,29 @@
 (() => {
   'use strict';
 
-  const marketData = window.freeMarketData || { cot: [] };
+  const core = window.MarketBriefCore || {};
+  const router = core.router;
+  const marketData = core.adapters?.official() || window.freeMarketData || { cot: [] };
+  const research = core.adapters?.research() || (typeof fallback !== 'undefined' ? fallback : {});
   const $ = (id) => document.getElementById(id);
   const cot = (id) => (marketData.cot || []).find((row) => row.id === id);
-  const signed = (value) => {
-    if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
-    const number = Number(value);
-    return `${number > 0 ? '+' : ''}${number.toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
-  };
+  const signed = core.format?.signed || ((value) => value === null || value === undefined || Number.isNaN(Number(value)) ? '—' : `${Number(value) > 0 ? '+' : ''}${Number(value).toLocaleString(undefined, { maximumFractionDigits: 0 })}`);
   const percentile = (row) => row?.netPercentile5y === null || row?.netPercentile5y === undefined ? 'percentile unavailable' : `${Number(row.netPercentile5y).toFixed(1)}th percentile`;
   const summary = (row) => row
-    ? `${row.crowding}; net ${signed(row.net)}; ${percentile(row)}; report ${row.reportDate}`
+    ? `${row.crowding}; net ${signed(row.net, '', 0)}; ${percentile(row)}; report ${row.reportDate}`
     : 'No verified current benchmark contract is mapped. Older or similarly named contracts are excluded.';
 
   function updateProductReferences() {
-    if (typeof fallback === 'undefined' || !Array.isArray(fallback.products)) return;
-    const oil = fallback.products.find((item) => item.id === 'oil');
-    const gas = fallback.products.find((item) => item.id === 'natural-gas');
+    if (!Array.isArray(research.products)) return;
+    const oil = research.products.find((item) => item.id === 'oil');
+    const gas = research.products.find((item) => item.id === 'natural-gas');
     if (oil) oil.current = 'Brent reference ~$79.31; verify WTI on live chart';
     if (gas) gas.current = 'Henry Hub reference ~$2.89; verify UK NBP on live chart';
   }
 
   function updateBiasEngine() {
-    if (typeof fallback === 'undefined' || !Array.isArray(fallback.assetBiases)) return;
-    const oilBias = fallback.assetBiases.find((item) => item.id === 'oil');
+    if (!Array.isArray(research.assetBiases)) return;
+    const oilBias = research.assetBiases.find((item) => item.id === 'oil');
     if (oilBias) {
       oilBias.name = 'Oil — Brent / WTI';
       oilBias.cot = `Brent: ${summary(cot('oil-brent'))}. WTI: ${summary(cot('oil-wti'))}.`;
@@ -101,7 +100,8 @@
       const observer = new MutationObserver(() => requestAnimationFrame(() => requestAnimationFrame(refreshEnergyDetail)));
       observer.observe(detail, { childList: true, subtree: true });
     }
-    window.addEventListener('hashchange', () => requestAnimationFrame(() => requestAnimationFrame(refreshEnergyDetail)));
+    if (router) router.subscribe(() => requestAnimationFrame(() => requestAnimationFrame(refreshEnergyDetail)));
+    else window.addEventListener('hashchange', () => requestAnimationFrame(() => requestAnimationFrame(refreshEnergyDetail)));
     refreshEnergyDetail();
     loadCotChart();
   }

@@ -1,21 +1,31 @@
 (() => {
   'use strict';
-  const assets = window.scenarioAssets || {};
+  const core = window.MarketBriefCore || {};
+  const router = core.router;
+  const views = core.adapters?.views;
+  const assets = core.adapters?.scenarios() || window.scenarioAssets || {};
+  const research = core.adapters?.research() || (typeof fallback !== 'undefined' ? fallback : {});
   let selected = Object.keys(assets)[0] || '';
   let renderedWidgetFor = '';
   const $ = (id) => document.getElementById(id);
-  const escapeHtml = (value = '') => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
-  const regimeMeaning = () => typeof fallback !== 'undefined' && fallback.regime?.meaning ? fallback.regime.meaning : 'Use the latest regime state when interpreting the target.';
+  const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('\"','&quot;').replaceAll("'",'&#039;'));
+  const regimeMeaning = () => research.regime?.meaning || 'Use the latest regime state when interpreting the target.';
 
   function showView(updateHash = true) {
-    document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
-    $('view-scenarios')?.classList.add('active');
-    document.querySelectorAll('#nav button').forEach((button) => button.classList.toggle('active', button.dataset.view === 'scenarios'));
-    $('sidebar')?.classList.remove('open');
-    $('overlay')?.classList.remove('show');
-    if (updateHash) history.replaceState(null, '', '#scenarios');
+    if (updateHash && router) {
+      router.navigate('scenarios', { replace: true });
+      return;
+    }
+    if (!views?.activate('scenarios')) {
+      document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
+      $('view-scenarios')?.classList.add('active');
+      document.querySelectorAll('#nav button').forEach((button) => button.classList.toggle('active', button.dataset.view === 'scenarios'));
+      $('sidebar')?.classList.remove('open');
+      $('overlay')?.classList.remove('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    if (updateHash && !router) history.replaceState(null, '', '#scenarios');
     setTimeout(renderChart, 0);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function renderChart() {
@@ -117,9 +127,12 @@
       event.stopImmediatePropagation();
       showView();
     }, true);
-    const route = () => { if (location.hash === '#scenarios') showView(false); };
-    window.addEventListener('hashchange', route);
-    route();
+    if (router) router.register('scenarios', () => showView(false));
+    else {
+      const route = () => { if (location.hash === '#scenarios') showView(false); };
+      window.addEventListener('hashchange', route);
+      route();
+    }
   }
 
   initialise();

@@ -1,8 +1,8 @@
 (() => {
   'use strict';
-  if (typeof fallback === 'undefined' || !fallback.trackers) return;
-
-  const data = fallback;
+  const core = window.MarketBriefCore || {};
+  const data = core.adapters?.research() || (typeof fallback !== 'undefined' ? fallback : null);
+  if (!data?.trackers) return;
   const watched = new Set(JSON.parse(localStorage.getItem('marketBriefWatchedPoliticians') || '[]'));
   let filter = 'All';
   let sort = 'name';

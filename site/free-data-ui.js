@@ -1,27 +1,27 @@
 (() => {
   'use strict';
 
-  const data = window.freeMarketData || { rates: [], curveSpreads: [], cot: [], sourceStatus: [], methodology: {} };
-  const research = window.marketResearchData || { physicalChecklists: {}, eventReactions: [] };
+  const core = window.MarketBriefCore || {};
+  const router = core.router;
+  const views = core.adapters?.views;
+  const data = core.adapters?.official() || window.freeMarketData || { rates: [], curveSpreads: [], cot: [], sourceStatus: [], methodology: {} };
+  const research = core.adapters?.evidence() || window.marketResearchData || { physicalChecklists: {}, eventReactions: [] };
+  const legacyResearch = core.adapters?.research() || (typeof fallback !== 'undefined' ? fallback : {});
   const $ = (id) => document.getElementById(id);
-  const escapeHtml = (value = '') => String(value)
+  const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value)
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
-
-  const formatNumber = (value, maximumFractionDigits = 0) => {
-    if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
-    return Number(value).toLocaleString(undefined, { maximumFractionDigits });
-  };
-
-  const signed = (value, suffix = '') => {
-    if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
-    const number = Number(value);
-    return `${number > 0 ? '+' : ''}${formatNumber(number, 1)}${suffix}`;
-  };
-
+    .replaceAll('\"', '&quot;').replaceAll("'", '&#039;'));
+  const formatNumber = core.format?.formatNumber || ((value, maximumFractionDigits = 0) => value === null || value === undefined || Number.isNaN(Number(value)) ? '—' : Number(value).toLocaleString(undefined, { maximumFractionDigits }));
+  const signed = core.format?.signed || ((value, suffix = '') => value === null || value === undefined || Number.isNaN(Number(value)) ? '—' : `${Number(value) > 0 ? '+' : ''}${formatNumber(Number(value), 1)}${suffix}`);
+  const statusClass = core.status?.className || ((status = '') => status.toLowerCase().includes('current') ? 'current' : status.toLowerCase().includes('partial') ? 'partial' : status.toLowerCase().includes('stale') ? 'stale' : 'pending');
   const directionClass = (value) => Number(value) > 0 ? 'number-up' : Number(value) < 0 ? 'number-down' : 'number-flat';
 
   function showView(view, updateHash = true) {
+    if (updateHash && router) {
+      router.navigate(view, { replace: true });
+      return;
+    }
+    if (views?.activate(view)) return;
     document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
     $(`view-${view}`)?.classList.add('active');
     document.querySelectorAll('#nav button').forEach((button) => button.classList.toggle('active', button.dataset.view === view));
@@ -29,14 +29,6 @@
     $('overlay')?.classList.remove('show');
     if (updateHash) history.replaceState(null, '', `#${view}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function statusClass(status = '') {
-    const value = status.toLowerCase();
-    if (value.includes('current')) return 'current';
-    if (value.includes('partial')) return 'partial';
-    if (value.includes('stale')) return 'stale';
-    return 'pending';
   }
 
   function renderSourceStatus(hostId) {
@@ -144,13 +136,13 @@
   }
 
   function applyCotToBiasEngine() {
-    if (typeof fallback === 'undefined' || !Array.isArray(fallback.assetBiases)) return;
+    if (!Array.isArray(legacyResearch.assetBiases)) return;
     const mapping = {
       gold: 'gold', oil: 'oil', copper: 'copper', silver: 'silver', yen: 'usdjpy', 'us10y-futures': 'us10y'
     };
     Object.entries(mapping).forEach(([cotId, biasId]) => {
       const cot = cotById(cotId);
-      const bias = fallback.assetBiases.find((item) => item.id === biasId);
+      const bias = legacyResearch.assetBiases.find((item) => item.id === biasId);
       if (!cot || !bias) return;
       const inverseNote = cotId === 'yen' ? ' Yen futures positioning is inverse to USD/JPY direction.' : cotId === 'us10y-futures' ? ' Treasury-futures positioning is not the same as a yield position.' : '';
       bias.cot = `${cot.crowding}; net ${signed(cot.net)}; ${cot.netPercentile5y === null ? 'percentile unavailable' : `${formatNumber(cot.netPercentile5y, 1)}th percentile`}; ${cot.reportDate}.${inverseNote}`;
@@ -222,6 +214,11 @@
 
   function initialiseRoutes() {
     const supported = ['cot', 'rates', 'events'];
+    if (router) {
+      supported.forEach((view) => router.register(view, () => showView(view, false)));
+      router.subscribe(() => requestAnimationFrame(() => requestAnimationFrame(injectPhysicalEvidence)));
+      return;
+    }
     $('nav')?.addEventListener('click', (event) => {
       const button = event.target.closest('button[data-view]');
       if (!button || !supported.includes(button.dataset.view)) return;
@@ -230,7 +227,6 @@
       event.stopImmediatePropagation();
       showView(button.dataset.view);
     }, true);
-
     const route = () => {
       const target = location.hash.replace(/^#/, '');
       if (supported.includes(target)) showView(target, false);

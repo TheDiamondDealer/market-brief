@@ -1,15 +1,16 @@
 (() => {
   'use strict';
 
-  const data = window.freeMarketData || { cot: [] };
+  const core = window.MarketBriefCore || {};
+  const data = core.adapters?.official() || window.freeMarketData || { cot: [] };
   const rows = Array.isArray(data.cot) ? data.cot : [];
   const $ = (id) => document.getElementById(id);
-  const escapeHtml = (value = '') => String(value)
+  const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value)
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
-  const number = (value) => Number(value || 0).toLocaleString(undefined, { maximumFractionDigits: 0 });
-  const signed = (value) => `${Number(value) > 0 ? '+' : ''}${number(value)}`;
-  const compact = (value) => new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(Number(value || 0));
+    .replaceAll('\"', '&quot;').replaceAll("'", '&#039;'));
+  const number = (value) => core.format?.formatNumber ? core.format.formatNumber(value || 0, 0) : Number(value || 0).toLocaleString(undefined, { maximumFractionDigits: 0 });
+  const signed = (value) => core.format?.signed ? core.format.signed(value, '', 0) : `${Number(value) > 0 ? '+' : ''}${number(value)}`;
+  const compact = (value) => core.format?.compact ? core.format.compact(value || 0, 1) : new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(Number(value || 0));
   let activeId = rows.find((row) => row.id === 'gold' && Array.isArray(row.history52) && row.history52.length > 1)?.id
     || rows.find((row) => Array.isArray(row.history52) && row.history52.length > 1)?.id
     || rows[0]?.id
