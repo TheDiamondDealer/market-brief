@@ -56,7 +56,7 @@
     for (const src of entry.scripts) await script(src);
   }
 
-  script('core/freshness.js')
+  Promise.all([stylesheet('styles/hardening.css'), script('core/freshness.js')])
     .then(() => Promise.all(manifest.map(loadEntry)))
     .catch((error) => {
       console.error('Market Brief feature asset load failed', error);
