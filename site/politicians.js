@@ -65,3 +65,4 @@
     'rob-bresnahan', 'donald-beyer', 'sheldon-whitehouse', 'josh-gottheimer'
   ];
 })();
+document.write('<script src="political-data.js"><\/script>');
