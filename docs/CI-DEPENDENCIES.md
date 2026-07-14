@@ -8,6 +8,8 @@ Current pinned Actions:
 
 - `actions/checkout` — `11bd71901bbe5b1630ceea73d27597364c9af683` (`v4.2.2`)
 - `actions/setup-python` — `a26af69be951a213d495a4c3e4e4022e16d87065` (`v5`)
+- `actions/setup-node` — `49933ea5288caeca8642d1e84afbd3f7d6820020` (`v4`)
+- `actions/upload-artifact` — `ea165f8d65b6e75b540449e92b4886f43607fa02` (`v4`)
 - `actions/configure-pages` — `983d7736d9b0ae728b81ab479565c72886d7745b` (`v5`)
 - `actions/upload-pages-artifact` — `56afc609e74202658d3ffba0e8f6dda462b719fa` (`v3`)
 - `actions/deploy-pages` — `d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e` (`v4`)
@@ -30,7 +32,7 @@ Direct dependencies must use exact `==` versions. Workflows must install through
 - a workflow installs named Python packages directly instead of using `requirements/`;
 - a direct requirement is not pinned with `==`.
 
-The script runs in the required `offline-validation` job and in both collector workflows.
+The script runs in the required `offline-validation` job and in both collector workflows. Pin failures are uploaded as a short-lived workflow artifact; invalid output is never committed merely to retain diagnostics.
 
 ## Updating dependencies
 
