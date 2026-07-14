@@ -32,9 +32,32 @@ jobs:
         run: python scripts/apply_br05_core.py
 
       - name: Validate migrated JavaScript
+        id: validate
+        shell: bash
         run: |
-          find site -maxdepth 2 -name '*.js' -print0 | xargs -0 -n1 node --check
-          python -m py_compile scripts/apply_br05_core.py
+          set +e
+          : > br05-migration-errors.log
+          while IFS= read -r -d '' file; do
+            node --check "$file" >> br05-migration-errors.log 2>&1
+            status=$?
+            if [ "$status" -ne 0 ]; then
+              echo "FAILED: $file" >> br05-migration-errors.log
+            fi
+          done < <(find site -maxdepth 2 -name '*.js' -print0)
+          python -m py_compile scripts/apply_br05_core.py >> br05-migration-errors.log 2>&1
+          if grep -q 'FAILED:' br05-migration-errors.log; then
+            cat br05-migration-errors.log
+            exit 1
+          fi
+
+      - name: Upload migration diagnostics on failure
+        if: ${{ failure() && steps.validate.outcome == 'failure' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: br05-migration-diagnostics
+          path: br05-migration-errors.log
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Commit migrated renderers
         run: |
