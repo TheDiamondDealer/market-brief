@@ -14,9 +14,11 @@ SITE = ROOT / "site"
 class CalendarReactionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        cls.data = (SITE / "features" / "calendar" / "calendar-data.js").read_text(encoding="utf-8")
         cls.page = (SITE / "features" / "calendar" / "calendar-page.js").read_text(encoding="utf-8")
         cls.styles = (SITE / "features" / "calendar" / "calendar-page.css").read_text(encoding="utf-8")
         cls.loader = (SITE / "core" / "feature-loader.js").read_text(encoding="utf-8")
+        cls.contract = cls.data + "\n" + cls.page
 
     def test_fixture_matches_versioned_schema(self) -> None:
         schema = json.loads((ROOT / "schemas" / "calendar-events.schema.json").read_text(encoding="utf-8"))
@@ -41,12 +43,12 @@ class CalendarReactionTests(unittest.TestCase):
             "Immediate",
             "+1 trading day",
             "+5 trading days",
-            "Not sourced",
-            "Needs verification",
+            "not-sourced",
+            "needs-verification",
             "look-ahead bias",
         ):
             with self.subTest(marker=marker):
-                self.assertIn(marker, self.page)
+                self.assertIn(marker, self.contract)
 
     def test_calendar_and_events_routes_are_preserved(self) -> None:
         self.assertIn("router.register('events'", self.page)
