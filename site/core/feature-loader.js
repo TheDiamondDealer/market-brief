@@ -41,7 +41,8 @@
   }
 
   const manifest = Object.freeze([
-    Object.freeze({ route: 'cot', styles: ['features/cot/cot-page.css'], scripts: ['features/cot/cot-page.js'] })
+    Object.freeze({ route: 'cot', styles: ['features/cot/cot-page.css'], scripts: ['features/cot/cot-page.js'] }),
+    Object.freeze({ route: 'trackers', styles: [], scripts: ['features/political-flow/political-data.js'] })
   ]);
 
   async function loadEntry(entry) {
