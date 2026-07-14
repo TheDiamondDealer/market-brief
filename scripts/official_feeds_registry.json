@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "sec": {
+    "forms": ["8-K", "10-Q", "10-K", "6-K", "20-F", "40-F", "4", "S-3", "S-3ASR", "424B2", "424B3", "424B5", "SC 13D", "SC 13D/A", "SC 13G", "SC 13G/A"],
+    "lookbackDays": 180,
+    "maxRecords": 160,
+    "tickers": ["NVDA", "AMD", "AVGO", "TSM", "ASML", "MU", "AMAT", "LRCX", "KLAC", "QCOM", "ARM", "INTC", "MP", "UUUU", "USAR", "NB", "CRML", "ALB", "SQM", "BHP", "RIO", "FCX"]
+  },
+  "bls": {
+    "series": [
+      {"id":"CUSR0000SA0","name":"US CPI all items","group":"Inflation","unit":"index","frequency":"Monthly"},
+      {"id":"CUSR0000SA0L1E","name":"US core CPI","group":"Inflation","unit":"index","frequency":"Monthly"},
+      {"id":"WPSFD4","name":"US PPI final demand","group":"Inflation","unit":"index","frequency":"Monthly"},
+      {"id":"CES0000000001","name":"US nonfarm payroll employment","group":"Employment","unit":"thousands","frequency":"Monthly"},
+      {"id":"LNS14000000","name":"US unemployment rate","group":"Employment","unit":"%","frequency":"Monthly"},
+      {"id":"LNS11300000","name":"US labour-force participation rate","group":"Employment","unit":"%","frequency":"Monthly"},
+      {"id":"CES0500000003","name":"US average hourly earnings, private","group":"Employment","unit":"USD/hour","frequency":"Monthly"},
+      {"id":"JTS000000000000000JOL","name":"US job openings","group":"Employment","unit":"thousands","frequency":"Monthly"}
+    ]
+  },
+  "eia": {
+    "series": [
+      {"id":"PET.WCESTUS1.W","name":"US commercial crude oil stocks excluding SPR","group":"Oil","frequency":"Weekly","expectedTerms":["crude","excluding"],"unit":"thousand barrels"},
+      {"id":"PET.W_EPC0_SAX_YCUOK_MBBL.W","name":"Cushing crude oil stocks","group":"Oil","frequency":"Weekly","expectedTerms":["cushing","crude"],"unit":"thousand barrels"},
+      {"id":"PET.WCRFPUS2.W","name":"US field production of crude oil","group":"Oil","frequency":"Weekly","expectedTerms":["production","crude"],"unit":"thousand barrels per day"},
+      {"id":"PET.WGTSTUS1.W","name":"US total motor gasoline stocks","group":"Oil","frequency":"Weekly","expectedTerms":["gasoline","stocks"],"unit":"thousand barrels"},
+      {"id":"PET.WDISTUS1.W","name":"US distillate fuel oil stocks","group":"Oil","frequency":"Weekly","expectedTerms":["distillate","stocks"],"unit":"thousand barrels"},
+      {"id":"PET.WPULEUS3.W","name":"US refinery utilisation","group":"Oil","frequency":"Weekly","expectedTerms":["utilization"],"unit":"%"},
+      {"id":"NG.NW2_EPG0_SWO_R48_BCF.W","name":"Lower 48 working natural gas in storage","group":"Natural Gas","frequency":"Weekly","expectedTerms":["working","storage"],"unit":"billion cubic feet"}
+    ]
+  },
+  "bea": {
+    "tables": [
+      {"table":"T10101","name":"GDP and major components","frequency":"Q","patterns":["gross domestic product","personal consumption expenditures","gross private domestic investment","exports of goods and services","imports of goods and services"]},
+      {"table":"T20100","name":"Personal income and disposition","frequency":"Q","patterns":["personal income","disposable personal income","personal outlays","personal saving"]},
+      {"table":"T20804","name":"PCE price indexes","frequency":"Q","patterns":["personal consumption expenditures","food and energy"]},
+      {"table":"T11200","name":"National income and corporate profits","frequency":"Q","patterns":["corporate profits","national income"]}
+    ]
+  },
+  "census": {
+    "datasets": [
+      {"id":"advm3","name":"Advance durable goods","group":"Manufacturing","frequency":"Monthly"},
+      {"id":"ftd","name":"US international trade in goods and services","group":"Trade","frequency":"Monthly"},
+      {"id":"marts","name":"Advance retail and food services","group":"Consumption","frequency":"Monthly"},
+      {"id":"m3","name":"Manufacturers shipments, inventories and orders","group":"Manufacturing","frequency":"Monthly"},
+      {"id":"mtis","name":"Manufacturing and trade inventories and sales","group":"Inventories","frequency":"Monthly"},
+      {"id":"mwts","name":"Monthly wholesale trade","group":"Inventories","frequency":"Monthly"},
+      {"id":"resconst","name":"New residential construction","group":"Housing","frequency":"Monthly"},
+      {"id":"ressales","name":"New residential sales","group":"Housing","frequency":"Monthly"},
+      {"id":"vip","name":"Construction spending","group":"Housing","frequency":"Monthly"}
+    ]
+  },
+  "usgs": {
+    "page": "https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries",
+    "name": "USGS Mineral Commodity Summaries",
+    "frequency": "Annual"
+  }
+}

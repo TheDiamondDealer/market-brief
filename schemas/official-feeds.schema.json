@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thediamonddealer.github.io/market-brief/schemas/official-feeds.schema.json",
+  "title": "Market Brief official free feeds",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAtUtc", "collection", "sources", "methodology"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "generatedAtUtc": {"type": "string", "format": "date-time"},
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "successCount", "failureCount", "unavailableCount", "lastSuccessfulAt", "errors"],
+      "properties": {
+        "status": {"enum": ["current", "delayed", "stale", "failed", "unavailable", "partial", "unknown"]},
+        "successCount": {"type": "integer", "minimum": 0},
+        "failureCount": {"type": "integer", "minimum": 0},
+        "unavailableCount": {"type": "integer", "minimum": 0},
+        "lastSuccessfulAt": {"type": ["string", "null"], "format": "date-time"},
+        "errors": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "family", "access", "status", "observedAt", "collectedAt", "lastSuccessfulAt", "expectedCadence", "sourceUrl", "detail", "error", "records"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "name": {"type": "string", "minLength": 1},
+          "family": {"type": "string", "minLength": 1},
+          "access": {"type": "string", "minLength": 1},
+          "status": {"enum": ["current", "delayed", "stale", "failed", "unavailable", "partial", "unknown"]},
+          "observedAt": {"type": ["string", "null"]},
+          "collectedAt": {"type": "string", "format": "date-time"},
+          "lastSuccessfulAt": {"type": ["string", "null"], "format": "date-time"},
+          "expectedCadence": {"type": "string", "minLength": 1},
+          "sourceUrl": {"type": "string", "format": "uri"},
+          "detail": {"type": "string"},
+          "error": {"type": ["string", "null"]},
+          "records": {"type": "array", "items": {"$ref": "#/$defs/record"}}
+        }
+      }
+    },
+    "methodology": {"type": "object", "additionalProperties": {"type": "string"}}
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": ["id", "kind", "name", "sourceUrl"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["filing", "series", "coded-series", "release"]},
+        "name": {"type": "string", "minLength": 1},
+        "sourceUrl": {"type": "string", "format": "uri"},
+        "observedAt": {"type": ["string", "null"]},
+        "filedAt": {"type": ["string", "null"]},
+        "acceptedAt": {"type": ["string", "null"]},
+        "period": {"type": ["string", "null"]},
+        "value": {"type": ["number", "null"]},
+        "previous": {"type": ["number", "null"]},
+        "change": {"type": ["number", "null"]},
+        "unit": {"type": ["string", "null"]},
+        "frequency": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    }
+  }
+}

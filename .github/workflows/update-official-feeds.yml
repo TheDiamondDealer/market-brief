@@ -1,0 +1,108 @@
+name: Update free official feeds
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update_official_feeds.py'
+      - 'scripts/validate_official_feeds.py'
+      - 'scripts/official_feeds_registry.json'
+      - 'schemas/official-feeds.schema.json'
+      - 'tests/test_official_feeds.py'
+      - '.github/workflows/update-official-feeds.yml'
+      - '.github/workflows/deploy-pages.yml'
+  schedule:
+    - cron: '10 22 * * 1-5'
+    - cron: '20 3 * * 6'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: generated-data-writer
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Use Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements/validation.txt
+
+      - name: Validate immutable dependency pins
+        run: python scripts/check_ci_pins.py
+
+      - name: Install validation dependency
+        run: |
+          python -m pip install --disable-pip-version-check --requirement requirements/validation.txt
+          python -m pip check
+
+      - name: Validate collector and fixtures
+        run: |
+          python -m py_compile scripts/update_official_feeds.py scripts/validate_official_feeds.py tests/test_official_feeds.py
+          python -m unittest tests/test_official_feeds.py -v
+
+      - name: Collect official sources
+        env:
+          OFFICIAL_FEEDS_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
+          BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+        run: python scripts/update_official_feeds.py
+
+      - name: Validate generated output
+        run: |
+          python scripts/validate_official_feeds.py
+          node --check site/features/official-feeds/official-feeds-data.js
+          node --check site/features/official-feeds/official-feeds-health.js
+          node --check site/features/official-feeds/official-feeds-page.js
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('site/data/official-feeds.json').read_text())
+          print(
+              f"Official feeds status={data['collection']['status']}; "
+              f"successful={data['collection']['successCount']}; "
+              f"unavailable={data['collection']['unavailableCount']}; "
+              f"failed/stale={data['collection']['failureCount']}; "
+              f"records={sum(len(source['records']) for source in data['sources'])}"
+          )
+          for source in data['sources']:
+              print(f"- {source['id']}: {source['status']} ({len(source['records'])} records)")
+          PY
+
+      - name: Commit validated data
+        run: |
+          if git diff --quiet -- site/data/official-feeds.json; then
+            echo 'No official-feed changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site/data/official-feeds.json
+          git commit -m 'Refresh free official agency feeds'
+          git pull --rebase origin main
+          python scripts/validate_official_feeds.py
+          git push origin HEAD:main
+
+  deploy:
+    needs: update
+    if: ${{ needs.update.result == 'success' }}
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      ref: main
