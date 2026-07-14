@@ -9,6 +9,7 @@ on:
       - 'scripts/update_political_disclosures_strict.py'
       - 'scripts/update_political_disclosures_ledger.py'
       - 'scripts/political_filing_ledger.py'
+      - 'scripts/build_political_data_split.py'
       - 'scripts/validate_generated_data.py'
       - 'scripts/validation_helpers.py'
       - 'scripts/check_ci_pins.py'
@@ -64,7 +65,7 @@ jobs:
           python -m pip check
 
       - name: Validate collectors
-        run: python -m py_compile scripts/update_political_disclosures.py scripts/update_political_disclosures_strict.py scripts/update_political_disclosures_ledger.py scripts/political_filing_ledger.py scripts/validate_generated_data.py scripts/validation_helpers.py scripts/check_ci_pins.py
+        run: python -m py_compile scripts/update_political_disclosures.py scripts/update_political_disclosures_strict.py scripts/update_political_disclosures_ledger.py scripts/political_filing_ledger.py scripts/build_political_data_split.py scripts/validate_generated_data.py scripts/validation_helpers.py scripts/check_ci_pins.py
 
       - name: Collect official disclosures
         run: python scripts/update_political_disclosures_ledger.py
@@ -78,15 +79,23 @@ jobs:
           from pathlib import Path
           summary = json.loads(Path('site/data/political-disclosures-summary.json').read_text())
           ledger = json.loads(Path('site/data/political/filing-ledger.json').read_text())
+          manifest = json.loads(Path('site/data/political/manifest.json').read_text())
+          lazy_summary = json.loads(Path('site/data/political/summary.json').read_text())
           pelosi = summary.get('trackers', {}).get('pelosi', {}).get('trades', 0)
+          assert manifest.get('totalTrades') == summary.get('totalTrades') == lazy_summary.get('totalTrades')
+          assert manifest.get('trackerCount') == len(manifest.get('trackers', {}))
+          for tracker_id, item in manifest.get('trackers', {}).items():
+              annual_total = sum(json.loads(Path(url.replace('data/', 'site/data/')).read_text()).get('tradeCount', 0) for url in item.get('annualUrls', {}).values())
+              assert annual_total == item.get('tradeCount'), (tracker_id, annual_total, item.get('tradeCount'))
           print(f"Generated political trades={summary.get('totalTrades')}; Pelosi={pelosi}; generatedAt={summary.get('generatedAt')}")
           print(f"Filing ledger={ledger.get('summary', {}).get('filings', 0)}; retryable={ledger.get('summary', {}).get('retryable', 0)}; parser={ledger.get('parserVersion')}")
+          print(f"Lazy files trackers={manifest.get('trackerCount')}; recent={len(lazy_summary.get('recentFilings', []))}")
           PY
 
       - name: Commit validated data
         id: commit
         run: |
-          CHANGES="$(git status --porcelain -- site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json site/data/political/filing-ledger.json)"
+          CHANGES="$(git status --porcelain -- site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json site/data/political)"
           if [ -z "$CHANGES" ]; then
             echo 'No disclosure changes to commit.'
             echo 'changed=false' >> "$GITHUB_OUTPUT"
@@ -96,7 +105,7 @@ jobs:
           echo "$CHANGES"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json site/data/political/filing-ledger.json
+          git add site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json site/data/political
           git commit -m 'Refresh official political disclosures'
           git pull --rebase origin main
           python scripts/validate_generated_data.py

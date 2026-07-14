@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 from typing import Any
 
 import update_political_disclosures_strict as strict
+from build_political_data_split import browser_bootstrap, build_split
 from political_filing_ledger import FilingIdentity, FilingLedger, content_hash, identity_from_filing
 
 collector = strict.collector
@@ -136,13 +136,14 @@ def parse_senate_with_ledger(session, filing):
         raise
 
 
-def attach_ledger_status() -> None:
+def attach_ledger_and_split_data() -> None:
     if not collector.JSON_PATH.exists():
         return
     dataset = json.loads(collector.JSON_PATH.read_text(encoding="utf-8"))
     dataset.setdefault("sourceStatus", {})["filingLedger"] = ledger.summary()
     collector.JSON_PATH.write_text(json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    collector.JS_PATH.write_text(collector.browser_js(dataset), encoding="utf-8")
+    split = build_split(dataset)
+    collector.JS_PATH.write_text(browser_bootstrap(split), encoding="utf-8")
 
 
 collector.load_previous = load_previous_with_ledger
@@ -159,7 +160,7 @@ if __name__ == "__main__":
     try:
         exit_code = collector.main()
         ledger.write()
-        attach_ledger_status()
+        attach_ledger_and_split_data()
         strict.write_summary()
     finally:
         ledger.write()
