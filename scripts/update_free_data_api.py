@@ -2,9 +2,9 @@
 """Collect COT data from the CFTC public reporting API.
 
 The Socrata datasets are the CFTC's official public reporting environment. This
-wrapper selects the most recently reported contract candidate first, then uses
-contract-name scoring to prefer the main contract over micro, mini, cross-rate,
-ICE or ultra variants. The annual ZIP collector remains the fallback.
+wrapper chooses only explicitly recognised primary contracts. Similar micro,
+mini, financial, index, cross-rate, ICE and ultra contracts are rejected rather
+than silently substituted. The annual ZIP collector remains a limited fallback.
 """
 
 from __future__ import annotations
@@ -29,35 +29,37 @@ DATASETS = {
 MARKETS = {
     "gold": {
         "label": "Gold", "report": "disagg", "query": "GOLD",
-        "prefer": ["GOLD -", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
+        "must": ["GOLD", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
     },
     "silver": {
         "label": "Silver", "report": "disagg", "query": "SILVER",
-        "prefer": ["SILVER -", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
+        "must": ["SILVER", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
     },
     "copper": {
         "label": "Copper", "report": "disagg", "query": "COPPER",
-        "prefer": ["COPPER", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
+        "must": ["COPPER", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
     },
     "oil": {
         "label": "WTI crude oil", "report": "disagg", "query": "CRUDE OIL",
-        "prefer": ["LIGHT SWEET", "NEW YORK MERCANTILE"], "avoid": ["E-MINI", "MICRO", "ICE FUTURES"],
+        "must": ["LIGHT SWEET", "NEW YORK MERCANTILE"],
+        "avoid": ["E-MINI", "MICRO", "ICE FUTURES", "FINANCIAL", "INDEX"],
     },
     "natural-gas": {
         "label": "Natural gas", "report": "disagg", "query": "NATURAL GAS",
-        "prefer": ["NATURAL GAS -", "NEW YORK MERCANTILE"], "avoid": ["E-MINI", "MICRO"],
+        "must": ["NATURAL GAS", "NEW YORK MERCANTILE"],
+        "avoid": ["E-MINI", "MICRO", "INDEX", "SWAP", "BASIS"],
     },
     "yen": {
         "label": "Japanese yen", "report": "tff", "query": "JAPANESE YEN",
-        "prefer": ["JAPANESE YEN -", "CHICAGO MERCANTILE"], "avoid": ["EURO FX", "CROSS"],
+        "must": ["JAPANESE YEN", "CHICAGO MERCANTILE"], "avoid": ["EURO FX", "CROSS"],
     },
     "us10y-futures": {
         "label": "US 10-year Treasury futures", "report": "tff", "query": "10-YEAR",
-        "prefer": ["TREASURY NOTES", "CHICAGO BOARD OF TRADE"], "avoid": ["ULTRA"],
+        "must": ["10-YEAR", "TREASURY", "CHICAGO BOARD OF TRADE"], "avoid": ["ULTRA"],
     },
     "usd-index": {
         "label": "US Dollar Index", "report": "tff", "query": "USD INDEX",
-        "prefer": ["USD INDEX", "ICE FUTURES U.S."], "avoid": [],
+        "must": ["USD INDEX", "ICE FUTURES U.S."], "avoid": [],
     },
 }
 
@@ -90,62 +92,71 @@ def report_date(row: dict[str, Any]) -> str | None:
     return None
 
 
-def candidate_score(name: str, config: dict[str, Any]) -> int:
+def recognised_contract(name: str, config: dict[str, Any]) -> bool:
     upper = name.upper()
-    score = 0
-    for token in config.get("prefer", []):
-        token_upper = token.upper()
-        if token_upper in upper:
-            score += 8
-        if upper.startswith(token_upper):
-            score += 6
-    for token in config.get("avoid", []):
-        if token.upper() in upper:
-            score -= 25
-    return score
+    if any(token.upper() in upper for token in config.get("avoid", [])):
+        return False
+    return all(token.upper() in upper for token in config.get("must", []))
+
+
+def position_keys(report: str) -> tuple[str, str]:
+    return ("m_money_positions_long_all", "m_money_positions_short_all") if report == "disagg" else ("lev_money_positions_long_all", "lev_money_positions_short_all")
 
 
 def choose_candidate(rows: list[dict[str, Any]], config: dict[str, Any]) -> tuple[str, list[dict[str, Any]]] | None:
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
         name = str(row.get("market_and_exchange_names", "")).strip()
-        if name and report_date(row):
+        if name and report_date(row) and recognised_contract(name, config):
             grouped[name].append(row)
     if not grouped:
         return None
 
+    long_key, short_key = position_keys(config["report"])
     ranked = []
     for name, values in grouped.items():
         latest = max(report_date(row) or "" for row in values)
-        ranked.append((latest, candidate_score(name, config), name, values))
+        latest_rows = [row for row in values if report_date(row) == latest]
+        usable = any(
+            (collector.safe_float(row.get(long_key)) or 0) != 0 or
+            (collector.safe_float(row.get(short_key)) or 0) != 0
+            for row in latest_rows
+        )
+        ranked.append((latest, usable, name, values))
     ranked.sort(reverse=True)
+    for latest, usable, name, values in ranked:
+        if usable:
+            return name, values
+    return None
 
-    newest_date = ranked[0][0]
-    current_candidates = [entry for entry in ranked if entry[0] == newest_date]
-    current_candidates.sort(key=lambda entry: entry[1], reverse=True)
-    _, _, name, values = current_candidates[0]
-    return name, values
+
+def candidate_diagnostic(rows: list[dict[str, Any]], report: str) -> str:
+    grouped: dict[str, str] = {}
+    for row in rows:
+        name = str(row.get("market_and_exchange_names", "")).strip()
+        date = report_date(row)
+        if name and date and date > grouped.get(name, ""):
+            grouped[name] = date
+    candidates = sorted(((date, name) for name, date in grouped.items()), reverse=True)[:5]
+    available_position_keys = sorted({key for row in rows[:20] for key in row if "money" in key.lower() and ("long" in key.lower() or "short" in key.lower())})
+    return f"candidates={candidates}; position_keys={available_position_keys[:8]}; report={report}"
 
 
 def observations_for(market_id: str, config: dict[str, Any]) -> list[collector.Observation]:
     rows = api_rows(DATASETS[config["report"]], config["query"])
     selected = choose_candidate(rows, config)
     if not selected:
-        return []
+        raise ValueError("no recognised primary contract; " + candidate_diagnostic(rows, config["report"]))
     market_name, values = selected
     output: list[collector.Observation] = []
+    long_key, short_key = position_keys(config["report"])
+    category = "Managed money" if config["report"] == "disagg" else "Leveraged funds"
     for row in values:
         date = report_date(row)
         if not date:
             continue
-        if config["report"] == "disagg":
-            long_value = collector.safe_float(row.get("m_money_positions_long_all"))
-            short_value = collector.safe_float(row.get("m_money_positions_short_all"))
-            category = "Managed money"
-        else:
-            long_value = collector.safe_float(row.get("lev_money_positions_long_all"))
-            short_value = collector.safe_float(row.get("lev_money_positions_short_all"))
-            category = "Leveraged funds"
+        long_value = collector.safe_float(row.get(long_key))
+        short_value = collector.safe_float(row.get(short_key))
         if long_value is None or short_value is None:
             continue
         output.append(collector.Observation(
@@ -156,6 +167,8 @@ def observations_for(market_id: str, config: dict[str, Any]) -> list[collector.O
             market_name=market_name,
             category=category,
         ))
+    if not output:
+        raise ValueError("recognised contract has no usable positions; " + candidate_diagnostic(values, config["report"]))
     return output
 
 
@@ -174,11 +187,15 @@ def fetch_cot_api() -> tuple[list[dict[str, Any]], list[str]]:
         except Exception as exc:
             errors.append(f"{market_id}: {exc}")
 
-    if len(summaries) < 5:
-        fallback, fallback_errors = ZIP_FALLBACK()
-        existing = {row["id"] for row in summaries}
-        summaries.extend(row for row in fallback if row["id"] not in existing)
-        errors.extend(f"ZIP fallback: {error}" for error in fallback_errors[:3])
+    # ZIP fallback is accepted only when the returned report is recent enough.
+    fallback, fallback_errors = ZIP_FALLBACK()
+    existing = {row["id"] for row in summaries}
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=21)).date().isoformat()
+    for row in fallback:
+        if row["id"] not in existing and str(row.get("reportDate", "")) >= cutoff:
+            row["dataMethod"] = "CFTC annual ZIP fallback"
+            summaries.append(row)
+    errors.extend(f"ZIP fallback: {error}" for error in fallback_errors[:2])
     return summaries, errors
 
 
