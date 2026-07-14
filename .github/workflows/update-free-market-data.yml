@@ -2,6 +2,11 @@ name: Update free market data
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update_free_data.py'
+      - '.github/workflows/update-free-market-data.yml'
   schedule:
     # Weekday morning refresh for Melbourne after the US session.
     - cron: '20 21 * * 1-5'
