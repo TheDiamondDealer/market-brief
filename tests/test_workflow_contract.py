@@ -3,6 +3,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOWS = ROOT / ".github" / "workflows"
 
@@ -10,6 +12,13 @@ WORKFLOWS = ROOT / ".github" / "workflows"
 class WorkflowPublishingContractTests(unittest.TestCase):
     def read(self, name: str) -> str:
         return (WORKFLOWS / name).read_text(encoding="utf-8")
+
+    def test_all_workflow_yaml_parses(self) -> None:
+        for path in sorted(WORKFLOWS.glob("*.yml")):
+            with self.subTest(workflow=path.name):
+                parsed = yaml.safe_load(path.read_text(encoding="utf-8"))
+                self.assertIsInstance(parsed, dict)
+                self.assertIn("jobs", parsed)
 
     def test_pages_workflow_is_reusable_and_checks_out_requested_ref(self) -> None:
         text = self.read("deploy-pages.yml")
