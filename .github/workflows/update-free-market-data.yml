@@ -7,6 +7,7 @@ on:
     paths:
       - 'scripts/update_free_data.py'
       - 'scripts/update_free_data_strict.py'
+      - 'scripts/update_free_data_api.py'
       - '.github/workflows/update-free-market-data.yml'
   schedule:
     # Weekday morning refresh for Melbourne after the US session.
@@ -35,10 +36,10 @@ jobs:
           python-version: '3.12'
 
       - name: Validate collectors
-        run: python -m py_compile scripts/update_free_data.py scripts/update_free_data_strict.py
+        run: python -m py_compile scripts/update_free_data.py scripts/update_free_data_strict.py scripts/update_free_data_api.py
 
       - name: Collect official free data
-        run: python scripts/update_free_data_strict.py
+        run: python scripts/update_free_data_api.py
 
       - name: Validate generated files
         run: |
