@@ -91,10 +91,12 @@
 
   // Feature packages are loaded from one ordered, auditable manifest. This keeps
   // index.html stable while the remodel migrates individual routes.
-  const featureLoader = document.createElement('script');
-  featureLoader.src = 'core/feature-loader.js';
-  featureLoader.async = false;
-  featureLoader.dataset.marketBriefFeatureLoader = 'true';
-  featureLoader.addEventListener('error', () => console.error('Market Brief feature manifest failed to load.'));
-  document.head.appendChild(featureLoader);
+  if (typeof document.createElement === 'function' && document.head?.appendChild) {
+    const featureLoader = document.createElement('script');
+    featureLoader.src = 'core/feature-loader.js';
+    featureLoader.async = false;
+    featureLoader.dataset.marketBriefFeatureLoader = 'true';
+    featureLoader.addEventListener('error', () => console.error('Market Brief feature manifest failed to load.'));
+    document.head.appendChild(featureLoader);
+  }
 })();
