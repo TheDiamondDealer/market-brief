@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Collect COT data from the CFTC public reporting API.
+"""Collect COT data using the exact, versioned CFTC contract registry.
 
-Only explicitly recognised, recent benchmark contracts are accepted. Similar
-micro, mini, index, basis, cross-rate and ultra contracts are rejected rather
-than silently substituted. Missing or stale markets remain unavailable.
+A row is accepted only when its official CFTC contract-market code, complete
+market/exchange name, report family and exchange all match the registry. Similar
+contracts are never ranked or substituted. Registry entries without an approved
+identity remain explicitly unavailable.
 """
 
 from __future__ import annotations
@@ -11,83 +12,41 @@ from __future__ import annotations
 import json
 import sys
 import urllib.parse
-from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
 import update_free_data as collector
-import update_free_data_strict as strict_collector  # applies strict fallback config
+from cot_contracts import (
+    contract_accepts_row,
+    contract_metadata,
+    generated_row_is_verified,
+    load_registry,
+    row_contract_code,
+    row_market_name,
+    unavailable_contracts,
+    verified_contracts,
+)
 
-ZIP_FALLBACK = collector.fetch_cot
-RECENT_CUTOFF_DAYS = 21
-
-DATASETS = {
-    "disagg": "72hh-3qpy",
-    "tff": "gpe5-46if",
-}
-
-MARKETS = {
-    "gold": {
-        "label": "Gold", "report": "disagg", "query": "GOLD",
-        "must": ["GOLD", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
-    },
-    "silver": {
-        "label": "Silver", "report": "disagg", "query": "SILVER",
-        "must": ["SILVER", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
-    },
-    "copper": {
-        "label": "Copper", "report": "disagg", "query": "COPPER",
-        "must": ["COPPER", "COMMODITY EXCHANGE"], "avoid": ["MICRO", "MINI"],
-    },
-    "oil-wti": {
-        "label": "WTI crude oil", "report": "disagg", "query": "CRUDE OIL, LIGHT SWEET",
-        "must": ["CRUDE OIL", "LIGHT SWEET"],
-        "avoid": ["E-MINI", "MICRO", "FINANCIAL", "INDEX"],
-    },
-    "oil-brent": {
-        "label": "Brent crude oil", "report": "disagg", "query": "BRENT",
-        "must": ["BRENT"], "avoid": ["E-MINI", "MICRO", "INDEX", "BASIS", "SPREAD"],
-    },
-    "gas-us": {
-        "label": "US Henry Hub natural gas", "report": "disagg", "query": "HENRY HUB",
-        "must": ["HENRY HUB"], "avoid": ["E-MINI", "MICRO", "INDEX", "BASIS", "SWAP"],
-    },
-    "gas-uk": {
-        "label": "UK NBP natural gas", "report": "disagg", "query": "NBP",
-        "must": ["NBP"], "avoid": ["E-MINI", "MICRO", "INDEX", "BASIS", "SWAP"],
-    },
-    "yen": {
-        "label": "Japanese yen", "report": "tff", "query": "JAPANESE YEN",
-        "must": ["JAPANESE YEN", "CHICAGO MERCANTILE"], "avoid": ["EURO FX", "CROSS"],
-    },
-    "us10y-futures": {
-        "label": "US 10-year Treasury futures", "report": "tff", "query": "10-YEAR",
-        "must": ["10-YEAR", "TREASURY", "CHICAGO BOARD OF TRADE"], "avoid": ["ULTRA"],
-    },
-    "usd-index": {
-        "label": "US Dollar Index", "report": "tff", "query": "USD INDEX",
-        "must": ["USD INDEX", "ICE FUTURES U.S."], "avoid": [],
-    },
-}
+REGISTRY = load_registry()
 
 
-def api_rows(dataset: str, search_text: str) -> list[dict[str, Any]]:
+def api_rows(contract: dict[str, Any]) -> list[dict[str, Any]]:
     start_date = (datetime.now(timezone.utc) - timedelta(days=366 * 6)).date().isoformat()
-    escaped_search = search_text.replace("'", "''")
+    code = contract["cftcContractCode"].replace("'", "''")
     where = (
         f"report_date_as_yyyy_mm_dd >= '{start_date}T00:00:00.000' "
-        f"AND market_and_exchange_names like '%{escaped_search}%'"
+        f"AND cftc_contract_market_code = '{code}'"
     )
     params = urllib.parse.urlencode({
         "$limit": "5000",
         "$order": "report_date_as_yyyy_mm_dd DESC",
         "$where": where,
     })
-    url = f"https://publicreporting.cftc.gov/resource/{dataset}.json?{params}"
+    url = f"https://publicreporting.cftc.gov/resource/{contract['datasetId']}.json?{params}"
     payload = collector.fetch_bytes(url, timeout=90)
     rows = json.loads(payload.decode("utf-8"))
     if not isinstance(rows, list):
-        raise ValueError(f"Unexpected API response for {search_text}")
+        raise ValueError(f"Unexpected API response for {contract['id']}")
     return rows
 
 
@@ -99,129 +58,119 @@ def report_date(row: dict[str, Any]) -> str | None:
     return None
 
 
-def recognised_contract(name: str, config: dict[str, Any]) -> bool:
-    upper = name.upper()
-    if any(token.upper() in upper for token in config.get("avoid", [])):
-        return False
-    return all(token.upper() in upper for token in config.get("must", []))
-
-
-def position_keys(report: str) -> tuple[str, str]:
-    if report == "disagg":
-        return "m_money_positions_long_all", "m_money_positions_short_all"
-    return "lev_money_positions_long", "lev_money_positions_short"
-
-
-def choose_candidate(rows: list[dict[str, Any]], config: dict[str, Any]) -> tuple[str, list[dict[str, Any]]] | None:
-    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for row in rows:
-        name = str(row.get("market_and_exchange_names", "")).strip()
-        if name and report_date(row) and recognised_contract(name, config):
-            grouped[name].append(row)
-    if not grouped:
-        return None
-
-    long_key, short_key = position_keys(config["report"])
-    ranked = []
-    for name, values in grouped.items():
-        latest = max(report_date(row) or "" for row in values)
-        latest_rows = [row for row in values if report_date(row) == latest]
-        usable = any(
-            (collector.safe_float(row.get(long_key)) or 0) != 0 or
-            (collector.safe_float(row.get(short_key)) or 0) != 0
-            for row in latest_rows
-        )
-        # Prefer the largest current open-interest contract where several
-        # recognised versions share the same latest date.
-        latest_open_interest = max((collector.safe_float(row.get("open_interest_all")) or 0) for row in latest_rows)
-        ranked.append((latest, usable, latest_open_interest, name, values))
-    ranked.sort(reverse=True)
-    for _, usable, _, name, values in ranked:
-        if usable:
-            return name, values
-    return None
+def position_keys(report_type: str) -> tuple[tuple[str, ...], tuple[str, ...]]:
+    if report_type == "disaggregated":
+        return ("m_money_positions_long_all",), ("m_money_positions_short_all",)
+    return ("lev_money_positions_long", "lev_money_positions_long_all"), ("lev_money_positions_short", "lev_money_positions_short_all")
 
 
 def candidate_diagnostic(rows: list[dict[str, Any]]) -> str:
-    grouped: dict[str, str] = {}
+    candidates: dict[tuple[str, str], str] = {}
     for row in rows:
-        name = str(row.get("market_and_exchange_names", "")).strip()
         date = report_date(row)
-        if name and date and date > grouped.get(name, ""):
-            grouped[name] = date
-    candidates = sorted(((date, name) for name, date in grouped.items()), reverse=True)[:4]
-    return f"nearest candidates={candidates}"
+        code = row_contract_code(row)
+        name = row_market_name(row)
+        if date and (code or name):
+            candidates[(code, name)] = max(date, candidates.get((code, name), ""))
+    nearest = sorted(((date, code, name) for (code, name), date in candidates.items()), reverse=True)[:4]
+    return f"returned identities={nearest}"
 
 
-def observations_for(config: dict[str, Any]) -> list[collector.Observation]:
-    rows = api_rows(DATASETS[config["report"]], config["query"])
-    selected = choose_candidate(rows, config)
-    if not selected:
-        raise ValueError("no recognised current benchmark contract; " + candidate_diagnostic(rows))
-    market_name, values = selected
+def observations_from_rows(contract: dict[str, Any], rows: list[dict[str, Any]]) -> list[collector.Observation]:
+    accepted = [row for row in rows if report_date(row) and contract_accepts_row(contract, row)]
+    if not accepted:
+        raise ValueError("no exact registered contract rows; " + candidate_diagnostic(rows))
+
+    long_keys, short_keys = position_keys(contract["reportType"])
     output: list[collector.Observation] = []
-    long_key, short_key = position_keys(config["report"])
-    category = "Managed money" if config["report"] == "disagg" else "Leveraged funds"
-    for row in values:
+    for row in accepted:
         date = report_date(row)
-        if not date:
-            continue
-        long_value = collector.safe_float(row.get(long_key))
-        short_value = collector.safe_float(row.get(short_key))
-        if long_value is None or short_value is None:
+        long_value = collector.row_value(row, long_keys)
+        short_value = collector.row_value(row, short_keys)
+        if not date or long_value is None or short_value is None:
             continue
         output.append(collector.Observation(
             date=date,
             long=long_value,
             short=short_value,
             open_interest=collector.safe_float(row.get("open_interest_all")),
-            market_name=market_name,
-            category=category,
+            market_name=row_market_name(row),
+            category=contract["category"],
         ))
     if not output:
-        raise ValueError("recognised contract has no usable positioning fields")
+        raise ValueError("exact registered contract has no usable positioning fields")
     return output
 
 
-def is_recent(report_date_value: str) -> bool:
-    cutoff = (datetime.now(timezone.utc) - timedelta(days=RECENT_CUTOFF_DAYS)).date().isoformat()
+def observations_for(contract: dict[str, Any]) -> list[collector.Observation]:
+    return observations_from_rows(contract, api_rows(contract))
+
+
+def is_recent(report_date_value: str, maximum_age_days: int, *, as_of: datetime | None = None) -> bool:
+    now = as_of or datetime.now(timezone.utc)
+    cutoff = (now - timedelta(days=maximum_age_days)).date().isoformat()
     return bool(report_date_value and report_date_value >= cutoff)
 
 
 def fetch_cot_api() -> tuple[list[dict[str, Any]], list[str]]:
     summaries: list[dict[str, Any]] = []
     errors: list[str] = []
-    for market_id, config in MARKETS.items():
+    for contract in verified_contracts(REGISTRY):
         try:
-            observations = observations_for(config)
-            summary = collector.summarise_market(market_id, config["label"], observations)
+            observations = observations_for(contract)
+            summary = collector.summarise_market(contract["id"], contract["label"], observations)
             if not summary:
-                errors.append(f"{market_id}: no usable rows")
+                errors.append(f"{contract['id']}: no usable rows")
                 continue
-            if not is_recent(str(summary.get("reportDate", ""))):
-                errors.append(f"{market_id}: latest recognised benchmark contract is stale ({summary.get('reportDate')}); excluded")
+            if not is_recent(str(summary.get("reportDate", "")), contract["maximumAgeDays"]):
+                errors.append(
+                    f"{contract['id']}: exact contract {contract['cftcContractCode']} is stale "
+                    f"({summary.get('reportDate')}); excluded"
+                )
                 continue
-            summary["dataMethod"] = "CFTC public reporting API"
+            summary["contract"] = contract_metadata(contract, summary["market"])
+            summary["dataMethod"] = "CFTC public reporting API exact contract registry"
+            summary["sourceUrl"] = f"https://publicreporting.cftc.gov/resource/{contract['datasetId']}.json"
             summaries.append(summary)
         except Exception as exc:
-            errors.append(f"{market_id}: {exc}")
-
-    # Keep the legacy fallback only for non-energy IDs whose contract identity
-    # remains unambiguous and whose report is current.
-    fallback, fallback_errors = ZIP_FALLBACK()
-    legacy_id_map = {"yen": "yen", "us10y-futures": "us10y-futures", "usd-index": "usd-index"}
-    existing = {row["id"] for row in summaries}
-    for row in fallback:
-        mapped_id = legacy_id_map.get(row.get("id"))
-        if mapped_id and mapped_id not in existing and is_recent(str(row.get("reportDate", ""))):
-            row["id"] = mapped_id
-            row["dataMethod"] = "CFTC annual ZIP fallback"
-            summaries.append(row)
-    errors.extend(f"ZIP fallback: {error}" for error in fallback_errors[:2])
+            errors.append(f"{contract['id']}: {exc}")
     return summaries, errors
 
 
+_original_load_previous = collector.load_previous
+
+
+def load_previous_verified() -> dict[str, Any]:
+    previous = _original_load_previous()
+    if previous.get("cot"):
+        previous["cot"] = [row for row in previous["cot"] if generated_row_is_verified(row, REGISTRY)]
+    return previous
+
+
+_original_build_dataset = collector.build_dataset
+
+
+def build_dataset_with_registry(previous: dict[str, Any]) -> dict[str, Any]:
+    dataset = _original_build_dataset(previous)
+    unavailable = unavailable_contracts(REGISTRY)
+    dataset["cotContractRegistry"] = {
+        "schemaVersion": REGISTRY["schemaVersion"],
+        "verifiedIds": [contract["id"] for contract in verified_contracts(REGISTRY)],
+        "unavailable": [
+            {"id": contract["id"], "label": contract["label"], "reason": contract["unavailableReason"]}
+            for contract in unavailable
+        ],
+    }
+    dataset.setdefault("methodology", {})["cotRegistry"] = (
+        "Rows require an exact CFTC contract-market code and exact approved market/exchange name. "
+        "Unapproved benchmarks remain unavailable; no open-interest ranking or similar-name substitution is used."
+    )
+    return dataset
+
+
+collector.load_previous = load_previous_verified
 collector.fetch_cot = fetch_cot_api
+collector.build_dataset = build_dataset_with_registry
 
 if __name__ == "__main__":
     sys.exit(collector.main())
