@@ -20,12 +20,24 @@ class WorkflowPublishingContractTests(unittest.TestCase):
                 self.assertIsInstance(parsed, dict)
                 self.assertIn("jobs", parsed)
 
+    def test_required_pull_request_gate_is_stable(self) -> None:
+        text = self.read("validate.yml")
+        self.assertIn("pull_request:", text)
+        self.assertIn("merge_group:", text)
+        self.assertIn("offline-validation:", text)
+        self.assertIn("python scripts/check_ci_pins.py", text)
+        self.assertIn("requirements/ci.txt", text)
+        self.assertIn("python -m pip check", text)
+
     def test_pages_workflow_is_reusable_and_checks_out_requested_ref(self) -> None:
         text = self.read("deploy-pages.yml")
         self.assertIn("workflow_call:", text)
         self.assertIn("ref: ${{ inputs.ref || github.ref }}", text)
         self.assertIn("path: site", text)
-        self.assertIn("actions/deploy-pages@v4", text)
+        self.assertIn(
+            "actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e",
+            text,
+        )
         self.assertIn("pages: write", text)
         self.assertIn("id-token: write", text)
 
@@ -41,6 +53,8 @@ class WorkflowPublishingContractTests(unittest.TestCase):
                 self.assertLess(validate, commit)
                 self.assertLess(commit, push)
                 self.assertIn("python scripts/validate_generated_data.py", text)
+                self.assertIn("python scripts/check_ci_pins.py", text)
+                self.assertIn("python -m pip check", text)
                 self.assertNotIn("continue-on-error: true", text)
 
     def test_collectors_revalidate_after_rebase_before_push(self) -> None:
@@ -68,6 +82,14 @@ class WorkflowPublishingContractTests(unittest.TestCase):
         self.assertNotIn("paths-ignore:", text)
         self.assertIn("scripts/update_political_disclosures.py", text)
         self.assertIn("schemas/political-disclosures.schema.json", text)
+        self.assertIn("requirements/political.txt", text)
+
+    def test_owner_protection_checklist_names_required_check_and_bypass_risk(self) -> None:
+        text = (ROOT / "docs" / "REPOSITORY-PROTECTION.md").read_text(encoding="utf-8")
+        self.assertIn("offline-validation", text)
+        self.assertIn("GitHub Actions", text)
+        self.assertIn("Block force pushes", text)
+        self.assertIn("Acceptance drill", text)
 
 
 if __name__ == "__main__":
