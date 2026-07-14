@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thediamonddealer.github.io/market-brief/schemas/political-disclosures.schema.json",
+  "title": "Market Brief political disclosures",
+  "type": "object",
+  "required": ["generatedAt", "generatedAtHuman", "trackers", "sourceStatus"],
+  "properties": {
+    "generatedAt": {"type": "string", "minLength": 1},
+    "generatedAtHuman": {"type": "string", "minLength": 1},
+    "trackers": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "chamber", "status", "trades", "portfolio"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "chamber": {"enum": ["House", "Senate"]},
+          "status": {"type": "string", "minLength": 1},
+          "trades": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "filingId", "asset", "type", "owner", "traded", "filed", "amount", "source", "sourceUrl"],
+              "properties": {
+                "id": {"type": "string", "minLength": 1},
+                "filingId": {"type": "string", "minLength": 1},
+                "asset": {"type": "string", "minLength": 1},
+                "ticker": {"type": "string"},
+                "type": {"type": "string", "minLength": 1},
+                "owner": {"type": "string", "minLength": 1},
+                "traded": {"type": "string", "minLength": 8},
+                "filed": {"type": "string", "minLength": 8},
+                "lag": {"type": "string"},
+                "lagDays": {"type": ["integer", "null"]},
+                "amount": {"type": "string", "minLength": 1},
+                "source": {"type": "string", "minLength": 1},
+                "sourceUrl": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": true
+            }
+          },
+          "portfolio": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "sourceStatus": {"type": "object"}
+  },
+  "additionalProperties": true
+}
