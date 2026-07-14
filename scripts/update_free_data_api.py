@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Collect COT data from the CFTC public reporting API.
 
-The Socrata datasets are the CFTC's official public reporting environment. This
-wrapper chooses only explicitly recognised primary contracts. Similar micro,
-mini, financial, index, cross-rate, ICE and ultra contracts are rejected rather
-than silently substituted. The annual ZIP collector remains a limited fallback.
+Only explicitly recognised, recent primary contracts are accepted. Similar
+micro, mini, financial, index, cross-rate, ICE and ultra contracts are rejected
+rather than silently substituted. Missing or stale markets remain unavailable.
 """
 
 from __future__ import annotations
@@ -20,6 +19,7 @@ import update_free_data as collector
 import update_free_data_strict as strict_collector  # applies strict fallback config
 
 ZIP_FALLBACK = collector.fetch_cot
+RECENT_CUTOFF_DAYS = 21
 
 DATASETS = {
     "disagg": "72hh-3qpy",
@@ -100,7 +100,10 @@ def recognised_contract(name: str, config: dict[str, Any]) -> bool:
 
 
 def position_keys(report: str) -> tuple[str, str]:
-    return ("m_money_positions_long_all", "m_money_positions_short_all") if report == "disagg" else ("lev_money_positions_long_all", "lev_money_positions_short_all")
+    if report == "disagg":
+        return "m_money_positions_long_all", "m_money_positions_short_all"
+    # The TFF public reporting API omits the `_all` suffix used by ZIP files.
+    return "lev_money_positions_long", "lev_money_positions_short"
 
 
 def choose_candidate(rows: list[dict[str, Any]], config: dict[str, Any]) -> tuple[str, list[dict[str, Any]]] | None:
@@ -124,29 +127,28 @@ def choose_candidate(rows: list[dict[str, Any]], config: dict[str, Any]) -> tupl
         )
         ranked.append((latest, usable, name, values))
     ranked.sort(reverse=True)
-    for latest, usable, name, values in ranked:
+    for _, usable, name, values in ranked:
         if usable:
             return name, values
     return None
 
 
-def candidate_diagnostic(rows: list[dict[str, Any]], report: str) -> str:
+def candidate_diagnostic(rows: list[dict[str, Any]]) -> str:
     grouped: dict[str, str] = {}
     for row in rows:
         name = str(row.get("market_and_exchange_names", "")).strip()
         date = report_date(row)
         if name and date and date > grouped.get(name, ""):
             grouped[name] = date
-    candidates = sorted(((date, name) for name, date in grouped.items()), reverse=True)[:5]
-    available_position_keys = sorted({key for row in rows[:20] for key in row if "money" in key.lower() and ("long" in key.lower() or "short" in key.lower())})
-    return f"candidates={candidates}; position_keys={available_position_keys[:8]}; report={report}"
+    candidates = sorted(((date, name) for name, date in grouped.items()), reverse=True)[:3]
+    return f"nearest candidates={candidates}"
 
 
-def observations_for(market_id: str, config: dict[str, Any]) -> list[collector.Observation]:
+def observations_for(config: dict[str, Any]) -> list[collector.Observation]:
     rows = api_rows(DATASETS[config["report"]], config["query"])
     selected = choose_candidate(rows, config)
     if not selected:
-        raise ValueError("no recognised primary contract; " + candidate_diagnostic(rows, config["report"]))
+        raise ValueError("no recognised current primary contract; " + candidate_diagnostic(rows))
     market_name, values = selected
     output: list[collector.Observation] = []
     long_key, short_key = position_keys(config["report"])
@@ -168,8 +170,13 @@ def observations_for(market_id: str, config: dict[str, Any]) -> list[collector.O
             category=category,
         ))
     if not output:
-        raise ValueError("recognised contract has no usable positions; " + candidate_diagnostic(values, config["report"]))
+        raise ValueError("recognised contract has no usable positioning fields")
     return output
+
+
+def is_recent(report_date_value: str) -> bool:
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=RECENT_CUTOFF_DAYS)).date().isoformat()
+    return bool(report_date_value and report_date_value >= cutoff)
 
 
 def fetch_cot_api() -> tuple[list[dict[str, Any]], list[str]]:
@@ -177,22 +184,23 @@ def fetch_cot_api() -> tuple[list[dict[str, Any]], list[str]]:
     errors: list[str] = []
     for market_id, config in MARKETS.items():
         try:
-            observations = observations_for(market_id, config)
+            observations = observations_for(config)
             summary = collector.summarise_market(market_id, config["label"], observations)
-            if summary:
-                summary["dataMethod"] = "CFTC public reporting API"
-                summaries.append(summary)
-            else:
+            if not summary:
                 errors.append(f"{market_id}: no usable rows")
+                continue
+            if not is_recent(str(summary.get("reportDate", ""))):
+                errors.append(f"{market_id}: latest recognised primary contract is stale ({summary.get('reportDate')}); excluded")
+                continue
+            summary["dataMethod"] = "CFTC public reporting API"
+            summaries.append(summary)
         except Exception as exc:
             errors.append(f"{market_id}: {exc}")
 
-    # ZIP fallback is accepted only when the returned report is recent enough.
     fallback, fallback_errors = ZIP_FALLBACK()
     existing = {row["id"] for row in summaries}
-    cutoff = (datetime.now(timezone.utc) - timedelta(days=21)).date().isoformat()
     for row in fallback:
-        if row["id"] not in existing and str(row.get("reportDate", "")) >= cutoff:
+        if row["id"] not in existing and is_recent(str(row.get("reportDate", ""))):
             row["dataMethod"] = "CFTC annual ZIP fallback"
             summaries.append(row)
     errors.extend(f"ZIP fallback: {error}" for error in fallback_errors[:2])
