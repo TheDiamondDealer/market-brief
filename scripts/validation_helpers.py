@@ -8,6 +8,8 @@ import re
 from pathlib import Path
 from typing import Any, Iterable
 
+from cot_contracts import generated_row_is_verified
+
 FORBIDDEN_COT_TERMS = (
     "MICRO",
     "E-MINI",
@@ -61,7 +63,7 @@ def assert_safe_cot_name(name: str, rejected_terms: Iterable[str] = FORBIDDEN_CO
         raise ValidationFailure(f"Unsafe COT contract name: {name!r}")
 
 
-def validate_free_market_semantics(data: dict[str, Any]) -> None:
+def validate_free_market_semantics(data: dict[str, Any], registry: dict[str, Any] | None = None) -> None:
     rate_ids = [str(row.get("id", "")) for row in data.get("rates", [])]
     cot_ids = [str(row.get("id", "")) for row in data.get("cot", [])]
     for label, values in (("rate", rate_ids), ("COT", cot_ids)):
@@ -69,6 +71,12 @@ def validate_free_market_semantics(data: dict[str, Any]) -> None:
         if duplicates:
             raise ValidationFailure(f"Duplicate {label} ids: {', '.join(duplicates)}")
 
+    registry_marker = data.get("cotContractRegistry")
+    unavailable_ids = {
+        str(item.get("id", ""))
+        for item in (registry_marker or {}).get("unavailable", [])
+        if isinstance(item, dict)
+    }
     for row in data.get("cot", []):
         try:
             expected = round(float(row["long"]) - float(row["short"]))
@@ -79,6 +87,11 @@ def validate_free_market_semantics(data: dict[str, Any]) -> None:
             raise ValidationFailure(
                 f"COT net mismatch for {row.get('id', 'unknown')}: expected {expected}, got {actual}"
             )
+        if registry_marker:
+            if row.get("id") in unavailable_ids:
+                raise ValidationFailure(f"Unavailable COT market was emitted: {row.get('id')}")
+            if not generated_row_is_verified(row, registry):
+                raise ValidationFailure(f"COT row lacks exact verified identity: {row.get('id', 'unknown')}")
 
 
 def political_trade_count(data: dict[str, Any]) -> int:
