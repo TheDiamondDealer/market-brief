@@ -52,7 +52,7 @@ class StaticProductionAuditTests(unittest.TestCase):
             "FEATURE_BUDGET",
             "TOTAL_RUNTIME_BUDGET",
             "Duplicate HTML ids",
-            "Duplicate feature script",
+            "Duplicate {kind}s",
             "political-disclosures.json",
             "not lazy loaded",
             "missing a title",
