@@ -8,11 +8,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 
+# Most remodelled routes register directly with the core router. COT deliberately
+# keeps the established shell route and replaces its view presentation, so its
+# release marker verifies the remodelled workspace inside the existing host.
 ROUTE_CONTRACTS = {
     "home": ("features/command-centre/command-page.js", "router.register('home'"),
     "news": ("features/impact-feed/impact-page.js", "router.register('news'"),
     "news/<id>": ("features/impact-feed/impact-page.js", "registerPattern('impact-detail'"),
-    "cot": ("features/cot/cot-page.js", "route.name === 'cot'"),
+    "cot": ("features/cot/cot-page.js", "cotWorkspaceSearch"),
     "trackers": ("features/political-flow/political-page.js", "router.register('trackers'"),
     "trackers/<id>": ("features/political-flow/political-page.js", "registerPattern('political-profile'"),
     "asset/<id>": ("features/asset-workspace/asset-page.js", "registerPattern('asset-workspace'"),
