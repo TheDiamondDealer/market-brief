@@ -7,6 +7,7 @@ on:
     paths-ignore:
       - 'site/political-data.js'
       - 'site/data/political-disclosures.json'
+      - 'site/data/political-disclosures-summary.json'
   schedule:
     # Weekday morning refresh in Melbourne. Runs at 08:15 AEST / 09:15 AEDT.
     - cron: '15 22 * * 0-4'
@@ -50,18 +51,19 @@ jobs:
         if: always()
         run: |
           python -m json.tool site/data/political-disclosures.json >/dev/null
+          python -m json.tool site/data/political-disclosures-summary.json >/dev/null
           node --check site/political-data.js
 
       - name: Commit imported data or diagnostics
         if: always()
         run: |
-          if git diff --quiet -- site/political-data.js site/data/political-disclosures.json; then
+          if git diff --quiet -- site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json; then
             echo 'No disclosure changes to commit.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site/political-data.js site/data/political-disclosures.json
+          git add site/political-data.js site/data/political-disclosures.json site/data/political-disclosures-summary.json
           git commit -m 'Refresh official political disclosures'
           git pull --rebase origin main
           git push
@@ -75,8 +77,16 @@ jobs:
           data = json.loads(Path('site/data/political-disclosures.json').read_text())
           pelosi = data.get('trackers', {}).get('pelosi', {}).get('trades', [])
           total = sum(len(item.get('trades', [])) for item in data.get('trackers', {}).values())
+          malformed = [
+              trade for item in data.get('trackers', {}).values() for trade in item.get('trades', [])
+              if '\x00' in str(trade.get('asset', ''))
+              or 'Name: Hon.' in str(trade.get('asset', ''))
+              or 'State/District:' in str(trade.get('asset', ''))
+          ]
           if not pelosi:
               print(json.dumps(data.get('sourceStatus', {}), indent=2))
               raise SystemExit('Validation failed: Pelosi should have historical PTR records, but none were parsed.')
-          print(f'Validated {total} retained political transactions; Pelosi={len(pelosi)}')
+          if malformed:
+              raise SystemExit(f'Validation failed: {len(malformed)} malformed asset rows remain.')
+          print(f'Validated {total} retained political transactions; Pelosi={len(pelosi)}; malformed=0')
           PY
