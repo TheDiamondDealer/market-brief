@@ -16,8 +16,8 @@ from build_political_data_split import RECENT_PER_TRACKER, browser_bootstrap, bu
 class PoliticalDataSplitTests(unittest.TestCase):
     def dataset(self) -> dict:
         trades = []
-        for index in range(45):
-            year = 2025 if index < 20 else 2026
+        for index in range(145):
+            year = 2025 if index < 60 else 2026
             trades.append({
                 "id": f"trade-{index}",
                 "filingId": f"filing-{index // 3}",
@@ -57,13 +57,13 @@ class PoliticalDataSplitTests(unittest.TestCase):
             manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
             summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
             ticker_index = json.loads((root / "indexes" / "tickers.json").read_text(encoding="utf-8"))
-            self.assertEqual(manifest["totalTrades"], 45)
+            self.assertEqual(manifest["totalTrades"], 145)
             self.assertEqual(manifest["trackers"]["example"]["years"], [2026, 2025])
-            self.assertEqual(json.loads((root / "example" / "2026.json").read_text())["tradeCount"], 25)
-            self.assertEqual(json.loads((root / "example" / "2025.json").read_text())["tradeCount"], 20)
+            self.assertEqual(json.loads((root / "example" / "2026.json").read_text())["tradeCount"], 85)
+            self.assertEqual(json.loads((root / "example" / "2025.json").read_text())["tradeCount"], 60)
             self.assertEqual(len(summary["trackers"]["example"]["recentTrades"]), RECENT_PER_TRACKER)
             self.assertEqual(ticker_index["tickers"][0]["ticker"], "EXM")
-            self.assertEqual(ticker_index["tickers"][0]["tradeCount"], 45)
+            self.assertEqual(ticker_index["tickers"][0]["tradeCount"], 145)
             self.assertEqual(split["manifest"]["trackers"]["example"]["summaryUrl"], "data/political/example/summary.json")
 
     def test_browser_bootstrap_does_not_embed_full_history(self) -> None:
