@@ -6,6 +6,8 @@ on:
     paths:
       - 'scripts/apply_br05_core.py'
       - '.github/workflows/apply-br05-core.yml'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
