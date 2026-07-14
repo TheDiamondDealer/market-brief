@@ -4,10 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - 'scripts/update_political_disclosures.py'
-      - 'scripts/update_political_disclosures_strict.py'
-      - '.github/workflows/update-political-disclosures.yml'
+    paths-ignore:
+      - 'site/political-data.js'
+      - 'site/data/political-disclosures.json'
   schedule:
     # Weekday morning refresh in Melbourne. Runs at 08:15 AEST / 09:15 AEDT.
     - cron: '15 22 * * 0-4'
