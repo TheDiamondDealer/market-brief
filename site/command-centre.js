@@ -1,12 +1,15 @@
 (() => {
   'use strict';
-  if (typeof fallback === 'undefined' || !fallback.commandCentre || !Array.isArray(fallback.assetBiases)) return;
+  const core = window.MarketBriefCore || {};
+  const router = core.router;
+  const views = core.adapters?.views;
+  const data = core.adapters?.research() || (typeof fallback !== 'undefined' ? fallback : null);
+  if (!data?.commandCentre || !Array.isArray(data.assetBiases)) return;
 
-  const data = fallback;
   const $ = (id) => document.getElementById(id);
-  const escapeHtml = (value = '') => String(value)
+  const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value)
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+    .replaceAll('\"', '&quot;').replaceAll("'", '&#039;'));
 
   const biasClass = (bias = '') => {
     const value = bias.toLowerCase();
@@ -20,13 +23,19 @@
   const componentLabel = (score) => score > 0 ? `+${score}` : String(score);
 
   function showHome(updateHash = true) {
-    document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
-    $('view-home')?.classList.add('active');
-    document.querySelectorAll('#nav button').forEach((button) => button.classList.toggle('active', button.dataset.view === 'home'));
-    $('sidebar')?.classList.remove('open');
-    $('overlay')?.classList.remove('show');
-    if (updateHash) history.replaceState(null, '', '#home');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (updateHash && router) {
+      router.navigate('home', { replace: true });
+      return;
+    }
+    if (!views?.activate('home')) {
+      document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
+      $('view-home')?.classList.add('active');
+      document.querySelectorAll('#nav button').forEach((button) => button.classList.toggle('active', button.dataset.view === 'home'));
+      $('sidebar')?.classList.remove('open');
+      $('overlay')?.classList.remove('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    if (updateHash && !router) history.replaceState(null, '', '#home');
   }
 
   function renderRiskGauge() {
@@ -71,7 +80,8 @@
 
   function openProduct(id) {
     if (!id) return;
-    location.hash = `product/${id}`;
+    if (router) router.navigate(`product/${id}`, { replace: true });
+    else location.hash = `product/${id}`;
   }
 
   function renderBiasBoard() {
@@ -164,6 +174,7 @@
   }
 
   function initialise() {
+    if (router) router.register('home', () => showHome(false));
     renderRiskGauge();
     renderCommandSummary();
     renderBiasBoard();
@@ -188,9 +199,11 @@
     }, true);
     injectProductBias();
 
-    const initialHash = initialDocumentHash();
-    if (!initialHash) showHome(true);
-    else if (initialHash === '#home') showHome(false);
+    if (!router) {
+      const initialHash = initialDocumentHash();
+      if (!initialHash) showHome(true);
+      else if (initialHash === '#home') showHome(false);
+    }
   }
 
   initialise();

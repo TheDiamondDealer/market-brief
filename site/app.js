@@ -1,19 +1,19 @@
 (() => {
   'use strict';
 
-  const data = typeof fallback !== 'undefined' ? fallback : null;
+  const core = window.MarketBriefCore || {};
+  const router = core.router;
+  const views = core.adapters?.views;
+  const data = core.adapters?.research() || (typeof fallback !== 'undefined' ? fallback : null);
   if (!data) {
     document.body.innerHTML = '<div style="padding:40px;color:white;font-family:system-ui">Dashboard data failed to load.</div>';
     return;
   }
 
   const $ = (id) => document.getElementById(id);
-  const escapeHtml = (value = '') => String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
+  const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value)
+    .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+    .replaceAll('\"', '&quot;').replaceAll("'", '&#039;'));
 
   const listHtml = (items = []) => `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
   const closeMenu = () => {
@@ -22,15 +22,18 @@
   };
 
   function setView(view, updateHash = true) {
+    if (updateHash && view !== 'product-detail' && router) {
+      router.navigate(view, { replace: true });
+      return;
+    }
+    if (views?.activate(view)) return;
     document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
     const target = $(`view-${view}`) || $('view-today');
     target.classList.add('active');
-
     document.querySelectorAll('#nav button').forEach((button) => {
       const isProductDetail = view === 'product-detail' && button.dataset.view === 'products';
       button.classList.toggle('active', button.dataset.view === view || isProductDetail);
     });
-
     closeMenu();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (updateHash && view !== 'product-detail') history.replaceState(null, '', `#${view}`);
@@ -168,7 +171,7 @@
     document.querySelectorAll('.deep-tabs button').forEach((button) => button.classList.toggle('active', button.dataset.tab === tab));
   }
 
-  function openProduct(id) {
+  function openProduct(id, updateHash = true) {
     const product = data.products.find((item) => item.id === id);
     if (!product) return;
     $('productDetail').innerHTML = `<section class="deep-hero">
@@ -187,7 +190,8 @@
     document.querySelectorAll('.deep-tabs button').forEach((button) => button.addEventListener('click', () => productTab(product, button.dataset.tab)));
     productTab(product, 'overview');
     setView('product-detail', false);
-    history.replaceState(null, '', `#product/${product.id}`);
+    if (updateHash && router) router.navigate(`product/${product.id}`, { replace: true });
+    else if (updateHash) history.replaceState(null, '', `#product/${product.id}`);
   }
 
   function renderArchive() {
@@ -205,14 +209,23 @@
     }
   }
 
-  function handleRoute() {
+  function handleRouteLegacy() {
     const route = location.hash.replace(/^#/, '') || 'today';
     if (route.startsWith('product/')) {
-      openProduct(route.split('/')[1]);
+      openProduct(route.split('/')[1], false);
       return;
     }
     const allowed = ['today', 'week', 'regime', 'triggers', 'assets', 'products', 'archive'];
     setView(allowed.includes(route) ? route : 'today', false);
+  }
+
+  function registerCoreRoutes() {
+    if (!router) return false;
+    ['today', 'week', 'regime', 'triggers', 'assets', 'products', 'archive'].forEach((route) => {
+      router.register(route, () => setView(route, false));
+    });
+    router.registerPattern('product-detail', /^product\/([^/]+)$/, (route) => openProduct(route.params.id, false), (match) => ({ id: decodeURIComponent(match[1]) }));
+    return true;
   }
 
   function initialise() {
@@ -223,6 +236,7 @@
     renderAssets();
     renderProducts();
     renderArchive();
+    const routed = registerCoreRoutes();
 
     document.querySelectorAll('#nav button').forEach((button) => button.addEventListener('click', () => setView(button.dataset.view)));
     $('productBack').addEventListener('click', () => setView('products'));
@@ -238,8 +252,10 @@
     document.addEventListener('keydown', (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); $('search').focus(); }
     });
-    window.addEventListener('hashchange', handleRoute);
-    handleRoute();
+    if (!routed) {
+      window.addEventListener('hashchange', handleRouteLegacy);
+      handleRouteLegacy();
+    }
   }
 
   initialise();

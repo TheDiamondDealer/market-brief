@@ -1,6 +1,9 @@
 (() => {
   'use strict';
 
+  const core = window.MarketBriefCore || {};
+  const router = core.router;
+
   const routeMeta = {
     home: ['Command Centre', 'What matters now, the active regime and what could change it.'],
     today: ['Daily Brief', 'The latest research-led cross-asset recap.'],
@@ -75,10 +78,13 @@
   }
 
   function goToRoute(route) {
-    const desktopButton = document.querySelector(`#nav button[data-view="${CSS.escape(route)}"]`);
     closeMore({ restoreFocus: false });
-    if (desktopButton) desktopButton.click();
-    else window.location.hash = route;
+    if (router) router.navigate(route, { replace: true });
+    else {
+      const desktopButton = document.querySelector(`#nav button[data-view="${CSS.escape(route)}"]`);
+      if (desktopButton) desktopButton.click();
+      else window.location.hash = route;
+    }
     requestAnimationFrame(() => syncNavigation());
   }
 
@@ -123,7 +129,8 @@
   const viewObserver = new MutationObserver(() => syncNavigation());
   document.querySelectorAll('.view').forEach((view) => viewObserver.observe(view, { attributes: true, attributeFilter: ['class'] }));
 
-  window.addEventListener('hashchange', () => requestAnimationFrame(() => syncNavigation()));
+  if (router) router.subscribe(() => requestAnimationFrame(() => syncNavigation()));
+  else window.addEventListener('hashchange', () => requestAnimationFrame(() => syncNavigation()));
   window.addEventListener('resize', () => {
     setMenuState(Boolean(sidebar?.classList.contains('open')));
     if (window.innerWidth >= 600) closeMore({ restoreFocus: false });
@@ -131,5 +138,6 @@
 
   $('search')?.setAttribute('aria-label', 'Search locally available assets, catalysts and research routes');
   setMenuState(Boolean(sidebar?.classList.contains('open')));
-  syncNavigation();
+  if (router) router.start(window.__marketInitialHash || window.location.hash || '#home');
+  else syncNavigation();
 })();
