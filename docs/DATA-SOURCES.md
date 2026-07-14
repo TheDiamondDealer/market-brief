@@ -1,8 +1,8 @@
-# Data Sources and Trust Model
+# Market Brief Data Sources and Trust Model
 
-## Purpose
+Last reviewed: 14 July 2026
 
-This document identifies the source classes used by Market Brief and the rules for accepting, displaying and interpreting them.
+This document lists sources that are actually connected to the static site. Planned providers are not described as live.
 
 ## Trust hierarchy
 
@@ -15,256 +15,121 @@ Use sources in this order:
 5. Third-party aggregator or parser.
 6. Social media as an unverified discovery lead only.
 
-A lower-tier source can help find an item, but should not overwrite a conflicting primary record.
+A lower-tier source can help locate evidence but cannot overwrite a conflicting primary record.
 
-## Official market data
+## Connected source classes
 
-## CFTC Commitments of Traders
+| Product surface | Connected source | Mode | Important boundary |
+| --- | --- | --- | --- |
+| COT Positioning | CFTC Public Reporting Environment datasets `72hh-3qpy` and `gpe5-46if` | Official weekly cache | Only exact registry-approved code, name, exchange, report family and category are emitted. |
+| Macro Monitor | Federal Reserve Economic Data public series | Official delayed observations | Every series keeps its own observation date; cache recency does not override it. |
+| Political Flow — House | US House Clerk Financial Disclosure portal | Official filing discovery and PDF parsing | Public disclosure is delayed and range-based; disclosed owner/account is preserved. |
+| Political Flow — Senate | US Senate electronic Financial Disclosure portal | Official filing discovery and HTML parsing | Failed and partial filings remain visible and retryable. |
+| Impact Feed | Repository-maintained curated research records | Delayed editorial interpretation | This is not a live news wire; unknown decision fields remain unknown. |
+| Calendar & Reactions | Repository-maintained event research using named official release agencies | Research workflow | Consensus stays `Not sourced` until an approved provider is connected. |
+| Asset charts | Embedded TradingView widgets | Display-only external widget | Chart data remains with TradingView and is not copied into internal datasets. |
+| Physical and macro checklists | Repository-maintained research records with source and cadence labels | Research workflow | A checklist is not called automated unless a pipeline exists. |
 
-Used for:
+## Exact COT registry
 
-- managed-money positioning in commodities;
-- leveraged-fund positioning in selected financial futures;
-- long, short and net contracts;
-- weekly and four-week changes;
-- historical percentiles;
-- 52-week positioning charts.
+The source of truth is `scripts/cot_contracts.json`.
 
-Rules:
+Verified contracts:
 
-- select the intended primary contract;
-- reject micro, mini, ultra, index, financial and cross-rate variants when inappropriate;
-- do not substitute a stale or similarly named contract;
-- preserve report date and category;
-- COT is weekly and delayed by design.
+- Gold — `088691`, Managed Money, Disaggregated Futures Only.
+- Silver — `084691`, Managed Money, Disaggregated Futures Only.
+- Copper — `085692`, Managed Money, Disaggregated Futures Only.
+- Japanese yen — `097741`, Leveraged Funds, Traders in Financial Futures.
+- US 10-year Treasury note — `043602`, Leveraged Funds, Traders in Financial Futures.
+- US Dollar Index — `098662`, Leveraged Funds, Traders in Financial Futures.
 
-## FRED and official rate sources
+Explicitly unavailable and never substituted:
 
-Used for:
+- WTI crude oil.
+- Brent crude oil.
+- US Henry Hub natural gas.
+- UK NBP natural gas.
 
-- Treasury yields;
-- real yields;
-- breakevens;
-- high-yield spreads;
-- effective federal funds rate;
-- SOFR;
-- trade-weighted US dollar;
-- curve-spread calculations.
+Each unavailable reason is stored in the registry and exposed in the interface.
 
-Rules:
+## Official macro series currently connected
 
-- preserve each series’ own latest observation date;
-- weekends and holidays create expected gaps;
-- do not mark all rates current because one series updated;
-- distinguish basis-point changes from index-point changes.
+- `DFF` — Effective Federal Funds Rate.
+- `SOFR` — Secured Overnight Financing Rate.
+- `DGS2`, `DGS5`, `DGS10`, `DGS30` — nominal Treasury yields.
+- `DFII10` — 10-year real Treasury yield.
+- `T10YIE` — 10-year breakeven inflation rate.
+- `BAMLH0A0HYM2` — US high-yield option-adjusted spread.
+- `DTWEXBGS` — broad trade-weighted US dollar index.
 
-## Political disclosures
+Employment and growth panels remain unavailable until approved automated series are added.
 
-## House Clerk
+## Political disclosure rules
 
-Used for:
+- Official filing URL is retained for each transaction.
+- Actual trade date and public filing date remain separate.
+- Disclosure lag is calculated, not inferred.
+- Spouse, member, joint and dependent attribution is preserved.
+- Statutory value ranges remain ranges.
+- Verified history survives temporary source failures.
+- The filing ledger records parser version, content hash, attempts, error and retry state.
+- Portfolio reconstruction is labelled as transaction-derived and cannot claim brokerage-account completeness.
 
-- Periodic Transaction Report discovery;
-- official PTR PDFs;
-- filing date;
-- owner;
-- asset;
-- transaction type;
-- trade date;
-- statutory amount range.
+## Generated-file ownership
 
-The collector uses annual House disclosure indexes and official report PDFs.
+Generated files must not be edited by hand.
 
-## Senate eFD
+| Generated output | Owning generator/workflow |
+| --- | --- |
+| `site/free-data.js` | `scripts/update_free_data_charts.py` through `update-free-market-data.yml` |
+| `site/data/free-market-data.json` | `scripts/update_free_data_charts.py` through `update-free-market-data.yml` |
+| `site/political-data.js` | `scripts/update_political_disclosures_ledger.py` through `update-political-disclosures.yml` |
+| `site/data/political-disclosures.json` | `scripts/update_political_disclosures_ledger.py` |
+| `site/data/political-disclosures-summary.json` | `scripts/update_political_disclosures_ledger.py` |
+| `site/data/political/filing-ledger.json` | `scripts/political_filing_ledger.py` through the ledger-backed collector |
+| `site/data/political/manifest.json` | `scripts/build_political_data_split.py` |
+| `site/data/political/summary.json` | `scripts/build_political_data_split.py` |
+| `site/data/political/<politician>/<year>.json` | `scripts/build_political_data_split.py` |
+| `site/data/political/indexes/*.json` | `scripts/build_political_data_split.py` |
 
-Used for:
+## Freshness vocabulary
 
-- Senate PTR discovery;
-- official Senate report pages;
-- the same normalized transaction fields as House records.
+`site/core/freshness.js` standardises:
 
-The statutory terms page must be accepted programmatically before search access.
+- `current` — inside the expected cadence window.
+- `delayed` — outside the normal window but potentially usable.
+- `stale` — materially older than expected.
+- `partial` — some records succeeded while others require retry.
+- `failed` — the latest run reported an error.
+- `unavailable` — no approved source or verified mapping is connected.
+- `unknown` — the timestamp cannot be interpreted safely.
 
-## Political data rules
+Each source-health record stores source observation time, collection time, generation time, expected cadence and last successful run separately.
 
-- official filing URL is retained for each transaction;
-- actual trade date and public filing date remain separate;
-- disclosure lag is calculated, not inferred;
-- verified history is retained through temporary source failures;
-- spouse/member/joint/dependent attribution is preserved;
-- value ranges remain ranges;
-- annual holdings baselines are required before a portfolio can claim broader completeness;
-- current portfolios are labelled as transaction-derived estimates where appropriate.
+## Research interpretation rules
 
-## Curated research and interpretation
+A research interpretation must expose, when applicable:
 
-Examples:
-
-- regime classification;
-- risk gauge;
-- asset bias scores;
-- causal transmission chains;
-- target-path scenarios;
-- trigger conditions;
-- news impact explanations.
-
-These are project interpretations, not official source observations.
-
-Every interpretation should be auditable through:
-
-- dated inputs;
-- visible component scores where used;
-- driver;
-- contradiction;
+- affected asset;
+- direction and magnitude;
+- horizon and confidence;
+- causal mechanism;
 - confirmation;
 - invalidation;
-- source links for the underlying facts.
+- source and event timestamp.
 
-## News
+No hidden composite risk score is used by the remodelled Command Centre. The retired renderer remains only as a compatibility shim.
 
-The internal news feed is a delayed, curated research product.
+## Sources not connected
 
-Preferred evidence:
+The mandatory remodel does not claim access to:
 
-- official announcement or original document;
-- reputable wire/publication confirmation;
-- direct company/regulator source where relevant.
+- a licensed live news wire;
+- live or exchange-delayed price redistribution;
+- an approved consensus forecast feed;
+- interest-rate probability data;
+- earnings-estimate data;
+- capital-flow data;
+- authenticated user accounts, watchlists or alerts.
 
-Policy events should distinguish:
-
-- threatened;
-- proposed;
-- announced;
-- enacted;
-- effective;
-- exempted;
-- delayed;
-- reversed;
-- retaliated against;
-- de-escalated.
-
-Do not treat a proposal as implementation.
-
-## TradingView
-
-TradingView is an external embedded display/discovery layer.
-
-Used for:
-
-- interactive charts;
-- top stories;
-- economic calendar context.
-
-Not used for:
-
-- internal price extraction;
-- programmatic indicator values;
-- internal news ingestion;
-- bias-engine calculations;
-- generated static market data.
-
-The widget remains inside its iframe. The project must not scrape it or imply that its data has been imported.
-
-## Third-party political tools
-
-Examples such as Quiver may assist:
-
-- discovering a filing;
-- comparing parser results;
-- identifying possible missing records;
-- product-design inspiration.
-
-They do not outrank official House or Senate records.
-
-Do not use personal login credentials to scrape authenticated pages.
-
-## Physical commodity evidence
-
-Each commodity should use market-specific evidence rather than price alone.
-
-### Oil
-
-Keep separate:
-
-- Brent global/seaborne balance;
-- WTI US/Cushing balance;
-- Brent-WTI spread;
-- time spreads;
-- inventories;
-- refinery runs;
-- product cracks;
-- tanker/export flows;
-- OPEC+ production and compliance.
-
-### Natural gas
-
-Keep separate:
-
-- US Henry Hub;
-- UK NBP;
-- European TTF as a comparison, not a UK substitute;
-- storage;
-- production;
-- LNG feedgas/arrivals;
-- pipeline and interconnector flows;
-- weather;
-- gas-fired power demand.
-
-### Gold and silver
-
-Consider:
-
-- real yields;
-- nominal yields;
-- dollar;
-- ETF flows;
-- central-bank demand;
-- physical premiums;
-- COT positioning;
-- option/futures structure where available.
-
-### Copper
-
-Consider:
-
-- LME/COMEX/Shanghai inventories;
-- treatment charges;
-- regional premiums;
-- Chinese demand indicators;
-- mine disruptions;
-- scrap supply;
-- COT positioning.
-
-### Rare earths
-
-Consider:
-
-- individual oxide/metal prices;
-- Chinese quotas and export controls;
-- ex-China premiums;
-- magnet demand;
-- project construction and commissioning milestones;
-- defence/industrial policy;
-- company funding and permitting.
-
-## Freshness labels
-
-Where practical, expose:
-
-- source;
-- observation/report date;
-- generated date;
-- expected update cadence;
-- current, delayed, partial, stale or unavailable status.
-
-A page should not use one generic updated timestamp to conceal mixed-frequency inputs.
-
-## Missing data
-
-When data is missing:
-
-- show unavailable or pending;
-- preserve the last verified value with a stale label when appropriate;
-- explain the failed source or parser;
-- do not estimate unless the methodology is explicit and the estimate is labelled;
-- never use a superficially similar dataset to avoid an empty state.
+Those items belong to optional BR-20 and require explicit approval, licensing and architecture decisions.

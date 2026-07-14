@@ -1,198 +1,104 @@
 # Market Brief Intelligence Console
 
-A static, research-led market intelligence dashboard focused on commodities, macro, rates, positioning, cross-asset transmission and delayed public political disclosures.
+A static, research-led market intelligence dashboard focused on commodities, macro, rates, positioning, causal news interpretation and delayed public political disclosures.
 
 **Live dashboard:** https://thediamonddealer.github.io/market-brief/
 
-> Research and system testing only. Not financial advice. Political transaction data is delayed public disclosure, not real-time execution data.
+> Research and system testing only. Not financial advice. Political transaction data is delayed public disclosure, not real-time execution data. The Impact Feed is delayed curated research, not a live news wire.
 
-## What the project does
+## Completed mandatory remodel
 
-The dashboard combines:
+BR-01 through BR-19 are implemented. The current product includes:
 
-- A market command centre with regime, risk gauge, asset bias and trigger proximity.
-- Daily and weekly research views.
-- An interpreted news feed with first-order, second-order and invalidation logic.
-- CFTC Commitments of Traders positioning, including long/short history and percentiles.
-- Rates and liquidity data from free official sources.
-- Commodity deep dives covering gold, silver, copper, oil, natural gas, rare earths and other products.
-- A conditional Scenario Lab using an embedded TradingView chart and the project’s own target-path reasoning.
-- Political disclosure trackers using official House PTR PDFs and Senate eFD records.
-- Estimated disclosure-derived portfolios, with explicit limitations.
+- **Command Centre** — up to three priority events, active contradictions, asset flip conditions, exact COT changes, political filings and source failures. No hidden composite risk score.
+- **Impact Feed** — versioned directional interpretations with magnitude, horizon, confidence, mechanism, confirmation, invalidation and sources.
+- **COT Positioning** — category filters, contract search, net/long-short/weekly-change modes, history and exact CFTC identity disclosure.
+- **Political Flow** — recent filings, politician profiles, ticker reverse search, disclosed owner/account, statutory ranges, lazy annual history and filing-ledger health.
+- **Asset Workspaces** — display-only external chart, supporting/contradicting evidence, flip rules, impact events, calendar catalysts, exact COT and physical checks.
+- **Calendar & Reactions** — Melbourne release times, independent previous/consensus/actual source states and immediate/close/+1/+5 reaction lifecycle.
+- **Macro Monitor** — official rates, liquidity, real yields, breakevens, credit and broad US dollar series with individual observation dates.
+- **Source Health** — independent observation, collection, generation, cadence, last-success and error records.
+- **Production hardening** — recursive syntax checks, generated-data validation, static accessibility/performance audit, payload budgets and release-route verification.
 
-The system is intentionally **research-led rather than real-time**. Fast external widgets are kept separate from internal verified analysis.
+BR-20 is optional and has not been started. It covers licensed/live feeds, consensus data, accounts, alerts and backend services.
 
-## Quick start
+## Architecture
 
-No frontend build step is required.
+The site is plain HTML, CSS and JavaScript deployed to GitHub Pages. There is no application server, database, secret-bearing browser request, framework or bundler.
+
+Core runtime:
+
+- `site/index.html`
+- `site/core/store.js`
+- `site/core/format.js`
+- `site/core/adapters.js`
+- `site/core/router.js`
+- `site/core/feature-loader.js`
+- `site/core/freshness.js`
+
+Feature routes are loaded through one ordered manifest under `site/features/`.
+
+## Main routes
+
+- `#home`
+- `#news` and `#news/<id>`
+- `#cot`
+- `#trackers` and `#trackers/<id>`
+- `#asset/<id>` and legacy `#product/<id>`
+- `#events`, `#calendar`, `#calendar/<id>`
+- `#rates`, `#macro`
+- `#sources`, `#source-health`
+
+## Data and trust boundaries
+
+Official automated data currently includes:
+
+- CFTC exact-contract COT records;
+- selected FRED macro and rates series;
+- official House and Senate political disclosure filings.
+
+Repository-maintained delayed research supplies regime, asset bias, physical checklists, event scenarios and curated impact records.
+
+Unavailable data remains unavailable rather than being replaced with a similar contract, estimate or unsourced value.
+
+See:
+
+- `docs/DATA-SOURCES.md`
+- `docs/ARCHITECTURE.md`
+- `docs/RUNBOOK.md`
+
+## Local development
 
 ```bash
-git clone https://github.com/TheDiamondDealer/market-brief.git
-cd market-brief
 python -m http.server 8000 --directory site
 ```
 
 Open `http://localhost:8000`.
 
-Do not open `site/index.html` directly with `file://`; browser security rules can prevent widgets and local data loading from behaving normally.
-
-## Repository map
-
-```text
-.
-├── AGENTS.md                         # Instructions Codex reads before work
-├── README.md                         # Project overview and setup
-├── CONTRIBUTING.md                   # Change and review expectations
-├── operating-model.md                # Daily / weekly / monthly research model
-├── prompts/                          # Research-generation prompts and rules
-├── docs/
-│   ├── ARCHITECTURE.md               # System and data-flow design
-│   ├── CODEX-HANDOFF.md              # Exact Codex setup and starter tasks
-│   └── RUNBOOK.md                    # Operations and troubleshooting
-├── scripts/
-│   ├── update_political_disclosures.py
-│   ├── update_political_disclosures_strict.py
-│   └── ...                           # Free official-data collectors and validators
-├── site/
-│   ├── index.html                    # Static application shell and script order
-│   ├── data.js                       # Core seeded research state
-│   ├── intelligence-data.js          # Interpreted news and tracker definitions
-│   ├── political-data.js             # GENERATED political transaction cache
-│   ├── free-data.js                  # GENERATED official market-data cache
-│   ├── data/                          # Machine-readable generated JSON caches
-│   ├── products-*.js                 # Commodity research library
-│   ├── *-app.js / *-ui.js            # Rendering and interaction modules
-│   └── *.css                         # Dashboard styles
-└── .github/workflows/
-    ├── deploy-pages.yml
-    ├── update-political-disclosures.yml
-    └── ...                           # Scheduled data refresh and validation jobs
-```
-
-## Architecture in one minute
-
-1. GitHub Actions downloads free official data and disclosure records.
-2. Python collectors validate and normalize the source data.
-3. Collectors write static JSON and browser-ready JavaScript caches under `site/`.
-4. The browser loads ordered global data modules, then rendering modules.
-5. Any change under `site/**` triggers GitHub Pages deployment.
-
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full design.
-
-## Important source-of-truth rules
-
-### Generated files
-
-Do not manually maintain these as primary sources:
-
-- `site/political-data.js`
-- `site/data/political-disclosures.json`
-- `site/data/political-disclosures-summary.json`
-- generated official-market-data caches under `site/`
-
-Change the relevant collector, run it, validate the output, and commit both code and generated data when appropriate.
-
-### Political disclosures
-
-- Trade date and filing date are separate fields.
-- Late filings are retained permanently.
-- Spouse, member, joint and dependent ownership must remain exactly attributed.
-- Nancy Pelosi profiles must not describe Paul Pelosi’s transactions as Nancy personally trading.
-- Portfolio values are statutory ranges and reconstruction estimates, not brokerage balances.
-- Official House or Senate records outrank third-party parsers.
-
-### Market data and news
-
-- Never fabricate a price, consensus estimate, trade or filing.
-- Display source and freshness where practical.
-- TradingView widgets are external display/discovery layers; their data is not extracted into the internal bias engine.
-- Biases are conditional research views, not trade recommendations.
-
-## Validation
-
-Run these before merging changes:
+## Full validation
 
 ```bash
-# JavaScript syntax
-find site -maxdepth 1 -name '*.js' -print0 | xargs -0 -n1 node --check
-
-# Python collector syntax
-python -m py_compile scripts/*.py
-
-# Generated political disclosure data
-python -m json.tool site/data/political-disclosures.json >/dev/null
-python -m json.tool site/data/political-disclosures-summary.json >/dev/null
-node --check site/political-data.js
+python scripts/check_ci_pins.py
+python -m py_compile scripts/*.py tests/*.py
+find site tests/js -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+python scripts/validate_generated_data.py
+python scripts/audit_static_site.py
+python scripts/verify_release_routes.py
+python -m unittest discover -s tests -v
 ```
 
-For a visual check:
+The `Validate Market Brief` workflow enforces the same gates before merge.
 
-```bash
-python -m http.server 8000 --directory site
-```
+## Generated files
 
-Then verify at minimum:
+Do not manually edit generated market or political data. Change the owning collector/schema/fixture and let the workflow regenerate the output. The ownership table is in `docs/DATA-SOURCES.md`.
 
-- Command centre loads without console errors.
-- Direct hashes such as `#trackers`, `#cot`, `#rates` and `#scenarios` work.
-- Political tracker counts are non-zero after a successful import.
-- COT long/short charts render when history exists.
-- Mobile navigation remains usable.
+## Deployment
 
-## Automated workflows
+`site/` is deployed by `.github/workflows/deploy-pages.yml`. Successful collector runs invoke deployment, and relevant site/workflow pushes to `main` trigger deployment after BR-19.
 
-### GitHub Pages
+A deployment run and an independently verified public revision are different facts. Follow `docs/RUNBOOK.md` for live verification.
 
-`.github/workflows/deploy-pages.yml` deploys the `site/` directory whenever `site/**` changes.
+## Repository controls
 
-### Political disclosures
-
-`.github/workflows/update-political-disclosures.yml`:
-
-- checks official House and Senate sources on weekdays;
-- retains historical verified records;
-- validates that Pelosi history is not silently empty;
-- commits imported data or diagnostics;
-- rejects malformed asset rows.
-
-### Research cadence
-
-The intended operating cadence is defined in [operating-model.md](operating-model.md):
-
-- Daily tactical brief.
-- Weekly operational review.
-- Monthly strategic refresh.
-
-Monthly strategic files must not overwrite approved live regime, dossier or thresholds without explicit user approval.
-
-## Moving the project to Codex
-
-Yes: connect Codex to this GitHub repository and select it as the working environment. The repository now includes `AGENTS.md`, which provides persistent project rules to Codex, plus a dedicated [Codex handoff guide](docs/CODEX-HANDOFF.md).
-
-A good first task is:
-
-> Read `AGENTS.md`, `README.md`, `docs/ARCHITECTURE.md`, `docs/RUNBOOK.md` and `operating-model.md`. Audit the repository without changing files. Report the current architecture, generated-file boundaries, failing workflows, stale data and the five highest-priority technical risks.
-
-## Security
-
-- Never commit passwords, API keys, cookies, login exports or private tokens.
-- Use GitHub Actions secrets for any future credentialed integration.
-- Public official sources should normally require no repository secret.
-- Rotate any password that has been pasted into chat, an issue, a commit or a log.
-
-## Known limitations
-
-- The site is a growing static application with multiple ordered global scripts rather than a bundled module framework.
-- Some historical House PDF formats remain only partially parsed; profiles expose partial status instead of pretending coverage is complete.
-- Political portfolios are PTR-derived until complete annual holdings baselines are added.
-- TradingView supplies embedded charts/news but not an exportable data API for this project.
-- The internal news feed is delayed and interpreted, not a live wire.
-
-## Documentation
-
-- [Codex instructions](AGENTS.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Operations runbook](docs/RUNBOOK.md)
-- [Codex handoff](docs/CODEX-HANDOFF.md)
-- [Contributing](CONTRIBUTING.md)
-- [Research operating model](operating-model.md)
+Owner-only activation of the `main` protection ruleset remains tracked in GitHub issue #4 until it is enabled and tested.

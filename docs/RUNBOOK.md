@@ -1,8 +1,6 @@
-# Operations Runbook
+# Market Brief Operations Runbook
 
-## Purpose
-
-This runbook covers local development, validation, scheduled collectors, deployment and common failure modes for the Market Brief Intelligence Console.
+Last reviewed: 14 July 2026
 
 ## Local development
 
@@ -12,280 +10,208 @@ From the repository root:
 python -m http.server 8000 --directory site
 ```
 
-Open:
+Open `http://localhost:8000` and test hash routes directly.
 
-```text
-http://localhost:8000
-```
+Do not open `site/index.html` with a `file://` URL. Lazy political files and route assets require an HTTP origin.
 
-Useful direct routes:
+## Required local validation
 
-```text
-http://localhost:8000/#home
-http://localhost:8000/#news
-http://localhost:8000/#cot
-http://localhost:8000/#rates
-http://localhost:8000/#scenarios
-http://localhost:8000/#trackers
-```
-
-Use the browser console during smoke testing. A visually populated page can still contain script-order errors.
-
-## Standard validation
-
-### JavaScript
+Run before opening a pull request:
 
 ```bash
-find site -maxdepth 1 -name '*.js' -print0 | xargs -0 -n1 node --check
+python scripts/check_ci_pins.py
+python -m py_compile scripts/*.py tests/*.py
+find site tests/js -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+python scripts/validate_generated_data.py
+python scripts/audit_static_site.py
+python scripts/verify_release_routes.py
+python -m unittest discover -s tests -v
 ```
 
-### Python
+The GitHub `Validate Market Brief` workflow runs the same production gates.
 
-```bash
-python -m py_compile scripts/*.py
-```
+## Branch and merge procedure
 
-### Political disclosure caches
+1. Create one branch for one remodel or maintenance package.
+2. Do not mix generated data with presentation changes unless the collector owns the output.
+3. Open a pull request against `main`.
+4. Wait for `Validate Market Brief / offline-validation` to pass.
+5. Review the final diff and confirm unrelated routes or generated files were not changed.
+6. Squash-merge only after all required checks pass.
+7. Confirm the resulting main commit and any triggered collector/deployment run separately.
 
-```bash
-python -m json.tool site/data/political-disclosures.json >/dev/null
-python -m json.tool site/data/political-disclosures-summary.json >/dev/null
-node --check site/political-data.js
-```
+Owner-only repository protection remains tracked in GitHub issue #4 until the ruleset is activated and tested.
 
-### Political data sanity
+## Official market-data refresh
 
-```bash
-python - <<'PY'
-import json
-from pathlib import Path
+Workflow: `.github/workflows/update-free-market-data.yml`
 
-p = Path('site/data/political-disclosures-summary.json')
-data = json.loads(p.read_text())
-print('total trades:', data['totalTrades'])
-for key, item in data['trackers'].items():
-    print(key, item['trades'], item['holdings'], item['status'])
-PY
-```
+Collector entry point: `scripts/update_free_data_charts.py`
 
-Expected behaviour:
+The workflow:
 
-- Pelosi history is not zero after a successful historical import.
-- A partial parser status is allowed and should list filing IDs.
-- A source failure must not erase existing verified records.
-- Malformed page-header text must not appear as an asset.
+1. checks out current `main`;
+2. validates immutable Action pins;
+3. installs pinned dependencies;
+4. compiles collectors;
+5. collects official data;
+6. validates generated schemas and semantics;
+7. commits only if output changed;
+8. rebases against current `main`;
+9. revalidates;
+10. pushes the generated commit;
+11. invokes Pages deployment after success.
 
-## Running the political disclosure collector
+### COT incident rule
 
-Install dependencies:
+Never fix an unavailable COT row by selecting a similarly named contract. Update `scripts/cot_contracts.json` only after confirming exact code, accepted market name, exchange, report family and category from the official CFTC dataset. Add or update fixtures and tests in the same pull request.
 
-```bash
-python -m pip install requests beautifulsoup4 pdfplumber
-```
+## Political disclosure refresh
 
-Run the hardened collector:
+Workflow: `.github/workflows/update-political-disclosures.yml`
 
-```bash
-POLITICAL_DISCLOSURE_START_YEAR=2012 \
-POLITICAL_DISCLOSURE_TIMEOUT=60 \
-POLITICAL_REQUIRE_TRADES=1 \
-python scripts/update_political_disclosures_strict.py
-```
+Entry point: `scripts/update_political_disclosures_ledger.py`
 
-Then inspect:
+The collector:
 
-```text
-site/data/political-disclosures-summary.json
-```
+- discovers official House and Senate filings;
+- records discovery/download/parser state in `site/data/political/filing-ledger.json`;
+- records parser version and SHA-256 content hash;
+- retains verified history through temporary failures;
+- retries partial and failed filings;
+- builds compact summary, annual profile files and search indexes;
+- validates annual totals against retained canonical history before commit.
 
-Do not judge success only from the process exit code. Inspect counts, latest filing dates, error lists and a sample of source URLs.
+### Political failure triage
 
-## Adding a tracked politician
+1. Open `#sources` and inspect the filing-ledger status.
+2. Open `site/data/political/filing-ledger.json` for filing-specific error and next-retry metadata.
+3. Confirm the official filing still exists.
+4. Reproduce with the existing parser fixture or add a new fixture.
+5. Increment parser version when previously parsed filings require reprocessing.
+6. Never delete prior verified transactions merely because the current source request failed.
 
-1. Add the person to the tracker definitions in `site/politicians.js`.
-2. Add the person’s aliases and chamber to `TRACKERS` in `scripts/update_political_disclosures.py`.
-3. Preserve exact first/last-name matching rules to avoid importing a different person.
-4. Run the collector locally.
-5. Inspect transaction samples and source PDFs/pages.
-6. Confirm the generated tracker is loaded into the browser.
-7. Confirm the activity board and stock-first search update.
-8. Document any source-specific parser limitation.
+## Curated research updates
 
-Do not add a tracker only to the interface; a tracker is not operational until its collector mapping and generated data path work.
+Research globals remain repository-maintained delayed inputs. When editing them:
 
-## Deployment
+- preserve source and event dates;
+- separate fact from interpretation;
+- include mechanism, confirmation and invalidation where known;
+- leave horizon or confidence `unclear` when not supplied;
+- keep consensus `Not sourced` until an approved provider exists;
+- do not insert live-price claims into static research records.
 
-GitHub Pages deploys the `site/` directory through:
+## Generated-file ownership
 
-```text
-.github/workflows/deploy-pages.yml
-```
+See `docs/DATA-SOURCES.md`.
 
-A commit touching `site/**` should trigger deployment.
+Do not manually edit:
 
-After a deployment:
+- `site/free-data.js`;
+- `site/data/free-market-data.json`;
+- `site/political-data.js`;
+- `site/data/political-disclosures*.json`;
+- `site/data/political/**` generated manifests, annual files, indexes or ledger.
 
-1. Wait for the Pages workflow.
-2. Open the live URL.
-3. Hard refresh with `Ctrl+F5` or use a private window.
-4. Check the affected route directly.
-5. Open developer tools and confirm no 404 or JavaScript errors.
-6. Verify the page displays the new generated timestamp or expected behaviour.
+Change the owning generator, fixture or schema, then let the workflow regenerate output.
 
-A commit to `main` is not proof that Pages is live.
+## Pages deployment
 
-## Workflow troubleshooting
+Workflow: `.github/workflows/deploy-pages.yml`
 
-## Political trackers show zero
+The workflow can be:
 
-Check in this order:
+- invoked by successful collector workflows;
+- run manually with `workflow_dispatch`;
+- triggered by a relevant push to `main` after BR-19.
 
-1. Does `site/data/political-disclosures-summary.json` contain non-zero counts?
-2. Does `site/political-data.js` exist and pass `node --check`?
-3. Is the generated data module loaded by the page before tracker rendering, or is a documented loader used?
-4. Does the browser network panel show a 404 for `political-data.js`?
-5. Does the console show `fallback` or tracker initialization errors?
-6. Is Pages serving an older cached deployment?
+Deployment steps:
 
-If JSON has populated data but the UI shows zero, the problem is almost certainly frontend loading/hydration, not the source importer.
+1. validate Action pins;
+2. compile Python and recursively syntax-check JavaScript;
+3. validate generated data;
+4. run static production audit and release route verification;
+5. run offline tests;
+6. upload `site/` as the Pages artifact;
+7. deploy through `actions/deploy-pages`.
 
-## Political importer fails
+A successful deployment workflow proves that GitHub accepted and deployed an artifact. It does not by itself prove that the public URL is serving the new revision. Perform the independent checks below.
 
-Inspect:
+## Independent live verification
 
-- `sourceStatus.house.errors`
-- `sourceStatus.senate.errors`
-- `sourceStatus.parsing.errors`
-- the failing filing ID and official URL
-- whether the response is really a PDF/HTML page
-- whether an old PDF layout needs another parser fallback
+Public site: `https://thediamonddealer.github.io/market-brief/`
 
-Never solve a parser error by dropping the filing silently.
+After deployment:
 
-## Malformed political asset names
+1. open the root URL and confirm HTTP success;
+2. open `data/free-market-data.json` and compare `generatedAt` with the repository;
+3. open `data/political/manifest.json` and confirm tracker and trade counts;
+4. test direct hashes:
+   - `#home`
+   - `#news`
+   - `#cot`
+   - `#trackers`
+   - `#asset/gold`
+   - `#calendar`
+   - `#macro`
+   - `#sources`
+5. confirm the browser console has no route-asset load error;
+6. distinguish a deployment trigger from an independently observed live revision in release notes.
 
-Symptoms include:
+GitHub Pages and edge caches may temporarily serve an older artifact. Record the exact time and evidence if live verification is inconclusive.
 
-- null characters;
-- `Name: Hon.`;
-- `State/District:`;
-- table header text inside the asset;
-- a non-statutory amount such as a stray single price.
+## Source-health triage
 
-Required response:
+Use `#sources` to inspect independent records. Do not rely only on the page-level generation timestamp.
 
-1. reject the malformed row;
-2. reparse the filing using the fallback parser;
-3. preserve other valid historical rows;
-4. add or strengthen validation;
-5. rerun the collector and inspect the summary.
+- `current` — within expected cadence.
+- `delayed` — outside normal cadence but potentially usable.
+- `stale` — materially old.
+- `partial` — mixed success and retryable failures.
+- `failed` — latest run error.
+- `unavailable` — no approved source or mapping.
+- `unknown` — timestamp cannot be interpreted safely.
 
-## COT page has current values but no history chart
+Check source observation, collection, generation and last successful run separately.
 
-Check:
+## Common failure modes
 
-1. the generated COT records contain `history52` arrays;
-2. the intended primary contract was selected;
-3. the chart script is loaded;
-4. the report date is current;
-5. stale or unsafe contract mappings were not substituted.
+### Validation passes but a route is blank
 
-A current balance card can render from one observation while the historical line chart still lacks data.
+- confirm the route package is listed in `site/core/feature-loader.js`;
+- confirm its JavaScript and CSS paths exist;
+- run `node --check` on the nested feature file;
+- run `python scripts/verify_release_routes.py`;
+- inspect the browser console for feature-loader errors.
 
-## Wrong COT contract selected
+### Browser shows old Political Flow data
 
-Reject variants such as:
+- compare `site/data/political/manifest.json` and the deployed file;
+- hard refresh or use a cache-busting query for diagnosis;
+- confirm the update workflow pushed a generated commit before deployment;
+- verify the browser bootstrap is compact and not the retained full-history JSON.
 
-- micro;
-- mini;
-- ultra;
-- index;
-- financial;
-- cross-rate;
-- a similarly named contract on the wrong exchange.
+### Macro panel says current but a series is old
 
-Prefer unavailable status over a misleading substitute.
+- inspect the individual observation date in `#macro` or `#sources`;
+- do not use the FRED pipeline status as the series status;
+- confirm expected cadence and holiday gaps before changing thresholds.
 
-## Rates page is stale
+### Static audit fails a payload budget
 
-Check the generated source-status data and the last successful observation date.
+- identify whether full retained data entered the browser bootstrap;
+- split by route/year or move to a lazy file;
+- remove duplicate route assets;
+- increase a budget only with a documented reason and review.
 
-Remember:
+### A legacy file appears unused
 
-- official daily series may update after the market close;
-- weekends and holidays create expected gaps;
-- different series can have different latest dates.
+- search the repository for imports and script tags;
+- run route verification and the complete offline suite;
+- remove or retire it in an isolated pull request;
+- preserve a compatibility shim when a stable path may still be loaded by the shell.
 
-Do not stamp the whole dashboard current merely because one series updated.
+## Optional BR-20 boundary
 
-## Scenario Lab chart is blank
-
-Check:
-
-- browser content blockers;
-- TradingView script availability;
-- widget container dimensions;
-- symbol validity;
-- console network/CSP errors.
-
-The project’s scenario explanation should still function with a verified user-entered current price even if TradingView is unavailable.
-
-## Sidebar or mobile layout regression
-
-Test:
-
-- desktop width above 1100 px;
-- tablet around 800–1000 px;
-- mobile below 780 px;
-- long navigation lists;
-- sticky panels;
-- chart height;
-- footer and disclaimers.
-
-Avoid fixed overlays that cover navigation items.
-
-## Data recovery
-
-Generated history is committed to Git, so recovery normally means:
-
-1. identify the last known-good generated-data commit;
-2. compare the collector/code change that followed;
-3. restore generated files only if the source pipeline cannot safely regenerate them;
-4. fix the collector;
-5. rerun and validate;
-6. avoid force-pushing over useful history.
-
-## Safe rollback
-
-For a frontend regression:
-
-1. revert the specific feature commit;
-2. preserve newer generated-data commits where compatible;
-3. rerun JavaScript checks;
-4. deploy;
-5. verify the affected hash route.
-
-For a collector regression:
-
-1. stop or disable the scheduled workflow if it could corrupt data;
-2. retain the last verified cache;
-3. fix and test the collector against known filings;
-4. re-enable scheduling after validation.
-
-## Release checklist
-
-Before declaring a feature complete:
-
-- [ ] Source of truth identified.
-- [ ] Generated-file boundaries respected.
-- [ ] JavaScript syntax passes.
-- [ ] Python syntax passes.
-- [ ] JSON validates.
-- [ ] Local site tested.
-- [ ] Direct route tested.
-- [ ] Desktop and mobile checked.
-- [ ] No secret added.
-- [ ] Partial/stale states remain honest.
-- [ ] Documentation updated.
-- [ ] Deployment triggered.
-- [ ] Live deployment independently verified or explicitly described as unverified.
+Do not add live news, licensed prices, consensus feeds, user accounts, alerts, a database or secret-bearing APIs as part of routine maintenance. Those require explicit BR-20 approval and separate licensing/security design.
