@@ -1,0 +1,52 @@
+name: Update free market data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekday morning refresh for Melbourne after the US session.
+    - cron: '20 21 * * 1-5'
+    # Extra Saturday refresh after the normal Friday COT publication window.
+    - cron: '15 2 * * 6'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-free-market-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate collector
+        run: python -m py_compile scripts/update_free_data.py
+
+      - name: Collect official free data
+        run: python scripts/update_free_data.py
+
+      - name: Validate generated files
+        run: |
+          python -m json.tool site/data/free-market-data.json >/dev/null
+          node --check site/free-data.js
+
+      - name: Commit changed data
+        run: |
+          if git diff --quiet -- site/free-data.js site/data/free-market-data.json; then
+            echo 'No data changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site/free-data.js site/data/free-market-data.json
+          git commit -m 'Refresh free official market data'
+          git push
