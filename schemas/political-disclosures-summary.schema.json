@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thediamonddealer.github.io/market-brief/schemas/political-disclosures-summary.schema.json",
+  "title": "Market Brief political disclosure summary",
+  "type": "object",
+  "required": ["generatedAt", "generatedAtHuman", "totalTrades", "trackers", "sourceStatus"],
+  "properties": {
+    "generatedAt": {"type": "string", "minLength": 1},
+    "generatedAtHuman": {"type": "string", "minLength": 1},
+    "totalTrades": {"type": "integer", "minimum": 1},
+    "trackers": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "chamber", "status", "trades", "holdings"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "chamber": {"enum": ["House", "Senate"]},
+          "status": {"type": "string", "minLength": 1},
+          "trades": {"type": "integer", "minimum": 0},
+          "holdings": {"type": "integer", "minimum": 0}
+        },
+        "additionalProperties": true
+      }
+    },
+    "sourceStatus": {"type": "object"}
+  },
+  "additionalProperties": true
+}
