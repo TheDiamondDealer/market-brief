@@ -1,14 +1,12 @@
 # Dashboard Intelligence Data Update
 
-Run this as part of every successful daily market brief after the written report is complete.
+Run this after every successful daily market brief.
 
-Update `site/intelligence-data.js`, `site/command-centre-data.js` and the research-controlled sections of `site/research-data.js` on `main` without changing application code or styling.
+Update `site/intelligence-data.js`, `site/command-centre-data.js` and the research-controlled portions of `site/research-data.js` on `main`. Do not change application code or styling. Do not manually overwrite `site/free-data.js` or `site/data/free-market-data.json`; the official-data workflow owns those files.
 
-Do **not** manually overwrite `site/free-data.js` or `site/data/free-market-data.json`. Those files are produced by the free official-data workflow.
+## Evidence hierarchy
 
-## Source hierarchy
-
-Use this order of evidence:
+Use evidence in this order:
 
 1. official government, regulator, exchange, central-bank or company release
 2. primary filing, report, speech or dataset
@@ -16,209 +14,176 @@ Use this order of evidence:
 4. specialist commodity or industry publication
 5. social media only as an unconfirmed discovery lead
 
-For market-moving geopolitical or policy claims, prefer an official announcement or two independent reliable sources. Distinguish clearly between announced, proposed, enacted, effective, delayed, reversed and price-confirmed.
+For market-moving policy or geopolitical claims, use an official announcement or two reliable independent sources. Distinguish announced, proposed, enacted, effective, delayed, reversed and price-confirmed.
 
-TradingView widgets are an external discovery layer only. Do not copy, scrape, parse or treat TradingView headlines, chart values or indicators as inputs to the bias engine. Independently verify any story discovered there.
+TradingView widgets are an external discovery and charting layer only. Never scrape or import TradingView headlines, chart values or indicators into the bias engine. Independently verify anything discovered there.
 
 ## Command centre
 
-Refresh `fallback.commandCentre` from the latest verified daily research.
+Refresh `fallback.commandCentre` with:
 
-Update:
+- successful-run timestamp
+- risk state, transparent 0–100 score and cautious confidence label
+- concise summary and one important contradiction
+- three to six visible risk inputs with reading, score and reason
+- conditions that would move the gauge into another state
+- next high-impact event in Melbourne time and why it matters
+- three to six material changes from the previous successful state
 
-- `updated` from the successful research run
-- risk `state`, integer `score` from 0 to 100 and confidence label
-- one concise risk summary
-- one important contradiction or divergence
-- three to six transparent risk inputs, each with reading, score and reason
-- two to four conditions that would move the risk state back toward neutral or into a different regime
-- the next high-impact event, Melbourne-readable time and regime-adjusted logic
-- three to six material changes since the previous successful research state
-
-The risk score is an interpretable summary, not a prediction probability. Do not increase precision beyond the quality of the underlying evidence.
+The risk score is an interpretable summary, not a probability.
 
 ## Asset bias engine
 
-Refresh `fallback.assetBiases` for the actively monitored assets.
+Refresh `fallback.assetBiases` for actively monitored assets. For each asset include:
 
-For each asset include:
-
-- stable `id`, name, group and current research reference
-- directional bias using cautious labels such as Bullish, Bearish, Neutral, Higher yields or Bullish / unstable
+- stable ID, name, group and verified research reference
+- cautious directional label
 - confidence from 0 to 100
-- integer total score derived from visible component scores
+- integer total equal to the visible component scores
 - primary driver
-- COT or positioning state from `window.freeMarketData` when current; explicitly say stale, pending or unavailable otherwise
+- current COT/positioning state from `window.freeMarketData`, or explicitly stale/pending/unavailable
 - next relevant event
-- exact condition that would change the bias
-- product link when the asset has a deep-dive page
-- three to five visible components such as Macro, Rates, Physical, Positioning, China, Policy or Cross-asset
-- each component must use a score from -2 to +2 and a one-sentence explanation
+- exact condition that changes the bias
+- product deep-dive link where available
+- three to five components scored from -2 to +2 with one-sentence explanations
 
-The total must equal the sum of the visible components. Confidence is based on agreement, evidence quality and confirmation—not on the absolute score alone. Preserve contradictions rather than forcing every input to agree.
+Confidence reflects agreement, evidence quality and confirmation. Do not mechanically treat a high COT percentile as bullish or a low percentile as bearish; decide whether positioning confirms momentum or creates contrarian liquidation/squeeze risk.
 
-Do not mechanically treat high COT percentile as bullish or low percentile as bearish. Decide whether positioning confirms momentum or creates contrarian crowding/liquidation risk.
+## Rates and liquidity
 
-## Rates and liquidity interpretation
+Review the latest official-data cache:
 
-Read the latest successful values from the free official-data cache. At minimum review:
-
-- US 2-year, 5-year, 10-year and 30-year yields
+- US 2-, 5-, 10- and 30-year yields
 - US 10-year real yield
-- US 10-year inflation breakeven
-- 2s10s and 5s30s curve spreads
+- 10-year inflation breakeven
+- 2s10s and 5s30s
 - high-yield credit spread
 - effective federal funds rate and SOFR
 - trade-weighted US dollar
 
-Classify the dominant reason yields moved:
-
-- stronger or weaker growth
-- inflation or inflation-risk premium
-- tighter or easier policy expectations
-- bond supply or term premium
-- risk-off demand or forced deleveraging
-
-Do not give a yield move one universal equity, gold or currency interpretation without identifying its cause.
+Classify why yields moved: growth, inflation risk, policy expectations, bond supply/term premium, or risk-off/deleveraging. Do not assign one universal impact to a yield move before identifying its cause.
 
 ## Physical commodity confirmation
 
-Update the non-automatic readings in `window.marketResearchData.physicalChecklists` when verified evidence changes. Preserve automatic FRED and CFTC readings for the application to populate.
-
-A futures-price move alone is not physical confirmation.
+Update non-automatic readings in `window.marketResearchData.physicalChecklists`. Preserve automatic FRED and CFTC readings. A futures-price move alone is not physical confirmation.
 
 ### Gold
 
-Review real yields, US dollar, COT positioning, ETF flows, central-bank demand and regional physical premiums.
+Review real yields, US dollar, COT, ETF flows, central-bank demand and regional physical premiums.
 
-### Oil
+### Oil — always separate Brent and WTI
 
-Review Brent/WTI time spreads, gasoline and diesel cracks, commercial inventories, tanker/export flows, refinery utilisation, OPEC+ supply and managed-money positioning.
+Never write “oil” as one undifferentiated market.
+
+For **Brent**, review:
+
+- outright price and front spreads
+- seaborne cargo availability and tanker/export flows
+- OPEC+ supply and compliance
+- North Sea, Gulf, Russian and other export disruptions
+- global refinery runs and diesel/gasoline cracks
+- Brent managed-money positioning when a current verified contract is available
+
+For **WTI**, review:
+
+- outright price and front spreads
+- EIA commercial inventories and Cushing stocks
+- US production, Canadian inflows and Gulf Coast exports
+- US refinery utilisation and crude runs
+- WTI managed-money positioning from the exact current contract shown in the CFTC cache
+
+Always evaluate the **Brent–WTI spread**. State whether the move is global/seaborne, US-specific or broad across both benchmarks. Do not substitute a stale NYMEX series for a current ICE/CFTC-covered WTI series without naming the exact contract.
+
+### Natural gas — always separate US Henry Hub and UK NBP
+
+Never use TTF as though it were the UK benchmark. TTF is a continental-European cross-check; UK gas is NBP.
+
+For **US Henry Hub**, review:
+
+- EIA storage versus seasonal norms
+- dry-gas and associated-gas production
+- LNG feedgas, terminal outages/restarts and export capacity
+- weather and gas-fired power burn
+- pipeline constraints and regional basis
+- current verified Henry Hub positioning when available
+
+For **UK NBP**, review:
+
+- UK system balance and storage
+- UK Continental Shelf and Norwegian flows
+- interconnector imports/exports
+- LNG arrivals and regasification
+- UK weather, wind generation and gas-fired power demand
+- industrial demand
+- NBP positioning only when a current exact official contract is available; otherwise show unavailable
+
+Treat the Henry Hub–NBP divergence as a signal. Explain whether LNG, pipelines, storage or weather is preventing regional convergence.
 
 ### Copper
 
-Review LME/COMEX/Shanghai inventories, treatment charges, regional premiums, China grid/manufacturing demand, mine disruptions, scrap response and COT positioning.
+Review LME/COMEX/Shanghai inventories, treatment charges, regional premiums, China grid/manufacturing demand, mine disruptions, scrap response and COT.
 
 ### Silver
 
-Review the gold/rates channel, industrial metals and manufacturing, COT, exchange inventories, physical premiums and ETF/bar-and-coin flows.
+Review the gold/rates channel, industrial metals and manufacturing, COT, exchange inventories, premiums and ETF/bar-and-coin flows.
 
 ### Rare earths
 
-Review individual NdPr, dysprosium and terbium prices, Chinese quotas/export controls, China versus ex-China premiums, magnet prices/lead times and ex-China project milestones.
+Review NdPr, dysprosium and terbium separately; Chinese quotas/export controls; China versus ex-China premiums; magnet prices/lead times; and ex-China project milestones.
 
-For each updated item retain the exact source, observation date/freshness and one-sentence interpretation. If no dependable value is available, leave it pending rather than estimate it.
+For every updated physical reading retain the exact source, observation date/freshness and one-sentence interpretation. Leave unavailable values pending rather than estimating them.
 
 ## Event reaction lifecycle
 
-Maintain `window.marketResearchData.eventReactions` for the highest-impact scheduled and completed events.
+Maintain `window.marketResearchData.eventReactions` for the highest-impact events.
 
 Before the event record:
 
-- official release name and Melbourne-readable time
+- official release and Melbourne-readable time
 - previous value
-- consensus only when sourced from a reliable public source; otherwise state that no dependable free consensus is available
-- upside, neutral/mixed and downside scenarios
+- consensus only when reliably sourced; otherwise say no dependable free consensus is available
+- upside, mixed and downside scenarios
 - assets expected to react and current-regime transmission
 
 After the event record:
 
 - actual value and revisions
-- surprise versus a verified consensus when available
-- immediate reaction
-- market-close reaction
-- one-session reaction
-- five-session reaction
+- surprise versus verified consensus when available
+- immediate, market-close, +1 session and +5 session reactions
 - verdict: confirmed, faded, reversed, structural or too early
 
-Do not fill future reaction windows early. Preserve the original pre-event scenario so later reviews can test whether the logic was correct.
+Do not fill future reaction windows early. Preserve the original scenario for later review.
 
 ## Trigger proximity
 
-Keep `site/data.js` trigger references synchronized with the approved `thresholds.md` file.
-
-A price touch is a warning unless the confirmation rule is satisfied. Preserve the distinction between:
-
-- warning
-- triggered
-- confirmed
-- invalidated
-
-Never invent a current value. If the value cannot be verified, keep the prior verified value and mark its freshness clearly.
+Keep `site/data.js` synchronized with `thresholds.md`. Preserve warning, triggered, confirmed and invalidated as separate states. Never invent a current value; keep the prior verified value and mark freshness when a new value cannot be verified.
 
 ## News feed
 
-Refresh `fallback.newsFeed` with the most decision-relevant three to eight stories from the daily research.
+Refresh `fallback.newsFeed` with three to eight decision-relevant stories. Each item must include:
 
-For each story include:
+- stable ID, category, High/Medium impact and status
+- Melbourne-readable date/time
+- concise headline and two-sentence summary
+- exact source and URL
+- three to six affected assets with expected direction under the current regime and reason
+- First order, Second order, Cross asset and Confirmation/Invalidation channels
 
-- unique stable `id`
-- `category`: Macro, Politics, Energy, Precious, Equities, Battery, Bulk or FX
-- `impact`: High or Medium; omit low-value filler
-- `status`: New, Developing, Price-confirmed, Price-diverging or Too early
-- event date/time in Melbourne-readable form
-- concise headline
-- two-sentence summary
-- exact source name and URL
-- `assets`: three to six assets, each with expected direction under the current regime and a one-sentence reason
-- `channels`: First order, Second order, Cross asset and Confirmation/Invalidation
+This is a delayed research digest, not a live wire. Keep active news to no more than 30 items.
 
-The feed is a delayed daily digest, not a live wire. Do not imitate another platform's wording or visual identity. Apply the live regime and sign-flips from `regime-state.md`.
+## Political trackers
 
-## Political trackers and stock-first search
+Use official House, Senate and executive-branch records as primary sources. Third-party tools may assist discovery but cannot override the filing.
 
-The stock-first search reads directly from every tracker's `trades` and `portfolio.holdings` arrays. No separate search index is required.
+For every verified transaction retain asset/ticker, transaction type, owner, trade date, filing date, statutory range, source URL and calendar-day lag. Keep late filings permanently. Never call a spouse trade the member’s personal trade or calculate performance before public filing.
 
-When importing disclosures:
-
-- keep ticker and company description together where possible, for example `NVDA — NVIDIA Corp`
-- preserve transaction date, filing date, disclosure lag, owner/account, amount range and source URL
-- retain historical records permanently, including late filings
-- update portfolio holdings only from verified annual disclosures and subsequent verified transactions
-- keep member, spouse, joint, dependent, trust and managed-account labels exact
-
-This automatically makes the transaction discoverable from both the politician page and the stock-first reverse search.
-
-## Trump tracker
-
-Update policy events only when they are verified and market-relevant. Prioritise primary sources:
-
-- White House presidential actions and fact sheets
-- Federal Register
-- USTR and Commerce releases
-- official statements, followed by high-quality reporting for context
-
-Classify each item as threat, proposal, executive action, implementation, exemption, pause, retaliation or de-escalation. Include target country/sector, announcement date, effective date when verified, current status, affected assets and the transmission channel.
-
-Keep the tariff impact matrix structural. Do not mark a matrix row as an active policy unless a verified policy event exists.
-
-For financial transactions, use only public financial disclosures or a licensed data source. State when accounts are third-party managed or discretionary. Never describe disclosure data as real-time or imply personal direction when that is not established.
-
-## Congressional trackers
-
-Check for new official House and Senate transaction reports and annual disclosures. Use the official filing as the primary source; third-party parsers can assist discovery but must not override the filing.
-
-For each verified transaction include:
-
-- asset/ticker and asset description
-- purchase, sale, exchange or option exercise
-- owner exactly as disclosed
-- transaction date
-- filing date
-- statutory amount range
-- source filing URL
-- disclosure lag in calendar days
-
-Do not call a spouse transaction the member's personal trade. Do not use the filing date as the trade date. Do not calculate performance before the filing became public; avoid look-ahead bias.
-
-If no new verified filing exists, leave the complete trade history and portfolio unchanged and update only the checked date.
+For Trump policy events, classify threat, proposal, executive action, implementation, exemption, pause, retaliation or de-escalation. Include target, announcement date, effective date when verified, status, affected assets and transmission channel.
 
 ## Safety and quality
 
-- Never invent a trade, holding, amount, date, return, source, owner, ticker, market price, physical-market reading or economic release.
+- Never invent a trade, holding, amount, date, return, source, owner, ticker, market price, physical reading or economic release.
 - Preserve older verified items unless correcting a documented error.
-- Keep no more than 30 news items in the active feed; political transactions use annual archives rather than deletion.
-- Escape apostrophes and maintain valid JavaScript syntax.
-- The repository JavaScript and free-data validation workflows must pass before treating the update as complete.
-- Commit the research-data update to `main`; this triggers GitHub Pages deployment.
-- The dashboard must continue to say that this is research, not financial advice.
+- Escape apostrophes and maintain valid JavaScript.
+- JavaScript and free-data workflows must pass before completion.
+- Commit data updates to `main`; this triggers Pages deployment.
+- Keep the research/not-financial-advice warning visible.
