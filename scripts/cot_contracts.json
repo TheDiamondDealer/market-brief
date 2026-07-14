@@ -49,16 +49,17 @@
     {
       "id": "oil-wti",
       "label": "WTI crude oil",
-      "status": "verified",
+      "status": "unavailable",
       "reportType": "disaggregated",
       "category": "Managed money",
       "datasetId": "72hh-3qpy",
-      "cftcContractCode": "067651",
-      "expectedExchange": "NEW YORK MERCANTILE EXCHANGE",
-      "acceptedNames": ["CRUDE OIL, LIGHT SWEET - NEW YORK MERCANTILE EXCHANGE"],
-      "rejectedTerms": ["E-MINI", "MICRO", "FINANCIAL", "ICE FUTURES", "INDEX"],
+      "cftcContractCode": null,
+      "expectedExchange": null,
+      "acceptedNames": [],
+      "rejectedTerms": ["E-MINI", "MICRO", "FINANCIAL", "ICE FUTURES", "1ST LINE", "INDEX"],
       "maximumAgeDays": 21,
-      "legacyIds": ["oil"]
+      "legacyIds": ["oil"],
+      "unavailableReason": "The historical NYMEX Light Sweet Crude Oil identity stops in 2022 in the current Disaggregated Futures-Only dataset. Current rows are ICE WTI or NYMEX WTI Financial products and must not be substituted for the intended managed-money benchmark."
     },
     {
       "id": "oil-brent",
@@ -77,16 +78,17 @@
     {
       "id": "gas-us",
       "label": "US Henry Hub natural gas",
-      "status": "verified",
+      "status": "unavailable",
       "reportType": "disaggregated",
       "category": "Managed money",
       "datasetId": "72hh-3qpy",
-      "cftcContractCode": "023651",
-      "expectedExchange": "NEW YORK MERCANTILE EXCHANGE",
-      "acceptedNames": ["NATURAL GAS - NEW YORK MERCANTILE EXCHANGE"],
-      "rejectedTerms": ["E-MINI", "MICRO", "FINANCIAL", "LAST DAY", "BASIS", "SWAP"],
+      "cftcContractCode": null,
+      "expectedExchange": null,
+      "acceptedNames": [],
+      "rejectedTerms": ["E-MINI", "MICRO", "FINANCIAL", "LAST DAY", "PENULTIMATE", "BASIS", "INDEX", "SWAP"],
       "maximumAgeDays": 21,
-      "legacyIds": ["natural-gas"]
+      "legacyIds": ["natural-gas"],
+      "unavailableReason": "The historical standard NYMEX Natural Gas identity stops in 2022 in the current Disaggregated Futures-Only dataset. Current Henry Hub rows are financial, basis, index, penultimate or different contract-size products and must not be substituted for the intended managed-money benchmark."
     },
     {
       "id": "gas-uk",
@@ -124,8 +126,11 @@
       "datasetId": "gpe5-46if",
       "cftcContractCode": "043602",
       "expectedExchange": "CHICAGO BOARD OF TRADE",
-      "acceptedNames": ["10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE"],
-      "rejectedTerms": ["ULTRA", "MICRO", "2-YEAR", "5-YEAR", "30-DAY"],
+      "acceptedNames": [
+        "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+        "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE"
+      ],
+      "rejectedTerms": ["ULTRA", "MICRO", "2Y", "5Y", "30-DAY", "ERIS"],
       "maximumAgeDays": 21
     },
     {
