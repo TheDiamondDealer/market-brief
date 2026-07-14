@@ -1,0 +1,48 @@
+name: Validate Market Brief
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'site/**'
+      - 'schemas/**'
+      - 'tests/**'
+      - '.github/workflows/validate.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install offline test dependencies
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pdfplumber jsonschema
+
+      - name: Compile Python
+        run: python -m py_compile scripts/*.py tests/*.py
+
+      - name: Check JavaScript syntax
+        run: find site -maxdepth 1 -name '*.js' -print0 | xargs -0 -n1 node --check
+
+      - name: Validate generated schemas and semantics
+        run: python scripts/validate_generated_data.py
+
+      - name: Run offline fixture and route tests
+        run: python -m unittest discover -s tests -v
