@@ -14,6 +14,14 @@
     ? `${row.crowding}; net ${signed(row.net)}; ${percentile(row)}; report ${row.reportDate}`
     : 'No verified current benchmark contract is mapped. Older or similarly named contracts are excluded.';
 
+  function updateProductReferences() {
+    if (typeof fallback === 'undefined' || !Array.isArray(fallback.products)) return;
+    const oil = fallback.products.find((item) => item.id === 'oil');
+    const gas = fallback.products.find((item) => item.id === 'natural-gas');
+    if (oil) oil.current = 'Brent reference ~$79.31; verify WTI on live chart';
+    if (gas) gas.current = 'Henry Hub reference ~$2.89; verify UK NBP on live chart';
+  }
+
   function updateBiasEngine() {
     if (typeof fallback === 'undefined' || !Array.isArray(fallback.assetBiases)) return;
     const oilBias = fallback.assetBiases.find((item) => item.id === 'oil');
@@ -31,6 +39,22 @@
     'US Henry Hub positioning': 'gas-us',
     'UK NBP positioning': 'gas-uk'
   };
+
+  function refreshDetailReference() {
+    const match = location.hash.match(/^#product\/(oil|natural-gas)$/);
+    if (!match) return;
+    const cards = $('productDetail')?.querySelectorAll('.deep-hero .card.stat');
+    if (!cards?.length) return;
+    const expected = match[1] === 'oil'
+      ? 'Brent reference ~$79.31; verify WTI on live chart'
+      : 'Henry Hub reference ~$2.89; verify UK NBP on live chart';
+    cards.forEach((card) => {
+      if (card.querySelector('.stat-label')?.textContent?.trim() === 'Current reference') {
+        const value = card.querySelector('.stat-value');
+        if (value) value.textContent = expected;
+      }
+    });
+  }
 
   function refreshEvidencePanel() {
     const panel = $('physicalEvidencePanel');
@@ -56,15 +80,21 @@
     });
   }
 
+  function refreshEnergyDetail() {
+    refreshDetailReference();
+    refreshEvidencePanel();
+  }
+
   function initialise() {
+    updateProductReferences();
     updateBiasEngine();
     const detail = $('productDetail');
     if (detail) {
-      const observer = new MutationObserver(() => requestAnimationFrame(() => requestAnimationFrame(refreshEvidencePanel)));
+      const observer = new MutationObserver(() => requestAnimationFrame(() => requestAnimationFrame(refreshEnergyDetail)));
       observer.observe(detail, { childList: true, subtree: true });
     }
-    window.addEventListener('hashchange', () => requestAnimationFrame(() => requestAnimationFrame(refreshEvidencePanel)));
-    refreshEvidencePanel();
+    window.addEventListener('hashchange', () => requestAnimationFrame(() => requestAnimationFrame(refreshEnergyDetail)));
+    refreshEnergyDetail();
   }
 
   initialise();
