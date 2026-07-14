@@ -1,6 +1,8 @@
 name: Apply BR-04 shell migration
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [br-04-shared-shell]
     paths:
