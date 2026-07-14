@@ -1,316 +1,131 @@
-# Architecture
+# Market Brief Architecture
 
-## Purpose
-
-Market Brief is a static GitHub Pages application backed by scheduled research and public-data collectors. It aims to provide an auditable market-intelligence workspace without requiring a paid market-data API or an always-on application server.
-
-The system has three distinct layers:
-
-1. **Source collection** — official datasets, filings and research inputs.
-2. **Normalization and interpretation** — Python collectors and curated JavaScript research objects.
-3. **Static presentation** — browser-rendered dashboard deployed from `site/`.
-
-## High-level data flow
-
-```text
-Official public sources                    Research process
-(CFTC, FRED, House, Senate, etc.)          (daily / weekly / monthly)
-             │                                      │
-             ▼                                      ▼
-      Python collectors                     curated research state
-             │                                      │
-             ├── validation                         ├── regime
-             ├── deduplication                      ├── news interpretation
-             ├── freshness/status                   ├── triggers
-             └── historical retention               └── product dossiers
-             │                                      │
-             └──────────────┬───────────────────────┘
-                            ▼
-                    static JS / JSON caches
-                            │
-                            ▼
-                     `site/index.html`
-                            │
-                            ▼
-                     GitHub Pages deploy
-```
+Last reviewed: 14 July 2026
 
 ## Runtime model
 
-The frontend is deliberately simple:
+Market Brief is a static GitHub Pages application. There is no application server, database, secret-bearing browser request or bundler.
 
-- no Node package install;
-- no bundler;
-- no application server;
-- no database at runtime;
-- no client-side secret;
-- no paid API required for the current version.
+The page starts from `site/index.html` and loads ordered global scripts. Core modules attach to `window.MarketBriefCore`:
 
-The browser receives static HTML, CSS and JavaScript. JavaScript modules currently share global objects, so **load order is part of the architecture**.
+- `site/core/store.js` — immutable slice store and subscriptions.
+- `site/core/format.js` — shared formatting and HTML escaping.
+- `site/core/adapters.js` — access to official, research, evidence and scenario globals.
+- `site/core/router.js` — hash router, aliases and pattern routes.
+- `site/core/feature-loader.js` — ordered feature manifest.
+- `site/core/freshness.js` — unified per-source and per-series health registry.
 
-## Frontend loading model
+`feature-loader.js` first loads global hardening CSS and the freshness registry. It then loads each route package in manifest order. This keeps `index.html` stable while allowing individual remodel packages to own their presentation.
 
-### Data-first principle
+## Route packages
 
-Data-defining scripts must execute before rendering scripts that consume them.
+| Route | Feature package | Primary host |
+| --- | --- | --- |
+| `#home` | `features/command-centre` | `view-home` |
+| `#news` and `#news/<id>` | `features/impact-feed` | `view-news` |
+| `#cot` | `features/cot` | `view-cot` |
+| `#trackers` and `#trackers/<id>` | `features/political-flow` | `view-trackers` |
+| `#asset/<id>` and `#product/<id>` | `features/asset-workspace` | `view-product-detail` |
+| `#events`, `#calendar`, `#calendar/<id>` | `features/calendar` | `view-events` |
+| `#rates`, `#macro` | `features/macro-monitor` | `view-rates` |
+| `#sources`, `#source-health` | `features/source-health` | dynamically created `view-sources` |
 
-Typical categories:
+Legacy route names are retained where users or bookmarks may still rely on them.
 
-1. Core and product data.
-2. Command-centre and intelligence data.
-3. Political tracker definitions.
-4. Generated official-data caches.
-5. Base application router/renderers.
-6. Feature-specific enhancement modules.
+## Data layers
 
-When adding a new generated file, confirm all three conditions:
-
-- the collector writes the file;
-- `site/index.html` or a documented loader loads the file;
-- the consumer rerenders when the data becomes available.
-
-A generated file existing in GitHub does not mean the live application uses it.
-
-### Routing
-
-The application uses URL hashes for views and selected detail pages. Examples:
-
-- `#home`
-- `#today`
-- `#news`
-- `#cot`
-- `#rates`
-- `#events`
-- `#scenarios`
-- `#trackers`
-- product-detail routes handled by the application router
-
-New modules must not intercept or overwrite unrelated routes.
-
-## Data domains
-
-## 1. Curated research state
-
-Primary examples:
-
-- `site/data.js`
-- `site/command-centre-data.js`
-- `site/intelligence-data.js`
-- `site/research-data.js`
-- `site/products-a.js`
-- `site/products-b.js`
-- `site/energy-expansion.js`
-
-These objects drive:
-
-- regime and sign-flip interpretation;
-- command-centre bias scores;
-- news transmission logic;
-- trigger zones;
-- weekly events;
-- product research;
-- Scenario Lab explanations.
-
-These are not automatically market truth. They must carry appropriate dates, sources and conditional language.
-
-## 2. Free official market data
-
-The free-data pipeline collects public observations for areas such as:
-
-- CFTC Commitments of Traders;
-- Treasury yields and curve spreads;
-- real yields and inflation breakevens;
-- credit spreads;
-- policy rates;
-- broad dollar measures.
-
-The collector should output both:
-
-- a browser-ready JavaScript cache; and
-- machine-readable JSON or compact diagnostics where useful.
-
-COT market selection must reject misleading alternatives such as micro, mini, financial, index, cross-rate or ultra contracts when the intended primary contract cannot be mapped safely.
-
-Unavailable data must remain unavailable. Do not substitute another benchmark merely to populate a card.
-
-## 3. Political disclosures
-
-Primary collector:
-
-- `scripts/update_political_disclosures.py`
-
-Hardening layer:
-
-- `scripts/update_political_disclosures_strict.py`
+### Official market layer
 
 Generated outputs:
 
-- `site/political-data.js`
+- `site/free-data.js`
+- `site/data/free-market-data.json`
+
+The free official-data collector produces FRED series, derived Treasury curve spreads, exact-registry CFTC positioning and source metadata. The JSON file is canonical; the JavaScript file is the browser bootstrap.
+
+### COT contract integrity
+
+The exact registry lives in `scripts/cot_contracts.json`, `scripts/cot_contracts.py` and `schemas/cot-contract-registry.schema.json`.
+
+A row is emitted only when contract code, accepted market name, exchange, report family and report category all match. Unavailable intended benchmarks remain unavailable.
+
+### Political disclosure layer
+
+Canonical retained history:
+
 - `site/data/political-disclosures.json`
 - `site/data/political-disclosures-summary.json`
+- `site/data/political/filing-ledger.json`
 
-Primary sources:
+Lazy browser layout:
 
-- House Clerk annual indexes and official Periodic Transaction Report PDFs.
-- Senate eFD search and official PTR report pages.
+- `site/data/political/manifest.json`
+- `site/data/political/summary.json`
+- `site/data/political/<politician>/summary.json`
+- `site/data/political/<politician>/<year>.json`
+- `site/data/political/indexes/politicians.json`
+- `site/data/political/indexes/tickers.json`
+- compact `site/political-data.js` bootstrap.
 
-### Political import flow
+`site/features/political-flow/political-data.js` fetches profile, annual and search-index files only when requested.
 
-```text
-House/Senate source
-       │
-       ▼
-filing discovery
-       │
-       ▼
-PDF/HTML parsing
-       │
-       ├── normalize dates
-       ├── normalize transaction type
-       ├── preserve owner
-       ├── preserve statutory amount range
-       ├── calculate disclosure lag
-       └── attach official filing URL
-       │
-       ▼
-stable-ID deduplication
-       │
-       ▼
-merge with previous verified history
-       │
-       ├── retain history on source failure
-       └── expose partial/error status
-       │
-       ▼
-transaction-derived portfolio estimate
-       │
-       ▼
-static JSON + browser JS
-```
+### Research layer
 
-### Portfolio limitations
+Repository-maintained research globals provide strategic baseline text, asset-bias records, physical checklists, event/reaction records, scenarios and delayed curated news.
 
-Until full annual holdings baselines are incorporated, the portfolio is **PTR-derived only**.
+Adapters convert legacy structures into versioned contracts without changing editorial meaning:
 
-Consequences:
+- `schemas/news-impact.schema.json`
+- `schemas/calendar-events.schema.json`
+- `features/impact-feed/impact-data.js`
+- `features/calendar/calendar-data.js`
 
-- pre-existing positions may be unknown;
-- a partial sale may not reveal the remaining position;
-- options may not map cleanly to share exposure;
-- value ranges are not current market values;
-- a zero reconstruction does not always prove the asset is absent.
+Unknown fields remain explicitly unknown rather than inferred.
 
-The UI must preserve this limitation.
+### External display layer
 
-## 4. TradingView integration
+TradingView is embedded inside asset workspaces as a display-only iframe. Prices and indicators are not copied into internal datasets.
 
-TradingView is used as an embedded external layer for:
+## Source health
 
-- interactive charts;
-- top stories;
-- an economic calendar.
+`site/core/freshness.js` normalises records into source observation time, collection time, generation time, expected cadence, last successful run, status, detail, error and URL.
 
-TradingView is not the internal market-data source.
+Statuses are `current`, `delayed`, `stale`, `failed`, `unavailable`, `partial` and `unknown`.
 
-The application must not:
+Macro series and COT contracts are evaluated independently. A current FRED or CFTC pipeline cannot conceal a stale individual observation.
 
-- scrape widget contents;
-- read indicator values out of the iframe;
-- claim that a paid personal TradingView subscription upgrades website data;
-- feed widget data into internal bias calculations.
+## Generated-file ownership
 
-Scenario analysis belongs to the project’s own research model and user-entered/verified reference prices.
+Generated outputs are never manually edited. Collector workflows regenerate, validate, commit only passing changes, rebase on current `main` and invoke Pages deployment after success. See `docs/DATA-SOURCES.md` for the ownership table.
 
-## Scheduled workflows
+## Validation architecture
 
-## Pages deployment
+`Validate Market Brief` runs:
 
-`.github/workflows/deploy-pages.yml`
+1. immutable GitHub Action pin validation;
+2. Python compilation;
+3. recursive JavaScript syntax validation under `site/` and `tests/js/`;
+4. generated schema and semantic validation;
+5. static performance, accessibility and payload audit;
+6. release route and generated-ownership verification;
+7. offline unit, fixture, workflow and route tests.
 
-- triggers when `site/**` changes;
-- uploads `site/` as the Pages artifact;
-- deploys using GitHub Pages actions;
-- uses Pages and OIDC permissions only.
+`scripts/audit_static_site.py` checks duplicate IDs/assets, local references, accessible names, iframe/link safety, viewport contracts and payload budgets.
 
-## Political disclosure refresh
+`scripts/verify_release_routes.py` verifies required routes, aliases, exact COT unavailable set and generated ownership.
 
-`.github/workflows/update-political-disclosures.yml`
+## Performance and accessibility
 
-- supports manual dispatch;
-- runs on a Melbourne-oriented weekday schedule;
-- installs parser dependencies;
-- compiles collectors;
-- runs the strict collector;
-- validates JSON and JavaScript;
-- commits data or diagnostics;
-- verifies Pelosi history is not silently empty;
-- rejects malformed asset rows;
-- ignores generated-data-only commits to avoid loops.
+`site/styles/hardening.css` is loaded before route packages. It provides visible keyboard focus, 44-pixel interactive targets, overflow-safe tables and text, reduced-motion support, forced-colour support and explicit 1440, 1024, 768 and 390-pixel viewport contracts.
 
-## Other official-data refreshes
+Political history is excluded from the initial browser payload. Route packages are loaded through one auditable manifest, and external charts use lazy iframes.
 
-Free official-data workflows should follow the same pattern:
+## Compatibility boundaries
 
-1. collect;
-2. validate;
-3. preserve prior verified data on temporary failure;
-4. write freshness and diagnostics;
-5. commit only meaningful changes;
-6. allow Pages deployment to publish the result.
+Legacy files remain where the static shell or older routes may still reference them. Do not delete a module until search and route tests prove no remaining consumer.
 
-## Research operating model
+`site/command-centre.js` is an explicit compatibility shim. The composite-score renderer is retired; the actual home route is `features/command-centre/command-page.js`.
 
-`operating-model.md` defines three altitudes:
+## Optional future architecture
 
-- **Daily tactical** — overnight moves, immediate catalysts and dashboard updates.
-- **Weekly operational** — synthesis, regime test and week-ahead calendar.
-- **Monthly strategic** — deeper structural refresh and draft strategic state.
-
-The monthly process has an approval boundary: it can create drafts, but cannot overwrite approved live dossier, regime or threshold state without explicit approval.
-
-## Failure design
-
-The project prefers visible partial operation over false completeness.
-
-Expected failure behaviour:
-
-- source unavailable → keep previous verified data;
-- parser fails for one filing → log the filing ID and retain other history;
-- benchmark mapping unsafe → show unavailable;
-- generated data empty unexpectedly → fail validation;
-- stale source → display stale/partial status;
-- TradingView unavailable → internal dashboard remains usable;
-- one feature script fails → other views should continue where possible.
-
-## Security model
-
-The current architecture is public and static.
-
-Therefore:
-
-- anything under `site/` is public;
-- browser JavaScript cannot safely contain secrets;
-- GitHub Actions logs must not reveal credentials;
-- future credentialed APIs must use GitHub Secrets and server-side collection;
-- login passwords must never be used as scraping credentials;
-- official public endpoints are preferred.
-
-## Scaling path
-
-The static architecture is suitable while:
-
-- updates are daily/weekly rather than tick-level;
-- datasets remain manageable as compressed JS/JSON;
-- no user authentication is required;
-- portfolio calculations are disclosure-based rather than per-user accounts.
-
-A backend becomes justified when the project needs:
-
-- large queryable history;
-- user accounts and server-side watchlists;
-- real-time licensed feeds;
-- secret-bearing APIs;
-- complex cross-dataset joins;
-- reliable incremental ingestion and alerting.
-
-Until then, preserve the low-cost static design and improve modularity, validation and documentation before introducing infrastructure.
+BR-20 is outside the completed mandatory remodel. Live news, licensed prices, consensus data, user accounts, alerts, queues or secret-bearing APIs require separate source, licensing and architecture approval.
