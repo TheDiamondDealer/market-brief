@@ -11,6 +11,7 @@ on:
       - 'scripts/crowd_expectations_registry.json'
       - 'schemas/crowd-expectations.schema.json'
       - 'tests/test_crowd_expectations.py'
+      - 'tests/test_crowd_selection_balance.py'
       - '.github/workflows/update-crowd-expectations.yml'
       - '.github/workflows/deploy-pages.yml'
   schedule:
@@ -53,12 +54,12 @@ jobs:
 
       - name: Validate collector and fixtures
         run: |
-          python -m py_compile scripts/update_crowd_expectations.py scripts/update_crowd_expectations_hardened.py scripts/validate_crowd_expectations.py tests/test_crowd_expectations.py
-          python -m unittest tests/test_crowd_expectations.py -v
+          python -m py_compile scripts/update_crowd_expectations.py scripts/update_crowd_expectations_hardened.py scripts/validate_crowd_expectations.py tests/test_crowd_expectations.py tests/test_crowd_selection_balance.py
+          python -m unittest tests/test_crowd_expectations.py tests/test_crowd_selection_balance.py -v
 
       - name: Collect public crowd market data
         env:
-          CROWD_EXPECTATIONS_USER_AGENT: MarketBriefResearch/1.1 (+https://github.com/TheDiamondDealer/market-brief)
+          CROWD_EXPECTATIONS_USER_AGENT: MarketBriefResearch/1.2 (+https://github.com/TheDiamondDealer/market-brief)
         run: python scripts/update_crowd_expectations_hardened.py
 
       - name: Validate generated output and frontend
@@ -79,6 +80,8 @@ jobs:
               f"selected={data['collection']['selectedMarketCount']}; "
               f"shocks={len(data['shocks'])}"
           )
+          for category in data['categories']:
+              print(f"- {category['id']}: {category['count']}")
           PY
 
       - name: Commit validated crowd data
