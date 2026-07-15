@@ -59,7 +59,7 @@ jobs:
 
       - name: Collect official sources
         env:
-          OFFICIAL_FEEDS_USER_AGENT: "${{ vars.SEC_USER_AGENT || 'MarketBriefResearch/2.2 253694733+TheDiamondDealer@users.noreply.github.com' }}"
+          OFFICIAL_FEEDS_USER_AGENT: "${{ vars.SEC_USER_AGENT || 'MarketBriefResearch/2.3 253694733+TheDiamondDealer@users.noreply.github.com' }}"
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
           BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
           BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
@@ -75,6 +75,7 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
+
           data = json.loads(Path('site/data/official-feeds.json').read_text())
           print(
               f"Official feeds status={data['collection']['status']}; "
@@ -85,6 +86,12 @@ jobs:
           )
           for source in data['sources']:
               print(f"- {source['id']}: {source['status']} ({len(source['records'])} records)")
+
+          bls = next(source for source in data['sources'] if source['id'] == 'bls-public-data')
+          if bls['status'] == 'partial' and '0 missing' in bls.get('detail', '').lower():
+              raise SystemExit(
+                  'BLS completeness guard failed: a complete configured series set was labelled partial.'
+              )
           PY
 
       - name: Commit validated data
