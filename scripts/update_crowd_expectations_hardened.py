@@ -8,6 +8,7 @@ from typing import Any
 
 import update_crowd_expectations as base
 
+_ORIGINAL_BUILD_DATASET = base.build_dataset
 _ORIGINAL_QUALITY_SCORE = base.quality_score
 _ORIGINAL_MARKET_RECORD = base.market_record
 _URL_RE = re.compile(r"https?://[^\s<>\"']+")
@@ -152,6 +153,144 @@ def market_record(
     return record
 
 
+def event_family(record: dict[str, Any]) -> str:
+    """Stable family key used to prevent one multi-outcome event dominating."""
+    return base.normalized(
+        record.get("sourceUrl")
+        or record.get("eventTitle")
+        or record.get("slug")
+        or record.get("id")
+    )
+
+
+def balanced_selection(
+    ranked: list[dict[str, Any]],
+    registry: dict[str, Any],
+    *,
+    reserve_per_category: int = 3,
+    max_per_category: int = 16,
+    max_per_event: int = 4,
+) -> list[dict[str, Any]]:
+    """Preserve quality rank while reserving category breadth and event diversity."""
+    limit = int(registry.get("discovery", {}).get("maxMarkets", 48))
+    category_order = [
+        str(category.get("id") or "")
+        for category in registry.get("categories", [])
+        if category.get("id")
+    ]
+    buckets = {
+        category_id: [
+            item for item in ranked if str(item.get("categoryId") or "") == category_id
+        ]
+        for category_id in category_order
+    }
+    selected: list[dict[str, Any]] = []
+    selected_ids: set[str] = set()
+    category_counts: dict[str, int] = {}
+    event_counts: dict[str, int] = {}
+
+    def add(item: dict[str, Any]) -> bool:
+        item_id = str(item.get("id") or "")
+        category_id = str(item.get("categoryId") or "")
+        family = event_family(item)
+        if not item_id or item_id in selected_ids:
+            return False
+        if category_counts.get(category_id, 0) >= max_per_category:
+            return False
+        if event_counts.get(family, 0) >= max_per_event:
+            return False
+        selected.append(item)
+        selected_ids.add(item_id)
+        category_counts[category_id] = category_counts.get(category_id, 0) + 1
+        event_counts[family] = event_counts.get(family, 0) + 1
+        return True
+
+    # Round-robin reserves keep every qualifying category visible without
+    # promoting any market that failed the normal quality/liquidity filters.
+    for round_index in range(max(0, reserve_per_category)):
+        for category_id in category_order:
+            bucket = buckets.get(category_id, [])
+            accepted = category_counts.get(category_id, 0)
+            if accepted > round_index:
+                continue
+            for item in bucket:
+                if add(item):
+                    break
+            if len(selected) >= limit:
+                return selected
+
+    for item in ranked:
+        add(item)
+        if len(selected) >= limit:
+            break
+    return selected
+
+
+def build_dataset(registry: dict[str, Any], previous: dict[str, Any]) -> dict[str, Any]:
+    """Collect a larger qualified pool, then apply balanced final selection."""
+    expanded_registry = copy.deepcopy(registry)
+    discovery = expanded_registry.setdefault("discovery", {})
+    final_limit = int(registry.get("discovery", {}).get("maxMarkets", 48))
+    discovery["maxMarkets"] = max(final_limit * 4, final_limit + 96)
+
+    generated = _ORIGINAL_BUILD_DATASET(expanded_registry, previous)
+    if generated.get("collection", {}).get("error"):
+        return generated
+
+    markets = balanced_selection(generated.get("markets", []), registry)
+    generated["markets"] = markets
+    generated["collection"]["selectedMarketCount"] = len(markets)
+
+    category_counts: dict[str, int] = {}
+    for item in markets:
+        category_id = str(item.get("categoryId") or "")
+        category_counts[category_id] = category_counts.get(category_id, 0) + 1
+    generated["categories"] = [
+        {
+            "id": category["id"],
+            "name": category["name"],
+            "count": category_counts.get(category["id"], 0),
+        }
+        for category in registry.get("categories", [])
+    ]
+
+    discovery_rules = registry.get("discovery", {})
+    shocks = [
+        {
+            "marketId": item["id"],
+            "question": item["question"],
+            "probabilityPercent": item["probabilityPercent"],
+            "change24hPoints": item["change24hPoints"],
+            "qualityGrade": item["qualityGrade"],
+            "qualityScore": item["qualityScore"],
+            "assets": item["assets"],
+            "sourceUrl": item["sourceUrl"],
+        }
+        for item in markets
+        if item.get("change24hPoints") is not None
+        and abs(float(item["change24hPoints"]))
+        >= float(discovery_rules.get("shockPoints24h", 5))
+        and int(item["qualityScore"])
+        >= int(discovery_rules.get("shockMinQualityScore", 65))
+    ]
+    shocks.sort(key=lambda item: abs(float(item["change24hPoints"])), reverse=True)
+    generated["shocks"] = shocks[:12]
+
+    generated["methodology"]["selection"] = (
+        "Markets first pass the normal relevance, liquidity, volume and quality filters. "
+        "Final selection then reserves up to three markets per qualifying category, caps "
+        "any category at 16 markets and any event family at four outcomes before filling "
+        "remaining slots in quality rank order."
+    )
+    if generated.get("sourceStatus"):
+        generated["sourceStatus"][0]["detail"] = (
+            f"{len(markets)} balanced relevant markets retained from "
+            f"{generated['collection'].get('rawMarketCount', 0)} active markets."
+        )
+    validate_output(generated)
+    return generated
+
+
 def iter_keys(value: Any):
     if isinstance(value, dict):
         for key, child in value.items():
@@ -213,6 +352,7 @@ base.selected_probability = selected_probability
 base.quality_score = quality_score
 base.asset_map = asset_map
 base.market_record = market_record
+base.build_dataset = build_dataset
 base.validate_output = validate_output
 
 
