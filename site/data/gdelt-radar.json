@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": null,
+  "provider": {
+    "id": "gdelt-doc-2",
+    "name": "GDELT DOC 2.0 API",
+    "readOnly": true,
+    "documentationUrl": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
+  },
+  "collection": {
+    "status": "unavailable",
+    "expectedCadence": "Hourly",
+    "queryCount": 4,
+    "successfulQueryCount": 0,
+    "rawArticleCount": 0,
+    "selectedArticleCount": 0,
+    "lastSuccessfulAt": null,
+    "error": "The GDELT collector has not completed its first successful scheduled run."
+  },
+  "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
+  "topics": [
+    {"id": "strategic-materials", "name": "Strategic materials", "query": "rare earths, critical minerals, uranium, copper, gold and lithium"},
+    {"id": "semiconductors-ai", "name": "Semiconductors & AI infrastructure", "query": "semiconductors, artificial intelligence, data centres, HBM and advanced packaging"},
+    {"id": "macro-policy", "name": "Macro, trade & policy", "query": "tariffs, export controls, sanctions, inflation, central banks and recession"},
+    {"id": "energy-security", "name": "Energy & security", "query": "oil, LNG, natural gas, OPEC, nuclear and defence"}
+  ],
+  "articles": [],
+  "sourceStatus": [
+    {
+      "id": "gdelt-doc-2",
+      "source": "GDELT DOC 2.0 public API",
+      "status": "unavailable",
+      "observationDate": null,
+      "lastSuccessfulAt": null,
+      "expectedCadence": "Hourly",
+      "detail": "Awaiting the first successful scheduled collection.",
+      "error": "The GDELT collector has not completed its first successful scheduled run.",
+      "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
+    }
+  ],
+  "methodology": {
+    "role": "Discovery and early-warning only",
+    "storedFields": "Headline metadata, source domain, timestamps, topic mapping and outbound URL only; no article body text.",
+    "verification": "Confirm material claims against an official release, filing, regulator, government source or trusted financial wire.",
+    "ranking": "Deterministic relevance, event-term and recency score; not sentiment analysis and not a trading signal."
+  }
+}

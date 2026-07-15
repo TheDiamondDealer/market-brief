@@ -43,7 +43,7 @@
   const manifest = Object.freeze([
     Object.freeze({ route: 'cot', styles: ['features/cot/cot-page.css'], scripts: ['features/cot/cot-page.js'] }),
     Object.freeze({ route: 'trackers', styles: ['features/political-flow/political-page.css'], scripts: ['features/political-flow/political-data.js', 'features/political-flow/political-page.js'] }),
-    Object.freeze({ route: 'news', styles: ['features/impact-feed/impact-page.css', 'features/impact-feed/impact-direction.css'], scripts: ['features/impact-feed/impact-data.js', 'features/impact-feed/impact-page.js'] }),
+    Object.freeze({ route: 'news', styles: ['features/impact-feed/impact-page.css', 'features/impact-feed/impact-direction.css', 'features/gdelt-radar/gdelt-page.css'], scripts: ['features/impact-feed/impact-data.js', 'features/impact-feed/impact-page.js', 'features/gdelt-radar/gdelt-data.js', 'features/gdelt-radar/gdelt-health.js', 'features/gdelt-radar/gdelt-page.js'] }),
     Object.freeze({ route: 'asset', styles: ['features/asset-workspace/asset-page.css'], scripts: ['features/asset-workspace/asset-page.js'] }),
     Object.freeze({ route: 'home', styles: ['features/command-centre/command-page.css', 'features/command-centre/command-daily.css'], scripts: ['features/command-centre/command-page.js'] }),
     Object.freeze({ route: 'calendar', styles: ['features/calendar/calendar-page.css'], scripts: ['features/calendar/calendar-data.js', 'features/calendar/calendar-page.js'] }),
