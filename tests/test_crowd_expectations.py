@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import update_crowd_expectations as crowd  # noqa: E402
+import update_crowd_expectations_hardened as hardened  # noqa: E402,F401
 
 
 def sample_market(**overrides):
@@ -18,7 +19,10 @@ def sample_market(**overrides):
         "id": "123",
         "question": "Will the Federal Reserve cut interest rates by September?",
         "slug": "fed-cut-by-september",
-        "description": "This market resolves Yes if the Federal Reserve lowers its target range by the stated date. The resolution source is the official Federal Reserve announcement.",
+        "description": (
+            "This market resolves Yes if the Federal Reserve lowers its target range "
+            "by the stated date. The resolution source is the official Federal Reserve announcement."
+        ),
         "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
         "outcomes": '["Yes", "No"]',
         "outcomePrices": '["0.60", "0.40"]',
@@ -37,7 +41,11 @@ def sample_market(**overrides):
         "restricted": True,
         "endDate": "2026-09-30T00:00:00Z",
         "updatedAt": "2026-07-15T01:00:00Z",
-        "events": [{"slug": "fed-cut-by-september", "title": "Federal Reserve policy", "openInterest": 200000}],
+        "events": [{
+            "slug": "fed-cut-by-september",
+            "title": "Federal Reserve policy",
+            "openInterest": 200000,
+        }],
     }
     row.update(overrides)
     return row
@@ -46,7 +54,9 @@ def sample_market(**overrides):
 class CrowdCollectorTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.registry = json.loads((ROOT / "scripts" / "crowd_expectations_registry.json").read_text(encoding="utf-8"))
+        cls.registry = json.loads(
+            (ROOT / "scripts" / "crowd_expectations_registry.json").read_text(encoding="utf-8")
+        )
 
     def test_binary_yes_probability_parses_string_arrays(self):
         probability, index = crowd.binary_yes_probability(sample_market())
@@ -60,7 +70,10 @@ class CrowdCollectorTests(unittest.TestCase):
 
     def test_sports_market_is_excluded(self):
         category, score = crowd.classify_market(
-            sample_market(question="Will France win the World Cup?", sportsMarketType="soccer_moneyline"),
+            sample_market(
+                question="Will France win the World Cup?",
+                sportsMarketType="soccer_moneyline",
+            ),
             self.registry,
         )
         self.assertIsNone(category)
@@ -85,11 +98,54 @@ class CrowdCollectorTests(unittest.TestCase):
         self.assertEqual(source, "last trade")
 
     def test_history_replaces_same_day_and_retains_unique_dates(self):
-        previous = {"history": [{"date": "2026-07-14", "observedAt": "2026-07-14T00:00:00Z", "probability": 0.5}]}
+        previous = {
+            "history": [{
+                "date": "2026-07-14",
+                "observedAt": "2026-07-14T00:00:00Z",
+                "probability": 0.5,
+            }]
+        }
         first = crowd.day_snapshot(previous, "2026-07-15T00:00:00Z", 0.6)
         second = crowd.day_snapshot({"history": first}, "2026-07-15T06:00:00Z", 0.62)
         self.assertEqual(len(second), 2)
         self.assertEqual(second[-1]["probability"], 0.62)
+
+    def test_resolution_source_is_extracted_from_market_rules(self):
+        market = sample_market(
+            resolutionSource="",
+            description=(
+                "The resolution source for this market is the official statement at "
+                "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm. "
+                "This market resolves after publication."
+            ),
+        )
+        self.assertEqual(
+            hardened.resolution_source(market),
+            "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        )
+        category, score = crowd.classify_market(market, self.registry)
+        record = hardened.market_record(
+            market,
+            category,
+            score,
+            None,
+            "2026-07-15T01:00:00Z",
+            90,
+        )
+        self.assertEqual(record["resolutionSource"], hardened.resolution_source(market))
+        self.assertIn("Resolution source supplied", record["qualityReasons"])
+
+    def test_legitimate_signature_word_in_market_rules_is_allowed(self):
+        market = sample_market(
+            description=(
+                "This market resolves after the President's signature appears on the enacted bill. "
+                "The resolution source is https://www.congress.gov/."
+            )
+        )
+        with patch.object(crowd, "discover_markets", return_value=[market]):
+            result = crowd.build_dataset(self.registry, {})
+        self.assertEqual(result["collection"]["status"], "current")
+        hardened.validate_output(result)
 
     def test_build_dataset_creates_read_only_shock(self):
         with patch.object(crowd, "discover_markets", return_value=[sample_market()]):
@@ -103,15 +159,40 @@ class CrowdCollectorTests(unittest.TestCase):
         previous = {
             "collection": {"lastSuccessfulAt": "2026-07-14T00:00:00Z"},
             "markets": [{
-                "id": "old", "readOnly": True, "status": "current", "category": "Monetary Policy & Macro",
-                "categoryId": "monetary-policy", "question": "Old verified market", "probability": 0.5,
-                "probabilityPercent": 50.0, "probabilitySource": "last trade", "change24hPoints": None,
-                "change7dPoints": None, "bestBid": None, "bestAsk": None, "spread": None, "liquidity": 10000,
-                "volume24h": 1000, "volumeTotal": 10000, "openInterest": 0, "qualityScore": 60,
-                "qualityGrade": "C", "qualityReasons": ["retained"], "relevanceScore": 1, "assets": ["rates"],
-                "resolutionSource": None, "description": "", "endDate": None, "updatedAt": "2026-07-14T00:00:00Z",
-                "collectedAt": "2026-07-14T00:00:00Z", "sourceUrl": "https://polymarket.com/",
-                "restricted": True, "acceptingOrders": True, "history": [], "slug": None, "eventTitle": None,
+                "id": "old",
+                "readOnly": True,
+                "status": "current",
+                "category": "Monetary Policy & Macro",
+                "categoryId": "monetary-policy",
+                "question": "Old verified market",
+                "probability": 0.5,
+                "probabilityPercent": 50.0,
+                "probabilitySource": "last trade",
+                "change24hPoints": None,
+                "change7dPoints": None,
+                "bestBid": None,
+                "bestAsk": None,
+                "spread": None,
+                "liquidity": 10000,
+                "volume24h": 1000,
+                "volumeTotal": 10000,
+                "openInterest": 0,
+                "qualityScore": 60,
+                "qualityGrade": "C",
+                "qualityReasons": ["retained"],
+                "relevanceScore": 1,
+                "assets": ["rates"],
+                "resolutionSource": None,
+                "description": "",
+                "endDate": None,
+                "updatedAt": "2026-07-14T00:00:00Z",
+                "collectedAt": "2026-07-14T00:00:00Z",
+                "sourceUrl": "https://polymarket.com/",
+                "restricted": True,
+                "acceptingOrders": True,
+                "history": [],
+                "slug": None,
+                "eventTitle": None,
             }],
         }
         with patch.object(crowd, "discover_markets", side_effect=RuntimeError("temporary outage")):
@@ -142,19 +223,36 @@ class CrowdIntegrationTests(unittest.TestCase):
         ):
             self.assertIn(path, text)
 
+    def test_source_health_extension_is_idempotent(self):
+        text = (
+            ROOT / "site" / "features" / "crowd-expectations" / "crowd-health.js"
+        ).read_text(encoding="utf-8")
+        self.assertIn("alreadyInjected", text)
+        self.assertIn("if (alreadyInjected(base, expected)) return", text)
+
     def test_workflow_is_read_only_and_scheduled(self):
-        workflow = (ROOT / ".github" / "workflows" / "update-crowd-expectations.yml").read_text(encoding="utf-8").lower()
-        self.assertIn("python scripts/update_crowd_expectations.py", workflow)
+        workflow = (
+            ROOT / ".github" / "workflows" / "update-crowd-expectations.yml"
+        ).read_text(encoding="utf-8").lower()
+        self.assertIn("python scripts/update_crowd_expectations_hardened.py", workflow)
         self.assertIn("python scripts/validate_crowd_expectations.py", workflow)
         self.assertIn("cron:", workflow)
         for prohibited in ("private_key", "walletconnect", "post_order", "create_order"):
             self.assertNotIn(prohibited, workflow)
 
     def test_collector_has_no_order_endpoint_or_secret_contract(self):
-        collector = (ROOT / "scripts" / "update_crowd_expectations.py").read_text(encoding="utf-8").lower()
-        self.assertIn("gamma-api.polymarket.com/markets", (ROOT / "scripts" / "crowd_expectations_registry.json").read_text(encoding="utf-8"))
+        collector = "\n".join(
+            (
+                ROOT / "scripts" / "update_crowd_expectations.py"
+            ).read_text(encoding="utf-8").lower(),
+        ) if False else (
+            (ROOT / "scripts" / "update_crowd_expectations.py").read_text(encoding="utf-8")
+            + (ROOT / "scripts" / "update_crowd_expectations_hardened.py").read_text(encoding="utf-8")
+        ).lower()
+        registry = (ROOT / "scripts" / "crowd_expectations_registry.json").read_text(encoding="utf-8")
+        self.assertIn("gamma-api.polymarket.com/markets", registry)
         self.assertNotRegex(collector, r"https?://[^\"']+/(order|orders)(?:[/?#]|[\"'])")
-        self.assertNotRegex(collector, r"os\.environ\.get\([\"\'](?:private_key|api_secret)")
+        self.assertNotRegex(collector, r"os\.environ\.get\([\"'](?:private_key|api_secret)")
         self.assertNotRegex(collector, r"(?:post|put)\s*=\s*true")
 
 
