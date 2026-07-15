@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Harden the read-only Crowd Expectations collector.
 
-This layer improves resolution-source extraction and validates the generated
-structure without scanning legitimate market questions or resolution rules for
-generic words such as "signature".
+This layer improves resolution-source extraction, validates actual bid/ask
+spreads, applies event-specific asset mappings and validates generated structure
+without scanning legitimate market prose for generic words such as "signature".
 """
 from __future__ import annotations
 
@@ -52,11 +52,38 @@ def resolution_source(market: dict[str, Any]) -> str | None:
         marker = lowered.find("resolution source")
         if marker >= 0:
             trailing = description[marker:]
-            trailing_urls = [match.rstrip(".,);]") for match in _URL_RE.findall(trailing)]
+            trailing_urls = [
+                match.rstrip(".,);]") for match in _URL_RE.findall(trailing)
+            ]
             if trailing_urls:
                 return trailing_urls[0]
         return urls[0]
     return "Resolution source described in the market rules"
+
+
+def computed_spread(market: dict[str, Any]) -> float | None:
+    bid = base.number(market.get("bestBid"))
+    ask = base.number(market.get("bestAsk"))
+    if bid is None or ask is None or not 0 <= bid <= ask <= 1:
+        return None
+    return ask - bid
+
+
+def selected_probability(
+    market: dict[str, Any],
+    outcome_probability: float | None,
+) -> tuple[float | None, str]:
+    bid = base.number(market.get("bestBid"))
+    ask = base.number(market.get("bestAsk"))
+    spread = computed_spread(market)
+    if bid is not None and ask is not None and spread is not None and spread <= 0.10:
+        return (bid + ask) / 2, "bid-ask midpoint"
+    last = base.number(market.get("lastTradePrice"))
+    if last is not None and 0 <= last <= 1:
+        return last, "last trade"
+    if outcome_probability is not None and 0 <= outcome_probability <= 1:
+        return outcome_probability, "Gamma outcome price"
+    return None, "unavailable"
 
 
 def quality_score(
@@ -64,8 +91,111 @@ def quality_score(
     relevance_score: int,
 ) -> tuple[int, str, list[str]]:
     enriched = copy.deepcopy(market)
-    enriched["resolutionSource"] = resolution_source(market) or ""
-    return _ORIGINAL_QUALITY_SCORE(enriched, relevance_score)
+    source = resolution_source(market)
+    enriched["resolutionSource"] = source or ""
+    spread = computed_spread(market)
+    if spread is not None:
+        enriched["spread"] = spread
+    score, grade, reasons = _ORIGINAL_QUALITY_SCORE(enriched, relevance_score)
+    if not source and score >= 80:
+        score = 79
+        grade = "B"
+        reasons = [*reasons, "Grade capped below A until a resolution source is identifiable"]
+    return score, grade, reasons
+
+
+def asset_map(category: dict[str, Any], market: dict[str, Any]) -> list[str]:
+    """Map only event-relevant assets rather than every asset in a category."""
+    category_id = str(category.get("id") or "")
+    text = base.normalized(
+        f"{market.get('question', '')} {market.get('description', '')} "
+        f"{base.event_title(market)}"
+    )
+    assets: set[str] = set()
+
+    defaults = {
+        "monetary-policy": {"rates", "us-dollar", "gold", "silver", "semiconductors"},
+        "geopolitics-security": {"gold", "us-dollar"},
+        "technology-ai": {"semiconductors"},
+        "us-policy-elections": {"rates", "us-dollar"},
+        "trade-industrial-policy": {"us-dollar"},
+    }
+    assets.update(defaults.get(category_id, set()))
+
+    if "gold" in text:
+        assets.add("gold")
+    if "silver" in text:
+        assets.add("silver")
+    if "copper" in text:
+        assets.add("copper")
+    if "rare earth" in text or "critical mineral" in text:
+        assets.add("rare-earths")
+
+    if "wti" in text or "west texas intermediate" in text:
+        assets.add("wti")
+    elif "brent" in text:
+        assets.add("brent")
+    elif any(term in text for term in ("opec", "strait of hormuz", "crude oil", "oil production")):
+        assets.update({"brent", "wti"})
+
+    if "henry hub" in text or "us natural gas" in text:
+        assets.add("gas-us")
+    if any(term in text for term in ("uk gas", "european gas", "lng", "natural gas")):
+        assets.add("gas-uk")
+
+    if any(
+        term in text
+        for term in (
+            "semiconductor",
+            "chip",
+            "nvidia",
+            "amd",
+            "intel",
+            "tsmc",
+            "asml",
+            "taiwan",
+            "data center",
+            "data centre",
+            "artificial intelligence",
+        )
+    ):
+        assets.add("semiconductors")
+    if any(term in text for term in ("taiwan", "south china sea", "china export control")):
+        assets.add("rare-earths")
+
+    if any(
+        term in text
+        for term in (
+            "fed",
+            "fomc",
+            "interest rate",
+            "inflation",
+            "cpi",
+            "pce",
+            "recession",
+            "unemployment",
+            "payroll",
+            "gdp",
+        )
+    ):
+        assets.add("rates")
+    if any(
+        term in text
+        for term in (
+            "tariff",
+            "sanction",
+            "election",
+            "debt ceiling",
+            "government shutdown",
+            "federal reserve",
+            "fed",
+        )
+    ):
+        assets.add("us-dollar")
+    if "debt ceiling" in text or "government shutdown" in text:
+        assets.add("gold")
+
+    return sorted(assets)
 
 
 def market_record(
@@ -86,6 +216,10 @@ def market_record(
     )
     if record is not None:
         record["resolutionSource"] = resolution_source(raw)
+        record["assets"] = asset_map(category, raw)
+        spread = computed_spread(raw)
+        if spread is not None:
+            record["spread"] = round(spread, 6)
     return record
 
 
@@ -156,7 +290,9 @@ def validate_output(data: dict[str, Any]) -> None:
             raise ValueError(f"Generated crowd data contains an order endpoint: {url}")
 
 
+base.selected_probability = selected_probability
 base.quality_score = quality_score
+base.asset_map = asset_map
 base.market_record = market_record
 base.validate_output = validate_output
 
