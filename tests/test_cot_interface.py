@@ -45,12 +45,19 @@ class CotInterfaceTests(unittest.TestCase):
         self.assertIn("contract.category", self.script)
         self.assertIn("Open official CFTC source", self.script)
 
-    def test_filters_modes_table_and_history_are_present(self) -> None:
+    def test_reference_dashboard_chart_table_and_history_are_present(self) -> None:
         for marker in (
             "cotWorkspaceSearch",
             "data-cot-category",
             "data-cot-mode",
-            "Exact-contract positioning table",
+            "Position distribution",
+            "Recent COT data analysis",
+            "cot-positioning-svg",
+            "cot-chart-long",
+            "cot-chart-short",
+            "Prev long %",
+            "Previous net",
+            "data-cot-sort",
             "history52",
             "Net position",
             "Long / short",
@@ -65,10 +72,12 @@ class CotInterfaceTests(unittest.TestCase):
         self.assertIn('scope="col"', self.script)
         self.assertIn('scope="row"', self.script)
         self.assertIn('aria-pressed', self.script)
+        self.assertIn('tabindex="0"', self.script)
+        self.assertIn("event.key === 'Enter'", self.script)
         self.assertIn("prefers-reduced-motion", self.script)
-        self.assertIn("@media(max-width:700px)", self.styles)
-        self.assertIn("min-height:44px", self.styles)
-        self.assertIn("overflow:auto", self.styles)
+        self.assertIn("@media (max-width: 700px)", self.styles)
+        self.assertIn("min-height: 44px", self.styles)
+        self.assertIn("overflow: auto", self.styles)
 
 
 if __name__ == "__main__":
