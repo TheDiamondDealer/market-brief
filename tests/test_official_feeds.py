@@ -126,6 +126,47 @@ class OfficialFeedCollectorTests(unittest.TestCase):
         self.assertEqual(result["status"], "unavailable")
         self.assertEqual(result["records"], [])
 
+    def test_census_time_slots_have_distinct_stable_record_ids(self) -> None:
+        config = {
+            "datasets": [{
+                "id": "marts",
+                "name": "Monthly retail trade",
+                "group": "Consumption",
+                "frequency": "Monthly",
+            }]
+        }
+        response = [
+            [
+                "cell_value",
+                "data_type_code",
+                "time_slot_id",
+                "category_code",
+                "seasonally_adj",
+                "time",
+            ],
+            ["100", "SM", "1", "44X72", "yes", "2026-06"],
+            ["200", "SM", "2", "44X72", "yes", "2026-06"],
+            ["200", "SM", "2", "44X72", "yes", "2026-06"],
+        ]
+
+        with (
+            patch.dict("os.environ", {"CENSUS_API_KEY": "test-key"}),
+            patch.object(official, "request_json", return_value=response),
+            patch.object(official.time, "sleep"),
+        ):
+            result = official.collect_census(
+                config,
+                {},
+                "2026-07-15T00:00:00Z",
+            )
+
+        self.assertEqual(result["status"], "current")
+        self.assertEqual(len(result["records"]), 2)
+        self.assertEqual(
+            {row["id"] for row in result["records"]},
+            {"marts-SM-44X72-yes-1", "marts-SM-44X72-yes-2"},
+        )
+
     def test_committed_cache_validates(self) -> None:
         subprocess.run(
             ["python", "scripts/validate_official_feeds.py"],
