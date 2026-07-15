@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "asx": {
+    "sourcePage": "https://www.asx.com.au/markets/trade-our-cash-market/announcements",
+    "endpointTemplate": "https://www.asx.com.au/asx/1/company/{ticker}/announcements?count={count}&market_sensitive=false",
+    "countPerTicker": 12,
+    "maxRecords": 120,
+    "lookbackDays": 45,
+    "tickers": ["LYC", "ILU", "ARU", "ASM", "HAS", "NTU", "BHP", "RIO", "S32", "FMG", "MIN", "IGO", "PLS", "LTR", "CXO", "PDN", "DYL", "BOE", "LOT", "SYR"]
+  },
+  "fed": {
+    "sourcePage": "https://www.federalreserve.gov/feeds/feeds.htm",
+    "lookbackDays": 60,
+    "maxRecords": 60,
+    "feeds": [
+      {"id": "monetary", "name": "Monetary policy releases", "group": "Monetary Policy", "url": "https://www.federalreserve.gov/feeds/press_monetary.xml", "maxItems": 20},
+      {"id": "speeches", "name": "Speeches", "group": "Speeches", "url": "https://www.federalreserve.gov/feeds/speeches.xml", "maxItems": 15},
+      {"id": "testimony", "name": "Testimony", "group": "Testimony", "url": "https://www.federalreserve.gov/feeds/testimony.xml", "maxItems": 10},
+      {"id": "liquidity", "name": "Credit, liquidity and balance sheet", "group": "Liquidity & Balance Sheet", "url": "https://www.federalreserve.gov/feeds/clp.xml", "maxItems": 15}
+    ]
+  }
+}
