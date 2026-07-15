@@ -358,7 +358,7 @@ def collect_census(config: dict[str, Any], previous: dict[str, Any], collected_a
                 for offset in range(12):
                     month_index = now.year * 12 + now.month - 1 - offset
                     period = f"{month_index // 12:04d}-{month_index % 12 + 1:02d}"
-                    params = {"get": "cell_value,data_type_code,time_slot_id,category_code,seasonally_adj", "time": period, "key": api_key}
+                    params = {"get": "cell_value,data_type_code,time_slot_id,category_code,seasonally_adj", "for": "us:*", "time": period, "key": api_key}
                     try:
                         candidate_payload = request_json(f"https://api.census.gov/data/timeseries/eits/{dataset['id']}?" + urllib.parse.urlencode(params))
                         if isinstance(candidate_payload, list) and len(candidate_payload) >= 2:

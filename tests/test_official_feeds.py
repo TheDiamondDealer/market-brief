@@ -207,6 +207,7 @@ class OfficialFeedCollectorTests(unittest.TestCase):
         self.assertEqual(len(result["records"]), 1)
         self.assertEqual(len(urls), 2)
         self.assertTrue(all("time=from" not in url for url in urls))
+        self.assertTrue(all("for=us%3A%2A" in url for url in urls))
 
     def test_committed_cache_validates(self) -> None:
         subprocess.run(
