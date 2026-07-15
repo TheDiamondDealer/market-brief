@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Harden the read-only Crowd Expectations collector.
-
-This layer improves resolution-source extraction, validates actual bid/ask
-spreads, applies event-specific asset mappings and validates generated structure
-without scanning legitimate market prose for generic words such as "signature".
-"""
+"""Harden the read-only Crowd Expectations collector."""
 from __future__ import annotations
 
 import copy
@@ -17,48 +12,37 @@ _ORIGINAL_QUALITY_SCORE = base.quality_score
 _ORIGINAL_MARKET_RECORD = base.market_record
 _URL_RE = re.compile(r"https?://[^\s<>\"']+")
 _PROHIBITED_KEYS = {
-    "private_key",
-    "privatekey",
-    "api_secret",
-    "apisecret",
-    "walletconnect",
-    "signed_order",
-    "signedorder",
-    "order_payload",
+    "private_key", "privatekey", "api_secret", "apisecret",
+    "walletconnect", "signed_order", "signedorder", "order_payload",
 }
 _ORDER_ENDPOINT_RE = re.compile(r"https?://[^\s]+/(?:order|orders)(?:[/?#]|$)", re.I)
 
 
 def resolution_source(market: dict[str, Any]) -> str | None:
-    """Return the most specific resolution source supplied by the market."""
     direct = str(market.get("resolutionSource") or "").strip()
     if direct:
         return direct
-
     for event in market.get("events") or []:
-        if not isinstance(event, dict):
-            continue
-        candidate = str(event.get("resolutionSource") or "").strip()
-        if candidate:
-            return candidate
-
+        if isinstance(event, dict):
+            candidate = str(event.get("resolutionSource") or "").strip()
+            if candidate:
+                return candidate
     description = str(market.get("description") or "").strip()
     lowered = description.lower()
     if "resolution source" not in lowered and "will resolve" not in lowered:
         return None
-
     urls = [match.rstrip(".,);]") for match in _URL_RE.findall(description)]
-    if urls:
-        marker = lowered.find("resolution source")
-        if marker >= 0:
-            trailing = description[marker:]
-            trailing_urls = [
-                match.rstrip(".,);]") for match in _URL_RE.findall(trailing)
-            ]
-            if trailing_urls:
-                return trailing_urls[0]
-        return urls[0]
-    return None
+    if not urls:
+        return None
+    marker = lowered.find("resolution source")
+    if marker >= 0:
+        trailing_urls = [
+            match.rstrip(".,);]")
+            for match in _URL_RE.findall(description[marker:])
+        ]
+        if trailing_urls:
+            return trailing_urls[0]
+    return urls[0]
 
 
 def computed_spread(market: dict[str, Any]) -> float | None:
@@ -70,8 +54,7 @@ def computed_spread(market: dict[str, Any]) -> float | None:
 
 
 def selected_probability(
-    market: dict[str, Any],
-    outcome_probability: float | None,
+    market: dict[str, Any], outcome_probability: float | None
 ) -> tuple[float | None, str]:
     bid = base.number(market.get("bestBid"))
     ask = base.number(market.get("bestAsk"))
@@ -87,8 +70,7 @@ def selected_probability(
 
 
 def quality_score(
-    market: dict[str, Any],
-    relevance_score: int,
+    market: dict[str, Any], relevance_score: int
 ) -> tuple[int, str, list[str]]:
     enriched = copy.deepcopy(market)
     source = resolution_source(market)
@@ -98,21 +80,21 @@ def quality_score(
         enriched["spread"] = spread
     score, grade, reasons = _ORIGINAL_QUALITY_SCORE(enriched, relevance_score)
     if not source and score >= 80:
-        score = 79
-        grade = "B"
-        reasons = [*reasons, "Grade capped below A until a resolution source is identifiable"]
+        score, grade = 79, "B"
+        reasons = [
+            *reasons,
+            "Grade capped below A until a resolution source is identifiable",
+        ]
     return score, grade, reasons
 
 
 def asset_map(category: dict[str, Any], market: dict[str, Any]) -> list[str]:
-    """Map only event-relevant assets rather than every asset in a category."""
+    """Map event-relevant assets without broad category-wide contamination."""
     category_id = str(category.get("id") or "")
     text = base.normalized(
         f"{market.get('question', '')} {market.get('description', '')} "
         f"{base.event_title(market)}"
     )
-    assets: set[str] = set()
-
     defaults = {
         "monetary-policy": {"rates", "us-dollar", "gold", "silver", "semiconductors"},
         "geopolitics-security": {"gold", "us-dollar"},
@@ -120,14 +102,13 @@ def asset_map(category: dict[str, Any], market: dict[str, Any]) -> list[str]:
         "us-policy-elections": {"rates", "us-dollar"},
         "trade-industrial-policy": {"us-dollar"},
     }
-    assets.update(defaults.get(category_id, set()))
+    assets: set[str] = set(defaults.get(category_id, set()))
 
-    if "gold" in text:
-        assets.add("gold")
-    if "silver" in text:
-        assets.add("silver")
-    if "copper" in text:
-        assets.add("copper")
+    for token, asset in (
+        ("gold", "gold"), ("silver", "silver"), ("copper", "copper"),
+    ):
+        if token in text:
+            assets.add(asset)
     if "rare earth" in text or "critical mineral" in text:
         assets.add("rare-earths")
 
@@ -143,76 +124,24 @@ def asset_map(category: dict[str, Any], market: dict[str, Any]) -> list[str]:
     if any(term in text for term in ("uk gas", "european gas", "lng", "natural gas")):
         assets.add("gas-uk")
 
-    if any(
-        term in text
-        for term in (
-            "semiconductor",
-            "chip",
-            "nvidia",
-            "amd",
-            "intel",
-            "tsmc",
-            "asml",
-            "taiwan",
-            "data center",
-            "data centre",
-            "artificial intelligence",
-        )
-    ):
+    if any(term in text for term in (
+        "semiconductor", "chip", "nvidia", "amd", "intel", "tsmc", "asml",
+        "taiwan", "data center", "data centre", "artificial intelligence",
+    )):
         assets.add("semiconductors")
     if any(term in text for term in ("taiwan", "south china sea", "china export control")):
         assets.add("rare-earths")
-
-    if any(
-        term in text
-        for term in (
-            "fed",
-            "fomc",
-            "interest rate",
-            "inflation",
-            "cpi",
-            "pce",
-            "recession",
-            "unemployment",
-            "payroll",
-            "gdp",
-        )
-    ):
-        assets.add("rates")
-    if any(
-        term in text
-        for term in (
-            "tariff",
-            "sanction",
-            "election",
-            "debt ceiling",
-            "government shutdown",
-            "federal reserve",
-            "fed",
-        )
-    ):
-        assets.add("us-dollar")
     if "debt ceiling" in text or "government shutdown" in text:
         assets.add("gold")
-
     return sorted(assets)
 
 
 def market_record(
-    raw: dict[str, Any],
-    category: dict[str, Any],
-    relevance_score: int,
-    previous: dict[str, Any] | None,
-    collected_at: str,
-    history_days: int,
+    raw: dict[str, Any], category: dict[str, Any], relevance_score: int,
+    previous: dict[str, Any] | None, collected_at: str, history_days: int,
 ) -> dict[str, Any] | None:
     record = _ORIGINAL_MARKET_RECORD(
-        raw,
-        category,
-        relevance_score,
-        previous,
-        collected_at,
-        history_days,
+        raw, category, relevance_score, previous, collected_at, history_days
     )
     if record is not None:
         record["resolutionSource"] = resolution_source(raw)
@@ -236,17 +165,14 @@ def iter_keys(value: Any):
 def controlled_urls(data: dict[str, Any]):
     provider = data.get("provider", {})
     for key in ("marketEndpoint", "documentationUrl", "geoblockUrl"):
-        value = provider.get(key)
-        if value:
-            yield str(value)
+        if provider.get(key):
+            yield str(provider[key])
     for market in data.get("markets", []):
-        value = market.get("sourceUrl")
-        if value:
-            yield str(value)
+        if market.get("sourceUrl"):
+            yield str(market["sourceUrl"])
     for source in data.get("sourceStatus", []):
-        value = source.get("url")
-        if value:
-            yield str(value)
+        if source.get("url"):
+            yield str(source["url"])
 
 
 def validate_output(data: dict[str, Any]) -> None:
@@ -257,14 +183,12 @@ def validate_output(data: dict[str, Any]) -> None:
         raise ValueError("Provider must remain Polymarket read-only")
     if provider.get("marketEndpoint") != "https://gamma-api.polymarket.com/markets":
         raise ValueError("Unexpected Polymarket market-data endpoint")
-
     markets = data.get("markets")
     if not isinstance(markets, list):
         raise ValueError("markets must be a list")
     ids = [str(item.get("id") or "") for item in markets]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate crowd market ids")
-
     for item in markets:
         if item.get("readOnly") is not True:
             raise ValueError(f"Market is not read-only: {item.get('id')}")
@@ -272,16 +196,11 @@ def validate_output(data: dict[str, Any]) -> None:
         if probability is None or not 0 <= probability <= 1:
             raise ValueError(f"Invalid probability: {item.get('id')}")
         history = item.get("history", [])
-        dates = [
-            str(point.get("date") or "")
-            for point in history
-            if isinstance(point, dict)
-        ]
+        dates = [str(point.get("date") or "") for point in history if isinstance(point, dict)]
         if dates != sorted(dates) or len(dates) != len(set(dates)):
             raise ValueError(f"Invalid history dates: {item.get('id')}")
         if len(history) > 90:
             raise ValueError(f"History exceeds 90 days: {item.get('id')}")
-
     forbidden = sorted(set(iter_keys(data)).intersection(_PROHIBITED_KEYS))
     if forbidden:
         raise ValueError(f"Generated crowd data contains prohibited fields: {forbidden}")
