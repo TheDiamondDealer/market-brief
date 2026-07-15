@@ -60,5 +60,11 @@ assert.equal(byId['macro:CURRENT'].expectedCadence, 'Daily business-day observat
 assert.equal(windowObject.MarketBriefCore.freshness.forId('macro:STALE').name, 'Stale series');
 assert.ok(windowObject.MarketBriefCore.freshness.failures().some((record) => record.id === 'macro:STALE'));
 assert.ok(windowObject.MarketBriefCore.freshness.failures().some((record) => record.id === 'political:filing-ledger'));
+assert.ok(windowObject.MarketBriefCore.freshness.ageDays('2099-01-01T00:00:00Z') < 0);
+assert.equal(
+  windowObject.MarketBriefCore.freshness.cadenceStatus('2099-01-01T00:00:00Z', 5),
+  'unknown',
+  'future-dated observations outside tolerance must never be marked current'
+);
 assert.equal(slices.get('sourceHealth'), registry);
 console.log('BR-17 freshness registry tests passed');

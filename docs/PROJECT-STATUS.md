@@ -38,7 +38,7 @@ Read these before substantial work:
 
 Specialised implementation documents include:
 
-- `docs/FREE-OFFICIAL-FEEDS.md`
+- `docs/OFFICIAL-FEEDS.md`
 - `docs/CROWD-EXPECTATIONS.md`
 - feature-specific documentation present under `docs/`
 

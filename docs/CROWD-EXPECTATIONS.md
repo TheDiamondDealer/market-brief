@@ -60,7 +60,9 @@ The collector scans active, open markets ordered by 24-hour volume. It retains q
 - technology and AI;
 - US policy and elections.
 
-The registry excludes sports, entertainment, celebrity and standalone cryptocurrency-price questions.
+The registry excludes sports, entertainment, celebrity and standalone cryptocurrency-price questions. Phrase matching is word-boundary aware so provider prose such as "intelligence" cannot be mistaken for the company Intel. Generic presidential language qualifies for the US-policy category only when the question also contains explicit US context. Question and event-title matches outrank incidental description prose when categories compete.
+
+Only strict two-outcome YES/NO markets are accepted. A market containing a third outcome is rejected even when YES and NO are also present.
 
 All retained candidates first pass the normal relevance, liquidity, volume and quality thresholds. Final selection then:
 
@@ -76,6 +78,8 @@ The selection vocabulary is versioned in:
 ```text
 scripts/crowd_expectations_registry.json
 ```
+
+Offline generated-data validation reruns the classifier against each retained question, description and event title and rejects category drift before publication.
 
 ## Probability hierarchy
 

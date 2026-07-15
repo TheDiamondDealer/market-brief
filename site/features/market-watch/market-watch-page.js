@@ -39,11 +39,12 @@
   }
 
   function activate() {
+    host();
     if (!views?.activate('equities', { scroll: false })) {
       document.querySelectorAll('.view').forEach((node) => node.classList.toggle('active', node.id === 'view-equities'));
     }
-    const title = document.getElementById('page-title'); if (title) title.textContent = 'Equity Tape';
-    const subtitle = document.getElementById('page-subtitle'); if (subtitle) subtitle.textContent = 'Private delayed market-price watchlist';
+    const title = document.getElementById('pageTitle'); if (title) title.textContent = 'Equity Tape';
+    const subtitle = document.getElementById('pageSubtitle'); if (subtitle) subtitle.textContent = 'Private delayed market-price watchlist';
   }
 
   function value(row, path) { let current = row; for (const part of path.split('.')) current = current?.[part]; return Number.isFinite(Number(current)) ? Number(current) : Number.NEGATIVE_INFINITY; }
@@ -88,7 +89,15 @@
   }
 
   function show() { ensureNavigation(); activate(); render(); enhanceCommandCentre(); }
-  function register() { if (!router || register.done) return; register.done = true; router.register('equities', show); ensureNavigation(); enhanceCommandCentre(); }
+  function register() {
+    if (!router || register.done) return;
+    register.done = true;
+    router.register('equities', show);
+    ensureNavigation();
+    enhanceCommandCentre();
+    const current = router.current?.();
+    if (current?.path === 'equities') router.dispatch('#equities', { source: 'market-watch-ready' });
+  }
   window.addEventListener('marketbrief:equity-data', () => { core.adapters?.equities?.(); core.freshness?.refresh?.(); if (router?.current?.()?.path === 'equities') render(); enhanceCommandCentre(); });
   window.addEventListener('marketbrief:route', enhanceCommandCentre);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', register, { once: true }); else register();

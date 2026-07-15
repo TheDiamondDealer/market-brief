@@ -32,7 +32,7 @@ Do not modify files, create commits or open a pull request during discovery.
 6. `docs/DATA-SOURCES.md`
 7. `docs/RUNBOOK.md`
 8. `docs/CODEX-HANDOFF.md`
-9. `docs/FREE-OFFICIAL-FEEDS.md`
+9. `docs/OFFICIAL-FEEDS.md`
 10. `docs/CROWD-EXPECTATIONS.md`
 11. `operating-model.md`
 12. relevant files under `prompts/`

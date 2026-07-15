@@ -56,6 +56,9 @@ def main() -> int:
         f"status={payload['collection']['status']} "
         f"success={payload['collection']['successCount']} "
         f"failed={payload['collection']['failureCount']} "
+        f"quotes={payload['collection']['freshQuoteCount']} "
+        f"history={payload['collection']['freshHistoryCount']} "
+        f"stale={payload['collection']['staleCount']} "
         f"generatedAtUtc={payload['generatedAtUtc']}"
     )
     return collection_exit_code(payload)

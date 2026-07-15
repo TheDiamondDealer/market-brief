@@ -74,6 +74,9 @@ def disabled_payload(items: list[dict[str, Any]], *, now: datetime, reason: str)
             "lastSuccessfulAt": None,
             "successCount": 0,
             "failureCount": len(records),
+            "freshQuoteCount": 0,
+            "freshHistoryCount": 0,
+            "staleCount": 0,
             "errors": [reason],
         },
         "watchlist": records,
@@ -115,6 +118,8 @@ def collect_payload(
     output: list[dict[str, Any]] = []
     errors: list[str] = []
     fresh_success_count = 0
+    fresh_quote_count = 0
+    fresh_history_count = 0
     current_count = 0
 
     for item in items:
@@ -126,6 +131,7 @@ def collect_payload(
 
         try:
             quote = client.get("quote", quote_params(item))
+            fresh_quote_count += 1
         except SourceError as exc:
             item_errors.append(f"quote: {sanitize_error(exc)}")
 
@@ -133,6 +139,7 @@ def collect_payload(
             try:
                 history = parse_history(client.get("time_series", time_series_params(item)))
                 history_refreshed = True
+                fresh_history_count += 1
             except SourceError as exc:
                 item_errors.append(f"history: {sanitize_error(exc)}")
 
@@ -191,6 +198,9 @@ def collect_payload(
             "lastSuccessfulAt": last_success,
             "successCount": fresh_success_count,
             "failureCount": failure_count,
+            "freshQuoteCount": fresh_quote_count,
+            "freshHistoryCount": fresh_history_count,
+            "staleCount": stale_count,
             "errors": errors,
         },
         "watchlist": output,
@@ -203,8 +213,8 @@ def collect_payload(
                 "lastSuccessfulAt": last_success,
                 "expectedCadence": "Intraday snapshots plus daily full history",
                 "detail": (
-                    f"{fresh_success_count} of {len(output)} configured instruments received a fresh "
-                    f"quote or daily-history response; {stale_count} retained rows are stale."
+                    f"{fresh_quote_count} fresh quote responses; {fresh_history_count} fresh "
+                    f"daily-history responses; {stale_count} retained rows are stale."
                 ),
                 "error": "; ".join(errors[:5]) if errors else None,
                 "url": PROVIDER_URL,

@@ -12,7 +12,7 @@ BR-05 introduces a small browser core while preserving the static, no-bundler ar
 4. `site/core/adapters.js`
 5. `site/core/router.js`
 6. existing renderer and enhancement scripts
-7. `site/shell.js`, which starts initial routing after every feature has registered
+7. `site/shell.js`, which starts initial routing while feature packages continue loading asynchronously
 
 This order is a runtime contract. Data scripts must remain before the adapters, and the core must remain before current renderers.
 
@@ -52,7 +52,7 @@ The store retains object references rather than cloning them because current enr
 
 ### Router
 
-`MarketBriefCore.router` owns initial hash dispatch and subsequent hash changes. Feature scripts register their current render functions rather than competing to interpret the initial route independently.
+`MarketBriefCore.router` owns initial hash dispatch and subsequent hash changes. Feature scripts register their current render functions rather than competing to interpret the initial route independently. Because feature packages are loaded asynchronously, a package that owns the current initial hash redispatches that hash after registration.
 
 Supported route groups remain unchanged, including direct links such as:
 

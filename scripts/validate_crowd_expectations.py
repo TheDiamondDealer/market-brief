@@ -11,15 +11,18 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from update_crowd_expectations import classify_market  # noqa: E402
 from update_crowd_expectations_hardened import validate_output  # noqa: E402
 
 DATA = ROOT / "site" / "data" / "crowd-expectations.json"
 SCHEMA = ROOT / "schemas" / "crowd-expectations.schema.json"
+REGISTRY = ROOT / "scripts" / "crowd_expectations_registry.json"
 
 
 def main() -> int:
     data = json.loads(DATA.read_text(encoding="utf-8"))
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
+    registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     errors = sorted(
         Draft202012Validator(schema).iter_errors(data),
         key=lambda item: list(item.path),
@@ -45,6 +48,20 @@ def main() -> int:
         raise SystemExit("Category counts do not match markets length")
 
     for market in markets:
+        classified, _ = classify_market(
+            {
+                "question": market.get("question"),
+                "description": market.get("description"),
+                "events": [{"title": market.get("eventTitle") or ""}],
+            },
+            registry,
+        )
+        if classified is None or classified.get("id") != market.get("categoryId"):
+            expected = classified.get("id") if classified else "excluded"
+            raise SystemExit(
+                f"Category classification mismatch: {market['id']} is "
+                f"{market.get('categoryId')}, expected {expected}"
+            )
         if market["probabilityPercent"] != round(market["probability"] * 100, 2):
             raise SystemExit(f"Probability-percent mismatch: {market['id']}")
         if market["qualityGrade"] == "A" and market["qualityScore"] < 80:

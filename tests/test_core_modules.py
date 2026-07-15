@@ -79,6 +79,9 @@ class CoreModuleContractTests(unittest.TestCase):
         free_data = (SITE / "free-data-ui.js").read_text(encoding="utf-8")
         command = (SITE / "command-centre.js").read_text(encoding="utf-8")
         scenario = (SITE / "scenario-ui.js").read_text(encoding="utf-8")
+        market_watch = (
+            SITE / "features" / "market-watch" / "market-watch-page.js"
+        ).read_text(encoding="utf-8")
 
         self.assertIn("router.start(window.__marketInitialHash", shell)
         self.assertIn("router.registerPattern('product-detail'", app)
@@ -88,6 +91,10 @@ class CoreModuleContractTests(unittest.TestCase):
             self.assertIn(route, free_data)
         self.assertIn("router.register('home'", command)
         self.assertIn("router.register('scenarios'", scenario)
+        self.assertIn("current?.path === 'equities'", market_watch)
+        self.assertIn("source: 'market-watch-ready'", market_watch)
+        self.assertIn("host();", market_watch)
+        self.assertIn("equities: ['Equity Tape'", shell)
 
     def test_legacy_globals_are_wrapped_not_removed(self) -> None:
         adapters = (SITE / "core" / "adapters.js").read_text(encoding="utf-8")
