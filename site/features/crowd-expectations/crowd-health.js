@@ -28,13 +28,35 @@
     }));
   }
 
+  function sameRecord(left, right) {
+    return left && right
+      && left.id === right.id
+      && left.status === right.status
+      && left.sourceObservedAt === right.sourceObservedAt
+      && left.collectedAt === right.collectedAt
+      && left.lastSuccessfulAt === right.lastSuccessfulAt
+      && left.detail === right.detail
+      && left.error === right.error
+      && left.url === right.url;
+  }
+
+  function alreadyInjected(base, expected) {
+    const existing = (base.records || []).filter((record) => record.family === 'crowd-expectations');
+    if (existing.length !== expected.length) return false;
+    const byId = new Map(existing.map((record) => [record.id, record]));
+    return expected.every((record) => sameRecord(byId.get(record.id), record));
+  }
+
   function inject() {
     if (injecting || !core.freshness?.get || !core.store?.setSlice) return;
     const base = core.freshness.get();
     if (!base) return;
+    const expected = records();
+    if (alreadyInjected(base, expected)) return;
+
     const merged = [
       ...(base.records || []).filter((item) => item.family !== 'crowd-expectations'),
-      ...records()
+      ...expected
     ];
     const statuses = core.freshness.STATUS || base.statuses || [];
     const counts = Object.fromEntries(
@@ -46,6 +68,7 @@
       counts: Object.freeze(counts),
       records: Object.freeze(merged)
     });
+
     injecting = true;
     try {
       core.store.setSlice('sourceHealth', result, {
