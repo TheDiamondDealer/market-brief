@@ -87,13 +87,27 @@ class CrowdCollectorTests(unittest.TestCase):
         self.assertIn("rates", assets)
         self.assertIn("gold", assets)
 
-    def test_midpoint_is_preferred_when_spread_is_acceptable(self):
+    def test_wti_market_is_not_mapped_to_unrelated_commodities(self):
+        category = next(
+            item for item in self.registry["categories"] if item["id"] == "energy-commodities"
+        )
+        market = sample_market(
+            question="Will WTI Crude Oil hit $85 in July?",
+            description="This market resolves from the active WTI futures contract.",
+        )
+        assets = crowd.asset_map(category, market)
+        self.assertEqual(assets, ["wti"])
+
+    def test_midpoint_is_preferred_when_actual_spread_is_acceptable(self):
         probability, source = crowd.selected_probability(sample_market(), 0.60)
         self.assertEqual(probability, 0.60)
         self.assertEqual(source, "bid-ask midpoint")
 
-    def test_last_trade_is_used_when_spread_is_wide(self):
-        probability, source = crowd.selected_probability(sample_market(spread=0.20), 0.60)
+    def test_last_trade_is_used_when_actual_book_is_wide(self):
+        probability, source = crowd.selected_probability(
+            sample_market(bestBid=0.10, bestAsk=0.90, spread=0.01),
+            0.60,
+        )
         self.assertEqual(probability, 0.605)
         self.assertEqual(source, "last trade")
 
@@ -134,6 +148,17 @@ class CrowdCollectorTests(unittest.TestCase):
         )
         self.assertEqual(record["resolutionSource"], hardened.resolution_source(market))
         self.assertIn("Resolution source supplied", record["qualityReasons"])
+
+    def test_missing_resolution_source_caps_grade_below_a(self):
+        market = sample_market(
+            resolutionSource="",
+            description="A clearly worded active market without a stated resolution source or URL.",
+            events=[{"slug": "test", "title": "Test", "openInterest": 200000}],
+        )
+        score, grade, reasons = hardened.quality_score(market, 4)
+        self.assertLessEqual(score, 79)
+        self.assertEqual(grade, "B")
+        self.assertTrue(any("capped" in reason.lower() for reason in reasons))
 
     def test_legitimate_signature_word_in_market_rules_is_allowed(self):
         market = sample_market(
@@ -241,15 +266,13 @@ class CrowdIntegrationTests(unittest.TestCase):
             self.assertNotIn(prohibited, workflow)
 
     def test_collector_has_no_order_endpoint_or_secret_contract(self):
-        collector = "\n".join(
-            (
-                ROOT / "scripts" / "update_crowd_expectations.py"
-            ).read_text(encoding="utf-8").lower(),
-        ) if False else (
+        collector = (
             (ROOT / "scripts" / "update_crowd_expectations.py").read_text(encoding="utf-8")
             + (ROOT / "scripts" / "update_crowd_expectations_hardened.py").read_text(encoding="utf-8")
         ).lower()
-        registry = (ROOT / "scripts" / "crowd_expectations_registry.json").read_text(encoding="utf-8")
+        registry = (
+            ROOT / "scripts" / "crowd_expectations_registry.json"
+        ).read_text(encoding="utf-8")
         self.assertIn("gamma-api.polymarket.com/markets", registry)
         self.assertNotRegex(collector, r"https?://[^\"']+/(order|orders)(?:[/?#]|[\"'])")
         self.assertNotRegex(collector, r"os\.environ\.get\([\"'](?:private_key|api_secret)")
