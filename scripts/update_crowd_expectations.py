@@ -90,6 +90,19 @@ def normalized(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip().lower()
 
 
+def contains_term(text: str, term: Any) -> bool:
+    """Match a normalized phrase without accepting partial-word collisions."""
+    phrase = normalized(term)
+    if not phrase:
+        return False
+    pattern = re.escape(phrase).replace(r"\ ", r"\s+")
+    if phrase[0].isalnum():
+        pattern = rf"(?<![a-z0-9]){pattern}"
+    if phrase[-1].isalnum():
+        pattern = rf"{pattern}(?![a-z0-9])"
+    return re.search(pattern, text) is not None
+
+
 def source_url(market: dict[str, Any]) -> str:
     events = market.get("events") or []
     if events and isinstance(events[0], dict) and events[0].get("slug"):
@@ -108,33 +121,55 @@ def event_title(market: dict[str, Any]) -> str:
 def binary_yes_probability(market: dict[str, Any]) -> tuple[float | None, int | None]:
     outcomes = [normalized(item) for item in json_array(market.get("outcomes"))]
     prices = json_array(market.get("outcomePrices"))
-    if len(outcomes) != len(prices) or "yes" not in outcomes or "no" not in outcomes:
+    if len(outcomes) != 2 or len(prices) != 2 or set(outcomes) != {"yes", "no"}:
         return None, None
     yes_index = outcomes.index("yes")
-    return number(prices[yes_index]), yes_index
+    probability = number(prices[yes_index])
+    if probability is None or not 0 <= probability <= 1:
+        return None, None
+    return probability, yes_index
 
 
 def classify_market(market: dict[str, Any], registry: dict[str, Any]) -> tuple[dict[str, Any] | None, int]:
-    text = normalized(
+    primary_text = normalized(
         " ".join(
             [
                 str(market.get("question") or ""),
-                str(market.get("description") or ""),
                 str(market.get("category") or ""),
                 event_title(market),
             ]
         )
     )
+    description_text = normalized(market.get("description"))
+    text = normalized(f"{primary_text} {description_text}")
     if not text:
         return None, 0
-    if market.get("sportsMarketType") or any(term in text for term in registry.get("excludeTerms", [])):
+    if market.get("sportsMarketType") or any(
+        contains_term(text, term) for term in registry.get("excludeTerms", [])
+    ):
         return None, 0
 
     best: dict[str, Any] | None = None
     best_score = 0
     for category in registry.get("categories", []):
-        matches = [term for term in category.get("keywords", []) if term in text]
-        score = len(matches)
+        def term_score(term: Any) -> int:
+            if contains_term(primary_text, term):
+                return 3
+            if contains_term(description_text, term):
+                return 1
+            return 0
+
+        score = sum(term_score(term) for term in category.get("keywords", []))
+        context_matches = [
+            term for term in category.get("contextKeywords", [])
+            if contains_term(text, term)
+        ]
+        contextual_matches = [
+            term for term in category.get("contextualKeywords", [])
+            if contains_term(text, term)
+        ]
+        if context_matches and contextual_matches:
+            score += sum(term_score(term) for term in contextual_matches)
         if score > best_score:
             best = category
             best_score = score
@@ -251,7 +286,7 @@ def asset_map(category: dict[str, Any], market: dict[str, Any]) -> list[str]:
         "us-dollar": ("fed", "tariff", "election", "sanction", "debt ceiling"),
     }
     for asset, terms in additions.items():
-        if any(term in text for term in terms):
+        if any(contains_term(text, term) for term in terms):
             assets.append(asset)
     return sorted(set(assets))
 

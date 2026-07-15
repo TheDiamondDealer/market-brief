@@ -34,7 +34,7 @@
   function ageDays(value, now = new Date()) {
     const parsed = parseDate(value);
     if (!parsed) return null;
-    return Math.max(0, (now.getTime() - parsed.getTime()) / 86400000);
+    return (now.getTime() - parsed.getTime()) / 86400000;
   }
 
   function cadenceStatus(observedAt, cadenceDays, { futureToleranceDays = 1 } = {}) {

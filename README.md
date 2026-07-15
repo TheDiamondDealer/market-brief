@@ -61,7 +61,7 @@ Do not open `site/index.html` directly with `file://`; browser security rules ca
 │   ├── DATA-SOURCES.md               # Source trust and usage rules
 │   ├── RUNBOOK.md                    # Operations and troubleshooting
 │   ├── CODEX-HANDOFF.md              # Exact Codex setup and audit prompt
-│   ├── FREE-OFFICIAL-FEEDS.md        # SEC/BLS/EIA/BEA/Census/USGS pipeline
+│   ├── OFFICIAL-FEEDS.md             # SEC/BLS/EIA/BEA/Census/USGS pipeline
 │   └── CROWD-EXPECTATIONS.md         # Read-only prediction-market integration
 ├── scripts/
 │   ├── update_political_disclosures.py
@@ -243,7 +243,7 @@ The first Codex pass should be audit-only and must not edit files. It should ver
 - [Data sources and trust model](docs/DATA-SOURCES.md)
 - [Operations runbook](docs/RUNBOOK.md)
 - [Codex handoff](docs/CODEX-HANDOFF.md)
-- [Free official agency feeds](docs/FREE-OFFICIAL-FEEDS.md)
+- [Free official agency feeds](docs/OFFICIAL-FEEDS.md)
 - [Crowd Expectations](docs/CROWD-EXPECTATIONS.md)
 - [Contributing](CONTRIBUTING.md)
 - [Research operating model](operating-model.md)

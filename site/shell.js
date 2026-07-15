@@ -14,6 +14,7 @@
     official: ['Official Feeds', 'Primary agency filings, energy fundamentals and economic observations.'],
     'crowd-expectations': ['Crowd Expectations', 'Read-only market-implied probabilities for decision-relevant events.'],
     crowd: ['Crowd Expectations', 'Read-only market-implied probabilities for decision-relevant events.'],
+    equities: ['Equity Tape', 'Private delayed market-price watchlist.'],
     events: ['Calendar & Reactions', 'High-impact events, scenarios and post-event follow-through.'],
     week: ['Week Ahead', 'The active weekly thesis, event radar and verified moves.'],
     regime: ['Regime', 'The strategic interpretation layer used across the console.'],

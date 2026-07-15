@@ -81,6 +81,9 @@ class TwelveDataCollectorTests(unittest.TestCase):
         payload = module.collect_payload([self.item], client=client, previous={}, mode="full", now=self.now)
         row = payload["watchlist"][0]
         self.assertEqual(payload["collection"]["status"], "current")
+        self.assertEqual(payload["collection"]["freshQuoteCount"], 1)
+        self.assertEqual(payload["collection"]["freshHistoryCount"], 1)
+        self.assertEqual(payload["collection"]["staleCount"], 0)
         self.assertEqual(row["price"], 360.0)
         self.assertEqual(row["previousClose"], 359.0)
         self.assertEqual(row["movingAverages"]["day20"], 349.5)
@@ -119,6 +122,8 @@ class TwelveDataCollectorTests(unittest.TestCase):
         self.assertEqual(row["price"], 205.0)
         self.assertEqual(len(row["history"]), 260)
         self.assertEqual(payload["collection"]["successCount"], 1)
+        self.assertEqual(payload["collection"]["freshQuoteCount"], 1)
+        self.assertEqual(payload["collection"]["freshHistoryCount"], 0)
 
     def test_failed_symbol_retains_previous_verified_row_as_stale(self):
         previous_row = module.blank_record(self.item, "2026-07-13T12:00:00Z", "current", None)
@@ -138,6 +143,9 @@ class TwelveDataCollectorTests(unittest.TestCase):
         self.assertIn("rate limit", row["error"])
         self.assertEqual(payload["collection"]["status"], "failed")
         self.assertEqual(payload["collection"]["lastSuccessfulAt"], "2026-07-13T12:00:00Z")
+        self.assertEqual(payload["collection"]["freshQuoteCount"], 0)
+        self.assertEqual(payload["collection"]["freshHistoryCount"], 0)
+        self.assertEqual(payload["collection"]["staleCount"], 1)
         self.assertEqual(module.collection_exit_code(payload), 0)
 
     def test_quote_failure_cannot_promote_old_history_to_current(self):
@@ -179,6 +187,9 @@ class TwelveDataCollectorTests(unittest.TestCase):
         self.assertEqual(payload["collection"]["status"], "partial")
         self.assertEqual(payload["collection"]["successCount"], 1)
         self.assertEqual(payload["collection"]["lastSuccessfulAt"], "2026-07-14T12:00:00Z")
+        self.assertEqual(payload["collection"]["freshQuoteCount"], 0)
+        self.assertEqual(payload["collection"]["freshHistoryCount"], 1)
+        self.assertEqual(payload["collection"]["staleCount"], 0)
 
     def test_failed_empty_run_exits_nonzero(self):
         payload = module.disabled_payload([self.item], now=self.now, reason="pending")
@@ -188,6 +199,9 @@ class TwelveDataCollectorTests(unittest.TestCase):
     def test_disabled_payload_is_explicit_and_has_no_prices(self):
         payload = module.disabled_payload([self.item], now=self.now, reason="private perimeter pending")
         self.assertEqual(payload["collection"]["mode"], "disabled")
+        self.assertEqual(payload["collection"]["freshQuoteCount"], 0)
+        self.assertEqual(payload["collection"]["freshHistoryCount"], 0)
+        self.assertEqual(payload["collection"]["staleCount"], 0)
         self.assertEqual(payload["provider"]["licenseMode"], "private-internal-use-only")
         self.assertIsNone(payload["watchlist"][0]["price"])
         self.assertEqual(payload["watchlist"][0]["status"], "unavailable")

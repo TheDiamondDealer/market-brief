@@ -173,6 +173,7 @@ The collector is defensive:
 
 - one symbol failure does not erase other symbols;
 - a failed symbol retains its last verified row and becomes `stale`;
+- `freshQuoteCount`, `freshHistoryCount` and `staleCount` report provider responses and retained rows separately while `successCount` remains the compatible usable-instrument count;
 - a partial quote/history response becomes `partial`;
 - an all-source failure retains prior verified values;
 - API errors are stored without request URLs or credentials;

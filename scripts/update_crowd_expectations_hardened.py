@@ -108,31 +108,32 @@ def asset_map(category: dict[str, Any], market: dict[str, Any]) -> list[str]:
     for token, asset in (
         ("gold", "gold"), ("silver", "silver"), ("copper", "copper"),
     ):
-        if token in text:
+        if base.contains_term(text, token):
             assets.add(asset)
-    if "rare earth" in text or "critical mineral" in text:
+    if base.contains_term(text, "rare earth") or base.contains_term(text, "critical mineral"):
         assets.add("rare-earths")
 
-    if "wti" in text or "west texas intermediate" in text:
+    if base.contains_term(text, "wti") or base.contains_term(text, "west texas intermediate"):
         assets.add("wti")
-    elif "brent" in text:
+    elif base.contains_term(text, "brent"):
         assets.add("brent")
-    elif any(term in text for term in ("opec", "strait of hormuz", "crude oil", "oil production")):
+    elif any(base.contains_term(text, term) for term in ("opec", "strait of hormuz", "crude oil", "oil production")):
         assets.update({"brent", "wti"})
 
-    if "henry hub" in text or "us natural gas" in text:
+    if base.contains_term(text, "henry hub") or base.contains_term(text, "us natural gas"):
         assets.add("gas-us")
-    if any(term in text for term in ("uk gas", "european gas", "lng", "natural gas")):
+    if any(base.contains_term(text, term) for term in ("uk gas", "european gas", "lng", "natural gas")):
         assets.add("gas-uk")
 
-    if any(term in text for term in (
-        "semiconductor", "chip", "nvidia", "amd", "intel", "tsmc", "asml",
+    if any(base.contains_term(text, term) for term in (
+        "semiconductor", "chip", "nvidia", "amd", "intel corporation", "intel stock",
+        "intel earnings", "intc", "tsmc", "asml",
         "taiwan", "data center", "data centre", "artificial intelligence",
     )):
         assets.add("semiconductors")
-    if any(term in text for term in ("taiwan", "south china sea", "china export control")):
+    if any(base.contains_term(text, term) for term in ("taiwan", "south china sea", "china export control")):
         assets.add("rare-earths")
-    if "debt ceiling" in text or "government shutdown" in text:
+    if base.contains_term(text, "debt ceiling") or base.contains_term(text, "government shutdown"):
         assets.add("gold")
     return sorted(assets)
 

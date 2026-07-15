@@ -68,6 +68,16 @@ class CrowdCollectorTests(unittest.TestCase):
         self.assertIsNone(probability)
         self.assertIsNone(index)
 
+    def test_market_with_yes_no_and_third_outcome_is_rejected(self):
+        probability, index = crowd.binary_yes_probability(
+            sample_market(
+                outcomes='["Yes", "No", "Other"]',
+                outcomePrices='["0.40", "0.40", "0.20"]',
+            )
+        )
+        self.assertIsNone(probability)
+        self.assertIsNone(index)
+
     def test_sports_market_is_excluded(self):
         category, score = crowd.classify_market(
             sample_market(
@@ -86,6 +96,71 @@ class CrowdCollectorTests(unittest.TestCase):
         assets = crowd.asset_map(category, sample_market())
         self.assertIn("rates", assets)
         self.assertIn("gold", assets)
+
+    def test_foreign_presidential_elections_are_not_us_policy(self):
+        for question in (
+            "Will Eduardo Bolsonaro win the Brazilian presidential election?",
+            "Will a French presidential election be called this year?",
+        ):
+            with self.subTest(question=question):
+                category, score = crowd.classify_market(
+                    sample_market(
+                        question=question,
+                        description="An election market resolved from the national election authority.",
+                        events=[{"slug": "foreign-election", "title": question}],
+                    ),
+                    self.registry,
+                )
+                self.assertIsNone(category)
+                self.assertEqual(score, 0)
+
+    def test_us_presidential_election_requires_us_context(self):
+        category, score = crowd.classify_market(
+            sample_market(
+                question="Who will win the United States presidential election?",
+                description="The market resolves from the certified United States result.",
+                events=[{"slug": "us-election", "title": "United States presidential election"}],
+            ),
+            self.registry,
+        )
+        self.assertEqual(category["id"], "us-policy-elections")
+        self.assertGreaterEqual(score, 2)
+
+    def test_provider_intelligence_prose_is_not_intel_company_match(self):
+        category, score = crowd.classify_market(
+            sample_market(
+                question="Will a Satoshi-era wallet move coins this month?",
+                description="The event will be monitored using the Arkham Intel Explorer.",
+                events=[{"slug": "satoshi-wallet", "title": "Satoshi wallet activity"}],
+            ),
+            self.registry,
+        )
+        self.assertIsNone(category)
+        self.assertEqual(score, 0)
+
+    def test_celebrity_nomination_market_is_excluded(self):
+        category, score = crowd.classify_market(
+            sample_market(
+                question="Will LeBron James win the 2028 Democratic presidential nomination?",
+                description="This market resolves from official Democratic Party sources.",
+                events=[{"slug": "nominee", "title": "Democratic Presidential Nominee 2028"}],
+            ),
+            self.registry,
+        )
+        self.assertIsNone(category)
+        self.assertEqual(score, 0)
+
+    def test_geopolitical_event_outranks_incidental_president_prose(self):
+        category, score = crowd.classify_market(
+            sample_market(
+                question="Will Iran reopen its airspace by July 31?",
+                description="President Trump may comment on the event.",
+                events=[{"slug": "iran-airspace", "title": "Iran airspace closure"}],
+            ),
+            self.registry,
+        )
+        self.assertEqual(category["id"], "geopolitics-security")
+        self.assertGreaterEqual(score, 3)
 
     def test_wti_market_is_not_mapped_to_unrelated_commodities(self):
         category = next(
