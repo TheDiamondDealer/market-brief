@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": null,
+  "generatedAtUtc": "2026-07-15T23:11:29Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -8,33 +8,1442 @@
     "documentationUrl": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
   },
   "collection": {
-    "status": "unavailable",
+    "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 4,
-    "successfulQueryCount": 0,
-    "rawArticleCount": 0,
-    "selectedArticleCount": 0,
-    "lastSuccessfulAt": null,
-    "error": "The GDELT collector has not completed its first successful scheduled run."
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
+    "selectedArticleCount": 48,
+    "lastSuccessfulAt": "2026-07-15T23:11:29Z",
+    "error": "strategic-materials: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; semiconductors-ai: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
-    {"id": "strategic-materials", "name": "Strategic materials", "query": "rare earths, critical minerals, uranium, copper, gold and lithium"},
-    {"id": "semiconductors-ai", "name": "Semiconductors & AI infrastructure", "query": "semiconductors, artificial intelligence, data centres, HBM and advanced packaging"},
-    {"id": "macro-policy", "name": "Macro, trade & policy", "query": "tariffs, export controls, sanctions, inflation, central banks and recession"},
-    {"id": "energy-security", "name": "Energy & security", "query": "oil, LNG, natural gas, OPEC, nuclear and defence"}
+    {
+      "id": "strategic-materials",
+      "name": "Strategic materials",
+      "query": "(\"rare earth\" OR \"critical mineral\" OR uranium OR copper OR gold OR lithium)"
+    },
+    {
+      "id": "semiconductors-ai",
+      "name": "Semiconductors & AI infrastructure",
+      "query": "(semiconductor OR \"artificial intelligence\" OR \"data center\" OR HBM OR \"advanced packaging\")"
+    },
+    {
+      "id": "macro-policy",
+      "name": "Macro, trade & policy",
+      "query": "(tariff OR \"export control\" OR sanction OR inflation OR \"central bank\" OR recession)"
+    },
+    {
+      "id": "energy-security",
+      "name": "Energy & security",
+      "query": "(oil OR LNG OR \"natural gas\" OR OPEC OR nuclear OR defence OR defense)"
+    }
   ],
-  "articles": [],
+  "articles": [
+    {
+      "id": "e031a828d84b84ca70fd",
+      "title": "Trump - backed Russia sanctions bill , championed by Lindsey Graham , eases tariff threat on China , India – what to know",
+      "url": "https://www.hindustantimes.com/world-news/us-news/trumpbacked-russia-sanctions-bill-championed-by-lindsey-graham-eases-tariffs-threat-on-china-india-what-to-kno-101784074427157.html",
+      "domain": "hindustantimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-15T00:45:00Z",
+      "firstSeenAt": "2026-07-15T00:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 36,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "36784595c2a0c67193d3",
+      "title": "В ЕС не се разбраха за санкциите срещу Русия",
+      "url": "https://www.vesti.bg/sviat/v-es-ne-se-razbraha-za-sankciite-sreshtu-rusiia-6264992",
+      "domain": "vesti.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-07-15T22:30:00Z",
+      "firstSeenAt": "2026-07-15T22:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "812405f93e58a574eeed",
+      "title": "The hydrogen beneath our feet",
+      "url": "https://finance.yahoo.com/energy/articles/hydrogen-beneath-feet-213011922.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-15T22:00:00Z",
+      "firstSeenAt": "2026-07-15T22:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fc824e92f0744ccb7b0d",
+      "title": "Järkyttävä luku kertoo Ukrainan siviilien ahdingosta",
+      "url": "https://www.iltalehti.fi/ulkomaat/a/a3d5d91b-7bd1-4cef-b8b2-8000d8e170e2",
+      "domain": "iltalehti.fi",
+      "language": "Finnish",
+      "sourceCountry": "Finland",
+      "seenAt": "2026-07-15T21:30:00Z",
+      "firstSeenAt": "2026-07-15T21:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e18212beb1583ac9a346",
+      "title": "ЕС отложи решението за новия пакет санкции срещу Русия до 23 юли ᐉ Новини от Fakti . bg - Свят",
+      "url": "https://fakti.bg/world/1067915-es-otloji-reshenieto-za-novia-paket-sankcii-sreshtu-rusia-do-23-uli",
+      "domain": "fakti.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-07-15T21:15:00Z",
+      "firstSeenAt": "2026-07-15T21:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c1b08c6da38d4937f4d2",
+      "title": "Липса на единодушие : ЕС отложи решението за 21 - вия пакет санкции срещу Русия",
+      "url": "https://dariknews.bg/novini/sviat/lipsa-na-edinodushie-es-otlozhi-reshenieto-za-21-viia-paket-sankcii-sreshtu-rusiia-2460963",
+      "domain": "dariknews.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-07-15T21:15:00Z",
+      "firstSeenAt": "2026-07-15T21:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1ca74e3d9f0fe56d84b0",
+      "title": "Sanctions bill against Russia introduced in the U . S . Senate",
+      "url": "https://news.am/en/news/1049865",
+      "domain": "news.am",
+      "language": "English",
+      "sourceCountry": "Armenia",
+      "seenAt": "2026-07-15T09:30:00Z",
+      "firstSeenAt": "2026-07-15T09:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c6fbded95843f8bba992",
+      "title": "ΕΕ : Αδιέξοδο στις διαπραγματεύσεις για το 21ο πακέτο κυρώσεων κατά της Ρωσίας",
+      "url": "https://www.sofokleousin.gr/epikairotita/diethni/ee-adieksodo-stis-diapragmateyseis-gia-to-21o-paketo-kyroseon-kat",
+      "domain": "sofokleousin.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-15T20:45:00Z",
+      "firstSeenAt": "2026-07-15T20:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7f33e392cb1ba8375836",
+      "title": "Las crisis petroleras ya no son tan críticas",
+      "url": "https://vanguardia.com.mx/opinion/las-crisis-petroleras-ya-no-son-tan-criticas-CI22196325",
+      "domain": "vanguardia.com.mx",
+      "language": "Spanish",
+      "sourceCountry": "Mexico",
+      "seenAt": "2026-07-15T20:45:00Z",
+      "firstSeenAt": "2026-07-15T20:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9c474deaf760e7b492b8",
+      "title": "Top Oil Stocks To Watch Now – July 15th",
+      "url": "https://www.dailypolitical.com/2026/07/15/top-oil-stocks-to-watch-now-july-15th.html",
+      "domain": "dailypolitical.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-15T17:45:00Z",
+      "firstSeenAt": "2026-07-15T17:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "720542ad2d409594aee4",
+      "title": "EU ei pssyt sopuun uusista pakotteista Venäj vastaan – venälisen öljyn hintakatto säilyy toistaiseksi",
+      "url": "https://yle.fi/a/74-20236536",
+      "domain": "yle.fi",
+      "language": "Finnish",
+      "sourceCountry": "Finland",
+      "seenAt": "2026-07-15T17:45:00Z",
+      "firstSeenAt": "2026-07-15T17:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cf0765dbda4597ee21ea",
+      "title": "Nové sankcie proti Rusku zatiaľ neprešli . Výhrady má Grécko - Svet - Správy",
+      "url": "https://www.pravda.sk/spravy/svet/clanok/2008007-europska-unia-eu-rusko-sankcie-balicek",
+      "domain": "pravda.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-07-15T17:30:00Z",
+      "firstSeenAt": "2026-07-15T17:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "abaefef353a3ba33c18b",
+      "title": "Vorerst keine Einigung auf neue Russland - Sanktionen",
+      "url": "https://orf.at/stories/3436297/",
+      "domain": "orf.at",
+      "language": "German",
+      "sourceCountry": "Austria",
+      "seenAt": "2026-07-15T17:30:00Z",
+      "firstSeenAt": "2026-07-15T17:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e1158a91bc3d2c47967a",
+      "title": "Σκληρό πόκερ ξανά με τις τιμές του πετρελαίου",
+      "url": "https://www.tanea.gr/print/2026/07/15/economy/skliro-poker-ksana-lfme-tis-times-tou-petrelaiou/",
+      "domain": "tanea.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-15T17:30:00Z",
+      "firstSeenAt": "2026-07-15T17:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7de61d57295d02a76029",
+      "title": "Σκληρό πόκερ ξανά με τις τιμές του πετρελαίου",
+      "url": "https://www.inewsgr.com/27/skliro-poker-xana-me-tis-times-tou-petrelaiou.htm",
+      "domain": "inewsgr.com",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-15T17:30:00Z",
+      "firstSeenAt": "2026-07-15T17:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e3ef9316cc692d4c1763",
+      "title": "وراء الخبر : حمد بن خليفة آل ثاني .. الأمير الذي حوّل الغاز إلى نفوذ وجعل قطر أكبر من خريطتها",
+      "url": "https://www.sbs.com.au/language/arabic/ar/podcast-episode/behind-the-news-hamad-bin-khalifa-al-thani-the-prince-who-turned-gas-into-influence-and-made-qatar-bigger-than-its-map/m4c0d7cvn",
+      "domain": "sbs.com.au",
+      "language": "Arabic",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-07-15T17:30:00Z",
+      "firstSeenAt": "2026-07-15T17:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "62e361a3e06ab433002c",
+      "title": "MDN Energy Stories of Interest : Wed , Jul 15 , 2026 - Marcellus Drilling News",
+      "url": "https://marcellusdrilling.com/2026/07/mdns-energy-stories-of-interest-wed-jul-15-2026/",
+      "domain": "marcellusdrilling.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-15T17:15:00Z",
+      "firstSeenAt": "2026-07-15T17:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6234420bf5810b1a7d80",
+      "title": "Štáty EÚ sa zatiaľ nedohodli na podpore 21 . balíka sankcií proti Rusku",
+      "url": "https://www.teraz.sk/zahranicie/staty-eu-sa-zatial-nedohodli-na-podp/978153-clanok.html",
+      "domain": "teraz.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-07-15T17:15:00Z",
+      "firstSeenAt": "2026-07-15T17:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "83ca58f1904fc0cd0323",
+      "title": "Európska únia ani po hodinách rokovaní neschválila sankčný balík . Spor vyvolala grécka požiadavka",
+      "url": "https://www.ta3.com/clanok/1061005/eu-ani-po-hodinach-rokovani-neschvalila-sankcny-balik-spor-vyvolala-grecka-poziadavka",
+      "domain": "ta3.com",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-07-15T17:00:00Z",
+      "firstSeenAt": "2026-07-15T17:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "be5374bd453aff041c79",
+      "title": "Argentina vs . Inglaterra : más allá del Mundial 2026 , dos modelos energéticos se enfrentan al mismo desafío",
+      "url": "https://www.rionegro.com.ar/energia/argentina-vs-inglaterra-mas-alla-del-mundial-2026-dos-modelos-energeticos-se-enfrentan-al-mismo-desafio-4648978/",
+      "domain": "rionegro.com.ar",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-07-15T17:00:00Z",
+      "firstSeenAt": "2026-07-15T17:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4037214da28a3f5e4245",
+      "title": "Russia Gas Industry Is Dying a Slow But Occasionally Explosive Death",
+      "url": "https://www.themoscowtimes.com/2026/07/15/russias-gas-industry-is-dying-a-slow-but-occasionally-explosive-death-a93257",
+      "domain": "themoscowtimes.com",
+      "language": "English",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-15T16:15:00Z",
+      "firstSeenAt": "2026-07-15T16:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5456f0f4654d0a5a262e",
+      "title": "Alaska LNG bill tests the Interior delegation unity",
+      "url": "https://www.newsminer.com/news/alaska_news/alaska-lng-bill-tests-the-interior-delegations-unity/article_edeb9f5a-96eb-40cc-8d5c-8db6d90186dd.html",
+      "domain": "newsminer.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-15T16:15:00Z",
+      "firstSeenAt": "2026-07-15T16:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4cbc8f38012edcf62674",
+      "title": "Нафтогаз і Argent LNG уклали угоду про довгострокове постачання LNG зі США",
+      "url": "https://lb.ua/economics/2026/07/15/752134_naftogaz_amerikanska_argent_lng.html",
+      "domain": "lb.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-07-15T14:45:00Z",
+      "firstSeenAt": "2026-07-15T14:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "eed36ccf70dfc97ace43",
+      "title": "Shell Targets 2027 Drilling at Venezuela Dragon Gas Field",
+      "url": "https://www.oedigital.com/news/541236-shell-targets-2027-drilling-at-venezuela-s-dragon-gas-field",
+      "domain": "oedigital.com",
+      "language": "English",
+      "sourceCountry": "Norway",
+      "seenAt": "2026-07-15T13:00:00Z",
+      "firstSeenAt": "2026-07-15T13:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a230568d124800bb6ba3",
+      "title": "Čína kritizuje americký návrh sankcií voči odberateľom ruských energií",
+      "url": "https://www.teraz.sk/zahranicie/cina-kritizuje-americky-navrh-sankci/978057-clanok.html",
+      "domain": "teraz.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-07-15T12:30:00Z",
+      "firstSeenAt": "2026-07-15T12:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "be00ec8a2e6134435c48",
+      "title": "Южная Корея в июне была вынуждена нарастить импорт СПГ",
+      "url": "https://www.interfax.ru/business/1103427",
+      "domain": "interfax.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-15T12:15:00Z",
+      "firstSeenAt": "2026-07-15T12:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "91cce0f7b7d7e91753e0",
+      "title": "Dow Jones Top Energy Headlines at 7 AM ET : Oil Rises After U . S . Reimposed Naval Blockade on Iran | Europe ...",
+      "url": "https://www.morningstar.com/news/dow-jones/202607153357/dow-jones-top-energy-headlines-at-7-am-et-oil-rises-after-us-reimposed-naval-blockade-on-iran-europes",
+      "domain": "morningstar.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-07-15T12:00:00Z",
+      "firstSeenAt": "2026-07-15T12:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "52c5162e178c9ff833c8",
+      "title": "Gas , Adriatic LNG ha fornito il 14 % della domanda nazionale nel primo semestre",
+      "url": "https://www.teleborsa.it/News/2026/07/15/gas-adriatic-lng-ha-fornito-il-14percent-della-domanda-nazionale-nel-primo-semestre-91.html",
+      "domain": "teleborsa.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-07-15T12:00:00Z",
+      "firstSeenAt": "2026-07-15T12:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ab833da4def60ff70f43",
+      "title": "Oil , LNG , fertilisers and maybe diamonds : What is at risk from Iran wider blockade threat",
+      "url": "https://timesofindia.indiatimes.com/business/international-business/oil-lng-fertilisers-and-maybe-diamonds-what-is-at-risk-from-irans-wider-blockade-threat/articleshow/132413210.cms",
+      "domain": "timesofindia.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-15T11:45:00Z",
+      "firstSeenAt": "2026-07-15T11:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d791690027b12fbb73a2",
+      "title": "Čína kritizuje americký návrh sankcií voči odberateľom ruských energií",
+      "url": "https://www.topky.sk/cl/11/9446463/Cina-odmieta-americky-tlak--Sankcie-za-rusku-ropu-oznacila-za-neprijatelne",
+      "domain": "topky.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-07-15T11:45:00Z",
+      "firstSeenAt": "2026-07-15T11:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e0ba99e9db8bb69f5b9d",
+      "title": "Οι εχθροπραξίες ΗΠΑ - Ιράν κρατούν σε άνοδο την τιμή αργού",
+      "url": "https://www.agronews.gr/oikonomia-kai-politiki/230181/oi-ehthropraxies-ipa-iran-kratoun-se-anodo-tin-timi-argou/",
+      "domain": "agronews.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-15T11:45:00Z",
+      "firstSeenAt": "2026-07-15T11:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "78050569e22efa268faa",
+      "title": "Το Ιράν απειλεί με « έμφραγμα » την παγκόσμια ναυσιπλοΐα - Δεν είναι μόνο τα Στενά του Ορμούζ που προκαλούν ανησυχία",
+      "url": "https://www.athensvoice.gr/epikairotita/diethni/975188/to-iran-apeilei-me-emfragma-tin-pagosmia-nausiploia-den-einai-mono-ta-stena-tou-ormouz-pou-prokaloun-anisuhia/",
+      "domain": "athensvoice.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-15T11:45:00Z",
+      "firstSeenAt": "2026-07-15T11:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7fd88816027c1c779101",
+      "title": "যুক্তরাষ্ট্র - ইরানের পাল্টাপাল্টি হামলায় বিশ্ববাজারে বাড়লো জ্বালানি তেলের দাম",
+      "url": "https://www.dhakatimes24.com/2026/07/15/408907",
+      "domain": "dhakatimes24.com",
+      "language": "Bengali",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-07-15T11:45:00Z",
+      "firstSeenAt": "2026-07-15T11:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b2dc500c21883fc5ce9b",
+      "title": "بنود أقل صرامة .. الولايات المتحدة تكشف تفاصيل مشروع قانون جراهام للعقوبات ضد روسيا",
+      "url": "https://www.dostor.org/5635725",
+      "domain": "dostor.org",
+      "language": "Arabic",
+      "sourceCountry": "Egypt",
+      "seenAt": "2026-07-15T09:45:00Z",
+      "firstSeenAt": "2026-07-15T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d1b7c34e48bb5a9dbb56",
+      "title": "Inside the Race to Fix America Gas Pipelines Amid AI Center Boom",
+      "url": "https://www.theepochtimes.com/article/inside-the-race-to-fix-americas-gas-pipelines-amid-ai-center-boom-6055874",
+      "domain": "theepochtimes.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-15T09:30:00Z",
+      "firstSeenAt": "2026-07-15T09:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5c47cd577c2e8a3d015d",
+      "title": "Roubini intervention : Iran activates the",
+      "url": "https://www.bankingnews.gr/diethni/articles/888263/roubini-intervention-iran-activates-the-weapon-that-destroyed-hitler-s-germany-why-the-economy-is-marching-blind-into-the-abyss",
+      "domain": "bankingnews.gr",
+      "language": "English",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-15T09:30:00Z",
+      "firstSeenAt": "2026-07-15T09:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c82cb620962920d972df",
+      "title": "Petrolio , ora il rischio è passare dal deficit al surplus . Le stime sui prezzi di Intesa Sanpaolo",
+      "url": "https://www.milanofinanza.it/news/petrolio-ora-il-rischio-e-passare-dal-deficit-al-surplus-le-stime-sui-prezzi-di-intesa-sanpaolo-202607142044286075",
+      "domain": "milanofinanza.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-07-15T08:30:00Z",
+      "firstSeenAt": "2026-07-15T08:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "05dd08c293b0e99edaea",
+      "title": "Умрелият внезапно Линдзи Греъм завеща мощно оръжие в ръцете на приятеля си Тръмп !",
+      "url": "https://bnews.bg/245676-2/",
+      "domain": "bnews.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-07-15T08:15:00Z",
+      "firstSeenAt": "2026-07-15T08:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "004d2a84401de251261a",
+      "title": "Prímerie medzi Iránom a united states nevydržalo . Ceny ropy opäť vzrástli",
+      "url": "https://www.aktuality.sk/clanok/bYESijI/primerie-medzi-iranom-a-usa-nevydrzalo-ceny-ropy-opat-vzrastli/",
+      "domain": "aktuality.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-07-15T07:00:00Z",
+      "firstSeenAt": "2026-07-15T07:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "74470ead8c112044af2c",
+      "title": "Good news for new gas connection seekers in Pakistan",
+      "url": "https://arynews.tv/good-news-for-new-gas-connection-seekers-in-pakistan",
+      "domain": "arynews.tv",
+      "language": "English",
+      "sourceCountry": "Pakistan",
+      "seenAt": "2026-07-15T07:00:00Z",
+      "firstSeenAt": "2026-07-15T07:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "00f8f4aed8c12f9530a0",
+      "title": "2026年6月份能源生产情况 _ 国内财经 _ 财经 _ 中金在线",
+      "url": "http://news.cnfol.com/guoneicaijing/20260715/32307805.shtml",
+      "domain": "news.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-07-15T06:15:00Z",
+      "firstSeenAt": "2026-07-15T06:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6ab7546729e059026cbb",
+      "title": "Πετρέλαιο : Νέα άνοδος στις τιμές καθώς κλιμακώνεται η ένταση στη Μέση ...",
+      "url": "https://www.capital.gr/agores/4004769/petrelaio-nea-anodos-stis-times-kathos-klimakonetai-i-entasi-sti-mesi-anatoli/",
+      "domain": "capital.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-15T06:15:00Z",
+      "firstSeenAt": "2026-07-15T06:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5be4160de967030e9256",
+      "title": "国家统计局公布2026年6月份能源生产情况",
+      "url": "https://finance.ifeng.com/c/8um7qLZm44V",
+      "domain": "finance.ifeng.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-07-15T04:00:00Z",
+      "firstSeenAt": "2026-07-15T04:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3bd04a9a75a33044c31b",
+      "title": "جريدة الرياض | ارتفاع إنتاج « أوبك+ » 36 , 3 مليون برميل يومياً مع استئناف الإمدادات الخليجية",
+      "url": "https://www.alriyadh.com/2197876",
+      "domain": "alriyadh.com",
+      "language": "Arabic",
+      "sourceCountry": "Saudi Arabia",
+      "seenAt": "2026-07-15T03:00:00Z",
+      "firstSeenAt": "2026-07-15T03:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "07500ee5e38a90dfe86c",
+      "title": "Mitsubishi takes over $7 . 5B in U . S . natural gas fields , deepening Japanese bet on LNG and AI boom",
+      "url": "https://fortune.com/2026/07/14/mitsubishi-takes-over-7billion-gas-fields-aethon-japanese-push-lng-ai/",
+      "domain": "fortune.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-15T02:30:00Z",
+      "firstSeenAt": "2026-07-15T02:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "caed7332e7d86a944423",
+      "title": "6月规上工业发电量同比增长2 . 0 % 原煤产量同比下降9 . 7 %",
+      "url": "https://www.163.com/money/article/L1SCURFQ00259SCP.html",
+      "domain": "163.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-07-15T02:30:00Z",
+      "firstSeenAt": "2026-07-15T02:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9f1235c7454785588169",
+      "title": "Reuters : Shell avanza en licitaciones de cuatro pozos para el segundo trimestre de 2027",
+      "url": "https://www.descifrado.com/2026/07/14/reuters-shell-avanza-en-licitaciones-de-cuatro-pozos-para-el-segundo-trimestre-de-2027/",
+      "domain": "descifrado.com",
+      "language": "Spanish",
+      "sourceCountry": "Venezuela",
+      "seenAt": "2026-07-15T01:00:00Z",
+      "firstSeenAt": "2026-07-15T01:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9eee420c0245cb590a92",
+      "title": "LNG Canada offers First Nations option to invest up to C$1B in phase 2 project ( SHEL : NYSE )",
+      "url": "https://seekingalpha.com/news/4613798-lng-canada-offers-first-nations-option-to-invest-up-to-c-1b-in-phase-2-project",
+      "domain": "seekingalpha.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-15T01:00:00Z",
+      "firstSeenAt": "2026-07-15T01:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    }
+  ],
   "sourceStatus": [
     {
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
-      "status": "unavailable",
-      "observationDate": null,
-      "lastSuccessfulAt": null,
+      "status": "partial",
+      "observationDate": "2026-07-15T22:30:00Z",
+      "lastSuccessfulAt": "2026-07-15T23:11:29Z",
       "expectedCadence": "Hourly",
-      "detail": "Awaiting the first successful scheduled collection.",
-      "error": "The GDELT collector has not completed its first successful scheduled run.",
+      "detail": "48 discovery leads selected from 50 returned records across 1/4 successful queries.",
+      "error": "strategic-materials: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; semiconductors-ai: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
