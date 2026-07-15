@@ -16,6 +16,12 @@
     document.querySelectorAll('.view').forEach((node) => node.classList.toggle('active', node.id === 'view-news'));
   }
   function directionGlyph(value) { return value === 'up' ? '↑' : value === 'down' ? '↓' : value === 'mixed' ? '↕' : '?'; }
+  function directionLabel(value) { return ['up', 'down', 'mixed'].includes(value) ? value : 'unclear'; }
+  function directionChip(entry) {
+    const direction = directionLabel(entry.direction);
+    const accessible = `${entry.assetName}: expected ${direction}. ${entry.mechanism || 'Mechanism not specified.'}`;
+    return `<span class="market-direction-chip ${escapeHtml(direction)}" title="${escapeHtml(entry.mechanism)}" aria-label="${escapeHtml(accessible)}"><span>${escapeHtml(entry.assetName)}</span><span class="market-direction-arrow" aria-hidden="true">${directionGlyph(direction)}</span></span>`;
+  }
   function statusLabel(value) { return value ? value.charAt(0).toUpperCase() + value.slice(1) : 'Unclear'; }
   function sourceLinks(sources = []) {
     return sources.map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name)} ↗</a>`).join('');
@@ -40,13 +46,13 @@
 
   function timelineItem(item) {
     const expanded = state.expandedId === item.id;
-    const chips = item.interpretations.map((entry) => `<span class="impact-asset-chip ${escapeHtml(entry.direction)}" title="${escapeHtml(entry.mechanism)}">${escapeHtml(entry.assetName)} ${directionGlyph(entry.direction)}</span>`).join('');
+    const chips = item.interpretations.map(directionChip).join('');
     return `<article class="impact-timeline-item" id="impact-${escapeHtml(item.id)}">
       <div class="impact-timeline-marker" aria-hidden="true"></div>
       <div class="impact-card">
         <header><div class="impact-card-meta"><span class="impact-status ${escapeHtml(item.status)}">${escapeHtml(statusLabel(item.status))}</span><span>${escapeHtml(item.category)}</span><span>${escapeHtml(item.eventDate || item.timeLabel || 'Date unavailable')}</span></div><span class="impact-magnitude">${escapeHtml(item.legacy?.impact || 'Impact not ranked')}</span></header>
         <h3>${escapeHtml(item.headline)}</h3><p>${escapeHtml(item.summary)}</p>
-        <div class="impact-assets" aria-label="Affected assets">${chips}</div>
+        <div class="impact-assets market-direction-strip" aria-label="Expected market pressure"><span class="market-direction-label">Expected pressure under the current regime</span><div class="market-direction-chips">${chips}</div></div>
         <div class="impact-card-actions"><div class="impact-sources">${sourceLinks(item.sources)}</div><button type="button" data-impact-expand="${escapeHtml(item.id)}" aria-expanded="${expanded}">${expanded ? 'Hide causal detail' : 'Show causal detail'}</button></div>
         ${expanded ? `<div class="impact-expanded"><div class="impact-chain">${item.channels.map((channel, index) => `<article><span>${index + 1}</span><div><strong>${escapeHtml(channel.label)}</strong><p>${escapeHtml(channel.detail)}</p></div></article>`).join('')}</div><div class="impact-interpretations">${item.interpretations.map(interpretationCard).join('')}</div></div>` : ''}
       </div>
@@ -69,7 +75,7 @@
         <div><span>State</span><div class="impact-filter-group" role="group" aria-label="Impact state">${statuses.map((status) => `<button type="button" data-impact-status="${escapeHtml(status)}" aria-pressed="${state.status === status}">${escapeHtml(statusLabel(status))}</button>`).join('')}</div></div>
       </section>
       <section><div class="impact-section-heading"><div><span class="impact-kicker">Timeline</span><h3>Market-moving interpretations</h3></div><span>${items.length} item${items.length === 1 ? '' : 's'} shown</span></div><div class="impact-timeline">${items.length ? items.map(timelineItem).join('') : '<div class="impact-empty">No impact records match the current filters.</div>'}</div></section>
-      <details class="impact-methodology"><summary>How to read this feed</summary><p>Magnitude is inherited from the existing editorial impact label. Direction and mechanism are preserved from the curated asset interpretation. Horizon, confidence, confirmation and invalidation remain marked unclear or not specified when the source item did not supply them.</p><p>Developing means the causal interpretation is still being tested. Confirmed means the curated item explicitly described price confirmation. Resolved should be used only after the event’s market impact is no longer active.</p></details>
+      <details class="impact-methodology"><summary>How to read this feed</summary><p>Arrows show expected directional pressure under the current regime, not certainty or a trading recommendation. Magnitude is inherited from the existing editorial impact label. Direction and mechanism are preserved from the curated asset interpretation. Horizon, confidence, confirmation and invalidation remain marked unclear or not specified when the source item did not supply them.</p><p>Developing means the causal interpretation is still being tested. Confirmed means the curated item explicitly described price confirmation. Resolved should be used only after the event’s market impact is no longer active.</p></details>
     </div>`;
 
     root.querySelector('#impactAssetSearch')?.addEventListener('input', (event) => { state.asset = event.target.value; render(); });

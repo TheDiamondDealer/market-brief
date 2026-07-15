@@ -128,7 +128,7 @@ The application uses URL hashes.
 Important routes include:
 
 - `#home`
-- `#today`
+- `#today` (legacy alias that redirects to `#home`; Daily Brief is rendered inside Command Centre)
 - `#news`
 - `#cot`
 - `#rates`

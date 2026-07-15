@@ -235,7 +235,7 @@ Use browser automation or Playwright where practical. Test desktop and mobile. I
 
 Verify at least:
 - #home
-- #today
+- #today (legacy redirect to #home; there is no standalone Daily Brief menu item)
 - #news
 - #cot
 - #rates

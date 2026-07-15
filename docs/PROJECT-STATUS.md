@@ -295,7 +295,7 @@ python -m http.server 8000 --directory site
 Verify at least:
 
 - `#home`
-- `#today`
+- `#today` (legacy redirect to `#home`; Daily Brief is merged into Command Centre)
 - `#news`
 - `#cot`
 - `#rates`

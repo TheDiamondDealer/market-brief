@@ -28,8 +28,8 @@
     }
     if (views?.activate(view)) return;
     document.querySelectorAll('.view').forEach((node) => node.classList.remove('active'));
-    const target = $(`view-${view}`) || $('view-today');
-    target.classList.add('active');
+    const target = $(`view-${view}`) || $('view-home');
+    target?.classList.add('active');
     document.querySelectorAll('#nav button').forEach((button) => {
       const isProductDetail = view === 'product-detail' && button.dataset.view === 'products';
       button.classList.toggle('active', button.dataset.view === view || isProductDetail);
@@ -37,25 +37,6 @@
     closeMenu();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (updateHash && view !== 'product-detail') history.replaceState(null, '', `#${view}`);
-  }
-
-  function renderToday() {
-    $('freshness').textContent = `Updated ${data.generatedAt}`;
-    $('dailyTitle').textContent = data.daily.title;
-    $('dailySub').textContent = data.daily.asOf;
-    $('dailyBadge').textContent = `● ${data.regime.verdict}`;
-
-    $('marketStats').innerHTML = data.daily.stats.map((stat, index) => {
-      const points = index % 2 === 0 ? '0,28 20,23 40,25 60,15 80,18 100,6' : '0,8 20,12 40,10 60,22 80,18 100,27';
-      return `<article class="card stat">
-        <div class="stat-top"><span class="stat-label">${escapeHtml(stat.label)}</span><span class="move ${escapeHtml(stat.dir)}">${escapeHtml(stat.move)}</span></div>
-        <div class="stat-value">${escapeHtml(stat.value)}</div>
-        <div class="spark"><svg viewBox="0 0 100 34" preserveAspectRatio="none"><polyline points="${points}" fill="none" stroke="currentColor" stroke-width="2.5" /></svg></div>
-      </article>`;
-    }).join('');
-
-    $('headlines').innerHTML = data.daily.headlines.map((item) => `<article class="headline"><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.body)}</p></div></article>`).join('');
-    $('chain').innerHTML = data.regime.chain.map((node, index) => `${index ? '<span class="arrow">→</span>' : ''}<span class="node">${escapeHtml(node)}</span>`).join('');
   }
 
   function renderWeek() {
@@ -210,26 +191,27 @@
   }
 
   function handleRouteLegacy() {
-    const route = location.hash.replace(/^#/, '') || 'today';
+    const route = location.hash.replace(/^#/, '') || 'home';
     if (route.startsWith('product/')) {
       openProduct(route.split('/')[1], false);
       return;
     }
-    const allowed = ['today', 'week', 'regime', 'triggers', 'assets', 'products', 'archive'];
-    setView(allowed.includes(route) ? route : 'today', false);
+    const allowed = ['home', 'week', 'regime', 'triggers', 'assets', 'products', 'archive'];
+    setView(route === 'today' ? 'home' : allowed.includes(route) ? route : 'home', false);
   }
 
   function registerCoreRoutes() {
     if (!router) return false;
-    ['today', 'week', 'regime', 'triggers', 'assets', 'products', 'archive'].forEach((route) => {
+    ['week', 'regime', 'triggers', 'assets', 'products', 'archive'].forEach((route) => {
       router.register(route, () => setView(route, false));
     });
+    router.register('today', () => router.navigate('home', { replace: true }));
     router.registerPattern('product-detail', /^product\/([^/]+)$/, (route) => openProduct(route.params.id, false), (match) => ({ id: decodeURIComponent(match[1]) }));
     return true;
   }
 
   function initialise() {
-    renderToday();
+    if ($('freshness')) $('freshness').textContent = `Updated ${data.generatedAt}`;
     renderWeek();
     renderRegime();
     renderTriggers();

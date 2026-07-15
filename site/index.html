@@ -35,7 +35,6 @@
       <button type="button" class="nav-item" data-view="trackers" aria-label="Political Flow" title="Political Flow" data-tooltip="Political Flow"><span class="nav-icon" aria-hidden="true">◎</span><span class="nav-label">Political Flow</span></button>
       <span class="nav-section-label">Research</span>
       <button type="button" class="nav-item" data-view="rates" aria-label="Rates and liquidity" title="Rates and liquidity" data-tooltip="Rates and liquidity"><span class="nav-icon" aria-hidden="true">⌁</span><span class="nav-label">Rates &amp; Liquidity</span></button>
-      <button type="button" class="nav-item" data-view="today" aria-label="Daily Brief" title="Daily Brief" data-tooltip="Daily Brief"><span class="nav-icon" aria-hidden="true">◉</span><span class="nav-label">Daily Brief</span></button>
       <button type="button" class="nav-item" data-view="week" aria-label="Week Ahead" title="Week Ahead" data-tooltip="Week Ahead"><span class="nav-icon" aria-hidden="true">◫</span><span class="nav-label">Week Ahead</span></button>
       <button type="button" class="nav-item" data-view="regime" aria-label="Regime" title="Regime" data-tooltip="Regime"><span class="nav-icon" aria-hidden="true">◇</span><span class="nav-label">Regime</span></button>
       <button type="button" class="nav-item" data-view="triggers" aria-label="Trigger Zones" title="Trigger Zones" data-tooltip="Trigger Zones"><span class="nav-icon" aria-hidden="true">⚑</span><span class="nav-label">Trigger Zones</span></button>
@@ -86,15 +85,6 @@
         <div class="section-title"><h3>Asset command board</h3><span>Bias, confidence, driver, positioning and change condition</span></div>
         <div class="card table-wrap bias-board"><table class="bias-table" id="biasTable"></table></div>
         <div id="biasDetail"></div>
-      </section>
-
-      <section class="view" id="view-today">
-        <div class="hero"><div><div class="eyebrow">Daily intelligence</div><h2 id="dailyTitle">Today’s market brief</h2><p id="dailySub">The highest-conviction cross-asset developments, filtered through the approved regime.</p></div><span class="badge" id="dailyBadge">● Loading regime</span></div>
-        <div class="grid cols-4" id="marketStats"></div>
-        <div class="section-title"><h3>Listen</h3><span>Five things that matter</span></div>
-        <div class="card headline-list" id="headlines"></div>
-        <div class="section-title"><h3>Dominant transmission</h3><span>Current causal chain</span></div>
-        <div class="card chain" id="chain"></div>
       </section>
 
       <section class="view" id="view-news">
@@ -230,7 +220,6 @@
   <div class="mobile-more-header"><h2 id="mobileMoreTitle">More sections</h2><button type="button" class="mobile-more-close" id="mobileMoreClose" aria-label="Close more navigation">×</button></div>
   <div class="mobile-more-grid">
     <button type="button" data-shell-view="rates">Rates &amp; Liquidity</button>
-    <button type="button" data-shell-view="today">Daily Brief</button>
     <button type="button" data-shell-view="week">Week Ahead</button>
     <button type="button" data-shell-view="regime">Regime</button>
     <button type="button" data-shell-view="triggers">Trigger Zones</button>

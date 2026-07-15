@@ -13,6 +13,8 @@ class ImpactFeedInterfaceTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.page = (SITE / "features" / "impact-feed" / "impact-page.js").read_text(encoding="utf-8")
         cls.styles = (SITE / "features" / "impact-feed" / "impact-page.css").read_text(encoding="utf-8")
+        cls.direction_styles = (SITE / "features" / "impact-feed" / "impact-direction.css").read_text(encoding="utf-8")
+        cls.base_styles = (SITE / "styles" / "base.css").read_text(encoding="utf-8")
         cls.loader = (SITE / "core" / "feature-loader.js").read_text(encoding="utf-8")
 
     def test_nested_javascript_is_syntax_valid(self) -> None:
@@ -21,6 +23,7 @@ class ImpactFeedInterfaceTests(unittest.TestCase):
     def test_contract_loads_before_interface(self) -> None:
         self.assertLess(self.loader.index("impact-data.js"), self.loader.index("impact-page.js"))
         self.assertIn("impact-page.css", self.loader)
+        self.assertIn("impact-direction.css", self.loader)
 
     def test_filters_timeline_and_expandable_causal_detail_are_present(self) -> None:
         for marker in (
@@ -49,12 +52,17 @@ class ImpactFeedInterfaceTests(unittest.TestCase):
     def test_delayed_and_unknown_data_are_not_overstated(self) -> None:
         self.assertIn("not a real-time news wire", self.page)
         self.assertIn("remain marked unclear or not specified", self.page)
+        self.assertIn("Expected pressure under the current regime", self.page)
+        self.assertIn("not certainty or a trading recommendation", self.page)
+        self.assertIn("market-direction-chip", self.page)
+        self.assertIn("market-direction-chip", self.base_styles)
         self.assertNotIn("guaranteed", self.page.lower())
 
     def test_mobile_and_accessibility_contract(self) -> None:
         self.assertIn('aria-expanded', self.page)
-        self.assertIn('aria-label="Affected assets"', self.page)
+        self.assertIn('aria-label="Expected market pressure"', self.page)
         self.assertIn("@media(max-width:700px)", self.styles)
+        self.assertIn("@media (max-width: 700px)", self.direction_styles)
         self.assertIn("min-height:44px", self.styles)
         self.assertIn("prefers-reduced-motion", self.styles)
 
