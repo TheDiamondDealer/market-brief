@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 import importlib.util
-import json
-import math
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
@@ -41,7 +39,6 @@ def daily_values(count=260, start=100.0):
             "close": str(price),
             "volume": str(1_000_000 + index * 1_000),
         })
-    # Ensure lexical sort has unique, monotonically increasing dates.
     from datetime import date, timedelta
     base = date(2025, 1, 1)
     for index, row in enumerate(rows):
@@ -143,6 +140,45 @@ class TwelveDataCollectorTests(unittest.TestCase):
         self.assertEqual(payload["collection"]["lastSuccessfulAt"], "2026-07-13T12:00:00Z")
         self.assertEqual(module.collection_exit_code(payload), 0)
 
+    def test_quote_failure_cannot_promote_old_history_to_current(self):
+        previous_row = module.build_record(
+            self.item,
+            quote={"close": "200", "previous_close": "198", "timestamp": 1700000000},
+            history=module.parse_history({"values": daily_values()}),
+            now_iso="2026-07-13T12:00:00Z",
+        )
+        client = FakeClient({("quote", "NVDA"): module.SourceError("temporary outage")})
+        payload = module.collect_payload(
+            [self.item],
+            client=client,
+            previous={"watchlist": [previous_row], "collection": {"lastSuccessfulAt": "2026-07-13T12:00:00Z"}},
+            mode="snapshot",
+            now=self.now,
+        )
+        row = payload["watchlist"][0]
+        self.assertEqual(row["status"], "stale")
+        self.assertEqual(payload["collection"]["status"], "failed")
+        self.assertEqual(payload["collection"]["successCount"], 0)
+        self.assertEqual(payload["collection"]["lastSuccessfulAt"], "2026-07-13T12:00:00Z")
+
+    def test_fresh_daily_history_with_failed_quote_is_partial_not_current(self):
+        client = FakeClient({
+            ("quote", "NVDA"): module.SourceError("quote unavailable"),
+            ("time_series", "NVDA"): {"status": "ok", "values": daily_values()},
+        })
+        payload = module.collect_payload(
+            [self.item],
+            client=client,
+            previous={},
+            mode="full",
+            now=self.now,
+        )
+        row = payload["watchlist"][0]
+        self.assertEqual(row["status"], "partial")
+        self.assertEqual(row["price"], 359.0)
+        self.assertEqual(payload["collection"]["status"], "partial")
+        self.assertEqual(payload["collection"]["successCount"], 1)
+        self.assertEqual(payload["collection"]["lastSuccessfulAt"], "2026-07-14T12:00:00Z")
 
     def test_failed_empty_run_exits_nonzero(self):
         payload = module.disabled_payload([self.item], now=self.now, reason="pending")
