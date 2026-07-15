@@ -3,16 +3,52 @@
 
   const core = window.MarketBriefCore || {};
   const official = core.adapters?.official?.() || window.freeMarketData || {};
-  const rows = Array.isArray(official.cot) ? official.cot.filter((row) => row?.contract?.identityStatus === 'verified') : [];
+  const rows = Array.isArray(official.cot)
+    ? official.cot.filter((row) => row?.contract?.identityStatus === 'verified')
+    : [];
   const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value)
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;').replaceAll("'", '&#039;'));
-  const number = core.format?.formatNumber || ((value, digits = 0) => value === null || value === undefined || Number.isNaN(Number(value)) ? '—' : Number(value).toLocaleString(undefined, { maximumFractionDigits: digits }));
-  const signed = core.format?.signed || ((value) => value === null || value === undefined || Number.isNaN(Number(value)) ? '—' : `${Number(value) > 0 ? '+' : ''}${number(value)}`);
+  const number = core.format?.formatNumber || ((value, digits = 0) => (
+    value === null || value === undefined || Number.isNaN(Number(value))
+      ? '—'
+      : Number(value).toLocaleString(undefined, { maximumFractionDigits: digits })
+  ));
+  const signed = core.format?.signed || ((value) => (
+    value === null || value === undefined || Number.isNaN(Number(value))
+      ? '—'
+      : `${Number(value) > 0 ? '+' : ''}${number(value)}`
+  ));
+  const compact = core.format?.compact || ((value) => new Intl.NumberFormat('en', {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  }).format(Number(value || 0)));
 
-  const CATEGORY_LABELS = Object.freeze({ all: 'All', metals: 'Metals', energy: 'Energy', currencies: 'Currencies', rates: 'Rates', indices: 'Indices', other: 'Other' });
-  const ID_CATEGORIES = Object.freeze({ gold: 'metals', silver: 'metals', copper: 'metals', yen: 'currencies', 'usd-index': 'currencies', 'us10y-futures': 'rates' });
-  const state = { category: 'all', query: '', mode: 'net', selectedId: rows[0]?.id || null };
+  const CATEGORY_LABELS = Object.freeze({
+    all: 'All',
+    metals: 'Metals',
+    energy: 'Energy',
+    currencies: 'Currencies',
+    rates: 'Rates',
+    indices: 'Indices',
+    other: 'Other',
+  });
+  const ID_CATEGORIES = Object.freeze({
+    gold: 'metals',
+    silver: 'metals',
+    copper: 'metals',
+    yen: 'currencies',
+    'usd-index': 'currencies',
+    'us10y-futures': 'rates',
+  });
+  const state = {
+    category: 'all',
+    query: '',
+    mode: 'balance',
+    selectedId: rows[0]?.id || null,
+    sortKey: 'name',
+    sortDirection: 'asc',
+  };
 
   function categoryFor(row) {
     if (ID_CATEGORIES[row.id]) return ID_CATEGORIES[row.id];
@@ -25,102 +61,232 @@
     return 'other';
   }
 
-  function metricValue(point, index, history) {
-    if (state.mode === 'balance') {
-      const gross = Number(point.long || 0) + Number(point.short || 0);
-      return gross ? (Number(point.long || 0) / gross) * 100 : 50;
-    }
-    if (state.mode === 'change') return index ? Number(point.net || 0) - Number(history[index - 1].net || 0) : 0;
-    return Number(point.net || 0);
+  function shares(point) {
+    const long = Math.max(0, Number(point?.long || 0));
+    const short = Math.max(0, Number(point?.short || 0));
+    const gross = long + short;
+    return {
+      long: gross ? (long / gross) * 100 : 50,
+      short: gross ? (short / gross) * 100 : 50,
+    };
   }
 
-  function metricLabel(value) {
-    if (state.mode === 'balance') return `${number(value, 1)}% long share`;
-    if (state.mode === 'change') return `${signed(value)} weekly net change`;
-    return `${signed(value)} net contracts`;
+  function historyPair(row) {
+    const history = Array.isArray(row.history52) ? row.history52 : [];
+    const latestHistory = history.at(-1);
+    const previous = latestHistory?.date === row.reportDate ? history.at(-2) : latestHistory;
+    return {
+      current: { long: row.long, short: row.short, net: row.net, date: row.reportDate },
+      previous: previous || null,
+    };
   }
 
-  function visibleRows() {
-    const query = state.query.trim().toLowerCase();
-    return rows.filter((row) => {
-      const categoryMatch = state.category === 'all' || categoryFor(row) === state.category;
-      const contract = row.contract || {};
-      const haystack = [row.id, row.name, row.market, row.category, contract.exchange, contract.cftcContractCode, contract.reportType].join(' ').toLowerCase();
-      return categoryMatch && (!query || haystack.includes(query));
-    });
+  function formatDate(value) {
+    if (!value) return 'Unavailable';
+    const date = new Date(`${value}T00:00:00`);
+    return Number.isNaN(date.getTime())
+      ? value
+      : date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
   }
 
   function sourceStatus() {
     const cftc = (official.sourceStatus || []).find((item) => String(item.source || '').toLowerCase().includes('cftc'));
-    if (!cftc) return { status: rows.length ? 'current' : 'unavailable', detail: rows.length ? 'Verified exact-contract cache loaded.' : 'No verified CFTC rows are available.', url: rows[0]?.sourceUrl || '#' };
-    return cftc;
+    if (cftc) return cftc;
+    return {
+      status: rows.length ? 'current' : 'unavailable',
+      detail: rows.length ? 'Verified exact-contract cache loaded.' : 'No verified CFTC rows are available.',
+      url: rows[0]?.sourceUrl || '',
+    };
   }
 
-  function sparkline(row) {
-    const history = Array.isArray(row.history52) ? row.history52 : [];
+  function visibleRows() {
+    const query = state.query.trim().toLowerCase();
+    const filtered = rows.filter((row) => {
+      const categoryMatch = state.category === 'all' || categoryFor(row) === state.category;
+      const contract = row.contract || {};
+      const haystack = [
+        row.id,
+        row.name,
+        row.market,
+        row.category,
+        contract.exchange,
+        contract.cftcContractCode,
+        contract.reportType,
+      ].join(' ').toLowerCase();
+      return categoryMatch && (!query || haystack.includes(query));
+    });
+    const direction = state.sortDirection === 'asc' ? 1 : -1;
+    return filtered.sort((a, b) => {
+      if (state.sortKey === 'name') return String(a.name || '').localeCompare(String(b.name || '')) * direction;
+      if (state.sortKey === 'longShare') return (shares(a).long - shares(b).long) * direction;
+      return (Number(a[state.sortKey] || 0) - Number(b[state.sortKey] || 0)) * direction;
+    });
+  }
+
+  function positionLabel(row) {
+    if (Number(row.net) > 0) return 'Net long';
+    if (Number(row.net) < 0) return 'Net short';
+    return 'Neutral';
+  }
+
+  function flowLabel(row) {
+    if (Number(row.weekChange) > 0) return 'Net increased';
+    if (Number(row.weekChange) < 0) return 'Net decreased';
+    return 'Unchanged';
+  }
+
+  function chartBalance(rowsToShow) {
+    const width = Math.max(860, rowsToShow.length * 142);
+    const height = 350;
+    const margin = { top: 30, right: 22, bottom: 98, left: 48 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const step = plotWidth / rowsToShow.length;
+    const barWidth = Math.min(54, step * 0.48);
+    const grid = [0, 25, 50, 75, 100].map((tick) => {
+      const y = margin.top + plotHeight - (tick / 100) * plotHeight;
+      return `<line class="cot-chart-gridline" x1="${margin.left}" x2="${width - margin.right}" y1="${y}" y2="${y}"></line><text class="cot-chart-axis" x="${margin.left - 10}" y="${y + 4}" text-anchor="end">${tick}</text>`;
+    }).join('');
+    const bars = rowsToShow.map((row, index) => {
+      const split = shares(row);
+      const x = margin.left + step * index + (step - barWidth) / 2;
+      const shortHeight = (split.short / 100) * plotHeight;
+      const longHeight = (split.long / 100) * plotHeight;
+      const labelX = x + barWidth / 2;
+      return `<g class="cot-chart-market" data-cot-chart-select="${escapeHtml(row.id)}" tabindex="0" role="button" aria-label="${escapeHtml(row.name)}: ${number(split.long, 1)} percent long and ${number(split.short, 1)} percent short">
+        <rect class="cot-chart-short" x="${x.toFixed(1)}" y="${margin.top}" width="${barWidth.toFixed(1)}" height="${shortHeight.toFixed(1)}" rx="4"></rect>
+        <rect class="cot-chart-long" x="${x.toFixed(1)}" y="${(margin.top + shortHeight).toFixed(1)}" width="${barWidth.toFixed(1)}" height="${longHeight.toFixed(1)}" rx="4"></rect>
+        ${split.long >= 18 ? `<text class="cot-chart-value" x="${labelX.toFixed(1)}" y="${(margin.top + shortHeight + longHeight / 2 + 4).toFixed(1)}" text-anchor="middle">${number(split.long, 0)}%</text>` : ''}
+        <text class="cot-chart-label" x="${labelX.toFixed(1)}" y="${height - margin.bottom + 25}" text-anchor="end" transform="rotate(-36 ${labelX.toFixed(1)} ${height - margin.bottom + 25})">${escapeHtml(row.name)}</text>
+      </g>`;
+    }).join('');
+    return `<div class="cot-positioning-chart-scroll"><svg class="cot-positioning-svg" style="min-width:${width}px" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotPositioningTitle cotPositioningDesc">
+      <title id="cotPositioningTitle">Long and short positioning by verified CFTC contract</title>
+      <desc id="cotPositioningDesc">Each column totals 100 percent of reported long plus short positions. Green is long share and red is short share.</desc>
+      <defs>
+        <linearGradient id="cotLongBars" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#27e58b"></stop><stop offset="100%" stop-color="#087b4b"></stop></linearGradient>
+        <linearGradient id="cotShortBars" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff6672"></stop><stop offset="100%" stop-color="#8e2932"></stop></linearGradient>
+      </defs>
+      ${grid}${bars}
+      <text class="cot-chart-axis-title" x="12" y="${margin.top + plotHeight / 2}" text-anchor="middle" transform="rotate(-90 12 ${margin.top + plotHeight / 2})">Position distribution (%)</text>
+    </svg></div>`;
+  }
+
+  function chartDirectional(rowsToShow, key, description) {
+    const width = Math.max(860, rowsToShow.length * 142);
+    const height = 350;
+    const margin = { top: 30, right: 22, bottom: 98, left: 62 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const zeroY = margin.top + plotHeight / 2;
+    const maxAbsolute = Math.max(...rowsToShow.map((row) => Math.abs(Number(row[key] || 0))), 1);
+    const step = plotWidth / rowsToShow.length;
+    const barWidth = Math.min(54, step * 0.48);
+    const grid = [-1, -.5, 0, .5, 1].map((fraction) => {
+      const y = zeroY - fraction * (plotHeight / 2);
+      const label = fraction * maxAbsolute;
+      return `<line class="cot-chart-gridline ${fraction === 0 ? 'zero' : ''}" x1="${margin.left}" x2="${width - margin.right}" y1="${y}" y2="${y}"></line><text class="cot-chart-axis" x="${margin.left - 10}" y="${y + 4}" text-anchor="end">${escapeHtml(compact(label))}</text>`;
+    }).join('');
+    const bars = rowsToShow.map((row, index) => {
+      const value = Number(row[key] || 0);
+      const heightValue = (Math.abs(value) / maxAbsolute) * (plotHeight / 2);
+      const x = margin.left + step * index + (step - barWidth) / 2;
+      const y = value >= 0 ? zeroY - heightValue : zeroY;
+      const labelX = x + barWidth / 2;
+      return `<g class="cot-chart-market" data-cot-chart-select="${escapeHtml(row.id)}" tabindex="0" role="button" aria-label="${escapeHtml(row.name)}: ${escapeHtml(signed(value))} contracts">
+        <rect class="${value >= 0 ? 'cot-chart-positive' : 'cot-chart-negative'}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${Math.max(heightValue, 2).toFixed(1)}" rx="4"></rect>
+        <text class="cot-chart-label" x="${labelX.toFixed(1)}" y="${height - margin.bottom + 25}" text-anchor="end" transform="rotate(-36 ${labelX.toFixed(1)} ${height - margin.bottom + 25})">${escapeHtml(row.name)}</text>
+      </g>`;
+    }).join('');
+    return `<div class="cot-positioning-chart-scroll"><svg class="cot-positioning-svg" style="min-width:${width}px" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotPositioningTitle cotPositioningDesc">
+      <title id="cotPositioningTitle">${escapeHtml(description)} by verified CFTC contract</title>
+      <desc id="cotPositioningDesc">Positive values are green and negative values are red. Values are contract counts and are not comparable across differently sized futures markets.</desc>
+      ${grid}${bars}
+    </svg></div>`;
+  }
+
+  function positioningChart(rowsToShow) {
+    if (!rowsToShow.length) return '<div class="cot-empty">No verified exact contracts match these filters.</div>';
+    if (state.mode === 'net') return chartDirectional(rowsToShow, 'net', 'Net positioning');
+    if (state.mode === 'change') return chartDirectional(rowsToShow, 'weekChange', 'Weekly net-position change');
+    return chartBalance(rowsToShow);
+  }
+
+  function sortButton(key, label) {
+    const active = state.sortKey === key;
+    const direction = active ? (state.sortDirection === 'asc' ? 'ascending' : 'descending') : 'none';
+    const marker = active ? (state.sortDirection === 'asc' ? '↑' : '↓') : '';
+    return `<button type="button" data-cot-sort="${key}" aria-label="Sort by ${escapeHtml(label)}" aria-pressed="${active}" data-sort-direction="${direction}">${escapeHtml(label)} <span aria-hidden="true">${marker}</span></button>`;
+  }
+
+  function shareCell(value, tone) {
+    return `<div class="cot-share-cell"><strong>${number(value, 1)}%</strong><span class="cot-share-meter" aria-hidden="true"><i class="${tone}" style="width:${Math.max(0, Math.min(100, value)).toFixed(1)}%"></i></span></div>`;
+  }
+
+  function analysisTable(rowsToShow) {
+    if (!rowsToShow.length) return '<div class="cot-empty">No verified exact contracts match these filters.</div>';
+    return `<div class="cot-analysis-table-scroll"><table class="cot-analysis-table">
+      <thead><tr>
+        <th scope="col">${sortButton('name', 'Market')}</th>
+        <th scope="col">Position</th>
+        <th scope="col">Weekly flow</th>
+        <th scope="col">${sortButton('longShare', 'Long %')}</th>
+        <th scope="col">Prev long %</th>
+        <th scope="col">Short %</th>
+        <th scope="col">Prev short %</th>
+        <th scope="col">${sortButton('net', 'Net position')}</th>
+        <th scope="col">Previous net</th>
+        <th scope="col">${sortButton('weekChange', '1W change')}</th>
+        <th scope="col">Report</th>
+      </tr></thead>
+      <tbody>${rowsToShow.map((row) => {
+        const pair = historyPair(row);
+        const current = shares(pair.current);
+        const previous = pair.previous ? shares(pair.previous) : null;
+        const positive = Number(row.net) >= 0;
+        const flowPositive = Number(row.weekChange) >= 0;
+        return `<tr class="${state.selectedId === row.id ? 'selected' : ''}">
+          <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}</strong><span>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</span><small>${escapeHtml(row.category || '')}</small></button></th>
+          <td><span class="cot-signal ${positive ? 'positive' : 'negative'}">${positionLabel(row)}</span></td>
+          <td><span class="cot-flow ${flowPositive ? 'positive' : 'negative'}">${flowLabel(row)}</span></td>
+          <td>${shareCell(current.long, 'long')}</td>
+          <td class="cot-previous">${previous ? `${number(previous.long, 1)}%` : '—'}</td>
+          <td>${shareCell(current.short, 'short')}</td>
+          <td class="cot-previous">${previous ? `${number(previous.short, 1)}%` : '—'}</td>
+          <td class="cot-contract-value ${positive ? 'positive' : 'negative'}">${signed(row.net)}</td>
+          <td class="cot-previous">${pair.previous ? signed(pair.previous.net) : '—'}</td>
+          <td><span class="cot-change ${flowPositive ? 'positive' : 'negative'}">${signed(row.weekChange)} <i aria-hidden="true">${flowPositive ? '↗' : '↘'}</i></span></td>
+          <td class="cot-report-date">${escapeHtml(formatDate(row.reportDate))}</td>
+        </tr>`;
+      }).join('')}</tbody>
+    </table></div>`;
+  }
+
+  function historyChart(row) {
+    const history = Array.isArray(row?.history52) ? row.history52 : [];
     if (history.length < 2) return '<div class="cot-empty-chart">History unavailable for this exact contract.</div>';
-    const values = history.map(metricValue);
-    const min = Math.min(...values);
-    const max = Math.max(...values);
+    const values = history.map((point) => Number(point.net || 0));
+    const min = Math.min(...values, 0);
+    const max = Math.max(...values, 0);
     const span = max - min || 1;
-    const width = 720;
-    const height = 220;
-    const points = values.map((value, index) => {
-      const x = (index / (values.length - 1)) * width;
-      const y = height - 18 - ((value - min) / span) * (height - 36);
-      return `${x.toFixed(1)},${y.toFixed(1)}`;
-    }).join(' ');
-    const latest = values.at(-1);
-    const firstDate = history[0]?.date || '';
-    const lastDate = history.at(-1)?.date || '';
-    const summary = `${row.name} ${state.mode} history from ${firstDate} to ${lastDate}. Latest ${metricLabel(latest)}; range ${metricLabel(min)} to ${metricLabel(max)}.`;
+    const width = 900;
+    const height = 210;
+    const xFor = (index) => 16 + (index / (values.length - 1)) * (width - 32);
+    const yFor = (value) => 14 + ((max - value) / span) * (height - 34);
+    const points = values.map((value, index) => `${xFor(index).toFixed(1)},${yFor(value).toFixed(1)}`).join(' ');
+    const zeroY = yFor(0);
+    const summary = `${row.name} net positioning history from ${history[0]?.date || ''} to ${history.at(-1)?.date || ''}. Latest ${signed(values.at(-1))} net contracts.`;
     return `<figure class="cot-history-figure">
-      <svg viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotChartTitle cotChartDesc" preserveAspectRatio="none">
-        <title id="cotChartTitle">${escapeHtml(row.name)} positioning history</title>
-        <desc id="cotChartDesc">${escapeHtml(summary)}</desc>
-        <line class="cot-zero-line" x1="0" x2="${width}" y1="${height / 2}" y2="${height / 2}"></line>
+      <svg viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotHistoryTitle cotHistoryDesc" preserveAspectRatio="none">
+        <title id="cotHistoryTitle">${escapeHtml(row.name)} 52-week net positioning</title>
+        <desc id="cotHistoryDesc">${escapeHtml(summary)}</desc>
+        <defs><linearGradient id="cotHistoryArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a970ff" stop-opacity=".32"></stop><stop offset="100%" stop-color="#a970ff" stop-opacity="0"></stop></linearGradient></defs>
+        <line class="cot-zero-line" x1="0" x2="${width}" y1="${zeroY}" y2="${zeroY}"></line>
+        <polygon class="cot-history-area" points="16,${height - 20} ${points} ${width - 16},${height - 20}"></polygon>
         <polyline class="cot-history-line" points="${points}"></polyline>
       </svg>
-      <figcaption><span>${escapeHtml(firstDate)}</span><strong>${escapeHtml(metricLabel(latest))}</strong><span>${escapeHtml(lastDate)}</span></figcaption>
-      <p class="sr-only">${escapeHtml(summary)}</p>
+      <figcaption><span>${escapeHtml(formatDate(history[0]?.date))}</span><strong>${escapeHtml(signed(values.at(-1)))} net</strong><span>${escapeHtml(formatDate(history.at(-1)?.date))}</span></figcaption>
     </figure>`;
-  }
-
-  function balanceBar(row) {
-    const gross = Number(row.long || 0) + Number(row.short || 0);
-    const longShare = gross ? (Number(row.long || 0) / gross) * 100 : 50;
-    return `<div class="cot-balance" aria-label="Long ${number(longShare, 1)} percent; short ${number(100 - longShare, 1)} percent">
-      <span class="cot-balance-long" style="width:${longShare.toFixed(1)}%"></span>
-      <span class="cot-balance-short" style="width:${(100 - longShare).toFixed(1)}%"></span>
-    </div><small>${number(longShare, 1)}% long / ${number(100 - longShare, 1)}% short</small>`;
-  }
-
-  function overview(rowsToShow) {
-    if (!rowsToShow.length) return '<div class="cot-empty">No verified exact contracts match these filters.</div>';
-    return rowsToShow.map((row) => {
-      const value = state.mode === 'balance'
-        ? balanceBar(row)
-        : `<strong class="cot-overview-value">${state.mode === 'change' ? signed(row.weekChange) : signed(row.net)}</strong><small>${state.mode === 'change' ? 'weekly net change' : `${row.crowding} · ${row.netPercentile5y === null ? 'percentile unavailable' : `${number(row.netPercentile5y, 1)}th percentile`}`}</small>`;
-      return `<button type="button" class="cot-overview-card ${state.selectedId === row.id ? 'selected' : ''}" data-cot-select="${escapeHtml(row.id)}" aria-pressed="${state.selectedId === row.id}">
-        <span class="cot-overview-head"><strong>${escapeHtml(row.name)}</strong><span>${escapeHtml(CATEGORY_LABELS[categoryFor(row)] || 'Other')}</span></span>
-        ${value}
-        <span class="cot-overview-contract">${escapeHtml(row.contract?.cftcContractCode || 'No code')} · ${escapeHtml(row.category || 'No category')}</span>
-      </button>`;
-    }).join('');
-  }
-
-  function table(rowsToShow) {
-    if (!rowsToShow.length) return '<div class="cot-empty">No verified exact contracts match these filters.</div>';
-    return `<div class="cot-table-scroll"><table class="cot-dense-table">
-      <thead><tr><th scope="col">Market / exact contract</th><th scope="col">Report category</th><th scope="col">Long</th><th scope="col">Short</th><th scope="col">Net</th><th scope="col">1 week</th><th scope="col">4 weeks</th><th scope="col">Open interest</th><th scope="col">5-year percentile</th><th scope="col">Report date</th></tr></thead>
-      <tbody>${rowsToShow.map((row) => `<tr class="${state.selectedId === row.id ? 'selected' : ''}">
-        <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}</strong><span>${escapeHtml(row.contract?.marketName || row.market)}</span><small>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</small></button></th>
-        <td>${escapeHtml(row.category)}</td><td>${number(row.long)}</td><td>${number(row.short)}</td>
-        <td><span class="cot-number ${Number(row.net) >= 0 ? 'positive' : 'negative'}">${Number(row.net) >= 0 ? 'Net long ' : 'Net short '}${signed(row.net)}</span></td>
-        <td>${signed(row.weekChange)}</td><td>${signed(row.fourWeekChange)}</td><td>${number(row.openInterest)}</td>
-        <td>${row.netPercentile5y === null ? '—' : `${number(row.netPercentile5y, 1)}%`}</td><td>${escapeHtml(row.reportDate)}</td>
-      </tr>`).join('')}</tbody>
-    </table></div>`;
   }
 
   function detail(row) {
@@ -128,12 +294,14 @@
     const contract = row.contract || {};
     return `<article class="cot-detail-card">
       <header><div><span class="cot-kicker">Selected exact contract</span><h3>${escapeHtml(row.name)}</h3><p>${escapeHtml(contract.marketName || row.market)}</p></div><span class="cot-identity">✓ ${escapeHtml(contract.identityStatus || 'unknown')} identity</span></header>
-      <div class="cot-detail-grid">
-        <dl><div><dt>CFTC contract code</dt><dd>${escapeHtml(contract.cftcContractCode || 'Unavailable')}</dd></div><div><dt>Exchange</dt><dd>${escapeHtml(contract.exchange || 'Unavailable')}</dd></div><div><dt>Report family</dt><dd>${escapeHtml(contract.reportType || 'Unavailable')}</dd></div><div><dt>Report category</dt><dd>${escapeHtml(contract.category || row.category || 'Unavailable')}</dd></div></dl>
-        <dl><div><dt>Long</dt><dd>${number(row.long)}</dd></div><div><dt>Short</dt><dd>${number(row.short)}</dd></div><div><dt>Net</dt><dd>${signed(row.net)}</dd></div><div><dt>Open interest</dt><dd>${number(row.openInterest)}</dd></div></dl>
+      <div class="cot-detail-metrics">
+        <div><span>Net position</span><strong class="${Number(row.net) >= 0 ? 'positive' : 'negative'}">${signed(row.net)}</strong></div>
+        <div><span>1-week change</span><strong class="${Number(row.weekChange) >= 0 ? 'positive' : 'negative'}">${signed(row.weekChange)}</strong></div>
+        <div><span>5-year percentile</span><strong>${row.netPercentile5y === null ? '—' : `${number(row.netPercentile5y, 1)}%`}</strong></div>
+        <div><span>Open interest</span><strong>${number(row.openInterest)}</strong></div>
       </div>
-      ${sparkline(row)}
-      <footer><div><strong>Observation</strong><span>${escapeHtml(row.reportDate)} · ${escapeHtml(row.dataMethod || 'CFTC exact-contract registry')}</span></div><a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open official CFTC source ↗</a></footer>
+      ${historyChart(row)}
+      <footer><div><strong>${escapeHtml(contract.reportType || contract.category || row.category || 'CFTC report')}</strong><span>${escapeHtml(contract.cftcContractCode || 'No code')} · ${escapeHtml(contract.exchange || 'No exchange')} · observed ${escapeHtml(formatDate(row.reportDate))}</span></div><a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open official CFTC source ↗</a></footer>
     </article>`;
   }
 
@@ -145,27 +313,74 @@
     const selected = rows.find((row) => row.id === state.selectedId) || null;
     const status = sourceStatus();
     const categories = ['all', ...new Set(rows.map(categoryFor))];
-    const latest = rows.map((row) => row.reportDate).filter(Boolean).sort().at(-1) || 'Unavailable';
+    const latest = rows.map((row) => row.reportDate).filter(Boolean).sort().at(-1) || '';
 
-    host.dataset.cotRemodel = 'br-07';
+    host.dataset.cotRemodel = 'reference-dashboard';
     host.innerHTML = `<div class="cot-page">
-      <header class="cot-page-header"><div><span class="cot-kicker">Official weekly positioning</span><h2>COT Positioning</h2><p>Compare only verified exact CFTC contracts. Commodity rows use Managed Money; selected financial futures use Leveraged Funds.</p></div><div class="cot-freshness"><span class="data-state ${escapeHtml(String(status.status || 'unavailable').toLowerCase())}">${escapeHtml(status.status || 'Unavailable')}</span><strong>Latest report ${escapeHtml(latest)}</strong><small>Cache generated ${escapeHtml(official.generatedAt || 'unknown')}</small></div></header>
-      <section class="cot-controls" aria-label="COT filters">
-        <label class="cot-search"><span>Search contract, code or exchange</span><input id="cotWorkspaceSearch" type="search" value="${escapeHtml(state.query)}" placeholder="Gold, 088691, CBOT…" autocomplete="off"></label>
+      <header class="cot-report-header">
+        <div><span class="cot-kicker">Official weekly positioning</span><h2>COT positioning</h2><p>Commitment of Traders positioning analysis using only verified exact CFTC contracts.</p></div>
+        <div class="cot-report-status"><span class="data-state ${escapeHtml(String(status.status || 'unavailable').toLowerCase())}">${escapeHtml(status.status || 'Unavailable')}</span><strong>${escapeHtml(formatDate(latest))}</strong><small>Generated ${escapeHtml(official.generatedAt || 'unknown')}</small></div>
+      </header>
+      <section class="cot-filter-stack" aria-label="COT filters">
+        <label class="cot-search"><span class="sr-only">Search contract, code or exchange</span><i aria-hidden="true">⌕</i><input id="cotWorkspaceSearch" type="search" value="${escapeHtml(state.query)}" placeholder="Search markets, codes or exchanges…" autocomplete="off"></label>
         <div class="cot-category-filters" role="group" aria-label="Market category">${categories.map((category) => `<button type="button" data-cot-category="${category}" aria-pressed="${state.category === category}">${escapeHtml(CATEGORY_LABELS[category] || category)}</button>`).join('')}</div>
-        <div class="cot-mode-tabs" role="group" aria-label="Overview mode">${[['net', 'Net position'], ['balance', 'Long / short'], ['change', 'Weekly change']].map(([mode, label]) => `<button type="button" data-cot-mode="${mode}" aria-pressed="${state.mode === mode}">${label}</button>`).join('')}</div>
       </section>
-      <section class="cot-source-banner" aria-label="CFTC source status"><div><strong>${escapeHtml(status.source || 'CFTC Commitments of Traders')}</strong><span>${escapeHtml(status.detail || 'Exact-contract cache status')}</span></div>${status.url ? `<a href="${escapeHtml(status.url)}" target="_blank" rel="noopener noreferrer">Official source ↗</a>` : ''}</section>
-      <section><div class="cot-section-heading"><div><span class="cot-kicker">Overview</span><h3>${escapeHtml(CATEGORY_LABELS[state.category] || 'Filtered')} contracts</h3></div><span>${filtered.length} verified market${filtered.length === 1 ? '' : 's'}</span></div><div class="cot-overview-grid">${overview(filtered)}</div></section>
-      <section><div class="cot-section-heading"><div><span class="cot-kicker">Comparison</span><h3>Exact-contract positioning table</h3></div><span>Values are contracts, not trader counts</span></div>${table(filtered)}</section>
+      <section class="cot-positioning-panel" aria-labelledby="cotPositioningHeading">
+        <div class="cot-panel-heading"><div><span class="cot-kicker">Cross-market comparison</span><h3 id="cotPositioningHeading">Position distribution</h3><p>Normalised within each market; contract sizes are not comparable across markets.</p></div><div class="cot-mode-tabs" role="group" aria-label="Chart metric">${[['balance', 'Long / short'], ['net', 'Net position'], ['change', 'Weekly change']].map(([mode, label]) => `<button type="button" data-cot-mode="${mode}" aria-pressed="${state.mode === mode}">${label}</button>`).join('')}</div></div>
+        <div class="cot-chart-legend" aria-label="Chart legend"><span class="long"><i></i>Long %</span><span class="short"><i></i>Short %</span><span>${filtered.length} verified market${filtered.length === 1 ? '' : 's'}</span></div>
+        ${positioningChart(filtered)}
+      </section>
+      <section class="cot-analysis-section" aria-labelledby="cotAnalysisHeading">
+        <div class="cot-panel-heading"><div><span class="cot-kicker">Latest versus previous report</span><h3 id="cotAnalysisHeading">Recent COT data analysis</h3></div><span class="cot-table-date">${escapeHtml(formatDate(latest))}</span></div>
+        ${analysisTable(filtered)}
+      </section>
       <section aria-live="polite">${detail(selected)}</section>
-      <details class="cot-methodology"><summary>Methodology and limitations</summary><p>${escapeHtml(official.methodology?.cot || 'CFTC weekly observations selected by exact verified contract code and accepted market identity.')}</p><p>${escapeHtml(official.methodology?.warning || 'Unavailable intended benchmarks remain unavailable rather than being replaced with similar contracts.')}</p><p>Long, short and net values always refer to the report category named above. Percentiles compare net positioning with available five-year history and are not price forecasts.</p></details>
+      <details class="cot-methodology"><summary>Source, methodology and limitations</summary><div class="cot-methodology-grid"><p>${escapeHtml(status.detail || 'Exact-contract cache status')}</p><p>${escapeHtml(official.methodology?.cot || 'CFTC weekly observations selected by exact verified contract code and accepted market identity.')}</p><p>${escapeHtml(official.methodology?.warning || 'Unavailable intended benchmarks remain unavailable rather than being replaced with similar contracts.')}</p></div>${status.url ? `<a href="${escapeHtml(status.url)}" target="_blank" rel="noopener noreferrer">Open CFTC source status ↗</a>` : ''}</details>
     </div>`;
 
-    host.querySelector('#cotWorkspaceSearch')?.addEventListener('input', (event) => { state.query = event.target.value; render(); });
-    host.querySelectorAll('[data-cot-category]').forEach((button) => button.addEventListener('click', () => { state.category = button.dataset.cotCategory; render(); }));
-    host.querySelectorAll('[data-cot-mode]').forEach((button) => button.addEventListener('click', () => { state.mode = button.dataset.cotMode; render(); }));
-    host.querySelectorAll('[data-cot-select]').forEach((button) => button.addEventListener('click', () => { state.selectedId = button.dataset.cotSelect; render(); host.querySelector('.cot-detail-card')?.scrollIntoView({ block: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }));
+    host.querySelector('#cotWorkspaceSearch')?.addEventListener('input', (event) => {
+      state.query = event.target.value;
+      const cursor = event.target.selectionStart;
+      render();
+      const input = host.querySelector('#cotWorkspaceSearch');
+      input?.focus();
+      input?.setSelectionRange(cursor, cursor);
+    });
+    host.querySelectorAll('[data-cot-category]').forEach((button) => button.addEventListener('click', () => {
+      state.category = button.dataset.cotCategory;
+      render();
+    }));
+    host.querySelectorAll('[data-cot-mode]').forEach((button) => button.addEventListener('click', () => {
+      state.mode = button.dataset.cotMode;
+      render();
+    }));
+    host.querySelectorAll('[data-cot-sort]').forEach((button) => button.addEventListener('click', () => {
+      const key = button.dataset.cotSort;
+      if (state.sortKey === key) state.sortDirection = state.sortDirection === 'asc' ? 'desc' : 'asc';
+      else {
+        state.sortKey = key;
+        state.sortDirection = key === 'name' ? 'asc' : 'desc';
+      }
+      render();
+    }));
+    host.querySelectorAll('[data-cot-select]').forEach((button) => button.addEventListener('click', () => {
+      state.selectedId = button.dataset.cotSelect;
+      render();
+      host.querySelector('.cot-detail-card')?.scrollIntoView({ block: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }));
+    host.querySelectorAll('[data-cot-chart-select]').forEach((group) => {
+      const select = () => {
+        state.selectedId = group.dataset.cotChartSelect;
+        render();
+      };
+      group.addEventListener('click', select);
+      group.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          select();
+        }
+      });
+    });
   }
 
   function initialise() {
