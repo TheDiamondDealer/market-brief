@@ -1,49 +1,24 @@
 (() => {
   'use strict';
   if (typeof fallback === 'undefined') return;
-
-  fallback.commandCentre = {
-    updated: '15 July 2026, 08:30 AEST',
-    risk: {
-      state: 'Dovish CPI countershock / live energy shock',
-      score: 61,
-      confidence: 'Medium-high',
-      summary: 'Softer US inflation broke the rates-dollar confirmation loop, but Brent and European gas remain above trigger levels with physical Gulf constraints.',
-      contradiction: 'US equities, gold, copper and iron ore accepted the dovish signal even as oil and gas strengthened.',
-      inputs: [
-        { name: 'Energy shock', reading: 'Brent $84.73; TTF >€52', score: 2, reason: 'Physical-flow risk preserves the inflation impulse.' },
-        { name: 'Rates', reading: 'US 10Y 4.589%', score: 0, reason: 'Nominal and real yields fell after CPI but remain in warning territory.' },
-        { name: 'Fed pricing', reading: 'Sep hike ~53%', score: -1, reason: 'A roughly 22-point one-day fall materially softened the policy impulse.' },
-        { name: 'US dollar', reading: 'DXY 100.94', score: 0, reason: 'The dollar fell but remains inside its decision zone.' },
-        { name: 'Risk assets', reading: 'Selective relief', score: -1, reason: 'Nasdaq and S&P rose while ASX breadth remained split.' }
-      ],
-      changeConditions: [
-        'De-escalation requires Brent below $76 with improving Gulf flows.',
-        'September hike pricing below 50% and the US 10-year below 4.45% would weaken the hawkish leg.',
-        'DXY below 100 plus gold above $4,150 would challenge the rates-dominant sign-flip.'
-      ]
-    },
-    nextEvent: {
-      name: 'US June PPI',
-      time: 'Wednesday 15 July · 10:30 pm Melbourne',
-      importance: 'High',
-      logic: 'The cleanest near-term test of whether the CPI countershock survives pipeline inflation and renewed energy pressure.'
-    },
-    changes: [
-      'September hike probability fell from roughly 75% to 53%, triggering the daily move threshold but not the below-50% invalidation.',
-      'Gold rebounded to the lower edge of its warning zone as real yields and DXY fell.',
-      'Brent closed above $80 with physical-flow confirmation; TTF also held above €52.',
-      'Copper cleared $6.30 and iron ore CNY760, but China activity still has to confirm physical demand.',
-      'The regime remains intact; price confirmation is now divergent rather than reinforcing.'
-    ]
+  fallback.commandCentre={
+    updated:'16 July 2026, 08:30 AEST',
+    risk:{state:'Policy relief / live energy shock',score:55,confidence:'Medium-high',summary:'Two soft US inflation reports pushed September hike pricing below 50% and lowered yields and DXY, but Brent remains near $85 with physical confirmation.',contradiction:'China demand data weakened sharply while copper, iron ore and ASX materials held bullish price levels.',inputs:[
+      {name:'Fed pricing',reading:'Sep hike 48.1%',score:-2,reason:'Below the standing 50% invalidation level.'},
+      {name:'Rates and USD',reading:'US10Y 4.553%; DXY 100.52',score:-1,reason:'Both fell for a second session after CPI and PPI.'},
+      {name:'Energy shock',reading:'Brent $84.95; TTF ~€55',score:2,reason:'Physical Gulf and LNG risk remains active.'},
+      {name:'China demand',reading:'GDP 4.3%; FAI -5.7%',score:1,reason:'Weak domestic composition raises growth and policy risk.'},
+      {name:'Risk assets',reading:'Broad but selective risk-on',score:-1,reason:'US breadth and ASX materials confirmed; semiconductors and Shanghai diverged.'}
+    ],changeConditions:['Risk score falls if Brent closes below $76, US10Y below 4.45% and DXY below 100.','Risk score rises if Brent closes above $85 with worsening flows or Fed pricing returns above 70%.','A broad China metals/AUD reversal would add growth risk; physical China confirmation would reduce it.']},
+    nextEvent:{name:'US June retail sales',time:'Thursday 16 July · 10:30 pm Melbourne',importance:'High',logic:'Tests whether softer inflation can coexist with solid demand without rebuilding hike odds.'},
+    changes:['September hike probability fell 60.6% → 48.1%, crossing below invalidation.','US10Y, real yields and DXY fell for a second session.','Brent held $84.95 and EIA crude/gasoline stocks drew.','ASX closed above 8,830 with materials breadth.','China growth and investment missed while copper/iron prices diverged.']
   };
-
-  fallback.assetBiases = [
-    { id:'gold', name:'Gold', group:'Precious', reference:'$4,051.79', bias:'Neutral / recovering', confidence:64, total:1, primaryDriver:'Lower real yields and DXY', cot:'CFTC week ended 7 Jul; verify dashboard percentile', nextEvent:'US PPI', changeCondition:'Bullish above $4,150; bearish close below $4,050 with DXY/yield confirmation.', productId:'gold', components:[{name:'Macro',score:1,reason:'CPI delivered a dovish countershock.'},{name:'Rates',score:1,reason:'Nominal and real yields fell.'},{name:'Positioning',score:0,reason:'Weekly COT is lagged and not the daily driver.'},{name:'Cross-asset',score:-1,reason:'Brent strength can revive the hawkish channel.'}] },
-    { id:'oil', name:'Brent oil', group:'Energy', reference:'$84.73', bias:'Bullish', confidence:84, total:6, primaryDriver:'Hormuz physical-flow constraint', cot:'CFTC week ended 7 Jul; lagged', nextEvent:'EIA petroleum report', changeCondition:'Close below $76 with improving flows and softer spreads.', productId:'oil', components:[{name:'Macro',score:1,reason:'Softer USD is supportive.'},{name:'Physical',score:2,reason:'Traffic remains impaired and price closed above trigger.'},{name:'Positioning',score:1,reason:'No verified crowding override in the daily frame.'},{name:'Cross-asset',score:2,reason:'European gas confirms regional supply stress.'}] },
-    { id:'copper', name:'Copper', group:'Base metals', reference:'$6.32/lb', bias:'Bullish / unconfirmed', confidence:58, total:2, primaryDriver:'Lower USD plus China anticipation', cot:'CFTC week ended 7 Jul; lagged', nextEvent:'China Q2 and activity data', changeCondition:'Sustain above $6.30 with aligned inventories, premiums and China demand.', productId:'copper', components:[{name:'Macro',score:1,reason:'Lower DXY and yields eased financial conditions.'},{name:'China',score:1,reason:'Iron ore and CNH moved constructively ahead of data.'},{name:'Positioning',score:0,reason:'COT is not a same-day confirmation.'},{name:'Physical',score:0,reason:'Inventory and premium confirmation is incomplete.'}] },
-    { id:'silver', name:'Silver', group:'Precious', reference:'$58.79', bias:'Recovering', confidence:60, total:2, primaryDriver:'Gold/rates relief plus copper', cot:'CFTC week ended 7 Jul; lagged', nextEvent:'US PPI / China data', changeCondition:'Sustain gains with gold above $4,150 and copper physically confirmed.', productId:'silver', components:[{name:'Macro',score:1,reason:'Softer CPI supports precious metals.'},{name:'Rates',score:1,reason:'Real yields fell.'},{name:'Industrial',score:1,reason:'Copper and iron ore strengthened.'},{name:'Cross-asset',score:-1,reason:'Energy inflation can reverse the rates relief.'}] },
-    { id:'usdjpy', name:'USD/JPY', group:'FX', reference:'162.24', bias:'Bullish / unstable', confidence:54, total:2, primaryDriver:'Structural yield differential', cot:'FX COT week ended 7 Jul; lagged', nextEvent:'Warsh Senate testimony', changeCondition:'Close below 160 or verified intervention.', components:[{name:'Rates',score:0,reason:'US yields fell, removing fresh confirmation.'},{name:'Policy',score:1,reason:'Japan-US policy gap remains wide.'},{name:'Positioning',score:0,reason:'Crowding is not verified in the daily frame.'},{name:'Cross-asset',score:1,reason:'Price held above 162 despite lower DXY.'}] },
-    { id:'us10y', name:'US 10-year yield', group:'Rates', reference:'4.589%', bias:'Neutral / lower', confidence:66, total:-2, primaryDriver:'CPI versus oil', cot:'Treasury futures COT week ended 7 Jul; lagged', nextEvent:'US PPI', changeCondition:'Below 4.45% confirms easing; above 4.60% with DXY strength restores hawkish confirmation.', components:[{name:'Inflation',score:0,reason:'Soft CPI conflicts with renewed energy inflation.'},{name:'Policy',score:-1,reason:'Hike odds fell sharply.'},{name:'Growth',score:0,reason:'China and US demand data are still pending.'},{name:'Cross-asset',score:-1,reason:'DXY fell and gold recovered.'}] }
+  fallback.assetBiases=[
+    {id:'gold',name:'Gold',group:'Precious',reference:'$4,059.01',bias:'Neutral / supported',confidence:68,total:2,primaryDriver:'Lower real yields and DXY versus oil',cot:'CFTC week ended 7 Jul; lagged',nextEvent:'US retail sales',changeCondition:'Bullish close above $4,150; bearish close below $4,050 with DXY ≥101 and US10Y ≥4.60%.',productId:'gold',components:[{name:'Macro',score:1,reason:'CPI and PPI both softened.'},{name:'Rates',score:2,reason:'Nominal and real yields fell again.'},{name:'Positioning',score:0,reason:'Weekly COT is lagged.'},{name:'Cross-asset',score:-1,reason:'Brent near $85 preserves future inflation pressure.'}]},
+    {id:'oil',name:'Brent oil',group:'Energy',reference:'$84.95',bias:'Bullish',confidence:86,total:6,primaryDriver:'Hormuz flows and low inventories',cot:'CFTC week ended 7 Jul; lagged',nextEvent:'Gulf flows / next EIA report',changeCondition:'Close below $76 with improving flows and softer spreads.',productId:'oil',components:[{name:'Macro',score:1,reason:'Softer USD supports seaborne commodities.'},{name:'Physical',score:2,reason:'Brent remains above trigger with impaired Gulf flows.'},{name:'Inventories',score:1,reason:'US crude and gasoline stocks drew.'},{name:'Cross-asset',score:2,reason:'TTF remains above €52.'}]},
+    {id:'copper',name:'Copper',group:'Base metals',reference:'$6.34/lb',bias:'Bullish price / mixed fundamental',confidence:57,total:1,primaryDriver:'Supply/high-tech versus weak China demand',cot:'CFTC week ended 7 Jul; lagged',nextEvent:'China Politburo / physical data',changeCondition:'Sustain >$6.30 with inventory/premium and broad China demand confirmation; return < $6.25 weakens.',productId:'copper',components:[{name:'Macro',score:1,reason:'Lower DXY is supportive.'},{name:'China',score:-2,reason:'GDP, investment and property disappointed.'},{name:'Positioning',score:0,reason:'COT is not same-day evidence.'},{name:'Physical',score:2,reason:'Price held trigger, but inventories/premiums remain incomplete.'}]},
+    {id:'silver',name:'Silver',group:'Precious',reference:'$57.55',bias:'Mixed / weak',confidence:65,total:-1,primaryDriver:'Industrial beta failed rates relief',cot:'CFTC week ended 7 Jul; lagged',nextEvent:'US retail sales',changeCondition:'Gold >$4,150 and copper physical confirmation improve bias; gold < $4,050 with firm USD/yields worsens.',productId:'silver',components:[{name:'Macro',score:1,reason:'Soft inflation supports monetary metals.'},{name:'Rates',score:1,reason:'Real yields fell.'},{name:'Industrial',score:-2,reason:'China demand composition weakened.'},{name:'Cross-asset',score:-1,reason:'Silver fell despite gold holding.'}]},
+    {id:'usdjpy',name:'USD/JPY',group:'FX',reference:'162.20',bias:'Bullish / unstable',confidence:50,total:1,primaryDriver:'Japan-US structural gap',cot:'FX COT week ended 7 Jul; lagged',nextEvent:'US retail sales / intervention risk',changeCondition:'Close below 160 or verified intervention.',components:[{name:'Rates',score:-1,reason:'US yields fell for two days.'},{name:'Policy',score:1,reason:'Structural policy gap remains.'},{name:'Positioning',score:0,reason:'Current crowding not verified.'},{name:'Cross-asset',score:1,reason:'Price held above trigger despite softer DXY.'}]},
+    {id:'us10y',name:'US 10-year yield',group:'Rates',reference:'4.553%',bias:'Lower / range',confidence:75,total:-3,primaryDriver:'Back-to-back soft inflation',cot:'Treasury COT week ended 7 Jul; lagged',nextEvent:'US retail sales',changeCondition:'Below 4.45% confirms de-escalation; above 4.60% with DXY ≥101 restores hawkish confirmation.',components:[{name:'Inflation',score:-1,reason:'CPI and PPI surprised lower.'},{name:'Policy',score:-2,reason:'September hike probability fell below 50%.'},{name:'Growth',score:0,reason:'US demand test is pending.'},{name:'Cross-asset',score:0,reason:'Oil offsets but has not lifted yields.'}]}
   ];
 })();
