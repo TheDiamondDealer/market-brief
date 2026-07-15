@@ -167,6 +167,47 @@ class OfficialFeedCollectorTests(unittest.TestCase):
             {"marts-SM-44X72-yes-1", "marts-SM-44X72-yes-2"},
         )
 
+    def test_census_queries_single_months_until_rows_are_available(self) -> None:
+        config = {
+            "datasets": [{
+                "id": "advm3",
+                "name": "Advance durable goods",
+                "group": "Manufacturing",
+                "frequency": "Monthly",
+            }]
+        }
+        headers = [
+            "cell_value",
+            "data_type_code",
+            "time_slot_id",
+            "category_code",
+            "seasonally_adj",
+            "time",
+        ]
+        urls = []
+
+        def fake_request(url, **kwargs):
+            urls.append(url)
+            if len(urls) == 1:
+                return [headers]
+            return [headers, ["100", "VS", "1", "MDM", "yes", "2026-06"]]
+
+        with (
+            patch.dict("os.environ", {"CENSUS_API_KEY": "test-key"}),
+            patch.object(official, "request_json", side_effect=fake_request),
+            patch.object(official.time, "sleep"),
+        ):
+            result = official.collect_census(
+                config,
+                {},
+                "2026-07-15T00:00:00Z",
+            )
+
+        self.assertEqual(result["status"], "current")
+        self.assertEqual(len(result["records"]), 1)
+        self.assertEqual(len(urls), 2)
+        self.assertTrue(all("time=from" not in url for url in urls))
+
     def test_committed_cache_validates(self) -> None:
         subprocess.run(
             ["python", "scripts/validate_official_feeds.py"],
@@ -215,6 +256,8 @@ class OfficialFeedIntegrationTests(unittest.TestCase):
         self.assertTrue(all(int(row["cik"]) > 0 for row in registry["sec"]["companies"]))
         self.assertGreaterEqual(len(registry["bls"]["series"]), 8)
         self.assertGreaterEqual(len(registry["eia"]["series"]), 7)
+        pce = next(row for row in registry["bea"]["tables"] if row["table"] == "T20804")
+        self.assertEqual(pce["frequency"], "M")
 
 
 if __name__ == "__main__":

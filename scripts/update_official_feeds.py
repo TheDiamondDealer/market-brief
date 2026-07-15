@@ -16,6 +16,7 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -347,15 +348,28 @@ def collect_census(config: dict[str, Any], previous: dict[str, Any], collected_a
     if not api_key:
         return finalise_failure(source, previous, "CENSUS_API_KEY is not configured", unavailable=True)
     try:
-        start_year = datetime.now(timezone.utc).year - 1
         records = []
         failures = []
         for dataset in config.get("datasets", []):
             try:
-                params = {"get": "cell_value,data_type_code,time_slot_id,category_code,seasonally_adj", "time": f"from {start_year}", "key": api_key}
-                payload = request_json(f"https://api.census.gov/data/timeseries/eits/{dataset['id']}?" + urllib.parse.urlencode(params))
-                if not isinstance(payload, list) or len(payload) < 2:
-                    raise ValueError("no rows")
+                payload = None
+                now = datetime.now(timezone.utc)
+                last_error: Exception | None = None
+                for offset in range(12):
+                    month_index = now.year * 12 + now.month - 1 - offset
+                    period = f"{month_index // 12:04d}-{month_index % 12 + 1:02d}"
+                    params = {"get": "cell_value,data_type_code,time_slot_id,category_code,seasonally_adj", "time": period, "key": api_key}
+                    try:
+                        candidate_payload = request_json(f"https://api.census.gov/data/timeseries/eits/{dataset['id']}?" + urllib.parse.urlencode(params))
+                        if isinstance(candidate_payload, list) and len(candidate_payload) >= 2:
+                            payload = candidate_payload
+                            break
+                        last_error = ValueError(f"no rows for {period}")
+                    except (urllib.error.HTTPError, json.JSONDecodeError) as exc:
+                        last_error = exc
+                    time.sleep(0.05)
+                if payload is None:
+                    raise ValueError(f"no rows in the latest 12 monthly periods: {scrub(last_error)}")
                 headers = payload[0]
                 candidates_by_id: dict[str, dict[str, Any]] = {}
                 for values in payload[1:]:
