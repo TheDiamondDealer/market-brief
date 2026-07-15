@@ -58,7 +58,7 @@ def resolution_source(market: dict[str, Any]) -> str | None:
             if trailing_urls:
                 return trailing_urls[0]
         return urls[0]
-    return "Resolution source described in the market rules"
+    return None
 
 
 def computed_spread(market: dict[str, Any]) -> float | None:
