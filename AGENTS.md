@@ -7,10 +7,15 @@ Maintain and extend the Market Brief Intelligence Console as a trustworthy, rese
 Read these files before substantial work:
 
 1. `README.md`
-2. `docs/ARCHITECTURE.md`
-3. `docs/RUNBOOK.md`
-4. `operating-model.md`
-5. The relevant file under `prompts/`
+2. `docs/PROJECT-STATUS.md`
+3. `docs/RESEARCH-GOVERNANCE.md`
+4. `docs/ARCHITECTURE.md`
+5. `docs/DATA-SOURCES.md`
+6. `docs/RUNBOOK.md`
+7. `docs/CODEX-HANDOFF.md`
+8. `operating-model.md`
+9. The relevant file under `prompts/`
+10. Every workflow related to the proposed change
 
 ## Non-negotiable data rules
 

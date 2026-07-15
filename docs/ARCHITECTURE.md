@@ -2,88 +2,148 @@
 
 ## Purpose
 
-Market Brief is a static GitHub Pages application backed by scheduled research and public-data collectors. It aims to provide an auditable market-intelligence workspace without requiring a paid market-data API or an always-on application server.
+Market Brief is a static research-led market-intelligence application backed by scheduled collectors and curated research state. It provides an auditable workspace for macro, commodities, positioning, political disclosures and event probabilities without requiring an always-on application server.
 
-The system has three distinct layers:
+The dated implementation and blocker state is maintained in `docs/PROJECT-STATUS.md`.
 
-1. **Source collection** — official datasets, filings and research inputs.
-2. **Normalization and interpretation** — Python collectors and curated JavaScript research objects.
-3. **Static presentation** — browser-rendered dashboard deployed from `site/`.
+## Core layers
+
+The system has four distinct layers:
+
+1. **Source collection** — official datasets, filings, public market data and research inputs.
+2. **Normalization and validation** — Python collectors, schemas, semantic tests and retained-history rules.
+3. **Interpretation** — curated JavaScript research objects for regime, news impact, triggers, scenarios and dossiers.
+4. **Static presentation** — browser-rendered dashboard deployed from `site/`.
 
 ## High-level data flow
 
 ```text
-Official public sources                    Research process
-(CFTC, FRED, House, Senate, etc.)          (daily / weekly / monthly)
-             │                                      │
-             ▼                                      ▼
-      Python collectors                     curated research state
-             │                                      │
-             ├── validation                         ├── regime
-             ├── deduplication                      ├── news interpretation
-             ├── freshness/status                   ├── triggers
-             └── historical retention               └── product dossiers
-             │                                      │
-             └──────────────┬───────────────────────┘
+Official/public sources                   Research process
+(CFTC, FRED, agencies,                    (daily / weekly / monthly)
+House, Senate, Polymarket)                         │
+          │                                         │
+          ▼                                         ▼
+   Python collectors                         curated research state
+          │                                         │
+          ├── identity checks                       ├── regime
+          ├── validation                            ├── news interpretation
+          ├── deduplication                         ├── triggers
+          ├── freshness/status                      ├── scenarios
+          └── retained history                      └── product dossiers
+          │                                         │
+          └─────────────────┬───────────────────────┘
                             ▼
                     static JS / JSON caches
                             │
                             ▼
-                     `site/index.html`
+                     feature loader/router
                             │
                             ▼
-                     GitHub Pages deploy
+                      `site/index.html`
+                            │
+                            ▼
+                    GitHub Pages artifact
 ```
+
+A separate dormant path exists for licensed private data:
+
+```text
+Twelve Data API
+      │
+      ▼
+GitHub Actions collector
+      │
+      ├── only after private-access verification
+      ├── secret never sent to browser
+      ├── fresh/stale distinction
+      └── internal-use licence boundary
+      │
+      ▼
+protected static cache
+      │
+      ▼
+Cloudflare Access protected deployment
+```
+
+That path is intentionally disabled in the current public repository and public deployment.
 
 ## Runtime model
 
-The frontend is deliberately simple:
+The public frontend is deliberately simple:
 
-- no Node package install;
+- no Node package installation at runtime;
 - no bundler;
 - no application server;
-- no database at runtime;
-- no client-side secret;
-- no paid API required for the current version.
+- no runtime database;
+- no browser-side secret;
+- no user account system;
+- no runtime API proxy.
 
-The browser receives static HTML, CSS and JavaScript. JavaScript modules currently share global objects, so **load order is part of the architecture**.
+The browser receives static HTML, CSS, JavaScript and generated JSON.
+
+JavaScript modules share browser globals and a small core/feature-loader contract. Script and feature order remain part of the architecture.
 
 ## Frontend loading model
 
 ### Data-first principle
 
-Data-defining scripts must execute before rendering scripts that consume them.
+Data-defining modules must become available before rendering modules consume them.
 
-Typical categories:
+Typical order:
 
-1. Core and product data.
-2. Command-centre and intelligence data.
-3. Political tracker definitions.
-4. Generated official-data caches.
-5. Base application router/renderers.
-6. Feature-specific enhancement modules.
+1. core and product data;
+2. command-centre and intelligence data;
+3. generated official-data caches or asynchronous data loaders;
+4. base application router and shared renderers;
+5. feature manifest modules;
+6. feature-specific page, command, asset and Source Health extensions.
 
-When adding a new generated file, confirm all three conditions:
+When adding a generated source, confirm:
 
-- the collector writes the file;
-- `site/index.html` or a documented loader loads the file;
-- the consumer rerenders when the data becomes available.
+- collector writes the file;
+- schema validates it;
+- browser loader requests or loads it;
+- consumer rerenders when data arrives;
+- Source Health receives exactly one stable record set;
+- deployment includes the generated path.
 
-A generated file existing in GitHub does not mean the live application uses it.
+A generated file existing in Git does not prove the live application uses it.
+
+### Shared core
+
+`window.MarketBriefCore` provides shared contracts such as:
+
+- routing;
+- state/store access;
+- formatting and escaping;
+- source freshness normalization;
+- feature registration.
+
+Feature extensions must remain idempotent. An extension that listens for a shared event and then redispatches it must prove that it returns without writing when its expected records already exist.
 
 ### Routing
 
-The application uses URL hashes for views and selected detail pages. Examples:
+The application uses URL hashes.
+
+Important routes include:
 
 - `#home`
 - `#today`
 - `#news`
 - `#cot`
 - `#rates`
+- `#official-feeds`
+- `#crowd-expectations`
 - `#events`
+- `#week`
+- `#regime`
+- `#triggers`
+- `#assets`
+- `#products`
 - `#scenarios`
 - `#trackers`
-- product-detail routes handled by the application router
+- `#archive`
+- asset and product-detail hashes.
 
 New modules must not intercept or overwrite unrelated routes.
 
@@ -91,49 +151,80 @@ New modules must not intercept or overwrite unrelated routes.
 
 ## 1. Curated research state
 
-Primary examples:
+Primary examples include:
 
 - `site/data.js`
 - `site/command-centre-data.js`
 - `site/intelligence-data.js`
 - `site/research-data.js`
-- `site/products-a.js`
-- `site/products-b.js`
-- `site/energy-expansion.js`
+- `site/products-*.js`
+- other curated product and expansion modules.
 
-These objects drive:
+These drive:
 
 - regime and sign-flip interpretation;
-- command-centre bias scores;
+- command-centre priorities;
 - news transmission logic;
 - trigger zones;
 - weekly events;
 - product research;
-- Scenario Lab explanations.
+- scenario explanations.
 
-These are not automatically market truth. They must carry appropriate dates, sources and conditional language.
+They are interpretations rather than automatic market truth. They must follow `docs/RESEARCH-GOVERNANCE.md` and carry dates, sources, uncertainty and conditional language.
 
-## 2. Free official market data
+## 2. CFTC and FRED official market data
 
-The free-data pipeline collects public observations for areas such as:
+The free-data pipeline collects:
 
 - CFTC Commitments of Traders;
 - Treasury yields and curve spreads;
-- real yields and inflation breakevens;
+- real yields and breakevens;
 - credit spreads;
 - policy rates;
 - broad dollar measures.
 
-The collector should output both:
+COT contract selection must reject misleading alternatives such as micro, mini, ultra, index, financial or cross-rate contracts when the intended primary contract cannot be mapped safely.
 
-- a browser-ready JavaScript cache; and
-- machine-readable JSON or compact diagnostics where useful.
+Unavailable data stays unavailable.
 
-COT market selection must reject misleading alternatives such as micro, mini, financial, index, cross-rate or ultra contracts when the intended primary contract cannot be mapped safely.
+## 3. Free official agency feeds
 
-Unavailable data must remain unavailable. Do not substitute another benchmark merely to populate a card.
+Primary collector family:
 
-## 3. Political disclosures
+- `scripts/update_official_feeds.py`
+- `scripts/update_official_feeds_resilient.py`
+- `scripts/validate_official_feeds.py`
+- `scripts/official_feeds_registry.json`
+
+Generated output:
+
+- `site/data/official-feeds.json`
+- browser data and Source Health modules under `site/features/official-feeds/`.
+
+Agencies:
+
+- SEC EDGAR;
+- BLS;
+- EIA;
+- BEA;
+- Census;
+- USGS.
+
+Each agency is independent.
+
+Expected behaviour:
+
+- one agency failure does not block successful agencies;
+- missing keys become unavailable;
+- previous verified records become stale on temporary failure;
+- identity mismatches are rejected;
+- source observation and collection times remain separate;
+- generated output validates before commit;
+- BLS completeness is not downgraded by benign advisory metadata.
+
+Current exact operational state belongs in `docs/PROJECT-STATUS.md` and the generated cache.
+
+## 4. Political disclosures
 
 Primary collector:
 
@@ -151,8 +242,8 @@ Generated outputs:
 
 Primary sources:
 
-- House Clerk annual indexes and official Periodic Transaction Report PDFs.
-- Senate eFD search and official PTR report pages.
+- House Clerk annual indexes and official PTR PDFs;
+- Senate eFD search and official PTR pages.
 
 ### Political import flow
 
@@ -190,83 +281,188 @@ static JSON + browser JS
 
 ### Portfolio limitations
 
-Until full annual holdings baselines are incorporated, the portfolio is **PTR-derived only**.
+Until complete annual holdings baselines are incorporated, the portfolio is PTR-derived.
 
 Consequences:
 
 - pre-existing positions may be unknown;
-- a partial sale may not reveal the remaining position;
+- partial sales may not reveal the remaining position;
 - options may not map cleanly to share exposure;
-- value ranges are not current market values;
-- a zero reconstruction does not always prove the asset is absent.
+- statutory ranges are not current market values;
+- zero reconstruction does not always prove absence.
 
-The UI must preserve this limitation.
+The UI must preserve these limitations.
 
-## 4. TradingView integration
+## 5. Crowd Expectations
 
-TradingView is used as an embedded external layer for:
+Collector family:
+
+- `scripts/update_crowd_expectations.py`
+- `scripts/update_crowd_expectations_hardened.py`
+- `scripts/validate_crowd_expectations.py`
+- `scripts/crowd_expectations_registry.json`
+
+Generated output:
+
+- `site/data/crowd-expectations.json`
+- feature modules under `site/features/crowd-expectations/`.
+
+The provider path is public read-only market data.
+
+Architecture guarantees:
+
+- no wallet or user authentication;
+- no signing or deposits;
+- no order endpoint;
+- binary market validation;
+- relevance and exclusion vocabulary;
+- computed bid/ask spread;
+- resolution-source extraction;
+- transparent quality score;
+- event-specific asset mapping;
+- category and event-family balancing after qualification;
+- daily retained history;
+- stale fallback;
+- structural validation of controlled URLs and fields.
+
+Crowd probabilities are context rather than forecasts or recommendations.
+
+## 6. Dormant private market data
+
+Collector family includes Twelve Data watchlist and pipeline modules under `scripts/`, with generated disabled caches under `site/`.
+
+The public architecture must expose only a disabled state with no prices.
+
+The collector is gated by:
+
+- repository privacy;
+- protected deployment;
+- explicit access confirmation;
+- explicit collection enablement;
+- server-side secret;
+- provider-use rights.
+
+A private repository alone does not protect a public deployment. Both the custom origin and generated Cloudflare origin must be protected before activation, and the public GitHub Pages origin must be retired.
+
+Freshness rules distinguish:
+
+- fresh quote;
+- fresh daily history;
+- retained stale row;
+- failed empty run.
+
+Retained history must not make a failed quote current.
+
+## 7. TradingView integration
+
+TradingView is an external layer for:
 
 - interactive charts;
 - top stories;
-- an economic calendar.
+- economic calendar context.
 
-TradingView is not the internal market-data source.
+It is not an internal feed.
 
 The application must not:
 
 - scrape widget contents;
-- read indicator values out of the iframe;
-- claim that a paid personal TradingView subscription upgrades website data;
-- feed widget data into internal bias calculations.
+- read indicator values from the iframe;
+- claim a personal subscription upgrades website data;
+- feed widget values into internal bias calculations.
 
-Scenario analysis belongs to the project’s own research model and user-entered/verified reference prices.
+Scenario analysis belongs to the project’s own research model and verified/user-entered references.
+
+## Source Health architecture
+
+Source Health merges base records with feature-specific extensions.
+
+Each record should preserve:
+
+- stable ID;
+- source family;
+- observed date;
+- collection/generated date;
+- expected cadence;
+- last successful date;
+- normalized status;
+- detail;
+- error;
+- source URL.
+
+Extensions must:
+
+1. remove only their own family from the base set;
+2. construct the expected records;
+3. compare existing and expected records;
+4. return without writing when equal;
+5. dispatch a shared update only after a genuine change.
+
+This prevents event recursion and duplicate source records.
+
+## Schemas and validation
+
+Generated datasets are protected by:
+
+- JSON schemas;
+- semantic validators;
+- source-specific validators;
+- unit tests;
+- workflow tests;
+- route and frontend contract tests;
+- static accessibility and payload audit.
+
+The primary CI workflow is `.github/workflows/validate.yml`.
+
+It runs:
+
+- immutable action-pin validation;
+- Python compilation;
+- recursive JavaScript syntax checks;
+- generated schema and semantic validation;
+- Crowd Expectations validation;
+- static-site audit;
+- complete offline unit-test discovery.
 
 ## Scheduled workflows
 
-## Pages deployment
+### Pages deployment
 
 `.github/workflows/deploy-pages.yml`
 
-- triggers when `site/**` changes;
 - uploads `site/` as the Pages artifact;
 - deploys using GitHub Pages actions;
-- uses Pages and OIDC permissions only.
+- uses Pages and OIDC permissions;
+- does not make documentation-only changes visible on the dashboard unless `site/` also changes.
 
-## Political disclosure refresh
+### Generated-data writers
 
-`.github/workflows/update-political-disclosures.yml`
+Generated-data workflows share a serialization strategy so concurrent collectors do not race to push generated commits.
 
-- supports manual dispatch;
-- runs on a Melbourne-oriented weekday schedule;
-- installs parser dependencies;
-- compiles collectors;
-- runs the strict collector;
-- validates JSON and JavaScript;
-- commits data or diagnostics;
-- verifies Pelosi history is not silently empty;
-- rejects malformed asset rows;
-- ignores generated-data-only commits to avoid loops.
+Expected sequence:
 
-## Other official-data refreshes
+1. checkout latest `main`;
+2. validate pinned dependencies;
+3. compile and test collector;
+4. collect;
+5. validate generated output;
+6. inspect and print source counts;
+7. commit only changed generated paths;
+8. pull/rebase latest `main`;
+9. revalidate;
+10. push;
+11. trigger or call deployment.
 
-Free official-data workflows should follow the same pattern:
-
-1. collect;
-2. validate;
-3. preserve prior verified data on temporary failure;
-4. write freshness and diagnostics;
-5. commit only meaningful changes;
-6. allow Pages deployment to publish the result.
+Scheduled jobs must be safe to rerun and must not trigger infinite generated-data loops.
 
 ## Research operating model
 
-`operating-model.md` defines three altitudes:
+`operating-model.md` defines:
 
-- **Daily tactical** — overnight moves, immediate catalysts and dashboard updates.
-- **Weekly operational** — synthesis, regime test and week-ahead calendar.
-- **Monthly strategic** — deeper structural refresh and draft strategic state.
+- daily tactical research;
+- weekly operational synthesis;
+- monthly strategic refresh.
 
-The monthly process has an approval boundary: it can create drafts, but cannot overwrite approved live dossier, regime or threshold state without explicit approval.
+Monthly work can create drafts but cannot overwrite approved dossier, regime or threshold state without explicit approval naming the month.
 
 ## Failure design
 
@@ -274,43 +470,49 @@ The project prefers visible partial operation over false completeness.
 
 Expected failure behaviour:
 
-- source unavailable → keep previous verified data;
-- parser fails for one filing → log the filing ID and retain other history;
-- benchmark mapping unsafe → show unavailable;
-- generated data empty unexpectedly → fail validation;
-- stale source → display stale/partial status;
-- TradingView unavailable → internal dashboard remains usable;
-- one feature script fails → other views should continue where possible.
+- source unavailable → preserve last verified data where appropriate;
+- missing key → unavailable;
+- parser fails for one item → retain other valid history and report the item;
+- unsafe benchmark mapping → unavailable;
+- unexpectedly empty successful dataset → fail validation;
+- stale source → stale or partial status;
+- provider runner block → failed with diagnostic;
+- TradingView unavailable → internal research remains usable;
+- one feature fails → unrelated routes continue where possible;
+- private-access condition not met → licensed feed remains disabled with no prices.
 
 ## Security model
 
-The current architecture is public and static.
+The current deployed architecture is public and static.
 
 Therefore:
 
 - anything under `site/` is public;
 - browser JavaScript cannot safely contain secrets;
-- GitHub Actions logs must not reveal credentials;
-- future credentialed APIs must use GitHub Secrets and server-side collection;
-- login passwords must never be used as scraping credentials;
+- Actions logs must not reveal credentials;
+- credentialed collectors use GitHub Secrets;
+- licensed/private datasets require a protected deployment before collection;
+- website passwords or authenticated personal accounts must never be used as scraping credentials;
 - official public endpoints are preferred.
 
 ## Scaling path
 
-The static architecture is suitable while:
+The static design remains suitable while:
 
-- updates are daily/weekly rather than tick-level;
-- datasets remain manageable as compressed JS/JSON;
+- updates are periodic rather than tick-level;
+- datasets remain manageable as static JSON/JavaScript;
 - no user authentication is required;
-- portfolio calculations are disclosure-based rather than per-user accounts.
+- no private licensed data is publicly deployed;
+- no large queryable history or per-user alerts are required.
 
 A backend becomes justified when the project needs:
 
-- large queryable history;
-- user accounts and server-side watchlists;
-- real-time licensed feeds;
-- secret-bearing APIs;
+- private user accounts;
+- server-side watchlists and alerts;
+- large incremental history;
+- licensed real-time or delayed feeds;
 - complex cross-dataset joins;
-- reliable incremental ingestion and alerting.
+- secret-bearing runtime APIs;
+- reliable notification infrastructure.
 
-Until then, preserve the low-cost static design and improve modularity, validation and documentation before introducing infrastructure.
+Until those requirements are approved, preserve the low-cost static design and improve validation, modularity, browser coverage and documentation first.
