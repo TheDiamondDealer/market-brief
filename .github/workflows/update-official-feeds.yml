@@ -7,14 +7,17 @@ on:
     paths:
       - 'scripts/update_official_feeds.py'
       - 'scripts/update_official_feeds_resilient.py'
+      - 'scripts/update_official_news.py'
       - 'scripts/validate_official_feeds.py'
       - 'scripts/official_feeds_registry.json'
+      - 'scripts/official_news_registry.json'
       - 'schemas/official-feeds.schema.json'
       - 'tests/test_official_feeds.py'
+      - 'tests/test_official_news_feeds.py'
       - '.github/workflows/update-official-feeds.yml'
       - '.github/workflows/deploy-pages.yml'
   schedule:
-    - cron: '10 22 * * 1-5'
+    - cron: '17 0,4,8,12,16,20 * * 1-5'
     - cron: '20 3 * * 6'
 
 permissions:
@@ -52,19 +55,25 @@ jobs:
           python -m pip install --disable-pip-version-check --requirement requirements/validation.txt
           python -m pip check
 
-      - name: Validate collector and fixtures
+      - name: Validate collectors and fixtures
         run: |
-          python -m py_compile scripts/update_official_feeds.py scripts/update_official_feeds_resilient.py scripts/validate_official_feeds.py tests/test_official_feeds.py
-          python -m unittest tests/test_official_feeds.py -v
+          python -m py_compile scripts/update_official_feeds.py scripts/update_official_feeds_resilient.py scripts/update_official_news.py scripts/validate_official_feeds.py tests/test_official_feeds.py tests/test_official_news_feeds.py
+          python -m unittest tests/test_official_feeds.py tests/test_official_news_feeds.py -v
+
+      - name: Preserve previous official snapshot
+        run: cp site/data/official-feeds.json "$RUNNER_TEMP/official-feeds-before.json"
 
       - name: Collect official sources
         env:
           OFFICIAL_FEEDS_USER_AGENT: "${{ vars.SEC_USER_AGENT || 'MarketBriefResearch/2.3 253694733+TheDiamondDealer@users.noreply.github.com' }}"
+          OFFICIAL_NEWS_USER_AGENT: "MarketBriefResearch/1.0 253694733+TheDiamondDealer@users.noreply.github.com"
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
           BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
           BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
-        run: python scripts/update_official_feeds_resilient.py
+        run: |
+          python scripts/update_official_feeds_resilient.py
+          python scripts/update_official_news.py --previous "$RUNNER_TEMP/official-feeds-before.json"
 
       - name: Validate generated output
         run: |
@@ -86,6 +95,11 @@ jobs:
           )
           for source in data['sources']:
               print(f"- {source['id']}: {source['status']} ({len(source['records'])} records)")
+
+          ids = {source['id'] for source in data['sources']}
+          required = {'asx-announcements', 'federal-reserve-policy'}
+          if not required.issubset(ids):
+              raise SystemExit(f"Official-news migration guard failed: missing {sorted(required - ids)}")
 
           bls = next(source for source in data['sources'] if source['id'] == 'bls-public-data')
           if bls['status'] == 'partial' and '0 missing' in bls.get('detail', '').lower():

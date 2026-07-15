@@ -24,7 +24,7 @@
     "sources": {
       "type": "array",
       "minItems": 6,
-      "maxItems": 6,
+      "maxItems": 8,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -54,12 +54,14 @@
       "required": ["id", "kind", "name", "sourceUrl"],
       "properties": {
         "id": {"type": "string", "minLength": 1},
-        "kind": {"enum": ["filing", "series", "coded-series", "release"]},
+        "kind": {"enum": ["filing", "series", "coded-series", "release", "announcement", "policy-release"]},
         "name": {"type": "string", "minLength": 1},
         "sourceUrl": {"type": "string", "format": "uri"},
         "observedAt": {"type": ["string", "null"]},
         "filedAt": {"type": ["string", "null"]},
         "acceptedAt": {"type": ["string", "null"]},
+        "releasedAt": {"type": ["string", "null"]},
+        "publishedAt": {"type": ["string", "null"]},
         "period": {"type": ["string", "null"]},
         "value": {"type": ["number", "null"]},
         "previous": {"type": ["number", "null"]},

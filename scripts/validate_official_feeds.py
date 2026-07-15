@@ -11,7 +11,8 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "site" / "data" / "official-feeds.json"
 SCHEMA = ROOT / "schemas" / "official-feeds.schema.json"
-EXPECTED_IDS = {"sec-edgar", "bls-public-data", "eia-energy", "bea-nipa", "census-eits", "usgs-minerals"}
+BASE_IDS = {"sec-edgar", "bls-public-data", "eia-energy", "bea-nipa", "census-eits", "usgs-minerals"}
+NEWS_IDS = {"asx-announcements", "federal-reserve-policy"}
 STATUSES = {"current", "delayed", "stale", "failed", "unavailable", "partial", "unknown"}
 
 
@@ -28,8 +29,10 @@ def main() -> int:
 
     sources = data["sources"]
     ids = {source["id"] for source in sources}
-    if ids != EXPECTED_IDS:
+    if ids not in (BASE_IDS, BASE_IDS | NEWS_IDS):
         raise SystemExit(f"Official-feed source set mismatch: {sorted(ids)}")
+    if ids.intersection(NEWS_IDS) and not NEWS_IDS.issubset(ids):
+        raise SystemExit("ASX and Federal Reserve sources must migrate together")
     if data["collection"]["successCount"] + data["collection"]["failureCount"] + data["collection"]["unavailableCount"] != len(sources):
         raise SystemExit("Official-feed collection counts do not match the source registry")
 
@@ -48,12 +51,16 @@ def main() -> int:
             raise SystemExit(f"Current source has no records: {source['id']}")
         if source["status"] == "unavailable" and source["records"]:
             raise SystemExit(f"Unavailable source unexpectedly publishes records: {source['id']}")
+        for record in source["records"]:
+            if not str(record.get("sourceUrl") or "").startswith("https://"):
+                raise SystemExit(f"Official record has a non-HTTPS source URL: {record.get('id')}")
 
     rendered = json.dumps(data, ensure_ascii=False)
     if re.search(r"(?i)(api_key|apikey|userid|registrationkey)=[^&\s\[\]]+", rendered):
         raise SystemExit("Official-feed cache appears to contain a credential query parameter")
 
-    print(f"Validated six official sources and {len(all_record_ids)} retained records.")
+    migration = "expanded" if NEWS_IDS.issubset(ids) else "base migration state"
+    print(f"Validated {len(sources)} official sources ({migration}) and {len(all_record_ids)} retained records.")
     return 0
 
 
