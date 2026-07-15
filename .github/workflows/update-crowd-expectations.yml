@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/update_crowd_expectations.py'
+      - 'scripts/update_crowd_expectations_hardened.py'
       - 'scripts/validate_crowd_expectations.py'
       - 'scripts/crowd_expectations_registry.json'
       - 'schemas/crowd-expectations.schema.json'
@@ -52,13 +53,13 @@ jobs:
 
       - name: Validate collector and fixtures
         run: |
-          python -m py_compile scripts/update_crowd_expectations.py scripts/validate_crowd_expectations.py tests/test_crowd_expectations.py
+          python -m py_compile scripts/update_crowd_expectations.py scripts/update_crowd_expectations_hardened.py scripts/validate_crowd_expectations.py tests/test_crowd_expectations.py
           python -m unittest tests/test_crowd_expectations.py -v
 
       - name: Collect public crowd market data
         env:
-          CROWD_EXPECTATIONS_USER_AGENT: MarketBriefResearch/1.0 (+https://github.com/TheDiamondDealer/market-brief)
-        run: python scripts/update_crowd_expectations.py
+          CROWD_EXPECTATIONS_USER_AGENT: MarketBriefResearch/1.1 (+https://github.com/TheDiamondDealer/market-brief)
+        run: python scripts/update_crowd_expectations_hardened.py
 
       - name: Validate generated output and frontend
         run: |
