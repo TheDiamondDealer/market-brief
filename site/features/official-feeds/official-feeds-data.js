@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const EMPTY = Object.freeze({schemaVersion:1,generatedAtUtc:null,collection:{status:'unavailable',successCount:0,failureCount:0,unavailableCount:6,lastSuccessfulAt:null,errors:['Official feeds have not loaded.']},sources:[],methodology:{}});
+  const EMPTY = Object.freeze({schemaVersion:1,generatedAtUtc:null,collection:{status:'unavailable',successCount:0,failureCount:0,unavailableCount:8,lastSuccessfulAt:null,errors:['Official feeds have not loaded.']},sources:[],methodology:{}});
   async function load() {
     try {
       const response = await fetch('data/official-feeds.json', { cache: 'no-store', credentials: 'same-origin' });
