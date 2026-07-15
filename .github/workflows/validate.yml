@@ -76,6 +76,7 @@ jobs:
         run: |
           python scripts/validate_generated_data.py
           python scripts/validate_crowd_expectations.py
+          python scripts/validate_gdelt_radar.py
 
       - name: Audit static performance, accessibility and payloads
         run: python scripts/audit_static_site.py
