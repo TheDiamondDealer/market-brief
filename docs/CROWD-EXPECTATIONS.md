@@ -36,6 +36,7 @@ scripts/update_crowd_expectations_hardened.py
         ├── resolution-source extraction
         ├── transparent quality score
         ├── event-specific asset mapping
+        ├── category and event-family balancing
         ├── one-snapshot-per-day history
         ├── structural read-only validation
         └── stale-data retention
@@ -60,6 +61,15 @@ The collector scans active, open markets ordered by 24-hour volume. It retains q
 - US policy and elections.
 
 The registry excludes sports, entertainment, celebrity and standalone cryptocurrency-price questions.
+
+All retained candidates first pass the normal relevance, liquidity, volume and quality thresholds. Final selection then:
+
+- reserves up to three qualifying markets from each category;
+- caps one category at 16 retained markets;
+- caps one multi-outcome event family at four retained contracts;
+- fills remaining slots in the original quality and relevance rank order.
+
+This prevents a prolific event such as a Federal Reserve rate-bracket market from crowding all energy, commodity or geopolitical markets out of the dashboard. The balancing layer never promotes a market that failed the underlying quality filters.
 
 The selection vocabulary is versioned in:
 
@@ -145,7 +155,7 @@ The workflow validates the collectors, generated JSON and browser modules before
 
 ```bash
 python -m py_compile scripts/update_crowd_expectations.py scripts/update_crowd_expectations_hardened.py scripts/validate_crowd_expectations.py
-python -m unittest tests/test_crowd_expectations.py -v
+python -m unittest tests/test_crowd_expectations.py tests/test_crowd_selection_balance.py -v
 python scripts/validate_crowd_expectations.py
 node --check site/features/crowd-expectations/crowd-data.js
 node --check site/features/crowd-expectations/crowd-health.js
