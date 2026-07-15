@@ -20,6 +20,15 @@
   function number(value) { return value === null || value === undefined || Number.isNaN(Number(value)) ? '—' : Number(value).toLocaleString(); }
   function signed(value) { return value === null || value === undefined ? '—' : `${Number(value) > 0 ? '+' : ''}${number(value)}`; }
   function directionGlyph(value) { return value === 'up' ? '↑' : value === 'down' ? '↓' : value === 'mixed' ? '↕' : '?'; }
+  function directionLabel(value) { return value === 'up' ? 'up' : value === 'down' ? 'down' : value === 'mixed' ? 'mixed' : 'unclear'; }
+  function directionChip(label, direction, detail = '') {
+    const normalized = directionLabel(direction);
+    const accessible = `${label}: expected ${normalized}${detail ? `. ${detail}` : ''}`;
+    return `<span class="market-direction-chip ${escapeHtml(normalized)}" title="${escapeHtml(detail)}" aria-label="${escapeHtml(accessible)}"><span>${escapeHtml(label)}</span><span class="market-direction-arrow" aria-hidden="true">${directionGlyph(normalized)}</span></span>`;
+  }
+  function directionStrip(entries = [], label = 'Expected market pressure') {
+    return `<div class="market-direction-strip"><span class="market-direction-label">${escapeHtml(label)}</span><div class="market-direction-chips">${entries.map((entry) => directionChip(entry.assetName || entry.label || 'Asset', entry.direction || entry.dir, entry.mechanism || entry.detail || '')).join('')}</div></div>`;
+  }
   function statusClass(value = '') {
     const text = String(value).toLowerCase();
     if (text.includes('current') || text.includes('confirmed')) return 'current';
@@ -33,9 +42,28 @@
     return (impact().items || []).slice(0, 3).map((item) => `<article class="command-event-card">
       <header><span class="data-state ${statusClass(item.status)}">${escapeHtml(item.status)}</span><span>${escapeHtml(item.eventDate || item.timeLabel || 'Date unavailable')}</span></header>
       <h3>${escapeHtml(item.headline)}</h3><p>${escapeHtml(item.summary)}</p>
-      <div class="command-asset-chips">${item.interpretations.slice(0, 6).map((entry) => `<span class="${escapeHtml(entry.direction)}">${escapeHtml(entry.assetName)} ${directionGlyph(entry.direction)}</span>`).join('')}</div>
+      ${directionStrip((item.interpretations || []).slice(0, 6))}
       <a href="#news/${encodeURIComponent(item.id)}">Open causal analysis</a>
     </article>`).join('');
+  }
+
+  function dailyBrief() {
+    const daily = research.daily || {};
+    const stats = (daily.stats || []).slice(0, 6).map((stat) => ({
+      label: stat.label,
+      dir: stat.dir,
+      detail: [stat.value, stat.move].filter(Boolean).join(' · ')
+    }));
+    const headlines = (daily.headlines || []).slice(0, 5);
+    const chain = (research.regime?.chain || []).slice(0, 8);
+    return `<section class="command-daily command-panel" aria-labelledby="commandDailyTitle">
+      <div class="command-section-heading"><div><span class="command-kicker">Daily Brief</span><h3 id="commandDailyTitle">${escapeHtml(daily.title || 'Today’s market brief')}</h3></div><span>${escapeHtml(daily.asOf || research.generatedAt || 'As-of time unavailable')}</span></div>
+      ${stats.length ? directionStrip(stats, 'Today’s observed moves') : ''}
+      <div class="command-daily-grid">
+        <div class="command-daily-headlines"><span class="command-daily-label">Five things that matter</span>${headlines.length ? headlines.map((item, index) => `<article><span>${index + 1}</span><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.body)}</p></div></article>`).join('') : '<div class="command-empty">No daily headlines are available.</div>'}</div>
+        <div class="command-daily-transmission"><span class="command-daily-label">Dominant transmission</span><div class="command-daily-chain">${chain.length ? chain.map((node, index) => `<span class="command-chain-node">${escapeHtml(node)}</span>${index < chain.length - 1 ? '<span class="command-chain-arrow" aria-hidden="true">→</span>' : ''}`).join('') : '<span class="command-empty">No regime chain is available.</span>'}</div></div>
+      </div>
+    </section>`;
   }
 
   function triggerCards() {
@@ -76,7 +104,8 @@
     root.dataset.commandCentreRemodel = 'br-14';
     root.innerHTML = `<div class="command-page">
       <header class="command-hero"><div><span class="command-kicker">Decision console</span><h2>${escapeHtml(research.regime?.verdict || 'Market regime unavailable')}</h2><p>${escapeHtml(research.regime?.meaning || command.risk?.summary || 'Regime interpretation is not available.')}</p></div><div class="command-hero-meta"><span class="data-state ${failures.length ? 'partial' : 'current'}">${failures.length ? `${failures.length} source warning${failures.length === 1 ? '' : 's'}` : 'Core sources current'}</span><strong>${escapeHtml(research.regime?.name || 'Regime name unavailable')}</strong><small>Updated ${escapeHtml(command.updated || research.generatedAt || 'time unavailable')}</small></div></header>
-      <section class="command-priority"><div class="command-section-heading"><div><span class="command-kicker">What changed</span><h3>Priority market events</h3></div><span>Maximum three</span></div><div class="command-event-grid">${eventCards() || '<div class="command-empty">No curated impact records are available.</div>'}</div></section>
+      ${dailyBrief()}
+      <section class="command-priority"><div class="command-section-heading"><div><span class="command-kicker">What changed</span><h3>Priority market events</h3></div><span>Maximum three</span></div><div class="command-event-grid">${eventCards() || '<div class="command-empty">No curated impact records are available.</div>'}</div><p class="command-direction-note">Arrows show expected directional pressure under the current regime, not certainty or a trading recommendation. Open the causal analysis for the mechanism, confirmation and invalidation.</p></section>
       <section class="command-two-column"><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Next test</span><h3>${escapeHtml(command.nextEvent?.name || 'No event specified')}</h3></div><span>${escapeHtml(command.nextEvent?.time || 'Time unavailable')}</span></div><p>${escapeHtml(command.nextEvent?.logic || 'Decision logic unavailable.')}</p><div class="command-change-list">${changes.map((item, index) => `<article><span>${index + 1}</span><p>${escapeHtml(item)}</p></article>`).join('') || '<div class="command-empty">No change summary supplied.</div>'}</div></article><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Contradictions</span><h3>Active triggers</h3></div><span>Warning and triggered only</span></div><div class="command-trigger-list">${triggerCards()}</div></article></section>
       <section class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Bias board</span><h3>Asset decisions and flip conditions</h3></div><span>No composite score shown</span></div><div class="command-table-scroll"><table class="command-table"><thead><tr><th scope="col">Asset</th><th scope="col">Bias</th><th scope="col">Primary driver</th><th scope="col">Positioning</th><th scope="col">Next event</th><th scope="col">Condition that changes the bias</th></tr></thead><tbody>${biasRows() || '<tr><td colspan="6">Bias records unavailable.</td></tr>'}</tbody></table></div></section>
       <section class="command-two-column"><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">COT change</span><h3>Largest weekly positioning moves</h3></div><a href="#cot">Open COT</a></div><div class="command-table-scroll"><table class="command-table compact"><thead><tr><th scope="col">Contract</th><th scope="col">Category</th><th scope="col">Net</th><th scope="col">1 week</th><th scope="col">Report</th></tr></thead><tbody>${cotRows()}</tbody></table></div></article><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Political Flow</span><h3>Recent official disclosures</h3></div><a href="#trackers">Open Political Flow</a></div><div class="command-table-scroll"><table class="command-table compact"><thead><tr><th scope="col">Filer / asset</th><th scope="col">Action</th><th scope="col">Owner</th><th scope="col">Trade</th><th scope="col">Filed</th><th scope="col">Range</th></tr></thead><tbody>${politicalRows()}</tbody></table></div></article></section>

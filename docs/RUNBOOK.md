@@ -24,7 +24,7 @@ Useful direct routes:
 
 ```text
 http://localhost:8000/#home
-http://localhost:8000/#today
+http://localhost:8000/#today  (legacy redirect to #home)
 http://localhost:8000/#news
 http://localhost:8000/#cot
 http://localhost:8000/#rates

@@ -6,7 +6,7 @@
 
   const routeMeta = {
     home: ['Command Centre', 'What matters now, the active regime and what could change it.'],
-    today: ['Daily Brief', 'The latest research-led cross-asset recap.'],
+    today: ['Command Centre', 'Daily Brief is now part of the decision console.'],
     news: ['Impact Feed', 'Interpreted market-moving developments and transmission channels.'],
     cot: ['COT Positioning', 'Official weekly positioning with disclosed report categories.'],
     rates: ['Rates & Liquidity', 'Observed yields, spreads, policy rates and financial conditions.'],
