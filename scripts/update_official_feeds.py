@@ -357,7 +357,7 @@ def collect_census(config: dict[str, Any], previous: dict[str, Any], collected_a
                 if not isinstance(payload, list) or len(payload) < 2:
                     raise ValueError("no rows")
                 headers = payload[0]
-                candidates = []
+                candidates_by_id: dict[str, dict[str, Any]] = {}
                 for values in payload[1:]:
                     if not isinstance(values, list):
                         continue
@@ -366,7 +366,18 @@ def collect_census(config: dict[str, Any], previous: dict[str, Any], collected_a
                     period = str(row.get("time") or "")
                     if value is None or not period:
                         continue
-                    candidates.append({"id": f"{dataset['id']}-{row.get('data_type_code')}-{row.get('category_code')}-{row.get('seasonally_adj')}", "kind": "coded-series", "name": f"{dataset['name']} · {row.get('data_type_code')} / {row.get('category_code')}", "group": dataset["group"], "period": period, "observedAt": period, "value": value, "unit": "As defined by Census data dictionary", "frequency": dataset["frequency"], "dataTypeCode": row.get("data_type_code"), "categoryCode": row.get("category_code"), "seasonallyAdjusted": row.get("seasonally_adj"), "timeSlotId": row.get("time_slot_id"), "sourceUrl": f"https://api.census.gov/data/timeseries/eits/{dataset['id']}.html"})
+                    record_id = "-".join(
+                        str(part)
+                        for part in (
+                            dataset["id"],
+                            row.get("data_type_code"),
+                            row.get("category_code"),
+                            row.get("seasonally_adj"),
+                            row.get("time_slot_id"),
+                        )
+                    )
+                    candidates_by_id[record_id] = {"id": record_id, "kind": "coded-series", "name": f"{dataset['name']} · {row.get('data_type_code')} / {row.get('category_code')}", "group": dataset["group"], "period": period, "observedAt": period, "value": value, "unit": "As defined by Census data dictionary", "frequency": dataset["frequency"], "dataTypeCode": row.get("data_type_code"), "categoryCode": row.get("category_code"), "seasonallyAdjusted": row.get("seasonally_adj"), "timeSlotId": row.get("time_slot_id"), "sourceUrl": f"https://api.census.gov/data/timeseries/eits/{dataset['id']}.html"}
+                candidates = list(candidates_by_id.values())
                 if not candidates:
                     raise ValueError("no numeric rows")
                 candidates.sort(key=lambda item: str(item["period"]), reverse=True)
