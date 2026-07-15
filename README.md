@@ -15,12 +15,21 @@ The dashboard combines:
 - An interpreted news feed with first-order, second-order and invalidation logic.
 - CFTC Commitments of Traders positioning, including long/short history and percentiles.
 - Rates and liquidity data from free official sources.
+- Free official agency feeds for filings, macro, energy and critical-mineral context, with honest unavailable and failed states.
+- Read-only Crowd Expectations for market-relevant event probabilities.
 - Commodity deep dives covering gold, silver, copper, oil, natural gas, rare earths and other products.
 - A conditional Scenario Lab using an embedded TradingView chart and the project’s own target-path reasoning.
 - Political disclosure trackers using official House PTR PDFs and Senate eFD records.
 - Estimated disclosure-derived portfolios, with explicit limitations.
+- Dormant private-market-data plumbing that remains disabled while the repository and deployed site are public.
 
 The system is intentionally **research-led rather than real-time**. Fast external widgets are kept separate from internal verified analysis.
+
+## Current project status
+
+Read [docs/PROJECT-STATUS.md](docs/PROJECT-STATUS.md) for the dated implementation state, completed audit findings, source availability, privacy boundaries and recommended next-work order.
+
+The July 2026 post-integration audit found and corrected material issues involving Source Health recursion, false freshness, BLS status handling, Crowd Expectations validation, spread calculation, asset mapping and list concentration. Current unavailable sources remain visible rather than being substituted.
 
 ## Quick start
 
@@ -40,19 +49,24 @@ Do not open `site/index.html` directly with `file://`; browser security rules ca
 
 ```text
 .
-├── AGENTS.md                         # Instructions Codex reads before work
+├── AGENTS.md                         # Persistent engineering and data rules
 ├── README.md                         # Project overview and setup
 ├── CONTRIBUTING.md                   # Change and review expectations
 ├── operating-model.md                # Daily / weekly / monthly research model
 ├── prompts/                          # Research-generation prompts and rules
 ├── docs/
+│   ├── PROJECT-STATUS.md             # Dated implementation, blockers and next steps
+│   ├── RESEARCH-GOVERNANCE.md        # Investment-research mandate and protocol summary
 │   ├── ARCHITECTURE.md               # System and data-flow design
-│   ├── CODEX-HANDOFF.md              # Exact Codex setup and starter tasks
-│   └── RUNBOOK.md                    # Operations and troubleshooting
+│   ├── DATA-SOURCES.md               # Source trust and usage rules
+│   ├── RUNBOOK.md                    # Operations and troubleshooting
+│   ├── CODEX-HANDOFF.md              # Exact Codex setup and audit prompt
+│   ├── FREE-OFFICIAL-FEEDS.md        # SEC/BLS/EIA/BEA/Census/USGS pipeline
+│   └── CROWD-EXPECTATIONS.md         # Read-only prediction-market integration
 ├── scripts/
 │   ├── update_political_disclosures.py
 │   ├── update_political_disclosures_strict.py
-│   └── ...                           # Free official-data collectors and validators
+│   └── ...                           # Official-data collectors and validators
 ├── site/
 │   ├── index.html                    # Static application shell and script order
 │   ├── data.js                       # Core seeded research state
@@ -64,9 +78,10 @@ Do not open `site/index.html` directly with `file://`; browser security rules ca
 │   ├── *-app.js / *-ui.js            # Rendering and interaction modules
 │   └── *.css                         # Dashboard styles
 └── .github/workflows/
+    ├── validate.yml
     ├── deploy-pages.yml
     ├── update-political-disclosures.yml
-    └── ...                           # Scheduled data refresh and validation jobs
+    └── ...                           # Scheduled refresh and validation jobs
 ```
 
 ## Architecture in one minute
@@ -107,22 +122,38 @@ Change the relevant collector, run it, validate the output, and commit both code
 - Display source and freshness where practical.
 - TradingView widgets are external display/discovery layers; their data is not extracted into the internal bias engine.
 - Biases are conditional research views, not trade recommendations.
+- Licensed private data must not be activated while generated output remains publicly accessible.
+- Read-only Crowd Expectations must never acquire wallet, signing, deposit or order functionality.
+
+## Research governance
+
+Investment research must follow [docs/RESEARCH-GOVERNANCE.md](docs/RESEARCH-GOVERNANCE.md).
+
+Core requirements include:
+
+- use AUD as the base currency;
+- separate immediate risk, six-month trade, two-year investment and longer-term views;
+- prioritise primary sources;
+- distinguish fact, guidance, consensus, forecast, inference and opinion;
+- analyse valuation and embedded expectations;
+- present serious bear cases and invalidation conditions;
+- compare the preferred security with stronger, cheaper or lower-risk alternatives;
+- keep rare-earth elements, semiconductor subsectors and commodity benchmarks distinct.
 
 ## Validation
 
-Run these before merging changes:
+Use the complete offline validation sequence before merging broad changes:
 
 ```bash
-# JavaScript syntax
-find site -maxdepth 1 -name '*.js' -print0 | xargs -0 -n1 node --check
-
-# Python collector syntax
-python -m py_compile scripts/*.py
-
-# Generated political disclosure data
-python -m json.tool site/data/political-disclosures.json >/dev/null
-python -m json.tool site/data/political-disclosures-summary.json >/dev/null
-node --check site/political-data.js
+python scripts/check_ci_pins.py
+python -m pip install --disable-pip-version-check --requirement requirements/ci.txt
+python -m pip check
+python -m py_compile scripts/*.py tests/*.py
+find site tests/js -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+python scripts/validate_generated_data.py
+python scripts/validate_crowd_expectations.py
+python scripts/audit_static_site.py
+python -m unittest discover -s tests -v
 ```
 
 For a visual check:
@@ -134,12 +165,17 @@ python -m http.server 8000 --directory site
 Then verify at minimum:
 
 - Command centre loads without console errors.
-- Direct hashes such as `#trackers`, `#cot`, `#rates` and `#scenarios` work.
+- Direct hashes such as `#trackers`, `#cot`, `#rates`, `#official-feeds`, `#crowd-expectations` and `#scenarios` work.
 - Political tracker counts are non-zero after a successful import.
 - COT long/short charts render when history exists.
+- Expected unavailable and failed source states remain visible.
 - Mobile navigation remains usable.
 
 ## Automated workflows
+
+### Validation
+
+`.github/workflows/validate.yml` compiles Python, checks JavaScript recursively, validates generated schemas and semantics, audits the static site and runs the full offline fixture and route test suite.
 
 ### GitHub Pages
 
@@ -155,6 +191,14 @@ Then verify at minimum:
 - commits imported data or diagnostics;
 - rejects malformed asset rows.
 
+### Official agency feeds
+
+The official-feed workflow keeps each agency independent, preserves stale verified records, exposes missing keys and validates BLS completeness before committing generated output.
+
+### Crowd Expectations
+
+The Crowd Expectations workflow runs every six hours, validates read-only boundaries and commits only validated generated market data.
+
 ### Research cadence
 
 The intended operating cadence is defined in [operating-model.md](operating-model.md):
@@ -167,32 +211,39 @@ Monthly strategic files must not overwrite approved live regime, dossier or thre
 
 ## Moving the project to Codex
 
-Yes: connect Codex to this GitHub repository and select it as the working environment. The repository now includes `AGENTS.md`, which provides persistent project rules to Codex, plus a dedicated [Codex handoff guide](docs/CODEX-HANDOFF.md).
+Connect Codex to this GitHub repository and select it as the working environment. `AGENTS.md` supplies persistent rules, while [docs/CODEX-HANDOFF.md](docs/CODEX-HANDOFF.md) contains the current audit-only prompt and implementation handoff pattern.
 
-A good first task is:
+The first Codex pass should be audit-only and must not edit files. It should verify the current architecture, feeds, generated data, privacy gates, workflows, routes and audit fixes before proposing new work.
 
-> Read `AGENTS.md`, `README.md`, `docs/ARCHITECTURE.md`, `docs/RUNBOOK.md` and `operating-model.md`. Audit the repository without changing files. Report the current architecture, generated-file boundaries, failing workflows, stale data and the five highest-priority technical risks.
-
-## Security
+## Security and privacy
 
 - Never commit passwords, API keys, cookies, login exports or private tokens.
-- Use GitHub Actions secrets for any future credentialed integration.
-- Public official sources should normally require no repository secret.
-- Rotate any password that has been pasted into chat, an issue, a commit or a log.
+- Use GitHub Actions Secrets for credentialed collectors.
+- Anything under `site/` is public while the current GitHub Pages deployment remains active.
+- Making the repository private is not sufficient by itself; deployed origins must also be protected before private feeds are activated.
+- Rotate any credential that has been pasted into chat, an issue, a commit or a log.
 
 ## Known limitations
 
-- The site is a growing static application with multiple ordered global scripts rather than a bundled module framework.
+- The site is a growing static application with ordered global scripts rather than a bundled module framework.
 - Some historical House PDF formats remain only partially parsed; profiles expose partial status instead of pretending coverage is complete.
 - Political portfolios are PTR-derived until complete annual holdings baselines are added.
-- TradingView supplies embedded charts/news but not an exportable data API for this project.
+- TradingView supplies embedded charts/news but not an exportable internal API feed.
 - The internal news feed is delayed and interpreted, not a live wire.
+- SEC EDGAR remains blocked from GitHub-hosted runners.
+- EIA, BEA and Census remain unavailable until their free keys are configured.
+- Twelve Data remains disabled while the site is public.
 
 ## Documentation
 
 - [Codex instructions](AGENTS.md)
+- [Current project status](docs/PROJECT-STATUS.md)
+- [Research governance](docs/RESEARCH-GOVERNANCE.md)
 - [Architecture](docs/ARCHITECTURE.md)
+- [Data sources and trust model](docs/DATA-SOURCES.md)
 - [Operations runbook](docs/RUNBOOK.md)
 - [Codex handoff](docs/CODEX-HANDOFF.md)
+- [Free official agency feeds](docs/FREE-OFFICIAL-FEEDS.md)
+- [Crowd Expectations](docs/CROWD-EXPECTATIONS.md)
 - [Contributing](CONTRIBUTING.md)
 - [Research operating model](operating-model.md)
