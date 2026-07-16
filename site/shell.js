@@ -125,21 +125,26 @@
     (research.assetBiases || []).forEach((bias) => { if (bias?.name) entries.push(mk(bias.name, 'Asset workspace', `asset/${bias.productId || bias.id}`, bias.group)); });
     (research.products || []).forEach((product) => { if (product?.name) entries.push(mk(product.name, 'Research dossier', `product/${product.id}`, product.group)); });
     const trackers = research.trackers || {};
-    (research.trackerOrder || Object.keys(trackers)).forEach((id) => { const filer = trackers[id]; const label = filer?.title || filer?.name; if (label) entries.push(mk(label, 'Political profile', `trackers/${id}`, id)); });
+    // Only surface trackers that have a navigable disclosure profile. Some tracker definitions
+    // (e.g. the Trump policy tracker) exist in research.trackers but have no political-disclosure
+    // manifest entry, so #trackers/<id> would dead-end in a "profile unavailable" error.
+    const navigable = window.politicalDisclosureManifest?.trackers || null;
+    (research.trackerOrder || Object.keys(trackers)).forEach((id) => { if (navigable && !navigable[id]) return; const filer = trackers[id]; const label = filer?.title || filer?.name; if (label) entries.push(mk(label, 'Political profile', `trackers/${id}`, id)); });
     return entries;
   }
   function renderSearchResults(query) {
     const box = $('searchResults');
     if (!box) return;
     const term = String(query || '').trim().toLowerCase();
-    if (term.length < 2) { box.hidden = true; box.innerHTML = ''; return; }
+    if (term.length < 2) { box.hidden = true; box.innerHTML = ''; $('search')?.setAttribute('aria-expanded', 'false'); return; }
     const matches = searchIndex().filter((entry) => (entry.search || '').includes(term)).slice(0, 8);
     box.innerHTML = matches.length
-      ? matches.map((entry) => `<button type="button" role="option" data-palette-hash="${paletteEsc(entry.hash)}"><strong>${paletteEsc(entry.label)}</strong><span>${paletteEsc(entry.hint)}</span></button>`).join('')
+      ? matches.map((entry) => `<button type="button" role="option" aria-selected="false" data-palette-hash="${paletteEsc(entry.hash)}"><strong>${paletteEsc(entry.label)}</strong><span>${paletteEsc(entry.hint)}</span></button>`).join('')
       : '<div class="search-empty">No local match across views, assets, dossiers and tracked filers.</div>';
     box.hidden = false;
+    $('search')?.setAttribute('aria-expanded', 'true');
   }
-  function closeSearchResults() { const box = $('searchResults'); if (box) { box.hidden = true; box.innerHTML = ''; } }
+  function closeSearchResults() { const box = $('searchResults'); if (box) { box.hidden = true; box.innerHTML = ''; } $('search')?.setAttribute('aria-expanded', 'false'); }
   const paletteInput = $('search');
   if (paletteInput) {
     paletteInput.addEventListener('input', () => renderSearchResults(paletteInput.value));
@@ -149,7 +154,7 @@
       if (event.key === 'ArrowDown' && box && !box.hidden) { event.preventDefault(); box.querySelector('button')?.focus(); return; }
       if (event.key === 'Enter' && box && !box.hidden) {
         const first = box.querySelector('button[data-palette-hash]');
-        if (first) { event.preventDefault(); event.stopImmediatePropagation(); window.location.hash = first.dataset.paletteHash; closeSearchResults(); }
+        if (first) { event.preventDefault(); event.stopImmediatePropagation(); window.location.hash = first.dataset.paletteHash; closeSearchResults(); document.getElementById('main-content')?.focus(); }
       }
     });
   }
@@ -162,7 +167,7 @@
   });
   document.addEventListener('click', (event) => {
     const option = event.target.closest?.('[data-palette-hash]');
-    if (option) { window.location.hash = option.dataset.paletteHash; closeSearchResults(); if (paletteInput) paletteInput.value = ''; return; }
+    if (option) { window.location.hash = option.dataset.paletteHash; closeSearchResults(); if (paletteInput) paletteInput.value = ''; document.getElementById('main-content')?.focus(); return; }
     if (!event.target.closest?.('.search')) closeSearchResults();
   }, true);
 
