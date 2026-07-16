@@ -746,7 +746,212 @@ git commit -m "style: crowd expectation cards emphasise probability readout"
 
 ---
 
-### Task 12: Full verification sweep + PR
+### Task 12: Make the global search real (jump palette)
+
+The topbar search is prominent, centred, and ⌘K-hinted — but typing does **nothing visible on 11 of 13 views** (it only filters cards on Assets and Research Library, wired in `site/app.js:183-235`). Give it a results dropdown that always works: matching views, asset workspaces, product dossiers and tracked filers, Enter/click to jump.
+
+**Files:**
+- Modify: `site/index.html` (add results host inside `.search`)
+- Modify: `site/shell.js` (palette index + render + handlers, after the `routeMeta` block)
+- Modify: `site/styles/shell.css` (dropdown styles)
+
+**Interfaces:**
+- Consumes: `routeMeta` and `goToRoute(route)` already in `shell.js`; research state via `window.MarketBriefCore.adapters.research()` → `{assetBiases: [{name, productId|id}], products: [{name, id}], trackers: {<id>:{name}}, trackerOrder: []}` (defaults defined in `core/adapters.js`, so every field is safe to read).
+- Produces: `#searchResults` listbox; existing per-view filtering in `app.js` keeps working unchanged (the palette is additive).
+
+- [ ] **Step 1: Add the results host in index.html**
+
+Inside `<div class="search" role="search">…</div>` in the topbar, after the `<span class="kbd">` element, add:
+
+```html
+<div id="searchResults" class="search-results" role="listbox" aria-label="Search results" hidden></div>
+```
+
+- [ ] **Step 2: Check the existing Enter handler**
+
+Run: `sed -n 225,240p site/app.js` — read what Enter currently does in the `#search` keydown listener. If it navigates somewhere, the palette's Enter behaviour (Step 3) must run first and stop propagation so the two don't fight; note what you found in the commit message.
+
+- [ ] **Step 3: Add the palette to shell.js (after the `routeMeta` definition)**
+
+```js
+const paletteEsc = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+function searchIndex() {
+  const research = window.MarketBriefCore?.adapters?.research?.() || {};
+  const entries = Object.entries(routeMeta)
+    .filter(([route]) => !['today', 'official', 'crowd', 'equities', 'product-detail', 'asset'].includes(route))
+    .map(([route, [title]]) => ({ label: title, hint: 'View', hash: route }));
+  (research.assetBiases || []).forEach((bias) => entries.push({ label: bias.name, hint: 'Asset workspace', hash: `asset/${bias.productId || bias.id}` }));
+  (research.products || []).forEach((product) => entries.push({ label: product.name, hint: 'Research dossier', hash: `product/${product.id}` }));
+  const trackers = research.trackers || {};
+  (research.trackerOrder || Object.keys(trackers)).forEach((id) => { const filer = trackers[id]; if (filer?.name) entries.push({ label: filer.name, hint: 'Political profile', hash: `trackers/${id}` }); });
+  return entries;
+}
+function renderSearchResults(query) {
+  const box = $('searchResults');
+  if (!box) return;
+  const term = String(query || '').trim().toLowerCase();
+  if (term.length < 2) { box.hidden = true; box.innerHTML = ''; return; }
+  const matches = searchIndex().filter((entry) => entry.label.toLowerCase().includes(term)).slice(0, 8);
+  box.innerHTML = matches.length
+    ? matches.map((entry) => `<button type="button" role="option" data-palette-hash="${paletteEsc(entry.hash)}"><strong>${paletteEsc(entry.label)}</strong><span>${paletteEsc(entry.hint)}</span></button>`).join('')
+    : '<div class="search-empty">No local match across views, assets, dossiers and tracked filers.</div>';
+  box.hidden = false;
+}
+function closeSearchResults() { const box = $('searchResults'); if (box) { box.hidden = true; box.innerHTML = ''; } }
+const searchInput = $('search');
+if (searchInput) {
+  searchInput.addEventListener('input', () => renderSearchResults(searchInput.value));
+  searchInput.addEventListener('keydown', (event) => {
+    const box = $('searchResults');
+    if (event.key === 'Escape') { closeSearchResults(); return; }
+    if (event.key === 'ArrowDown' && box && !box.hidden) { event.preventDefault(); box.querySelector('button')?.focus(); return; }
+    if (event.key === 'Enter' && box && !box.hidden) {
+      const first = box.querySelector('button[data-palette-hash]');
+      if (first) { event.preventDefault(); event.stopImmediatePropagation(); window.location.hash = first.dataset.paletteHash; closeSearchResults(); }
+    }
+  });
+}
+document.addEventListener('click', (event) => {
+  const option = event.target.closest?.('[data-palette-hash]');
+  if (option) { window.location.hash = option.dataset.paletteHash; closeSearchResults(); if (searchInput) searchInput.value = ''; return; }
+  if (!event.target.closest?.('.search')) closeSearchResults();
+});
+```
+
+Also add keyboard support inside the box (arrow between options, Enter activates — buttons get this for free; add `Escape` on the box to return focus):
+
+```js
+$('searchResults')?.addEventListener('keydown', (event) => {
+  const options = [...event.currentTarget.querySelectorAll('button')];
+  const index = options.indexOf(document.activeElement);
+  if (event.key === 'ArrowDown') { event.preventDefault(); options[Math.min(index + 1, options.length - 1)]?.focus(); }
+  if (event.key === 'ArrowUp') { event.preventDefault(); if (index <= 0) searchInput?.focus(); else options[index - 1]?.focus(); }
+  if (event.key === 'Escape') { closeSearchResults(); searchInput?.focus(); }
+});
+```
+
+- [ ] **Step 4: Dropdown CSS in styles/shell.css**
+
+```css
+.search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:50;display:grid;max-height:340px;overflow-y:auto;padding:6px;border:1px solid var(--border-strong);border-radius:var(--radius-md);background:var(--bg-elevated);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.search-results button{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;padding:10px 12px;border:0;border-radius:var(--radius-sm);background:transparent;color:var(--text-primary);text-align:left;cursor:pointer}
+.search-results button:hover,.search-results button:focus-visible{background:var(--bg-selected)}
+.search-results button span{color:var(--text-muted);font-size:10px;text-transform:uppercase;letter-spacing:.07em}
+.search-empty{padding:12px;color:var(--text-muted);font-size:12px}
+```
+
+- [ ] **Step 5: Verify**
+
+Run: `node --check site/shell.js` → clean. `python scripts/audit_static_site.py` → passes. `python -m unittest tests.test_shell_contract tests.test_frontend_contract -v` → OK.
+In the browser: type "gol" on the Command Centre → dropdown shows Gold asset workspace + Gold dossier; Enter jumps to the first; Escape closes; clicking outside closes; on the Assets view the existing card filtering still works while the dropdown shows.
+
+- [ ] **Step 6: Commit**
+
+```bash
+git add site/index.html site/shell.js site/styles/shell.css
+git commit -m "feat: global search palette jumps to views, assets, dossiers and filers"
+```
+
+---
+
+### Task 13: De-chrome Official Feeds and Calendar nested cells
+
+Official Feeds cards nest bordered OBSERVED/COLLECTED/LAST SUCCESS/CADENCE cells (and FILED/ACCEPTED cells per filing); Calendar event cards nest bordered PREVIOUS/CONSENSUS/ACTUAL cells. Same disease Task 5 cured on the macro cards — apply the same label:value row pattern.
+
+**Files:**
+- Modify: `site/features/official-feeds/official-feeds-page.css`
+- Modify: `site/features/calendar/calendar-page.css`
+
+**Interfaces:**
+- Consumes: existing markup (unchanged); Task 5's visual pattern is the reference.
+
+- [ ] **Step 1: Locate the boxed-cell rules**
+
+Run: `grep -noE "[a-z-]+ (div|>div|dl div)\{[^}]*border[^}]*\}" site/features/official-feeds/official-feeds-page.css site/features/calendar/calendar-page.css | head -20`
+Identify each rule that gives inner metadata cells their own `border` + `background` + `padding` box (in Official Feeds: the source-status meta grid and the per-filing date cells; in Calendar: the previous/consensus/actual triplet).
+
+- [ ] **Step 2: Flatten them**
+
+For each located rule, replace the boxed declarations with the Task 5 row pattern (keep the selectors):
+
+```css
+/* target look, adapt selector names to the file */
+border: 0;
+background: transparent;
+padding: 3px 0;
+```
+
+and give the *containing* group a single hairline top border (`border-top:1px solid var(--border-subtle);padding-top:10px`) so the metadata region is still visually separated. Labels stay 10px uppercase `var(--text-muted)`, values 12px `tabular-nums` — add those declarations if the existing rules lack them. Keep the `data-state`/`SOURCED` badges untouched; keep "No approved source attached" and similar honesty strings visible.
+
+- [ ] **Step 3: Verify**
+
+Run: `python -m unittest tests.test_official_feeds tests.test_calendar_reactions -v` → OK (adjust module names to actual test files: `ls tests/ | grep -iE "official|calendar"`).
+Screenshots of `#official-feeds` and `#events`: metadata reads as clean label:value rows; each card has at most one level of inner border.
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add site/features/official-feeds/official-feeds-page.css site/features/calendar/calendar-page.css
+git commit -m "style: flatten nested metadata cells on official feeds and calendar"
+```
+
+---
+
+### Task 14: Asset-route topbar fix + strip dead Command Centre skeleton
+
+Two small structural bugs. (a) The asset workspace (`#asset/gold`) reuses the `view-product-detail` section (see `features/asset-workspace/asset-page.js:18-21`), so the topbar wrongly shows "Product Dossier / Detailed commodity research workspace" on asset pages. (b) `index.html` ships a full static Command Centre layout inside `<section id="view-home">` that `command-page.js` `render()` unconditionally replaces via `root.innerHTML` — dead bytes plus a flash of stale layout on load.
+
+**Files:**
+- Modify: `site/shell.js` (`routeMeta` + `updatePageContext`)
+- Modify: `site/index.html` (`view-home` section contents)
+
+- [ ] **Step 1: Add an asset meta entry and resolve it from the hash**
+
+In `shell.js` add to `routeMeta`:
+
+```js
+asset: ['Asset Workspace', 'Evidence, flip conditions, catalysts and positioning for one asset.'],
+```
+
+and change `updatePageContext` to prefer the hash for asset routes:
+
+```js
+function updatePageContext(view = activeView()) {
+  const hash = String(window.location.hash || '').replace(/^#/, '');
+  const key = hash.startsWith('asset/') ? 'asset' : view;
+  const [title, subtitle] = routeMeta[key] || routeMeta.home;
+  if ($('pageTitle')) $('pageTitle').textContent = title;
+  if ($('pageSubtitle')) $('pageSubtitle').textContent = subtitle;
+  document.title = `${title} · Market Brief`;
+}
+```
+
+- [ ] **Step 2: Check nothing asserts on the static home markup, then strip it**
+
+Run: `grep -rn "commandRegime\|commandRisk\|biasTable\|command-intro" tests/ scripts/audit_static_site.py`
+If no test/audit references them, replace the entire *contents* of `<section class="view active" id="view-home">…</section>` in `index.html` (the static `.command-hero`, `.command-grid`, bias table markup) with:
+
+```html
+<div class="command-empty">Loading command centre…</div>
+```
+
+The `<section>` tag itself, its `id`, and its classes must stay (route contract). If any test DOES reference one of those ids, keep a minimal `<div id="<that-id>"></div>` placeholder for each referenced id instead and note it in the commit.
+
+- [ ] **Step 3: Verify**
+
+Run: `node --check site/shell.js` → clean. `python scripts/audit_static_site.py` + `python -m unittest tests.test_frontend_contract tests.test_command_centre tests.test_shell_contract -v` → OK.
+Browser: `#asset/gold` topbar shows "Asset Workspace"; `#product/gold` still shows "Product Dossier"; hard-reload on `#home` shows the loading hint briefly, then the rendered console, with no layout jump from stale markup.
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add site/shell.js site/index.html
+git commit -m "fix: asset workspace topbar context + remove dead command centre skeleton"
+```
+
+---
+
+### Task 15: Full verification sweep + PR
 
 **Files:**
 - Modify: `docs/PROJECT-STATUS.md` (dated entry describing the UI revamp, per AGENTS.md change discipline)
@@ -783,7 +988,7 @@ Add a dated section summarising: theme unification, the four bug fixes, per-view
 
 ```bash
 git push -u origin feat/ui-mrktedge-revamp
-gh pr create --title "UI revamp: unify violet theme + mrktedge-style component polish" --body "<summary of tasks 1-11, before/after notes, checks run>"
+gh pr create --title "UI revamp: unify violet theme + mrktedge-style component polish" --body "<summary of tasks 1-14, before/after notes, checks run>"
 ```
 
 Do NOT merge. Merging to `main` deploys to the public site; Chris reviews first.
