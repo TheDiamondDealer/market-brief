@@ -250,7 +250,7 @@
 .cot-positioning-svg {
   display: block;
   width: 100%;
-  height: 350px;
+  height: auto;
   overflow: visible;
 }
 
@@ -283,18 +283,33 @@
 }
 
 .cot-chart-value {
-  fill: #f8fbff;
-  font-size: 9px;
-  font-weight: 750;
+  fill: var(--text-primary);
+  font-size: 11px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
   pointer-events: none;
 }
 
+.cot-chart-value.muted {
+  fill: var(--text-muted);
+}
+
+.cot-chart-value.inside {
+  fill: var(--bg-canvas);
+  font-weight: 750;
+}
+
+.cot-chart-row-label {
+  fill: var(--text-secondary);
+  font-size: 12px;
+}
+
 .cot-chart-long {
-  fill: url(#cotLongBars);
+  fill: var(--positive);
 }
 
 .cot-chart-short {
-  fill: url(#cotShortBars);
+  fill: var(--negative);
 }
 
 .cot-chart-empty-bar {
@@ -751,7 +766,7 @@
   }
 
   .cot-positioning-svg {
-    height: 320px;
+    height: auto;
   }
 
   .cot-detail-card > header,

@@ -21,7 +21,7 @@ body { overflow-x: hidden; }
 }
 
 .sidebar:hover,
-.sidebar:focus-within,
+.sidebar:has(:focus-visible),
 body.rail-expanded .sidebar {
   width: var(--rail-expanded-width);
   box-shadow: 18px 0 45px rgba(0, 0, 0, 0.35);
@@ -61,15 +61,15 @@ body.rail-expanded .sidebar { box-shadow: none; }
 }
 
 .sidebar:hover .brand-copy,
-.sidebar:focus-within .brand-copy,
+.sidebar:has(:focus-visible) .brand-copy,
 .sidebar:hover .nav-label,
-.sidebar:focus-within .nav-label,
+.sidebar:has(:focus-visible) .nav-label,
 .sidebar:hover .nav-section-label,
-.sidebar:focus-within .nav-section-label,
+.sidebar:has(:focus-visible) .nav-section-label,
 .sidebar:hover .side-note,
-.sidebar:focus-within .side-note,
+.sidebar:has(:focus-visible) .side-note,
 .sidebar:hover .rail-toggle-label,
-.sidebar:focus-within .rail-toggle-label,
+.sidebar:has(:focus-visible) .rail-toggle-label,
 body.rail-expanded .brand-copy,
 body.rail-expanded .nav-label,
 body.rail-expanded .nav-section-label,
@@ -153,8 +153,10 @@ body.rail-expanded .rail-toggle-label {
   line-height: 1;
 }
 
-.sidebar:not(:hover):not(:focus-within) .nav-item[data-tooltip]::after,
-body:not(.rail-expanded) .sidebar:not(:hover):not(:focus-within) .rail-toggle[data-tooltip]::after {
+.nav-icon svg { width: 17px; height: 17px; display: block; margin: 0 auto; }
+
+.sidebar:not(:hover):not(:has(:focus-visible)) .nav-item[data-tooltip]::after,
+body:not(.rail-expanded) .sidebar:not(:hover):not(:has(:focus-visible)) .rail-toggle[data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
   left: calc(100% + 10px);
@@ -173,10 +175,10 @@ body:not(.rail-expanded) .sidebar:not(:hover):not(:focus-within) .rail-toggle[da
   transition: opacity var(--transition-fast);
 }
 
-.sidebar:not(:hover):not(:focus-within) .nav-item[data-tooltip]:hover::after,
-.sidebar:not(:hover):not(:focus-within) .nav-item[data-tooltip]:focus-visible::after,
-body:not(.rail-expanded) .sidebar:not(:hover):not(:focus-within) .rail-toggle[data-tooltip]:hover::after,
-body:not(.rail-expanded) .sidebar:not(:hover):not(:focus-within) .rail-toggle[data-tooltip]:focus-visible::after { opacity: 1; }
+.sidebar:not(:hover):not(:has(:focus-visible)) .nav-item[data-tooltip]:hover::after,
+.sidebar:not(:hover):not(:has(:focus-visible)) .nav-item[data-tooltip]:focus-visible::after,
+body:not(.rail-expanded) .sidebar:not(:hover):not(:has(:focus-visible)) .rail-toggle[data-tooltip]:hover::after,
+body:not(.rail-expanded) .sidebar:not(:hover):not(:has(:focus-visible)) .rail-toggle[data-tooltip]:focus-visible::after { opacity: 1; }
 
 .side-note {
   position: absolute;
@@ -234,6 +236,14 @@ main { min-width: 0; }
 }
 .search input:focus { border-color: var(--accent-strong); box-shadow: 0 0 0 3px rgba(169, 112, 255, 0.14); }
 .search::before { color: var(--text-muted); }
+
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 50; display: grid; max-height: 340px; overflow-y: auto; padding: 6px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--bg-elevated); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.search-results[hidden] { display: none; }
+.search-results button { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; padding: 10px 12px; border: 0; border-radius: var(--radius-sm); background: transparent; color: var(--text-primary); text-align: left; cursor: pointer; }
+.search-results button:hover, .search-results button:focus-visible { background: var(--bg-selected); }
+.search-results button strong { font-weight: 600; font-size: 13px; }
+.search-results button span { color: var(--text-muted); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; white-space: nowrap; }
+.search-empty { padding: 12px; color: var(--text-muted); font-size: 12px; }
 
 .freshness-cluster { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
 .fresh { margin-left: 0; }

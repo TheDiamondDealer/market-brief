@@ -203,78 +203,76 @@
   }
 
   function chartBalance(rowsToShow) {
-    const width = Math.max(860, rowsToShow.length * 142);
-    const height = 350;
-    const margin = { top: 30, right: 22, bottom: 98, left: 48 };
+    const rowHeight = 34;
+    const margin = { top: 30, right: 64, bottom: 12, left: 200 };
+    const width = 980;
     const plotWidth = width - margin.left - margin.right;
-    const plotHeight = height - margin.top - margin.bottom;
-    const step = plotWidth / rowsToShow.length;
-    const barWidth = Math.min(54, step * 0.48);
-    const grid = [0, 25, 50, 75, 100].map((tick) => {
-      const y = margin.top + plotHeight - (tick / 100) * plotHeight;
-      return `<line class="cot-chart-gridline" x1="${margin.left}" x2="${width - margin.right}" y1="${y}" y2="${y}"></line><text class="cot-chart-axis" x="${margin.left - 10}" y="${y + 4}" text-anchor="end">${tick}</text>`;
+    const height = margin.top + rowsToShow.length * rowHeight + margin.bottom;
+    const axis = [0, 25, 50, 75, 100].map((tick) => {
+      const x = margin.left + (tick / 100) * plotWidth;
+      return `<line class="cot-chart-gridline ${tick === 50 ? 'zero' : ''}" x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${margin.top - 6}" y2="${height - margin.bottom}"></line><text class="cot-chart-axis" x="${x.toFixed(1)}" y="${margin.top - 12}" text-anchor="middle">${tick}%</text>`;
     }).join('');
     const bars = rowsToShow.map((row, index) => {
       const split = shares(row);
-      const x = margin.left + step * index + (step - barWidth) / 2;
-      const labelX = x + barWidth / 2;
+      const y = margin.top + index * rowHeight;
+      const barY = y + (rowHeight - 14) / 2;
+      const name = `<text class="cot-chart-row-label" x="${margin.left - 12}" y="${y + rowHeight / 2 + 4}" text-anchor="end">${escapeHtml(row.name)}</text>`;
       if (!split.available) {
         return `<g class="cot-chart-market" data-cot-chart-select="${escapeHtml(row.id)}" tabindex="0" role="button" aria-label="${escapeHtml(row.name)}: no reported long or short positions">
-          <rect class="cot-chart-empty-bar" x="${x.toFixed(1)}" y="${margin.top}" width="${barWidth.toFixed(1)}" height="${plotHeight.toFixed(1)}" rx="4"></rect>
-          <text class="cot-chart-label" x="${labelX.toFixed(1)}" y="${height - margin.bottom + 25}" text-anchor="end" transform="rotate(-36 ${labelX.toFixed(1)} ${height - margin.bottom + 25})">${escapeHtml(row.name)}</text>
+          ${name}<rect class="cot-chart-empty-bar" x="${margin.left}" y="${barY}" width="${plotWidth}" height="14" rx="7"></rect>
+          <text class="cot-chart-value muted" x="${margin.left + plotWidth + 10}" y="${y + rowHeight / 2 + 4}" text-anchor="start">n/a</text>
         </g>`;
       }
-      const shortHeight = (split.short / 100) * plotHeight;
-      const longHeight = (split.long / 100) * plotHeight;
+      const longWidth = (split.long / 100) * plotWidth;
       return `<g class="cot-chart-market" data-cot-chart-select="${escapeHtml(row.id)}" tabindex="0" role="button" aria-label="${escapeHtml(row.name)}: ${number(split.long, 1)} percent long and ${number(split.short, 1)} percent short">
-        <rect class="cot-chart-short" x="${x.toFixed(1)}" y="${margin.top}" width="${barWidth.toFixed(1)}" height="${shortHeight.toFixed(1)}" rx="4"></rect>
-        <rect class="cot-chart-long" x="${x.toFixed(1)}" y="${(margin.top + shortHeight).toFixed(1)}" width="${barWidth.toFixed(1)}" height="${longHeight.toFixed(1)}" rx="4"></rect>
-        ${split.long >= 18 ? `<text class="cot-chart-value" x="${labelX.toFixed(1)}" y="${(margin.top + shortHeight + longHeight / 2 + 4).toFixed(1)}" text-anchor="middle">${number(split.long, 0)}%</text>` : ''}
-        <text class="cot-chart-label" x="${labelX.toFixed(1)}" y="${height - margin.bottom + 25}" text-anchor="end" transform="rotate(-36 ${labelX.toFixed(1)} ${height - margin.bottom + 25})">${escapeHtml(row.name)}</text>
+        ${name}
+        <rect class="cot-chart-long" x="${margin.left}" y="${barY}" width="${longWidth.toFixed(1)}" height="14"></rect>
+        <rect class="cot-chart-short" x="${(margin.left + longWidth).toFixed(1)}" y="${barY}" width="${(plotWidth - longWidth).toFixed(1)}" height="14"></rect>
+        <text class="cot-chart-value" x="${margin.left + plotWidth + 10}" y="${y + rowHeight / 2 + 4}" text-anchor="start">${number(split.long, 0)}%</text>
       </g>`;
     }).join('');
-    return `<div class="cot-positioning-chart-scroll"><svg class="cot-positioning-svg" style="min-width:${width}px" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotPositioningTitle cotPositioningDesc">
+    return `<div class="cot-positioning-chart-scroll"><svg class="cot-positioning-svg" style="min-width:720px" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotPositioningTitle cotPositioningDesc">
       <title id="cotPositioningTitle">Long and short positioning by verified CFTC contract</title>
-      <desc id="cotPositioningDesc">Each column totals 100 percent of reported long plus short positions. Green is long share and red is short share.</desc>
-      <defs>
-        <linearGradient id="cotLongBars" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#27e58b"></stop><stop offset="100%" stop-color="#087b4b"></stop></linearGradient>
-        <linearGradient id="cotShortBars" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff6672"></stop><stop offset="100%" stop-color="#8e2932"></stop></linearGradient>
-      </defs>
-      ${grid}${bars}
-      <text class="cot-chart-axis-title" x="12" y="${margin.top + plotHeight / 2}" text-anchor="middle" transform="rotate(-90 12 ${margin.top + plotHeight / 2})">Position distribution (%)</text>
+      <desc id="cotPositioningDesc">Each row totals 100 percent of reported long plus short positions. Green is long share, red is short share, and the right-hand value is the long percentage.</desc>
+      ${axis}${bars}
     </svg></div>`;
   }
 
   function chartDirectional(rowsToShow, key, description) {
-    const width = Math.max(860, rowsToShow.length * 142);
-    const height = 350;
-    const margin = { top: 30, right: 22, bottom: 98, left: 62 };
+    const rowHeight = 34;
+    const margin = { top: 30, right: 84, bottom: 12, left: 200 };
+    const width = 980;
     const plotWidth = width - margin.left - margin.right;
-    const plotHeight = height - margin.top - margin.bottom;
-    const zeroY = margin.top + plotHeight / 2;
+    const height = margin.top + rowsToShow.length * rowHeight + margin.bottom;
     const maxAbsolute = Math.max(...rowsToShow.map((row) => Math.abs(Number(row[key] || 0))), 1);
-    const step = plotWidth / rowsToShow.length;
-    const barWidth = Math.min(54, step * 0.48);
-    const grid = [-1, -.5, 0, .5, 1].map((fraction) => {
-      const y = zeroY - fraction * (plotHeight / 2);
-      const label = fraction * maxAbsolute;
-      return `<line class="cot-chart-gridline ${fraction === 0 ? 'zero' : ''}" x1="${margin.left}" x2="${width - margin.right}" y1="${y}" y2="${y}"></line><text class="cot-chart-axis" x="${margin.left - 10}" y="${y + 4}" text-anchor="end">${escapeHtml(compact(label))}</text>`;
+    const zeroX = margin.left + plotWidth / 2;
+    const axis = [-1, -0.5, 0, 0.5, 1].map((fraction) => {
+      const x = zeroX + fraction * (plotWidth / 2);
+      return `<line class="cot-chart-gridline ${fraction === 0 ? 'zero' : ''}" x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${margin.top - 6}" y2="${height - margin.bottom}"></line><text class="cot-chart-axis" x="${x.toFixed(1)}" y="${margin.top - 12}" text-anchor="middle">${escapeHtml(compact(fraction * maxAbsolute))}</text>`;
     }).join('');
     const bars = rowsToShow.map((row, index) => {
       const value = Number(row[key] || 0);
-      const heightValue = (Math.abs(value) / maxAbsolute) * (plotHeight / 2);
-      const x = margin.left + step * index + (step - barWidth) / 2;
-      const y = value >= 0 ? zeroY - heightValue : zeroY;
-      const labelX = x + barWidth / 2;
+      const barLength = (Math.abs(value) / maxAbsolute) * (plotWidth / 2);
+      const y = margin.top + index * rowHeight;
+      const barY = y + (rowHeight - 14) / 2;
+      const negative = value < 0;
+      const x = negative ? zeroX - barLength : zeroX;
+      const outerX = negative ? zeroX - barLength - 8 : zeroX + barLength + 8;
+      // Keep the value label out of the left-hand row-name gutter: a long negative bar would push
+      // its label onto the market names, so render it just inside the bar's left end instead.
+      const inside = negative && outerX < margin.left + 6;
+      const valueX = inside ? x + 6 : outerX;
+      const anchor = negative ? (inside ? 'start' : 'end') : 'start';
       return `<g class="cot-chart-market" data-cot-chart-select="${escapeHtml(row.id)}" tabindex="0" role="button" aria-label="${escapeHtml(row.name)}: ${escapeHtml(signed(value))} contracts">
-        <rect class="${value >= 0 ? 'cot-chart-positive' : 'cot-chart-negative'}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${Math.max(heightValue, 2).toFixed(1)}" rx="4"></rect>
-        <text class="cot-chart-label" x="${labelX.toFixed(1)}" y="${height - margin.bottom + 25}" text-anchor="end" transform="rotate(-36 ${labelX.toFixed(1)} ${height - margin.bottom + 25})">${escapeHtml(row.name)}</text>
+        <text class="cot-chart-row-label" x="${margin.left - 12}" y="${y + rowHeight / 2 + 4}" text-anchor="end">${escapeHtml(row.name)}</text>
+        <rect class="${negative ? 'cot-chart-negative' : 'cot-chart-positive'}" x="${x.toFixed(1)}" y="${barY}" width="${Math.max(barLength, 2).toFixed(1)}" height="14"></rect>
+        <text class="cot-chart-value${inside ? ' inside' : ''}" x="${valueX.toFixed(1)}" y="${y + rowHeight / 2 + 4}" text-anchor="${anchor}">${escapeHtml(compact(value))}</text>
       </g>`;
     }).join('');
-    return `<div class="cot-positioning-chart-scroll"><svg class="cot-positioning-svg" style="min-width:${width}px" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotPositioningTitle cotPositioningDesc">
+    return `<div class="cot-positioning-chart-scroll"><svg class="cot-positioning-svg" style="min-width:720px" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotPositioningTitle cotPositioningDesc">
       <title id="cotPositioningTitle">${escapeHtml(description)} by verified CFTC contract</title>
-      <desc id="cotPositioningDesc">Positive values are green and negative values are red. Values are contract counts and are not comparable across differently sized futures markets.</desc>
-      ${grid}${bars}
+      <desc id="cotPositioningDesc">Bars extend right for positive (green) and left for negative (red) values. Values are contract counts and are not comparable across differently sized futures markets.</desc>
+      ${axis}${bars}
     </svg></div>`;
   }
 

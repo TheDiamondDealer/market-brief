@@ -93,7 +93,7 @@
       button.dataset.view = 'crowd-expectations';
       button.setAttribute('aria-label', 'Crowd Expectations');
       button.title = 'Crowd Expectations';
-      button.innerHTML = '<span class="nav-icon" aria-hidden="true">◉</span><span class="nav-label">Crowd Expectations</span>';
+      button.innerHTML = '<span class="nav-icon" aria-hidden="true"><svg><use href="#i-users"/></svg></span><span class="nav-label">Crowd Expectations</span>';
       button.addEventListener('click', navigate);
       const official = nav.querySelector('[data-view="official-feeds"]');
       if (official) official.insertAdjacentElement('afterend', button);

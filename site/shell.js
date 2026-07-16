@@ -24,7 +24,8 @@
     'product-detail': ['Product Dossier', 'Detailed commodity research workspace.'],
     scenarios: ['Scenario Lab', 'Conditional market paths and the evidence required to support them.'],
     trackers: ['Political Flow', 'Policy events and delayed official financial disclosures.'],
-    archive: ['Archive', 'Daily, weekly and strategic research memory.']
+    archive: ['Archive', 'Daily, weekly and strategic research memory.'],
+    asset: ['Asset Workspace', 'Evidence, flip conditions, catalysts and positioning for one asset.']
   };
 
   const $ = (id) => document.getElementById(id);
@@ -38,7 +39,9 @@
 
   function activeView() { return document.querySelector('.view.active')?.id?.replace(/^view-/, '') || 'home'; }
   function updatePageContext(view = activeView()) {
-    const [title, subtitle] = routeMeta[view] || routeMeta.home;
+    const hash = String(window.location.hash || '').replace(/^#/, '');
+    const key = hash.startsWith('asset/') ? 'asset' : hash.startsWith('product/') ? 'product-detail' : view;
+    const [title, subtitle] = routeMeta[key] || routeMeta.home;
     if ($('pageTitle')) $('pageTitle').textContent = title;
     if ($('pageSubtitle')) $('pageSubtitle').textContent = subtitle;
     document.title = `${title} · Market Brief`;
@@ -107,8 +110,67 @@
   const viewObserver = new MutationObserver(() => syncNavigation());
   document.querySelectorAll('.view').forEach((view) => viewObserver.observe(view, { attributes: true, attributeFilter: ['class'] }));
   if (router) router.subscribe(() => requestAnimationFrame(() => syncNavigation())); else window.addEventListener('hashchange', () => requestAnimationFrame(() => syncNavigation()));
+  window.addEventListener('hashchange', () => updatePageContext());
   window.addEventListener('resize', () => { setMenuState(Boolean(sidebar?.classList.contains('open'))); if (window.innerWidth >= 600) closeMore({ restoreFocus: false }); });
   $('search')?.setAttribute('aria-label', 'Search locally available assets, catalysts and research routes');
+
+  // Global search jump palette: matches views, asset workspaces, dossiers and tracked filers.
+  const paletteEsc = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  function searchIndex() {
+    const research = window.MarketBriefCore?.adapters?.research?.() || {};
+    const mk = (label, hint, hash, extra) => ({ label, hint, hash, search: `${label} ${extra || ''}`.trim().toLowerCase() });
+    const entries = Object.entries(routeMeta)
+      .filter(([route]) => !['today', 'official', 'crowd', 'equities', 'product-detail', 'asset'].includes(route))
+      .map(([route, meta]) => mk(meta[0], 'View', route));
+    (research.assetBiases || []).forEach((bias) => { if (bias?.name) entries.push(mk(bias.name, 'Asset workspace', `asset/${bias.productId || bias.id}`, bias.group)); });
+    (research.products || []).forEach((product) => { if (product?.name) entries.push(mk(product.name, 'Research dossier', `product/${product.id}`, product.group)); });
+    const trackers = research.trackers || {};
+    // Only surface trackers that have a navigable disclosure profile. Some tracker definitions
+    // (e.g. the Trump policy tracker) exist in research.trackers but have no political-disclosure
+    // manifest entry, so #trackers/<id> would dead-end in a "profile unavailable" error.
+    const navigable = window.politicalDisclosureManifest?.trackers || null;
+    (research.trackerOrder || Object.keys(trackers)).forEach((id) => { if (navigable && !navigable[id]) return; const filer = trackers[id]; const label = filer?.title || filer?.name; if (label) entries.push(mk(label, 'Political profile', `trackers/${id}`, id)); });
+    return entries;
+  }
+  function renderSearchResults(query) {
+    const box = $('searchResults');
+    if (!box) return;
+    const term = String(query || '').trim().toLowerCase();
+    if (term.length < 2) { box.hidden = true; box.innerHTML = ''; $('search')?.setAttribute('aria-expanded', 'false'); return; }
+    const matches = searchIndex().filter((entry) => (entry.search || '').includes(term)).slice(0, 8);
+    box.innerHTML = matches.length
+      ? matches.map((entry) => `<button type="button" role="option" aria-selected="false" data-palette-hash="${paletteEsc(entry.hash)}"><strong>${paletteEsc(entry.label)}</strong><span>${paletteEsc(entry.hint)}</span></button>`).join('')
+      : '<div class="search-empty">No local match across views, assets, dossiers and tracked filers.</div>';
+    box.hidden = false;
+    $('search')?.setAttribute('aria-expanded', 'true');
+  }
+  function closeSearchResults() { const box = $('searchResults'); if (box) { box.hidden = true; box.innerHTML = ''; } $('search')?.setAttribute('aria-expanded', 'false'); }
+  const paletteInput = $('search');
+  if (paletteInput) {
+    paletteInput.addEventListener('input', () => renderSearchResults(paletteInput.value));
+    paletteInput.addEventListener('keydown', (event) => {
+      const box = $('searchResults');
+      if (event.key === 'Escape') { closeSearchResults(); return; }
+      if (event.key === 'ArrowDown' && box && !box.hidden) { event.preventDefault(); box.querySelector('button')?.focus(); return; }
+      if (event.key === 'Enter' && box && !box.hidden) {
+        const first = box.querySelector('button[data-palette-hash]');
+        if (first) { event.preventDefault(); event.stopImmediatePropagation(); window.location.hash = first.dataset.paletteHash; closeSearchResults(); document.getElementById('main-content')?.focus(); }
+      }
+    });
+  }
+  $('searchResults')?.addEventListener('keydown', (event) => {
+    const options = [...event.currentTarget.querySelectorAll('button')];
+    const index = options.indexOf(document.activeElement);
+    if (event.key === 'ArrowDown') { event.preventDefault(); options[Math.min(index + 1, options.length - 1)]?.focus(); }
+    if (event.key === 'ArrowUp') { event.preventDefault(); if (index <= 0) paletteInput?.focus(); else options[index - 1]?.focus(); }
+    if (event.key === 'Escape') { closeSearchResults(); paletteInput?.focus(); }
+  });
+  document.addEventListener('click', (event) => {
+    const option = event.target.closest?.('[data-palette-hash]');
+    if (option) { window.location.hash = option.dataset.paletteHash; closeSearchResults(); if (paletteInput) paletteInput.value = ''; document.getElementById('main-content')?.focus(); return; }
+    if (!event.target.closest?.('.search')) closeSearchResults();
+  }, true);
+
   setMenuState(Boolean(sidebar?.classList.contains('open')));
   if (router) router.start(window.__marketInitialHash || window.location.hash || '#home'); else syncNavigation();
 })();

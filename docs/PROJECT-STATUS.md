@@ -6,6 +6,19 @@ This file is the durable implementation handoff for the repository. It records w
 
 Do not treat chat history as the source of truth. Confirm every statement against the current repository, generated caches, workflow runs and provider documentation before changing code.
 
+## Open branch pending review — UI revamp (16 July 2026)
+
+Branch `feat/ui-mrktedge-revamp` (open PR, **not merged to `main`**) carries a presentation-only revamp toward an mrktedge.ai-style design language. It changes no data logic, no route contracts, and no generated files; the unittest suite (195 tests) and `scripts/audit_static_site.py` stay green.
+
+- **Theme:** retired the legacy teal `:root` in `styles.css` and swept the remaining hardcoded teal literals in `command-centre.css`, `free-data.css`, `intelligence.css`, `scenario-lab.css` so the violet design tokens (`styles/tokens.css`) drive every view.
+- **Bug fixes:** GDELT radar card was white-on-white (undefined light-theme fallback vars) → dark tokens; nav rail stuck expanded after a mouse click (`:focus-within` → `:has(:focus-visible)`); fake two-point FRED sparklines → delta chips.
+- **Components:** data-first Command Centre hero (serif verdict + stat tiles, collapsible how-to); COT charts rebuilt as horizontal rows (no rotated labels); inline Lucide SVG icon sprite + favicon; quieter Impact Feed rows; unified status badges; de-chromed Official Feeds / Calendar / Rates metadata cells; probability-forward Crowd cards.
+- **New:** a global search jump palette in the topbar (previously a dead end on 11 of 13 views) matching views, asset workspaces, dossiers and navigable political filers.
+- **Structural:** correct "Asset Workspace" topbar context for `#asset/*`; removed a dead static `#view-home` skeleton and guarded two superseded legacy renderers (`command-centre.js`, `app.js` `openProduct`) so they cannot throw.
+- **Reviewed:** a 6-dimension adversarial agent review (Fable xhigh) raised 6 findings; all were addressed (palette no longer lists the profile-less Trump tracker; combobox ARIA + focus restore on the palette; COT negative-value-label overlap fixed; teal sweep completed).
+
+Real-browser Playwright smoke: zero new console errors (only pre-existing TradingView third-party CORS), all 18 views + mobile render, rail-collapse / palette-jump / COT row-select / asset↔product navigation verified.
+
 ## Repository and deployment
 
 - Repository: `TheDiamondDealer/market-brief`

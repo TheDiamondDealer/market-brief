@@ -48,10 +48,20 @@
   }
 
   function decisionGuide() {
-    return `<section class="command-decision-guide" aria-labelledby="commandGuideTitle">
-      <div><span class="command-kicker">How to use this console</span><h3 id="commandGuideTitle">From trigger to decision</h3><p>Start with the dominant driver, then require confirmation across prices and physical data. Use the asset pressure as a conditional map, and the flip condition as the point where the interpretation must change.</p></div>
-      <ol><li><span>1</span><div><strong>Trigger</strong><small>What changed in policy, conflict, data or physical flows?</small></div></li><li><span>2</span><div><strong>Confirmation</strong><small>Do oil, yields, the dollar, volatility and exposed assets agree?</small></div></li><li><span>3</span><div><strong>Transmission</strong><small>Which assets face upward, downward or mixed pressure under this regime?</small></div></li><li><span>4</span><div><strong>Flip condition</strong><small>What observable evidence would weaken or reverse the view?</small></div></li></ol>
-    </section>`;
+    return `<details class="command-decision-guide">
+      <summary><span class="command-kicker">How to use this console</span><h3 id="commandGuideTitle">From trigger to decision</h3></summary>
+      <div class="command-decision-guide-body"><p>Start with the dominant driver, then require confirmation across prices and physical data. Use the asset pressure as a conditional map, and the flip condition as the point where the interpretation must change.</p>
+      <ol><li><span>1</span><div><strong>Trigger</strong><small>What changed in policy, conflict, data or physical flows?</small></div></li><li><span>2</span><div><strong>Confirmation</strong><small>Do oil, yields, the dollar, volatility and exposed assets agree?</small></div></li><li><span>3</span><div><strong>Transmission</strong><small>Which assets face upward, downward or mixed pressure under this regime?</small></div></li><li><span>4</span><div><strong>Flip condition</strong><small>What observable evidence would weaken or reverse the view?</small></div></li></ol></div>
+    </details>`;
+  }
+
+  function heroStats() {
+    const stats = (research.daily?.stats || []).slice(0, 6);
+    if (!stats.length) return '';
+    return `<section class="command-stat-strip" aria-label="Today’s observed moves">${stats.map((stat) => {
+      const dir = directionLabel(stat.dir);
+      return `<article class="command-stat ${escapeHtml(dir)}"><span class="command-stat-label">${escapeHtml(stat.label)}</span><strong>${escapeHtml(stat.value || '—')}</strong><span class="command-stat-move"><span aria-hidden="true">${directionGlyph(stat.dir)}</span> ${escapeHtml(stat.move || 'No move recorded')}</span></article>`;
+    }).join('')}</section>`;
   }
 
   function conflictWatch() {
@@ -90,16 +100,10 @@
 
   function dailyBrief() {
     const daily = research.daily || {};
-    const stats = (daily.stats || []).slice(0, 6).map((stat) => ({
-      label: stat.label,
-      dir: stat.dir,
-      detail: [stat.value, stat.move].filter(Boolean).join(' · ')
-    }));
     const headlines = (daily.headlines || []).slice(0, 5);
     const chain = (research.regime?.chain || []).slice(0, 8);
     return `<section class="command-daily command-panel" aria-labelledby="commandDailyTitle">
       <div class="command-section-heading"><div><span class="command-kicker">Daily Brief</span><h3 id="commandDailyTitle">${escapeHtml(daily.title || 'Today’s market brief')}</h3></div><span>${escapeHtml(daily.asOf || research.generatedAt || 'As-of time unavailable')}</span></div>
-      ${stats.length ? directionStrip(stats, 'Today’s observed moves') : ''}
       <div class="command-daily-grid">
         <div class="command-daily-headlines"><span class="command-daily-label">Five things that matter</span>${headlines.length ? headlines.map((item, index) => `<article><span>${index + 1}</span><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.body)}</p></div></article>`).join('') : '<div class="command-empty">No daily headlines are available.</div>'}</div>
         <div class="command-daily-transmission"><span class="command-daily-label">Dominant transmission</span><div class="command-daily-chain">${chain.length ? chain.map((node, index) => `<span class="command-chain-node">${escapeHtml(node)}</span>${index < chain.length - 1 ? '<span class="command-chain-arrow" aria-hidden="true">→</span>' : ''}`).join('') : '<span class="command-empty">No regime chain is available.</span>'}</div></div>
@@ -147,13 +151,14 @@
     root.dataset.commandCentreRemodel = 'br-14';
     root.innerHTML = `<div class="command-page">
       <header class="command-hero"><div><span class="command-kicker">Decision console</span><h2>${escapeHtml(research.regime?.verdict || 'Market regime unavailable')}</h2><p>${escapeHtml(research.regime?.meaning || command.risk?.summary || 'Regime interpretation is not available.')}</p></div><div class="command-hero-meta"><span class="data-state ${failures.length ? 'partial' : 'current'}">${failures.length ? `${failures.length} source warning${failures.length === 1 ? '' : 's'}` : 'Core sources current'}</span><strong>${escapeHtml(research.regime?.name || 'Regime name unavailable')}</strong><small>Updated ${escapeHtml(command.updated || research.generatedAt || 'time unavailable')}</small></div></header>
-      ${decisionGuide()}
+      ${heroStats()}
       ${conflictWatch()}
       ${dailyBrief()}
       <section class="command-priority"><div class="command-section-heading"><div><span class="command-kicker">What changed</span><h3>Priority market events</h3></div><span>Maximum three</span></div><div class="command-event-grid">${eventCards() || '<div class="command-empty">No curated impact records are available.</div>'}</div><p class="command-direction-note">Arrows show expected directional pressure under the current regime, not certainty or a trading recommendation. Open the causal analysis for the mechanism, confirmation and invalidation.</p></section>
       <section class="command-two-column"><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Next test</span><h3>${escapeHtml(command.nextEvent?.name || 'No event specified')}</h3></div><span>${escapeHtml(command.nextEvent?.time || 'Time unavailable')}</span></div><p>${escapeHtml(command.nextEvent?.logic || 'Decision logic unavailable.')}</p><div class="command-change-list">${changes.map((item, index) => `<article><span>${index + 1}</span><p>${escapeHtml(item)}</p></article>`).join('') || '<div class="command-empty">No change summary supplied.</div>'}</div></article><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Contradictions</span><h3>Active triggers</h3></div><span>Warning and triggered only</span></div><div class="command-trigger-list">${triggerCards()}</div></article></section>
       <section class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Bias board</span><h3>Asset decisions and flip conditions</h3></div><span>No composite score shown</span></div><div class="command-table-scroll"><table class="command-table"><thead><tr><th scope="col">Asset</th><th scope="col">Bias</th><th scope="col">Primary driver</th><th scope="col">Positioning</th><th scope="col">Next event</th><th scope="col">Condition that changes the bias</th></tr></thead><tbody>${biasRows() || '<tr><td colspan="6">Bias records unavailable.</td></tr>'}</tbody></table></div></section>
       <section class="command-two-column"><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">COT change</span><h3>Largest weekly positioning moves</h3></div><a href="#cot">Open COT</a></div><div class="command-table-scroll"><table class="command-table compact"><thead><tr><th scope="col">Contract</th><th scope="col">Category</th><th scope="col">Net</th><th scope="col">1 week</th><th scope="col">Report</th></tr></thead><tbody>${cotRows()}</tbody></table></div></article><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Political Flow</span><h3>Recent official disclosures</h3></div><a href="#trackers">Open Political Flow</a></div><div class="command-table-scroll"><table class="command-table compact"><thead><tr><th scope="col">Filer / asset</th><th scope="col">Action</th><th scope="col">Owner</th><th scope="col">Trade</th><th scope="col">Filed</th><th scope="col">Range</th></tr></thead><tbody>${politicalRows()}</tbody></table></div></article></section>
+      ${decisionGuide()}
       <section class="command-source-panel"><div class="command-section-heading"><div><span class="command-kicker">Source health</span><h3>Failures that can change interpretation</h3></div><span>${failures.length} visible warning${failures.length === 1 ? '' : 's'}</span></div>${failures.length ? failures.map((failure) => `<article><span class="data-state ${statusClass(failure.status)}">${escapeHtml(failure.status)}</span><div><strong>${escapeHtml(failure.name)}</strong><p>${escapeHtml(failure.detail)}</p></div></article>`).join('') : '<div class="command-empty">No core source failure is currently reported.</div>'}</section>
     </div>`;
   }

@@ -36,26 +36,23 @@
     if (Number(row.change) < 0) return `Down ${row.changeBps === null ? number(Math.abs(row.change), 4) : `${number(Math.abs(row.changeBps), 1)} bp`}`;
     return 'Unchanged';
   }
-  function sparkline(row) {
-    if (row.previous === null || row.previous === undefined || row.value === null || row.value === undefined) return '<span class="macro-no-spark">No previous observation</span>';
-    const previous = Number(row.previous);
-    const current = Number(row.value);
-    const high = Math.max(previous, current);
-    const low = Math.min(previous, current);
-    const span = high - low || 1;
-    const y1 = 30 - ((previous - low) / span) * 20;
-    const y2 = 30 - ((current - low) / span) * 20;
-    const summary = `${row.name}: previous ${previous} ${row.unit}, latest ${current} ${row.unit}.`;
-    return `<svg class="macro-spark" viewBox="0 0 100 40" role="img" aria-label="${escapeHtml(summary)}"><line x1="5" y1="${y1}" x2="95" y2="${y2}"></line><circle cx="5" cy="${y1}" r="3"></circle><circle cx="95" cy="${y2}" r="3"></circle></svg>`;
+  function deltaChip(row) {
+    if (row.previous === null || row.previous === undefined || row.value === null || row.value === undefined || row.change === null || row.change === undefined) {
+      return '<span class="macro-delta flat">No previous observation</span>';
+    }
+    const change = Number(row.change);
+    const cls = change > 0 ? 'up' : change < 0 ? 'down' : 'flat';
+    const arrow = change > 0 ? '↑' : change < 0 ? '↓' : '·';
+    const summary = `${row.name}: previous ${Number(row.previous)} ${row.unit}, latest ${Number(row.value)} ${row.unit}.`;
+    return `<span class="macro-delta ${cls}" role="img" aria-label="${escapeHtml(summary)}"><span aria-hidden="true">${arrow}</span> ${escapeHtml(trendLabel(row))}</span>`;
   }
   function cadence(row) { return row.id === 'DFF' || row.id === 'SOFR' ? 'Daily business-day observation' : 'Daily market observation'; }
 
   function seriesCard(row, status) {
     return `<article class="macro-series-card">
       <header><div><span>${escapeHtml(row.kind || 'series')}</span><h4>${escapeHtml(row.name)}</h4></div><span class="data-state ${statusClass(status.status)}">${escapeHtml(status.status || 'Unavailable')}</span></header>
-      <div class="macro-reading"><strong>${number(row.value, row.unit === 'index' ? 4 : 2)}${row.unit === '%' ? '%' : ''}</strong><span>${escapeHtml(trendLabel(row))}</span></div>
-      ${sparkline(row)}
-      <dl><div><dt>Observation date</dt><dd>${escapeHtml(row.date || 'Unavailable')}</dd></div><div><dt>Expected cadence</dt><dd>${escapeHtml(cadence(row))}</dd></div><div><dt>Previous</dt><dd>${number(row.previous, row.unit === 'index' ? 4 : 2)}${row.unit === '%' ? '%' : ''}</dd></div><div><dt>Series ID</dt><dd>${escapeHtml(row.id)}</dd></div></dl>
+      <div class="macro-reading"><strong>${number(row.value, row.unit === 'index' ? 4 : 2)}${row.unit === '%' ? '%' : ''}</strong>${deltaChip(row)}</div>
+      <dl class="macro-meta"><div><dt>Observation date</dt><dd>${escapeHtml(row.date || 'Unavailable')}</dd></div><div><dt>Previous</dt><dd>${number(row.previous, row.unit === 'index' ? 4 : 2)}${row.unit === '%' ? '%' : ''}</dd></div><div><dt>Expected cadence</dt><dd>${escapeHtml(cadence(row))}</dd></div><div><dt>Series ID</dt><dd>${escapeHtml(row.id)}</dd></div></dl>
       <a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noopener noreferrer">Official FRED series ↗</a>
     </article>`;
   }
@@ -80,7 +77,7 @@
       <section class="macro-source-note"><strong>Source status</strong><p>${escapeHtml(status.detail || 'No additional source detail supplied.')}</p></section>
       ${GROUPS.map((group) => groupPanel(group, status)).join('')}
       ${curvePanel()}
-      <details class="macro-methodology"><summary>Interpretation limits</summary><p>The small line shows only the previous and latest connected observations; it is not a long-history chart. A current cache timestamp does not replace each series’ observation date. Missing employment and growth data remains unavailable until an approved pipeline is added.</p></details>
+      <details class="macro-methodology"><summary>Interpretation limits</summary><p>The delta chip shows only the change between the previous and latest connected observations; it is not a long-history chart. A current cache timestamp does not replace each series’ observation date. Missing employment and growth data remains unavailable until an approved pipeline is added.</p></details>
     </div>`;
   }
 

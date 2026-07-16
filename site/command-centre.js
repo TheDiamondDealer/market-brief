@@ -175,9 +175,14 @@
 
   function initialise() {
     if (router) router.register('home', () => showHome(false));
-    renderRiskGauge();
-    renderCommandSummary();
-    renderBiasBoard();
+    // The BR-14 command-centre feature (features/command-centre/command-page.js) now owns
+    // #view-home and renders it via innerHTML. This legacy renderer's output was always
+    // overwritten; skip it when the legacy skeleton elements are absent so it cannot throw.
+    if ($('commandRisk') && $('commandRegime') && $('biasTable')) {
+      renderRiskGauge();
+      renderCommandSummary();
+      renderBiasBoard();
+    }
     initialiseStockSearch();
 
     const detail = $('productDetail');
