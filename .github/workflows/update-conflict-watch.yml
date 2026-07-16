@@ -1,0 +1,96 @@
+name: Update conflict publication watch
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update_conflict_watch.py'
+      - 'schemas/conflict-watch.schema.json'
+      - 'tests/test_conflict_watch.py'
+      - '.github/workflows/update-conflict-watch.yml'
+      - '.github/workflows/deploy-pages.yml'
+  schedule:
+    - cron: '17 */3 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: generated-data-writer
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Use Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements/validation.txt
+
+      - name: Validate immutable dependency pins
+        run: python scripts/check_ci_pins.py
+
+      - name: Install validation dependency
+        run: |
+          python -m pip install --disable-pip-version-check --requirement requirements/validation.txt
+          python -m pip check
+
+      - name: Test collector
+        run: |
+          python -m py_compile scripts/update_conflict_watch.py tests/test_conflict_watch.py
+          python -m unittest tests/test_conflict_watch.py -v
+
+      - name: Collect official conflict publications
+        env:
+          CONFLICT_WATCH_USER_AGENT: "${{ vars.SEC_USER_AGENT || 'MarketBriefResearch/2.3 253694733+TheDiamondDealer@users.noreply.github.com' }}"
+        run: python scripts/update_conflict_watch.py
+
+      - name: Validate generated output
+        run: |
+          python scripts/validate_generated_data.py
+          node --check site/features/command-centre/conflict-watch-data.js
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path('site/data/conflict-watch.json').read_text())
+          print(
+              f"Conflict watch status={data['collection']['status']}; "
+              f"items={len(data['items'])}; failures={data['collection']['failureCount']}; "
+              f"retained={data['collection']['retainedItemCount']}"
+          )
+          PY
+
+      - name: Commit validated data
+        run: |
+          if git diff --quiet -- site/data/conflict-watch.json site/features/command-centre/conflict-watch-data.js; then
+            echo 'No conflict-watch changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site/data/conflict-watch.json site/features/command-centre/conflict-watch-data.js
+          git commit -m 'Refresh official conflict publication watch'
+          git pull --rebase origin main
+          python scripts/validate_generated_data.py
+          git push origin HEAD:main
+
+  deploy:
+    needs: update
+    if: ${{ needs.update.result == 'success' }}
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      ref: main
