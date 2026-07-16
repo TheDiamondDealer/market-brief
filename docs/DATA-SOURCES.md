@@ -34,11 +34,24 @@ Used for:
 
 Rules:
 
-- select the intended primary contract;
-- reject micro, mini, ultra, index, financial and cross-rate variants when inappropriate;
+- require an exact registry identity for every displayed product;
+- include micro, mini, ultra, index, financial or cross-rate contracts only when that exact derivative product is explicitly named in the registry;
 - do not substitute a stale or similarly named contract;
 - preserve report date and category;
+- retain previously verified rows visibly when only part of a refresh fails;
 - COT is weekly and delayed by design.
+
+### Official conflict publication watch
+
+Used on the Command Centre for a recurring market-trigger watch. The scheduled collector checks the United Nations Middle East RSS feed plus U.S. Department of War news and release feeds every three hours, filters titles for market-relevant conflict terms, and preserves the official headline, source, publication time and URL.
+
+Rules:
+
+- a displayed item means only that the named official source published it; it is not independent verification;
+- the conditional escalation and de-escalation pressure maps are Market Brief analysis, not source observations or price promises;
+- physical shipping, energy, freight or insurance evidence is required before describing a headline as a confirmed supply shock;
+- failed feeds retain previously verified items with `dataState: stale-retained` and expose the failure;
+- UKMTO warnings are linked as a primary maritime source but are not scraped into the generated feed.
 
 ### FRED and official rate sources
 

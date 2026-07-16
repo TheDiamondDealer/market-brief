@@ -56,6 +56,59 @@
   color: var(--text-muted);
 }
 
+.cot-coverage-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--bg-panel) 86%, transparent);
+}
+
+.cot-coverage-status > div {
+  display: grid;
+  gap: 3px;
+}
+
+.cot-coverage-status > div > small,
+.cot-coverage-status details span {
+  color: var(--text-muted);
+}
+
+.cot-coverage-status details {
+  max-width: min(640px, 60%);
+}
+
+.cot-coverage-status summary {
+  color: var(--warning);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cot-coverage-status ul {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cot-coverage-status li {
+  display: grid;
+  gap: 2px;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.cot-coverage-complete {
+  color: var(--positive);
+  font-size: 11px;
+  font-weight: 700;
+}
+
 .cot-filter-stack {
   display: grid;
   gap: 14px;
@@ -244,6 +297,13 @@
   fill: url(#cotShortBars);
 }
 
+.cot-chart-empty-bar {
+  fill: color-mix(in srgb, var(--bg-elevated) 75%, transparent);
+  stroke: var(--border-strong);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+}
+
 .cot-chart-positive {
   fill: var(--positive);
 }
@@ -374,6 +434,20 @@
   text-overflow: ellipsis;
 }
 
+.cot-retained-badge {
+  display: inline-flex;
+  margin-left: 5px;
+  padding: 2px 5px;
+  border: 1px solid color-mix(in srgb, var(--warning) 40%, var(--border-subtle));
+  border-radius: 999px;
+  color: var(--warning);
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 750;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
 .cot-signal,
 .cot-flow,
 .cot-change {
@@ -419,6 +493,12 @@
   gap: 6px;
   min-width: 92px;
   text-align: left;
+}
+
+.cot-share-empty {
+  color: var(--text-muted);
+  font-size: 10px;
+  white-space: nowrap;
 }
 
 .cot-share-meter {
@@ -470,6 +550,11 @@
   color: var(--positive);
   font-size: 11px;
   white-space: nowrap;
+}
+
+.cot-identity.retained {
+  border-color: color-mix(in srgb, var(--warning) 50%, var(--border-subtle));
+  color: var(--warning);
 }
 
 .cot-detail-metrics {
@@ -631,6 +716,15 @@
 @media (max-width: 700px) {
   .cot-page {
     gap: 18px;
+  }
+
+  .cot-coverage-status {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cot-coverage-status details {
+    max-width: 100%;
   }
 
   .cot-positioning-panel,

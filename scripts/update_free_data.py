@@ -246,6 +246,7 @@ def summarise_market(market_id: str, label: str, observations: list[Observation]
     previous = ordered[-2] if len(ordered) > 1 else None
     four_weeks = ordered[-5] if len(ordered) > 4 else None
     history = ordered[-260:]  # roughly five years of weekly reports
+    history_52 = ordered[-52:]
     percentile = percentile_rank([item.net for item in history], latest.net)
     return {
         "id": market_id,
@@ -262,6 +263,15 @@ def summarise_market(market_id: str, label: str, observations: list[Observation]
         "netPercentile5y": percentile,
         "crowding": crowding_label(percentile),
         "historyCount": len(history),
+        "history52": [
+            {
+                "date": item.date,
+                "long": round(item.long),
+                "short": round(item.short),
+                "net": round(item.net),
+            }
+            for item in history_52
+        ],
         "source": "CFTC Commitments of Traders",
         "sourceUrl": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
     }
@@ -357,7 +367,7 @@ def build_dataset(previous: dict[str, Any]) -> dict[str, Any]:
         spreads.append({"name": "5s30s", "value": round((dgs30 - dgs5) * 100, 1), "unit": "bp", "interpretation": "A steeper long end can reflect growth, inflation or supply pressure."})
 
     return {
-        "generatedAt": melbourne.strftime("%-d %B %Y, %-I:%M %p %Z"),
+        "generatedAt": f"{melbourne.day} {melbourne.strftime('%B %Y')}, {melbourne.strftime('%I:%M %p %Z').lstrip('0')}",
         "generatedAtUtc": utc_now.isoformat(timespec="seconds"),
         "rates": rates,
         "curveSpreads": spreads,

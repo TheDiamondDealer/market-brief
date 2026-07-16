@@ -61,6 +61,7 @@ Verify at least:
 - no browser-console exceptions;
 - no unexpected 404s for generated modules;
 - command centre renders;
+- the Decision Console guide and conflict watch render, show source timestamps and keep official publications separate from conditional market pressure;
 - `#trackers` shows imported counts rather than seeded zeros after a successful import;
 - `#cot` renders current data and history when available;
 - `#rates` renders mixed-frequency freshness correctly;
@@ -458,19 +459,15 @@ Check:
 4. report date is current;
 5. unsafe mappings were not substituted.
 
+### Conflict watch is stale or empty
+
+Check `.github/workflows/update-conflict-watch.yml`, then inspect `site/data/conflict-watch.json` for collection and per-source status. A feed failure must retain only previously verified items from that source and label them `stale-retained`. An empty successful feed can be legitimate when no title matches the 14-day market-relevance filter; do not weaken the filter merely to populate the panel. UKMTO warnings remain a direct manual primary-source link rather than scraped data.
+
 ### Wrong COT contract selected
 
-Reject variants such as:
+Compare the generated code, complete official market-and-exchange name, report family and exchange with `scripts/cot_contracts.json`. A micro, mini, ultra, index, financial or cross-rate contract is valid only when it is the exact named registry product. Never use one as a substitute for another intended benchmark, and always reject a similarly named contract on the wrong exchange.
 
-- micro;
-- mini;
-- ultra;
-- index;
-- financial;
-- cross-rate;
-- similarly named contract on the wrong exchange.
-
-Prefer unavailable status over a misleading substitute.
+Prefer unavailable status over a misleading substitute. For partial refresh failures, confirm retained rows carry `dataState: stale-retained` and the source-status detail identifies the affected IDs.
 
 ### Rates page is stale
 

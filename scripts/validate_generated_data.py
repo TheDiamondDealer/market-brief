@@ -32,6 +32,10 @@ TARGETS = (
         ROOT / "schemas" / "free-market-data.schema.json",
     ),
     (
+        ROOT / "site" / "data" / "conflict-watch.json",
+        ROOT / "schemas" / "conflict-watch.schema.json",
+    ),
+    (
         ROOT / "site" / "data" / "equity-market-data.json",
         ROOT / "schemas" / "equity-market-data.schema.json",
     ),
@@ -80,7 +84,7 @@ def main() -> int:
     total = loaded["political-disclosures-summary.json"]["totalTrades"]
     equities = len(loaded["equity-market-data.json"]["watchlist"])
     print(
-        f"Validated COT registry plus 4 generated datasets; "
+        f"Validated COT registry plus 5 generated datasets; "
         f"equity instruments={equities}; retained political trades={total}"
     )
     return 0

@@ -65,18 +65,17 @@ The static architecture and existing hash routes must be preserved unless a sepa
 
 ## Current data sources
 
+### Conflict and war trigger watch
+
+Command Centre now leads with a four-step Decision Console guide and a recurring official conflict-publication watch. The watch checks United Nations Middle East and U.S. defence publications every three hours, shows the five latest relevant updates, links directly to each official source and separates those publications from conditional Market Brief transmission analysis. Temporary source failures retain previously verified items visibly.
+
 ### CFTC Commitments of Traders
 
-Operational for exact mapped contracts including:
+The COT workspace tracks a 46-product reference catalogue spanning metals, energy, currencies, rates, equity indices, grains, softs and Bitcoin. Forty-five products have exact current CFTC identities. Oats remains visibly unavailable because its exact CBOT series has not published since 2 June 2026.
 
-- gold;
-- silver;
-- copper;
-- Japanese yen;
-- US 10-year Treasury futures;
-- US Dollar Index.
+Exact derivative products such as NYMEX Brent Last Day, ICE WTI and NYMEX WTI Financial are labelled and tracked separately. They must not be represented as the unavailable intended ICE Brent or historical NYMEX WTI benchmark entries. The same non-substitution rule remains in force for intended US Henry Hub and UK NBP benchmarks.
 
-Unsafe or ambiguous contract mappings remain unavailable rather than being replaced with a similar contract. WTI, Brent, US Henry Hub and UK NBP positioning must not be described as operational unless exact contract mapping is verified in the generated output.
+Partial refresh failures retain previously verified rows with an explicit stale-retained state; missing products without a verified cache remain visible in registry coverage diagnostics.
 
 ### FRED and official rate series
 

@@ -7,6 +7,7 @@
   const research = core.adapters?.research?.() || (typeof fallback !== 'undefined' ? fallback : {});
   const official = core.adapters?.official?.() || window.freeMarketData || {};
   const impact = () => core.impact?.get?.() || window.marketImpactData || { items: [] };
+  const conflict = () => window.conflictWatchData || { collection: { status: 'failed', sourceStatus: [] }, items: [] };
   const political = () => window.politicalDisclosureSummary || core.store?.getSlice?.('politicalSummary') || { recentFilings: [], sourceStatus: {} };
   const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value)
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
@@ -37,6 +38,46 @@
     return 'pending';
   }
   function productId(bias) { return bias.productId || bias.id; }
+
+  function timeLabel(value) {
+    if (!value) return 'Time unavailable';
+    const parsed = new Date(value);
+    return Number.isNaN(parsed.getTime())
+      ? value
+      : parsed.toLocaleString('en-AU', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+  }
+
+  function decisionGuide() {
+    return `<section class="command-decision-guide" aria-labelledby="commandGuideTitle">
+      <div><span class="command-kicker">How to use this console</span><h3 id="commandGuideTitle">From trigger to decision</h3><p>Start with the dominant driver, then require confirmation across prices and physical data. Use the asset pressure as a conditional map, and the flip condition as the point where the interpretation must change.</p></div>
+      <ol><li><span>1</span><div><strong>Trigger</strong><small>What changed in policy, conflict, data or physical flows?</small></div></li><li><span>2</span><div><strong>Confirmation</strong><small>Do oil, yields, the dollar, volatility and exposed assets agree?</small></div></li><li><span>3</span><div><strong>Transmission</strong><small>Which assets face upward, downward or mixed pressure under this regime?</small></div></li><li><span>4</span><div><strong>Flip condition</strong><small>What observable evidence would weaken or reverse the view?</small></div></li></ol>
+    </section>`;
+  }
+
+  function conflictWatch() {
+    const feed = conflict();
+    const collection = feed.collection || {};
+    const items = (feed.items || []).slice(0, 5);
+    const flowEscalation = [
+      { label: 'Brent', direction: 'up', detail: 'Conditional on verified disruption to Gulf production, shipping or insurance capacity.' },
+      { label: 'Gold', direction: 'up', detail: 'Safe-haven pressure is strongest when risk assets and real yields confirm.' },
+      { label: 'Inflation risk', direction: 'up', detail: 'Sustained energy and freight costs can feed the policy channel.' },
+      { label: 'Risk assets', direction: 'down', detail: 'Higher input costs and uncertainty can pressure margins and valuation.' },
+    ];
+    const deEscalation = [
+      { label: 'Brent', direction: 'down', detail: 'Requires improving physical transit and lower freight or insurance stress, not rhetoric alone.' },
+      { label: 'Inflation risk', direction: 'down', detail: 'A durable energy-premium reversal weakens the hawkish pass-through.' },
+      { label: 'Risk assets', direction: 'up', detail: 'Relief is more credible when volatility and the dollar also ease.' },
+      { label: 'Gold', direction: 'mixed', detail: 'Lower haven demand can be offset if yields and the dollar also fall.' },
+    ];
+    return `<section class="command-conflict command-panel" aria-labelledby="commandConflictTitle">
+      <div class="command-section-heading"><div><span class="command-kicker">Primary live trigger</span><h3 id="commandConflictTitle">Conflict and war transmission watch</h3></div><div class="command-conflict-meta"><span class="data-state ${statusClass(collection.status)}">${escapeHtml(collection.status || 'Unavailable')}</span><small>Checked ${escapeHtml(timeLabel(feed.generatedAtUtc))} · scheduled every 3 hours</small></div></div>
+      <p class="command-conflict-intro">Official-source publications are shown as updates, not independently verified facts. The pressure maps below are Market Brief analysis: they apply only if the development is verified, materially changes physical flows or policy risk, and receives cross-asset confirmation.</p>
+      <div class="command-conflict-map"><article><strong>Escalation with physical-flow confirmation</strong>${directionStrip(flowEscalation, 'Conditional pressure')}</article><article><strong>De-escalation with restored transit</strong>${directionStrip(deEscalation, 'Conditional pressure')}</article></div>
+      <div class="command-conflict-updates">${items.length ? items.map((item) => `<article><header><span>${escapeHtml(item.source?.name || 'Official source')}</span><time datetime="${escapeHtml(item.publishedAt)}">${escapeHtml(timeLabel(item.publishedAt))}</time></header><h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.summary)}</p><footer><div>${(item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}${item.dataState === 'stale-retained' ? '<span class="retained">Retained</span>' : ''}</div><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Open official update ↗</a></footer></article>`).join('') : '<div class="command-empty">No market-relevant official conflict publication is available in the current 14-day window.</div>'}</div>
+      <div class="command-conflict-footer"><span>${escapeHtml(feed.methodology || 'Official publication watch unavailable.')}</span><a href="https://www.ukmto.org/ukmto-products/warnings" target="_blank" rel="noopener noreferrer">Open UKMTO maritime warnings ↗</a></div>
+    </section>`;
+  }
 
   function eventCards() {
     return (impact().items || []).slice(0, 3).map((item) => `<article class="command-event-card">
@@ -92,6 +133,8 @@
     }
     const ledger = political().sourceStatus?.filingLedger;
     if (Number(ledger?.retryable || 0)) failures.push({ name: 'Political filing ledger', status: 'Partial', detail: `${ledger.retryable} filing${ledger.retryable === 1 ? '' : 's'} remain retryable; prior verified records are retained.` });
+    const conflictCollection = conflict().collection || {};
+    if (conflictCollection.status && conflictCollection.status !== 'current') failures.push({ name: 'Conflict publication watch', status: conflictCollection.status, detail: `${Number(conflictCollection.failureCount || 0)} official source refresh${Number(conflictCollection.failureCount || 0) === 1 ? '' : 'es'} failed; ${Number(conflictCollection.retainedItemCount || 0)} previously verified item${Number(conflictCollection.retainedItemCount || 0) === 1 ? '' : 's'} retained.` });
     return failures;
   }
 
@@ -104,6 +147,8 @@
     root.dataset.commandCentreRemodel = 'br-14';
     root.innerHTML = `<div class="command-page">
       <header class="command-hero"><div><span class="command-kicker">Decision console</span><h2>${escapeHtml(research.regime?.verdict || 'Market regime unavailable')}</h2><p>${escapeHtml(research.regime?.meaning || command.risk?.summary || 'Regime interpretation is not available.')}</p></div><div class="command-hero-meta"><span class="data-state ${failures.length ? 'partial' : 'current'}">${failures.length ? `${failures.length} source warning${failures.length === 1 ? '' : 's'}` : 'Core sources current'}</span><strong>${escapeHtml(research.regime?.name || 'Regime name unavailable')}</strong><small>Updated ${escapeHtml(command.updated || research.generatedAt || 'time unavailable')}</small></div></header>
+      ${decisionGuide()}
+      ${conflictWatch()}
       ${dailyBrief()}
       <section class="command-priority"><div class="command-section-heading"><div><span class="command-kicker">What changed</span><h3>Priority market events</h3></div><span>Maximum three</span></div><div class="command-event-grid">${eventCards() || '<div class="command-empty">No curated impact records are available.</div>'}</div><p class="command-direction-note">Arrows show expected directional pressure under the current regime, not certainty or a trading recommendation. Open the causal analysis for the mechanism, confirmation and invalidation.</p></section>
       <section class="command-two-column"><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Next test</span><h3>${escapeHtml(command.nextEvent?.name || 'No event specified')}</h3></div><span>${escapeHtml(command.nextEvent?.time || 'Time unavailable')}</span></div><p>${escapeHtml(command.nextEvent?.logic || 'Decision logic unavailable.')}</p><div class="command-change-list">${changes.map((item, index) => `<article><span>${index + 1}</span><p>${escapeHtml(item)}</p></article>`).join('') || '<div class="command-empty">No change summary supplied.</div>'}</div></article><article class="command-panel"><div class="command-section-heading"><div><span class="command-kicker">Contradictions</span><h3>Active triggers</h3></div><span>Warning and triggered only</span></div><div class="command-trigger-list">${triggerCards()}</div></article></section>

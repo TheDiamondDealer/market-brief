@@ -25,6 +25,7 @@ class CommandCentreTests(unittest.TestCase):
     def test_home_route_loads_command_centre(self) -> None:
         self.assertIn("router.register('home'", self.page)
         self.assertIn("features/command-centre/command-page.js", self.loader)
+        self.assertIn("features/command-centre/conflict-watch-data.js", self.loader)
         self.assertIn("features/command-centre/command-page.css", self.loader)
         self.assertIn("features/command-centre/command-daily.css", self.loader)
 
@@ -56,6 +57,10 @@ class CommandCentreTests(unittest.TestCase):
             "Largest weekly positioning moves",
             "Recent official disclosures",
             "Failures that can change interpretation",
+            "From trigger to decision",
+            "Conflict and war transmission watch",
+            "scheduled every 3 hours",
+            "Official-source publications are shown as updates, not independently verified facts",
         ):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.page)

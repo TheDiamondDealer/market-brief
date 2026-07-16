@@ -102,6 +102,24 @@ def validate_free_market_semantics(data: dict[str, Any], registry: dict[str, Any
                 raise ValidationFailure(f"Unavailable COT market was emitted: {row.get('id')}")
             if not generated_row_is_verified(row, registry):
                 raise ValidationFailure(f"COT row lacks exact verified identity: {row.get('id', 'unknown')}")
+            if row.get("dataState") not in {"current", "stale-retained"}:
+                raise ValidationFailure(f"COT row has invalid dataState: {row.get('id', 'unknown')}")
+
+    if registry_marker and registry:
+        reference_ids = [str(value) for value in registry_marker.get("referenceProductIds", [])]
+        if reference_ids != registry.get("referenceProductIds"):
+            raise ValidationFailure("Generated COT referenceProductIds do not match the source registry")
+        missing_ids = {
+            str(item.get("id", ""))
+            for item in registry_marker.get("missing", [])
+            if isinstance(item, dict)
+        }
+        represented_ids = set(cot_ids) | unavailable_ids | missing_ids
+        unrepresented = set(reference_ids) - represented_ids
+        if unrepresented:
+            raise ValidationFailure(f"COT reference products lack a rendered state: {', '.join(sorted(unrepresented))}")
+        if set(cot_ids) & missing_ids:
+            raise ValidationFailure("Generated COT rows also appear in cotContractRegistry.missing")
 
 
 def validate_equity_market_semantics(data: dict[str, Any]) -> None:
