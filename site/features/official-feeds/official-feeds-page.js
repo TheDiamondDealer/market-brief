@@ -34,7 +34,7 @@
     if (nav && !nav.querySelector('[data-view="official-feeds"]')) {
       const button = document.createElement('button');
       button.type = 'button'; button.className = 'nav-item'; button.dataset.view = 'official-feeds'; button.setAttribute('aria-label', 'Official Feeds'); button.title = 'Official Feeds';
-      button.innerHTML = '<span class="nav-icon" aria-hidden="true">▣</span><span class="nav-label">Official Feeds</span>';
+      button.innerHTML = '<span class="nav-icon" aria-hidden="true"><svg><use href="#i-rss"/></svg></span><span class="nav-label">Official Feeds</span>';
       button.addEventListener('click', () => router?.navigate?.('official-feeds') || (window.location.hash = '#official-feeds'));
       const rates = nav.querySelector('[data-view="rates"]');
       if (rates) rates.insertAdjacentElement('afterend', button); else nav.appendChild(button);
