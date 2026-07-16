@@ -610,7 +610,7 @@ git push
 
 **Interfaces:**
 - Consumes: `window.marketAssetBoard` labels; signal objects (Global Constraints shape).
-- Produces: `window.MarketBriefCore.impactChips` frozen object: `chip(signal)` → HTML string (`<a>` when `signal.href` truthy, else `<span>`); `chipStrip(signals, {max?})` → `<div class="impact-chips">…</div>` or `''` for an empty list. CSS classes: `impact-chips`, `impact-chip`, direction classes `up|down|mixed|watch|activity`, tier classes `tier-observed|tier-verified|tier-ai`, `conf-low`.
+- Produces: `window.MarketBriefCore.impactChips` frozen object: `chip(signal)` → HTML string (`<a>` when `signal.href` truthy, else `<span>`); `chipStrip(signals, {max?})` → `<span class="impact-chips">…</span>` or `''` for an empty list. The strip is deliberately a `<span>` (inline-safe): Tasks 4–7 interpolate it inside `<p>`, `<th>` and `<span>` contexts, and a `<div>` there would auto-close the open `<p>` and split the markup. The CSS `display:flex` applies regardless of tag. CSS classes: `impact-chips`, `impact-chip`, direction classes `up|down|mixed|watch|activity`, tier classes `tier-observed|tier-verified|tier-ai`, `conf-low`.
 
 - [ ] **Step 1: Write the failing Node test**
 
@@ -663,7 +663,7 @@ const strip = chips.chipStrip([
   null,
   { assetId: 'gold', direction: 'watch', tier: 'observed', href: '' },
 ]);
-assert.ok(strip.startsWith('<div class="impact-chips"'));
+assert.ok(strip.startsWith('<span class="impact-chips"'), 'strip must be inline-safe (span, not div)');
 assert.strictEqual((strip.match(/impact-chip /g) || []).length, 2);
 assert.strictEqual(chips.chipStrip([]), '');
 
@@ -729,7 +729,9 @@ Expected: FAIL — ENOENT for `site/core/impact-chips.js`.
     const max = Number(options.max) || 8;
     const list = (Array.isArray(signals) ? signals : []).filter(Boolean).slice(0, max);
     if (!list.length) return '';
-    return `<div class="impact-chips">${list.map(chip).join('')}</div>`;
+    // <span>, not <div>: callers interpolate strips inside <p>/<th>/<span>,
+    // and a div start tag would auto-close an open paragraph.
+    return `<span class="impact-chips">${list.map(chip).join('')}</span>`;
   }
 
   core.impactChips = Object.freeze({ chip, chipStrip });
@@ -756,11 +758,15 @@ a.impact-chip:hover,a.impact-chip:focus-visible{border-color:var(--accent);color
 
 - [ ] **Step 4: Wire into index.html and budgets**
 
-In `site/index.html`, after the `styles/shell.css` link (line ~16) add:
+In `site/index.html`, insert the chips stylesheet BEFORE `styles/shell.css` — after the `free-data.css` link (line ~15):
 
 ```html
+  <link rel="stylesheet" href="free-data.css" />
   <link rel="stylesheet" href="styles/chips.css" />
+  <link rel="stylesheet" href="styles/shell.css" />
 ```
+
+**Landmine:** `tests/test_shell_contract.py` `test_shared_styles_load_in_safe_order` asserts `links[-1] == "styles/shell.css"` — shell.css must remain the LAST stylesheet. Do not append chips.css after it and do not edit the test (shell-last is a deliberate cascade contract).
 
 In the core script block (lines ~235–239), load the board data before the core modules and the engine/chips after `core/adapters.js`:
 
@@ -811,7 +817,7 @@ git push
 ### Task 4: COT page — positioning chips
 
 **Files:**
-- Modify: `site/features/cot/cot-page.js` (row renderer inside the `rowsToShow.map` tbody template, ~lines 314–333)
+- Modify: `site/features/cot/cot-page.js` (row renderer inside the `rowsToShow.map` tbody template, ~lines 300–335; market-name `<th>` at ~line 321)
 - Test: extend `tests/test_cot_interface.py`
 
 **Interfaces:**
@@ -839,19 +845,17 @@ Expected: the new test FAILS (`impactEngine?.assetByCotId` not found); existing 
 
 - [ ] **Step 3: Implement**
 
-In `site/features/cot/cot-page.js`, inside the row template where the first cell renders the market name (the `<td>` containing `row.name`), append a chip line. Locate the first `<td>` in the `rowsToShow.map((row) => {` template and change the name cell from:
+In `site/features/cot/cot-page.js`, the market-name cell (line ~321, inside the `rowsToShow.map((row) => {` template) is a `<th scope="row">` whose entire content sits inside a row-select `<button type="button" data-cot-select=...>`. The chip goes inside the `<th>` but AFTER the closing `</button>` — NEVER inside the button (a nested interactive/flow element breaks the button's phrasing-content model, chip clicks would trigger row-select, and PR-3's `<a>` chips would be illegally nested in a `<button>`). Change:
 
 ```js
-        <td><strong>${escapeHtml(row.name)}</strong><span>${escapeHtml(row.market || '')}</span></td>
+          <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}${row.dataState === 'stale-retained' ? ' <em class="cot-retained-badge">retained</em>' : ''}</strong><span>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</span><small>${escapeHtml(row.category || '')}</small></button></th>
 ```
 
 to:
 
 ```js
-        <td><strong>${escapeHtml(row.name)}</strong><span>${escapeHtml(row.market || '')}</span><span class="cot-board-chip">${boardChip(row)}</span></td>
+          <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}${row.dataState === 'stale-retained' ? ' <em class="cot-retained-badge">retained</em>' : ''}</strong><span>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</span><small>${escapeHtml(row.category || '')}</small></button><span class="cot-board-chip">${boardChip(row)}</span></th>
 ```
-
-(If the actual cell markup differs, keep its existing content intact and append `<span class="cot-board-chip">${boardChip(row)}</span>` at the end of the same `<td>` — the class name is the test contract.)
 
 Add the helper near the top of the IIFE, after the existing `escapeHtml`/`number` helpers:
 
@@ -1290,3 +1294,5 @@ Do NOT merge. Report the PR URL and wait for explicit approval (repo rule: `site
 - `wti` maps to `wti-financial` (NYMEX financial contract) — closest CFTC series to CL positioning among available ids (`wti-crude-ice` is ICE).
 - Political trades: direction rendered but excluded from aggregation (filing lag) — matches spec §4.2's "low visual weight" intent, made explicit.
 - `bhp/rio/fcx` unmapped (no honest single theme); revisit post-v1.
+- Conscious deviation from spec §3/§8: the registry is emitted as `site/asset-board-data.js` (`window.marketAssetBoard`), not `site/data/asset-board.json`, because this classic-script site consumes synchronous globals (chips render on every page before any fetch) and `site/data/` is reserved for pipeline-refreshed JSON. Entry shape uses `cotId` slugs (the join key `freeMarketData.cot[].id` actually shipped to the browser) instead of the spec's `cotMarket` display names, plus page-specific alias fields (`crowdAliases`, `calendarAliases`). PR-2's tagger reads `scripts/asset_board.json` directly, so the closed vocabulary is unaffected. State this in the PR body alongside the other narrowings.
+- Adversarial review (2026-07-17) folded in: chips.css must load BEFORE styles/shell.css (`test_shell_contract.py` asserts shell.css last); `chipStrip` emits an inline-safe `<span>` (a `<div>` would split the calendar `<p>` and be invalid inside `<span>`/`<th>` wrappers); COT chip placed after the row-select `</button>`, never inside it.
