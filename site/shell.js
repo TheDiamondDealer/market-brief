@@ -24,7 +24,8 @@
     'product-detail': ['Product Dossier', 'Detailed commodity research workspace.'],
     scenarios: ['Scenario Lab', 'Conditional market paths and the evidence required to support them.'],
     trackers: ['Political Flow', 'Policy events and delayed official financial disclosures.'],
-    archive: ['Archive', 'Daily, weekly and strategic research memory.']
+    archive: ['Archive', 'Daily, weekly and strategic research memory.'],
+    asset: ['Asset Workspace', 'Evidence, flip conditions, catalysts and positioning for one asset.']
   };
 
   const $ = (id) => document.getElementById(id);
@@ -38,7 +39,9 @@
 
   function activeView() { return document.querySelector('.view.active')?.id?.replace(/^view-/, '') || 'home'; }
   function updatePageContext(view = activeView()) {
-    const [title, subtitle] = routeMeta[view] || routeMeta.home;
+    const hash = String(window.location.hash || '').replace(/^#/, '');
+    const key = hash.startsWith('asset/') ? 'asset' : hash.startsWith('product/') ? 'product-detail' : view;
+    const [title, subtitle] = routeMeta[key] || routeMeta.home;
     if ($('pageTitle')) $('pageTitle').textContent = title;
     if ($('pageSubtitle')) $('pageSubtitle').textContent = subtitle;
     document.title = `${title} · Market Brief`;
@@ -107,6 +110,7 @@
   const viewObserver = new MutationObserver(() => syncNavigation());
   document.querySelectorAll('.view').forEach((view) => viewObserver.observe(view, { attributes: true, attributeFilter: ['class'] }));
   if (router) router.subscribe(() => requestAnimationFrame(() => syncNavigation())); else window.addEventListener('hashchange', () => requestAnimationFrame(() => syncNavigation()));
+  window.addEventListener('hashchange', () => updatePageContext());
   window.addEventListener('resize', () => { setMenuState(Boolean(sidebar?.classList.contains('open'))); if (window.innerWidth >= 600) closeMore({ restoreFocus: false }); });
   $('search')?.setAttribute('aria-label', 'Search locally available assets, catalysts and research routes');
 

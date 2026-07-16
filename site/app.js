@@ -155,7 +155,9 @@
   function openProduct(id, updateHash = true) {
     const product = data.products.find((item) => item.id === id);
     if (!product) return;
-    $('productDetail').innerHTML = `<section class="deep-hero">
+    const host = $('productDetail');
+    if (host) {
+    host.innerHTML = `<section class="deep-hero">
       <div class="deep-hero-top"><div><div class="deep-icon">${escapeHtml(product.icon)}</div><div class="eyebrow">${escapeHtml(product.group)} deep dive</div><h2>${escapeHtml(product.name)}</h2><p>${escapeHtml(product.tagline)}</p></div><span class="deep-status">${escapeHtml(product.status)}</span></div>
       <div class="grid cols-4" style="margin-top:22px">
         <article class="card stat"><span class="stat-label">Benchmark</span><div class="stat-value" style="font-size:18px">${escapeHtml(product.benchmark)}</div></article>
@@ -171,6 +173,7 @@
     document.querySelectorAll('.deep-tabs button').forEach((button) => button.addEventListener('click', () => productTab(product, button.dataset.tab)));
     productTab(product, 'overview');
     setView('product-detail', false);
+    }
     if (updateHash && router) router.navigate(`product/${product.id}`, { replace: true });
     else if (updateHash) history.replaceState(null, '', `#product/${product.id}`);
   }
