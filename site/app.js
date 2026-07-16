@@ -227,6 +227,8 @@
     $('search').addEventListener('input', handleSearch);
     $('search').addEventListener('keydown', (event) => {
       if (event.key !== 'Enter') return;
+      const results = $('searchResults');
+      if (results && !results.hidden) return; // global search palette handles Enter when open
       const query = $('search').value.trim().toLowerCase();
       const product = data.products.find((item) => `${item.name} ${item.tagline} ${item.group}`.toLowerCase().includes(query));
       if (product) openProduct(product.id);
