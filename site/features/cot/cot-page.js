@@ -3,9 +3,14 @@
 
   const core = window.MarketBriefCore || {};
   const official = core.adapters?.official?.() || window.freeMarketData || {};
+  const registry = official.cotContractRegistry || {};
   const rows = Array.isArray(official.cot)
     ? official.cot.filter((row) => row?.contract?.identityStatus === 'verified')
     : [];
+  const referenceProductIds = Array.isArray(registry.referenceProductIds) && registry.referenceProductIds.length
+    ? registry.referenceProductIds
+    : rows.map((row) => row.id);
+  const referenceOrder = new Map(referenceProductIds.map((id, index) => [id, index]));
   const escapeHtml = core.format?.escapeHtml || ((value = '') => String(value)
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;').replaceAll("'", '&#039;'));
@@ -31,22 +36,64 @@
     currencies: 'Currencies',
     rates: 'Rates',
     indices: 'Indices',
+    grains: 'Grains',
+    softs: 'Softs',
     other: 'Other',
   });
   const ID_CATEGORIES = Object.freeze({
     gold: 'metals',
     silver: 'metals',
     copper: 'metals',
+    palladium: 'metals',
+    platinum: 'metals',
+    'brent-last-day': 'energy',
+    'wti-crude-ice': 'energy',
+    'wti-financial': 'energy',
+    'natural-gas-nyme': 'energy',
+    ethanol: 'energy',
+    aud: 'currencies',
+    'british-pound': 'currencies',
+    'canadian-dollar': 'currencies',
     yen: 'currencies',
     'usd-index': 'currencies',
+    'euro-fx': 'currencies',
+    'eur-gbp': 'currencies',
+    'brazilian-real': 'currencies',
+    'mexican-peso': 'currencies',
+    'new-zealand-dollar': 'currencies',
+    'swiss-franc': 'currencies',
+    'south-african-rand': 'currencies',
     'us10y-futures': 'rates',
+    'ultra-us10y': 'rates',
+    'ultra-us-bond': 'rates',
+    'us30y-bond': 'rates',
+    'us5y-note': 'rates',
+    'fed-funds': 'rates',
+    'us2y-note': 'rates',
+    'sp500-emini': 'indices',
+    'sp500-micro': 'indices',
+    'nasdaq100-micro': 'indices',
+    'nasdaq100-emini': 'indices',
+    'russell2000-emini': 'indices',
+    vix: 'indices',
+    'dow-emini': 'indices',
+    cocoa: 'softs',
+    'cotton-2': 'softs',
+    coffee: 'softs',
+    'sugar-11': 'softs',
+    corn: 'grains',
+    oats: 'grains',
+    'rough-rice': 'grains',
+    soybeans: 'grains',
+    'wheat-srw': 'grains',
+    'bitcoin-cme': 'other',
   });
   const state = {
     category: 'all',
     query: '',
     mode: 'balance',
     selectedId: rows[0]?.id || null,
-    sortKey: 'name',
+    sortKey: 'referenceOrder',
     sortDirection: 'asc',
   };
 
@@ -66,8 +113,9 @@
     const short = Math.max(0, Number(point?.short || 0));
     const gross = long + short;
     return {
-      long: gross ? (long / gross) * 100 : 50,
-      short: gross ? (short / gross) * 100 : 50,
+      available: gross > 0,
+      long: gross ? (long / gross) * 100 : null,
+      short: gross ? (short / gross) * 100 : null,
     };
   }
 
@@ -117,10 +165,29 @@
     });
     const direction = state.sortDirection === 'asc' ? 1 : -1;
     return filtered.sort((a, b) => {
+      if (state.sortKey === 'referenceOrder') {
+        return (referenceOrder.get(a.id) ?? referenceOrder.size) - (referenceOrder.get(b.id) ?? referenceOrder.size);
+      }
       if (state.sortKey === 'name') return String(a.name || '').localeCompare(String(b.name || '')) * direction;
-      if (state.sortKey === 'longShare') return (shares(a).long - shares(b).long) * direction;
+      if (state.sortKey === 'longShare') return ((shares(a).long ?? -1) - (shares(b).long ?? -1)) * direction;
       return (Number(a[state.sortKey] || 0) - Number(b[state.sortKey] || 0)) * direction;
     });
+  }
+
+  function referenceCoverage() {
+    const referenceIds = new Set(referenceProductIds);
+    const loadedIds = new Set(rows.map((row) => row.id).filter((id) => referenceIds.has(id)));
+    const currentCount = rows.filter((row) => referenceIds.has(row.id) && row.dataState !== 'stale-retained').length;
+    const retainedCount = rows.filter((row) => referenceIds.has(row.id) && row.dataState === 'stale-retained').length;
+    const unavailable = [...(Array.isArray(registry.unavailable) ? registry.unavailable : []), ...(Array.isArray(registry.missing) ? registry.missing : [])]
+      .filter((item, index, all) => referenceIds.has(item?.id) && !loadedIds.has(item.id) && all.findIndex((candidate) => candidate?.id === item.id) === index);
+    return {
+      total: referenceProductIds.length,
+      loaded: loadedIds.size,
+      currentCount,
+      retainedCount,
+      unavailable,
+    };
   }
 
   function positionLabel(row) {
@@ -150,9 +217,15 @@
     const bars = rowsToShow.map((row, index) => {
       const split = shares(row);
       const x = margin.left + step * index + (step - barWidth) / 2;
+      const labelX = x + barWidth / 2;
+      if (!split.available) {
+        return `<g class="cot-chart-market" data-cot-chart-select="${escapeHtml(row.id)}" tabindex="0" role="button" aria-label="${escapeHtml(row.name)}: no reported long or short positions">
+          <rect class="cot-chart-empty-bar" x="${x.toFixed(1)}" y="${margin.top}" width="${barWidth.toFixed(1)}" height="${plotHeight.toFixed(1)}" rx="4"></rect>
+          <text class="cot-chart-label" x="${labelX.toFixed(1)}" y="${height - margin.bottom + 25}" text-anchor="end" transform="rotate(-36 ${labelX.toFixed(1)} ${height - margin.bottom + 25})">${escapeHtml(row.name)}</text>
+        </g>`;
+      }
       const shortHeight = (split.short / 100) * plotHeight;
       const longHeight = (split.long / 100) * plotHeight;
-      const labelX = x + barWidth / 2;
       return `<g class="cot-chart-market" data-cot-chart-select="${escapeHtml(row.id)}" tabindex="0" role="button" aria-label="${escapeHtml(row.name)}: ${number(split.long, 1)} percent long and ${number(split.short, 1)} percent short">
         <rect class="cot-chart-short" x="${x.toFixed(1)}" y="${margin.top}" width="${barWidth.toFixed(1)}" height="${shortHeight.toFixed(1)}" rx="4"></rect>
         <rect class="cot-chart-long" x="${x.toFixed(1)}" y="${(margin.top + shortHeight).toFixed(1)}" width="${barWidth.toFixed(1)}" height="${longHeight.toFixed(1)}" rx="4"></rect>
@@ -220,6 +293,7 @@
   }
 
   function shareCell(value, tone) {
+    if (value === null || value === undefined) return '<span class="cot-share-empty">Not reported</span>';
     return `<div class="cot-share-cell"><strong>${number(value, 1)}%</strong><span class="cot-share-meter" aria-hidden="true"><i class="${tone}" style="width:${Math.max(0, Math.min(100, value)).toFixed(1)}%"></i></span></div>`;
   }
 
@@ -246,13 +320,13 @@
         const positive = Number(row.net) >= 0;
         const flowPositive = Number(row.weekChange) >= 0;
         return `<tr class="${state.selectedId === row.id ? 'selected' : ''}">
-          <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}</strong><span>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</span><small>${escapeHtml(row.category || '')}</small></button></th>
+          <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}${row.dataState === 'stale-retained' ? ' <em class="cot-retained-badge">retained</em>' : ''}</strong><span>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</span><small>${escapeHtml(row.category || '')}</small></button></th>
           <td><span class="cot-signal ${positive ? 'positive' : 'negative'}">${positionLabel(row)}</span></td>
           <td><span class="cot-flow ${flowPositive ? 'positive' : 'negative'}">${flowLabel(row)}</span></td>
           <td>${shareCell(current.long, 'long')}</td>
-          <td class="cot-previous">${previous ? `${number(previous.long, 1)}%` : '—'}</td>
+          <td class="cot-previous">${previous?.available ? `${number(previous.long, 1)}%` : '—'}</td>
           <td>${shareCell(current.short, 'short')}</td>
-          <td class="cot-previous">${previous ? `${number(previous.short, 1)}%` : '—'}</td>
+          <td class="cot-previous">${previous?.available ? `${number(previous.short, 1)}%` : '—'}</td>
           <td class="cot-contract-value ${positive ? 'positive' : 'negative'}">${signed(row.net)}</td>
           <td class="cot-previous">${pair.previous ? signed(pair.previous.net) : '—'}</td>
           <td><span class="cot-change ${flowPositive ? 'positive' : 'negative'}">${signed(row.weekChange)} <i aria-hidden="true">${flowPositive ? '↗' : '↘'}</i></span></td>
@@ -293,7 +367,7 @@
     if (!row) return '<div class="cot-empty">Select a verified contract to inspect its history and provenance.</div>';
     const contract = row.contract || {};
     return `<article class="cot-detail-card">
-      <header><div><span class="cot-kicker">Selected exact contract</span><h3>${escapeHtml(row.name)}</h3><p>${escapeHtml(contract.marketName || row.market)}</p></div><span class="cot-identity">✓ ${escapeHtml(contract.identityStatus || 'unknown')} identity</span></header>
+      <header><div><span class="cot-kicker">Selected exact contract</span><h3>${escapeHtml(row.name)}</h3><p>${escapeHtml(contract.marketName || row.market)}</p></div><span class="cot-identity ${row.dataState === 'stale-retained' ? 'retained' : ''}">${row.dataState === 'stale-retained' ? 'Previously verified · retained' : `✓ ${escapeHtml(contract.identityStatus || 'unknown')} identity`}</span></header>
       <div class="cot-detail-metrics">
         <div><span>Net position</span><strong class="${Number(row.net) >= 0 ? 'positive' : 'negative'}">${signed(row.net)}</strong></div>
         <div><span>1-week change</span><strong class="${Number(row.weekChange) >= 0 ? 'positive' : 'negative'}">${signed(row.weekChange)}</strong></div>
@@ -312,8 +386,10 @@
     if (!filtered.some((row) => row.id === state.selectedId)) state.selectedId = filtered[0]?.id || null;
     const selected = rows.find((row) => row.id === state.selectedId) || null;
     const status = sourceStatus();
-    const categories = ['all', ...new Set(rows.map(categoryFor))];
+    const categories = Object.keys(CATEGORY_LABELS);
+    const coverage = referenceCoverage();
     const latest = rows.map((row) => row.reportDate).filter(Boolean).sort().at(-1) || '';
+    const coverageDetails = coverage.unavailable.map((item) => `<li><strong>${escapeHtml(item.label || item.id)}</strong><span>${escapeHtml(item.reason || 'No verified current observation is available.')}</span></li>`).join('');
 
     host.dataset.cotRemodel = 'reference-dashboard';
     host.innerHTML = `<div class="cot-page">
@@ -321,6 +397,10 @@
         <div><span class="cot-kicker">Official weekly positioning</span><h2>COT positioning</h2><p>Commitment of Traders positioning analysis using only verified exact CFTC contracts.</p></div>
         <div class="cot-report-status"><span class="data-state ${escapeHtml(String(status.status || 'unavailable').toLowerCase())}">${escapeHtml(status.status || 'Unavailable')}</span><strong>${escapeHtml(formatDate(latest))}</strong><small>Generated ${escapeHtml(official.generatedAt || 'unknown')}</small></div>
       </header>
+      <section class="cot-coverage-status" aria-label="Reference product coverage">
+        <div><span class="cot-kicker">Reference coverage</span><strong>${coverage.loaded} of ${coverage.total} products available</strong><small>${coverage.currentCount} current${coverage.retainedCount ? ` · ${coverage.retainedCount} previously verified and retained` : ''}</small></div>
+        ${coverage.unavailable.length ? `<details><summary>${coverage.unavailable.length} unavailable product${coverage.unavailable.length === 1 ? '' : 's'}</summary><ul>${coverageDetails}</ul></details>` : '<span class="cot-coverage-complete">All reference products loaded</span>'}
+      </section>
       <section class="cot-filter-stack" aria-label="COT filters">
         <label class="cot-search"><span class="sr-only">Search contract, code or exchange</span><i aria-hidden="true">⌕</i><input id="cotWorkspaceSearch" type="search" value="${escapeHtml(state.query)}" placeholder="Search markets, codes or exchanges…" autocomplete="off"></label>
         <div class="cot-category-filters" role="group" aria-label="Market category">${categories.map((category) => `<button type="button" data-cot-category="${category}" aria-pressed="${state.category === category}">${escapeHtml(CATEGORY_LABELS[category] || category)}</button>`).join('')}</div>

@@ -29,6 +29,10 @@ At BR-06 completion:
 - UK NBP remains unavailable until an exact official contract is approved.
 - CFTC code `043602` is approved for the CBOT 10-year note. The current official name `UST 10Y NOTE - CHICAGO BOARD OF TRADE` and its historical official name are accepted; Ultra UST 10Y is rejected.
 
+The July 2026 reference expansion records 46 requested products in `referenceProductIds`. Forty-five have current exact identities across the Disaggregated Futures-Only and Traders in Financial Futures Futures-Only datasets. This includes explicitly named derivative products such as NYMEX Brent Last Day, ICE WTI, NYMEX WTI Financial, Micro E-mini indices and Ultra Treasury contracts. They are distinct products, not replacements for the unavailable intended WTI, ICE Brent, Henry Hub or UK NBP benchmark entries.
+
+Oats is the one unavailable reference product. Its exact CBOT series, historical code `004603`, last published on 2 June 2026. It remains visible in coverage diagnostics but is not graphed as current.
+
 ## Source and fixtures
 
 The registry uses the CFTC Public Reporting Environment datasets:
@@ -44,7 +48,7 @@ Current official identities were captured through a branch-only GitHub Actions d
 - Exact row stale: exclude it and report the stale contract code/date.
 - Only a similar contract available: leave the market unavailable; do not promote a candidate by name, exchange or open interest.
 - Total CFTC failure: retain only previous rows that already carry a registry-verified identity. Pre-BR-06 unverified rows are not retained as fallback.
-- Partially successful run: publish the verified markets and expose errors for failed verified entries.
+- Partially successful run: publish current verified markets, retain previously verified rows for failed contracts with `dataState: stale-retained`, and expose the errors. A failed contract with no verified retained row appears in `cotContractRegistry.missing`.
 
 ## Validation
 

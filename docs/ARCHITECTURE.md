@@ -183,9 +183,15 @@ The free-data pipeline collects:
 - policy rates;
 - broad dollar measures.
 
-COT contract selection must reject misleading alternatives such as micro, mini, ultra, index, financial or cross-rate contracts when the intended primary contract cannot be mapped safely.
+COT contract selection is exact-product based. Micro, mini, ultra, index, financial and cross-rate contracts may be included only when that precise derivative is an explicitly approved registry product; they must never be substituted for a different intended benchmark.
 
 Unavailable data stays unavailable.
+
+## 2a. Conflict publication watch
+
+`scripts/update_conflict_watch.py` collects official RSS publications into `site/data/conflict-watch.json` and the generated browser module `site/features/command-centre/conflict-watch-data.js`. The home-route feature manifest loads the generated module before `command-page.js`. `.github/workflows/update-conflict-watch.yml` refreshes it every three hours, retains verified source-specific fallback rows on temporary failure and triggers Pages deployment after validated updates.
+
+The generated source records contain no automated claim that an event moved a market. Command Centre owns a separate, explicitly conditional escalation/de-escalation transmission map.
 
 ## 3. Free official agency feeds
 

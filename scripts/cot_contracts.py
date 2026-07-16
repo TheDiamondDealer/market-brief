@@ -37,6 +37,13 @@ def validate_registry(registry: dict[str, Any]) -> None:
     contracts = registry.get("contracts")
     if not isinstance(contracts, list) or not contracts:
         raise ContractRegistryError("COT registry contracts must be a non-empty list")
+    reference_ids = registry.get("referenceProductIds")
+    if not isinstance(reference_ids, list) or not reference_ids:
+        raise ContractRegistryError("COT registry referenceProductIds must be a non-empty list")
+    if any(not isinstance(contract_id, str) or not _text(contract_id) for contract_id in reference_ids):
+        raise ContractRegistryError("COT registry referenceProductIds must contain non-empty strings")
+    if len(reference_ids) != len(set(reference_ids)):
+        raise ContractRegistryError("COT registry referenceProductIds must be unique")
 
     ids: set[str] = set()
     codes: set[tuple[str, str]] = set()
@@ -70,6 +77,12 @@ def validate_registry(registry: dict[str, Any]) -> None:
                 raise ContractRegistryError(f"Unavailable contract {contract_id} cannot carry an accepted identity")
             if not _text(contract.get("unavailableReason")):
                 raise ContractRegistryError(f"Unavailable contract {contract_id} needs a reason")
+
+    unknown_reference_ids = set(reference_ids) - ids
+    if unknown_reference_ids:
+        raise ContractRegistryError(
+            f"COT registry referenceProductIds contain unknown contracts: {sorted(unknown_reference_ids)}"
+        )
 
 
 def contracts_by_id(registry: dict[str, Any] | None = None) -> dict[str, dict[str, Any]]:

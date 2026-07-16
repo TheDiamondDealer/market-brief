@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thediamonddealer.github.io/market-brief/schemas/conflict-watch.schema.json",
+  "title": "Market Brief official conflict publication watch",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAtUtc", "sourceMode", "collection", "items", "methodology"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "generatedAtUtc": {"type": "string", "minLength": 1},
+    "sourceMode": {"const": "official-publication-watch"},
+    "collection": {
+      "type": "object",
+      "required": ["status", "sourceCount", "failureCount", "retainedItemCount", "sourceStatus"],
+      "properties": {
+        "status": {"enum": ["current", "partial", "stale-retained", "failed"]},
+        "sourceCount": {"type": "integer", "minimum": 1},
+        "failureCount": {"type": "integer", "minimum": 0},
+        "retainedItemCount": {"type": "integer", "minimum": 0},
+        "sourceStatus": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "status", "itemCount", "url", "detail"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "name": {"type": "string", "minLength": 1},
+              "status": {"enum": ["current", "stale-retained", "failed"]},
+              "itemCount": {"type": "integer", "minimum": 0},
+              "url": {"type": "string", "pattern": "^https://"},
+              "detail": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "summary", "publishedAt", "url", "source", "tags", "dataState"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-f0-9]{16}$"},
+          "title": {"type": "string", "minLength": 1},
+          "summary": {"type": "string", "minLength": 1},
+          "publishedAt": {"type": "string", "minLength": 1},
+          "url": {"type": "string", "pattern": "^https://"},
+          "source": {
+            "type": "object",
+            "required": ["id", "name", "pageUrl"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "name": {"type": "string", "minLength": 1},
+              "pageUrl": {"type": "string", "pattern": "^https://"}
+            },
+            "additionalProperties": false
+          },
+          "tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "dataState": {"enum": ["current", "stale-retained"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "methodology": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

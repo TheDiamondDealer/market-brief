@@ -62,6 +62,11 @@ class CotInterfaceTests(unittest.TestCase):
             "Net position",
             "Long / short",
             "Weekly change",
+            "Reference coverage",
+            "referenceProductIds",
+            "dataState === 'stale-retained'",
+            "grains: 'Grains'",
+            "softs: 'Softs'",
         ):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.script)

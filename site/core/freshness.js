@@ -184,12 +184,33 @@
     const calendar = core.calendar?.get?.() || window.marketCalendarData || {};
     const evidence = core.adapters?.evidence?.() || window.marketResearchData || {};
     const research = core.adapters?.research?.() || (typeof fallback !== 'undefined' ? fallback : {});
-    return [
+    const conflict = window.conflictWatchData || {};
+    const records = [
       record({ id: 'research:impact', family: 'research', name: 'Curated Impact Feed', sourceObservedAt: impact.generatedAt, collectedAt: impact.generatedAt, generatedAt: impact.generatedAt, expectedCadence: 'Research-run dependent', expectedCadenceDays: 7, lastSuccessfulAt: impact.generatedAt, status: impact.generatedAt ? cadenceStatus(impact.generatedAt, 7) : 'unavailable', detail: `${impact.items?.length || 0} curated events · ${impact.sourceMode || 'mode unavailable'}` }),
       record({ id: 'research:calendar', family: 'research', name: 'Calendar and reaction records', sourceObservedAt: calendar.generatedAt, collectedAt: calendar.generatedAt, generatedAt: calendar.generatedAt, expectedCadence: 'Research-run dependent', expectedCadenceDays: 7, lastSuccessfulAt: calendar.generatedAt, status: calendar.generatedAt ? cadenceStatus(calendar.generatedAt, 7) : 'unavailable', detail: `${calendar.events?.length || 0} tracked events · ${calendar.timezone || 'timezone unavailable'}` }),
       record({ id: 'research:physical', family: 'research', name: 'Physical and macro checklists', sourceObservedAt: evidence.updated, collectedAt: evidence.updated, generatedAt: evidence.updated, expectedCadence: 'Research-review dependent', expectedCadenceDays: 30, lastSuccessfulAt: evidence.updated, status: evidence.updated ? cadenceStatus(evidence.updated, 30) : 'unavailable', detail: `${Object.keys(evidence.physicalChecklists || {}).length} asset checklists` }),
       record({ id: 'research:baseline', family: 'research', name: 'Strategic research baseline', sourceObservedAt: research.generatedAt || research.updated, collectedAt: research.generatedAt || research.updated, generatedAt: research.generatedAt || research.updated, expectedCadence: 'Monthly strategic refresh', expectedCadenceDays: 35, lastSuccessfulAt: research.generatedAt || research.updated, status: (research.generatedAt || research.updated) ? cadenceStatus(research.generatedAt || research.updated, 35) : 'unavailable', detail: research.regime?.name || 'Regime record unavailable' })
     ];
+    if (conflict.collection) {
+      records.push(record({
+        id: 'conflict:pipeline', family: 'official-conflict', name: 'Conflict publication watch',
+        sourceObservedAt: conflict.items?.[0]?.publishedAt, collectedAt: conflict.generatedAtUtc, generatedAt: conflict.generatedAtUtc,
+        expectedCadence: 'Every three hours', expectedCadenceDays: .25, lastSuccessfulAt: conflict.collection.status === 'current' ? conflict.generatedAtUtc : null,
+        status: conflict.collection.status, detail: `${conflict.items?.length || 0} relevant official publications · ${conflict.collection.failureCount || 0} source failures`,
+        error: conflict.collection.failureCount ? 'One or more official conflict feeds failed during the latest refresh.' : null
+      }));
+      for (const source of conflict.collection.sourceStatus || []) {
+        const latest = (conflict.items || []).find((item) => item.source?.id === source.id);
+        records.push(record({
+          id: `conflict:${source.id}`, family: 'official-conflict', name: source.name,
+          sourceObservedAt: latest?.publishedAt, collectedAt: conflict.generatedAtUtc, generatedAt: conflict.generatedAtUtc,
+          expectedCadence: 'Every three hours', expectedCadenceDays: .25,
+          lastSuccessfulAt: source.status === 'current' ? conflict.generatedAtUtc : null,
+          status: source.status, detail: source.detail, error: source.status === 'failed' ? source.detail : null, url: source.url
+        }));
+      }
+    }
+    return records;
   }
 
   function build() {

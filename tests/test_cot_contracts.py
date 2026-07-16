@@ -29,9 +29,14 @@ class CotContractRegistryTests(unittest.TestCase):
         identities = {(item["reportType"], item["cftcContractCode"]) for item in verified}
         self.assertEqual(len(identities), len(verified))
         unavailable = {item["id"]: item for item in cot_contracts.unavailable_contracts(self.registry)}
-        self.assertEqual(set(unavailable), {"oil-wti", "oil-brent", "gas-us", "gas-uk"})
+        self.assertEqual(set(unavailable), {"oil-wti", "oil-brent", "gas-us", "gas-uk", "oats"})
         self.assertTrue(all(item["acceptedNames"] == [] for item in unavailable.values()))
         self.assertTrue(all(item["cftcContractCode"] is None for item in unavailable.values()))
+        self.assertEqual(len(self.registry["referenceProductIds"]), 46)
+        self.assertEqual(len(verified), 45)
+        self.assertEqual(set(self.registry["referenceProductIds"]), {
+            item["id"] for item in verified
+        } | {"oats"})
 
     def test_unavailable_energy_benchmarks_reject_current_alternatives(self) -> None:
         wti = self.contracts["oil-wti"]
@@ -60,7 +65,7 @@ class CotContractRegistryTests(unittest.TestCase):
     def test_registry_accepts_official_alphanumeric_contract_codes(self) -> None:
         registry = copy.deepcopy(self.registry)
         gold = next(contract for contract in registry["contracts"] if contract["id"] == "gold")
-        gold["cftcContractCode"] = "06765A"
+        gold["cftcContractCode"] = "06765Z"
         cot_contracts.validate_registry(registry)
 
     def test_api_query_is_bound_to_contract_code_not_name_search(self) -> None:
@@ -96,6 +101,44 @@ class CotContractRegistryTests(unittest.TestCase):
             "market": "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE",
         }
         self.assertFalse(cot_contracts.generated_row_is_verified(legacy, self.registry))
+
+    def test_partial_refresh_retains_a_previously_verified_contract_with_stale_state(self) -> None:
+        contract = self.contracts["us10y-futures"]
+        observations = api.observations_from_rows(contract, [self.rows["us10y-futures"]])
+        retained = api.collector.summarise_market(contract["id"], contract["label"], observations)
+        retained["contract"] = cot_contracts.contract_metadata(contract, retained["market"])
+        retained["dataState"] = "current"
+        partial = {
+            "cot": [],
+            "sourceStatus": [{"source": "CFTC Commitments of Traders", "status": "partial", "detail": "request failed"}],
+            "methodology": {},
+        }
+        with mock.patch.object(api, "_original_build_dataset", return_value=partial):
+            dataset = api.build_dataset_with_registry({"cot": [retained]})
+        output = next(row for row in dataset["cot"] if row["id"] == "us10y-futures")
+        self.assertEqual(output["dataState"], "stale-retained")
+        self.assertIn("us10y-futures", dataset["sourceStatus"][0]["detail"])
+        self.assertNotIn("us10y-futures", {item["id"] for item in dataset["cotContractRegistry"]["missing"]})
+
+    def test_committed_cache_covers_all_current_reference_products_in_reference_order(self) -> None:
+        generated = json.loads((ROOT / "site" / "data" / "free-market-data.json").read_text(encoding="utf-8"))
+        marker = generated["cotContractRegistry"]
+        expected_live_ids = [contract_id for contract_id in self.registry["referenceProductIds"] if contract_id != "oats"]
+        self.assertEqual(marker["referenceProductIds"], self.registry["referenceProductIds"])
+        self.assertEqual([row["id"] for row in generated["cot"]], expected_live_ids)
+        self.assertEqual(marker["missing"], [])
+        self.assertTrue(all(row["dataState"] in {"current", "stale-retained"} for row in generated["cot"]))
+        oats = next(item for item in marker["unavailable"] if item["id"] == "oats")
+        self.assertEqual(oats["lastObservationDate"], "2026-06-02")
+
+    def test_committed_cache_keeps_52_week_history_for_each_live_product(self) -> None:
+        generated = json.loads((ROOT / "site" / "data" / "free-market-data.json").read_text(encoding="utf-8"))
+        for row in generated["cot"]:
+            history = row.get("history52")
+            self.assertIsInstance(history, list, row["id"])
+            self.assertEqual(len(history), 52, row["id"])
+            self.assertEqual(history[-1]["date"], row["reportDate"], row["id"])
+            self.assertEqual(history[-1]["net"], row["net"], row["id"])
 
 
 if __name__ == "__main__":

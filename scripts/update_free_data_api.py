@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import sys
 import urllib.parse
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
@@ -112,28 +113,32 @@ def is_recent(report_date_value: str, maximum_age_days: int, *, as_of: datetime 
     return bool(report_date_value and report_date_value >= cutoff)
 
 
+def fetch_registered_contract(contract: dict[str, Any]) -> tuple[dict[str, Any] | None, str | None]:
+    try:
+        observations = observations_for(contract)
+        summary = collector.summarise_market(contract["id"], contract["label"], observations)
+        if not summary:
+            return None, f"{contract['id']}: no usable rows"
+        if not is_recent(str(summary.get("reportDate", "")), contract["maximumAgeDays"]):
+            return None, (
+                f"{contract['id']}: exact contract {contract['cftcContractCode']} is stale "
+                f"({summary.get('reportDate')}); excluded"
+            )
+        summary["contract"] = contract_metadata(contract, summary["market"])
+        summary["dataState"] = "current"
+        summary["dataMethod"] = "CFTC public reporting API exact contract registry"
+        summary["sourceUrl"] = f"https://publicreporting.cftc.gov/resource/{contract['datasetId']}.json"
+        return summary, None
+    except Exception as exc:
+        return None, f"{contract['id']}: {exc}"
+
+
 def fetch_cot_api() -> tuple[list[dict[str, Any]], list[str]]:
-    summaries: list[dict[str, Any]] = []
-    errors: list[str] = []
-    for contract in verified_contracts(REGISTRY):
-        try:
-            observations = observations_for(contract)
-            summary = collector.summarise_market(contract["id"], contract["label"], observations)
-            if not summary:
-                errors.append(f"{contract['id']}: no usable rows")
-                continue
-            if not is_recent(str(summary.get("reportDate", "")), contract["maximumAgeDays"]):
-                errors.append(
-                    f"{contract['id']}: exact contract {contract['cftcContractCode']} is stale "
-                    f"({summary.get('reportDate')}); excluded"
-                )
-                continue
-            summary["contract"] = contract_metadata(contract, summary["market"])
-            summary["dataMethod"] = "CFTC public reporting API exact contract registry"
-            summary["sourceUrl"] = f"https://publicreporting.cftc.gov/resource/{contract['datasetId']}.json"
-            summaries.append(summary)
-        except Exception as exc:
-            errors.append(f"{contract['id']}: {exc}")
+    contracts = verified_contracts(REGISTRY)
+    with ThreadPoolExecutor(max_workers=min(6, len(contracts))) as executor:
+        results = list(executor.map(fetch_registered_contract, contracts))
+    summaries = [summary for summary, _ in results if summary]
+    errors = [error for _, error in results if error]
     return summaries, errors
 
 
@@ -152,18 +157,81 @@ _original_build_dataset = collector.build_dataset
 
 def build_dataset_with_registry(previous: dict[str, Any]) -> dict[str, Any]:
     dataset = _original_build_dataset(previous)
+    verified = verified_contracts(REGISTRY)
     unavailable = unavailable_contracts(REGISTRY)
+    current_rows = {
+        str(row.get("id")): row
+        for row in dataset.get("cot", [])
+        if isinstance(row, dict) and row.get("id")
+    }
+    previous_rows = {
+        str(row.get("id")): row
+        for row in previous.get("cot", [])
+        if isinstance(row, dict) and row.get("id")
+    }
+    cftc_status = next(
+        (
+            item
+            for item in dataset.get("sourceStatus", [])
+            if "cftc" in str(item.get("source", "")).lower()
+        ),
+        None,
+    )
+    if cftc_status and cftc_status.get("status") == "stale fallback":
+        for row in current_rows.values():
+            row["dataState"] = "stale-retained"
+
+    retained_ids: list[str] = []
+    for contract in verified:
+        contract_id = contract["id"]
+        if contract_id in current_rows or contract_id not in previous_rows:
+            continue
+        retained = dict(previous_rows[contract_id])
+        retained["dataState"] = "stale-retained"
+        current_rows[contract_id] = retained
+        retained_ids.append(contract_id)
+
+    display_order = {contract_id: index for index, contract_id in enumerate(REGISTRY["referenceProductIds"])}
+    dataset["cot"] = sorted(
+        current_rows.values(),
+        key=lambda row: (display_order.get(str(row.get("id")), len(display_order)), str(row.get("name", ""))),
+    )
+    missing = [
+        {"id": contract["id"], "label": contract["label"], "reason": "No current or retained verified observation is available."}
+        for contract in verified
+        if contract["id"] not in current_rows
+    ]
+    if retained_ids and cftc_status:
+        retained_detail = "Retained previously verified rows for: " + ", ".join(retained_ids) + "."
+        cftc_status["detail"] = " ".join(filter(None, [str(cftc_status.get("detail", "")).strip(), retained_detail]))
+    elif cftc_status and cftc_status.get("status") == "current":
+        cftc_status["detail"] = (
+            f"Loaded {len(current_rows)} current exact-contract series from the CFTC Public Reporting Environment."
+        )
     dataset["cotContractRegistry"] = {
         "schemaVersion": REGISTRY["schemaVersion"],
-        "verifiedIds": [contract["id"] for contract in verified_contracts(REGISTRY)],
+        "referenceProductIds": REGISTRY["referenceProductIds"],
+        "verifiedIds": [contract["id"] for contract in verified],
+        "missing": missing,
         "unavailable": [
-            {"id": contract["id"], "label": contract["label"], "reason": contract["unavailableReason"]}
+            {
+                "id": contract["id"],
+                "label": contract["label"],
+                "reason": contract["unavailableReason"],
+                **({"lastObservationDate": contract["lastObservationDate"]} if contract.get("lastObservationDate") else {}),
+                **({"historicalCftcContractCode": contract["historicalCftcContractCode"]} if contract.get("historicalCftcContractCode") else {}),
+            }
             for contract in unavailable
         ],
     }
     dataset.setdefault("methodology", {})["cotRegistry"] = (
         "Rows require an exact CFTC contract-market code and exact approved market/exchange name. "
         "Unapproved benchmarks remain unavailable; no open-interest ranking or similar-name substitution is used."
+    )
+    dataset["methodology"]["cot"] = (
+        "CFTC Public Reporting Environment futures-only data. Commodities use Managed Money; financial futures use "
+        "Leveraged Funds. Every row must match an approved exact code, complete market/exchange identity and freshness limit; "
+        "history includes the latest 52 weekly observations."
     )
     return dataset
 
