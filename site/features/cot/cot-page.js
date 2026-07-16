@@ -255,12 +255,18 @@
       const barLength = (Math.abs(value) / maxAbsolute) * (plotWidth / 2);
       const y = margin.top + index * rowHeight;
       const barY = y + (rowHeight - 14) / 2;
-      const x = value >= 0 ? zeroX : zeroX - barLength;
-      const valueX = value >= 0 ? zeroX + barLength + 8 : zeroX - barLength - 8;
+      const negative = value < 0;
+      const x = negative ? zeroX - barLength : zeroX;
+      const outerX = negative ? zeroX - barLength - 8 : zeroX + barLength + 8;
+      // Keep the value label out of the left-hand row-name gutter: a long negative bar would push
+      // its label onto the market names, so render it just inside the bar's left end instead.
+      const inside = negative && outerX < margin.left + 6;
+      const valueX = inside ? x + 6 : outerX;
+      const anchor = negative ? (inside ? 'start' : 'end') : 'start';
       return `<g class="cot-chart-market" data-cot-chart-select="${escapeHtml(row.id)}" tabindex="0" role="button" aria-label="${escapeHtml(row.name)}: ${escapeHtml(signed(value))} contracts">
         <text class="cot-chart-row-label" x="${margin.left - 12}" y="${y + rowHeight / 2 + 4}" text-anchor="end">${escapeHtml(row.name)}</text>
-        <rect class="${value >= 0 ? 'cot-chart-positive' : 'cot-chart-negative'}" x="${x.toFixed(1)}" y="${barY}" width="${Math.max(barLength, 2).toFixed(1)}" height="14"></rect>
-        <text class="cot-chart-value" x="${valueX.toFixed(1)}" y="${y + rowHeight / 2 + 4}" text-anchor="${value >= 0 ? 'start' : 'end'}">${escapeHtml(compact(value))}</text>
+        <rect class="${negative ? 'cot-chart-negative' : 'cot-chart-positive'}" x="${x.toFixed(1)}" y="${barY}" width="${Math.max(barLength, 2).toFixed(1)}" height="14"></rect>
+        <text class="cot-chart-value${inside ? ' inside' : ''}" x="${valueX.toFixed(1)}" y="${y + rowHeight / 2 + 4}" text-anchor="${anchor}">${escapeHtml(compact(value))}</text>
       </g>`;
     }).join('');
     return `<div class="cot-positioning-chart-scroll"><svg class="cot-positioning-svg" style="min-width:720px" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="cotPositioningTitle cotPositioningDesc">
