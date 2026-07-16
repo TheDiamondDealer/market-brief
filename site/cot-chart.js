@@ -108,8 +108,8 @@
 
     return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(row.name)} 52-week long and short positioning chart">
       <defs>
-        <linearGradient id="cotLongGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2dd4bf" stop-opacity=".22"></stop><stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"></stop></linearGradient>
-        <linearGradient id="cotShortGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff6b6b" stop-opacity=".15"></stop><stop offset="100%" stop-color="#ff6b6b" stop-opacity="0"></stop></linearGradient>
+        <linearGradient id="cotLongGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#20c979" stop-opacity=".22"></stop><stop offset="100%" stop-color="#20c979" stop-opacity="0"></stop></linearGradient>
+        <linearGradient id="cotShortGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f45b69" stop-opacity=".15"></stop><stop offset="100%" stop-color="#f45b69" stop-opacity="0"></stop></linearGradient>
       </defs>
       ${grid}
       <path class="cot-long-area" d="${longArea}"></path>

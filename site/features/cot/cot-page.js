@@ -237,8 +237,8 @@
       <title id="cotPositioningTitle">Long and short positioning by verified CFTC contract</title>
       <desc id="cotPositioningDesc">Each column totals 100 percent of reported long plus short positions. Green is long share and red is short share.</desc>
       <defs>
-        <linearGradient id="cotLongBars" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#27e58b"></stop><stop offset="100%" stop-color="#087b4b"></stop></linearGradient>
-        <linearGradient id="cotShortBars" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff6672"></stop><stop offset="100%" stop-color="#8e2932"></stop></linearGradient>
+        <linearGradient id="cotLongBars" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#20c979"></stop><stop offset="100%" stop-color="#0e7a49"></stop></linearGradient>
+        <linearGradient id="cotShortBars" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f45b69"></stop><stop offset="100%" stop-color="#8a3038"></stop></linearGradient>
       </defs>
       ${grid}${bars}
       <text class="cot-chart-axis-title" x="12" y="${margin.top + plotHeight / 2}" text-anchor="middle" transform="rotate(-90 12 ${margin.top + plotHeight / 2})">Position distribution (%)</text>
