@@ -1,6 +1,6 @@
 {
-  "generatedAt": "16 July 2026, 3:25 PM AEST",
-  "generatedAtUtc": "2026-07-16T05:25:11+00:00",
+  "generatedAt": "16 July 2026, 3:30 PM AEST",
+  "generatedAtUtc": "2026-07-16T05:30:58+00:00",
   "rates": [
     {
       "id": "DGS2",
@@ -478,7 +478,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "AUSTRALIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -5623,7 +5623,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -13512,7 +13512,7 @@
         "exchange": "NEW YORK MERCANTILE EXCHANGE",
         "marketName": "ETHANOL - NEW YORK MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -15583,8 +15583,8 @@
     },
     {
       "source": "CFTC Commitments of Traders",
-      "status": "current",
-      "detail": "Loaded 45 current exact-contract series from the CFTC Public Reporting Environment.",
+      "status": "partial",
+      "detail": "yen: The read operation timed out; aud: <urlopen error _ssl.c:993: The handshake operation timed out>; ethanol: IncompleteRead(221217 bytes read) Retained previously verified rows for: yen, aud, ethanol.",
       "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
     }
   ],
