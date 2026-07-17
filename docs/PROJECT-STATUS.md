@@ -19,6 +19,12 @@ Branch `feat/ui-mrktedge-revamp` (open PR, **not merged to `main`**) carries a p
 
 Real-browser Playwright smoke: zero new console errors (only pre-existing TradingView third-party CORS), all 18 views + mobile render, rail-collapse / palette-jump / COT row-select / asset↔product navigation verified.
 
+## Open branch pending review — Pressure Board PR-1: impact grammar (17 July 2026)
+
+`feat/pressure-board-pr1-grammar` (open PR, **not merged to `main`**) adds the closed-vocabulary asset board (`scripts/asset_board.json` → generated `site/asset-board-data.js`), the deterministic impact engine (`site/core/impact-engine.js`), and the tiered chip component (`site/core/impact-chips.js` + `site/styles/chips.css`), applied to COT, Rates (+ a visible rules table), Crowd, Political (both tables, lag-excluded), Official-feeds (SEC filings + BLS prints) and Calendar (watch-only) cards. Pages delegate to the engine's single-row derivations — no duplicated signal logic. No model tagging yet (PR-2), no home board (PR-3), no new sources (PR-4). Spec: `docs/superpowers/specs/2026-07-16-trader-pressure-board-design.md`.
+
+Suite green (210 unittest tests + `scripts/audit_static_site.py`); real-browser Playwright smoke verified chips render on all six pages with correct arrows/colours/glyphs, no dead links (all chips are `<span>` in PR-1), and no new console errors. Two fixes folded in from review: calendar watch chips dedupe by board asset (alias collisions such as Bonds + US 10Y → us10y); the crowd derivation propagates `market.status` instead of asserting `current`.
+
 ## Repository and deployment
 
 - Repository: `TheDiamondDealer/market-brief`
