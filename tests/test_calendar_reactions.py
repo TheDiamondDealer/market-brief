@@ -69,6 +69,7 @@ class CalendarReactionTests(unittest.TestCase):
         self.assertIn("Relevant assets were not explicitly named", source)
         self.assertIn("if (!mapped.length) return '';", source)  # honesty fallback is contract-tested
         self.assertIn("watchChips(event) ||", source)  # helper is actually interpolated with its fallback
+        self.assertIn("if (seen.has(asset.id)) return;", source)  # watch chips dedupe by board asset (alias collisions)
 
 
 if __name__ == "__main__":

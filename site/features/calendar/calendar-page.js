@@ -33,23 +33,29 @@
     if (!engine || !chips) return '';
     const mapped = [];
     const leftover = [];
+    const seen = new Set();
     (event.assets || []).forEach((label) => {
       const asset = engine.assetByCalendarAlias(label);
-      if (asset) {
-        mapped.push({
-          assetId: asset.id,
-          direction: 'watch',
-          tier: 'observed',
-          source: 'calendar',
-          label: 'Scheduled release',
-          detail: `${event.name || 'This release'} is scheduled; direction is unknowable before the print.`,
-          at: event.scheduledAt || null,
-          status: 'current',
-          href: '',
-        });
-      } else {
+      if (!asset) {
         leftover.push(label);
+        return;
       }
+      // Dedupe by board asset: multiple calendar aliases can resolve to the
+      // same asset (e.g. "Bonds" and "US 10Y" -> us10y). Chart it once; a
+      // repeat alias is neither a second chip nor "Also relevant:" leftover.
+      if (seen.has(asset.id)) return;
+      seen.add(asset.id);
+      mapped.push({
+        assetId: asset.id,
+        direction: 'watch',
+        tier: 'observed',
+        source: 'calendar',
+        label: 'Scheduled release',
+        detail: `${event.name || 'This release'} is scheduled; direction is unknowable before the print.`,
+        at: event.scheduledAt || null,
+        status: 'current',
+        href: '',
+      });
     });
     // All labels unmappable: return '' so the caller's unchanged "Relevant assets:" copy
     // renders instead — "Also relevant:" must only ever appear below actual chips.
