@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-07-17T11:39:40Z",
+  "generatedAtUtc": "2026-07-17T14:01:15Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -8,14 +8,14 @@
     "documentationUrl": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
   },
   "collection": {
-    "status": "stale",
+    "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 4,
-    "successfulQueryCount": 0,
-    "rawArticleCount": 0,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-07-17T09:20:54Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-07-17T14:01:15Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -42,26 +42,23 @@
   ],
   "articles": [
     {
-      "id": "c0244e4bc1af7cc5b96f",
-      "title": "机构调研丨储能+AIDC+锂电池 这家公司主要产品满产满销 AIDC电池争取明年大批量供货 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202607173811033838.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-17T08:30:00Z",
-      "firstSeenAt": "2026-07-17T08:30:00Z",
+      "id": "c69d7b6afa9205ec3359",
+      "title": "Semiconductor stocks keep falling as investors go risk - off , Chinese startup releases powerful new AI model",
+      "url": "https://finance.yahoo.com/markets/article/semiconductor-stocks-keep-falling-as-investors-go-risk-off-chinese-startup-releases-powerful-new-ai-model-130920103.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-17T13:30:00Z",
+      "firstSeenAt": "2026-07-17T13:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -70,335 +67,323 @@
       "duplicateCount": 1
     },
     {
-      "id": "4b5c4def40adbd339b80",
-      "title": "Barkly sets rods turning for major NT rare earths drilling blitz",
-      "url": "https://www.smh.com.au/business/companies/barkly-sets-rods-turning-for-major-nt-rare-earths-drilling-blitz-20260717-p60gb9.html",
-      "domain": "smh.com.au",
+      "id": "75d2be6a73f8a476cacb",
+      "title": "Here Why ON Semiconductor Just Made a $7 Billion Bet on AI",
+      "url": "https://finance.yahoo.com/technology/ai/articles/heres-why-semiconductor-just-made-113000581.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
-      "sourceCountry": "Australia",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-17T12:00:00Z",
+      "firstSeenAt": "2026-07-17T12:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "84ca4ac3afb23cb2e2d3",
+      "title": "[ 마켓톡스 ] AI 자본 지출 둔화 가능성 … 반도체서 하이퍼스케일러로 눈돌리는 월가",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=03263606645515504&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-17T11:30:00Z",
+      "firstSeenAt": "2026-07-17T11:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "29900367feaf1ef551a6",
+      "title": "반도체 고점 우려에 코스피 6 . 4 % 급락 … 금리 인상에 성장주 하락 압력 - 경제ㅣ한국일보",
+      "url": "https://www.hankookilbo.com/news/article/A2026071617080002596",
+      "domain": "hankookilbo.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-17T10:30:00Z",
+      "firstSeenAt": "2026-07-17T10:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "31aa8a8c4f65df019281",
+      "title": "Semicon 2 . 0 may create up to 2 lakh jobs in next five years : Industry",
+      "url": "https://ianslive.in/semicon-20-may-create-up-to-2-lakh-jobs-in-next-five-years-industry--20260717132641",
+      "domain": "ianslive.in",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-17T08:30:00Z",
+      "firstSeenAt": "2026-07-17T08:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f0a3917b22c47072ab88",
+      "title": "Global Market : AI chip rally faces valuation test as investors rotate towards hyperscalers",
+      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-ai-chip-rally-faces-valuation-test-as-investors-rotate-towards-hyperscalers/articleshow/132455093.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-17T07:45:00Z",
+      "firstSeenAt": "2026-07-17T07:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "39516fa01bba0cc2db16",
+      "title": "Nikkei Plunges 5 % as AI Stock Selloff Spreads Across Asia",
+      "url": "http://www.econotimes.com/Nikkei-Plunges-5-as-AI-Stock-Selloff-Spreads-Across-Asia-1747032",
+      "domain": "econotimes.com",
+      "language": "English",
+      "sourceCountry": "United States",
       "seenAt": "2026-07-17T07:15:00Z",
       "firstSeenAt": "2026-07-17T07:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "8c8e3a1d18459b2207a9",
-      "title": "Tam 50 bin yıl yetecek rezerv keşfedildi : İnsanlığı kurtaracak",
-      "url": "https://www.sozcu.com.tr/tam-50-bin-yil-yetecek-rezerv-kesfedildi-insanligi-kurtaracak-p337180",
-      "domain": "sozcu.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-07-17T07:00:00Z",
-      "firstSeenAt": "2026-07-17T07:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "da28a62063bfd9ca4416",
-      "title": "Mineral exports revenue K32bil last year : Loifa",
-      "url": "https://www.thenational.com.pg/mineral-exports-revenue-k32bil-last-year-loifa/",
-      "domain": "thenational.com.pg",
+      "id": "b3e5b9c94d1f16b08d9e",
+      "title": "From Fab to Full Stack : How Semicon 2 . 0 may define India semiconductor decade",
+      "url": "https://www.moneycontrol.com/news/opinion/from-fab-to-full-stack-how-semicon-2-0-may-define-india-s-semiconductor-decade-13976455.html",
+      "domain": "moneycontrol.com",
       "language": "English",
-      "sourceCountry": "Papua New Guinea",
-      "seenAt": "2026-07-17T06:30:00Z",
-      "firstSeenAt": "2026-07-17T06:30:00Z",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-17T06:00:00Z",
+      "firstSeenAt": "2026-07-17T06:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "063675102e665a3453c2",
-      "title": "Metals in Motion : Sprott Outlines New Era of Critical Minerals",
-      "url": "https://finance.yahoo.com/markets/commodities/articles/metals-motion-sprott-outlines-era-182328914.html",
+      "id": "9879db171115bedbe321",
+      "title": "Advanced TSMC tech to stay in Taiwan : Cabinet",
+      "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/07/17/2003860912",
+      "domain": "taipeitimes.com",
+      "language": "English",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-07-17T05:45:00Z",
+      "firstSeenAt": "2026-07-17T05:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e2221d292125ab387cd8",
+      "title": "Cabinet Approves Rs 1 . 27 Lakh Crore Semicon 2 . 0 To Strengthen India Chip Ecosystem - Trak . in - Indian Business of Tech , Mobile & Startups",
+      "url": "https://trak.in/stories/cabinet-approves-rs-1-27-lakh-crore-semicon-2-0-to-strengthen-indias-chip-ecosystem/",
+      "domain": "trak.in",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-17T05:45:00Z",
+      "firstSeenAt": "2026-07-17T05:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d8e72141b0324dbfb70a",
+      "title": "SpaceX , Alphabet , and SK Hynix Are Quietly Flashing a Bullish Signal Investors Should Not Ignore",
+      "url": "https://www.fool.com/investing/2026/07/17/spacex-alphabet-and-sk-hynix-are-quietly-flashing/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-17T05:45:00Z",
+      "firstSeenAt": "2026-07-17T05:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ae53ff281572272dc9c8",
+      "title": "Xi Jinping pede governao global da IA e rejeita domínio de um só país",
+      "url": "https://www.rtp.pt/noticias/mundo/xi-jinping-pede-governacao-global-da-ia-e-rejeita-dominio-de-um-so-pais_n1753966",
+      "domain": "rtp.pt",
+      "language": "Portuguese",
+      "sourceCountry": "Portugal",
+      "seenAt": "2026-07-17T05:30:00Z",
+      "firstSeenAt": "2026-07-17T05:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e97b9b03e0582e6f231e",
+      "title": "SpaceX , Alphabet , and SK Hynix Are Quietly Flashing a Bullish Signal Investors Should Not Ignore",
+      "url": "https://finance.yahoo.com/technology/ai/articles/spacex-alphabet-sk-hynix-quietly-044500667.html",
       "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
       "seenAt": "2026-07-17T05:15:00Z",
       "firstSeenAt": "2026-07-17T05:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "749ce05f9baf1f3b9156",
-      "title": "Tin tức Công an phường Hà Đông - Hình ảnh và video clip nóng mới nhất",
-      "url": "https://baomoi.com/cong-an-phuong-ha-dong-t48403895.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-07-17T05:15:00Z",
-      "firstSeenAt": "2026-07-17T05:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "eca71afaa79c50a18ee9",
-      "title": "TNR Gold ( CVE : TNR ) Shares Down 5 . 9 % – Here What Happened",
-      "url": "https://www.themarketsdaily.com/2026/07/17/tnr-gold-cvetnr-shares-down-5-9-heres-what-happened.html",
-      "domain": "themarketsdaily.com",
+      "id": "1a00dcabd87f82ed8811",
+      "title": "AIT welcomes TSMC additional US$100 billion U . S . investment pledge",
+      "url": "https://focustaiwan.tw/business/202607170005",
+      "domain": "focustaiwan.tw",
       "language": "English",
-      "sourceCountry": "United States",
+      "sourceCountry": "Taiwan",
       "seenAt": "2026-07-17T05:00:00Z",
       "firstSeenAt": "2026-07-17T05:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "100b03f1741976874d54",
-      "title": "Boom exportador y transición clave : la minería argentina alcanzó un récord histórico de USD 6 . 000 millones",
-      "url": "http://www.tiempodesanjuan.com/mineria/boom-exportador-y-transicion-clave-la-mineria-argentina-alcanzo-un-record-historico-de-usd-6-000-millones_1784259762",
-      "domain": "tiempodesanjuan.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-07-17T04:30:00Z",
-      "firstSeenAt": "2026-07-17T04:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "12907572a78de38f90d9",
-      "title": "午盘播报 7月17日 周五 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202607173810513969.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-17T04:30:00Z",
-      "firstSeenAt": "2026-07-17T04:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2d1f131f8d43bcfc3daf",
-      "title": "Giá vàng hôm nay ( 17 / 7 ): Tiếp đà giảm mạnh",
-      "url": "https://eva.vn/tin-tuc/gia-vang-hom-nay-17-7-tiep-da-giam-manh-c73a677166.html",
-      "domain": "eva.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-07-17T04:30:00Z",
-      "firstSeenAt": "2026-07-17T04:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "798af922242ebc370a5d",
-      "title": "Cầm lái xe máy điện giá chỉ 21 , 9 triệu đồng thiết kế trẻ trung , công suất 1 . 350W , đi xa 90km / lần sạc , không cần bằng lái",
-      "url": "https://vietgiaitri.com/cam-lai-xe-may-dien-gia-chi-219-trieu-dong-thiet-ke-tre-trung-cong-suat-1350w-di-xa-90kmlan-sac-khong-can-bang-lai-20260717i7736154/",
-      "domain": "vietgiaitri.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-07-17T04:15:00Z",
-      "firstSeenAt": "2026-07-17T04:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8f4dfd9e3cec1258d2a3",
-      "title": "Giá bạc hôm nay : Bạc trong nước ở mức hơn 57 triệu đồng / kg",
-      "url": "http://vov.vn/thi-truong/gia-bac-hom-nay-bac-trong-nuoc-o-muc-hon-57-trieu-dongkg-post1316080.vov",
-      "domain": "vov.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-07-17T04:00:00Z",
-      "firstSeenAt": "2026-07-17T04:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6e19828b3b801602fd0e",
-      "title": "Giá vàng hôm nay 17 . 7 . 2026 : Bốc hơi 1 , 6 triệu , xuống dưới 147 triệu đồng một lượng",
-      "url": "https://thanhnien.vn/gia-vang-hom-nay-1772026-boc-hoi-16-trieu-xuong-duoi-147-trieu-dong-mot-luong-185260717073204571.htm",
-      "domain": "thanhnien.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-07-17T02:30:00Z",
-      "firstSeenAt": "2026-07-17T02:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -407,26 +392,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "2fc97a677d02fce36f54",
-      "title": "基金经理正在布局这些 冷门赛道 _ 天天基金网",
-      "url": "https://fund.eastmoney.com/a/202607163809398912.html",
-      "domain": "fund.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-17T02:00:00Z",
-      "firstSeenAt": "2026-07-17T02:00:00Z",
+      "id": "347f86f017fc6b7191e7",
+      "title": "AIT welcomes TSMC additional US$100 billion U . S . investment pledge",
+      "url": "https://focustaiwan.tw:443/business/202607170005",
+      "domain": "focustaiwan.tw",
+      "language": "English",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-07-17T05:00:00Z",
+      "firstSeenAt": "2026-07-17T05:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -435,26 +417,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "dfc6e688dfef3cdc5b9c",
-      "title": "有色 / 贵金属 | 镍矿价格或有望继续走弱 成本支撑或将下滑 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202607173809702963.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-17T01:45:00Z",
-      "firstSeenAt": "2026-07-17T01:45:00Z",
+      "id": "4ef58a2624501fd64069",
+      "title": "TSMC most advanced technology to remain in Taiwan : Cabinet",
+      "url": "https://focustaiwan.tw:443/politics/202607170006",
+      "domain": "focustaiwan.tw",
+      "language": "English",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-07-17T05:00:00Z",
+      "firstSeenAt": "2026-07-17T05:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -463,26 +442,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "a5377c2aede0fd4450cf",
-      "title": "宏观反复下金属分化再定价 铜铝稀土机会凸显 - CFi . CN 中财网",
-      "url": "http://www.cfi.net.cn/p20260717000214.html",
-      "domain": "cfi.net.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-17T01:45:00Z",
-      "firstSeenAt": "2026-07-17T01:45:00Z",
+      "id": "fce19c302ea1c41e7a9d",
+      "title": "TSMC most advanced technology to remain in Taiwan : Cabinet",
+      "url": "https://focustaiwan.tw/politics/202607170006",
+      "domain": "focustaiwan.tw",
+      "language": "English",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-07-17T05:00:00Z",
+      "firstSeenAt": "2026-07-17T05:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -491,26 +467,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "8fe6201a537853f22015",
-      "title": "有色 / 贵金属 | 锡 ： 短期受宏观及消费抑制 锡价高位震荡 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202607173809900384.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-17T01:45:00Z",
-      "firstSeenAt": "2026-07-17T01:45:00Z",
+      "id": "a55afe1e242c4dd539a7",
+      "title": "Chip sops slashed , but MeitY bets on policy stability to drive inflows",
+      "url": "https://economictimes.indiatimes.com/tech/technology/chip-sops-slashed-but-meity-bets-on-policy-stability-to-drive-inflows/articleshow/132446370.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-17T03:15:00Z",
+      "firstSeenAt": "2026-07-17T03:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -519,54 +492,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "3b7c3250bda5bf66a61e",
-      "title": "Chân dung bà trùm vương miện và 2 nữ giám đốc vừa bị khởi tố",
-      "url": "https://baomoi.com/chan-dung-ba-trum-vuong-mien-va-2-nu-giam-doc-vua-bi-khoi-to-c55632564.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-07-17T00:45:00Z",
-      "firstSeenAt": "2026-07-17T00:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4698bbb702088aab5ddd",
-      "title": "TSXV : NCX Forum Post | SPACEDOC - 37055144 | Just a heads up on arbitrage in this stock",
-      "url": "https://stockhouse.com/companies/bullboard?symbol=v.ncx&postid=37055144",
-      "domain": "stockhouse.com",
+      "id": "ae0ccd6133901ad74666",
+      "title": "Prediction : SK Hynix Will Become the Next Nvidia",
+      "url": "https://finance.yahoo.com/technology/ai/articles/prediction-sk-hynix-become-next-144300797.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-17T00:45:00Z",
-      "firstSeenAt": "2026-07-17T00:45:00Z",
+      "seenAt": "2026-07-17T03:00:00Z",
+      "firstSeenAt": "2026-07-17T03:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -575,26 +517,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "fa446530c7b7e7cf275f",
-      "title": "Uranium Market Update Highlights SPUT Breakout and ETF Consolidation",
-      "url": "https://bravenewcoin.com/insights/uranium-market-update-highlights-sput-breakout-and-etf-consolidation",
-      "domain": "bravenewcoin.com",
+      "id": "4ad7b584f91113dace25",
+      "title": "TSMC Just Announced Fantastic News for Nvidia Shareholders",
+      "url": "https://www.fool.com/investing/2026/07/16/tsmc-just-announced-fantastic-news-for-nvidia-shar/?source=iedfolrf0000001",
+      "domain": "fool.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-17T00:30:00Z",
-      "firstSeenAt": "2026-07-17T00:30:00Z",
+      "seenAt": "2026-07-17T01:30:00Z",
+      "firstSeenAt": "2026-07-17T01:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -603,54 +542,98 @@
       "duplicateCount": 1
     },
     {
-      "id": "53c9e1c5f77542e2a1ec",
-      "title": "The No . 1 Commodity Story of the Year Is Flying Under Wall Street Radar",
-      "url": "https://oilprice.com/Energy/Energy-General/The-No1-Commodity-Story-of-the-Year-Is-Flying-Under-Wall-Streets-Radar.html",
-      "domain": "oilprice.com",
+      "id": "3d43838b78f7963878b7",
+      "title": "반도체 피크아웃 공포에 … 삼전닉스 추락 · 코스피는 다시 7000선 붕괴 - 국민일보",
+      "url": "https://www.kmib.co.kr/article/view.asp?arcid=1784191764&code=11151200&sid1=eco",
+      "domain": "kmib.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-17T01:00:00Z",
+      "firstSeenAt": "2026-07-17T01:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "90111cea3265521a7ebc",
+      "title": "TSMC가 걷어낸 반도체 고점론 ?… AI 수요 더 강해졌다",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=02364886645515504&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-17T01:00:00Z",
+      "firstSeenAt": "2026-07-17T01:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b31dd0690c1d10481980",
+      "title": "반도체 랠리 끝 ?… AI는 이제 시작 , 다음 주도주는 조방원",
+      "url": "https://www.fnnews.com/news/202607170010377082",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-16T23:30:00Z",
+      "firstSeenAt": "2026-07-16T23:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bc0a736e35990cb0674e",
+      "title": "Meet the Company Supplying 56 % of the World AI Memory Chips",
+      "url": "https://www.fool.com/investing/2026/07/16/meet-the-company-supplying-56-of-the-worlds-ai-mem/?source=iedfolrf0000001",
+      "domain": "fool.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-17T00:15:00Z",
-      "firstSeenAt": "2026-07-17T00:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dde60b6d04c1d9d87ebc",
-      "title": "Chân dung bà trùm vương miện và 2 nữ giám đốc vừa bị khởi tố",
-      "url": "https://tienphong.vn/chan-dung-ba-trum-vuong-mien-va-2-nu-giam-doc-vua-bi-khoi-to-post1860025.tpo",
-      "domain": "tienphong.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
       "seenAt": "2026-07-16T23:15:00Z",
       "firstSeenAt": "2026-07-16T23:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -659,26 +642,73 @@
       "duplicateCount": 1
     },
     {
-      "id": "7b50ddc331688d61131c",
-      "title": "Resource rich nation praises US ties amid Washington - Beijing critical minerals race",
-      "url": "https://www.kotaradio.com/2026/07/16/resource-rich-nation-praises-us-ties-amid-washington-beijing-critical-minerals-race/",
-      "domain": "kotaradio.com",
+      "id": "7baa84319bf8e73600f3",
+      "title": "Leveraging Memory : Direxion Premiers Daily SK Hynix Bull 2X ETF",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/leveraging-memory-direxion-premiers-daily-152130262.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T23:15:00Z",
+      "firstSeenAt": "2026-07-16T23:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "aa54b2d508b7e6a6b199",
+      "title": "Here What to Expect From Advanced Micro Device Next Earnings Report",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/heres-expect-advanced-micro-devices-152825306.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T23:15:00Z",
+      "firstSeenAt": "2026-07-16T23:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e948eece2fbf2be4fa38",
+      "title": "Taiwan Semiconductor Commits To Investing Another $100 Billion In The United States",
+      "url": "https://www.fool.com/investing/2026/07/16/taiwan-semiconductor-commits-to-investing-another-100-billion-in-the-united-states/",
+      "domain": "fool.com",
       "language": "English",
       "sourceCountry": "United States",
       "seenAt": "2026-07-16T23:00:00Z",
       "firstSeenAt": "2026-07-16T23:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -687,54 +717,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "813dfa65bb419e462785",
-      "title": "Tỷ giá USD hôm nay 17 / 7 / 2026 : Đồng bạc xanh tăng nhẹ , chợ đen bật mạnh",
-      "url": "https://vietbao.vn/ty-gia-usd-hom-nay-1772026-dong-bac-xanh-tang-nhe-cho-den-bat-manh-599185.html",
-      "domain": "vietbao.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-07-16T22:45:00Z",
-      "firstSeenAt": "2026-07-16T22:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7c8a552a59a610387f80",
-      "title": "Alaska Now Challenging China on Critical Antimony Supply",
-      "url": "https://redstate.com/wardclark/2026/07/16/alaska-now-challenging-china-on-critical-antimony-supply-n2204412",
-      "domain": "redstate.com",
+      "id": "807e6ee3a1d87dbbd385",
+      "title": "SKHY Stock Is Attractive Amidst Sustained Demand and Significant Manufacturing Expansion",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/skhy-stock-attractive-amidst-sustained-132401039.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-16T22:15:00Z",
-      "firstSeenAt": "2026-07-16T22:15:00Z",
+      "seenAt": "2026-07-16T22:00:00Z",
+      "firstSeenAt": "2026-07-16T22:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -743,26 +742,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "2d65cf42e5fb53e9dc5e",
-      "title": "USA Rare Earth ( NASDAQ : USAR ) Shares Down 8 . 1 % – Here What Happened",
-      "url": "https://www.dailypolitical.com/2026/07/16/usa-rare-earth-nasdaqusar-shares-down-8-1-heres-what-happened.html",
-      "domain": "dailypolitical.com",
+      "id": "4a28da86af0ea815bc60",
+      "title": "Taiwan Semiconductor Commits To Investing Another $100 Billion In The United States",
+      "url": "https://www.fool.com/investing/2026/07/16/taiwan-semiconductor-commits-to-investing-another-100-billion-in-the-united-states/?source=iedfolrf0000001",
+      "domain": "fool.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-16T21:45:00Z",
-      "firstSeenAt": "2026-07-16T21:45:00Z",
+      "seenAt": "2026-07-16T22:00:00Z",
+      "firstSeenAt": "2026-07-16T22:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -771,54 +767,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "91a439dd2c71a10ec085",
-      "title": "USA Rare Earth ( NASDAQ : USAR ) Shares Down 8 . 1 % – Here What Happened",
-      "url": "https://www.tickerreport.com/banking-finance/13506187/usa-rare-earth-nasdaqusar-shares-down-8-1-heres-what-happened.html",
-      "domain": "tickerreport.com",
+      "id": "3e94ecdd8b19a74441b0",
+      "title": "TSMC Posts Record Quarter as AI Chip Demand Pushes Full - Year Growth Outlook Past 40 %",
+      "url": "https://www.techtimes.com/articles/320696/20260716/tsmc-posts-record-quarter-ai-chip-demand-pushes-full-year-growth-outlook-past-40.htm",
+      "domain": "techtimes.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-16T21:45:00Z",
-      "firstSeenAt": "2026-07-16T21:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "035bb981b678e1dda14f",
-      "title": "Ramaphosa says fixing ports and rail is key to keeping SA competitive",
-      "url": "https://www.businessday.co.za/companies/2026-07-16-ramaphosa-says-fixing-ports-and-rail-is-key-to-keeping-sa-competitive/",
-      "domain": "businessday.co.za",
-      "language": "English",
-      "sourceCountry": "South Africa",
       "seenAt": "2026-07-16T21:00:00Z",
       "firstSeenAt": "2026-07-16T21:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -827,26 +792,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "9ff802c14be03866a5a6",
-      "title": "From Mine to Megawatt : How NLR Is Securing Critical Mineral Supply Chains for the Power Grid",
-      "url": "https://cleantechnica.com/2026/07/16/from-mine-to-megawatt-how-nlr-is-securing-critical-mineral-supply-chains-for-the-power-grid/",
-      "domain": "cleantechnica.com",
+      "id": "af6d6ee22e0957e9e653",
+      "title": "Taiwan Semiconductor Manufacturing : Record Profits Chart the Future of AI ( NYSE : TSM )",
+      "url": "https://www.fool.com/investing/2026/07/16/taiwan-semiconductor-manufacturing-record-profits-chart-the-future-of-ai-nyse-tsm/?source=iedfolrf0000001",
+      "domain": "fool.com",
       "language": "English",
       "sourceCountry": "United States",
       "seenAt": "2026-07-16T20:45:00Z",
       "firstSeenAt": "2026-07-16T20:45:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -855,26 +817,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "5aa291fa5f714cdef4f1",
-      "title": "DRC foreign minister rejects US - China rivalry over Congo minerals",
-      "url": "https://www.foxnews.com/world/resource-rich-nation-praises-us-ties-amid-washington-beijing-critical-minerals-race",
-      "domain": "foxnews.com",
+      "id": "e1bd57a4dac2ed3b2ebe",
+      "title": "Value Stocks To Follow Today – July 16th",
+      "url": "https://www.dailypolitical.com/2026/07/16/value-stocks-to-follow-today-july-16th.html",
+      "domain": "dailypolitical.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-16T19:45:00Z",
-      "firstSeenAt": "2026-07-16T19:45:00Z",
+      "seenAt": "2026-07-16T20:45:00Z",
+      "firstSeenAt": "2026-07-16T20:45:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -883,54 +842,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "df942b88027ae8436c26",
-      "title": "China rare earth curbs endanger $6 . 5 trillion of Western industry , IEA says",
-      "url": "https://www.mvariety.com/business/business_news/chinas-rare-earth-curbs-endanger-6-5-trillion-of-western-industry-iea-says/article_4e8aa20c-2770-4b26-b2fd-7bf1518a45f8.html",
-      "domain": "mvariety.com",
+      "id": "1df864e7c357ead3fa09",
+      "title": "《 TAIPEI TIMES 》 TSMC lifts capex above US$64bn as AI use rises - 焦點",
+      "url": "https://news.ltn.com.tw/news/focus/breakingnews/5508072",
+      "domain": "news.ltn.com.tw",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-16T19:45:00Z",
-      "firstSeenAt": "2026-07-16T19:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e4b8834178682cffdf5a",
-      "title": "МЭА назвало металл с самым быстрорастущим спросом",
-      "url": "https://www.bfm.ru/news/612341",
-      "domain": "bfm.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
+      "sourceCountry": "Taiwan",
       "seenAt": "2026-07-16T19:30:00Z",
       "firstSeenAt": "2026-07-16T19:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -939,54 +867,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "f2493ff5e71325d5cb71",
-      "title": "IEA : Investment in Critical Minerals Has Fallen 9 %",
-      "url": "https://miningdigital.com/news/iea-investment-in-critical-minerals-has-fallen-9",
-      "domain": "miningdigital.com",
-      "language": "English",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-07-16T17:30:00Z",
-      "firstSeenAt": "2026-07-16T17:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b8c97326748c997ff117",
-      "title": "Mineral Security at Risk Amid Supply and Investment Woes",
-      "url": "https://www.miragenews.com/mineral-security-at-risk-amid-supply-and-1711525/",
-      "domain": "miragenews.com",
+      "id": "8f1de853c7047043a77d",
+      "title": "TSMC will invest an additional $100 billion into Arizona operations",
+      "url": "https://azbigmedia.com/business/tsmc-will-invest-an-additional-100-billion-into-arizona-operations/",
+      "domain": "azbigmedia.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-16T17:30:00Z",
-      "firstSeenAt": "2026-07-16T17:30:00Z",
+      "seenAt": "2026-07-16T19:15:00Z",
+      "firstSeenAt": "2026-07-16T19:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -995,26 +892,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "44280bd1ef181fdffd34",
-      "title": "National Science Foundation funds UAF - led critical minerals coalition",
-      "url": "https://alaska-native-news.com/national-science-foundation-funds-uaf-led-critical-minerals-coalition/85152/",
-      "domain": "alaska-native-news.com",
+      "id": "84b888831cc66c63bc42",
+      "title": "TSMC to Invest Additional $100 Billion in Arizona After Strong Q2 Profits",
+      "url": "https://www.theepochtimes.com/business/tsmc-to-invest-additional-100-billion-in-arizona-after-strong-q2-profits-6062807",
+      "domain": "theepochtimes.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-16T16:15:00Z",
-      "firstSeenAt": "2026-07-16T16:15:00Z",
+      "seenAt": "2026-07-16T18:15:00Z",
+      "firstSeenAt": "2026-07-16T18:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1023,138 +917,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "e00c548034da4f7feea2",
-      "title": "Эксперты предрекли взрывной рост мирового спроса на литий :: Новости дня / ВЗГЛЯД",
-      "url": "https://vz.ru/news/2026/7/16/1435357.html",
-      "domain": "vz.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-07-16T16:00:00Z",
-      "firstSeenAt": "2026-07-16T16:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b42f61f6d5d3800d995c",
-      "title": "Назван металл , на который больше всего растет спрос в мире",
-      "url": "https://www.mk.ru/economics/2026/07/16/nazvan-metall-na-kotoryy-bolshe-vsego-rastet-spros-v-mire.html",
-      "domain": "mk.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-07-16T15:30:00Z",
-      "firstSeenAt": "2026-07-16T15:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e7d28fa9cef8cd1c57ff",
-      "title": "САД создаваат 12 милијарди долари залихи во руда - Македонија не ги искористува ресурсите",
-      "url": "https://sitel.com.mk/sad-sozdavaat-12-milijardi-dolari-zalihi-vo-ruda-makedonija-ne-gi-iskoristuva-resursite",
-      "domain": "sitel.com.mk",
-      "language": "Macedonian",
-      "sourceCountry": "Macedonia",
-      "seenAt": "2026-07-16T15:30:00Z",
-      "firstSeenAt": "2026-07-16T15:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1b81845cc784a7b062fb",
-      "title": "分切机厂家实力哪家强 ？ 2026出片品牌深度 ， 所见即所得不踩雷 _ 中华网",
-      "url": "https://m.tech.china.com/redian/2026/0716/072026_1919127.html",
-      "domain": "m.tech.china.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-16T15:30:00Z",
-      "firstSeenAt": "2026-07-16T15:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f8c7c3076d062a2d3467",
-      "title": "IEA warns critical mineral supply risks persist despite diversification efforts",
-      "url": "https://tradearabia.com:443/News/465215/IEA-warns-critical-mineral-supply-risks-persist-despite-diversification-efforts",
-      "domain": "tradearabia.com",
+      "id": "46073bfa4111da1e346b",
+      "title": "FinancialContent - Why Marvell Technology ( MRVL ) Stock Is Down Today",
+      "url": "https://markets.financialcontent.com/stocks/article/stockstory-2026-7-16-why-marvell-technology-mrvl-stock-is-down-today",
+      "domain": "markets.financialcontent.com",
       "language": "English",
-      "sourceCountry": "United Arab Emirates",
-      "seenAt": "2026-07-16T15:15:00Z",
-      "firstSeenAt": "2026-07-16T15:15:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T18:15:00Z",
+      "firstSeenAt": "2026-07-16T18:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1163,26 +942,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "c33e7ba40f0a3e713466",
-      "title": "Patient Capital , Fast Deals : Japan and South Korea Take Different Paths into Central Asia",
-      "url": "https://timesca.com/japan-and-south-korea-take-different-paths-into-central-asia/",
-      "domain": "timesca.com",
+      "id": "b014e14cbd6ed5950ac3",
+      "title": "Micron Biggest Rival Just Got a Lot Easier for US Investors to Own",
+      "url": "https://www.fool.com/investing/2026/07/16/microns-biggest-rival-just-got-a-lot-easier-for-us/",
+      "domain": "fool.com",
       "language": "English",
-      "sourceCountry": "Kyrgyzstan",
-      "seenAt": "2026-07-16T15:15:00Z",
-      "firstSeenAt": "2026-07-16T15:15:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T18:00:00Z",
+      "firstSeenAt": "2026-07-16T18:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1191,26 +967,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "f538fb17b5067a86bcc7",
-      "title": "Назван металл с самым быстрорастущим спросом",
-      "url": "https://1prime.ru/20260716/litiy-871566698.html",
-      "domain": "1prime.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-07-16T15:15:00Z",
-      "firstSeenAt": "2026-07-16T15:15:00Z",
+      "id": "c7b2ea6058c1d0e08651",
+      "title": "[ 기고 ] 반도체 강국 , 이제는 연구 강국 돼야",
+      "url": "https://www.seoul.co.kr/news/editOpinion/opinion/contribution/2026/07/17/20260717025003",
+      "domain": "seoul.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-16T17:45:00Z",
+      "firstSeenAt": "2026-07-16T17:45:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1219,26 +992,48 @@
       "duplicateCount": 1
     },
     {
-      "id": "e17a1cac5875b5f3096d",
-      "title": "Africa moves up the value chain will the West keep pace ?",
-      "url": "https://www.riotimesonline.com/africa-moves-up-value-chain-ghana-namibia-drc-2026/",
-      "domain": "riotimesonline.com",
-      "language": "English",
+      "id": "f100f3fbcc14fb3752a7",
+      "title": "[ 기고 ] 반도체 강국 , 이제는 연구 강국 돼야",
+      "url": "https://seoul.co.kr:443/news/editOpinion/opinion/contribution/2026/07/17/20260717025003",
+      "domain": "seoul.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-16T17:45:00Z",
+      "firstSeenAt": "2026-07-16T17:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a006315e338f1a1b657e",
+      "title": "A máquina de fazer dinheiro da IA : lucro da TSMC dispara 77 %",
+      "url": "https://veja.abril.com.br/economia/a-maquina-de-fazer-dinheiro-da-ia-lucro-da-tsmc-dispara-77/",
+      "domain": "veja.abril.com.br",
+      "language": "Portuguese",
       "sourceCountry": "Brazil",
-      "seenAt": "2026-07-16T14:15:00Z",
-      "firstSeenAt": "2026-07-16T14:15:00Z",
+      "seenAt": "2026-07-16T17:45:00Z",
+      "firstSeenAt": "2026-07-16T17:45:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1247,26 +1042,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "2851af1e00a095568791",
-      "title": "India Eyes Private Sector Entry to Unlock Massive Thorium Reserves",
-      "url": "https://idrw.org/india-eyes-private-sector-entry-to-unlock-massive-thorium-reserves/",
-      "domain": "idrw.org",
+      "id": "2e0470ec939c59ec49ad",
+      "title": "Point Engineering signs supply contract with Japan YOKOWO",
+      "url": "https://www.upi.com/Top_News/World-News/2026/07/16/Point-Engineering-signs-supply-contract-with-Japans-YOKOWO/6791784214905/",
+      "domain": "upi.com",
       "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-07-16T13:45:00Z",
-      "firstSeenAt": "2026-07-16T13:45:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T17:30:00Z",
+      "firstSeenAt": "2026-07-16T17:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1275,26 +1067,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "ff0621d8168d5f8f3d7b",
-      "title": "Cyclic Materials Appoints Tomasz Poznar as Chief Commercial Officer to Accelerate Global Commercial Growth",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-07/69048100-cyclic-materials-appoints-tomasz-poznar-as-chief-commercial-officer-to-accelerate-global-commercial-growth-004.htm",
-      "domain": "finanznachrichten.de",
+      "id": "98217e749d7121360541",
+      "title": "Four new TSMC chip factories may be coming to Arizona",
+      "url": "https://www.azfamily.com/2026/07/16/four-new-tsmc-chip-factories-may-be-coming-arizona/",
+      "domain": "azfamily.com",
       "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-07-16T13:45:00Z",
-      "firstSeenAt": "2026-07-16T13:45:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T17:30:00Z",
+      "firstSeenAt": "2026-07-16T17:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1303,54 +1092,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "6be763547abd2c7e5a68",
-      "title": "САД ПРАВАТ ЗАЛИХИ ОД КРИТИЧНИ МИНЕРАЛИ ВРЕДНИ 12 МИЛИЈАРДИ ДОЛАРИ Македонија сè уште не го користи потенцијалот на Иловица",
-      "url": "https://plusinfo.mk/sad-pravat-zalihi-od-kritichni-minerali-vredni-12-mili-ardi-dolari-makedoni-a-se-ushte-ne-go-koristi-potenci-alot-na-ilovica/",
-      "domain": "plusinfo.mk",
-      "language": "Macedonian",
-      "sourceCountry": "Macedonia",
-      "seenAt": "2026-07-16T13:00:00Z",
-      "firstSeenAt": "2026-07-16T13:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ecda893fcf226b84c5ce",
-      "title": "Skyharbour Resources Ltd : Skyharbour Signs Letter of Intent with Purecore to Option its Yurchison Uranium Property in the Athabasca Basin",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-07/69047078-skyharbour-resources-ltd-skyharbour-signs-letter-of-intent-with-purecore-to-option-its-yurchison-uranium-property-in-the-athabasca-basin-399.htm",
-      "domain": "finanznachrichten.de",
+      "id": "6484a86949a89cffe168",
+      "title": "Apple supplier TSMC Q2 profit jumps 77 % to record high , far surpassing expectations",
+      "url": "https://macdailynews.com/2026/07/16/apple-supplier-tsmc-q2-profit-jumps-77-to-record-high-far-surpassing-expectations/",
+      "domain": "macdailynews.com",
       "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-07-16T12:30:00Z",
-      "firstSeenAt": "2026-07-16T12:30:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T17:30:00Z",
+      "firstSeenAt": "2026-07-16T17:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1359,26 +1117,123 @@
       "duplicateCount": 1
     },
     {
-      "id": "eea68207983c30363f08",
-      "title": "Middle East anchors global critical materials supply chains : IEA",
-      "url": "https://www.arabnews.com/node/2651136/business-economy",
-      "domain": "arabnews.com",
+      "id": "2ad355939301c2bec8c3",
+      "title": "Point Engineering signs supply contract with Japan YOKOWO",
+      "url": "https://www.upi.com/Top_News/World-News/2026/07/16/point-engineering-contract-YOKOWO/6791784214905/",
+      "domain": "upi.com",
       "language": "English",
-      "sourceCountry": "Saudi Arabia",
-      "seenAt": "2026-07-16T12:15:00Z",
-      "firstSeenAt": "2026-07-16T12:15:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T17:00:00Z",
+      "firstSeenAt": "2026-07-16T17:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e7523d4d66273d18193b",
+      "title": "Why Is Micron Stock Still Falling ? | The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/07/16/why-is-micron-stock-still-falling/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T17:00:00Z",
+      "firstSeenAt": "2026-07-16T17:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0ef4442ad186d438a53c",
+      "title": "TSMC 2분기 매출 58조원 사상 최대 … 美에 147조원 추가 투자",
+      "url": "https://www.etnews.com/20260716000351",
+      "domain": "etnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-16T16:30:00Z",
+      "firstSeenAt": "2026-07-16T16:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d44d54630492a51f149d",
+      "title": "Taiwan Semiconductor Earnings : Lifting Fair Value Estimate After a Beat - and - Raise Quarter",
+      "url": "https://www.morningstar.com/stocks/taiwan-semiconductor-earnings-raising-fair-value-estimate-after-beat-and-raise-quarter",
+      "domain": "morningstar.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-07-16T16:30:00Z",
+      "firstSeenAt": "2026-07-16T16:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2f385786ea821d5d7d04",
+      "title": "These 3 AI ETFs Are the Best Ways to Play the Memory Boom",
+      "url": "https://www.fool.com/investing/2026/07/16/these-3-ai-etfs-are-the-best-ways-to-play-the-memo/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-16T15:15:00Z",
+      "firstSeenAt": "2026-07-16T15:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1391,12 +1246,12 @@
     {
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
-      "status": "stale",
-      "observationDate": "2026-07-17T08:30:00Z",
-      "lastSuccessfulAt": "2026-07-17T09:20:54Z",
+      "status": "partial",
+      "observationDate": "2026-07-17T13:30:00Z",
+      "lastSuccessfulAt": "2026-07-17T14:01:15Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 0 returned records across 0/4 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/4 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
