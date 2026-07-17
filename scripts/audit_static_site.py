@@ -19,6 +19,10 @@ FILE_BUDGETS = {
     "equity-data.js": 2_000_000,
     "core/feature-loader.js": 50_000,
     "core/freshness.js": 80_000,
+    "asset-board-data.js": 12_000,
+    "core/impact-engine.js": 40_000,
+    "core/impact-chips.js": 16_000,
+    "styles/chips.css": 8_000,
 }
 FEATURE_BUDGET = 140_000
 TOTAL_RUNTIME_BUDGET = 4_000_000

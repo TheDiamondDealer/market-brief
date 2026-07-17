@@ -1,0 +1,13 @@
+.impact-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.impact-chip{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;border:1px solid var(--border-subtle);font-size:10px;font-weight:750;letter-spacing:.02em;line-height:1.4;text-decoration:none;color:var(--muted);background:rgba(7,16,20,.4)}
+a.impact-chip:hover,a.impact-chip:focus-visible{border-color:var(--accent);color:var(--text)}
+.impact-chip-arrow{font-size:11px;line-height:1}
+.impact-chip.up{color:var(--positive);border-color:rgba(32,201,121,.3)}
+.impact-chip.down{color:var(--negative);border-color:rgba(244,91,105,.3)}
+.impact-chip.tier-observed.up{background:rgba(32,201,121,.1)}
+.impact-chip.tier-observed.down{background:rgba(244,91,105,.09)}
+.impact-chip.tier-verified{background:transparent}
+.impact-chip.tier-verified::before{content:'✓';font-size:8px;opacity:.8}
+.impact-chip.tier-ai{background:transparent;border-style:dashed}
+.impact-chip.tier-ai::after{content:'AI';font-size:7px;font-weight:900;letter-spacing:.08em;opacity:.7}
+.impact-chip.conf-low{opacity:.55}
