@@ -17,10 +17,32 @@
 - AGENTS.md honesty rules: never hide unavailable/partial/stale states; no invented numbers; signals derive only from data whose row status permits it.
 - All existing tests must stay green: `python -m unittest discover -s tests -v` (195+ tests) and `python scripts/audit_static_site.py`.
 - Byte budgets are enforced by `scripts/audit_static_site.py` (`FILE_BUDGETS` dict) — new runtime files need entries (added in Task 3).
-- Branch: `feat/pressure-board-pr1-grammar` cut from `main`. Push after every commit. PR only — NEVER merge; `site/**` on `main` auto-deploys the public Pages site.
+- Branch: `feat/pressure-board-pr1-grammar` cut from `main` — created and verified in Task 0 (the repo has `push.autoSetupRemote` UNSET, so the first push must be `git push -u origin HEAD`). Push after every commit. PR only — NEVER merge; `site/**` on `main` auto-deploys the public Pages site.
 - Windows dev machine: use `python`, not `python3`. Node 22 is available.
-- Signal object shape (used by every task): `{assetId, direction: 'up'|'down'|'mixed'|'watch'|'activity', tier: 'observed'|'verified'|'ai', source, label, detail, at, href}`. `href` empty string ⇒ chip renders as `<span>` (dossier routes arrive in PR-3; chips must never emit dead links).
+- Signal object shape (used by every task): `{assetId, direction: 'up'|'down'|'mixed'|'watch'|'activity', tier: 'observed'|'verified'|'ai', source, label, detail, at, status, href}`. `at` is the observation date (ISO string) or null; `status` is `'current'` unless the source row declares otherwise (e.g. COT `dataState: 'stale-retained'` propagates verbatim) — unavailable/stale coverage must stay distinguishable from genuine QUIET. `href` empty string ⇒ chip renders as `<span>` (dossier routes arrive in PR-3; chips must never emit dead links).
+- Pages never re-derive signal logic: every chip on a page comes from calling the engine's `derive*Signals` with a single-row dataset (e.g. `deriveCotSignals({ cot: [row] })`). Page-local helpers exist only for sources the engine deliberately excludes from aggregation (political, SEC, calendar).
 - Crowd swings emit `direction: 'mixed'` (attention, not direction — a probability move has no deterministic price sign). Political trades derive direction from transaction type but are EXCLUDED from net-pressure aggregation (filing lag); they render as card chips only.
+
+---
+
+### Task 0: Branch setup
+
+**Files:** none — git state only.
+
+**Interfaces:**
+- Produces: local branch `feat/pressure-board-pr1-grammar` cut from up-to-date `main`, with upstream set. Every later task's `git push` depends on this upstream existing.
+
+- [ ] **Step 1: Create and verify the feature branch**
+
+```bash
+git checkout main
+git pull --ff-only
+git checkout -b feat/pressure-board-pr1-grammar
+git push -u origin HEAD
+git branch --show-current
+```
+
+Expected: final command prints exactly `feat/pressure-board-pr1-grammar`. The `-u` is REQUIRED — `push.autoSetupRemote` is unset in this repo, so a plain `git push` on a new branch fails. Do NOT work on `plan/trader-pressure-board` (docs-only branch) or `main` (auto-deploys the public site).
 
 ---
 
@@ -97,6 +119,15 @@ class AssetBoardRegistryTests(unittest.TestCase):
             if asset.get("memberTickers"):
                 self.assertEqual(asset["kind"], "theme", asset["id"])
 
+    def test_official_series_rules_shape(self) -> None:
+        rules = self.registry["officialSeriesRules"]
+        self.assertEqual(len(rules), 3)
+        asset_ids = {a["id"] for a in self.assets}
+        for rule in rules:
+            self.assertEqual(set(rule), {"seriesId", "seriesName", "assetId", "rule"})
+            self.assertIn(rule["assetId"], asset_ids)
+            self.assertEqual(rule["rule"], "sign-of-change")
+
     def test_emitted_file_in_sync(self) -> None:
         import importlib.util
 
@@ -170,9 +201,16 @@ Expected: FAIL — `FileNotFoundError` for `scripts/asset_board.json`.
     {"id": "rare-earths", "label": "Rare earths & critical minerals", "kind": "theme", "family": "Themes",
      "etfIds": ["remx"],
      "memberTickers": ["mp", "uuuu", "usar", "nb", "crml", "alb", "sqm", "lyc", "aru", "ilu"]}
+  ],
+  "officialSeriesRules": [
+    {"seriesId": "CUSR0000SA0", "seriesName": "US CPI all items", "assetId": "inflation-risk", "rule": "sign-of-change"},
+    {"seriesId": "WPSFD4", "seriesName": "US PPI final demand", "assetId": "inflation-risk", "rule": "sign-of-change"},
+    {"seriesId": "CUSR0000SA0L1E", "seriesName": "US core CPI", "assetId": "inflation-risk", "rule": "sign-of-change"}
   ]
 }
 ```
+
+`officialSeriesRules` is the spec §4.2 "visible rules table" for BLS prints, in registry data: each rule maps a BLS series id (verified present in `site/data/official-feeds.json` `bls-public-data` records, which ship `value/previous/change`) to a board asset with the deterministic sign-of-change rule. It renders as a table on the macro page (Task 5) and drives `deriveBlsPrintSignals` (Task 2).
 
 Mapping provenance (verified against live data on 16 Jul 2026): `cotId` values are `window.freeMarketData.cot[].id` slugs; `rateId` values are FRED series ids in `freeMarketData.rates`; `etfIds` are `equity-market-data.json` watchlist ids; `crowdAliases` are the exact values seen in `crowd-expectations.json` `markets[].assets` (`brent, gold, rates, semiconductors, silver, us-dollar, wti`); `calendarAliases` are the label strings in `site/features/calendar/calendar-data.js` `ASSETS`. `bhp`, `rio`, `fcx` (Diversified Mining) are intentionally unmapped in v1 — they straddle iron-ore/copper and forcing one theme would be dishonest.
 
@@ -217,7 +255,7 @@ Run: `python scripts/build_asset_board.py`
 Expected: `Wrote ...site/asset-board-data.js (…bytes)` — roughly 3–4 KB.
 
 Run: `python -m unittest tests.test_asset_board -v`
-Expected: PASS (6 tests).
+Expected: PASS (7 tests).
 
 - [ ] **Step 6: Commit**
 
@@ -240,8 +278,8 @@ git push
 - Consumes: `window.marketAssetBoard` (Task 1); at call time: `window.freeMarketData` (`.cot[]` rows with `id, weekChange, category, reportDate`; `.rates[]` rows with `id, name, change, changeBps, unit, date, value`), crowd dataset (`markets[]` with `assets[], change7dPoints, question`), equity dataset (`watchlist[]` with `id, status, percentChange, name`).
 - Produces: `window.MarketBriefCore.impactEngine` frozen object:
   - `netPressure({up, down, mixed})` → `'up'|'down'|'contested'|'quiet'`
-  - `deriveCotSignals(freeData?)`, `deriveRateSignals(freeData?)`, `deriveCrowdSignals(crowdData)`, `deriveEtfSignals(equityData)` → `signal[]`
-  - `collectDeterministicSignals({freeData, crowdData, equityData})` → `{[assetId]: {counts: {up, down, mixed}, net, signals: []}}` for every board asset (quiet ones included)
+  - `deriveCotSignals(freeData?)`, `deriveRateSignals(freeData?)`, `deriveCrowdSignals(crowdData)`, `deriveEtfSignals(equityData)`, `deriveBlsPrintSignals(blsSource)` → `signal[]` (every signal carries `at` + `status`; COT propagates `row.dataState`)
+  - `collectDeterministicSignals({freeData, crowdData, equityData, blsSource}, options?)` → `{[assetId]: {counts: {up, down, mixed}, net, signals: []}}` for every board asset (quiet ones included). `options.since` (ISO `YYYY-MM-DD` string) windows the aggregation: only signals with a non-null `at >= since` are counted or listed — signals with unknown dates never masquerade as in-window pressure. Pages calling row-level derivations are unaffected (they pass no `since`). PR-3's Today/Week boards pass `since` = now−24h / now−7d and are responsible for surfacing non-`current` statuses distinctly from QUIET.
   - Lookups: `assetById(id)`, `assetByCotId(cotId)`, `assetsByRateId(rateId)`, `assetsByCrowdAlias(alias)`, `assetByCalendarAlias(label)`, `themeForTicker(tickerId)`
 
 - [ ] **Step 1: Write the failing Node test**
@@ -271,8 +309,12 @@ sandbox.window.marketAssetBoard = {
     { id: 'us10y', label: 'US 10Y yield', kind: 'asset', family: 'Rates/FX', rateId: 'DGS10', cotId: 'us10y-cot' },
     { id: 'dxy', label: 'US dollar', kind: 'asset', family: 'Rates/FX', rateId: 'DTWEXBGS' },
     { id: 'risk-assets', label: 'Risk assets', kind: 'theme', family: 'Themes', rateId: 'BAMLH0A0HYM2', rateInvert: true },
+    { id: 'inflation-risk', label: 'Inflation risk', kind: 'theme', family: 'Themes' },
     { id: 'semis', label: 'Semiconductors', kind: 'theme', family: 'Themes', etfIds: ['smh', 'soxx'], memberTickers: ['nvda'] },
     { id: 'nbp', label: 'UK gas (NBP)', kind: 'asset', family: 'Energy' },
+  ],
+  officialSeriesRules: [
+    { seriesId: 'CUSR0000SA0', seriesName: 'US CPI all items', assetId: 'inflation-risk', rule: 'sign-of-change' },
   ],
 };
 
@@ -352,6 +394,36 @@ assert.strictEqual(collected.gold.net, 'up');
 assert.deepStrictEqual({ ...collected.gold.counts }, { up: 1, down: 0, mixed: 0 });
 assert.strictEqual(collected.nbp.net, 'quiet');
 assert.strictEqual(collected.nbp.signals.length, 0);
+
+// --- status propagation: stale-retained COT rows stay distinguishable ---
+const staleCot = engine.deriveCotSignals({
+  cot: [{ id: 'gold', weekChange: 3100, category: 'Managed money', reportDate: '2026-07-07', dataState: 'stale-retained' }],
+});
+assert.strictEqual(staleCot[0].status, 'stale-retained');
+assert.strictEqual(cotSignals[0].status, 'current'); // rows without dataState default to current
+
+// --- windowed aggregation: out-of-window signals never count as pressure ---
+const windowed = engine.collectDeterministicSignals({
+  freeData: { cot: [{ id: 'gold', weekChange: 5200, category: 'Managed money', reportDate: '2026-07-07' }], rates: [] },
+  crowdData: { markets: [] },
+  equityData: { watchlist: [] },
+}, { since: '2026-07-10' });
+assert.strictEqual(windowed.gold.net, 'quiet'); // 7 Jul report is outside a 10 Jul window
+assert.strictEqual(windowed.gold.signals.length, 0);
+
+// --- BLS print rules (deterministic, registry-driven) ---
+const blsSignals = engine.deriveBlsPrintSignals({
+  status: 'current',
+  records: [
+    { id: 'CUSR0000SA0', name: 'US CPI all items', change: -1.411, unit: 'index', observedAt: '2026-06-01', period: '2026-06' },
+    { id: 'CES0000000001', name: 'US nonfarm payrolls', change: 57.0, unit: 'thousands', observedAt: '2026-06-01' }, // no rule — skipped
+    { id: 'WPSFD4', name: 'US PPI final demand', change: 0, unit: 'index', observedAt: '2026-06-01' }, // rule exists in real registry but zero change — and unmapped in this fixture
+  ],
+});
+assert.strictEqual(blsSignals.length, 1);
+assert.strictEqual(blsSignals[0].assetId, 'inflation-risk');
+assert.strictEqual(blsSignals[0].direction, 'down');
+assert.ok(blsSignals[0].detail.includes('CPI'));
 
 // --- lookups ---
 assert.strictEqual(engine.assetByCotId('gold').id, 'gold');
@@ -462,6 +534,7 @@ Expected: FAIL — node exits non-zero (`Cannot find module .../site/core/impact
         label: `${row.category || 'Speculative'} positioning`,
         detail: `Net ${row.category || 'speculative'} position ${signedContracts(change)} in the CFTC week ending ${row.reportDate || 'date unavailable'}.`,
         at: row.reportDate || null,
+        status: row.dataState || 'current',
         href: '',
       });
     });
@@ -489,6 +562,7 @@ Expected: FAIL — node exits non-zero (`Cannot find module .../site/core/impact
           label: row.name || row.id,
           detail: `${row.name || row.id} moved ${change > 0 ? 'up' : 'down'} ${moveText} (${row.date || 'date unavailable'})${asset.rateInvert ? '; this series is risk-inverted' : ''}.`,
           at: row.date || null,
+          status: 'current',
           href: '',
         });
       });
@@ -516,6 +590,7 @@ Expected: FAIL — node exits non-zero (`Cannot find module .../site/core/impact
             label: 'Crowd repricing',
             detail: `Prediction-market odds moved ${Math.abs(swing).toFixed(1)}pts over 7 days: ${market.question || 'question unavailable'}. A probability move signals attention, not price direction.`,
             at: market.updatedAt || null,
+            status: 'current',
             href: '',
           });
         });
@@ -541,6 +616,7 @@ Expected: FAIL — node exits non-zero (`Cannot find module .../site/core/impact
           label: `${row.name || etfId.toUpperCase()} price`,
           detail: `${row.name || etfId.toUpperCase()} moved ${change > 0 ? '+' : ''}${change.toFixed(2)}% in the last accepted session.`,
           at: row.observedAt || null,
+          status: 'current',
           href: '',
         });
       });
@@ -548,18 +624,52 @@ Expected: FAIL — node exits non-zero (`Cannot find module .../site/core/impact
     return signals;
   }
 
-  function collectDeterministicSignals({ freeData, crowdData, equityData } = {}) {
+  function deriveBlsPrintSignals(blsSource = {}) {
+    const rules = Array.isArray(window.marketAssetBoard?.officialSeriesRules)
+      ? window.marketAssetBoard.officialSeriesRules
+      : [];
+    const records = Array.isArray(blsSource.records) ? blsSource.records : [];
+    const recordById = new Map(records.map((record) => [record.id, record]));
+    const signals = [];
+    rules.forEach((rule) => {
+      const record = recordById.get(rule.seriesId);
+      const change = Number(record?.change);
+      if (!record || !Number.isFinite(change) || change === 0) return;
+      const asset = assetById(rule.assetId);
+      if (!asset) return;
+      signals.push({
+        assetId: asset.id,
+        direction: change > 0 ? 'up' : 'down',
+        tier: 'observed',
+        source: 'bls',
+        label: record.name || rule.seriesName || rule.seriesId,
+        detail: `${record.name || rule.seriesId} printed ${change > 0 ? 'up' : 'down'} ${Math.abs(change)} ${record.unit || ''} vs the previous observation (${record.period || 'period unavailable'}).`,
+        at: record.observedAt || null,
+        status: blsSource.status || 'current',
+        href: '',
+      });
+    });
+    return signals;
+  }
+
+  function collectDeterministicSignals({ freeData, crowdData, equityData, blsSource } = {}, options = {}) {
     const all = [
       ...deriveCotSignals(freeData),
       ...deriveRateSignals(freeData),
       ...deriveCrowdSignals(crowdData),
       ...deriveEtfSignals(equityData),
+      ...deriveBlsPrintSignals(blsSource),
     ];
+    // options.since: ISO YYYY-MM-DD window floor. Signals with an unknown date
+    // (at: null) are excluded from windowed aggregation — an undated signal must
+    // never masquerade as in-window pressure. ISO strings compare lexicographically.
+    const since = typeof options.since === 'string' && options.since ? options.since : null;
+    const windowed = since ? all.filter((signal) => typeof signal.at === 'string' && signal.at >= since) : all;
     const result = {};
     assets().forEach((asset) => {
       result[asset.id] = { counts: { up: 0, down: 0, mixed: 0 }, net: 'quiet', signals: [] };
     });
-    all.forEach((signal) => {
+    windowed.forEach((signal) => {
       const bucket = result[signal.assetId];
       if (!bucket) return;
       bucket.signals.push(signal);
@@ -579,6 +689,7 @@ Expected: FAIL — node exits non-zero (`Cannot find module .../site/core/impact
     deriveRateSignals,
     deriveCrowdSignals,
     deriveEtfSignals,
+    deriveBlsPrintSignals,
     collectDeterministicSignals,
     assetById,
     assetByCotId,
@@ -811,7 +922,8 @@ FILE_BUDGETS = {
 Run: `node tests/js/impact-chips.test.js` → `impact-chips tests passed`
 Run: `python -m unittest tests.test_impact_engine -v` → PASS (2 tests)
 Run: `python scripts/audit_static_site.py` → exits 0
-Run: `python -m unittest discover -s tests -v 2>&1 | tail -5` → all green (shell contract tests read index.html — confirm none object to the new lines; fix expectations only if a test asserts the exact script list).
+Run: `python -m unittest discover -s tests` (unpiped — the exit code IS the gate)
+Expected: `OK`, exit code 0. Shell contract tests read index.html — confirm none object to the new lines; fix expectations only if a test asserts the exact script list.
 
 - [ ] **Step 6: Commit**
 
@@ -840,9 +952,10 @@ Add to `tests/test_cot_interface.py` (class with existing source-string assertio
 ```python
     def test_rows_render_board_impact_chips(self) -> None:
         source = (ROOT / "site" / "features" / "cot" / "cot-page.js").read_text(encoding="utf-8")
-        self.assertIn("impactEngine?.assetByCotId", source)
+        self.assertIn("deriveCotSignals?.({ cot: [row] })", source)  # page delegates to the engine, never re-derives
         self.assertIn("impactChips", source)
         self.assertIn("cot-board-chip", source)
+        self.assertIn("${boardChip(row)}", source)  # helper is actually interpolated, not dead code
 ```
 
 (Adjust `ROOT`/read helper to match the file's existing convention — the test file already reads the same source.)
@@ -866,30 +979,20 @@ to:
           <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}${row.dataState === 'stale-retained' ? ' <em class="cot-retained-badge">retained</em>' : ''}</strong><span>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</span><small>${escapeHtml(row.category || '')}</small></button><span class="cot-board-chip">${boardChip(row)}</span></th>
 ```
 
-Add the helper near the top of the IIFE, after the existing `escapeHtml`/`number` helpers:
+Add the helper near the top of the IIFE, after the existing `escapeHtml`/`number` helpers. It DELEGATES to the engine with a single-row dataset — the page must never re-derive signal logic, or engine fixes (windowing, honesty guards) silently stop reaching page chips:
 
 ```js
   function boardChip(row) {
-    const asset = core.impactEngine?.assetByCotId?.(row.id) || null;
-    const change = Number(row.weekChange);
-    if (!asset || !Number.isFinite(change) || change === 0) return '';
-    return core.impactChips?.chipStrip?.([{
-      assetId: asset.id,
-      direction: change > 0 ? 'up' : 'down',
-      tier: 'observed',
-      source: 'cot',
-      label: `${row.category || 'Speculative'} positioning`,
-      detail: `Net position ${change > 0 ? 'rose' : 'fell'} ${Math.abs(change).toLocaleString('en')} contracts in the week ending ${row.reportDate || 'date unavailable'}.`,
-      at: row.reportDate || null,
-      href: '',
-    }]) || '';
+    const signals = core.impactEngine?.deriveCotSignals?.({ cot: [row] }) || [];
+    return signals.length ? (core.impactChips?.chipStrip?.(signals) || '') : '';
   }
 ```
 
 - [ ] **Step 4: Run tests**
 
 Run: `python -m unittest tests.test_cot_interface -v` → PASS
-Run: `python -m unittest discover -s tests -v 2>&1 | tail -3` → all green
+Run: `python -m unittest discover -s tests` (unpiped — the exit code IS the gate; piping through `tail` masks failures)
+Expected: `OK`, exit code 0
 
 - [ ] **Step 5: Commit**
 
@@ -904,7 +1007,8 @@ git push
 ### Task 5: Rates/macro page — board chips + visible rules table
 
 **Files:**
-- Modify: `site/features/macro-monitor/macro-page.js` (series card template + methodology copy)
+- Modify: `site/features/macro-monitor/macro-page.js` (series card template + methodology rules table)
+- Modify: `site/features/macro-monitor/macro-page.css` (rules-table styles, additive)
 - Test: extend `tests/test_macro_monitor.py`
 
 **Interfaces:**
@@ -920,11 +1024,14 @@ Add to `tests/test_macro_monitor.py`:
 ```python
     def test_series_cards_render_board_chips_and_rules(self) -> None:
         source = (ROOT / "site" / "features" / "macro-monitor" / "macro-page.js").read_text(encoding="utf-8")
-        self.assertIn("assetsByRateId", source)
+        self.assertIn("deriveRateSignals({ rates: [row] })", source)  # page delegates to the engine
         self.assertIn("macro-board-chips", source)
-        self.assertIn("risk-inverted", source)
+        self.assertIn("${boardChips(row)}", source)  # helper is actually interpolated
+        self.assertIn("macro-rules-table", source)   # the spec's VISIBLE rules table
         self.assertIn("T10YIE", source)
         self.assertIn("BAMLH0A0HYM2", source)
+        self.assertIn("CUSR0000SA0", source)
+        self.assertIn("WPSFD4", source)
 ```
 
 (Match the file's existing ROOT/read helper convention.)
@@ -936,51 +1043,46 @@ Expected: new test FAILS; existing tests PASS.
 
 - [ ] **Step 3: Implement**
 
-In `site/features/macro-monitor/macro-page.js`, add after the `deltaChip` function:
+In `site/features/macro-monitor/macro-page.js`, add after the `deltaChip` function. It DELEGATES to the engine — no page-side re-derivation:
 
 ```js
   function boardChips(row) {
     const engine = core.impactEngine;
     const chips = core.impactChips;
     if (!engine || !chips) return '';
-    const change = Number(row.change);
-    if (!Number.isFinite(change) || change === 0) return '';
-    const signals = engine.assetsByRateId(row.id).map((asset) => {
-      const observed = asset.rateInvert ? -change : change;
-      return {
-        assetId: asset.id,
-        direction: observed > 0 ? 'up' : 'down',
-        tier: 'observed',
-        source: 'rates',
-        label: row.name || row.id,
-        detail: `${row.name || row.id} moved ${change > 0 ? 'up' : 'down'} vs the previous observation${asset.rateInvert ? ' (risk-inverted series)' : ''}.`,
-        at: row.date || null,
-        href: '',
-      };
-    });
-    if (!signals.length) return '';
-    return `<span class="macro-board-chips">${chips.chipStrip(signals)}</span>`;
+    const signals = engine.deriveRateSignals({ rates: [row] });
+    return signals.length ? `<span class="macro-board-chips">${chips.chipStrip(signals)}</span>` : '';
   }
 ```
 
 In the series-card template, immediately after the `${deltaChip(row)}` interpolation, add `${boardChips(row)}` (same template literal, additive — do not modify `deltaChip` output).
 
-Append one sentence to the page's existing methodology paragraph (the block containing the "not a long-history chart" honesty copy — keep every existing string intact):
+Append the spec §4.2 VISIBLE rules table to the page's methodology block (after the existing honesty copy — keep every existing string intact). This is a table, not a sentence, per the spec:
 
 ```js
-  Board chips are rule-based: DGS10 maps to US 10Y yield, DTWEXBGS to the US dollar, T10YIE to Inflation risk, and BAMLH0A0HYM2 (high-yield spread) maps risk-inverted to Risk assets — a widening spread reads as pressure DOWN on risk assets.
+  <table class="macro-rules-table"><caption>Board-chip mapping rules (deterministic, no interpretation)</caption><thead><tr><th scope="col">Series</th><th scope="col">Board asset</th><th scope="col">Rule</th></tr></thead><tbody><tr><td>DGS10</td><td>US 10Y yield</td><td>Sign of change</td></tr><tr><td>DTWEXBGS</td><td>US dollar</td><td>Sign of change</td></tr><tr><td>T10YIE</td><td>Inflation risk</td><td>Sign of change</td></tr><tr><td>BAMLH0A0HYM2</td><td>Risk assets</td><td>Risk-inverted: a wider high-yield spread reads as pressure DOWN on risk assets</td></tr><tr><td>CUSR0000SA0 / WPSFD4 / CUSR0000SA0L1E</td><td>Inflation risk</td><td>Sign of monthly change (BLS prints; chips render on Official feeds)</td></tr></tbody></table>
+```
+
+Add minimal CSS to `site/features/macro-monitor/macro-page.css` (additive):
+
+```css
+.macro-rules-table{width:100%;border-collapse:collapse;margin-top:10px}
+.macro-rules-table caption{text-align:left;color:var(--muted);font-size:9px;padding-bottom:6px}
+.macro-rules-table th,.macro-rules-table td{padding:7px;border-top:1px solid var(--line);text-align:left;font-size:9px;line-height:1.4}
+.macro-rules-table th{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.07em}
 ```
 
 - [ ] **Step 4: Run tests**
 
 Run: `python -m unittest tests.test_macro_monitor -v` → PASS (all, including the pre-existing contract strings)
-Run: `python -m unittest discover -s tests -v 2>&1 | tail -3` → all green
+Run: `python -m unittest discover -s tests` (unpiped — the exit code IS the gate; piping through `tail` masks failures)
+Expected: `OK`, exit code 0
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add site/features/macro-monitor/macro-page.js tests/test_macro_monitor.py
-git commit -m "feat(macro): board chips on series cards + visible mapping rules"
+git add site/features/macro-monitor/macro-page.js site/features/macro-monitor/macro-page.css tests/test_macro_monitor.py
+git commit -m "feat(macro): engine-delegated board chips + visible rules table"
 git push
 ```
 
@@ -991,12 +1093,12 @@ git push
 **Files:**
 - Modify: `site/features/crowd-expectations/crowd-page.js` (market card template)
 - Modify: `site/features/political-flow/political-page.js` (trade row template + methodology note)
-- Modify: `site/features/official-feeds/official-feeds-page.js` (SEC record row template)
+- Modify: `site/features/official-feeds/official-feeds-page.js` (`filingCard` + `seriesCard` article renderers — the page has card functions, not rows)
 - Test: extend `tests/test_crowd_expectations.py`, `tests/test_political_flow_interface.py`, `tests/test_official_feeds.py`
 
 **Interfaces:**
 - Consumes: `core.impactEngine.assetsByCrowdAlias(alias)`, `core.impactEngine.themeForTicker(tickerId)`, `core.impactChips.chipStrip(...)`.
-- Produces: crowd cards show `mixed` attention chips on ≥5pt 7-day swings; political trade rows show theme chips (direction from transaction type, excluded from aggregation); SEC filing records show direction-less `activity` theme chips.
+- Produces: crowd cards show `mixed` attention chips on ≥5pt 7-day swings (engine-derived); political trade rows in BOTH tables show theme chips (direction from transaction type, excluded from aggregation); SEC filing cards show direction-less `activity` theme chips; BLS series cards for CPI/PPI/core-CPI show engine-derived `inflation-risk` print chips.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -1005,9 +1107,9 @@ git push
 ```python
     def test_market_cards_render_attention_chips(self) -> None:
         source = (ROOT / "site" / "features" / "crowd-expectations" / "crowd-page.js").read_text(encoding="utf-8")
-        self.assertIn("assetsByCrowdAlias", source)
+        self.assertIn("deriveCrowdSignals({ markets: [market] })", source)  # page delegates to the engine
         self.assertIn("crowd-attention-chips", source)
-        self.assertIn("change7dPoints", source)
+        self.assertIn("${attentionChips(market)}", source)  # helper is actually interpolated
 ```
 
 `tests/test_political_flow_interface.py` — add:
@@ -1018,15 +1120,20 @@ git push
         self.assertIn("themeForTicker", source)
         self.assertIn("political-theme-chip", source)
         self.assertIn("excluded from net-pressure windows", source)
+        # BOTH trade tables must be chipped — the helper alone would satisfy assertIn:
+        self.assertEqual(source.count("${themeChip(trade)}"), 2)
 ```
 
 `tests/test_official_feeds.py` — add:
 
 ```python
-    def test_sec_records_render_theme_activity_chips(self) -> None:
+    def test_sec_and_bls_records_render_chips(self) -> None:
         source = (ROOT / "site" / "features" / "official-feeds" / "official-feeds-page.js").read_text(encoding="utf-8")
         self.assertIn("themeForTicker", source)
         self.assertIn("sec-theme-chip", source)
+        self.assertIn("${secThemeChip(record)}", source)   # interpolated into filingCard
+        self.assertIn("deriveBlsPrintSignals", source)      # BLS prints delegate to the engine
+        self.assertIn("${blsPrintChip(record)}", source)    # interpolated into seriesCard
 ```
 
 (Only `tests/test_political_flow_interface.py` already reads its page source — add the method to its existing class, reusing `cls.page` if convenient. `tests/test_crowd_expectations.py` and `tests/test_official_feeds.py` have NO page-source read helper; the methods above are self-contained — `ROOT` is module-level in both, so `(ROOT / "site" / ...).read_text(...)` works as written. Add the crowd method to `CrowdIntegrationTests` (~line 313) and the SEC method to `OfficialFeedIntegrationTests` (~line 222).)
@@ -1045,30 +1152,12 @@ In `site/features/crowd-expectations/crowd-page.js`, add helper after the existi
     const engine = core.impactEngine;
     const chips = core.impactChips;
     if (!engine || !chips) return '';
-    const swing = Number(market.change7dPoints);
-    if (!Number.isFinite(swing) || Math.abs(swing) < 5) return '';
-    const seen = new Set();
-    const signals = [];
-    (market.assets || []).forEach((alias) => {
-      engine.assetsByCrowdAlias(alias).forEach((asset) => {
-        if (seen.has(asset.id)) return;
-        seen.add(asset.id);
-        signals.push({
-          assetId: asset.id,
-          direction: 'mixed',
-          tier: 'observed',
-          source: 'crowd',
-          label: 'Crowd repricing',
-          detail: `Odds moved ${Math.abs(swing).toFixed(1)}pts over 7 days. A probability move signals attention, not price direction.`,
-          at: market.updatedAt || null,
-          href: '',
-        });
-      });
-    });
-    if (!signals.length) return '';
-    return `<span class="crowd-attention-chips">${chips.chipStrip(signals)}</span>`;
+    const signals = engine.deriveCrowdSignals({ markets: [market] });
+    return signals.length ? `<span class="crowd-attention-chips">${chips.chipStrip(signals)}</span>` : '';
   }
 ```
+
+(The threshold, alias matching, dedup and honesty copy all live in the engine's `deriveCrowdSignals` — the page only renders.)
 
 Interpolate `${attentionChips(market)}` into the market card template, after the probability/quality block (additive; existing strings untouched).
 
@@ -1093,6 +1182,7 @@ In `site/features/political-flow/political-page.js`, add helper:
       label: 'Disclosed trade',
       detail: `Disclosed ${trade.type || 'transaction'} in ${trade.ticker}; filed ${trade.lagDays ?? '?'} days after the trade. Disclosures are lagged and excluded from net-pressure windows.`,
       at: trade.filed || null,
+      status: 'current',
       href: '',
     }])}</span>`;
   }
@@ -1109,9 +1199,11 @@ Append to the page's existing warning/context copy (additive sentence):
 Theme chips on disclosed trades are contextual only — filings lag the trade date, so they are excluded from net-pressure windows.
 ```
 
-- [ ] **Step 5: Implement SEC filing chips**
+- [ ] **Step 5: Implement SEC filing + BLS print chips**
 
-In `site/features/official-feeds/official-feeds-page.js`, add helper:
+The official-feeds page renders records through one-line `<article>` card functions (`recordCard` dispatches by `record.kind` — there is NO row/cell structure). Two card functions get chips.
+
+In `site/features/official-feeds/official-feeds-page.js`, add helpers:
 
 ```js
   function secThemeChip(record) {
@@ -1128,23 +1220,57 @@ In `site/features/official-feeds/official-feeds-page.js`, add helper:
       label: `${record.form || 'Filing'} filed`,
       detail: `${record.company || record.ticker} filed a ${record.form || 'document'} on ${record.filedAt || 'date unavailable'}.`,
       at: record.filedAt || null,
+      status: 'current',
       href: '',
     }])}</span>`;
   }
+
+  function blsPrintChip(record) {
+    const engine = core.impactEngine;
+    const chips = core.impactChips;
+    if (!engine || !chips || record.kind !== 'series') return '';
+    const signals = engine.deriveBlsPrintSignals({ records: [record] });
+    return signals.length ? `<span class="bls-print-chip">${chips.chipStrip(signals)}</span>` : '';
+  }
 ```
 
-Interpolate `${secThemeChip(record)}` into the SEC record row template next to the company/form cell (additive).
+In `filingCard(record)` (~line 65), the header currently reads:
+
+```js
+<header><div><span>${escapeHtml(record.ticker || record.companyId || 'SEC')}</span><strong>${escapeHtml(record.company || record.name)}</strong></div><span class="official-form">${escapeHtml(record.form || 'Filing')}</span></header>
+```
+
+Change the inner `<div>` to append the chip after the `<strong>`:
+
+```js
+<header><div><span>${escapeHtml(record.ticker || record.companyId || 'SEC')}</span><strong>${escapeHtml(record.company || record.name)}</strong>${secThemeChip(record)}</div><span class="official-form">${escapeHtml(record.form || 'Filing')}</span></header>
+```
+
+In `seriesCard(record)` (~line 74), the header currently reads:
+
+```js
+<header><div><span>${escapeHtml(record.group || record.kind)}</span><strong>${escapeHtml(record.name)}</strong></div><span>${escapeHtml(record.frequency || '')}</span></header>
+```
+
+Change it the same way:
+
+```js
+<header><div><span>${escapeHtml(record.group || record.kind)}</span><strong>${escapeHtml(record.name)}</strong>${blsPrintChip(record)}</div><span>${escapeHtml(record.frequency || '')}</span></header>
+```
+
+Only the three rule-mapped BLS series (CPI, PPI, core CPI) produce chips; every other series card renders unchanged — `deriveBlsPrintSignals` returns `[]` for unmapped ids.
 
 - [ ] **Step 6: Run tests**
 
 Run: `python -m unittest tests.test_crowd_expectations tests.test_political_flow_interface tests.test_official_feeds -v` → PASS
-Run: `python -m unittest discover -s tests -v 2>&1 | tail -3` → all green
+Run: `python -m unittest discover -s tests` (unpiped — the exit code IS the gate; piping through `tail` masks failures)
+Expected: `OK`, exit code 0
 
 - [ ] **Step 7: Commit**
 
 ```bash
 git add site/features/crowd-expectations/crowd-page.js site/features/political-flow/political-page.js site/features/official-feeds/official-feeds-page.js tests/test_crowd_expectations.py tests/test_political_flow_interface.py tests/test_official_feeds.py
-git commit -m "feat(chips): crowd attention, political theme (lag-excluded), SEC activity chips"
+git commit -m "feat(chips): crowd attention, political theme (lag-excluded), SEC activity + BLS print chips"
 git push
 ```
 
@@ -1171,6 +1297,7 @@ Add to `tests/test_calendar_reactions.py`:
         self.assertIn("'watch'", source)
         self.assertIn("Relevant assets were not explicitly named", source)
         self.assertIn("if (!mapped.length) return '';", source)  # honesty fallback is contract-tested
+        self.assertIn("watchChips(event) ||", source)  # helper is actually interpolated with its fallback
 ```
 
 - [ ] **Step 2: Run test to verify it fails**
@@ -1199,7 +1326,8 @@ In `site/features/calendar/calendar-page.js`, add helper inside the IIFE:
           source: 'calendar',
           label: 'Scheduled release',
           detail: `${event.name || 'This release'} is scheduled; direction is unknowable before the print.`,
-          at: null,
+          at: event.scheduledAt || null,
+          status: 'current',
           href: '',
         });
       } else {
@@ -1230,7 +1358,8 @@ to:
 - [ ] **Step 4: Run tests**
 
 Run: `python -m unittest tests.test_calendar_reactions -v` → PASS
-Run: `python -m unittest discover -s tests -v 2>&1 | tail -3` → all green
+Run: `python -m unittest discover -s tests` (unpiped — the exit code IS the gate; piping through `tail` masks failures)
+Expected: `OK`, exit code 0
 
 - [ ] **Step 5: Commit**
 
@@ -1252,8 +1381,8 @@ git push
 
 - [ ] **Step 1: Full test gate**
 
-Run: `python -m unittest discover -s tests -v 2>&1 | tail -5`
-Expected: `OK` with 200+ tests (195 pre-existing + new).
+Run: `python -m unittest discover -s tests` (unpiped — the exit code IS the gate; never pipe through `tail`, which masks the exit code and doesn't exist in plain PowerShell)
+Expected: `OK` with 200+ tests (195 pre-existing + new), exit code 0.
 
 Run: `python scripts/audit_static_site.py`
 Expected: exit 0, no budget errors.
@@ -1287,12 +1416,13 @@ No model tagging yet (PR-2), no home board (PR-3). Spec:
 git add docs/PROJECT-STATUS.md
 git commit -m "docs: status entry for pressure-board PR-1"
 git push
-gh pr create --title "Pressure Board PR-1: asset registry, impact engine, deterministic chips" --body "## Summary
-- Closed-vocabulary asset board: 18 assets + 4 themes (scripts/asset_board.json → generated site/asset-board-data.js)
-- site/core/impact-engine.js: deterministic signal derivation (COT week-change, FRED rate moves incl. risk-inverted HY spread, crowd ≥5pt attention swings, ETF day moves) + the ≥2:1 net-pressure rule
+gh pr create --base main --head feat/pressure-board-pr1-grammar --title "Pressure Board PR-1: asset registry, impact engine, deterministic chips" --body "## Summary
+- Closed-vocabulary asset board: 18 assets + 4 themes + BLS print rules (scripts/asset_board.json → generated site/asset-board-data.js)
+- site/core/impact-engine.js: deterministic signal derivation (COT week-change with dataState propagation, FRED rate moves incl. risk-inverted HY spread, crowd ≥5pt attention swings, ETF day moves, BLS CPI/PPI/core-CPI prints) + the ≥2:1 net-pressure rule with windowed aggregation (options.since)
 - site/core/impact-chips.js + styles/chips.css: tiered chip component (observed/verified/ai)
-- Chips applied to COT, Rates, Crowd, Political (lag-excluded), Official-feeds SEC records, Calendar (watch-only)
-- Node-executed behaviour tests + source-contract tests; byte budgets extended
+- Chips applied to COT, Rates (+ visible rules table), Crowd, Political (both tables, lag-excluded), Official-feeds SEC filings + BLS prints, Calendar (watch-only)
+- Pages delegate to engine derivations (single-row datasets) — zero duplicated signal logic
+- Node-executed behaviour tests + call-site-asserting source-contract tests; byte budgets extended
 
 First of four PRs from docs/superpowers/specs/2026-07-16-trader-pressure-board-design.md. No model tagging (PR-2), no home board (PR-3), no new sources (PR-4).
 
@@ -1315,7 +1445,7 @@ Do NOT merge. Report the PR URL and wait for explicit approval (repo rule: `site
 
 ## Self-review notes (resolved during planning)
 
-- Spec §4.2 lists FRED/BLS print→theme rules: v1 implements the rates-block rules only (T10YIE, BAMLH0A0HYM2, DGS10, DTWEXBGS); BLS CPI/PPI records live in official-feeds and join in a later PR — recorded as a conscious narrowing, noted in the PR body via the spec reference.
+- Spec §4.2 FRED/BLS print→theme rules: BOTH halves implemented — rates-block rules (T10YIE, BAMLH0A0HYM2, DGS10, DTWEXBGS) chip the macro page; BLS rules (CUSR0000SA0, WPSFD4, CUSR0000SA0L1E → inflation-risk, sign-of-change) live as `officialSeriesRules` registry data, derive via `deriveBlsPrintSignals`, and chip the official-feeds series cards. The spec's "visible rules table" renders on the macro page. (Originally narrowed out; restored after external review verified the BLS records ship clean value/previous/change fields.)
 - Spec §4.2 crowd chips: implemented as direction-less attention chips (`mixed`) because a probability move has no deterministic price sign — honesty override, documented in card detail text and methodology.
 - `wti` maps to `wti-financial` (NYMEX financial contract) — closest CFTC series to CL positioning among available ids (`wti-crude-ice` is ICE).
 - Political trades: direction rendered but excluded from aggregation (filing lag) — matches spec §4.2's "low visual weight" intent, made explicit.
@@ -1328,3 +1458,10 @@ Do NOT merge. Report the PR URL and wait for explicit approval (repo rule: `site
   - Calendar watch chips carry `tier: 'observed'` although spec §4.2 marks calendar tier n/a — the signal shape only has observed/verified/ai and the component falls back to observed for anything else. They are page-local (never aggregated) and get no observed fill (CSS only fills `.tier-observed.up/.down`). Revisit before PR-3 surfaces tiers in dossier stacks.
   - Labels adopted verbatim from spec §3: `US natural gas (Henry Hub)`, `Rare earths & critical minerals` (the theme holds lithium/uranium members only the full label honestly covers). `US dollar` kept short of `US dollar (DXY)` — the join is FRED broad-dollar, labelled as such per the spec's own caveat.
   - `deriveRateSignals` null-`changeBps` guard (real DTWEXBGS row ships `changeBps: null` — coercion would invent "0bps"); node-test fixtures made load-bearing for the COT zero-change and ETF status gates; vm-realm `deepStrictEqual` fixed by spreading into a host-realm object; both political trade tables chipped (chip outside the recent-filings anchor); calendar all-unmappable events fall back to the original honest copy; `site/intelligence-data.js` correctly reclassified as hand-maintained.
+- External review (Codex, 2026-07-17, verdict REWORK — all six findings repo-verified before folding):
+  - Task 0 added: the feature branch must be created explicitly with `git push -u` (`push.autoSetupRemote` is unset); `gh pr create` given explicit `--base main --head`.
+  - All test gates unpiped — `| tail` masked the exit code (and doesn't exist in plain PowerShell); the exit code IS the gate.
+  - Engine gained windowed aggregation (`options.since`, undated signals never count in-window) and per-signal `status` (COT `dataState` propagates — a stale-retained 7 Jul AUD report can no longer pose as current pressure) — spec §4.4's window semantics were unimplementable without it.
+  - Pages now DELEGATE to engine derivations with single-row datasets instead of re-deriving (drift-proof: engine fixes reach every chip).
+  - BLS print rules (CPI/PPI/core-CPI → inflation-risk) implemented via `officialSeriesRules` registry data + `deriveBlsPrintSignals` + macro-page rules TABLE — the records verifiably ship value/previous/change, so the original deferral was an unjustified narrowing; official-feeds card anchors corrected to the real `filingCard`/`seriesCard` article renderers.
+  - Contract tests assert actual call sites (`${boardChip(row)}`, `source.count("${themeChip(trade)}") == 2`, …) so dead helpers can't pass; calendar signals preserve `event.scheduledAt`.
