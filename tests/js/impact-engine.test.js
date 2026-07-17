@@ -82,6 +82,11 @@ const crowdSignals = engine.deriveCrowdSignals({
 });
 assert.strictEqual(crowdSignals.length, 1);
 assert.strictEqual(crowdSignals[0].direction, 'mixed');
+assert.strictEqual(crowdSignals[0].status, 'current'); // market without status defaults to current
+const staleCrowd = engine.deriveCrowdSignals({
+  markets: [{ assets: ['gold'], change7dPoints: 8.4, status: 'stale', question: 'Stale market' }],
+});
+assert.strictEqual(staleCrowd[0].status, 'stale'); // market.status propagates, not hard-coded current
 
 // --- ETF derivation respects row status ---
 const etfSignals = engine.deriveEtfSignals({

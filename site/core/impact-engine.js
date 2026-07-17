@@ -118,7 +118,7 @@
             label: 'Crowd repricing',
             detail: `Prediction-market odds moved ${Math.abs(swing).toFixed(1)}pts over 7 days: ${market.question || 'question unavailable'}. A probability move signals attention, not price direction.`,
             at: market.updatedAt || null,
-            status: 'current',
+            status: market.status || 'current',
             href: '',
           });
         });
