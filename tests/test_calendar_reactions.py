@@ -62,6 +62,14 @@ class CalendarReactionTests(unittest.TestCase):
         self.assertIn("min-height:42px", self.styles)
         self.assertIn("prefers-reduced-motion", self.styles)
 
+    def test_event_cards_render_watch_chips(self) -> None:
+        source = (ROOT / "site" / "features" / "calendar" / "calendar-page.js").read_text(encoding="utf-8")
+        self.assertIn("assetByCalendarAlias", source)
+        self.assertIn("'watch'", source)
+        self.assertIn("Relevant assets were not explicitly named", source)
+        self.assertIn("if (!mapped.length) return '';", source)  # honesty fallback is contract-tested
+        self.assertIn("watchChips(event) ||", source)  # helper is actually interpolated with its fallback
+
 
 if __name__ == "__main__":
     unittest.main()

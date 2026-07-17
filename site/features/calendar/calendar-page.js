@@ -27,11 +27,43 @@
     return `<div class="calendar-reaction-grid">${Object.values(event.reactions).map((reaction, index) => `<article class="${escapeHtml(reaction.status)}"><span>${index + 1}</span><div><strong>${escapeHtml(reaction.label)}</strong><p>${escapeHtml(reaction.value)}</p><small>${reaction.observedAt ? `Observed ${escapeHtml(reaction.observedAt)}` : 'Observation pending'}</small></div></article>`).join('')}</div>`;
   }
 
+  function watchChips(event) {
+    const engine = core.impactEngine;
+    const chips = core.impactChips;
+    if (!engine || !chips) return '';
+    const mapped = [];
+    const leftover = [];
+    (event.assets || []).forEach((label) => {
+      const asset = engine.assetByCalendarAlias(label);
+      if (asset) {
+        mapped.push({
+          assetId: asset.id,
+          direction: 'watch',
+          tier: 'observed',
+          source: 'calendar',
+          label: 'Scheduled release',
+          detail: `${event.name || 'This release'} is scheduled; direction is unknowable before the print.`,
+          at: event.scheduledAt || null,
+          status: 'current',
+          href: '',
+        });
+      } else {
+        leftover.push(label);
+      }
+    });
+    // All labels unmappable: return '' so the caller's unchanged "Relevant assets:" copy
+    // renders instead — "Also relevant:" must only ever appear below actual chips.
+    if (!mapped.length) return '';
+    const chipHtml = chips.chipStrip(mapped);
+    const textHtml = leftover.length ? `<span class="calendar-leftover-assets">Also relevant: ${leftover.map((l) => escapeHtml(l)).join(' · ')}</span>` : '';
+    return chipHtml + textHtml;
+  }
+
   function eventCard(event) {
     const expanded = state.expandedId === event.id;
     return `<article class="calendar-event-card" id="calendar-${escapeHtml(event.id)}">
       <header><div><span class="data-state ${statusClass(event.state)}">${escapeHtml(label(event.state))}</span><span>${escapeHtml(event.importance)}</span></div><span class="data-state ${statusClass(event.timeStatus)}">${escapeHtml(label(event.timeStatus))}</span></header>
-      <div class="calendar-event-main"><div><span class="calendar-kicker">${escapeHtml(event.scheduledLabel)}</span><h3>${escapeHtml(event.name)}</h3><p>${event.assets.length ? `Relevant assets: ${escapeHtml(event.assets.join(' · '))}` : 'Relevant assets were not explicitly named in the source record.'}</p></div><button type="button" data-calendar-expand="${escapeHtml(event.id)}" aria-expanded="${expanded}">${expanded ? 'Hide workflow' : 'Open workflow'}</button></div>
+      <div class="calendar-event-main"><div><span class="calendar-kicker">${escapeHtml(event.scheduledLabel)}</span><h3>${escapeHtml(event.name)}</h3><p>${event.assets.length ? watchChips(event) || `Relevant assets: ${escapeHtml(event.assets.join(' · '))}` : 'Relevant assets were not explicitly named in the source record.'}</p></div><button type="button" data-calendar-expand="${escapeHtml(event.id)}" aria-expanded="${expanded}">${expanded ? 'Hide workflow' : 'Open workflow'}</button></div>
       <div class="calendar-outcomes">${valueCard('Previous', event.previous)}${valueCard('Consensus', event.consensus)}${valueCard('Actual', event.actual)}</div>
       ${expanded ? `<div class="calendar-expanded"><section><div class="calendar-section-heading"><div><span class="calendar-kicker">Pre-event scenarios</span><h4>What the market may test</h4></div><span>Scenario map, not a forecast</span></div><div class="calendar-scenarios">${event.scenarios.map((scenario) => `<article><strong>${escapeHtml(scenario.label)}</strong><p>${escapeHtml(scenario.interpretation)}</p></article>`).join('')}</div></section><section><div class="calendar-section-heading"><div><span class="calendar-kicker">Reaction lifecycle</span><h4>Observed without look-ahead bias</h4></div><span>${escapeHtml(event.verdict)}</span></div>${reactionTimeline(event)}</section><footer><div><strong>Official release source</strong><span>${escapeHtml(event.source.name)}</span></div>${event.source.url ? `<a href="${escapeHtml(event.source.url)}" target="_blank" rel="noopener noreferrer">Open official source ↗</a>` : '<span>Official URL not yet attached</span>'}</footer></div>` : ''}
     </article>`;
