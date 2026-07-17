@@ -84,6 +84,12 @@ class CotInterfaceTests(unittest.TestCase):
         self.assertIn("min-height: 44px", self.styles)
         self.assertIn("overflow: auto", self.styles)
 
+    def test_rows_render_board_impact_chips(self) -> None:
+        self.assertIn("deriveCotSignals?.({ cot: [row] })", self.script)  # page delegates to the engine, never re-derives
+        self.assertIn("impactChips", self.script)
+        self.assertIn("cot-board-chip", self.script)
+        self.assertIn("${boardChip(row)}", self.script)  # helper is actually interpolated, not dead code
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -19,6 +19,10 @@
       ? '—'
       : Number(value).toLocaleString(undefined, { maximumFractionDigits: digits })
   ));
+  function boardChip(row) {
+    const signals = core.impactEngine?.deriveCotSignals?.({ cot: [row] }) || [];
+    return signals.length ? (core.impactChips?.chipStrip?.(signals) || '') : '';
+  }
   const signed = core.format?.signed || ((value) => (
     value === null || value === undefined || Number.isNaN(Number(value))
       ? '—'
@@ -318,7 +322,7 @@
         const positive = Number(row.net) >= 0;
         const flowPositive = Number(row.weekChange) >= 0;
         return `<tr class="${state.selectedId === row.id ? 'selected' : ''}">
-          <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}${row.dataState === 'stale-retained' ? ' <em class="cot-retained-badge">retained</em>' : ''}</strong><span>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</span><small>${escapeHtml(row.category || '')}</small></button></th>
+          <th scope="row"><button type="button" data-cot-select="${escapeHtml(row.id)}"><strong>${escapeHtml(row.name)}${row.dataState === 'stale-retained' ? ' <em class="cot-retained-badge">retained</em>' : ''}</strong><span>${escapeHtml(row.contract?.cftcContractCode || '')} · ${escapeHtml(row.contract?.exchange || '')}</span><small>${escapeHtml(row.category || '')}</small></button><span class="cot-board-chip">${boardChip(row)}</span></th>
           <td><span class="cot-signal ${positive ? 'positive' : 'negative'}">${positionLabel(row)}</span></td>
           <td><span class="cot-flow ${flowPositive ? 'positive' : 'negative'}">${flowLabel(row)}</span></td>
           <td>${shareCell(current.long, 'long')}</td>
