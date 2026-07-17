@@ -81,6 +81,14 @@ class PoliticalFlowInterfaceTests(unittest.TestCase):
         self.assertIn("overflow:auto", self.styles)
         self.assertIn("prefers-reduced-motion", self.styles)
 
+    def test_trade_rows_render_theme_chips_with_lag_exclusion(self) -> None:
+        source = (ROOT / "site" / "features" / "political-flow" / "political-page.js").read_text(encoding="utf-8")
+        self.assertIn("themeForTicker", source)
+        self.assertIn("political-theme-chip", source)
+        self.assertIn("excluded from net-pressure windows", source)
+        # BOTH trade tables must be chipped — the helper alone would satisfy assertIn:
+        self.assertEqual(source.count("${themeChip(trade)}"), 2)
+
 
 if __name__ == "__main__":
     unittest.main()

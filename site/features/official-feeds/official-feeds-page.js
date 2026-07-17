@@ -61,8 +61,33 @@
       return familyMatch && statusMatch && (!query || haystack.includes(query));
     });
   }
+  function secThemeChip(record) {
+    const engine = core.impactEngine;
+    const chips = core.impactChips;
+    if (!engine || !chips || record.kind !== 'filing' || !record.ticker) return '';
+    const theme = engine.themeForTicker(String(record.ticker).toLowerCase());
+    if (!theme) return '';
+    return `<span class="sec-theme-chip">${chips.chipStrip([{
+      assetId: theme.id,
+      direction: 'activity',
+      tier: 'observed',
+      source: 'sec',
+      label: `${record.form || 'Filing'} filed`,
+      detail: `${record.company || record.ticker} filed a ${record.form || 'document'} on ${record.filedAt || 'date unavailable'}.`,
+      at: record.filedAt || null,
+      status: 'current',
+      href: '',
+    }])}</span>`;
+  }
+  function blsPrintChip(record) {
+    const engine = core.impactEngine;
+    const chips = core.impactChips;
+    if (!engine || !chips || record.kind !== 'series') return '';
+    const signals = engine.deriveBlsPrintSignals({ records: [record] });
+    return signals.length ? `<span class="bls-print-chip">${chips.chipStrip(signals)}</span>` : '';
+  }
   function filingCard(record) {
-    return `<article class="official-record filing"><header><div><span>${escapeHtml(record.ticker || record.companyId || 'SEC')}</span><strong>${escapeHtml(record.company || record.name)}</strong></div><span class="official-form">${escapeHtml(record.form || 'Filing')}</span></header><p>${escapeHtml(record.title || record.primaryDocument || 'Official filing')}</p><dl><div><dt>Filed</dt><dd>${escapeHtml(formatDate(record.filedAt))}</dd></div><div><dt>Accepted</dt><dd>${escapeHtml(formatDate(record.acceptedAt))}</dd></div><div><dt>Report period</dt><dd>${escapeHtml(record.period || 'Not specified')}</dd></div><div><dt>Accession</dt><dd>${escapeHtml(record.accession || 'Unavailable')}</dd></div></dl><a href="${escapeHtml(record.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open official filing ↗</a></article>`;
+    return `<article class="official-record filing"><header><div><span>${escapeHtml(record.ticker || record.companyId || 'SEC')}</span><strong>${escapeHtml(record.company || record.name)}</strong>${secThemeChip(record)}</div><span class="official-form">${escapeHtml(record.form || 'Filing')}</span></header><p>${escapeHtml(record.title || record.primaryDocument || 'Official filing')}</p><dl><div><dt>Filed</dt><dd>${escapeHtml(formatDate(record.filedAt))}</dd></div><div><dt>Accepted</dt><dd>${escapeHtml(formatDate(record.acceptedAt))}</dd></div><div><dt>Report period</dt><dd>${escapeHtml(record.period || 'Not specified')}</dd></div><div><dt>Accession</dt><dd>${escapeHtml(record.accession || 'Unavailable')}</dd></div></dl><a href="${escapeHtml(record.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open official filing ↗</a></article>`;
   }
   function announcementCard(record) {
     const sensitive = record.marketSensitive ? '<span class="official-sensitive">Market sensitive</span>' : '<span class="official-neutral">Announcement</span>';
@@ -73,7 +98,7 @@
   }
   function seriesCard(record) {
     const code = record.dataTypeCode || record.lineNumber || record.id;
-    return `<article class="official-record series"><header><div><span>${escapeHtml(record.group || record.kind)}</span><strong>${escapeHtml(record.name)}</strong></div><span>${escapeHtml(record.frequency || '')}</span></header><div class="official-reading"><strong>${escapeHtml(number(record.value))}</strong><span>${escapeHtml(record.unit || '')}</span></div><dl><div><dt>Period</dt><dd>${escapeHtml(record.period || formatDate(record.observedAt))}</dd></div><div><dt>Previous</dt><dd>${escapeHtml(number(record.previous))}</dd></div><div><dt>Change</dt><dd>${escapeHtml(signed(record.change))}</dd></div><div><dt>Official code</dt><dd>${escapeHtml(code || 'Unavailable')}</dd></div></dl>${record.preliminary ? '<p class="official-note">Preliminary observation.</p>' : ''}<a href="${escapeHtml(record.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open official source ↗</a></article>`;
+    return `<article class="official-record series"><header><div><span>${escapeHtml(record.group || record.kind)}</span><strong>${escapeHtml(record.name)}</strong>${blsPrintChip(record)}</div><span>${escapeHtml(record.frequency || '')}</span></header><div class="official-reading"><strong>${escapeHtml(number(record.value))}</strong><span>${escapeHtml(record.unit || '')}</span></div><dl><div><dt>Period</dt><dd>${escapeHtml(record.period || formatDate(record.observedAt))}</dd></div><div><dt>Previous</dt><dd>${escapeHtml(number(record.previous))}</dd></div><div><dt>Change</dt><dd>${escapeHtml(signed(record.change))}</dd></div><div><dt>Official code</dt><dd>${escapeHtml(code || 'Unavailable')}</dd></div></dl>${record.preliminary ? '<p class="official-note">Preliminary observation.</p>' : ''}<a href="${escapeHtml(record.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open official source ↗</a></article>`;
   }
   function releaseCard(record) { return `<article class="official-record release"><header><div><span>${escapeHtml(record.group || 'Release')}</span><strong>${escapeHtml(record.name)}</strong></div><span>${escapeHtml(record.period || '')}</span></header><p>${escapeHtml(record.detail || 'Official release metadata.')}</p><a href="${escapeHtml(record.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open official publication ↗</a></article>`; }
   function recordCard(record) {
