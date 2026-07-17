@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Ship the universal impact-chip grammar — asset registry, aggregation engine, chip component — applied to existing pages with deterministic signals only (COT, FRED rates, crowd swings, ETF moves, SEC filings, political trades, calendar watchpoints).
+**Goal:** Ship the universal impact-chip grammar — asset registry, aggregation engine, chip component — applied to existing pages with deterministic signals only (COT, FRED rates, crowd swings, SEC filings, political trades, calendar watchpoints; ETF price signals ship engine-only with tests and first surface on PR-3's board/dossiers).
 
 **Architecture:** A closed-vocabulary asset registry (`scripts/asset_board.json`) is emitted to a browser global (`site/asset-board-data.js`). A pure-logic engine (`site/core/impact-engine.js`) derives directional signals from data already shipped to the browser and aggregates them with the ≥2:1 net-pressure rule. A render component (`site/core/impact-chips.js` + `site/styles/chips.css`) draws tiered chips. Feature pages call the engine/chips to decorate their existing cards. No new pipeline, no model, no new fetches.
 
@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Static, bundler-free site. Every JS file is a classic script; load order in `site/index.html` matters. New globals: `window.marketAssetBoard`, `MarketBriefCore.impactEngine`, `MarketBriefCore.impactChips`.
-- NEVER hand-edit generated files: `site/free-data.js`, `site/political-data.js`, `site/equity-data.js`, `site/data/*`, `site/intelligence-data.js`. `site/asset-board-data.js` is a NEW generated file owned by `scripts/build_asset_board.py` — edit the registry JSON and re-run the emitter, never the emitted file.
+- NEVER hand-edit generated files: `site/free-data.js`, `site/political-data.js`, `site/equity-data.js`, `site/data/*`. (`site/intelligence-data.js` is NOT generated — it is the hand-curated Verified-tier source per AGENTS.md; no PR-1 task touches it.) `site/asset-board-data.js` is a NEW generated file owned by `scripts/build_asset_board.py` — edit the registry JSON and re-run the emitter, never the emitted file.
 - AGENTS.md honesty rules: never hide unavailable/partial/stale states; no invented numbers; signals derive only from data whose row status permits it.
 - All existing tests must stay green: `python -m unittest discover -s tests -v` (195+ tests) and `python scripts/audit_static_site.py`.
 - Byte budgets are enforced by `scripts/audit_static_site.py` (`FILE_BUDGETS` dict) — new runtime files need entries (added in Task 3).
@@ -128,7 +128,7 @@ Expected: FAIL — `FileNotFoundError` for `scripts/asset_board.json`.
      "cotId": "brent-last-day", "crowdAliases": ["brent"], "calendarAliases": ["Brent"]},
     {"id": "wti", "label": "WTI", "kind": "asset", "family": "Energy",
      "cotId": "wti-financial", "crowdAliases": ["wti"], "calendarAliases": ["WTI"]},
-    {"id": "henry-hub", "label": "US natural gas", "kind": "asset", "family": "Energy",
+    {"id": "henry-hub", "label": "US natural gas (Henry Hub)", "kind": "asset", "family": "Energy",
      "cotId": "natural-gas-nyme"},
     {"id": "ttf", "label": "EU gas (TTF)", "kind": "asset", "family": "Energy"},
     {"id": "nbp", "label": "UK gas (NBP)", "kind": "asset", "family": "Energy"},
@@ -167,7 +167,7 @@ Expected: FAIL — `FileNotFoundError` for `scripts/asset_board.json`.
     {"id": "semis", "label": "Semiconductors", "kind": "theme", "family": "Themes",
      "etfIds": ["smh", "soxx"], "crowdAliases": ["semiconductors"],
      "memberTickers": ["nvda", "amd", "avgo", "tsm", "asml", "mu", "amat", "lrcx", "klac", "qcom", "arm", "intc"]},
-    {"id": "rare-earths", "label": "Rare earths", "kind": "theme", "family": "Themes",
+    {"id": "rare-earths", "label": "Rare earths & critical minerals", "kind": "theme", "family": "Themes",
      "etfIds": ["remx"],
      "memberTickers": ["mp", "uuuu", "usar", "nb", "crml", "alb", "sqm", "lyc", "aru", "ilu"]}
   ]
@@ -268,9 +268,10 @@ sandbox.window.marketAssetBoard = {
   schemaVersion: 1,
   assets: [
     { id: 'gold', label: 'Gold', kind: 'asset', family: 'Metals', cotId: 'gold', crowdAliases: ['gold'] },
-    { id: 'us10y', label: 'US 10Y yield', kind: 'asset', family: 'Rates/FX', rateId: 'DGS10' },
+    { id: 'us10y', label: 'US 10Y yield', kind: 'asset', family: 'Rates/FX', rateId: 'DGS10', cotId: 'us10y-cot' },
+    { id: 'dxy', label: 'US dollar', kind: 'asset', family: 'Rates/FX', rateId: 'DTWEXBGS' },
     { id: 'risk-assets', label: 'Risk assets', kind: 'theme', family: 'Themes', rateId: 'BAMLH0A0HYM2', rateInvert: true },
-    { id: 'semis', label: 'Semiconductors', kind: 'theme', family: 'Themes', etfIds: ['smh'], memberTickers: ['nvda'] },
+    { id: 'semis', label: 'Semiconductors', kind: 'theme', family: 'Themes', etfIds: ['smh', 'soxx'], memberTickers: ['nvda'] },
     { id: 'nbp', label: 'UK gas (NBP)', kind: 'asset', family: 'Energy' },
   ],
 };
@@ -291,7 +292,7 @@ const cotSignals = engine.deriveCotSignals({
   cot: [
     { id: 'gold', weekChange: 5200, category: 'Managed money', reportDate: '2026-07-07' },
     { id: 'silver', weekChange: -900, category: 'Managed money', reportDate: '2026-07-07' }, // unmapped in fixture board
-    { id: 'gold-dup-zero', weekChange: 0 },
+    { id: 'us10y-cot', weekChange: 0, category: 'Leveraged funds', reportDate: '2026-07-07' }, // MAPPED but zero change — must be suppressed
   ],
 });
 assert.strictEqual(cotSignals.length, 1);
@@ -304,14 +305,19 @@ const rateSignals = engine.deriveRateSignals({
   rates: [
     { id: 'DGS10', name: 'US 10-year Treasury', change: -0.06, changeBps: -6, unit: '%', date: '2026-07-14', value: 4.2 },
     { id: 'BAMLH0A0HYM2', name: 'US high-yield spread', change: 0.11, changeBps: 11, unit: '%', date: '2026-07-14', value: 3.1 },
+    { id: 'DTWEXBGS', name: 'US broad dollar index', change: -0.31, changeBps: null, unit: 'index', date: '2026-07-14', value: 119.2 }, // real shape: null changeBps
     { id: 'SOFR', name: 'SOFR', change: 0.01, changeBps: 1, unit: '%', date: '2026-07-14', value: 4.3 },
   ],
 });
-assert.strictEqual(rateSignals.length, 2);
+assert.strictEqual(rateSignals.length, 3);
 const us10y = rateSignals.find((s) => s.assetId === 'us10y');
 const risk = rateSignals.find((s) => s.assetId === 'risk-assets');
+const dxy = rateSignals.find((s) => s.assetId === 'dxy');
 assert.strictEqual(us10y.direction, 'down');
 assert.strictEqual(risk.direction, 'down'); // spread widened → inverted
+assert.strictEqual(dxy.direction, 'down');
+assert.ok(!dxy.detail.includes('0bps'), 'null changeBps must never render as an invented 0bps');
+assert.ok(dxy.detail.includes('0.31 index'), 'null changeBps falls back to raw change + unit');
 
 // --- crowd derivation: attention only, threshold 5pts ---
 const crowdSignals = engine.deriveCrowdSignals({
@@ -328,7 +334,7 @@ assert.strictEqual(crowdSignals[0].direction, 'mixed');
 const etfSignals = engine.deriveEtfSignals({
   watchlist: [
     { id: 'smh', status: 'current', percentChange: 1.42, name: 'VanEck Semiconductor ETF' },
-    { id: 'soxx', status: 'unavailable', percentChange: null, name: 'iShares Semiconductor ETF' },
+    { id: 'soxx', status: 'unavailable', percentChange: 2.0, name: 'iShares Semiconductor ETF' }, // non-current status must be excluded even with a numeric move
   ],
 });
 assert.strictEqual(etfSignals.length, 1);
@@ -342,7 +348,8 @@ const collected = engine.collectDeterministicSignals({
   equityData: { watchlist: [] },
 });
 assert.strictEqual(collected.gold.net, 'up');
-assert.deepStrictEqual(collected.gold.counts, { up: 1, down: 0, mixed: 0 });
+// Spread into a host-realm object: vm-realm objects fail deepStrictEqual's prototype identity check.
+assert.deepStrictEqual({ ...collected.gold.counts }, { up: 1, down: 0, mixed: 0 });
 assert.strictEqual(collected.nbp.net, 'quiet');
 assert.strictEqual(collected.nbp.signals.length, 0);
 
@@ -469,9 +476,11 @@ Expected: FAIL — node exits non-zero (`Cannot find module .../site/core/impact
       if (!Number.isFinite(change) || change === 0) return;
       assetsByRateId(row.id).forEach((asset) => {
         const observed = asset.rateInvert ? -change : change;
-        const moveText = Number.isFinite(Number(row.changeBps))
-          ? `${Math.abs(Number(row.changeBps))}bps`
-          : `${Math.abs(change)}${row.unit || ''}`;
+        // Non-coercing gate: Number.isFinite(null) is false, but Number(null) === 0 —
+        // coercion would render an invented "0bps" for real rows like DTWEXBGS (changeBps: null).
+        const moveText = Number.isFinite(row.changeBps)
+          ? `${Math.abs(row.changeBps)}bps`
+          : `${Math.abs(change)} ${row.unit || ''}`.trim();
         signals.push({
           assetId: asset.id,
           direction: observed > 0 ? 'up' : 'down',
@@ -604,7 +613,7 @@ git push
 **Files:**
 - Create: `site/core/impact-chips.js`
 - Create: `site/styles/chips.css`
-- Modify: `site/index.html` (one `<link>` line after `styles/shell.css`; three `<script>` lines around the `core/` block at ~lines 235–239)
+- Modify: `site/index.html` (one `<link>` line BEFORE `styles/shell.css`, immediately after `free-data.css` at ~line 15 — shell.css must stay the last stylesheet; three `<script>` lines around the `core/` block at ~lines 235–239)
 - Modify: `scripts/audit_static_site.py:16-21` (`FILE_BUDGETS`)
 - Test: `tests/js/impact-chips.test.js`, extend `tests/test_impact_engine.py`
 
@@ -1020,7 +1029,7 @@ git push
         self.assertIn("sec-theme-chip", source)
 ```
 
-(Each file already reads its page source — match its helper convention.)
+(Only `tests/test_political_flow_interface.py` already reads its page source — add the method to its existing class, reusing `cls.page` if convenient. `tests/test_crowd_expectations.py` and `tests/test_official_feeds.py` have NO page-source read helper; the methods above are self-contained — `ROOT` is module-level in both, so `(ROOT / "site" / ...).read_text(...)` works as written. Add the crowd method to `CrowdIntegrationTests` (~line 313) and the SEC method to `OfficialFeedIntegrationTests` (~line 222).)
 
 - [ ] **Step 2: Run tests to verify the three new ones fail**
 
@@ -1089,7 +1098,12 @@ In `site/features/political-flow/political-page.js`, add helper:
   }
 ```
 
-Interpolate `${themeChip(trade)}` into the trade row template next to the ticker cell. Append to the page's existing warning/context copy (additive sentence):
+Interpolate `${themeChip(trade)}` into BOTH trade-row renderers — `political-page.js` has two:
+
+1. `renderRecent()` (~line 110, the Recent-filings table): the ticker sits inside an `<a href="#trackers/...">` — place the chip inside the `<th scope="row">` immediately AFTER the closing `</a>`, NEVER inside the anchor (PR-3 upgrades chips to `<a>`, and nested anchors are invalid — same rule as the COT after-`</button>` placement in Task 4).
+2. `tradeTable()` (~line 130, the per-politician annual ledger): place the chip inside the `<th scope="row">` after the asset `<span>`.
+
+Append to the page's existing warning/context copy (additive sentence):
 
 ```
 Theme chips on disclosed trades are contextual only — filings lag the trade date, so they are excluded from net-pressure windows.
@@ -1156,6 +1170,7 @@ Add to `tests/test_calendar_reactions.py`:
         self.assertIn("assetByCalendarAlias", source)
         self.assertIn("'watch'", source)
         self.assertIn("Relevant assets were not explicitly named", source)
+        self.assertIn("if (!mapped.length) return '';", source)  # honesty fallback is contract-tested
 ```
 
 - [ ] **Step 2: Run test to verify it fails**
@@ -1191,7 +1206,10 @@ In `site/features/calendar/calendar-page.js`, add helper inside the IIFE:
         leftover.push(label);
       }
     });
-    const chipHtml = mapped.length ? chips.chipStrip(mapped) : '';
+    // All labels unmappable: return '' so the caller's unchanged "Relevant assets:" copy
+    // renders instead — "Also relevant:" must only ever appear below actual chips.
+    if (!mapped.length) return '';
+    const chipHtml = chips.chipStrip(mapped);
     const textHtml = leftover.length ? `<span class="calendar-leftover-assets">Also relevant: ${leftover.map((l) => escapeHtml(l)).join(' · ')}</span>` : '';
     return chipHtml + textHtml;
   }
@@ -1245,7 +1263,7 @@ Expected: silence (all files parse).
 
 - [ ] **Step 2: Visual smoke (real browser)**
 
-Use the existing harness at `C:/Users/Office/Desktop/Make Backup/market-brief-ui-shots/shoot.js` (borrows Playwright from `amj-diamonds/node_modules`; serve `site/` with `python -m http.server`). Capture `#cot`, `#rates`, `#crowd`, `#calendar`, `#official-feeds`. Verify: chips render with arrows + labels, no console errors beyond the pre-existing TradingView CORS noise, COT/macro chip colours match the direction (green ↑ / red ↓), calendar chips show the ◔ watch glyph.
+Use the existing harness at `C:/Users/Office/Desktop/Make Backup/market-brief-ui-shots/shoot.js` (borrows Playwright from `amj-diamonds/node_modules`; serve `site/` with `python -m http.server`). Capture `#cot`, `#rates`, `#crowd`, `#calendar`, `#official-feeds`, `#political`. Verify: chips render with arrows + labels, no console errors beyond the pre-existing TradingView CORS noise, COT/macro chip colours match the direction (green ↑ / red ↓), calendar chips show the ◔ watch glyph. Expected ABSENT: ETF price chips (no page calls the ETF derivation in PR-1, and the committed equity snapshot is currently all-`unavailable`) — their absence is correct, not a bug.
 
 - [ ] **Step 3: Update PROJECT-STATUS.md**
 
@@ -1278,6 +1296,14 @@ gh pr create --title "Pressure Board PR-1: asset registry, impact engine, determ
 
 First of four PRs from docs/superpowers/specs/2026-07-16-trader-pressure-board-design.md. No model tagging (PR-2), no home board (PR-3), no new sources (PR-4).
 
+Conscious narrowings/amendments vs the spec (operator sign-off requested):
+- Price chips: hard commodities have NO free price feed in window.freeMarketData (rates/COT only) — spec's 'if free feed exists' resolves to absent, honest dashes come with PR-3's board. ETF price signals ship engine-only (tested) and first render on PR-3's board/dossiers.
+- us10y + dxy get COT joins the spec table marked absent — the CFTC data exists in the feed (us10y-futures, usd-index); richer Sunday COT block for free.
+- Crowd chips are direction-less attention chips (a probability move has no deterministic price sign).
+- Political trade chips render on cards but are excluded from net-pressure windows (filing lag).
+- Calendar watch chips pulled forward from PR-3 (deterministic, zero new infra); they carry tier 'observed' as a v1 shape limitation and never enter aggregation.
+- Registry emitted as site/asset-board-data.js window-global (classic-script site) rather than site/data/asset-board.json; labels follow spec §3 verbatim ('US natural gas (Henry Hub)', 'Rare earths & critical minerals'); 'US dollar' kept short of spec's 'US dollar (DXY)' because the join is FRED broad-dollar, labelled as such.
+
 🤖 Generated with [Claude Code](https://claude.com/claude-code)"
 ```
 
@@ -1295,4 +1321,10 @@ Do NOT merge. Report the PR URL and wait for explicit approval (repo rule: `site
 - Political trades: direction rendered but excluded from aggregation (filing lag) — matches spec §4.2's "low visual weight" intent, made explicit.
 - `bhp/rio/fcx` unmapped (no honest single theme); revisit post-v1.
 - Conscious deviation from spec §3/§8: the registry is emitted as `site/asset-board-data.js` (`window.marketAssetBoard`), not `site/data/asset-board.json`, because this classic-script site consumes synchronous globals (chips render on every page before any fetch) and `site/data/` is reserved for pipeline-refreshed JSON. Entry shape uses `cotId` slugs (the join key `freeMarketData.cot[].id` actually shipped to the browser) instead of the spec's `cotMarket` display names, plus page-specific alias fields (`crowdAliases`, `calendarAliases`). PR-2's tagger reads `scripts/asset_board.json` directly, so the closed vocabulary is unaffected. State this in the PR body alongside the other narrowings.
-- Adversarial review (2026-07-17) folded in: chips.css must load BEFORE styles/shell.css (`test_shell_contract.py` asserts shell.css last); `chipStrip` emits an inline-safe `<span>` (a `<div>` would split the calendar `<p>` and be invalid inside `<span>`/`<th>` wrappers); COT chip placed after the row-select `</button>`, never inside it.
+- Adversarial review round 1 (2026-07-17) folded in: chips.css must load BEFORE styles/shell.css (`test_shell_contract.py` asserts shell.css last); `chipStrip` emits an inline-safe `<span>` (a `<div>` would split the calendar `<p>` and be invalid inside `<span>`/`<th>` wrappers); COT chip placed after the row-select `</button>`, never inside it.
+- Adversarial review round 2 (2026-07-17, 13 confirmed findings) folded in:
+  - `us10y`/`dxy` COT joins added beyond spec §3's "no" — the data exists in `freeMarketData.cot`; flagged in the PR body for operator approval rather than silently shipped.
+  - Spec §9.1 "price" chips: engine-derived only in PR-1 (`deriveEtfSignals` + tests); no existing card surfaces them — first render on PR-3's board/dossiers. Commodity `priceJoin` absent from the registry because `freeMarketData` ships no commodity price section (honest per spec §3's "if free feed exists" clause).
+  - Calendar watch chips carry `tier: 'observed'` although spec §4.2 marks calendar tier n/a — the signal shape only has observed/verified/ai and the component falls back to observed for anything else. They are page-local (never aggregated) and get no observed fill (CSS only fills `.tier-observed.up/.down`). Revisit before PR-3 surfaces tiers in dossier stacks.
+  - Labels adopted verbatim from spec §3: `US natural gas (Henry Hub)`, `Rare earths & critical minerals` (the theme holds lithium/uranium members only the full label honestly covers). `US dollar` kept short of `US dollar (DXY)` — the join is FRED broad-dollar, labelled as such per the spec's own caveat.
+  - `deriveRateSignals` null-`changeBps` guard (real DTWEXBGS row ships `changeBps: null` — coercion would invent "0bps"); node-test fixtures made load-bearing for the COT zero-change and ETF status gates; vm-realm `deepStrictEqual` fixed by spreading into a host-realm object; both political trade tables chipped (chip outside the recent-filings anchor); calendar all-unmappable events fall back to the original honest copy; `site/intelligence-data.js` correctly reclassified as hand-maintained.
