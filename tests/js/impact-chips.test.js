@@ -48,4 +48,10 @@ assert.ok(strip.startsWith('<span class="impact-chips"'), 'strip must be inline-
 assert.strictEqual((strip.match(/impact-chip /g) || []).length, 2);
 assert.strictEqual(chips.chipStrip([]), '');
 
+// max clamps to a non-negative integer; {max:0} renders none (not the default 8), negatives fall back to default
+const many = Array.from({ length: 12 }, () => ({ assetId: 'gold', direction: 'up', tier: 'observed', href: '' }));
+assert.strictEqual((chips.chipStrip(many).match(/impact-chip /g) || []).length, 8, 'default cap is 8');
+assert.strictEqual((chips.chipStrip(many, { max: 3 }).match(/impact-chip /g) || []).length, 3);
+assert.strictEqual(chips.chipStrip(many, { max: 0 }), '', '{max:0} renders none, not the default 8');
+
 console.log('impact-chips tests passed');

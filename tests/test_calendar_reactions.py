@@ -70,6 +70,7 @@ class CalendarReactionTests(unittest.TestCase):
         self.assertIn("if (!mapped.length) return '';", source)  # honesty fallback is contract-tested
         self.assertIn("watchChips(event) ||", source)  # helper is actually interpolated with its fallback
         self.assertIn("if (seen.has(asset.id)) return;", source)  # watch chips dedupe by board asset (alias collisions)
+        self.assertIn("if (event.state !== 'upcoming') return '';", source)  # watch chips only on upcoming events, never released/reaction-complete
 
 
 if __name__ == "__main__":

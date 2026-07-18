@@ -33,7 +33,9 @@
   }
 
   function chipStrip(signals = [], options = {}) {
-    const max = Number(options.max) || 8;
+    // Clamp to a non-negative integer; default 8. Number(x) || 8 would turn an
+    // explicit {max:0} ("render none") into 8, and negatives into surprising slice() behaviour.
+    const max = Number.isInteger(options.max) && options.max >= 0 ? options.max : 8;
     const list = (Array.isArray(signals) ? signals : []).filter(Boolean).slice(0, max);
     if (!list.length) return '';
     // <span>, not <div>: callers interpolate strips inside <p>/<th>/<span>,

@@ -31,6 +31,10 @@
     const engine = core.impactEngine;
     const chips = core.impactChips;
     if (!engine || !chips) return '';
+    // Watch chips ("direction is unknowable before the print") are for UPCOMING events only.
+    // Released / reaction-complete events have already printed — fall back to the plain
+    // "Relevant assets:" copy rather than claim the release is still scheduled.
+    if (event.state !== 'upcoming') return '';
     const mapped = [];
     const leftover = [];
     const seen = new Set();
