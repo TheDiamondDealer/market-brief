@@ -60,7 +60,7 @@
         tier: 'observed',
         source: 'cot',
         label: `${row.category || 'Speculative'} positioning`,
-        detail: `Net ${row.category || 'speculative'} position ${signedContracts(change)} in the CFTC week ending ${row.reportDate || 'date unavailable'}.`,
+        detail: `Net ${row.category || 'speculative'} position ${signedContracts(change)} - ${row.name || 'CFTC contract'}${row.contract?.exchange ? ', ' + row.contract.exchange : ''} (CFTC week ending ${row.reportDate || 'date unavailable'}).`,
         at: row.reportDate || null,
         status: row.dataState || 'current',
         href: '',
@@ -71,6 +71,14 @@
 
   function deriveRateSignals(freeData = window.freeMarketData || {}) {
     const rows = Array.isArray(freeData.rates) ? freeData.rates : [];
+    // Source-level honesty: FRED rate rows share one source status. Page calls pass a
+    // single-row dataset, so fall back to the global cache's sourceStatus. Never assert
+    // 'current' when the source cache is a stale/partial fallback.
+    const statusArr = Array.isArray(freeData.sourceStatus)
+      ? freeData.sourceStatus
+      : (typeof window !== 'undefined' && Array.isArray(window.freeMarketData?.sourceStatus) ? window.freeMarketData.sourceStatus : []);
+    const fredSource = statusArr.find((entry) => `${entry.source || ''} ${entry.id || ''}`.toLowerCase().includes('fred'));
+    const rateStatus = fredSource?.status || 'current';
     const signals = [];
     rows.forEach((row) => {
       const change = Number(row?.change);
@@ -90,7 +98,7 @@
           label: row.name || row.id,
           detail: `${row.name || row.id} moved ${change > 0 ? 'up' : 'down'} ${moveText} (${row.date || 'date unavailable'})${asset.rateInvert ? '; this series is risk-inverted' : ''}.`,
           at: row.date || null,
-          status: 'current',
+          status: rateStatus,
           href: '',
         });
       });

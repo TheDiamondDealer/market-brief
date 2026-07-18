@@ -267,6 +267,9 @@ class OfficialFeedIntegrationTests(unittest.TestCase):
         self.assertIn("${secThemeChip(record)}", source)   # interpolated into filingCard
         self.assertIn("deriveBlsPrintSignals", source)      # BLS prints delegate to the engine
         self.assertIn("${blsPrintChip(record)}", source)    # interpolated into seriesCard
+        # SEC/BLS chips report the owning source's real status, not a hard-coded 'current'
+        self.assertIn("sourceStatus: record.sourceStatus || source.status", source)
+        self.assertIn("record.sourceStatus || 'current'", source)
 
 
 if __name__ == "__main__":

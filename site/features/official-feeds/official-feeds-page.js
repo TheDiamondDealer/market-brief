@@ -75,7 +75,7 @@
       label: `${record.form || 'Filing'} filed`,
       detail: `${record.company || record.ticker} filed a ${record.form || 'document'} on ${record.filedAt || 'date unavailable'}.`,
       at: record.filedAt || null,
-      status: 'current',
+      status: record.sourceStatus || 'current',
       href: '',
     }])}</span>`;
   }
@@ -83,7 +83,7 @@
     const engine = core.impactEngine;
     const chips = core.impactChips;
     if (!engine || !chips || record.kind !== 'series') return '';
-    const signals = engine.deriveBlsPrintSignals({ records: [record] });
+    const signals = engine.deriveBlsPrintSignals({ records: [record], status: record.sourceStatus });
     return signals.length ? `<span class="bls-print-chip">${chips.chipStrip(signals)}</span>` : '';
   }
   function filingCard(record) {
@@ -109,7 +109,9 @@
     return seriesCard(record);
   }
   function sourceSection(source) {
-    const records = source.records || [];
+    // Stamp the owning source's status onto each record so SEC/BLS chips report the
+    // real feed status (partial/stale) instead of hard-coding 'current'.
+    const records = (source.records || []).map((record) => ({ ...record, sourceStatus: record.sourceStatus || source.status }));
     return `<section class="official-source-section"><header class="official-source-header"><div><span class="official-kicker">${escapeHtml(source.family)}</span><h3>${escapeHtml(source.name)}</h3><p>${escapeHtml(source.detail || 'No source detail supplied.')}</p></div><div class="official-source-meta"><span class="data-state ${statusClass(source.status)}">${escapeHtml(label(source.status))}</span><strong>${records.length} record${records.length === 1 ? '' : 's'}</strong><small>${escapeHtml(source.access)}</small></div></header><dl class="official-source-dates"><div><dt>Observed</dt><dd>${escapeHtml(formatDate(source.observedAt))}</dd></div><div><dt>Collected</dt><dd>${escapeHtml(formatDate(source.collectedAt))}</dd></div><div><dt>Last success</dt><dd>${escapeHtml(formatDate(source.lastSuccessfulAt))}</dd></div><div><dt>Cadence</dt><dd>${escapeHtml(source.expectedCadence)}</dd></div></dl>${source.error ? `<div class="official-error"><strong>Source note</strong><span>${escapeHtml(source.error)}</span></div>` : ''}<div class="official-record-grid">${records.length ? records.map(recordCard).join('') : '<div class="official-empty">No verified observations are available from this source yet.</div>'}</div><a class="official-source-link" href="${escapeHtml(source.sourceUrl)}" target="_blank" rel="noopener noreferrer">Source documentation ↗</a></section>`;
   }
   function render() {

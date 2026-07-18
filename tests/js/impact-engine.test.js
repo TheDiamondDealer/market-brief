@@ -43,7 +43,7 @@ assert.strictEqual(engine.netPressure({ up: 0, down: 0, mixed: 2 }), 'contested'
 // --- COT derivation ---
 const cotSignals = engine.deriveCotSignals({
   cot: [
-    { id: 'gold', weekChange: 5200, category: 'Managed money', reportDate: '2026-07-07' },
+    { id: 'gold', weekChange: 5200, category: 'Managed money', reportDate: '2026-07-07', name: 'Gold', contract: { exchange: 'COMMODITY EXCHANGE INC.' } },
     { id: 'silver', weekChange: -900, category: 'Managed money', reportDate: '2026-07-07' }, // unmapped in fixture board
     { id: 'us10y-cot', weekChange: 0, category: 'Leveraged funds', reportDate: '2026-07-07' }, // MAPPED but zero change — must be suppressed
   ],
@@ -52,6 +52,7 @@ assert.strictEqual(cotSignals.length, 1);
 assert.deepStrictEqual(
   { assetId: cotSignals[0].assetId, direction: cotSignals[0].direction, tier: cotSignals[0].tier, source: cotSignals[0].source },
   { assetId: 'gold', direction: 'up', tier: 'observed', source: 'cot' });
+assert.ok(cotSignals[0].detail.includes('COMMODITY EXCHANGE INC.'), 'COT chip detail must name the exact contract/exchange (provenance)');
 
 // --- rate derivation with inversion ---
 const rateSignals = engine.deriveRateSignals({
@@ -71,6 +72,12 @@ assert.strictEqual(risk.direction, 'down'); // spread widened → inverted
 assert.strictEqual(dxy.direction, 'down');
 assert.ok(!dxy.detail.includes('0bps'), 'null changeBps must never render as an invented 0bps');
 assert.ok(dxy.detail.includes('0.31 index'), 'null changeBps falls back to raw change + unit');
+assert.strictEqual(us10y.status, 'current'); // no sourceStatus supplied -> defaults current
+const staleRates = engine.deriveRateSignals({
+  rates: [{ id: 'DGS10', name: 'US 10-year Treasury', change: -0.06, changeBps: -6, unit: '%', date: '2026-07-14' }],
+  sourceStatus: [{ source: 'FRED / Federal Reserve data', status: 'stale-fallback' }],
+});
+assert.strictEqual(staleRates[0].status, 'stale-fallback'); // rate signals propagate the FRED source status, never assert current
 
 // --- crowd derivation: attention only, threshold 5pts ---
 const crowdSignals = engine.deriveCrowdSignals({
