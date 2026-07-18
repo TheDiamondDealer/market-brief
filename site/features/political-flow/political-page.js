@@ -23,6 +23,26 @@
   function sourceLink(url, label = 'Official filing') {
     return url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} ↗</a>` : '<span>Official link unavailable</span>';
   }
+  function themeChip(trade) {
+    const engine = core.impactEngine;
+    const chips = core.impactChips;
+    if (!engine || !chips || !trade.ticker) return '';
+    const theme = engine.themeForTicker(String(trade.ticker).toLowerCase());
+    if (!theme) return '';
+    const type = String(trade.type || '').toLowerCase();
+    const direction = type.startsWith('purchase') ? 'up' : type.startsWith('sale') ? 'down' : 'activity';
+    return `<span class="political-theme-chip">${chips.chipStrip([{
+      assetId: theme.id,
+      direction,
+      tier: 'observed',
+      source: 'political',
+      label: 'Disclosed trade',
+      detail: `Disclosed ${trade.type || 'transaction'} in ${trade.ticker}; filed ${trade.lagDays ?? '?'} days after the trade. Disclosures are lagged and excluded from net-pressure windows.`,
+      at: trade.filed || null,
+      status: 'current',
+      href: '',
+    }])}</span>`;
+  }
   function activate() {
     if (views?.activate('trackers', { scroll: false })) return;
     document.querySelectorAll('.view').forEach((node) => node.classList.toggle('active', node.id === 'view-trackers'));
@@ -47,7 +67,7 @@
     if (!root) return;
     root.dataset.politicalFlowRemodel = 'br-10';
     root.innerHTML = `<div class="political-flow-page">
-      <header class="political-flow-hero"><div><span class="political-kicker">Delayed public disclosure intelligence</span><h2>Political Flow</h2><p>Official House and Senate filings, separated into trade date, filing date, disclosed owner/account and statutory amount range. This is not real-time execution data.</p></div><div id="politicalFlowFreshness" class="political-flow-freshness"></div></header>
+      <header class="political-flow-hero"><div><span class="political-kicker">Delayed public disclosure intelligence</span><h2>Political Flow</h2><p>Official House and Senate filings, separated into trade date, filing date, disclosed owner/account and statutory amount range. This is not real-time execution data. Theme chips on disclosed trades are contextual only — filings lag the trade date, so they are excluded from net-pressure windows.</p></div><div id="politicalFlowFreshness" class="political-flow-freshness"></div></header>
       <section id="politicalFlowStatus" aria-live="polite"></section>
       <section class="political-flow-controls" aria-label="Political Flow search">
         <label><span>Find a politician</span><input id="politicalFlowPoliticianSearch" type="search" placeholder="Pelosi, Whitehouse, House…" autocomplete="off"></label>
@@ -107,7 +127,7 @@
     if (!target) return;
     const rows = recentRows().slice(0, 24);
     target.innerHTML = rows.length ? `<div class="political-table-scroll"><table class="political-table"><thead><tr><th scope="col">Politician / asset</th><th scope="col">Transaction</th><th scope="col">Disclosed owner/account</th><th scope="col">Trade date</th><th scope="col">Filed</th><th scope="col">Disclosure lag</th><th scope="col">Statutory range</th><th scope="col">Source</th></tr></thead><tbody>${rows.map((trade) => `<tr>
-      <th scope="row"><a href="#trackers/${encodeURIComponent(trade.politicianId || '')}"><strong>${escapeHtml(trade.politician || trade.politicianId || 'Tracked filer')}</strong><span>${escapeHtml(trade.ticker || trade.asset || 'Asset not specified')}</span><small>${escapeHtml(trade.asset || '')}</small></a></th>
+      <th scope="row"><a href="#trackers/${encodeURIComponent(trade.politicianId || '')}"><strong>${escapeHtml(trade.politician || trade.politicianId || 'Tracked filer')}</strong><span>${escapeHtml(trade.ticker || trade.asset || 'Asset not specified')}</span><small>${escapeHtml(trade.asset || '')}</small></a>${themeChip(trade)}</th>
       <td>${escapeHtml(trade.type || 'Not specified')}</td><td>${escapeHtml(trade.owner || 'Not specified')}</td><td>${escapeHtml(date(trade.traded))}</td><td>${escapeHtml(date(trade.filed))}</td><td>${escapeHtml(trade.lag || (trade.lagDays === null || trade.lagDays === undefined ? '—' : `${trade.lagDays} days`))}</td><td>${escapeHtml(trade.amount || 'Range unavailable')}</td><td>${sourceLink(trade.sourceUrl, 'Filing')}</td>
     </tr>`).join('')}</tbody></table></div>` : '<div class="political-empty">No verified recent transactions are available.</div>';
   }
@@ -127,7 +147,7 @@
   }
 
   function tradeTable(trades, caption) {
-    return `<div class="political-table-scroll"><table class="political-table"><caption>${escapeHtml(caption)}</caption><thead><tr><th scope="col">Asset</th><th scope="col">Transaction</th><th scope="col">Disclosed owner/account</th><th scope="col">Trade date</th><th scope="col">Filed</th><th scope="col">Lag</th><th scope="col">Statutory range</th><th scope="col">Official source</th></tr></thead><tbody>${trades.length ? trades.map((trade) => `<tr><th scope="row"><strong>${escapeHtml(trade.ticker || 'No ticker')}</strong><span>${escapeHtml(trade.asset || 'Asset not specified')}</span></th><td>${escapeHtml(trade.type || 'Not specified')}</td><td>${escapeHtml(trade.owner || 'Not specified')}</td><td>${escapeHtml(date(trade.traded))}</td><td>${escapeHtml(date(trade.filed))}</td><td>${escapeHtml(trade.lag || '—')}</td><td>${escapeHtml(trade.amount || 'Range unavailable')}</td><td>${sourceLink(trade.sourceUrl, 'Open filing')}</td></tr>`).join('') : '<tr><td colspan="8"><div class="political-empty">No verified trades are available for this selection.</div></td></tr>'}</tbody></table></div>`;
+    return `<div class="political-table-scroll"><table class="political-table"><caption>${escapeHtml(caption)}</caption><thead><tr><th scope="col">Asset</th><th scope="col">Transaction</th><th scope="col">Disclosed owner/account</th><th scope="col">Trade date</th><th scope="col">Filed</th><th scope="col">Lag</th><th scope="col">Statutory range</th><th scope="col">Official source</th></tr></thead><tbody>${trades.length ? trades.map((trade) => `<tr><th scope="row"><strong>${escapeHtml(trade.ticker || 'No ticker')}</strong><span>${escapeHtml(trade.asset || 'Asset not specified')}</span>${themeChip(trade)}</th><td>${escapeHtml(trade.type || 'Not specified')}</td><td>${escapeHtml(trade.owner || 'Not specified')}</td><td>${escapeHtml(date(trade.traded))}</td><td>${escapeHtml(date(trade.filed))}</td><td>${escapeHtml(trade.lag || '—')}</td><td>${escapeHtml(trade.amount || 'Range unavailable')}</td><td>${sourceLink(trade.sourceUrl, 'Open filing')}</td></tr>`).join('') : '<tr><td colspan="8"><div class="political-empty">No verified trades are available for this selection.</div></td></tr>'}</tbody></table></div>`;
   }
 
   function portfolio(profile) {

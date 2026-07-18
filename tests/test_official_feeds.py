@@ -260,6 +260,17 @@ class OfficialFeedIntegrationTests(unittest.TestCase):
         pce = next(row for row in registry["bea"]["tables"] if row["table"] == "T20804")
         self.assertEqual(pce["frequency"], "M")
 
+    def test_sec_and_bls_records_render_chips(self) -> None:
+        source = (ROOT / "site" / "features" / "official-feeds" / "official-feeds-page.js").read_text(encoding="utf-8")
+        self.assertIn("themeForTicker", source)
+        self.assertIn("sec-theme-chip", source)
+        self.assertIn("${secThemeChip(record)}", source)   # interpolated into filingCard
+        self.assertIn("deriveBlsPrintSignals", source)      # BLS prints delegate to the engine
+        self.assertIn("${blsPrintChip(record)}", source)    # interpolated into seriesCard
+        # SEC/BLS chips report the owning source's real status, not a hard-coded 'current'
+        self.assertIn("sourceStatus: record.sourceStatus || source.status", source)
+        self.assertIn("record.sourceStatus || 'current'", source)
+
 
 if __name__ == "__main__":
     unittest.main()

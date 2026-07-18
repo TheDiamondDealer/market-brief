@@ -46,12 +46,19 @@
     const summary = `${row.name}: previous ${Number(row.previous)} ${row.unit}, latest ${Number(row.value)} ${row.unit}.`;
     return `<span class="macro-delta ${cls}" role="img" aria-label="${escapeHtml(summary)}"><span aria-hidden="true">${arrow}</span> ${escapeHtml(trendLabel(row))}</span>`;
   }
+  function boardChips(row) {
+    const engine = core.impactEngine;
+    const chips = core.impactChips;
+    if (!engine || !chips) return '';
+    const signals = engine.deriveRateSignals({ rates: [row] });
+    return signals.length ? `<span class="macro-board-chips">${chips.chipStrip(signals)}</span>` : '';
+  }
   function cadence(row) { return row.id === 'DFF' || row.id === 'SOFR' ? 'Daily business-day observation' : 'Daily market observation'; }
 
   function seriesCard(row, status) {
     return `<article class="macro-series-card">
       <header><div><span>${escapeHtml(row.kind || 'series')}</span><h4>${escapeHtml(row.name)}</h4></div><span class="data-state ${statusClass(status.status)}">${escapeHtml(status.status || 'Unavailable')}</span></header>
-      <div class="macro-reading"><strong>${number(row.value, row.unit === 'index' ? 4 : 2)}${row.unit === '%' ? '%' : ''}</strong>${deltaChip(row)}</div>
+      <div class="macro-reading"><strong>${number(row.value, row.unit === 'index' ? 4 : 2)}${row.unit === '%' ? '%' : ''}</strong>${deltaChip(row)}${boardChips(row)}</div>
       <dl class="macro-meta"><div><dt>Observation date</dt><dd>${escapeHtml(row.date || 'Unavailable')}</dd></div><div><dt>Previous</dt><dd>${number(row.previous, row.unit === 'index' ? 4 : 2)}${row.unit === '%' ? '%' : ''}</dd></div><div><dt>Expected cadence</dt><dd>${escapeHtml(cadence(row))}</dd></div><div><dt>Series ID</dt><dd>${escapeHtml(row.id)}</dd></div></dl>
       <a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noopener noreferrer">Official FRED series ↗</a>
     </article>`;
@@ -77,7 +84,7 @@
       <section class="macro-source-note"><strong>Source status</strong><p>${escapeHtml(status.detail || 'No additional source detail supplied.')}</p></section>
       ${GROUPS.map((group) => groupPanel(group, status)).join('')}
       ${curvePanel()}
-      <details class="macro-methodology"><summary>Interpretation limits</summary><p>The delta chip shows only the change between the previous and latest connected observations; it is not a long-history chart. A current cache timestamp does not replace each series’ observation date. Missing employment and growth data remains unavailable until an approved pipeline is added.</p></details>
+      <details class="macro-methodology"><summary>Interpretation limits</summary><p>The delta chip shows only the change between the previous and latest connected observations; it is not a long-history chart. A current cache timestamp does not replace each series’ observation date. Missing employment and growth data remains unavailable until an approved pipeline is added.</p><table class="macro-rules-table"><caption>Board-chip mapping rules (deterministic, no interpretation)</caption><thead><tr><th scope="col">Series</th><th scope="col">Board asset</th><th scope="col">Rule</th></tr></thead><tbody><tr><td>DGS10</td><td>US 10Y yield</td><td>Sign of change</td></tr><tr><td>DTWEXBGS</td><td>US dollar</td><td>Sign of change</td></tr><tr><td>T10YIE</td><td>Inflation risk</td><td>Sign of change</td></tr><tr><td>BAMLH0A0HYM2</td><td>Risk assets</td><td>Risk-inverted: a wider high-yield spread reads as pressure DOWN on risk assets</td></tr><tr><td>CUSR0000SA0 / WPSFD4 / CUSR0000SA0L1E</td><td>Inflation risk</td><td>Sign of monthly change (BLS prints; chips render on Official feeds)</td></tr></tbody></table></details>
     </div>`;
   }
 

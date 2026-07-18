@@ -73,6 +73,16 @@ class MacroMonitorTests(unittest.TestCase):
         self.assertIn("flex-direction:column", self.styles)
         self.assertIn("prefers-reduced-motion", self.styles)
 
+    def test_series_cards_render_board_chips_and_rules(self) -> None:
+        self.assertIn("deriveRateSignals({ rates: [row] })", self.page)  # page delegates to the engine
+        self.assertIn("macro-board-chips", self.page)
+        self.assertIn("${boardChips(row)}", self.page)  # helper is actually interpolated
+        self.assertIn("macro-rules-table", self.page)   # the spec's VISIBLE rules table
+        self.assertIn("T10YIE", self.page)
+        self.assertIn("BAMLH0A0HYM2", self.page)
+        self.assertIn("CUSR0000SA0", self.page)
+        self.assertIn("WPSFD4", self.page)
+
 
 if __name__ == "__main__":
     unittest.main()

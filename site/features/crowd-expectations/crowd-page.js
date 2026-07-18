@@ -65,6 +65,14 @@
     return `${Number(value).toFixed(1)}%`;
   }
 
+  function attentionChips(market) {
+    const engine = core.impactEngine;
+    const chips = core.impactChips;
+    if (!engine || !chips) return '';
+    const signals = engine.deriveCrowdSignals({ markets: [market] });
+    return signals.length ? `<span class="crowd-attention-chips">${chips.chipStrip(signals)}</span>` : '';
+  }
+
   function ensureHost() {
     let node = document.getElementById('view-crowd-expectations');
     if (node) return node;
@@ -164,6 +172,7 @@
       </header>
       <h3>${escapeHtml(market.question)}</h3>
       <div class="crowd-probability"><strong>${escapeHtml(probability(market.probabilityPercent))}</strong><span>YES · ${escapeHtml(market.probabilitySource)}</span></div>
+      ${attentionChips(market)}
       ${historySparkline(market)}
       <dl>
         <div><dt>7-day move</dt><dd>${escapeHtml(signedPoints(market.change7dPoints))}</dd></div>

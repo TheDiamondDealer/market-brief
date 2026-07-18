@@ -353,6 +353,12 @@ class CrowdIntegrationTests(unittest.TestCase):
         self.assertNotRegex(collector, r"os\.environ\.get\([\"'](?:private_key|api_secret)")
         self.assertNotRegex(collector, r"(?:post|put)\s*=\s*true")
 
+    def test_market_cards_render_attention_chips(self) -> None:
+        source = (ROOT / "site" / "features" / "crowd-expectations" / "crowd-page.js").read_text(encoding="utf-8")
+        self.assertIn("deriveCrowdSignals({ markets: [market] })", source)  # page delegates to the engine
+        self.assertIn("crowd-attention-chips", source)
+        self.assertIn("${attentionChips(market)}", source)  # helper is actually interpolated
+
 
 if __name__ == "__main__":
     unittest.main()
