@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-17T09:12:43+10:00",
-  "generatedAtHuman": "17 July 2026, 09:12 AEST",
+  "generatedAt": "2026-07-20T09:13:50+10:00",
+  "generatedAtHuman": "20 July 2026, 09:13 AEST",
   "methodology": "Official House PTR PDFs and Senate eFD PTR pages. Existing verified trades are retained during source failures. Portfolio estimates are PTR-derived until annual holdings baselines are added.",
-  "totalTrades": 3949,
+  "totalTrades": 3950,
   "trackers": {
     "pelosi": {
       "politicianId": "pelosi",
@@ -512,7 +512,6 @@
       ],
       "sourceStatus": {
         "errors": [
-          "House pelosi 8214491: no transaction rows parsed",
           "House pelosi 20012343: no transaction rows parsed",
           "House pelosi 20016155: no transaction rows parsed",
           "House pelosi 20017123: no transaction rows parsed",
@@ -1535,14 +1534,32 @@
       "name": "Cleo Fields",
       "chamber": "House",
       "status": "Partial — previous verified records retained",
-      "tradeCount": 106,
-      "latestTrade": "2026-06-11",
-      "latestFiling": "2026-06-26",
+      "tradeCount": 107,
+      "latestTrade": "2026-06-26",
+      "latestFiling": "2026-07-16",
       "years": [
         2026,
         2025
       ],
       "recentTrades": [
+        {
+          "id": "93834870e8be46ece4c2ff1c",
+          "filingId": "20034894",
+          "asset": "NVIDIA Corporation - Common Stock (NVDA) [ST]",
+          "ticker": "NVDA",
+          "type": "Purchase",
+          "owner": "Not specified",
+          "traded": "2026-06-26",
+          "filed": "2026-07-16",
+          "lag": "20 days",
+          "lagDays": 20,
+          "amount": "$1,001 - $15,000",
+          "source": "Official House Periodic Transaction Report",
+          "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034894.pdf",
+          "page": 1,
+          "filingContentHash": "608b5187192c389d67a0bc033458d4fac3215194821982049102a5bab2a2df9b",
+          "parserVersion": "political-ptr-v3"
+        },
         {
           "id": "44edd073e1ce9167b7537fba",
           "filingId": "20034800",
@@ -2006,22 +2023,6 @@
           "source": "Official House Periodic Transaction Report",
           "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033326.pdf",
           "page": 1
-        },
-        {
-          "id": "a883d8262c8d1493b859eba5",
-          "filingId": "20033326",
-          "asset": "CoreWeave, Inc. - Class A Common Stock (CRWV) [ST]",
-          "ticker": "CRWV",
-          "type": "Purchase",
-          "owner": "Not specified",
-          "traded": "2025-10-09",
-          "filed": "2025-10-30",
-          "lag": "21 days",
-          "lagDays": 21,
-          "amount": "$1,001 - $15,000",
-          "source": "Official House Periodic Transaction Report",
-          "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033326.pdf",
-          "page": 1
         }
       ],
       "sourceStatus": {
@@ -2031,7 +2032,7 @@
           "House cleo-fields 20034357: no transaction rows parsed",
           "House cleo-fields 20034591: no transaction rows parsed"
         ],
-        "newTrades": 0
+        "newTrades": 1
       }
     },
     "rob-bresnahan": {
@@ -4073,6 +4074,27 @@
       "sourceUrl": "https://efdsearch.senate.gov/search/view/ptr/5d9b1b8e-2ae1-442b-860c-e79b8a701dc6/"
     },
     {
+      "politicianId": "cleo-fields",
+      "politician": "Cleo Fields",
+      "chamber": "House",
+      "id": "93834870e8be46ece4c2ff1c",
+      "filingId": "20034894",
+      "asset": "NVIDIA Corporation - Common Stock (NVDA) [ST]",
+      "ticker": "NVDA",
+      "type": "Purchase",
+      "owner": "Not specified",
+      "traded": "2026-06-26",
+      "filed": "2026-07-16",
+      "lag": "20 days",
+      "lagDays": 20,
+      "amount": "$1,001 - $15,000",
+      "source": "Official House Periodic Transaction Report",
+      "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034894.pdf",
+      "page": 1,
+      "filingContentHash": "608b5187192c389d67a0bc033458d4fac3215194821982049102a5bab2a2df9b",
+      "parserVersion": "political-ptr-v3"
+    },
+    {
       "politicianId": "sheldon-whitehouse",
       "politician": "Sheldon Whitehouse",
       "chamber": "Senate",
@@ -5912,30 +5934,11 @@
       "source": "Official House Periodic Transaction Report",
       "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033903.pdf",
       "page": 1
-    },
-    {
-      "politicianId": "tim-moore",
-      "politician": "Tim Moore",
-      "chamber": "House",
-      "id": "ed7c840660a5fc5a70be9423",
-      "filingId": "20033856",
-      "asset": "Hyster-Yale, Inc. Class A common stock (HY) [ST]",
-      "ticker": "HY",
-      "type": "Sale",
-      "owner": "Not specified",
-      "traded": "2026-01-05",
-      "filed": "2026-01-24",
-      "lag": "19 days",
-      "lagDays": 19,
-      "amount": "$15,001 - $50,000",
-      "source": "Official House Periodic Transaction Report",
-      "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20033856.pdf",
-      "page": 1
     }
   ],
   "sourceStatus": {
     "house": {
-      "filingsDiscovered": 307,
+      "filingsDiscovered": 305,
       "errors": []
     },
     "senate": {
@@ -5943,7 +5946,6 @@
     },
     "parsing": {
       "errors": [
-        "House pelosi 8214491: no transaction rows parsed",
         "House josh-gottheimer 9110522: no transaction rows parsed",
         "House josh-gottheimer 9111258: no transaction rows parsed",
         "House josh-gottheimer 9111844: no transaction rows parsed",
@@ -5972,14 +5974,15 @@
         "House cleo-fields 20027855: no transaction rows parsed",
         "House donald-beyer 20030262: no transaction rows parsed",
         "House rob-bresnahan 20030336: no transaction rows parsed",
-        "House donald-beyer 20030746: no transaction rows parsed"
+        "House donald-beyer 20030746: no transaction rows parsed",
+        "House rob-bresnahan 20030998: no transaction rows parsed"
       ]
     },
     "filingLedger": {
       "parserVersion": "political-ptr-v3",
-      "filings": 429,
+      "filings": 430,
       "states": {
-        "parsed": 391,
+        "parsed": 392,
         "failed": 38
       },
       "retryable": 38,
@@ -5999,7 +6002,7 @@
           "filingId": "9110522",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2017/9110522.pdf"
         },
         {
@@ -6008,7 +6011,7 @@
           "filingId": "9111258",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2017/9111258.pdf"
         },
         {
@@ -6017,7 +6020,7 @@
           "filingId": "9111844",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2017/9111844.pdf"
         },
         {
@@ -6026,7 +6029,7 @@
           "filingId": "9111984",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2017/9111984.pdf"
         },
         {
@@ -6035,7 +6038,7 @@
           "filingId": "9112308",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2018/9112308.pdf"
         },
         {
@@ -6044,7 +6047,7 @@
           "filingId": "9112457",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2018/9112457.pdf"
         },
         {
@@ -6053,7 +6056,7 @@
           "filingId": "9112650",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2018/9112650.pdf"
         },
         {
@@ -6062,7 +6065,7 @@
           "filingId": "9112651",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2018/9112651.pdf"
         },
         {
@@ -6071,7 +6074,7 @@
           "filingId": "9113462",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2018/9113462.pdf"
         },
         {
@@ -6080,7 +6083,7 @@
           "filingId": "9113463",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2018/9113463.pdf"
         },
         {
@@ -6089,7 +6092,7 @@
           "filingId": "20012343",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:48+00:00",
+          "nextRetryAt": "2026-07-20T11:13:55+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2019/20012343.pdf"
         },
         {
@@ -6098,7 +6101,7 @@
           "filingId": "20016155",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:49+00:00",
+          "nextRetryAt": "2026-07-20T11:13:56+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2020/20016155.pdf"
         },
         {
@@ -6107,7 +6110,7 @@
           "filingId": "20017123",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:49+00:00",
+          "nextRetryAt": "2026-07-20T11:13:56+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2020/20017123.pdf"
         },
         {
@@ -6116,7 +6119,7 @@
           "filingId": "20017460",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:49+00:00",
+          "nextRetryAt": "2026-07-20T11:13:56+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2020/20017460.pdf"
         },
         {
@@ -6125,7 +6128,7 @@
           "filingId": "20020662",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:50+00:00",
+          "nextRetryAt": "2026-07-20T11:13:56+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2022/20020662.pdf"
         },
         {
@@ -6134,7 +6137,7 @@
           "filingId": "20020916",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:50+00:00",
+          "nextRetryAt": "2026-07-20T11:13:57+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2022/20020916.pdf"
         },
         {
@@ -6143,7 +6146,7 @@
           "filingId": "20021091",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:50+00:00",
+          "nextRetryAt": "2026-07-20T11:13:57+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2022/20021091.pdf"
         },
         {
@@ -6152,7 +6155,7 @@
           "filingId": "20021193",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:51+00:00",
+          "nextRetryAt": "2026-07-20T11:13:57+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2022/20021193.pdf"
         },
         {
@@ -6161,7 +6164,7 @@
           "filingId": "20021447",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:51+00:00",
+          "nextRetryAt": "2026-07-20T11:13:57+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2022/20021447.pdf"
         },
         {
@@ -6170,7 +6173,7 @@
           "filingId": "20022320",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:51+00:00",
+          "nextRetryAt": "2026-07-20T11:13:58+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2023/20022320.pdf"
         },
         {
@@ -6179,7 +6182,7 @@
           "filingId": "20022418",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:51+00:00",
+          "nextRetryAt": "2026-07-20T11:13:58+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2023/20022418.pdf"
         },
         {
@@ -6188,7 +6191,7 @@
           "filingId": "20022807",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:52+00:00",
+          "nextRetryAt": "2026-07-20T11:13:58+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2023/20022807.pdf"
         },
         {
@@ -6197,7 +6200,7 @@
           "filingId": "20024769",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:52+00:00",
+          "nextRetryAt": "2026-07-20T11:13:58+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2024/20024769.pdf"
         },
         {
@@ -6206,7 +6209,7 @@
           "filingId": "20025776",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:52+00:00",
+          "nextRetryAt": "2026-07-20T11:13:59+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2024/20025776.pdf"
         },
         {
@@ -6215,7 +6218,7 @@
           "filingId": "20027932",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:52+00:00",
+          "nextRetryAt": "2026-07-20T11:13:59+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20027932.pdf"
         },
         {
@@ -6224,7 +6227,7 @@
           "filingId": "20027855",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:53+00:00",
+          "nextRetryAt": "2026-07-20T11:13:59+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20027855.pdf"
         },
         {
@@ -6233,7 +6236,7 @@
           "filingId": "20030262",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:53+00:00",
+          "nextRetryAt": "2026-07-20T11:13:59+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20030262.pdf"
         },
         {
@@ -6242,7 +6245,7 @@
           "filingId": "20030336",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:53+00:00",
+          "nextRetryAt": "2026-07-20T11:14:00+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20030336.pdf"
         },
         {
@@ -6251,7 +6254,7 @@
           "filingId": "20030746",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:53+00:00",
+          "nextRetryAt": "2026-07-20T11:14:00+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20030746.pdf"
         },
         {
@@ -6260,7 +6263,7 @@
           "filingId": "20030998",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:54+00:00",
+          "nextRetryAt": "2026-07-20T11:14:00+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20030998.pdf"
         },
         {
@@ -6269,7 +6272,7 @@
           "filingId": "20033337",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:54+00:00",
+          "nextRetryAt": "2026-07-20T11:14:00+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033337.pdf"
         },
         {
@@ -6278,7 +6281,7 @@
           "filingId": "20034085",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:54+00:00",
+          "nextRetryAt": "2026-07-20T11:14:01+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034085.pdf"
         },
         {
@@ -6287,7 +6290,7 @@
           "filingId": "20034295",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:55+00:00",
+          "nextRetryAt": "2026-07-20T11:14:01+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034295.pdf"
         },
         {
@@ -6296,7 +6299,7 @@
           "filingId": "20034357",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:55+00:00",
+          "nextRetryAt": "2026-07-20T11:14:01+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034357.pdf"
         },
         {
@@ -6305,7 +6308,7 @@
           "filingId": "20034591",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:55+00:00",
+          "nextRetryAt": "2026-07-20T11:14:01+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034591.pdf"
         },
         {
@@ -6314,7 +6317,7 @@
           "filingId": "20034891",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:55+00:00",
+          "nextRetryAt": "2026-07-20T11:14:02+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034891.pdf"
         },
         {
@@ -6323,7 +6326,7 @@
           "filingId": "20034952",
           "state": "failed",
           "lastError": "no transaction rows parsed",
-          "nextRetryAt": "2026-07-17T11:12:55+00:00",
+          "nextRetryAt": "2026-07-20T11:14:02+00:00",
           "reportUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034952.pdf"
         }
       ]

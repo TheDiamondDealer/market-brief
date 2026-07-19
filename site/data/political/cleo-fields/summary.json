@@ -1,19 +1,37 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-17T09:12:43+10:00",
+  "generatedAt": "2026-07-20T09:13:50+10:00",
   "politicianId": "cleo-fields",
   "name": "Cleo Fields",
   "chamber": "House",
   "status": "Partial — previous verified records retained",
-  "updated": "17 July 2026, 09:12 AEST",
-  "tradeCount": 106,
+  "updated": "20 July 2026, 09:13 AEST",
+  "tradeCount": 107,
   "years": [
     2026,
     2025
   ],
-  "latestTrade": "2026-06-11",
-  "latestFiling": "2026-06-26",
+  "latestTrade": "2026-06-26",
+  "latestFiling": "2026-07-16",
   "recentTrades": [
+    {
+      "id": "93834870e8be46ece4c2ff1c",
+      "filingId": "20034894",
+      "asset": "NVIDIA Corporation - Common Stock (NVDA) [ST]",
+      "ticker": "NVDA",
+      "type": "Purchase",
+      "owner": "Not specified",
+      "traded": "2026-06-26",
+      "filed": "2026-07-16",
+      "lag": "20 days",
+      "lagDays": 20,
+      "amount": "$1,001 - $15,000",
+      "source": "Official House Periodic Transaction Report",
+      "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034894.pdf",
+      "page": 1,
+      "filingContentHash": "608b5187192c389d67a0bc033458d4fac3215194821982049102a5bab2a2df9b",
+      "parserVersion": "political-ptr-v3"
+    },
     {
       "id": "44edd073e1ce9167b7537fba",
       "filingId": "20034800",
@@ -477,30 +495,23 @@
       "source": "Official House Periodic Transaction Report",
       "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033326.pdf",
       "page": 1
-    },
-    {
-      "id": "a883d8262c8d1493b859eba5",
-      "filingId": "20033326",
-      "asset": "CoreWeave, Inc. - Class A Common Stock (CRWV) [ST]",
-      "ticker": "CRWV",
-      "type": "Purchase",
-      "owner": "Not specified",
-      "traded": "2025-10-09",
-      "filed": "2025-10-30",
-      "lag": "21 days",
-      "lagDays": 21,
-      "amount": "$1,001 - $15,000",
-      "source": "Official House Periodic Transaction Report",
-      "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033326.pdf",
-      "page": 1
     }
   ],
   "portfolio": {
-    "updated": "17 July 2026, 09:12 AEST",
+    "updated": "20 July 2026, 09:13 AEST",
     "status": "Transaction-derived estimate",
     "basis": "Built from verified Periodic Transaction Reports. It does not yet include a complete annual holdings baseline, so sales and pre-existing positions may be unresolved.",
     "valuation": "Amounts are statutory disclosure ranges, not share counts or current market values.",
     "holdings": [
+      {
+        "asset": "NVIDIA Corporation - Common Stock (NVDA) [ST]",
+        "owner": "Not specified",
+        "amount": "$1,397,019–$3,330,000 disclosed activity",
+        "status": "Transaction-derived open",
+        "lastActivity": "2026-06-26",
+        "confidence": "Low — PTR-derived only",
+        "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034894.pdf"
+      },
       {
         "asset": "Microsoft Corporation - Common Stock (MSFT) [ST]",
         "owner": "Not specified",
@@ -617,15 +628,6 @@
         "lastActivity": "2025-11-03",
         "confidence": "Low — PTR-derived only",
         "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033493.pdf"
-      },
-      {
-        "asset": "NVIDIA Corporation - Common Stock (NVDA) [ST]",
-        "owner": "Not specified",
-        "amount": "$1,396,018–$3,315,000 disclosed activity",
-        "status": "Transaction-derived open",
-        "lastActivity": "2025-10-30",
-        "confidence": "Low — PTR-derived only",
-        "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2025/20033424.pdf"
       },
       {
         "asset": "Apple Inc. - Common Stock (AAPL) [ST]",
@@ -745,6 +747,6 @@
       "House cleo-fields 20034357: no transaction rows parsed",
       "House cleo-fields 20034591: no transaction rows parsed"
     ],
-    "newTrades": 0
+    "newTrades": 1
   }
 }
