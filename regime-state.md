@@ -1,5 +1,9 @@
 # Regime State
 
+> **24 July 2026 amendment — VERDICT: SHIFTED INTO ACUTE STAGFLATION / DISORDERLY RISK-OFF.** Brent closed $100.69 with tanker attacks and Gulf loading activity near 2.5mbpd over seven days versus about 6mbpd over the prior 30 days. US10Y closed 4.71% (real 10Y 2.43%), September Fed hike pricing reached 81.4%, DXY 101.47, Nasdaq 25,137.69 on weak breadth, and spot gold $4,043.14 below its bearish trigger. The two-session gold haven divergence failed; the inverse rates/dollar sign-flip is re-confirmed. Escalation: US10Y >4.75%, DXY >102 or credit deterioration. De-escalation cluster remains Brent < $76 with repaired flows, US10Y <4.45%, DXY <100 and September hike pricing <50%.
+
+## Standing frame (13 July 2026)
+
 **As of:** 13 July 2026, 19:30 AEST  
 **Verdict:** **INTACT AND STRENGTHENING**  
 **Regime:** **Energy-shock / hawkish-policy / strong-dollar / weak-yen / risk-fragile**
