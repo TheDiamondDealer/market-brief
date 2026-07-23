@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-07-23T20:19:32Z",
+  "generatedAtUtc": "2026-07-23T22:13:46Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -8,14 +8,14 @@
     "documentationUrl": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
   },
   "collection": {
-    "status": "stale",
+    "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 4,
-    "successfulQueryCount": 0,
-    "rawArticleCount": 0,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-07-23T18:37:06Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-07-23T22:13:46Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -42,26 +42,85 @@
   ],
   "articles": [
     {
-      "id": "dfef28c1db74e27fcb8c",
-      "title": "11 , 8 milioni a Circular Materials , la startup che recupera materie prime critiche dalle acque reflue",
-      "url": "https://www.repubblica.it/tecnologia/2026/07/23/news/118_milioni_circular_materials_materie_prime_critiche_acque_reflue_cdp-425488679/",
-      "domain": "repubblica.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-07-23T18:15:00Z",
-      "firstSeenAt": "2026-07-23T18:15:00Z",
+      "id": "6de3fbb24ce183675ac6",
+      "title": "Guerre en Ukraine : que contient laccord des pays de lUE pour de nouvelles sanctions contre",
+      "url": "https://paris.maville.com/actu/actudet_-guerre-en-ukraine-que-contient-l-accord-des-pays-de-l-ue-pour-de-nouvelles-sanctions-contre-la-russie-_fil-7417490_actu.Htm",
+      "domain": "paris.maville.com",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-07-23T20:30:00Z",
+      "firstSeenAt": "2026-07-23T20:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 38,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9e73ede3d6aa9d9dc2db",
+      "title": "Guerre en Ukraine : que contient laccord des pays de lUE pour de nouvelles sanctions contre",
+      "url": "https://laseyne.maville.com/actu/actudet_-guerre-en-ukraine-que-contient-l-accord-des-pays-de-l-ue-pour-de-nouvelles-sanctions-contre-la-russie-_fil-7417490_actu.Htm",
+      "domain": "laseyne.maville.com",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-07-23T18:30:00Z",
+      "firstSeenAt": "2026-07-23T18:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 32,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4ff8df9b2793d9904c1b",
+      "title": "Dmitriev ( Ρωσία ): Οι Ευρωπαίοι θα πληρώσουν το τίμημα της πολιτικής της ΕΕ κατά της ρωσικής ενέργειας",
+      "url": "https://www.bankingnews.gr/diethni/articles/890078/dmitriev-rosia-oi-evropaioi-tha-plirosoun-to-timima-tis-politikis-tis-ee-kata-tis-rosikis-energeias",
+      "domain": "bankingnews.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-23T21:45:00Z",
+      "firstSeenAt": "2026-07-23T21:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -70,26 +129,28 @@
       "duplicateCount": 1
     },
     {
-      "id": "4822895dc9d0a155a8d2",
-      "title": "3D - Printable Material Can Heal the Body , Build Better Robots and Recover Critical Minerals",
-      "url": "https://news.utexas.edu/2026/07/23/3d-printable-material-can-heal-the-body-build-better-robots-and-recover-critical-minerals/",
-      "domain": "news.utexas.edu",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T17:30:00Z",
-      "firstSeenAt": "2026-07-23T17:30:00Z",
+      "id": "eea98c50149bd4222fa7",
+      "title": "BLOGI | Fedorov keeldub teisest ametist : olen valmis olema ainult kaitseminister",
+      "url": "https://www.ohtuleht.ee/1162908/blogi-fedorov-keeldub-teisest-ametist-olen-valmis-olema-ainult-kaitseminister",
+      "domain": "ohtuleht.ee",
+      "language": "Estonian",
+      "sourceCountry": "Estonia",
+      "seenAt": "2026-07-23T21:15:00Z",
+      "firstSeenAt": "2026-07-23T21:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "us-dollar",
+        "wti"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -98,26 +159,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "5dd0677ce3c9ee045745",
-      "title": "Govt set to auction mineral blocks in Banka and Jamui | Patna News",
-      "url": "https://timesofindia.indiatimes.com/city/patna/govt-set-to-auction-mineral-blocks-in-banka-and-jamui/articleshow/132586767.cms",
-      "domain": "timesofindia.indiatimes.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-07-23T16:45:00Z",
-      "firstSeenAt": "2026-07-23T16:45:00Z",
+      "id": "4cd0caa901db7f94c197",
+      "title": "Guerre en Ukraine : ce que prévoit la 21e salve de sanctions européennes infligées à la Russie",
+      "url": "https://www.leparisien.fr/international/guerre-en-ukraine-ce-que-prevoit-la-21e-salve-de-sanctions-europeennes-infligees-a-la-russie-23-07-2026-RNLI234LLNC2ZHDBJONI57YUTQ.php",
+      "domain": "leparisien.fr",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-07-23T12:15:00Z",
+      "firstSeenAt": "2026-07-23T12:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -126,922 +188,260 @@
       "duplicateCount": 1
     },
     {
-      "id": "e037f1c9b60ac2cead99",
-      "title": "2026 - 07 - 22 | Explanation On MCTO Request - Moroccan Lawyers Strike | CSE : SCM",
-      "url": "https://stockhouse.com/news/press-releases/2026/07/22/explanation-on-mcto-request-moroccan-lawyers-strike",
-      "domain": "stockhouse.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T00:00:00Z",
-      "firstSeenAt": "2026-07-23T00:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 24,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cc15379bda07a3ac4afc",
-      "title": "عودة اللعبة الكبرى .. آسيا الوسطى تتحول لساحة صراع عالمي على المعادن النادرة",
-      "url": "https://www.eremnews.com/news/world/k3oh13k",
-      "domain": "eremnews.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-07-23T15:30:00Z",
-      "firstSeenAt": "2026-07-23T15:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e4608eadd6c47d5374b0",
-      "title": "锂矿股大爆发 ！ 高盛研报唱多 多股中报高预增 _ 证券要闻 _ 财经 _ 中金在线",
-      "url": "http://news.cnfol.com/zhengquanyaowen/20260723/32316248.shtml",
-      "domain": "news.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-23T15:00:00Z",
-      "firstSeenAt": "2026-07-23T15:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0418712d2174a15460c8",
-      "title": "EQS - News : Royalty Management Holding Corp .: Royalty Management Holding Corporation Congratulates Its Portfolio Holding , ReElement Technologies , on Recent Financings",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-07/69108212-eqs-news-royalty-management-holding-corp-royalty-management-holding-corporation-congratulates-its-portfolio-holding-reelement-technologies-on-rec-023.htm",
-      "domain": "finanznachrichten.de",
-      "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-07-23T14:45:00Z",
-      "firstSeenAt": "2026-07-23T14:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2af2f0305f73af5bf278",
-      "title": "Hindalco lines up potential Rs 1 lakh cr investment in India",
-      "url": "https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/hindalco-lines-up-potential-rs-1-lakh-cr-investment-in-india/articleshow/132584532.cms",
-      "domain": "economictimes.indiatimes.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-07-23T14:45:00Z",
-      "firstSeenAt": "2026-07-23T14:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6eb47aa873d5f35bce16",
-      "title": "Jyväskyln kaavailtu elektroniikka­romun kierrätyslaitos etenee ympäristölupa­vaiheeseen – taustalla vuosien tutkimustyö | Keski - Suomi",
-      "url": "https://yle.fi/a/74-20237699",
-      "domain": "yle.fi",
-      "language": "Finnish",
-      "sourceCountry": "Finland",
-      "seenAt": "2026-07-23T12:45:00Z",
-      "firstSeenAt": "2026-07-23T12:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1d9422c9d86bf7b76437",
-      "title": "Aqua Metals to Announce Second Quarter 2026 Financial Results and Host Investor Conference Call on July 30 , 2026",
-      "url": "https://www.manilatimes.net/2026/07/23/tmt-newswire/globenewswire/aqua-metals-to-announce-second-quarter-2026-financial-results-and-host-investor-conference-call-on-july-30-2026/2390150",
-      "domain": "manilatimes.net",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-07-23T12:00:00Z",
-      "firstSeenAt": "2026-07-23T12:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9171d080222303883b86",
-      "title": "White Gold Corp . to Present at the Precious Metals & Critical Minerals Virtual Investor Conference on July 23 , 2026",
-      "url": "https://www.manilatimes.net/2026/07/23/tmt-newswire/globenewswire/white-gold-corp-to-present-at-the-precious-metals-critical-minerals-virtual-investor-conference-on-july-23-2026/2390141",
-      "domain": "manilatimes.net",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-07-23T12:00:00Z",
-      "firstSeenAt": "2026-07-23T12:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1563abdfa2a30a61dfe7",
-      "title": "American Critical Minerals Announces Private Placement in Advance of Its Green River Project Well",
-      "url": "http://www.californiatelegraph.com/news/279204885/american-critical-minerals-announces-private-placement-in-advance-of-its-green-river-project-well",
-      "domain": "californiatelegraph.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T12:00:00Z",
-      "firstSeenAt": "2026-07-23T12:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5f46ba3cc753657aa412",
-      "title": "American Critical Minerals Announces Private Placement in Advance of Its Green River Project Well",
-      "url": "http://www.tennesseedaily.com/news/279204885/american-critical-minerals-announces-private-placement-in-advance-of-its-green-river-project-well",
-      "domain": "tennesseedaily.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T12:00:00Z",
-      "firstSeenAt": "2026-07-23T12:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0e22e4d159a316ceae68",
-      "title": "Idaho Strategic Resources Reports Significant Concentrations of Heavy Rare Earth Elements , Including Yttrium at Its Diamond Creek Project",
-      "url": "https://thestarphoenix.com/press-releases/business-wire/idaho-strategic-resources-reports-significant-concentrations-of-heavy-rare-earth-elements-including-yttrium-at-its-diamond-creek-project/",
-      "domain": "thestarphoenix.com",
-      "language": "English",
-      "sourceCountry": "Canada",
+      "id": "ce883fb63dccee21d6fc",
+      "title": "Guerre en Ukraine : un 21e train de sanctions adopté contre la Russie par lEurope , la Grèce réussit à protéger un de ses secteurs économiques",
+      "url": "https://www.lindependant.fr/2026/07/23/guerre-en-ukraine-un-21e-train-de-sanctions-adopte-contre-la-russie-par-leurope-la-grece-reussit-a-proteger-un-de-ses-secteurs-economiques-13480681.php",
+      "domain": "lindependant.fr",
+      "language": "French",
+      "sourceCountry": "France",
       "seenAt": "2026-07-23T11:45:00Z",
       "firstSeenAt": "2026-07-23T11:45:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 14,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "aaaa8884730abb0900eb",
-      "title": "港股缩量反弹 低迷市况下最 能打 的还是这个板块",
-      "url": "https://www.nbd.com.cn/articles/2026-07-23/4504560.html",
-      "domain": "nbd.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-23T11:15:00Z",
-      "firstSeenAt": "2026-07-23T11:15:00Z",
+      "id": "83d741cd2166217054e1",
+      "title": "AB Konseyi , Rusyaya yönelik 21 . yaptırım paketini kabul etti",
+      "url": "https://www.ensonhaber.com/ab-konseyi-rusyaya-yonelik-21-yaptirim-paketini-kabul-etti-h1552043",
+      "domain": "ensonhaber.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-23T19:00:00Z",
+      "firstSeenAt": "2026-07-23T19:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "6a4cea6ce1f8af7a05ae",
-      "title": "American Critical Minerals Corp .: American Critical Minerals Announces Private Placement in Advance of Its Green River Project Well",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-07/69104093-american-critical-minerals-corp-american-critical-minerals-announces-private-placement-in-advance-of-its-green-river-project-well-200.htm",
-      "domain": "finanznachrichten.de",
-      "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-07-23T10:15:00Z",
-      "firstSeenAt": "2026-07-23T10:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "58813dc4a7967dd41936",
-      "title": "American Critical Minerals Announces Private Placement in Advance of Its Green River Project Well",
-      "url": "http://www.hawaiitelegraph.com/news/279204885/american-critical-minerals-announces-private-placement-in-advance-of-its-green-river-project-well",
-      "domain": "hawaiitelegraph.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T10:15:00Z",
-      "firstSeenAt": "2026-07-23T10:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "16372b2ee06b00fbdee6",
-      "title": "Anglo American Aktie ( AAL ) | Aktienkurs » GB00BTK05J60",
-      "url": "https://www.wallstreet-online.de/aktien/gb00btk05j60-anglo-american-aktie",
-      "domain": "wallstreet-online.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-07-23T09:45:00Z",
-      "firstSeenAt": "2026-07-23T09:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d5255e778dc1bb2dd779",
-      "title": "How war in Myanmar is driving a deadly rare earth mining boom",
-      "url": "https://grist.org/international/myanmar-war-rare-earth-mining-landslide-labor/",
-      "domain": "grist.org",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T09:45:00Z",
-      "firstSeenAt": "2026-07-23T09:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d3907f09b6122f011944",
-      "title": "Rohstoff - Kritik im Faktencheck : Was wirklich in einem Elektroauto steckt",
-      "url": "https://www.chip.de/news/auto-fahrrad/rohstoff-kritik-im-faktencheck-was-wirklich-in-einem-elektroauto-steckt_e234a6fa-f123-40cf-be2b-4bf9e4b8b0b0.html",
-      "domain": "chip.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-07-23T08:30:00Z",
-      "firstSeenAt": "2026-07-23T08:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "999b0c009c0e8b3263a2",
-      "title": "现货黄金站上4100美元 / 盎司 ， 金铜油共振涨价 ， 有色金属ETF天弘标的指数盘中大涨近4 % _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202607233818828678.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-23T07:00:00Z",
-      "firstSeenAt": "2026-07-23T07:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "19b38a4ebf48740dc2e8",
-      "title": "Study finds toxic waste at sites like Mary Kathleen spread further | The North West Star",
-      "url": "https://www.northweststar.com.au/story/9316260/study-finds-toxic-waste-at-sites-like-mary-kathleen-spread-further/",
-      "domain": "northweststar.com.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-07-23T07:00:00Z",
-      "firstSeenAt": "2026-07-23T07:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b951f024947a0a579fc8",
-      "title": "Zimbabwe rushed mining wager on itself is paying off as it sees a record $2 . 5 billion profit added to its economy",
-      "url": "https://www.newzimbabwe.com/zimbabwes-rushed-mining-wager-on-itself-is-paying-off-as-it-sees-a-record-2-5-billion-profit-added-to-its-economy/",
-      "domain": "newzimbabwe.com",
-      "language": "English",
-      "sourceCountry": "Zimbabwe",
-      "seenAt": "2026-07-23T06:45:00Z",
-      "firstSeenAt": "2026-07-23T06:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "701a41eb6fc4913e61fd",
-      "title": "Pacgold hits copper - gold jackpot under existing SA gold system",
-      "url": "https://www.theage.com.au/business/companies/pacgold-hits-copper-gold-jackpot-under-existing-sa-gold-system-20260723-p60hyo.html",
-      "domain": "theage.com.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-07-23T06:00:00Z",
-      "firstSeenAt": "2026-07-23T06:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "60035caf5cb75ae44a77",
-      "title": "PLC Resources lights up big new WA Murchison gold system",
-      "url": "https://www.brisbanetimes.com.au/business/companies/plc-resources-lights-up-big-new-wa-murchison-gold-system-20260723-p60hzf.html",
-      "domain": "brisbanetimes.com.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-07-23T05:30:00Z",
-      "firstSeenAt": "2026-07-23T05:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c230e57fad153bd2ecdf",
-      "title": "锂矿股大爆发 ！ 高盛研报唱多 多股中报高预增 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202607233818667496.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-23T05:15:00Z",
-      "firstSeenAt": "2026-07-23T05:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ebc415b496f7a4975dde",
-      "title": "Dalaroo geophysics unlocks thick Greenland rare earths potential",
-      "url": "https://www.smh.com.au/business/companies/dalaroo-geophysics-unlocks-thick-greenland-rare-earths-potential-20260723-p60hx5.html",
-      "domain": "smh.com.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-07-23T04:15:00Z",
-      "firstSeenAt": "2026-07-23T04:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fa7dcb83da16becb3594",
-      "title": "Dalaroo geophysics unlocks thick Greenland rare earths potential",
-      "url": "https://www.theage.com.au/business/companies/dalaroo-geophysics-unlocks-thick-greenland-rare-earths-potential-20260723-p60hx5.html",
-      "domain": "theage.com.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-07-23T04:15:00Z",
-      "firstSeenAt": "2026-07-23T04:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "687ae34aeaa0b443ee62",
-      "title": "Shares up and Aussie ticks higher after jobs surprise",
-      "url": "https://www.perthnow.com.au/news/business/shares-up-and-aussie-ticks-higher-after-jobs-surprise-c-22617305",
-      "domain": "perthnow.com.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-07-23T04:00:00Z",
-      "firstSeenAt": "2026-07-23T04:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1ecbe4c5c8b050b67e46",
-      "title": "【 读财报 】 有色金属行业中期业绩前瞻 ： 逾八成预喜",
-      "url": "https://finance.sina.com.cn/tech/roll/2026-07-23/doc-iniiufvk4503431.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-23T03:45:00Z",
-      "firstSeenAt": "2026-07-23T03:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0ea1022696771797ec97",
-      "title": "Small Cap Watch : Explorers advance drilling , surveys and resource work",
-      "url": "https://www.proactiveinvestors.com/companies/news/1095890/small-cap-watch-explorers-advance-drilling-surveys-and-resource-work-1095890.html",
-      "domain": "proactiveinvestors.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T03:15:00Z",
-      "firstSeenAt": "2026-07-23T03:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "15bbae854eeab28780d1",
-      "title": "铜需求边际改善趋势明确 ， 铜价中枢有望稳步抬升 ， 工业有色ETF博时 ( 159171 ) 涨超3 %， 冲击4连涨 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202607233818598539.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-07-23T03:00:00Z",
-      "firstSeenAt": "2026-07-23T03:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ca5e824f06dd86c88129",
-      "title": "From lithium to nickel : How the UN is helping countries make the most of critical minerals",
-      "url": "https://www.globalissues.org/news/2026/07/22/43644",
-      "domain": "globalissues.org",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T02:45:00Z",
-      "firstSeenAt": "2026-07-23T02:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d0a7d855365b9ff0fbfe",
-      "title": "Security Council LIVE : Can critical minerals fuel peace and prosperity instead of conflict ?",
-      "url": "https://www.globalissues.org/news/2026/07/22/43645",
-      "domain": "globalissues.org",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T02:45:00Z",
-      "firstSeenAt": "2026-07-23T02:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "54d239cb624fa309b892",
-      "title": "Novo Tellus Partners with RCF and NRFC to Complete Buyout of Russell Mineral Equipment",
-      "url": "https://www.thehindu.com/brandhub/pr-release/novo-tellus-partners-with-rcf-and-nrfc-to-complete-buyout-of-russell-mineral-equipment/article71256254.ece",
-      "domain": "thehindu.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-07-23T02:30:00Z",
-      "firstSeenAt": "2026-07-23T02:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "752c061dfe3ddea2033e",
-      "title": "American Gold & Copper to Begin Trading Under New AGCI Ticker Following Name Change ( USOTC : AGCI )",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/american-gold-copper-begin-trading-143558115.html",
+      "id": "74ae290ea7aa2c5b74e4",
+      "title": "ADNOC Approves $6 . 2 Billion Umm Shaif Gas Project to Boost UAE Supply",
+      "url": "https://finance.yahoo.com/energy/articles/adnoc-approves-6-2-billion-074448607.html",
       "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-23T02:30:00Z",
-      "firstSeenAt": "2026-07-23T02:30:00Z",
+      "seenAt": "2026-07-23T18:30:00Z",
+      "firstSeenAt": "2026-07-23T18:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "03f484b44a80636c7d87",
+      "title": "Запрет на перевозку российского СПГ убрали из 21 пакета санкций",
+      "url": "https://lenta.ru/news/2026/07/23/zapret-na-perevozku-rossiyskogo-spg-ubrali-iz-21-paketa-sanktsiy/",
+      "domain": "lenta.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T18:15:00Z",
+      "firstSeenAt": "2026-07-23T18:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dd672cbd0366369026c7",
+      "title": "Países da UE chegam a acordo para impor novas sanes à Rússia",
+      "url": "https://www.diariodepernambuco.com.br/mundo/2026/07/11719426-paises-da-ue-chegam-a-acordo-para-impor-novas-sancoes-a-russia.html",
+      "domain": "diariodepernambuco.com.br",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-07-23T18:15:00Z",
+      "firstSeenAt": "2026-07-23T18:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4113b9fbca9db8eb9a6b",
+      "title": "ABden Rusyaya son 4 yılın en kapsamlı yaptırım paketi",
+      "url": "https://www.haberler.com/politika/ab-konseyi-rusya-ya-yonelik-21-yaptirim-paketini-20082035-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-23T18:15:00Z",
+      "firstSeenAt": "2026-07-23T18:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "df8b14aceaab03c84f87",
+      "title": "Oil Stocks To Keep An Eye On – July 23rd",
+      "url": "https://www.tickerreport.com/banking-finance/13513135/oil-stocks-to-keep-an-eye-on-july-23rd.html",
+      "domain": "tickerreport.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-23T18:15:00Z",
+      "firstSeenAt": "2026-07-23T18:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "729e90db8c38ab724137",
+      "title": "OTSEBLOGI | Fedorov keeldub teisest ametist : olen valmis olema ainult kaitseminister",
+      "url": "https://www.ohtuleht.ee/1162908/otseblogi-fedorov-keeldub-teisest-ametist-olen-valmis-olema-ainult-kaitseminister",
+      "domain": "ohtuleht.ee",
+      "language": "Estonian",
+      "sourceCountry": "Estonia",
+      "seenAt": "2026-07-23T16:45:00Z",
+      "firstSeenAt": "2026-07-23T16:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "us-dollar",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "618d85b3edfc09937086",
+      "title": "В Германии стоимость импортного газа превысила показатели 2020 года в 5 раз",
+      "url": "https://aif.ru/money/economy/v-germanii-stoimost-importnogo-gaza-prevysila-pokazateli-2020-goda-v-5-raz",
+      "domain": "aif.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T15:30:00Z",
+      "firstSeenAt": "2026-07-23T15:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1050,26 +450,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "73ccb0de478a13bc9ea4",
-      "title": "Demand for critical minerals fuels conflict but could help resource - rich nations , WTO says",
-      "url": "https://www.bostonherald.com/2026/07/22/united-nations-critical-minerals/",
-      "domain": "bostonherald.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T02:15:00Z",
-      "firstSeenAt": "2026-07-23T02:15:00Z",
+      "id": "5c343ba6cd51d851c4d8",
+      "title": "Avrupada doğalgaz alarmı : Fiyatı bir ayda yüzde 50 den fazla zamlandı",
+      "url": "https://www.samanyoluhaber.com/avrupada-dogalgaz-alarmi-fiyati-bir-ayda-yuzde-50den-fazla-zamlandi/1490686",
+      "domain": "samanyoluhaber.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-23T15:00:00Z",
+      "firstSeenAt": "2026-07-23T15:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1078,26 +479,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "57d0e79d4e909db14748",
-      "title": "USGS Discovers 2 . 3 - Million - Ton Appalachian Lithium Deposit",
-      "url": "https://www.mondaq.com:443/unitedstates/mining/1821414/usgs-discovers-23-million-ton-appalachian-lithium-deposit",
-      "domain": "mondaq.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-23T01:45:00Z",
-      "firstSeenAt": "2026-07-23T01:45:00Z",
+      "id": "87ef497215fb32ed1023",
+      "title": "Πατρίκ Πουγιάν : Η TotalEnergies κερδίζει 400 εκατ . δολάρια ετησίως από την πώληση ρωσικού LNG",
+      "url": "https://www.naftemporiki.gr/finance/world/2141733/patrik-poygian-i-totalenergies-kerdizei-400-ekat-dolaria-etisios-apo-tin-polisi-rosikoy-lng/",
+      "domain": "naftemporiki.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-23T14:45:00Z",
+      "firstSeenAt": "2026-07-23T14:45:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1106,26 +508,781 @@
       "duplicateCount": 1
     },
     {
-      "id": "06d1e9a884bdb61d137a",
-      "title": "Demand for critical minerals fuels conflict but could help resource - rich nations , WTO says",
-      "url": "https://www.thetimes-tribune.com/2026/07/22/united-nations-critical-minerals/",
-      "domain": "thetimes-tribune.com",
+      "id": "64ca1e5e241e7c8ab800",
+      "title": "ЄС дозволив виключення у санкціях проти РФ для Греції",
+      "url": "https://epravda.com.ua/energetika/yes-dozvoliv-viklyuchennya-u-sankciyah-proti-rf-dlya-greciji-823919/",
+      "domain": "epravda.com.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-07-23T13:15:00Z",
+      "firstSeenAt": "2026-07-23T13:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c656f5e8c57f8cdac248",
+      "title": "Hartlepool nuclear power station to operate until 2030 after extension",
+      "url": "https://www.thenorthernecho.co.uk/news/26401399.hartlepool-nuclear-power-station-operate-2030-extension/",
+      "domain": "thenorthernecho.co.uk",
       "language": "English",
-      "sourceCountry": "United States",
+      "sourceCountry": "United Kingdom",
+      "seenAt": "2026-07-23T12:30:00Z",
+      "firstSeenAt": "2026-07-23T12:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7a8f527fd216ae0a8873",
+      "title": "El petróleo roza los 100 dólares y el gas natural alcanza máximos en tres años",
+      "url": "https://www.diariosur.es/economia/mercados/petroleo-vuelve-100-dolares-gas-natural-alcanza-20260723140415-ntrc.html",
+      "domain": "diariosur.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-07-23T12:30:00Z",
+      "firstSeenAt": "2026-07-23T12:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7f9d84ebecd436e3e379",
+      "title": "El petróleo roza los 100 dólares y el gas natural alcanza máximos en tres años",
+      "url": "https://www.elcomercio.es/economia/mercados/petroleo-vuelve-100-dolares-gas-natural-alcanza-20260723140415-ntrc.html",
+      "domain": "elcomercio.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-07-23T12:30:00Z",
+      "firstSeenAt": "2026-07-23T12:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3196948162f3b7604ceb",
+      "title": "Мосбиржа окажется под санкциями ЕС : что известно",
+      "url": "https://iz.ru/2137184/es-soglasoval-sanktcii-protiv-moskovskoi-birzhi-i-desiatkov-rossiiskikh-bankov-izi",
+      "domain": "iz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T12:15:00Z",
+      "firstSeenAt": "2026-07-23T12:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6ebdf79db44583f56dd1",
+      "title": "India to build Phase - II strategic oil reserves at Rs 14 , 527 crore under PPP model",
+      "url": "https://www.moneycontrol.com/news/business/india-to-build-phase-ii-strategic-oil-reserves-at-rs-14-527-crore-under-ppp-model-13981930.html",
+      "domain": "moneycontrol.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-23T12:15:00Z",
+      "firstSeenAt": "2026-07-23T12:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "01cd3a3ff78b2c531dcf",
+      "title": "ԱՄՆ - ն և Սաուդյան Արաբիան ստորագրել են միջուկային էներգետիկայի ոլորտում համագործակցության համաձայնագիր",
+      "url": "https://b24.am/economy/461843.html",
+      "domain": "b24.am",
+      "language": "Armenian",
+      "sourceCountry": "Armenia",
+      "seenAt": "2026-07-23T12:00:00Z",
+      "firstSeenAt": "2026-07-23T12:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "85089dd81f55d7a4b3bf",
+      "title": "Reuters : послы ЕС согласовали санкции против Мосбиржи",
+      "url": "https://www.vedomosti.ru/politics/news/2026/07/23/1215951-sanktsii-protiv-mosbirzhi",
+      "domain": "vedomosti.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T11:45:00Z",
+      "firstSeenAt": "2026-07-23T11:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "55a17815b2cdba207afd",
+      "title": "Купувачите планират натиск върху Катар и ОАЕ за по - евтини и по - гъвкави LNG сделки",
+      "url": "https://www.investor.bg/a/518-energetika/433975-kupuvachite-planirat-natisk-varhu-katar-i-oae-za-po-evtini-i-po-gavkavi-lng-sdelki",
+      "domain": "investor.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-07-23T11:45:00Z",
+      "firstSeenAt": "2026-07-23T11:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "217756acd9df57825fd6",
+      "title": "Hidroelektrik üretimi , enerji ithalatını azalttı",
+      "url": "https://www.ensonhaber.com/hidroelektrik-uretimi-enerji-ithalatini-azaltti-h1551935",
+      "domain": "ensonhaber.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-23T11:15:00Z",
+      "firstSeenAt": "2026-07-23T11:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f5178884e0793fb7a097",
+      "title": "21 - й пакет санкций ЕС : что вошло в новые ограничения против России | Москва",
+      "url": "https://fedpress.ru/news/77/policy/3445131",
+      "domain": "fedpress.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T11:15:00Z",
+      "firstSeenAt": "2026-07-23T11:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d63cf03eab8645d75658",
+      "title": "« فرانس برس »: الاتحاد الأوروبي يوافق على حزمة عقوبات جديدة على روسيا",
+      "url": "https://alwasat.ly/news/international/525636",
+      "domain": "alwasat.ly",
+      "language": "Arabic",
+      "sourceCountry": "Libya",
+      "seenAt": "2026-07-23T11:00:00Z",
+      "firstSeenAt": "2026-07-23T11:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1feb34c516d5f21ff346",
+      "title": "ЕС сохранит исключение для перевозок российского СПГ в новом пакете санкций ( Financial Times , Великобритания )",
+      "url": "https://inosmi.ru/20260723/sanktsii-279399107.html",
+      "domain": "inosmi.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T10:30:00Z",
+      "firstSeenAt": "2026-07-23T10:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "92fd1a117a318327b6cd",
+      "title": "AB , Rusyaya yönelik 21 inci yaptırım paketini hazırlıyor",
+      "url": "https://www.odatv.com/dunya/ab-rusyaya-yonelik-21inci-yaptirim-paketini-hazirliyor-120155891",
+      "domain": "odatv.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-23T10:00:00Z",
+      "firstSeenAt": "2026-07-23T10:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f9ad6c87356cdfa27f4b",
+      "title": "الاتحاد الأوروبي يتفق على حزمة عقوبات اقتصادية جديدة ضد روسيا",
+      "url": "https://www.aljazeera.net/ebusiness/2026/7/23/eu-package-sanctions-russia",
+      "domain": "aljazeera.net",
+      "language": "Arabic",
+      "sourceCountry": "Israel",
+      "seenAt": "2026-07-23T10:00:00Z",
+      "firstSeenAt": "2026-07-23T10:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8c703cc66f8e8ee388b5",
+      "title": "21 - й пакет санкций ЕС : исключение запрета на морской СПГ из России - 23 июля 2026",
+      "url": "https://www.fontanka.ru/2026/07/23/76548917/",
+      "domain": "fontanka.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T09:45:00Z",
+      "firstSeenAt": "2026-07-23T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7afdb308092ae5dab972",
+      "title": "ABden Rusyaya 21 inci yaptırım paketi yolda",
+      "url": "https://www.bursahakimiyet.com.tr/dunya/ab-den-rusya-ya-21-inci-yaptirim-paketi-yolda-1674890",
+      "domain": "bursahakimiyet.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-23T09:45:00Z",
+      "firstSeenAt": "2026-07-23T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bbda560a2b109ee3fb9f",
+      "title": "След ветото на Радев : Пакет №21 от санкции срещу Русия е договорен , важни новини за петрола и втечнения газ",
+      "url": "https://www.actualno.com/europe/sled-vetoto-na-radev-paket-21-ot-sankcii-sreshtu-rusija-e-dogovoren-vajni-novini-za-petrola-i-vtechnenija-gaz-news_2621014.html",
+      "domain": "actualno.com",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-07-23T09:45:00Z",
+      "firstSeenAt": "2026-07-23T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a96e1150a4c2fc0793c0",
+      "title": "Iran war pushes ONGC to plan strategic gas reserve",
+      "url": "https://www.hindustantimes.com/india-news/iran-war-pushes-ongc-to-plan-strategic-gas-reserve-101784788329706.html",
+      "domain": "hindustantimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-23T07:15:00Z",
+      "firstSeenAt": "2026-07-23T07:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d2a5352bcd51186cf5a9",
+      "title": "Драпати наследява армия с натрупани проблеми и очаквания за реформи",
+      "url": "https://www.investor.bg/a/593-sigurnost-i-otbrana/433961-drapati-nasledyava-armiya-s-natrupani-problemi-i-ochakvaniya-za-reformi",
+      "domain": "investor.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-07-23T06:45:00Z",
+      "firstSeenAt": "2026-07-23T06:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6196bd218c1782de869f",
+      "title": "OTSEBLOGI | Ukraina droonid tabasid naftataristut ja Wildberriesi logistikakeskust",
+      "url": "https://www.ohtuleht.ee/1162908/otseblogi-ukraina-droonid-tabasid-naftataristut-ja-wildberriesi-logistikakeskust",
+      "domain": "ohtuleht.ee",
+      "language": "Estonian",
+      "sourceCountry": "Estonia",
+      "seenAt": "2026-07-23T06:15:00Z",
+      "firstSeenAt": "2026-07-23T06:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d965590643effd7c1cf6",
+      "title": "G . Frieda . Kodėl šis energetinis sukrėtimas yra kitoks",
+      "url": "https://www.vz.lt/izvalgos/2026/07/23/g-frieda-kodel-sis-energetinis-sukretimas-yra-kitoks-587366",
+      "domain": "vz.lt",
+      "language": "Lithuanian",
+      "sourceCountry": "Lithuania",
+      "seenAt": "2026-07-23T05:30:00Z",
+      "firstSeenAt": "2026-07-23T05:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d2741a88ccaeb4b23ced",
+      "title": "ONGC plans India first strategic natural gas reserve amid West Asia tensions : Report",
+      "url": "https://www.moneycontrol.com/news/business/ongc-plans-india-s-first-strategic-natural-gas-reserve-amid-west-asia-tensions-report-13981318.html",
+      "domain": "moneycontrol.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-23T05:00:00Z",
+      "firstSeenAt": "2026-07-23T05:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "014f402d47b3e138ff82",
+      "title": "FT : ЕС позволит странам блока перевозку российского СПГ еще на год",
+      "url": "https://www.vedomosti.ru/politics/news/2026/07/23/1215840-ft-es-pozvolit",
+      "domain": "vedomosti.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T05:00:00Z",
+      "firstSeenAt": "2026-07-23T05:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "049c5f7d5c26766dba2c",
+      "title": "Послы ЕС согласовали компромисс по 21 - му пакету санкций против России",
+      "url": "https://www.kommersant.ru/doc/8832603",
+      "domain": "kommersant.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T03:15:00Z",
+      "firstSeenAt": "2026-07-23T03:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bf532d5266994936758f",
+      "title": "Rubio says Korea , other allies will benefit from joining efforts to secure Strait of Hormuz",
+      "url": "https://www.koreatimes.co.kr/foreignaffairs/20260723/rubio-says-korea-other-allies-will-benefit-from-joining-efforts-to-secure-strait-of-hormuz",
+      "domain": "koreatimes.co.kr",
+      "language": "English",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-23T03:15:00Z",
+      "firstSeenAt": "2026-07-23T03:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "41e5a09d8783443de49d",
+      "title": "FT узнала о возможности Греции избежать запрета на транзит российского газа :: Новости дня / ВЗГЛЯД",
+      "url": "https://vz.ru/news/2026/7/23/1437004.html",
+      "domain": "vz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
       "seenAt": "2026-07-23T01:30:00Z",
       "firstSeenAt": "2026-07-23T01:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1134,26 +1291,114 @@
       "duplicateCount": 1
     },
     {
-      "id": "ac62ad05d7bd09e09518",
-      "title": "South Korean president to visit U . S ., South America",
-      "url": "https://www.upi.com/Top_News/World-News/2026/07/22/lee-jae-myung-11-day-trip-us-south-american-countries/6691784755385/",
-      "domain": "upi.com",
+      "id": "5e04c8af2d93586b0aaa",
+      "title": "FT узнала о возможности Греции избежать запрета на транзит российского газа :: Новости дня / ВЗГЛЯД",
+      "url": "https://vz.ru/news/2026/7/23/1437003.html",
+      "domain": "vz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-23T01:30:00Z",
+      "firstSeenAt": "2026-07-23T01:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "81deb2dad74f6e4c66ee",
+      "title": "West Asia war pushes ONGC to plan India first strategic gas reserve",
+      "url": "https://www.livemint.com/companies/news/ongc-strategic-natural-gas-reserve-india-west-asia-war-lng-energy-security-11784718865508.html",
+      "domain": "livemint.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-23T01:00:00Z",
+      "firstSeenAt": "2026-07-23T01:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "454ac99fa6aea82eb9b5",
+      "title": "Everybody Hates This Commodity - The Daily Reckoning",
+      "url": "https://dailyreckoning.com/everybody-hates-this-commodity/",
+      "domain": "dailyreckoning.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-23T00:30:00Z",
+      "firstSeenAt": "2026-07-23T00:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "826b369311dc39777286",
+      "title": "Equinor CEO : Europe May Miss Winter Gas Storage Goal",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Equinor-CEO-Europe-May-Miss-Winter-Gas-Storage-Goal.html",
+      "domain": "oilprice.com",
       "language": "English",
       "sourceCountry": "United States",
       "seenAt": "2026-07-22T23:15:00Z",
       "firstSeenAt": "2026-07-22T23:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1162,222 +1407,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "046e1380be9e8d7ab47a",
-      "title": "Demand for critical minerals fuels conflict but could help resource - rich nations , WTO says",
-      "url": "https://www.clickorlando.com/news/world/2026/07/22/demand-for-critical-minerals-fuels-conflict-but-could-help-resource-rich-nations-wto-says/",
-      "domain": "clickorlando.com",
+      "id": "3530dafe7bd6e361a7ef",
+      "title": "The way Australia taxes gas production is stuck in the past – this is why companies arent paying their fair share",
+      "url": "https://theconversation.com/the-way-australia-taxes-gas-production-is-stuck-in-the-past-this-is-why-companies-arent-paying-their-fair-share-287785",
+      "domain": "theconversation.com",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-22T22:45:00Z",
-      "firstSeenAt": "2026-07-22T22:45:00Z",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-07-22T22:30:00Z",
+      "firstSeenAt": "2026-07-22T22:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "388bffbfdc95287919ae",
-      "title": "Demand for critical minerals fuels conflict but could help resource - rich nations , WTO says",
-      "url": "https://www.sandiegouniontribune.com/2026/07/22/united-nations-critical-minerals/",
-      "domain": "sandiegouniontribune.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-22T22:15:00Z",
-      "firstSeenAt": "2026-07-22T22:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "868ca8be128c61298e42",
-      "title": "Demand for critical minerals fuels conflict but could help resource - rich nations , WTO says",
-      "url": "https://www.news4jax.com/news/world/2026/07/22/demand-for-critical-minerals-fuels-conflict-but-could-help-resource-rich-nations-wto-says/",
-      "domain": "news4jax.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-22T22:00:00Z",
-      "firstSeenAt": "2026-07-22T22:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b72e9c7e448c87f9ac85",
-      "title": "Demand for critical minerals fuels conflict but could help resource - rich nations , WTO says",
-      "url": "https://www.clickondetroit.com/news/world/2026/07/22/demand-for-critical-minerals-fuels-conflict-but-could-help-resource-rich-nations-wto-says/",
-      "domain": "clickondetroit.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-22T21:45:00Z",
-      "firstSeenAt": "2026-07-22T21:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "41f5ef3420c177a41e92",
-      "title": "Critical minerals have fueled conflict but are an opportunity , WTO says",
-      "url": "https://www.wsbradio.com/news/world/demand-critical/HFVNQPZKIU2V7PBTXUFPJFN7HA/",
-      "domain": "wsbradio.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-22T21:30:00Z",
-      "firstSeenAt": "2026-07-22T21:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cb92b5eb14400df97eb9",
-      "title": "USGC to Accelerate Mineral Production Under Unleashing American",
-      "url": "https://natlawreview.com/article/usgs-discovers-23-million-ton-appalachian-lithium-deposit",
-      "domain": "natlawreview.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-22T21:15:00Z",
-      "firstSeenAt": "2026-07-22T21:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "71de9e3d694505d7cc12",
-      "title": "Demand for critical minerals fuels conflict but could help resource - rich nations , WTO says – Winnipeg Free Press",
-      "url": "https://www.winnipegfreepress.com/arts-and-life/life/sci-tech/2026/07/22/demand-for-critical-minerals-fuels-conflict-but-could-help-resource-rich-nations-wto-says",
-      "domain": "winnipegfreepress.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-07-22T20:30:00Z",
-      "firstSeenAt": "2026-07-22T20:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9a638bb179e8b516ef0b",
-      "title": "Demand for critical minerals fuels conflict but could help resource - rich nations , WTO says",
-      "url": "https://isp.netscape.com:443/news/world/story/0001/20260722/fb19925797cab7c386a80798d4bc8dab",
-      "domain": "isp.netscape.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-22T20:30:00Z",
-      "firstSeenAt": "2026-07-22T20:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1390,12 +1440,12 @@
     {
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
-      "status": "stale",
-      "observationDate": "2026-07-23T18:15:00Z",
-      "lastSuccessfulAt": "2026-07-23T18:37:06Z",
+      "status": "partial",
+      "observationDate": "2026-07-23T21:45:00Z",
+      "lastSuccessfulAt": "2026-07-23T22:13:46Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 0 returned records across 0/4 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/4 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
