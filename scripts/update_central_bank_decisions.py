@@ -48,9 +48,9 @@ def is_live_decision(event: dict[str, Any], bank: dict[str, Any], now: datetime)
         return False
     try:
         end_dt = datetime.fromisoformat(str(event.get("endDate")).replace("Z", "+00:00"))
+        return end_dt > now
     except (TypeError, ValueError):
         return False
-    return end_dt > now
 
 
 def outcome_records(
@@ -222,8 +222,11 @@ def build_dataset(registry, previous, *, fetcher=fetch_events):
         generated["banks"] = []
         generated["collection"]["status"] = "failed"
         generated["collection"]["banksCovered"] = 0
+        generated["collection"]["lastSuccessfulAt"] = None
         generated["collection"]["error"] = f"retained data failed validation: {exc}"[:600]
         generated["sourceStatus"][0]["status"] = "failed"
+        generated["sourceStatus"][0]["detail"] = "Retained data failed validation; no banks emitted."
+        generated["sourceStatus"][0]["lastSuccessfulAt"] = None
         generated["sourceStatus"][0]["error"] = generated["collection"]["error"]
         validate_output(generated)
     return generated

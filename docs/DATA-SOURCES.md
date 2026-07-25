@@ -249,7 +249,7 @@ Used for read-only, market-implied probabilities of the next scheduled rate deci
 
 The collector performs targeted per-bank discovery against the same Polymarket public-search endpoint and reuses the tested Crowd Expectations helpers. It is refreshed every six hours (offset 30 minutes from Crowd Expectations) into `site/data/central-bank-decisions.json` and surfaced by the "Rate decisions" view.
 
-It inherits every Polymarket rule above (read-only only; no wallet, authentication, deposit, signing or order code; structural rejection of secret-bearing or execution fields; stale retention on source failure; one verified snapshot per UTC day for up to 90 days). In addition:
+It inherits every Polymarket rule above (read-only; no wallet, authentication, deposit, signing or order code; structural rejection of secret-bearing or execution fields; stale retention on source failure; one verified snapshot per UTC day for up to 90 days). In addition:
 
 - accept only live decision events that are open, unresolved and carry a future end date;
 - attribute an event to a bank only through its registry title keywords, never a broad default;

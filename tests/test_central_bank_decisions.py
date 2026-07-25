@@ -46,6 +46,13 @@ class CentralBankParsingTests(unittest.TestCase):
         self.assertEqual(modal, "75+ bps increase")
         self.assertEqual(direction, "hold")
 
+    def test_is_live_decision_naive_datetime_returns_false(self):
+        bank = {"titleKeywords": ["fed decision"]}
+        event = {"title": "Fed Decision in July", "endDate": "2099-07-29T00:00:00",  # naive, no Z/offset
+                 "active": True, "closed": False}
+        # must not raise, must exclude (can't compare naive vs aware)
+        self.assertFalse(cb.is_live_decision(event, bank, datetime.now(timezone.utc)))
+
 
 def _fake_event(slug, title, end, ladder):
     return {
@@ -161,6 +168,32 @@ class CentralBankDatasetTests(unittest.TestCase):
         data = cb.build_dataset(registry, previous, fetcher=boom)  # must not raise
         self.assertEqual(data["collection"]["status"], "failed")
         self.assertEqual(data["banks"], [])
+        cb.validate_output(data)
+
+    def test_degrade_payload_clears_last_successful_at(self):
+        registry = {"schemaVersion": 1,
+                    "provider": {"id": "polymarket", "readOnly": True,
+                                 "searchEndpoint": "https://x", "documentationUrl": "https://x"},
+                    "discovery": {"historyDays": 90},
+                    "banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                               "boardAssetId": "dxy", "flag": "US", "searchTerms": ["Fed Decision"],
+                               "titleKeywords": ["fed decision"]}]}
+        previous = {"banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                    "boardAssetId": "dxy", "meetings": [{"decisionDate": "2099-07-29",
+                    "outcomes": [{"label": "No change", "bps": 0, "probability": 1.5,
+                    "probabilityPercent": 150.0, "probabilitySource": "last trade", "history": []}],
+                    "modalOutcome": "No change", "modalProbability": 1.5, "expectedBps": 0.0,
+                    "impliedDirection": "hold", "liquidityUsd": 0, "marketUrl": "https://x"}]}],
+                    "collection": {"lastSuccessfulAt": "2026-07-25T00:00:00Z"}}
+
+        def boom(ep, term, lim):
+            raise RuntimeError("network down")
+
+        data = cb.build_dataset(registry, previous, fetcher=boom)  # must not raise
+        self.assertEqual(data["collection"]["status"], "failed")
+        # a 0-bank failed payload must not advertise stale success timestamps
+        self.assertIsNone(data["collection"]["lastSuccessfulAt"])
+        self.assertIsNone(data["sourceStatus"][0]["lastSuccessfulAt"])
         cb.validate_output(data)
 
 
