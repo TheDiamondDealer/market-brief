@@ -57,6 +57,7 @@
       <button type="button" class="nav-item" data-view="cot" aria-label="COT Positioning" title="COT Positioning" data-tooltip="COT Positioning"><span class="nav-icon" aria-hidden="true"><svg><use href="#i-arrows"/></svg></span><span class="nav-label">COT Positioning</span></button>
       <button type="button" class="nav-item" data-view="trackers" aria-label="Political Flow" title="Political Flow" data-tooltip="Political Flow"><span class="nav-icon" aria-hidden="true"><svg><use href="#i-landmark"/></svg></span><span class="nav-label">Political Flow</span></button>
       <button type="button" class="nav-item" data-view="rates" aria-label="Rates and liquidity" title="Rates and liquidity" data-tooltip="Rates and liquidity"><span class="nav-icon" aria-hidden="true"><svg><use href="#i-activity"/></svg></span><span class="nav-label">Rates &amp; Liquidity</span></button>
+      <button type="button" class="nav-item" data-view="rate-decisions" aria-label="Rate decisions" title="Rate decisions — central-bank probabilities" data-tooltip="Rate decisions"><span class="nav-icon" aria-hidden="true"><svg><use href="#i-activity"/></svg></span><span class="nav-label">Rate decisions</span></button>
       <span class="nav-section-label">System</span>
       <button type="button" class="nav-item" data-view="regime" aria-label="Regime" title="Regime" data-tooltip="Regime"><span class="nav-icon" aria-hidden="true"><svg><use href="#i-compass"/></svg></span><span class="nav-label">Regime</span></button>
       <button type="button" class="nav-item" data-view="triggers" aria-label="Trigger Zones" title="Trigger Zones" data-tooltip="Trigger Zones"><span class="nav-icon" aria-hidden="true"><svg><use href="#i-flag"/></svg></span><span class="nav-label">Trigger Zones</span></button>
@@ -111,6 +112,11 @@
         <div class="curve-spreads" id="curveSpreads"></div>
         <div class="card table-wrap"><table class="data-table" id="ratesTable"></table></div>
         <article class="methodology-note" id="ratesMethodology"></article>
+      </section>
+
+      <section class="view" id="view-rate-decisions">
+        <div class="hero"><div><div class="eyebrow">Market-implied central-bank probabilities</div><h2>Rate decisions</h2><p class="data-hero-note">Per-bank, per-meeting odds of each rate outcome with how the odds evolved — read-only Polymarket data, shown beside the last actual decision where we hold it.</p></div><span class="badge" id="rateDecisionsUpdated">Awaiting data</span></div>
+        <div id="rateDecisionsMount"><div class="command-empty">Loading rate decisions…</div></div>
       </section>
 
       <section class="view" id="view-events">
@@ -236,6 +242,7 @@
 <script src="energy-expansion.js"></script>
 <script src="asset-board-data.js"></script>
 <script src="features/official-feeds/official-feeds-data.js"></script>
+<script src="features/rate-decisions/rate-decisions-data.js"></script>
 <script src="core/format.js"></script>
 <script src="core/status.js"></script>
 <script src="core/store.js"></script>

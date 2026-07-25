@@ -170,5 +170,18 @@ class CentralBankValidationTests(unittest.TestCase):
                        cwd=ROOT, check=True, capture_output=True, text=True)
 
 
+class CentralBankWiringTests(unittest.TestCase):
+    def test_eager_loader_and_nav_are_wired(self):
+        index_html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("features/rate-decisions/rate-decisions-data.js", index_html)
+        self.assertIn('data-view="rate-decisions"', index_html)
+        self.assertIn('id="view-rate-decisions"', index_html)
+        loader = (ROOT / "site" / "core" / "feature-loader.js").read_text(encoding="utf-8")
+        self.assertIn("route: 'rate-decisions'", loader)
+        engine = (ROOT / "site" / "core" / "impact-engine.js").read_text(encoding="utf-8")
+        self.assertIn("deriveRateDecisionSignals", engine)
+        self.assertIn("rate-decision-odds", engine)
+
+
 if __name__ == "__main__":
     unittest.main()
