@@ -23,6 +23,7 @@ FILE_BUDGETS = {
     "core/impact-engine.js": 40_000,
     "core/impact-chips.js": 16_000,
     "styles/chips.css": 8_000,
+    "data/impact-tags.json": 400_000,
 }
 FEATURE_BUDGET = 140_000
 TOTAL_RUNTIME_BUDGET = 4_000_000

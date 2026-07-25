@@ -34,14 +34,19 @@ jobs:
       - name: Validate discovery payload
         run: python scripts/validate_gdelt_radar.py
 
+      - name: Tag news impacts (AI, fail-open)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/tag_impacts.py
+
       - name: Commit changed snapshot
         run: |
-          if git diff --quiet -- site/data/gdelt-radar.json; then
-            echo "No GDELT radar changes to commit."
+          if git diff --quiet -- site/data/gdelt-radar.json site/data/impact-tags.json; then
+            echo "No GDELT radar or impact-tag changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/data/gdelt-radar.json
-          git commit -m "Refresh GDELT discovery radar"
+          git add site/data/gdelt-radar.json site/data/impact-tags.json
+          git commit -m "Refresh GDELT discovery radar + impact tags"
           git push

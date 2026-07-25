@@ -84,6 +84,18 @@ class WorkflowPublishingContractTests(unittest.TestCase):
         self.assertIn("schemas/political-disclosures.schema.json", text)
         self.assertIn("requirements/political.txt", text)
 
+    def test_gdelt_workflow_runs_tagger_before_commit_with_secret(self) -> None:
+        text = self.read("update-gdelt-radar.yml")
+        validate = text.index("Validate discovery payload")
+        tag = text.index("python scripts/tag_impacts.py")
+        commit = text.index("Commit changed snapshot")
+        self.assertLess(validate, tag)          # tag only after the radar payload is validated
+        self.assertLess(tag, commit)            # tag before committing the ledger
+        # secret is passed but the tagger is fail-open, so a missing secret never breaks the run
+        self.assertIn("ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}", text)
+        self.assertIn("git add site/data/gdelt-radar.json site/data/impact-tags.json", text)
+        self.assertNotIn("continue-on-error: true", text)
+
     def test_owner_protection_checklist_names_required_check_and_bypass_risk(self) -> None:
         text = (ROOT / "docs" / "REPOSITORY-PROTECTION.md").read_text(encoding="utf-8")
         self.assertIn("offline-validation", text)

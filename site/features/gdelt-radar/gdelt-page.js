@@ -7,9 +7,65 @@
     .replaceAll('"', '&quot;').replaceAll("'", '&#039;'));
   let topic = 'all';
   let scheduled = false;
+  let impactTags = null;
+  let impactTagsFailed = false;
+  let impactTagsFetchStarted = false;
 
   function data() {
     return window.gdeltRadarData || { collection: { status: 'unavailable' }, articles: [], topics: [] };
+  }
+
+  function impactTagsById() {
+    const map = new Map();
+    const items = Array.isArray(impactTags?.items) ? impactTags.items : [];
+    items.forEach((entry) => { if (entry && entry.id) map.set(entry.id, entry); });
+    return map;
+  }
+
+  async function loadImpactTags() {
+    if (impactTagsFetchStarted) return;
+    impactTagsFetchStarted = true;
+    try {
+      const response = await fetch('data/impact-tags.json', { cache: 'no-store', credentials: 'same-origin' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      impactTags = await response.json();
+      impactTagsFailed = false;
+    } catch (error) {
+      impactTags = null;
+      impactTagsFailed = true;
+    }
+    scheduleRender();
+  }
+
+  function aiChipsMarkup(item) {
+    const entry = impactTagsById().get(item.id);
+    if (!entry) {
+      // Not in the ledger yet, or the whole ledger failed to load: honest "pending" note either way.
+      return '<span class="gdelt-ai-note">AI tagging pending</span>';
+    }
+    if (entry.tagState === 'unavailable') {
+      return '<span class="gdelt-ai-note">AI tagging unavailable</span>';
+    }
+    if (entry.tagState !== 'tagged') {
+      return '<span class="gdelt-ai-note">AI tagging pending</span>';
+    }
+    const tags = Array.isArray(entry.tags) ? entry.tags : [];
+    if (!tags.length) return '';
+    if (!core.impactChips || !window.marketAssetBoard?.assets) return '';
+    const signals = tags.map((tag) => ({
+      assetId: tag.assetId,
+      direction: tag.direction,
+      tier: 'ai',
+      source: 'ai',
+      label: 'AI-tagged',
+      confidence: tag.confidence,
+      detail: `${tag.mechanism} (AI-tagged from ${item.domain || 'source'}, ${tag.confidence} confidence).`,
+      at: item.seenAt || null,
+      status: 'current',
+      href: '',
+    }));
+    const strip = core.impactChips.chipStrip(signals);
+    return strip ? `<span class="gdelt-ai-chips">${strip}</span>` : '';
   }
 
   function relativeTime(value) {
@@ -35,6 +91,7 @@
       <h4><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)} ↗</a></h4>
       <div class="gdelt-source"><strong>${escapeHtml(item.domain || 'Source unavailable')}</strong><span>${escapeHtml(item.sourceCountry || 'Country unavailable')}</span><span>${escapeHtml(item.language || 'Language unavailable')}</span></div>
       <div class="gdelt-tags">${(item.assets || []).slice(0, 5).map((asset) => `<span>${escapeHtml(asset)}</span>`).join('')}</div>
+      ${aiChipsMarkup(item)}
       <p>${escapeHtml(item.verificationNote || 'Discovery lead only. Confirm against an official source.')}</p>
     </article>`).join('');
   }
@@ -58,7 +115,7 @@
     const collection = feed.collection || {};
     const allItems = Array.isArray(feed.articles) ? feed.articles : [];
     const visible = topic === 'all' ? allItems : allItems.filter((item) => (item.topicIds || []).includes(topic));
-    const fingerprint = JSON.stringify([feed.generatedAtUtc, collection.status, topic, visible.map((item) => item.id)]);
+    const fingerprint = JSON.stringify([feed.generatedAtUtc, collection.status, topic, visible.map((item) => item.id), impactTags?.generatedAtUtc, impactTagsFailed]);
     if (mount.dataset.fingerprint === fingerprint) return;
     mount.dataset.fingerprint = fingerprint;
 
@@ -66,6 +123,7 @@
       <summary><div><span class="gdelt-kicker">Wide-net early warning</span><h3>GDELT Discovery Radar</h3><p>Machine-observed media coverage. Unverified until confirmed by an official source or trusted financial wire.</p></div><div class="gdelt-status"><span class="data-state ${escapeHtml(collection.status || 'unavailable')}">${escapeHtml(statusLabel(collection.status))}</span><strong>${escapeHtml(allItems.length)} leads</strong><small>${escapeHtml(collection.expectedCadence || 'Hourly')}</small></div></summary>
       <div class="gdelt-warning"><strong>Discovery only:</strong> a headline appearing here proves that coverage exists, not that the underlying claim is true, current or financially material.</div>
       <div class="gdelt-toolbar" role="group" aria-label="GDELT topic filters"><button type="button" data-gdelt-topic="all" aria-pressed="${topic === 'all'}">All</button>${(feed.topics || []).map((entry) => `<button type="button" data-gdelt-topic="${escapeHtml(entry.id)}" aria-pressed="${topic === entry.id}">${escapeHtml(entry.name)}</button>`).join('')}</div>
+      ${impactTagsFailed ? '<p class="gdelt-ai-degraded">AI impact tagging is temporarily unavailable; showing untagged discovery leads.</p>' : ''}
       ${collection.error ? `<p class="gdelt-error">${escapeHtml(collection.error)}</p>` : ''}
       <div class="gdelt-grid">${cards(visible)}</div>
       <footer><span>Generated ${escapeHtml(feed.generatedAtUtc ? relativeTime(feed.generatedAtUtc) : 'time unavailable')}</span><a href="${escapeHtml(feed.provider?.documentationUrl || 'https://www.gdeltproject.org/')}" target="_blank" rel="noopener noreferrer">GDELT methodology ↗</a></footer>
@@ -90,6 +148,7 @@
     const observer = new MutationObserver(scheduleRender);
     observer.observe(root, { childList: true, subtree: true });
     scheduleRender();
+    loadImpactTags();
   }
 
   window.addEventListener('marketbrief:gdelt-data', scheduleRender);

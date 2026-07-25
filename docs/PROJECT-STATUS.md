@@ -6,6 +6,12 @@ This file is the durable implementation handoff for the repository. It records w
 
 Do not treat chat history as the source of truth. Confirm every statement against the current repository, generated caches, workflow runs and provider documentation before changing code.
 
+## Open branch pending review — Pressure Board PR-2: AI news tagger (18 July 2026)
+
+`feat/pressure-board-pr2-tagger` (open PR, **not merged to `main`**) adds the Claude news-impact tagger from the design spec §4.1. `scripts/tag_impacts.py` batches new GDELT-radar + conflict-watch items to `claude-haiku-4-5` (raw `urllib`, stdlib only) and records validated directional tags (`{assetId, direction, confidence, mechanism}`) in a self-contained 7-day ledger `site/data/impact-tags.json`. `scripts/validate_impact_tags.py` drops any tag outside the closed asset vocabulary or the `up|down|mixed` / `high|medium|low` enums; malformed model output → `tagFailed` (retried, capped at 3 attempts → `unavailable`). The GDELT News-radar cards render the tags as `tier-ai` chips (reusing PR-1's chip component; dashed + "AI" badge, `conf-low` dimming, `href:''` so no dead links) with honest `AI tagging pending` / `AI tagging unavailable` states. Wired as a step in the hourly GDELT workflow (`ANTHROPIC_API_KEY` from repo secrets); the tagger is **fail-open** — a missing key or model outage never breaks the build (news simply ships untagged). 27 tagger unit tests + a source-contract UI test + a workflow-contract test; the suite stays green apart from the one pre-existing date-fragile freshness test.
+
+**Operator prerequisite:** add the `ANTHROPIC_API_KEY` GitHub Actions secret (Settings → Secrets → Actions) before the tagger will populate the ledger. Until then, everything ships fine and news cards show "AI tagging pending". Conscious single-writer choice: the tagger runs only in the GDELT hourly workflow but reads *both* news sources, so conflict-watch items are tagged there too (no cross-workflow commit race). Deferred to PR-3: the curated Verified-tier chips and the Today/Week board consuming these tags.
+
 ## Open branch pending review — UI revamp (16 July 2026)
 
 Branch `feat/ui-mrktedge-revamp` (open PR, **not merged to `main`**) carries a presentation-only revamp toward an mrktedge.ai-style design language. It changes no data logic, no route contracts, and no generated files; the unittest suite (195 tests) and `scripts/audit_static_site.py` stay green.
