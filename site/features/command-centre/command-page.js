@@ -195,6 +195,12 @@
     };
   }
 
+  function cbDecisionsSlice() {
+    // Eager loader sets window.centralBankDecisionsData; the board repaints via
+    // patchPressureBoard() on 'marketbrief:central-bank-decisions'.
+    return window.centralBankDecisionsData || {};
+  }
+
   function pressureBoardInner() {
     const engine = core.impactEngine;
     const boardAssets = Array.isArray(window.marketAssetBoard?.assets) ? window.marketAssetBoard.assets : [];
@@ -208,6 +214,7 @@
         crowdData: window.crowdExpectationsData,   // NOTE: real global is crowdExpectationsData
         equityData: window.equityMarketData,
         blsSource: officialSlice(),
+        cbSource: cbDecisionsSlice(),
       }) || {};
     } catch (error) {
       return '<div class="command-empty">Pressure board unavailable — impact engine not loaded.</div>';
@@ -382,4 +389,5 @@
   // Official feeds load async (eager loader) — repaint the board in place when they arrive
   // so BLS/RBA-driven signals fold into net pressure without a full re-render.
   window.addEventListener('marketbrief:official-feeds', patchPressureBoard);
+  window.addEventListener('marketbrief:central-bank-decisions', patchPressureBoard);
 })();
