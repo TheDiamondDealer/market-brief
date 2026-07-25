@@ -243,6 +243,18 @@ Rules:
 
 A probability is market-implied context, not a recommendation or factual prediction.
 
+### Central-bank rate decisions (Polymarket)
+
+Used for read-only, market-implied probabilities of the next scheduled rate decision for a fixed registry of central banks (Federal Reserve, ECB, Bank of England, Bank of Japan, Reserve Bank of Australia, Bank of Canada, Bank of Korea, Bank of Mexico and Reserve Bank of New Zealand). Each decision's outcomes are mapped to policy buckets — 50+ bps decrease, 25 bps decrease, no change, 25 bps increase, 50+ bps increase.
+
+The collector performs targeted per-bank discovery against the same Polymarket public-search endpoint and reuses the tested Crowd Expectations helpers. It is refreshed every six hours (offset 30 minutes from Crowd Expectations) into `site/data/central-bank-decisions.json` and surfaced by the "Rate decisions" view.
+
+It inherits every Polymarket rule above (read-only only; no wallet, authentication, deposit, signing or order code; structural rejection of secret-bearing or execution fields; stale retention on source failure; one verified snapshot per UTC day for up to 90 days). In addition:
+
+- accept only live decision events that are open, unresolved and carry a future end date;
+- attribute an event to a bank only through its registry title keywords, never a broad default;
+- keep each outcome's probability as market-implied context for an upcoming decision, not a forecast or prediction of the actual policy result.
+
 ## Political disclosures
 
 ### House Clerk
