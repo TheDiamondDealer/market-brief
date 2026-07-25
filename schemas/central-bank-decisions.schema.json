@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schemaVersion", "provider", "collection", "banks"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "provider": {
+      "type": "object",
+      "required": ["id", "readOnly"],
+      "properties": { "id": { "const": "polymarket" }, "readOnly": { "const": true } }
+    },
+    "collection": {
+      "type": "object",
+      "required": ["status", "banksCovered"],
+      "properties": {
+        "status": { "enum": ["current", "stale", "partial", "failed", "unavailable"] },
+        "banksCovered": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "banks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "currency", "boardAssetId", "meetings"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "currency": { "type": "string" },
+          "boardAssetId": { "type": ["string", "null"] },
+          "meetings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["decisionDate", "outcomes", "impliedDirection"],
+              "properties": {
+                "decisionDate": { "type": ["string", "null"] },
+                "impliedDirection": { "enum": ["hawkish", "dovish", "hold"] },
+                "modalProbability": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+                "outcomes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["label", "probability", "history"],
+                    "properties": {
+                      "label": { "type": "string" },
+                      "bps": { "type": ["integer", "null"] },
+                      "probability": { "type": "number", "minimum": 0, "maximum": 1 },
+                      "history": {
+                        "type": "array",
+                        "maxItems": 90,
+                        "items": {
+                          "type": "object",
+                          "required": ["date", "probability"],
+                          "properties": {
+                            "date": { "type": "string" },
+                            "probability": { "type": "number", "minimum": 0, "maximum": 1 }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

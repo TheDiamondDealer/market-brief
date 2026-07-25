@@ -164,5 +164,11 @@ class CentralBankDatasetTests(unittest.TestCase):
         cb.validate_output(data)
 
 
+class CentralBankValidationTests(unittest.TestCase):
+    def test_committed_cache_validates(self):
+        subprocess.run(["python", "scripts/validate_central_bank_decisions.py"],
+                       cwd=ROOT, check=True, capture_output=True, text=True)
+
+
 if __name__ == "__main__":
     unittest.main()
