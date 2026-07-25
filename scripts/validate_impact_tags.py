@@ -58,3 +58,21 @@ def validate_item_output(raw_obj: Any, valid_ids: set[str]) -> list[dict[str, st
     if not isinstance(tags, list):
         return None
     return [clean_tag(t) for t in tags if validate_tag(t, valid_ids)]
+
+
+NOTE_MAX_CHARS = 280
+
+
+def clean_note(raw_obj: Any) -> str:
+    """Extract and sanitise the per-headline ``note`` from one model result object.
+
+    Absent, blank, non-string, or non-dict input all collapse to ``""`` so the
+    tagger can store a note unconditionally. Hard-capped at ``NOTE_MAX_CHARS`` to
+    bound the ledger size budget.
+    """
+    if not isinstance(raw_obj, dict):
+        return ""
+    note = raw_obj.get("note")
+    if not isinstance(note, str):
+        return ""
+    return note.strip()[:NOTE_MAX_CHARS]

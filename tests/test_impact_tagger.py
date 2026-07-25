@@ -118,6 +118,23 @@ class ValidatorTests(unittest.TestCase):
         out = validator.validate_item_output(raw, VALID_IDS)
         self.assertEqual(set(out[0].keys()), {"assetId", "direction", "confidence", "mechanism"})
 
+    def test_clean_note_extracts_and_strips(self) -> None:
+        self.assertEqual(validator.clean_note({"itemId": "x", "note": "  Hello world.  "}), "Hello world.")
+
+    def test_clean_note_empty_when_missing_or_blank_or_none(self) -> None:
+        self.assertEqual(validator.clean_note({"itemId": "x"}), "")
+        self.assertEqual(validator.clean_note({"itemId": "x", "note": "   "}), "")
+        self.assertEqual(validator.clean_note({"itemId": "x", "note": None}), "")
+
+    def test_clean_note_empty_when_not_dict_or_not_string(self) -> None:
+        self.assertEqual(validator.clean_note("nope"), "")
+        self.assertEqual(validator.clean_note({"itemId": "x", "note": 123}), "")
+
+    def test_clean_note_hard_caps_at_280_chars(self) -> None:
+        out = validator.clean_note({"itemId": "x", "note": "y" * 400})
+        self.assertEqual(out, "y" * 280)
+        self.assertEqual(len(out), 280)
+
 
 # --------------------------------------------------------------------------- #
 # Ledger prune / select
