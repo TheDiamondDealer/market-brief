@@ -23,9 +23,11 @@ sandbox.window.marketAssetBoard = {
     { id: 'inflation-risk', label: 'Inflation risk', kind: 'theme', family: 'Themes' },
     { id: 'semis', label: 'Semiconductors', kind: 'theme', family: 'Themes', etfIds: ['smh', 'soxx'], memberTickers: ['nvda'] },
     { id: 'nbp', label: 'UK gas (NBP)', kind: 'asset', family: 'Energy' },
+    { id: 'aud', label: 'AUD/USD', kind: 'asset', family: 'Rates/FX' },
   ],
   officialSeriesRules: [
     { seriesId: 'CUSR0000SA0', seriesName: 'US CPI all items', assetId: 'inflation-risk', rule: 'sign-of-change' },
+    { seriesId: 'rba-cash-rate', seriesName: 'RBA cash rate', assetId: 'aud', source: 'rba', rule: 'sign-of-change' },
   ],
 };
 
@@ -141,12 +143,18 @@ const blsSignals = engine.deriveBlsPrintSignals({
     { id: 'CUSR0000SA0', name: 'US CPI all items', change: -1.411, unit: 'index', observedAt: '2026-06-01', period: '2026-06' },
     { id: 'CES0000000001', name: 'US nonfarm payrolls', change: 57.0, unit: 'thousands', observedAt: '2026-06-01' }, // no rule — skipped
     { id: 'WPSFD4', name: 'US PPI final demand', change: 0, unit: 'index', observedAt: '2026-06-01' }, // rule exists in real registry but zero change — and unmapped in this fixture
+    { id: 'rba-cash-rate', name: 'RBA cash rate target', change: 0.25, unit: '%', observedAt: '2026-05-06', period: '2026-05-06' }, // rule with source: 'rba'
   ],
 });
-assert.strictEqual(blsSignals.length, 1);
-assert.strictEqual(blsSignals[0].assetId, 'inflation-risk');
-assert.strictEqual(blsSignals[0].direction, 'down');
-assert.ok(blsSignals[0].detail.includes('CPI'));
+assert.strictEqual(blsSignals.length, 2);
+const infl = blsSignals.find((s) => s.assetId === 'inflation-risk');
+const aud = blsSignals.find((s) => s.assetId === 'aud');
+assert.strictEqual(infl.direction, 'down');
+assert.strictEqual(infl.source, 'bls', 'default source stays bls when the rule names none');
+assert.ok(infl.detail.includes('CPI'));
+// A rule may name its source: the RBA cash-rate hike (+0.25) maps to aud UP, sourced 'rba'
+assert.strictEqual(aud.direction, 'up');
+assert.strictEqual(aud.source, 'rba');
 
 // --- lookups ---
 assert.strictEqual(engine.assetByCotId('gold').id, 'gold');

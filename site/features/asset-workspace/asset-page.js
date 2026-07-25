@@ -196,6 +196,17 @@
     container.innerHTML = aiTierInner(currentAssetId);
   }
 
+  function officialSlice() {
+    // All official-feed records so officialSeriesRules can map any numeric series
+    // (BLS prints, RBA cash-rate) onto this dossier's asset (e.g. RBA cash-rate -> aud).
+    const data = window.officialFeedsData || {};
+    const sources = Array.isArray(data.sources) ? data.sources : [];
+    return {
+      records: sources.flatMap((source) => (Array.isArray(source.records) ? source.records : [])),
+      status: data.collection?.status,
+    };
+  }
+
   function render(id) {
     const root = host();
     if (!root) return;
@@ -210,6 +221,7 @@
       freeData: window.freeMarketData,
       crowdData: window.crowdExpectationsData,
       equityData: window.equityMarketData,
+      blsSource: officialSlice(),
     }) || {};
     const bucket = collected[id] || { net: 'quiet', counts: { up: 0, down: 0, mixed: 0 }, signals: [] };
     root.innerHTML = `<div class="asset-workspace">
@@ -241,4 +253,10 @@
   else registerRoutes();
   window.addEventListener('load', registerRoutes, { once: true });
   loadImpactTags();
+  // Official feeds arrive async — re-render the open dossier (AI fetch is guarded, so no
+  // double fetch) so an official signal like the RBA cash-rate appears in Observed evidence.
+  window.addEventListener('marketbrief:official-feeds', () => {
+    const path = router?.current?.()?.path || '';
+    if (currentAssetId && (path.startsWith('asset/') || path.startsWith('product/'))) render(currentAssetId);
+  });
 })();

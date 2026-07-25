@@ -177,7 +177,9 @@
         assetId: asset.id,
         direction: change > 0 ? 'up' : 'down',
         tier: 'observed',
-        source: 'bls',
+        // A rule may name its source (e.g. 'rba' for the cash-rate series); default 'bls'
+        // for the original inflation-print rules so existing behaviour is unchanged.
+        source: rule.source || 'bls',
         label: record.name || rule.seriesName || rule.seriesId,
         detail: `${record.name || rule.seriesId} printed ${change > 0 ? 'up' : 'down'} ${Math.abs(change)} ${record.unit || ''} vs the previous observation (${record.period || 'period unavailable'}).`,
         at: record.observedAt || null,

@@ -52,6 +52,17 @@
     return new Date(Date.now() - 7*24*3600*1000).toISOString().slice(0,10);
   }
 
+  function officialSlice() {
+    // All official-feed records so officialSeriesRules can map any numeric series
+    // (BLS prints, RBA cash-rate) onto its asset; windowing by `since` still applies.
+    const data = window.officialFeedsData || {};
+    const sources = Array.isArray(data.sources) ? data.sources : [];
+    return {
+      records: sources.flatMap((source) => (Array.isArray(source.records) ? source.records : [])),
+      status: data.collection?.status,
+    };
+  }
+
   function collectWeekBuckets(since) {
     const engine = core.impactEngine;
     const boardAssets = Array.isArray(window.marketAssetBoard?.assets) ? window.marketAssetBoard.assets : [];
@@ -61,6 +72,7 @@
         freeData: window.freeMarketData,
         crowdData: window.crowdExpectationsData,   // NOTE: real global is crowdExpectationsData
         equityData: window.equityMarketData,
+        blsSource: officialSlice(),
       }, { since }) || {};
     } catch (error) {
       return null;
@@ -350,4 +362,9 @@
   else register();
   window.addEventListener('load', register, { once: true });
   loadWeekLedger();
+  // Official feeds arrive async — re-render the week view (only when it is the active
+  // route) so any in-window BLS/RBA signal folds into the trailing-7d board.
+  window.addEventListener('marketbrief:official-feeds', () => {
+    if (router?.current?.()?.path === 'week') render();
+  });
 })();

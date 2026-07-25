@@ -182,26 +182,35 @@
     </a>`;
   }
 
-  function pressureBoardUnavailable() {
-    return `<section class="pressure-board command-panel" aria-labelledby="pressureBoardTitle">
-      <div class="command-section-heading"><div><span class="command-kicker">Asset board</span><h3 id="pressureBoardTitle">Pressure board</h3></div></div>
-      <div class="command-empty">Pressure board unavailable — impact engine not loaded.</div>
-    </section>`;
+  function officialSlice() {
+    // Flatten every official-feed source's records so officialSeriesRules can map any
+    // numeric series (BLS inflation prints, the RBA cash-rate) onto its board asset.
+    // Async: window.officialFeedsData is populated by the eager official-feeds loader
+    // and the board repaints via patchPressureBoard() on 'marketbrief:official-feeds'.
+    const data = window.officialFeedsData || {};
+    const sources = Array.isArray(data.sources) ? data.sources : [];
+    return {
+      records: sources.flatMap((source) => (Array.isArray(source.records) ? source.records : [])),
+      status: data.collection?.status,
+    };
   }
 
-  function pressureBoard() {
+  function pressureBoardInner() {
     const engine = core.impactEngine;
     const boardAssets = Array.isArray(window.marketAssetBoard?.assets) ? window.marketAssetBoard.assets : [];
-    if (!engine?.collectDeterministicSignals || !boardAssets.length) return pressureBoardUnavailable();
+    if (!engine?.collectDeterministicSignals || !boardAssets.length) {
+      return '<div class="command-empty">Pressure board unavailable — impact engine not loaded.</div>';
+    }
     let collected;
     try {
       collected = engine.collectDeterministicSignals({
         freeData: window.freeMarketData,
         crowdData: window.crowdExpectationsData,   // NOTE: real global is crowdExpectationsData
         equityData: window.equityMarketData,
+        blsSource: officialSlice(),
       }) || {};
     } catch (error) {
-      return pressureBoardUnavailable();
+      return '<div class="command-empty">Pressure board unavailable — impact engine not loaded.</div>';
     }
     const groups = new Map();
     boardAssets.forEach((asset) => {
@@ -210,11 +219,20 @@
       groups.get(family).push(asset);
     });
     const orderedFamilies = [...FAMILY_ORDER.filter((name) => groups.has(name)), ...[...groups.keys()].filter((name) => !FAMILY_ORDER.includes(name))];
-    const groupsMarkup = orderedFamilies.map((family) => `<div class="pressure-family"><span class="pressure-family-label">${escapeHtml(family)}</span><div class="pressure-rows">${groups.get(family).map((asset) => pressureRow(asset, collected[asset.id])).join('')}</div></div>`).join('');
+    return orderedFamilies.map((family) => `<div class="pressure-family"><span class="pressure-family-label">${escapeHtml(family)}</span><div class="pressure-rows">${groups.get(family).map((asset) => pressureRow(asset, collected[asset.id])).join('')}</div></div>`).join('');
+  }
+
+  function pressureBoard() {
+    const count = Array.isArray(window.marketAssetBoard?.assets) ? window.marketAssetBoard.assets.length : 0;
     return `<section class="pressure-board command-panel" aria-labelledby="pressureBoardTitle">
-      <div class="command-section-heading"><div><span class="command-kicker">Asset board</span><h3 id="pressureBoardTitle">Pressure board</h3></div><span>${boardAssets.length} assets · net pressure from observed signals only</span></div>
-      ${groupsMarkup}
+      <div class="command-section-heading"><div><span class="command-kicker">Asset board</span><h3 id="pressureBoardTitle">Pressure board</h3></div><span>${count} assets · net pressure from observed signals only</span></div>
+      <div id="pressureBoardMount">${pressureBoardInner()}</div>
     </section>`;
+  }
+
+  function patchPressureBoard() {
+    const mount = document.getElementById('pressureBoardMount');
+    if (mount) mount.innerHTML = pressureBoardInner();
   }
 
   // Top drivers: AI-tagged (PR-2 ledger). Guarded try/catch fetch mirrors gdelt-page.js's
@@ -361,4 +379,7 @@
   else registerRoute();
   window.addEventListener('load', registerRoute, { once: true });
   loadAiDriversLedger();
+  // Official feeds load async (eager loader) — repaint the board in place when they arrive
+  // so BLS/RBA-driven signals fold into net pressure without a full re-render.
+  window.addEventListener('marketbrief:official-feeds', patchPressureBoard);
 })();

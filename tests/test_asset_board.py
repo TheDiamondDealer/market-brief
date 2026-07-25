@@ -58,10 +58,12 @@ class AssetBoardRegistryTests(unittest.TestCase):
 
     def test_official_series_rules_shape(self) -> None:
         rules = self.registry["officialSeriesRules"]
-        self.assertEqual(len(rules), 3)
+        self.assertEqual(len(rules), 4)
         asset_ids = {a["id"] for a in self.assets}
+        required = {"seriesId", "seriesName", "assetId", "rule"}
         for rule in rules:
-            self.assertEqual(set(rule), {"seriesId", "seriesName", "assetId", "rule"})
+            self.assertTrue(required.issubset(rule))
+            self.assertTrue(set(rule) <= required | {"source"})  # 'source' optional (RBA cash-rate -> aud)
             self.assertIn(rule["assetId"], asset_ids)
             self.assertEqual(rule["rule"], "sign-of-change")
 
