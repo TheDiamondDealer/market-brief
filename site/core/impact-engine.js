@@ -209,9 +209,12 @@
       const modalProb = Number(meeting.modalProbability);
       const direction = meeting.impliedDirection;
       if (!Number.isFinite(modalProb) || modalProb < 0.55 || direction === 'hold') return;
+      // Explicit map — never silently coerce an unexpected impliedDirection into a 'down' signal.
+      const signalDirection = direction === 'hawkish' ? 'up' : direction === 'dovish' ? 'down' : null;
+      if (!signalDirection) return;
       signals.push({
         assetId: asset.id,
-        direction: direction === 'hawkish' ? 'up' : 'down',
+        direction: signalDirection,
         tier: 'observed',
         source: 'rate-decision-odds',
         label: `${bank.name} policy lean`,

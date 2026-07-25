@@ -173,6 +173,12 @@ const cbSource = {
     { id: 'boc', name: 'Bank of Canada', boardAssetId: 'cad-not-a-real-asset',
       meetings: [{ decisionDate: '2026-09-02', modalOutcome: '25 bps decrease',
         modalProbability: 0.52, impliedDirection: 'dovish' }] },        // <55% AND unknown asset
+    { id: 'fed2', name: 'Fed near-tie', boardAssetId: 'dxy',
+      meetings: [{ decisionDate: '2026-09-16', modalOutcome: '25 bps increase',
+        modalProbability: 0.51, impliedDirection: 'hawkish' }] },   // resolvable dxy but 0.51 < 0.55 -> no signal
+    { id: 'fed3', name: 'Fed malformed', boardAssetId: 'dxy',
+      meetings: [{ decisionDate: '2026-10-28', modalOutcome: '???',
+        modalProbability: 0.90, impliedDirection: 'sideways' }] },  // resolvable + >=55% but unknown direction -> skip
   ],
 };
 const cbSignals = engine.deriveRateDecisionSignals(cbSource);
@@ -189,6 +195,10 @@ const cbCollected = engine.collectDeterministicSignals({
 });
 assert.strictEqual(cbCollected.aud.counts.up, 1);
 assert.strictEqual(cbCollected.aud.net, 'up');
+// dxy resolves for fed/fed2/fed3, but none may emit: hold (fed), <55% (fed2), unknown direction (fed3).
+// Without the threshold gate fed2 would add up; without the explicit-direction skip fed3 would add down.
+assert.strictEqual(cbCollected.dxy.counts.up, 0);
+assert.strictEqual(cbCollected.dxy.counts.down, 0);
 
 // --- lookups ---
 assert.strictEqual(engine.assetByCotId('gold').id, 'gold');
