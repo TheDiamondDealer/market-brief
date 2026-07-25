@@ -22,6 +22,7 @@ Every task's requirements implicitly include these (verbatim from the spec + ver
 - **Outcome labels** come from Polymarket `groupItemTitle` verbatim; the bps value is derived via `BPS_BY_LABEL`.
 - **Cadence:** every 6 hours (matches the sibling `crowd-expectations` Polymarket collector; the spec's "hourly" was based on a mis-recollection of crowd's cadence — corrected here).
 - **DRY:** import shared helpers from `update_crowd_expectations`; do not re-implement them.
+- **Tests are `unittest`, NOT pytest.** pytest is not installed and every `tests/*.py` in this repo is a `unittest.TestCase`. Write test classes subclassing `unittest.TestCase` with `self.assert*`; run a module with `python -m unittest tests.test_central_bank_decisions -v` and a single class with `python -m unittest tests.test_central_bank_decisions.<ClassName> -v`. CI runs the file form `python -m unittest tests/test_central_bank_decisions.py -v` (mirror `update-crowd-expectations.yml`). Each task appends its own `TestCase` class to the one test file.
 
 ## File Structure
 
@@ -94,10 +95,13 @@ Every task's requirements implicitly include these (verbatim from the spec + ver
 
 - [ ] **Step 2: Write the failing test for label→bps + summarise**
 
-Add to `tests/test_central_bank_decisions.py`:
+Create `tests/test_central_bank_decisions.py` (full import header — later tasks append `TestCase` classes to this file, so include every import they need now):
 ```python
 from __future__ import annotations
+
+import subprocess
 import sys
+import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -107,30 +111,35 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import update_central_bank_decisions as cb  # noqa: E402
 
 
-def test_bps_for_label_maps_standard_ladder():
-    assert cb.bps_for_label("No change") == 0
-    assert cb.bps_for_label("25 bps increase") == 25
-    assert cb.bps_for_label("50+ bps decrease") == -50
-    assert cb.bps_for_label("garbage") is None
+class CentralBankParsingTests(unittest.TestCase):
+    def test_bps_for_label_maps_standard_ladder(self):
+        self.assertEqual(cb.bps_for_label("No change"), 0)
+        self.assertEqual(cb.bps_for_label("25 bps increase"), 25)
+        self.assertEqual(cb.bps_for_label("50+ bps decrease"), -50)
+        self.assertIsNone(cb.bps_for_label("garbage"))
+
+    def test_summarise_picks_modal_and_direction(self):
+        outcomes = [
+            {"label": "No change", "bps": 0, "probability": 0.30},
+            {"label": "25 bps increase", "bps": 25, "probability": 0.62},
+            {"label": "50+ bps increase", "bps": 50, "probability": 0.08},
+        ]
+        modal, modal_prob, expected, direction = cb.summarise(outcomes)
+        self.assertEqual(modal, "25 bps increase")
+        self.assertEqual(modal_prob, 0.62)
+        self.assertEqual(direction, "hawkish")
+        self.assertIsNotNone(expected)
+        self.assertGreater(expected, 0)
 
 
-def test_summarise_picks_modal_and_direction():
-    outcomes = [
-        {"label": "No change", "bps": 0, "probability": 0.30},
-        {"label": "25 bps increase", "bps": 25, "probability": 0.62},
-        {"label": "50+ bps increase", "bps": 50, "probability": 0.08},
-    ]
-    modal, modal_prob, expected, direction = cb.summarise(outcomes)
-    assert modal == "25 bps increase"
-    assert modal_prob == 0.62
-    assert direction == "hawkish"
-    assert expected is not None and expected > 0
+if __name__ == "__main__":
+    unittest.main()
 ```
 
 - [ ] **Step 3: Run it to confirm it fails**
 
-Run: `python -m pytest tests/test_central_bank_decisions.py -q`
-Expected: FAIL — `ModuleNotFoundError: No module named 'update_central_bank_decisions'`.
+Run: `python -m unittest tests.test_central_bank_decisions -v`
+Expected: ERROR on import — `ModuleNotFoundError: No module named 'update_central_bank_decisions'` (the module doesn't exist yet).
 
 - [ ] **Step 4: Write the collector's parsing core**
 
@@ -236,8 +245,8 @@ def summarise(outcomes: list[dict[str, Any]]):
 
 - [ ] **Step 5: Run the tests to confirm they pass**
 
-Run: `python -m pytest tests/test_central_bank_decisions.py -q`
-Expected: PASS (2 tests).
+Run: `python -m unittest tests.test_central_bank_decisions -v`
+Expected: OK (2 tests).
 
 - [ ] **Step 6: Commit**
 
@@ -265,7 +274,7 @@ git commit -m "feat(rate-decisions): central-bank collector parsing core + regis
 
 - [ ] **Step 1: Write the failing test for build_dataset with a fake fetcher**
 
-Add to `tests/test_central_bank_decisions.py`:
+Append a new `TestCase` class to `tests/test_central_bank_decisions.py` (imports already at top from Task 1):
 ```python
 def _fake_event(slug, title, end, ladder):
     return {
@@ -273,68 +282,73 @@ def _fake_event(slug, title, end, ladder):
         "volume": 50000,
         "markets": [
             {"groupItemTitle": label, "outcomes": "[\"Yes\", \"No\"]",
-             "outcomePrices": f"[\"{p}\", \"{round(1-p,4)}\"]"}
+             "outcomePrices": f"[\"{p}\", \"{round(1 - p, 4)}\"]"}
             for label, p in ladder
         ],
     }
 
 
-def test_build_dataset_normalizes_a_bank_meeting():
-    registry = {
-        "schemaVersion": 1,
-        "provider": {"id": "polymarket", "readOnly": True, "documentationUrl": "https://x"},
-        "discovery": {"searchLimitPerType": 30, "historyDays": 90},
-        "banks": [{"id": "rba", "name": "Reserve Bank of Australia", "currency": "AUD",
-                   "boardAssetId": "aud", "flag": "AU",
-                   "searchTerms": ["Reserve Bank of Australia Decision"],
-                   "titleKeywords": ["reserve bank of australia decision"]}],
-    }
-    events = {"Reserve Bank of Australia Decision": [
-        _fake_event("rba-aug", "Reserve Bank of Australia Decision in August",
-                    "2099-08-11T11:59:00Z",
-                    [("No change", 0.62), ("25 bps increase", 0.30), ("25 bps decrease", 0.08)])
-    ]}
-    data = cb.build_dataset(registry, {}, fetcher=lambda ep, term, lim: events.get(term, []))
-    assert data["collection"]["status"] == "current"
-    bank = data["banks"][0]
-    assert bank["id"] == "rba" and bank["boardAssetId"] == "aud"
-    meeting = bank["meetings"][0]
-    assert meeting["decisionDate"] == "2099-08-11"
-    assert meeting["modalOutcome"] == "No change"
-    assert meeting["impliedDirection"] == "hold"
-    # outcomes are bps-ordered and each carries a one-point history
-    assert [o["label"] for o in meeting["outcomes"]] == ["25 bps decrease", "No change", "25 bps increase"]
-    assert len(meeting["outcomes"][0]["history"]) == 1
-    cb.validate_output(data)  # must not raise
+class CentralBankDatasetTests(unittest.TestCase):
+    def test_build_dataset_normalizes_a_bank_meeting(self):
+        registry = {
+            "schemaVersion": 1,
+            "provider": {"id": "polymarket", "readOnly": True,
+                         "searchEndpoint": "https://x", "documentationUrl": "https://x"},
+            "discovery": {"searchLimitPerType": 30, "historyDays": 90},
+            "banks": [{"id": "rba", "name": "Reserve Bank of Australia", "currency": "AUD",
+                       "boardAssetId": "aud", "flag": "AU",
+                       "searchTerms": ["Reserve Bank of Australia Decision"],
+                       "titleKeywords": ["reserve bank of australia decision"]}],
+        }
+        events = {"Reserve Bank of Australia Decision": [
+            _fake_event("rba-aug", "Reserve Bank of Australia Decision in August",
+                        "2099-08-11T11:59:00Z",
+                        [("No change", 0.62), ("25 bps increase", 0.30), ("25 bps decrease", 0.08)])
+        ]}
+        data = cb.build_dataset(registry, {}, fetcher=lambda ep, term, lim: events.get(term, []))
+        self.assertEqual(data["collection"]["status"], "current")
+        bank = data["banks"][0]
+        self.assertEqual(bank["id"], "rba")
+        self.assertEqual(bank["boardAssetId"], "aud")
+        meeting = bank["meetings"][0]
+        self.assertEqual(meeting["decisionDate"], "2099-08-11")
+        self.assertEqual(meeting["modalOutcome"], "No change")
+        self.assertEqual(meeting["impliedDirection"], "hold")
+        # outcomes are bps-ordered and each carries a one-point history
+        self.assertEqual([o["label"] for o in meeting["outcomes"]],
+                         ["25 bps decrease", "No change", "25 bps increase"])
+        self.assertEqual(len(meeting["outcomes"][0]["history"]), 1)
+        cb.validate_output(data)  # must not raise
 
+    def test_build_dataset_retains_previous_on_total_failure(self):
+        registry = {"schemaVersion": 1,
+                    "provider": {"id": "polymarket", "readOnly": True,
+                                 "searchEndpoint": "https://x", "documentationUrl": "https://x"},
+                    "discovery": {"historyDays": 90},
+                    "banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                               "boardAssetId": "dxy", "flag": "US", "searchTerms": ["Fed Decision"],
+                               "titleKeywords": ["fed decision"]}]}
+        previous = {"banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                    "boardAssetId": "dxy", "meetings": [{"decisionDate": "2099-07-29",
+                    "outcomes": [{"label": "No change", "bps": 0, "probability": 0.7,
+                    "probabilityPercent": 70.0, "probabilitySource": "last trade", "history": []}],
+                    "modalOutcome": "No change", "modalProbability": 0.7, "expectedBps": 0.0,
+                    "impliedDirection": "hold", "liquidityUsd": 0, "marketUrl": "https://x"}]}],
+                    "collection": {"lastSuccessfulAt": "2026-07-25T00:00:00Z"}}
 
-def test_build_dataset_retains_previous_on_total_failure():
-    registry = {"schemaVersion": 1, "provider": {"id": "polymarket", "readOnly": True,
-                "documentationUrl": "https://x"}, "discovery": {"historyDays": 90},
-                "banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
-                           "boardAssetId": "dxy", "flag": "US", "searchTerms": ["Fed Decision"],
-                           "titleKeywords": ["fed decision"]}]}
-    previous = {"banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
-                "boardAssetId": "dxy", "meetings": [{"decisionDate": "2099-07-29",
-                "outcomes": [{"label": "No change", "bps": 0, "probability": 0.7,
-                "probabilityPercent": 70.0, "probabilitySource": "last trade", "history": []}],
-                "modalOutcome": "No change", "modalProbability": 0.7, "expectedBps": 0.0,
-                "impliedDirection": "hold", "liquidityUsd": 0, "marketUrl": "https://x"}]}],
-                "collection": {"lastSuccessfulAt": "2026-07-25T00:00:00Z"}}
+        def boom(ep, term, lim):
+            raise RuntimeError("network down")
 
-    def boom(ep, term, lim):
-        raise RuntimeError("network down")
-
-    data = cb.build_dataset(registry, previous, fetcher=boom)
-    assert data["collection"]["status"] == "stale"
-    assert data["collection"]["error"]
-    assert data["banks"][0]["meetings"][0]["decisionDate"] == "2099-07-29"
+        data = cb.build_dataset(registry, previous, fetcher=boom)
+        self.assertEqual(data["collection"]["status"], "stale")
+        self.assertTrue(data["collection"]["error"])
+        self.assertEqual(data["banks"][0]["meetings"][0]["decisionDate"], "2099-07-29")
 ```
 
 - [ ] **Step 2: Run to confirm failure**
 
-Run: `python -m pytest tests/test_central_bank_decisions.py -q`
-Expected: FAIL — `AttributeError: module ... has no attribute 'build_dataset'`.
+Run: `python -m unittest tests.test_central_bank_decisions.CentralBankDatasetTests -v`
+Expected: ERROR — `AttributeError: module 'update_central_bank_decisions' has no attribute 'build_dataset'`.
 
 - [ ] **Step 3: Implement records, dataset build, resilience, validation, CLI**
 
@@ -501,8 +515,8 @@ if __name__ == "__main__":
 
 - [ ] **Step 4: Run the tests to confirm they pass**
 
-Run: `python -m pytest tests/test_central_bank_decisions.py -q`
-Expected: PASS (4 tests).
+Run: `python -m unittest tests.test_central_bank_decisions -v`
+Expected: OK (4 tests).
 
 - [ ] **Step 5: Commit**
 
@@ -652,20 +666,18 @@ Expected stdout: `status=current; banksCovered=9` (or close — thin banks occas
 
 - [ ] **Step 4: Write the committed-cache validation test**
 
-Add to `tests/test_central_bank_decisions.py`:
+Append a `TestCase` class to `tests/test_central_bank_decisions.py` (`subprocess` is imported at the top from Task 1):
 ```python
-import subprocess
-
-
-def test_committed_cache_validates():
-    subprocess.run(["python", "scripts/validate_central_bank_decisions.py"],
-                   cwd=ROOT, check=True, capture_output=True, text=True)
+class CentralBankValidationTests(unittest.TestCase):
+    def test_committed_cache_validates(self):
+        subprocess.run(["python", "scripts/validate_central_bank_decisions.py"],
+                       cwd=ROOT, check=True, capture_output=True, text=True)
 ```
 
 - [ ] **Step 5: Run validator + tests**
 
-Run: `python scripts/validate_central_bank_decisions.py && python -m pytest tests/test_central_bank_decisions.py -q`
-Expected: validator prints OK; all tests PASS.
+Run: `python scripts/validate_central_bank_decisions.py && python -m unittest tests.test_central_bank_decisions -v`
+Expected: validator prints OK; all tests OK.
 
 - [ ] **Step 6: Commit**
 
@@ -922,22 +934,24 @@ For each allow-list array that contains `'cot'` (e.g. a `supported`/known-views 
 
 - [ ] **Step 7: Write structural tests**
 
-Add to `tests/test_central_bank_decisions.py`:
+Append a `TestCase` class to `tests/test_central_bank_decisions.py`:
 ```python
-def test_eager_loader_and_nav_are_wired():
-    index_html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
-    assert "features/rate-decisions/rate-decisions-data.js" in index_html
-    assert 'data-view="rate-decisions"' in index_html
-    assert 'id="view-rate-decisions"' in index_html
-    loader = (ROOT / "site" / "core" / "feature-loader.js").read_text(encoding="utf-8")
-    assert "route: 'rate-decisions'" in loader
-    engine = (ROOT / "site" / "core" / "impact-engine.js").read_text(encoding="utf-8")
-    assert "deriveRateDecisionSignals" in engine and "rate-decision-odds" in engine
+class CentralBankWiringTests(unittest.TestCase):
+    def test_eager_loader_and_nav_are_wired(self):
+        index_html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("features/rate-decisions/rate-decisions-data.js", index_html)
+        self.assertIn('data-view="rate-decisions"', index_html)
+        self.assertIn('id="view-rate-decisions"', index_html)
+        loader = (ROOT / "site" / "core" / "feature-loader.js").read_text(encoding="utf-8")
+        self.assertIn("route: 'rate-decisions'", loader)
+        engine = (ROOT / "site" / "core" / "impact-engine.js").read_text(encoding="utf-8")
+        self.assertIn("deriveRateDecisionSignals", engine)
+        self.assertIn("rate-decision-odds", engine)
 ```
 
 - [ ] **Step 8: Run tests + smoke navigation**
 
-Run: `python -m pytest tests/test_central_bank_decisions.py -q` (all PASS).
+Run: `python -m unittest tests.test_central_bank_decisions -v` (all OK).
 Then `python -m http.server 8099 --directory site`, click the "Rate decisions" nav item.
 Expected: URL becomes `#rate-decisions`, the `#view-rate-decisions` section becomes active (shows the "Loading…" placeholder — the page module lands in Task 7). No console errors.
 
@@ -1134,8 +1148,10 @@ concurrency:
 ```
 For the job body, copy the `update` job from `update-crowd-expectations.yml` verbatim and replace only the run + validate + commit-path lines:
 ```yaml
-      - name: Compile guard
-        run: python -m py_compile scripts/update_central_bank_decisions.py scripts/validate_central_bank_decisions.py tests/test_central_bank_decisions.py
+      - name: Compile guard + unit tests
+        run: |
+          python -m py_compile scripts/update_central_bank_decisions.py scripts/validate_central_bank_decisions.py tests/test_central_bank_decisions.py
+          python -m unittest tests/test_central_bank_decisions.py -v
       - name: Collect central bank decisions
         run: python scripts/update_central_bank_decisions.py
       - name: Validate
@@ -1167,8 +1183,9 @@ git commit -m "ci(rate-decisions): 6-hourly refresh workflow + docs"
 
 - [ ] **Step 1: Run the whole test suite**
 
-Run: `python -m pytest tests/ -q` and `node tests/js/impact-engine.test.js`
-Expected: all green except the pre-existing, unrelated `test_runtime_registry_keeps_source_failures_independent` freshness-registry flake (date-fragile; red on every PR — confirm it's the same known failure and nothing new).
+Run: `python -m unittest tests.test_central_bank_decisions -v` and `node tests/js/impact-engine.test.js`.
+Then the broader sweep: `python -m unittest discover -s tests -v`.
+Expected: the CB module + JS impact-engine test all green. In the broader sweep, the only expected red is the pre-existing, unrelated `test_runtime_registry_keeps_source_failures_independent` freshness-registry flake (date-fragile; red on every PR — confirm it's the same known failure and nothing new introduced by this branch).
 
 - [ ] **Step 2: Final board + view smoke**
 
