@@ -142,6 +142,190 @@
     return failures;
   }
 
+  // --- PR-3 Task 2: home Pressure Board (Today) (spec S5.2) ---------------
+  // The board leads the home render: every board asset's net directional pressure at a
+  // glance, each row a link into its dossier (Task 1's #asset/:id route). Guarded end to
+  // end - a missing engine/board, a failed AI ledger fetch or a missing calendar dataset
+  // must degrade to an honest empty state, never crash the home page.
+  const NET_LABEL = { up: '↑ upward pressure', down: '↓ downward pressure', contested: 'CONTESTED', quiet: 'QUIET' };
+  const FAMILY_ORDER = ['Energy', 'Metals', 'Softs/Ags', 'Rates/FX', 'Indices', 'Themes'];
+
+  // Cheap, honest price read: most board assets ship no free price feed at all, so a
+  // labelled dash is the normal, correct state. Only assets that carry an etfIds proxy
+  // (indices/theme baskets) get a real reading, and only when the equity cache reports
+  // that row as 'current' - never invent a move for a stale/unavailable/absent row.
+  function priceMove(asset) {
+    const etfIds = Array.isArray(asset?.etfIds) ? asset.etfIds : [];
+    const watchlist = Array.isArray(window.equityMarketData?.watchlist) ? window.equityMarketData.watchlist : [];
+    for (const etfId of etfIds) {
+      const row = watchlist.find((entry) => entry?.id === etfId);
+      const change = Number(row?.percentChange);
+      if (row && row.status === 'current' && Number.isFinite(change)) {
+        return `${change > 0 ? '+' : ''}${change.toFixed(2)}% (${row.symbol || etfId.toUpperCase()})`;
+      }
+    }
+    return '—';
+  }
+
+  function pressureRow(asset, bucket) {
+    const safeBucket = bucket || { net: 'quiet', counts: { up: 0, down: 0, mixed: 0 }, signals: [] };
+    const netKey = ['up', 'down', 'contested', 'quiet'].includes(safeBucket.net) ? safeBucket.net : 'quiet';
+    const counts = safeBucket.counts || { up: 0, down: 0, mixed: 0 };
+    const strongest = (safeBucket.signals || [])[0] || null;
+    const driverText = strongest ? (strongest.label || strongest.detail || '—') : '—';
+    return `<a class="pressure-row net-${netKey}" href="#asset/${encodeURIComponent(asset.id)}">
+      <span class="pressure-row-asset">${escapeHtml(asset.label || asset.id)}</span>
+      <span class="pressure-row-net">${NET_LABEL[netKey]}</span>
+      <span class="pressure-row-counts">${counts.up}↑ ${counts.down}↓ ${counts.mixed}↔</span>
+      <span class="pressure-row-price">${escapeHtml(priceMove(asset))}</span>
+      <span class="pressure-row-driver">${escapeHtml(driverText)}</span>
+    </a>`;
+  }
+
+  function pressureBoardUnavailable() {
+    return `<section class="pressure-board command-panel" aria-labelledby="pressureBoardTitle">
+      <div class="command-section-heading"><div><span class="command-kicker">Asset board</span><h3 id="pressureBoardTitle">Pressure board</h3></div></div>
+      <div class="command-empty">Pressure board unavailable — impact engine not loaded.</div>
+    </section>`;
+  }
+
+  function pressureBoard() {
+    const engine = core.impactEngine;
+    const boardAssets = Array.isArray(window.marketAssetBoard?.assets) ? window.marketAssetBoard.assets : [];
+    if (!engine?.collectDeterministicSignals || !boardAssets.length) return pressureBoardUnavailable();
+    let collected;
+    try {
+      collected = engine.collectDeterministicSignals({
+        freeData: window.freeMarketData,
+        crowdData: window.crowdExpectationsData,   // NOTE: real global is crowdExpectationsData
+        equityData: window.equityMarketData,
+      }) || {};
+    } catch (error) {
+      return pressureBoardUnavailable();
+    }
+    const groups = new Map();
+    boardAssets.forEach((asset) => {
+      const family = asset.family || 'Other';
+      if (!groups.has(family)) groups.set(family, []);
+      groups.get(family).push(asset);
+    });
+    const orderedFamilies = [...FAMILY_ORDER.filter((name) => groups.has(name)), ...[...groups.keys()].filter((name) => !FAMILY_ORDER.includes(name))];
+    const groupsMarkup = orderedFamilies.map((family) => `<div class="pressure-family"><span class="pressure-family-label">${escapeHtml(family)}</span><div class="pressure-rows">${groups.get(family).map((asset) => pressureRow(asset, collected[asset.id])).join('')}</div></div>`).join('');
+    return `<section class="pressure-board command-panel" aria-labelledby="pressureBoardTitle">
+      <div class="command-section-heading"><div><span class="command-kicker">Asset board</span><h3 id="pressureBoardTitle">Pressure board</h3></div><span>${boardAssets.length} assets · net pressure from observed signals only</span></div>
+      ${groupsMarkup}
+    </section>`;
+  }
+
+  // Top drivers: AI-tagged (PR-2 ledger). Guarded try/catch fetch mirrors gdelt-page.js's
+  // loadImpactTags() - render the home first with whatever is cached (nothing, on first
+  // load), patch #topDriversMount in place once the fetch resolves (mirrors asset-page.js's
+  // patchAiTier()). A missing/empty/failed ledger renders the same honest empty state either
+  // way; it is never distinguished from "confirmed empty" because both are equally honest.
+  let aiDriversLedger = null;
+  let aiDriversFetchStarted = false;
+  const CONFIDENCE_RANK = { high: 3, medium: 2, low: 1 };
+
+  async function loadAiDriversLedger() {
+    if (aiDriversFetchStarted) return;
+    aiDriversFetchStarted = true;
+    try {
+      const response = await fetch('data/impact-tags.json', { cache: 'no-store', credentials: 'same-origin' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      aiDriversLedger = await response.json();
+    } catch (error) {
+      aiDriversLedger = null;
+    }
+    patchTopDrivers();
+  }
+
+  function rankedTopDrivers(limit = 5) {
+    const items = Array.isArray(aiDriversLedger?.items) ? aiDriversLedger.items : [];
+    const eligible = items.filter((item) => item?.tagState === 'tagged' && Array.isArray(item.tags) && item.tags.length);
+    const scored = eligible.map((item) => ({
+      item,
+      tagCount: item.tags.length,
+      maxConfidence: item.tags.reduce((max, tag) => Math.max(max, CONFIDENCE_RANK[tag.confidence] || 0), 0),
+    }));
+    scored.sort((a, b) => (b.tagCount - a.tagCount) || (b.maxConfidence - a.maxConfidence));
+    return scored.slice(0, limit).map((entry) => entry.item);
+  }
+
+  function topDriverRow(item) {
+    const chips = core.impactChips?.chipStrip?.((item.tags || []).map((tag) => ({
+      assetId: tag.assetId,
+      direction: tag.direction,
+      tier: 'ai',
+      confidence: tag.confidence,
+      source: 'ai',
+      label: 'AI-tagged',
+      detail: tag.mechanism,
+      at: item.seenAt,
+      href: '',
+    }))) || '';
+    const link = item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Open source ↗</a>` : '';
+    return `<article class="top-driver-row">
+      <h4>${escapeHtml(item.headline || 'Headline unavailable')}</h4>
+      ${chips}
+      <div class="top-driver-meta"><span>${escapeHtml(item.domain || 'Source unavailable')}</span><span>${escapeHtml(item.seenAt || 'Time unavailable')}</span>${link}</div>
+    </article>`;
+  }
+
+  function topDriversInner() {
+    const ranked = rankedTopDrivers(5);
+    if (!ranked.length) return '<div class="command-empty">No AI-tagged drivers in the current window (add ANTHROPIC_API_KEY / awaiting the next tagging run).</div>';
+    return `<div class="top-drivers-list">${ranked.map(topDriverRow).join('')}</div>`;
+  }
+
+  function topDrivers() {
+    return `<section class="top-drivers command-panel" aria-labelledby="topDriversTitle">
+      <div class="command-section-heading"><div><span class="command-kicker">AI-tagged, last 24h</span><h3 id="topDriversTitle">Top drivers</h3></div><a href="#news">Open Impact Feed</a></div>
+      <div id="topDriversMount">${topDriversInner()}</div>
+    </section>`;
+  }
+
+  function patchTopDrivers() {
+    const mount = document.getElementById('topDriversMount');
+    if (!mount) return;
+    mount.innerHTML = topDriversInner();
+  }
+
+  // Watchpoints today: next upcoming calendar releases (real global is
+  // window.marketCalendarData / core.calendar.get(), NOT window.calendarData) + the
+  // standing research triggers the home already renders via triggerCards(). If the
+  // calendar dataset isn't available (module load race, or simply not shipped yet) this
+  // degrades to standing triggers only with an honest note - never a crash, never a guess.
+  function upcomingCalendarEvents(limit = 3) {
+    const source = core.calendar?.get?.() || window.marketCalendarData || null;
+    const events = Array.isArray(source?.events) ? source.events : null;
+    if (!events) return null;
+    return events
+      .filter((event) => event?.state === 'upcoming' && typeof event.scheduledAt === 'string' && event.scheduledAt)
+      .sort((a, b) => a.scheduledAt.localeCompare(b.scheduledAt))
+      .slice(0, limit);
+  }
+
+  function watchpointsToday() {
+    let upcoming = null;
+    try {
+      upcoming = upcomingCalendarEvents(3);
+    } catch (error) {
+      upcoming = null;
+    }
+    const calendarMarkup = upcoming === null
+      ? '<p class="watchpoints-calendar-note">Calendar releases shown on the Calendar page.</p>'
+      : (upcoming.length
+        ? `<div class="watchpoints-calendar">${upcoming.map((event) => `<article><strong>${escapeHtml(event.name || 'Scheduled release')}</strong><span>${escapeHtml(event.scheduledLabel || 'Time unavailable')}</span></article>`).join('')}</div>`
+        : '<div class="command-empty">No upcoming scheduled release is currently listed.</div>');
+    return `<section class="watchpoints command-panel" aria-labelledby="watchpointsTitle">
+      <div class="command-section-heading"><div><span class="command-kicker">Next tests</span><h3 id="watchpointsTitle">Watchpoints today</h3></div><a href="#calendar">Open Calendar</a></div>
+      <div class="watchpoints-grid">
+        <div class="watchpoints-column"><span class="command-daily-label">Upcoming releases</span>${calendarMarkup}</div>
+        <div class="watchpoints-column"><span class="command-daily-label">Standing triggers</span><div class="command-trigger-list">${triggerCards()}</div></div>
+      </div>
+    </section>`;
+  }
+
   function render() {
     const root = host();
     if (!root) return;
@@ -151,6 +335,9 @@
     root.dataset.commandCentreRemodel = 'br-14';
     root.innerHTML = `<div class="command-page">
       <header class="command-hero"><div><span class="command-kicker">Decision console</span><h2>${escapeHtml(research.regime?.verdict || 'Market regime unavailable')}</h2><p>${escapeHtml(research.regime?.meaning || command.risk?.summary || 'Regime interpretation is not available.')}</p></div><div class="command-hero-meta"><span class="data-state ${failures.length ? 'partial' : 'current'}">${failures.length ? `${failures.length} source warning${failures.length === 1 ? '' : 's'}` : 'Core sources current'}</span><strong>${escapeHtml(research.regime?.name || 'Regime name unavailable')}</strong><small>Updated ${escapeHtml(command.updated || research.generatedAt || 'time unavailable')}</small></div></header>
+      ${pressureBoard()}
+      ${topDrivers()}
+      ${watchpointsToday()}
       ${heroStats()}
       ${conflictWatch()}
       ${dailyBrief()}
@@ -173,4 +360,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', registerRoute, { once: true });
   else registerRoute();
   window.addEventListener('load', registerRoute, { once: true });
+  loadAiDriversLedger();
 })();
