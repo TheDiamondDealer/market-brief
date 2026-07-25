@@ -260,6 +260,52 @@ class TaggerTests(unittest.TestCase):
 
 
 # --------------------------------------------------------------------------- #
+# Batching (chunk so one call's JSON never exceeds the model output budget)
+# --------------------------------------------------------------------------- #
+class TaggerBatchingTests(unittest.TestCase):
+    @staticmethod
+    def _caller_tagging_prompt_items(calls: list) -> object:
+        import re
+
+        def _caller(prompt: str) -> str:
+            calls.append(prompt)
+            ids = re.findall(r"itemId=(\S+)", prompt)
+            return json.dumps([{"itemId": i, "tags": [_good_tag("gold")]} for i in ids])
+
+        return _caller
+
+    def test_large_pending_set_is_split_across_multiple_calls(self) -> None:
+        ledger = _empty_ledger()
+        items = [_item(f"n{i}") for i in range(tagger.BATCH_SIZE + 5)]  # -> 2 chunks
+        calls: list = []
+        tagger.tag_pending(ledger, items, caller=self._caller_tagging_prompt_items(calls), now=NOW)
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(len(ledger["items"]), tagger.BATCH_SIZE + 5)
+        self.assertTrue(all(i["tagState"] == "tagged" for i in ledger["items"]))
+        # each chunk carried at most BATCH_SIZE items
+        for prompt in calls:
+            self.assertLessEqual(prompt.count("itemId="), tagger.BATCH_SIZE)
+
+    def test_one_chunk_outage_does_not_sink_the_other_chunk(self) -> None:
+        import re
+        ledger = _empty_ledger()
+        items = [_item(f"n{i}") for i in range(tagger.BATCH_SIZE + 3)]  # -> 2 chunks
+        state = {"n": 0}
+
+        def caller(prompt: str) -> str:
+            state["n"] += 1
+            if state["n"] == 1:
+                raise OSError("outage on first chunk")
+            ids = re.findall(r"itemId=(\S+)", prompt)
+            return json.dumps([{"itemId": i, "tags": []} for i in ids])
+
+        tagger.tag_pending(ledger, items, caller=caller, now=NOW)
+        # first chunk left untouched (absent); second chunk (3 items) tagged
+        self.assertEqual(len(ledger["items"]), 3)
+        self.assertTrue(all(i["tagState"] == "tagged" for i in ledger["items"]))
+
+
+# --------------------------------------------------------------------------- #
 # Input normalization
 # --------------------------------------------------------------------------- #
 class NormalizeTests(unittest.TestCase):
