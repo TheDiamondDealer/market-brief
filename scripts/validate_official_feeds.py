@@ -12,7 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "site" / "data" / "official-feeds.json"
 SCHEMA = ROOT / "schemas" / "official-feeds.schema.json"
 BASE_IDS = {"sec-edgar", "bls-public-data", "eia-energy", "bea-nipa", "census-eits", "usgs-minerals"}
-NEWS_IDS = {"asx-announcements", "federal-reserve-policy"}
+# News sources migrate in groups so the committed seed stays valid until the next
+# pipeline run regenerates it: core = ASX + Fed; extra = RBA + USDA (added in PR-4).
+CORE_NEWS_IDS = {"asx-announcements", "federal-reserve-policy"}
+EXTRA_NEWS_IDS = {"rba-media-releases", "usda-wasde"}
+NEWS_IDS = CORE_NEWS_IDS | EXTRA_NEWS_IDS
 STATUSES = {"current", "delayed", "stale", "failed", "unavailable", "partial", "unknown"}
 
 
@@ -29,10 +33,12 @@ def main() -> int:
 
     sources = data["sources"]
     ids = {source["id"] for source in sources}
-    if ids not in (BASE_IDS, BASE_IDS | NEWS_IDS):
+    if ids not in (BASE_IDS, BASE_IDS | CORE_NEWS_IDS, BASE_IDS | NEWS_IDS):
         raise SystemExit(f"Official-feed source set mismatch: {sorted(ids)}")
-    if ids.intersection(NEWS_IDS) and not NEWS_IDS.issubset(ids):
+    if ids.intersection(CORE_NEWS_IDS) and not CORE_NEWS_IDS.issubset(ids):
         raise SystemExit("ASX and Federal Reserve sources must migrate together")
+    if ids.intersection(EXTRA_NEWS_IDS) and not EXTRA_NEWS_IDS.issubset(ids):
+        raise SystemExit("RBA and USDA sources must migrate together")
     if data["collection"]["successCount"] + data["collection"]["failureCount"] + data["collection"]["unavailableCount"] != len(sources):
         raise SystemExit("Official-feed collection counts do not match the source registry")
 
@@ -59,7 +65,12 @@ def main() -> int:
     if re.search(r"(?i)(api_key|apikey|userid|registrationkey)=[^&\s\[\]]+", rendered):
         raise SystemExit("Official-feed cache appears to contain a credential query parameter")
 
-    migration = "expanded" if NEWS_IDS.issubset(ids) else "base migration state"
+    if NEWS_IDS.issubset(ids):
+        migration = "expanded"
+    elif CORE_NEWS_IDS.issubset(ids):
+        migration = "core-news migration state"
+    else:
+        migration = "base migration state"
     print(f"Validated {len(sources)} official sources ({migration}) and {len(all_record_ids)} retained records.")
     return 0
 
