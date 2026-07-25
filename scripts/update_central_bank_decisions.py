@@ -104,3 +104,162 @@ def summarise(outcomes: list[dict[str, Any]]):
     else:
         direction = "dovish"
     return modal["label"], round(modal["probability"], 6), expected, direction
+
+
+def meeting_record(event, previous_outcomes, collected_at, history_days):
+    outcomes = outcome_records(event, previous_outcomes, collected_at, history_days)
+    if not outcomes:
+        return None
+    modal_label, modal_prob, expected_bps, direction = summarise(outcomes)
+    end = str(event.get("endDate") or "")
+    return {
+        "decisionDate": end[:10] or None,
+        "decisionDateTime": event.get("endDate") or None,
+        "outcomes": outcomes,
+        "modalOutcome": modal_label,
+        "modalProbability": modal_prob,
+        "expectedBps": expected_bps,
+        "impliedDirection": direction,
+        "liquidityUsd": round(crowd.number(event.get("volume")) or 0, 2),
+        "marketUrl": (f"https://polymarket.com/event/{event.get('slug')}"
+                      if event.get("slug") else "https://polymarket.com/"),
+    }
+
+
+def index_previous(previous):
+    idx: dict[tuple, dict] = {}
+    for bank in previous.get("banks", []) or []:
+        for meeting in bank.get("meetings", []) or []:
+            for outcome in meeting.get("outcomes", []) or []:
+                key = (bank.get("id"), meeting.get("decisionDate"), crowd.normalized(outcome.get("label")))
+                idx[key] = outcome
+    return idx
+
+
+def build_dataset(registry, previous, *, fetcher=fetch_events):
+    collected_at = crowd.utc_now()
+    now = datetime.now(timezone.utc)
+    discovery = registry.get("discovery", {})
+    endpoint = registry["provider"]["searchEndpoint"]
+    limit = int(discovery.get("searchLimitPerType", 30))
+    history_days = int(discovery.get("historyDays", 90))
+    prev_idx = index_previous(previous)
+
+    error: str | None = None
+    banks_out: list[dict[str, Any]] = []
+    try:
+        for bank in registry.get("banks", []):
+            events: list[dict[str, Any]] = []
+            seen: set[str] = set()
+            for term in bank.get("searchTerms", []):
+                for event in fetcher(endpoint, term, limit):
+                    key = str(event.get("id") or event.get("slug") or event.get("title"))
+                    if key in seen or not is_live_decision(event, bank, now):
+                        continue
+                    seen.add(key)
+                    events.append(event)
+            events.sort(key=lambda e: str(e.get("endDate") or ""))
+            meetings = []
+            for event in events:
+                prev_outcomes = {
+                    k[2]: v for k, v in prev_idx.items()
+                    if k[0] == bank["id"] and k[1] == str(event.get("endDate") or "")[:10]
+                }
+                record = meeting_record(event, prev_outcomes, collected_at, history_days)
+                if record:
+                    meetings.append(record)
+            banks_out.append({
+                "id": bank["id"], "name": bank["name"], "currency": bank["currency"],
+                "boardAssetId": bank.get("boardAssetId"), "flag": bank.get("flag", ""),
+                "meetings": meetings,
+            })
+        if not any(bank["meetings"] for bank in banks_out):
+            raise ValueError("No live central-bank decision meetings returned")
+    except Exception as exc:  # noqa: BLE001 — resilience: retain prior verified data
+        error = str(exc)[:600]
+        banks_out = [dict(bank) for bank in previous.get("banks", []) if isinstance(bank, dict)]
+
+    covered = sum(1 for bank in banks_out if bank.get("meetings"))
+    status = ("stale" if error else "current") if banks_out else ("failed" if error else "unavailable")
+    last_success = collected_at if (covered and not error) else previous.get("collection", {}).get("lastSuccessfulAt")
+    generated = {
+        "schemaVersion": 1,
+        "generatedAtUtc": collected_at,
+        "provider": registry["provider"],
+        "collection": {
+            "status": status,
+            "banksCovered": covered,
+            "lastSuccessfulAt": last_success,
+            "error": error,
+        },
+        "banks": banks_out,
+        "methodology": {
+            "interpretation": "Prices are crowd-implied probabilities of each central-bank rate outcome, not forecasts or trade recommendations.",
+            "price": "YES bid-ask midpoint when the spread is <=10 points, else last trade, else the Gamma outcome price.",
+            "history": "One snapshot per UTC day is retained for up to 90 days; new banks start with short histories that fill in daily.",
+            "jurisdiction": "Read-only public market data. No wallet, authentication, deposits or order endpoints.",
+        },
+        "sourceStatus": [{
+            "id": "polymarket-central-bank-decisions",
+            "source": "Polymarket public market data",
+            "status": status,
+            "lastSuccessfulAt": last_success,
+            "expectedCadence": "Every six hours",
+            "detail": f"{covered} central banks with live decision markets.",
+            "error": error,
+            "url": registry["provider"]["documentationUrl"],
+        }],
+    }
+    validate_output(generated)
+    return generated
+
+
+def validate_output(data):
+    if data.get("schemaVersion") != 1:
+        raise ValueError("schemaVersion must be 1")
+    provider = data.get("provider", {})
+    if provider.get("id") != "polymarket" or provider.get("readOnly") is not True:
+        raise ValueError("Provider must remain Polymarket read-only")
+    for bank in data.get("banks", []):
+        for meeting in bank.get("meetings", []):
+            outcomes = meeting.get("outcomes", [])
+            labels = [o.get("label") for o in outcomes]
+            if len(labels) != len(set(labels)):
+                raise ValueError(f"Duplicate outcome labels: {bank.get('id')} {meeting.get('decisionDate')}")
+            for outcome in outcomes:
+                probability = crowd.number(outcome.get("probability"))
+                if probability is None or not 0 <= probability <= 1:
+                    raise ValueError(f"Invalid probability: {bank.get('id')} {outcome.get('label')}")
+                history = outcome.get("history", [])
+                dates = [str(p.get("date") or "") for p in history if isinstance(p, dict)]
+                if dates != sorted(dates) or len(dates) != len(set(dates)):
+                    raise ValueError(f"Invalid history dates: {bank.get('id')} {outcome.get('label')}")
+                if len(history) > 90:
+                    raise ValueError(f"History exceeds 90 days: {bank.get('id')} {outcome.get('label')}")
+            if meeting.get("modalOutcome") is not None and meeting["modalOutcome"] not in labels:
+                raise ValueError(f"Modal outcome not among outcomes: {bank.get('id')}")
+    rendered = json.dumps(data, ensure_ascii=False).lower()
+    if any(marker in rendered for marker in crowd.TRADING_MARKERS):
+        raise ValueError("Generated data contains a prohibited trading marker")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--registry", type=Path, default=REGISTRY_PATH)
+    parser.add_argument("--output", type=Path, default=OUTPUT_PATH)
+    args = parser.parse_args()
+    registry = crowd.load_json(args.registry, {})
+    if not registry:
+        print(f"Unable to load registry: {args.registry}", file=sys.stderr)
+        return 1
+    previous = crowd.load_json(args.output, {})
+    dataset = build_dataset(registry, previous)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Central-bank decisions status={dataset['collection']['status']}; "
+          f"banksCovered={dataset['collection']['banksCovered']}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

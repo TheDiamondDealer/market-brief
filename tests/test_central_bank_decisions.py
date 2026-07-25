@@ -47,5 +47,74 @@ class CentralBankParsingTests(unittest.TestCase):
         self.assertEqual(direction, "hold")
 
 
+def _fake_event(slug, title, end, ladder):
+    return {
+        "slug": slug, "title": title, "endDate": end, "active": True, "closed": False,
+        "volume": 50000,
+        "markets": [
+            {"groupItemTitle": label, "outcomes": "[\"Yes\", \"No\"]",
+             "outcomePrices": f"[\"{p}\", \"{round(1 - p, 4)}\"]"}
+            for label, p in ladder
+        ],
+    }
+
+
+class CentralBankDatasetTests(unittest.TestCase):
+    def test_build_dataset_normalizes_a_bank_meeting(self):
+        registry = {
+            "schemaVersion": 1,
+            "provider": {"id": "polymarket", "readOnly": True,
+                         "searchEndpoint": "https://x", "documentationUrl": "https://x"},
+            "discovery": {"searchLimitPerType": 30, "historyDays": 90},
+            "banks": [{"id": "rba", "name": "Reserve Bank of Australia", "currency": "AUD",
+                       "boardAssetId": "aud", "flag": "AU",
+                       "searchTerms": ["Reserve Bank of Australia Decision"],
+                       "titleKeywords": ["reserve bank of australia decision"]}],
+        }
+        events = {"Reserve Bank of Australia Decision": [
+            _fake_event("rba-aug", "Reserve Bank of Australia Decision in August",
+                        "2099-08-11T11:59:00Z",
+                        [("No change", 0.62), ("25 bps increase", 0.30), ("25 bps decrease", 0.08)])
+        ]}
+        data = cb.build_dataset(registry, {}, fetcher=lambda ep, term, lim: events.get(term, []))
+        self.assertEqual(data["collection"]["status"], "current")
+        bank = data["banks"][0]
+        self.assertEqual(bank["id"], "rba")
+        self.assertEqual(bank["boardAssetId"], "aud")
+        meeting = bank["meetings"][0]
+        self.assertEqual(meeting["decisionDate"], "2099-08-11")
+        self.assertEqual(meeting["modalOutcome"], "No change")
+        self.assertEqual(meeting["impliedDirection"], "hold")
+        # outcomes are bps-ordered and each carries a one-point history
+        self.assertEqual([o["label"] for o in meeting["outcomes"]],
+                         ["25 bps decrease", "No change", "25 bps increase"])
+        self.assertEqual(len(meeting["outcomes"][0]["history"]), 1)
+        cb.validate_output(data)  # must not raise
+
+    def test_build_dataset_retains_previous_on_total_failure(self):
+        registry = {"schemaVersion": 1,
+                    "provider": {"id": "polymarket", "readOnly": True,
+                                 "searchEndpoint": "https://x", "documentationUrl": "https://x"},
+                    "discovery": {"historyDays": 90},
+                    "banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                               "boardAssetId": "dxy", "flag": "US", "searchTerms": ["Fed Decision"],
+                               "titleKeywords": ["fed decision"]}]}
+        previous = {"banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                    "boardAssetId": "dxy", "meetings": [{"decisionDate": "2099-07-29",
+                    "outcomes": [{"label": "No change", "bps": 0, "probability": 0.7,
+                    "probabilityPercent": 70.0, "probabilitySource": "last trade", "history": []}],
+                    "modalOutcome": "No change", "modalProbability": 0.7, "expectedBps": 0.0,
+                    "impliedDirection": "hold", "liquidityUsd": 0, "marketUrl": "https://x"}]}],
+                    "collection": {"lastSuccessfulAt": "2026-07-25T00:00:00Z"}}
+
+        def boom(ep, term, lim):
+            raise RuntimeError("network down")
+
+        data = cb.build_dataset(registry, previous, fetcher=boom)
+        self.assertEqual(data["collection"]["status"], "stale")
+        self.assertTrue(data["collection"]["error"])
+        self.assertEqual(data["banks"][0]["meetings"][0]["decisionDate"], "2099-07-29")
+
+
 if __name__ == "__main__":
     unittest.main()
