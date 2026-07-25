@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import importlib.util
 import unittest
+import urllib.error
 from pathlib import Path
 from unittest.mock import patch
 
@@ -104,17 +105,55 @@ class GdeltRequestThrottleTests(unittest.TestCase):
         self.assertGreater(update.INTER_REQUEST_DELAY_SECONDS, 0.0)
         self.assertLessEqual(update.INTER_REQUEST_DELAY_SECONDS, 5.0)
 
-    def test_successful_requests_are_spaced(self) -> None:
+    def test_requests_are_spaced_before_each_call(self) -> None:
         with patch.object(update, "request_json", return_value={"articles": []}), \
              patch.object(update, "time") as fake_time:
             update.collect({}, max_records=1, timespan="1h")
-        # one throttle between each pair of successful buckets, none after the last
+        # one throttle before each bucket except the first
         self.assertEqual(fake_time.sleep.call_count, len(update.QUERY_BUCKETS) - 1)
 
-    def test_all_failing_requests_never_sleep(self) -> None:
+    def test_requests_are_spaced_even_when_all_fail(self) -> None:
+        # Spacing is now BEFORE each request, so a mid-burst 429 can't cascade through
+        # the rest — the delay applies regardless of the previous request's outcome.
         with patch.object(update, "request_json", side_effect=OSError("offline")), \
              patch.object(update, "time") as fake_time:
             update.collect({}, max_records=1, timespan="1h")
+        self.assertEqual(fake_time.sleep.call_count, len(update.QUERY_BUCKETS) - 1)
+
+
+def _http_429(url: str = "https://api.gdeltproject.org/x") -> urllib.error.HTTPError:
+    return urllib.error.HTTPError(url, 429, "Too Many Requests", {}, None)
+
+
+class GdeltRateLimitRetryTests(unittest.TestCase):
+    """fetch_query backs off once on HTTP 429 and retries that single query."""
+
+    def test_backoff_constant_is_positive(self) -> None:
+        self.assertIsInstance(update.RATE_LIMIT_BACKOFF_SECONDS, float)
+        self.assertGreater(update.RATE_LIMIT_BACKOFF_SECONDS, 0.0)
+
+    def test_retries_once_on_429_then_succeeds(self) -> None:
+        with patch.object(update, "request_json", side_effect=[_http_429(), {"articles": []}]) as rj, \
+             patch.object(update, "time") as fake_time:
+            result = update.fetch_query("https://api.gdeltproject.org/x")
+        self.assertEqual(result, {"articles": []})
+        self.assertEqual(rj.call_count, 2)
+        fake_time.sleep.assert_called_once()
+
+    def test_reraises_persistent_429_after_one_retry(self) -> None:
+        with patch.object(update, "request_json", side_effect=[_http_429(), _http_429()]) as rj, \
+             patch.object(update, "time"):
+            with self.assertRaises(urllib.error.HTTPError):
+                update.fetch_query("https://api.gdeltproject.org/x")
+        self.assertEqual(rj.call_count, 2)
+
+    def test_does_not_retry_non_429(self) -> None:
+        err = urllib.error.HTTPError("https://api.gdeltproject.org/x", 500, "Server Error", {}, None)
+        with patch.object(update, "request_json", side_effect=err) as rj, \
+             patch.object(update, "time") as fake_time:
+            with self.assertRaises(urllib.error.HTTPError):
+                update.fetch_query("https://api.gdeltproject.org/x")
+        self.assertEqual(rj.call_count, 1)
         fake_time.sleep.assert_not_called()
 
 
