@@ -176,7 +176,7 @@ def build_dataset(registry, previous, *, fetcher=fetch_events):
         if not any(bank["meetings"] for bank in banks_out):
             raise ValueError("No live central-bank decision meetings returned")
     except Exception as exc:  # noqa: BLE001 — resilience: retain prior verified data
-        error = str(exc)[:600]
+        error = str(exc)[:600] or exc.__class__.__name__
         banks_out = [dict(bank) for bank in previous.get("banks", []) if isinstance(bank, dict)]
 
     covered = sum(1 for bank in banks_out if bank.get("meetings"))
@@ -210,7 +210,22 @@ def build_dataset(registry, previous, *, fetcher=fetch_events):
             "url": registry["provider"]["documentationUrl"],
         }],
     }
-    validate_output(generated)
+    try:
+        validate_output(generated)
+    except ValueError as exc:
+        # A secondary validation failure must not defeat the resilience path. On the SUCCESS
+        # path (error is None) we still fail loud — never write freshly-built invalid data.
+        # On the retention path, degrade to an explicit empty 'failed' payload rather than
+        # crashing the collector (e.g. a corrupt prior file, or tightened validation rules).
+        if error is None:
+            raise
+        generated["banks"] = []
+        generated["collection"]["status"] = "failed"
+        generated["collection"]["banksCovered"] = 0
+        generated["collection"]["error"] = f"retained data failed validation: {exc}"[:600]
+        generated["sourceStatus"][0]["status"] = "failed"
+        generated["sourceStatus"][0]["error"] = generated["collection"]["error"]
+        validate_output(generated)
     return generated
 
 

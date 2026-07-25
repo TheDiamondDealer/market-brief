@@ -115,6 +115,54 @@ class CentralBankDatasetTests(unittest.TestCase):
         self.assertTrue(data["collection"]["error"])
         self.assertEqual(data["banks"][0]["meetings"][0]["decisionDate"], "2099-07-29")
 
+    def test_empty_message_exception_marks_stale_not_current(self):
+        registry = {"schemaVersion": 1,
+                    "provider": {"id": "polymarket", "readOnly": True,
+                                 "searchEndpoint": "https://x", "documentationUrl": "https://x"},
+                    "discovery": {"historyDays": 90},
+                    "banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                               "boardAssetId": "dxy", "flag": "US", "searchTerms": ["Fed Decision"],
+                               "titleKeywords": ["fed decision"]}]}
+        previous = {"banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                    "boardAssetId": "dxy", "meetings": [{"decisionDate": "2099-07-29",
+                    "outcomes": [{"label": "No change", "bps": 0, "probability": 0.7,
+                    "probabilityPercent": 70.0, "probabilitySource": "last trade", "history": []}],
+                    "modalOutcome": "No change", "modalProbability": 0.7, "expectedBps": 0.0,
+                    "impliedDirection": "hold", "liquidityUsd": 0, "marketUrl": "https://x"}]}],
+                    "collection": {"lastSuccessfulAt": "2026-07-25T00:00:00Z"}}
+
+        def boom_no_message(ep, term, lim):
+            raise RuntimeError()  # str(exc) == ""
+
+        data = cb.build_dataset(registry, previous, fetcher=boom_no_message)
+        self.assertEqual(data["collection"]["status"], "stale")
+        self.assertTrue(data["collection"]["error"])
+        self.assertEqual(data["collection"]["lastSuccessfulAt"], "2026-07-25T00:00:00Z")
+
+    def test_invalid_retained_data_degrades_to_failed_without_crashing(self):
+        registry = {"schemaVersion": 1,
+                    "provider": {"id": "polymarket", "readOnly": True,
+                                 "searchEndpoint": "https://x", "documentationUrl": "https://x"},
+                    "discovery": {"historyDays": 90},
+                    "banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                               "boardAssetId": "dxy", "flag": "US", "searchTerms": ["Fed Decision"],
+                               "titleKeywords": ["fed decision"]}]}
+        previous = {"banks": [{"id": "fed", "name": "Federal Reserve", "currency": "USD",
+                    "boardAssetId": "dxy", "meetings": [{"decisionDate": "2099-07-29",
+                    "outcomes": [{"label": "No change", "bps": 0, "probability": 1.5,
+                    "probabilityPercent": 150.0, "probabilitySource": "last trade", "history": []}],
+                    "modalOutcome": "No change", "modalProbability": 1.5, "expectedBps": 0.0,
+                    "impliedDirection": "hold", "liquidityUsd": 0, "marketUrl": "https://x"}]}],
+                    "collection": {"lastSuccessfulAt": "2026-07-25T00:00:00Z"}}
+
+        def boom(ep, term, lim):
+            raise RuntimeError("network down")
+
+        data = cb.build_dataset(registry, previous, fetcher=boom)  # must not raise
+        self.assertEqual(data["collection"]["status"], "failed")
+        self.assertEqual(data["banks"], [])
+        cb.validate_output(data)
+
 
 if __name__ == "__main__":
     unittest.main()
