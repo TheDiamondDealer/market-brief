@@ -11,6 +11,7 @@
   const evidence = core.adapters?.evidence?.() || window.marketResearchData || {};
   const scenarios = core.adapters?.scenarios?.() || window.scenarioAssets || {};
   const impact = () => core.impact?.get?.() || window.marketImpactData || { items: [] };
+  const engine = core.impactEngine;
   const ASSET_ALIASES = Object.freeze({ brent: ['brent', 'oil'], wti: ['wti', 'oil'], 'gas-us': ['henry hub', 'us natural gas', 'gas'], 'gas-uk': ['nbp', 'uk natural gas', 'gas'], gold: ['gold'], silver: ['silver'], copper: ['copper'] });
   const CHECKLIST_KEYS = Object.freeze({ brent: 'oil', wti: 'oil', 'gas-us': 'gas-us', 'gas-uk': 'gas-uk' });
   const COT_IDS = Object.freeze({ gold: 'gold', silver: 'silver', copper: 'copper', brent: 'oil-brent', wti: 'oil-wti', 'gas-us': 'gas-us', 'gas-uk': 'gas-uk' });
@@ -90,17 +91,131 @@
     return `<div class="asset-chart-wrap"><iframe title="${escapeHtml(item.name)} external market chart" src="${src}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe><p>Display-only external TradingView chart. Provider data, delay and licensing terms apply; the site does not copy or recalculate the chart values.</p></div>`;
   }
 
+  // --- Net-pressure header + tier-ordered evidence stack (spec S5.4/S5.5, PR-3 Task 1) ---
+  const NET_LABEL = { up: '↑ upward pressure', down: '↓ downward pressure', contested: 'CONTESTED', quiet: 'QUIET' };
+  let currentAssetId = null;
+  let aiLedger = null;
+  let aiLedgerFetchStarted = false;
+
+  function tierInner(title, rows, emptyText) {
+    const heading = `<div class="asset-section-heading"><h3>${escapeHtml(title)}</h3><span>${rows.length} item${rows.length === 1 ? '' : 's'}</span></div>`;
+    return `${heading}${rows.length ? rows.join('') : `<div class="asset-empty">${escapeHtml(emptyText)}</div>`}`;
+  }
+
+  // Guard: unknown/product ids (e.g. the gas-us/gas-uk scenario routes, which map to
+  // different board-asset ids - henry-hub/ttf/nbp) are not board assets. Render nothing
+  // rather than a header for an asset the engine has no bucket for.
+  function pressureHeader(id, bucket) {
+    const boardAsset = engine?.assetById?.(id);
+    if (!boardAsset) return '';
+    const netKey = ['up', 'down', 'contested', 'quiet'].includes(bucket.net) ? bucket.net : 'quiet';
+    const counts = bucket.counts || { up: 0, down: 0, mixed: 0 };
+    return `<section class="asset-panel asset-pressure-header"><div><span class="asset-kicker">${escapeHtml(boardAsset.family || 'Board asset')}</span><h3>${escapeHtml(boardAsset.label || id)}</h3></div><div class="asset-pressure-net net-${netKey}"><strong>${NET_LABEL[netKey]}</strong><span>${counts.up}↑ ${counts.down}↓ ${counts.mixed}↔</span></div></section>`;
+  }
+
+  function verifiedRows(id, item) {
+    const events = relevantImpact(id, item);
+    const terms = aliases(id, item);
+    const rows = [];
+    events.forEach((event) => {
+      const entries = event.interpretations.filter((entry) => terms.some((term) => normalized(`${entry.assetId} ${entry.assetName}`).includes(term)));
+      entries.forEach((entry) => {
+        rows.push(`<article><header><strong>${escapeHtml(event.headline)}</strong><span class="data-state ${event.status === 'confirmed' ? 'current' : 'partial'}">${escapeHtml(event.status)}</span></header>${entry.mechanism ? `<p><strong>Mechanism:</strong> ${escapeHtml(entry.mechanism)}</p>` : ''}${entry.confirmation ? `<p><strong>Confirms if:</strong> ${escapeHtml(entry.confirmation)}</p>` : ''}${entry.invalidation ? `<p><strong>Flips if:</strong> ${escapeHtml(entry.invalidation)}</p>` : ''}</article>`);
+      });
+    });
+    return rows;
+  }
+
+  // Observed + Verified render synchronously from data already on window. AI-tagged is the
+  // one async tier: evidenceStack() renders its container up front (aiTierInner() reads
+  // whatever the ledger cache holds right now - null before the first fetch resolves) and
+  // patchAiTier() below replaces just that container's contents once the fetch settles.
+  function evidenceStack(id, item, bucket) {
+    const observed = (bucket.signals || []).map((signal) => `<article><header><strong>${escapeHtml(signal.label || 'Signal')}</strong><span>${directionGlyph(signal.direction)} ${escapeHtml(signal.direction || 'mixed')}</span></header><p>${escapeHtml(signal.detail || '')}</p><small>${escapeHtml(signal.at || 'Date unavailable')}</small></article>`);
+    const verified = verifiedRows(id, item);
+    return `<section class="asset-evidence-stack">
+      <div class="asset-panel asset-evidence-tier tier-observed">${tierInner('Observed', observed, 'No Observed evidence in view')}</div>
+      <div class="asset-panel asset-evidence-tier tier-verified">${tierInner('Verified', verified, 'No Verified evidence in view')}</div>
+      <div class="asset-panel asset-evidence-tier tier-ai" id="asset-evidence-ai" data-asset-id="${escapeHtml(id)}">${aiTierInner(id)}</div>
+    </section>`;
+  }
+
+  // Guarded ledger fetch - mirrors gdelt-page.js's loadImpactTags(). A missing/empty/failed
+  // data/impact-tags.json must degrade to the honest empty line below, never crash the dossier.
+  async function loadImpactTags() {
+    if (aiLedgerFetchStarted) return;
+    aiLedgerFetchStarted = true;
+    try {
+      const response = await fetch('data/impact-tags.json', { cache: 'no-store', credentials: 'same-origin' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      aiLedger = await response.json();
+    } catch (error) {
+      aiLedger = null;
+    }
+    patchAiTier();
+  }
+
+  function aiTaggedRows(id) {
+    const items = Array.isArray(aiLedger?.items) ? aiLedger.items : [];
+    const rows = [];
+    items.forEach((entry) => {
+      if (!entry || entry.tagState !== 'tagged') return;
+      (Array.isArray(entry.tags) ? entry.tags : []).forEach((tag) => {
+        if (tag?.assetId === id) rows.push({ item: entry, tag });
+      });
+    });
+    return rows;
+  }
+
+  function aiTierInner(id) {
+    const rows = aiTaggedRows(id).map(({ item, tag }) => {
+      const chip = core.impactChips?.chip?.({
+        assetId: id,
+        direction: tag.direction,
+        tier: 'ai',
+        confidence: tag.confidence,
+        source: 'ai',
+        label: 'AI-tagged',
+        detail: tag.mechanism,
+        at: item.seenAt || null,
+        href: '',
+      }) || '';
+      const link = item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Open source ↗</a>` : '';
+      return `<article><header><strong>${escapeHtml(item.headline || 'Headline unavailable')}</strong>${chip}</header><p>${escapeHtml(tag.mechanism || '')}</p><div class="asset-ai-meta"><span>${escapeHtml(item.domain || 'Source unavailable')}</span><span>${escapeHtml(item.seenAt || 'Time unavailable')}</span>${link}</div></article>`;
+    });
+    return tierInner('AI-tagged', rows, 'No AI-tagged news for this asset in the current window.');
+  }
+
+  // Patch just the AI container in place (not a full render()) so a late-resolving fetch
+  // never reloads the TradingView chart iframe or disturbs the rest of the dossier. Guarded
+  // by data-asset-id so a stale fetch from a since-abandoned view can never patch the wrong id.
+  function patchAiTier() {
+    if (!currentAssetId) return;
+    const container = document.getElementById('asset-evidence-ai');
+    if (!container || container.dataset.assetId !== currentAssetId) return;
+    container.innerHTML = aiTierInner(currentAssetId);
+  }
+
   function render(id) {
     const root = host();
     if (!root) return;
+    currentAssetId = id;
     const item = asset(id);
     root.dataset.assetWorkspaceRemodel = 'br-13';
     if (!item) {
       root.innerHTML = `<div class="asset-workspace"><div class="asset-empty"><strong>Asset workspace unavailable</strong><p>No scenario record exists for “${escapeHtml(id)}”.</p><a href="#products">Return to assets</a></div></div>`;
       return;
     }
+    const collected = engine?.collectDeterministicSignals?.({
+      freeData: window.freeMarketData,
+      crowdData: window.crowdExpectationsData,
+      equityData: window.equityMarketData,
+    }) || {};
+    const bucket = collected[id] || { net: 'quiet', counts: { up: 0, down: 0, mixed: 0 }, signals: [] };
     root.innerHTML = `<div class="asset-workspace">
       <header class="asset-hero"><div><span class="asset-kicker">Decision workspace</span><h2>${escapeHtml(item.name)}</h2><p>Evidence for the current path, evidence that would flip it, relevant catalysts, positioning and physical-market checks in one route.</p></div><div class="asset-hero-meta"><span class="data-state current">Scenario record connected</span><strong>${escapeHtml(item.symbol || 'Chart symbol unavailable')}</strong><small>Official cache ${escapeHtml(official.generatedAt || 'time unavailable')}</small></div></header>
+      ${pressureHeader(id, bucket)}
+      ${evidenceStack(id, item, bucket)}
       <section class="asset-panel"><div class="asset-section-heading"><div><span class="asset-kicker">External chart</span><h3>Market context</h3></div><span>Display only</span></div>${chart(item)}</section>
       <section class="asset-thesis-grid">${evidenceList('Evidence supporting upside', item.upside || [], 'positive')}${evidenceList('Evidence supporting downside', item.downside || [], 'negative')}</section>
       <section class="asset-panel"><div class="asset-section-heading"><div><span class="asset-kicker">Decision rules</span><h3>Confirmation and flip conditions</h3></div><span>No hidden score</span></div><div class="asset-rule-grid"><article><span>Upside confirmation</span><p>${escapeHtml(item.confirmUp || 'Not specified')}</p></article><article><span>Upside invalidation</span><p>${escapeHtml(item.invalidUp || 'Not specified')}</p></article><article><span>Downside confirmation</span><p>${escapeHtml(item.confirmDown || 'Not specified')}</p></article><article><span>Downside invalidation</span><p>${escapeHtml(item.invalidDown || 'Not specified')}</p></article></div></section>
@@ -125,4 +240,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', registerRoutes, { once: true });
   else registerRoutes();
   window.addEventListener('load', registerRoutes, { once: true });
+  loadImpactTags();
 })();

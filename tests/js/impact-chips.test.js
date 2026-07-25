@@ -29,13 +29,16 @@ assert.ok(linked.includes('↑'));
 assert.ok(linked.includes('Gold'));
 assert.ok(!linked.includes('<fast>'), 'detail must be HTML-escaped');
 
-const span = chips.chip({ assetId: 'gold', direction: 'down', tier: 'ai', confidence: 'low', href: '' });
-assert.ok(span.startsWith('<span '), span);
-assert.ok(span.includes('tier-ai'));
-assert.ok(span.includes('conf-low'));
-assert.ok(span.includes('↓'));
+// PR-3: an empty href now defaults to the asset's dossier link when the asset is on the board.
+const aiLinked = chips.chip({ assetId: 'gold', direction: 'down', tier: 'ai', confidence: 'low', href: '' });
+assert.ok(aiLinked.startsWith('<a '), aiLinked);
+assert.ok(aiLinked.includes('href="#asset/gold"'), 'empty href must default to the dossier link for a board asset');
+assert.ok(aiLinked.includes('tier-ai'));
+assert.ok(aiLinked.includes('conf-low'));
+assert.ok(aiLinked.includes('↓'));
 
 const unknown = chips.chip({ assetId: 'mystery', direction: 'sideways', tier: 'nope', href: '' });
+assert.ok(unknown.startsWith('<span '), 'unknown asset must not get a dossier link (no dead links)');
 assert.ok(unknown.includes('impact-chip mixed tier-observed'), 'invalid enums fall back safely');
 assert.ok(unknown.includes('mystery'), 'unknown asset falls back to its id');
 

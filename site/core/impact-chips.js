@@ -26,8 +26,14 @@
     const title = signal.detail ? ` title="${escapeHtml(signal.detail)}"` : '';
     const aria = ` aria-label="${escapeHtml(`${label}: ${DIRECTION_WORD[direction]}`)}"`;
     const body = `<span class="impact-chip-arrow" aria-hidden="true">${ARROWS[direction]}</span>${escapeHtml(label)}`;
-    if (signal.href) {
-      return `<a class="${classes}" href="${escapeHtml(signal.href)}"${title}${aria}>${body}</a>`;
+    // Default an empty href to the asset's dossier route so every board-asset chip becomes
+    // navigation currency at once. Unknown assets (not on the board) keep no href - the
+    // dossier route can't render them, and a <span> is the honest choice (no dead links).
+    const board = window.marketAssetBoard?.assets || [];
+    const isBoardAsset = board.some((entry) => entry.id === signal.assetId);
+    const href = signal.href || (isBoardAsset ? `#asset/${signal.assetId}` : '');
+    if (href) {
+      return `<a class="${classes}" href="${escapeHtml(href)}"${title}${aria}>${body}</a>`;
     }
     return `<span class="${classes}"${title}${aria}>${body}</span>`;
   }
