@@ -32,6 +32,20 @@ class CentralBankParsingTests(unittest.TestCase):
         self.assertIsNotNone(expected)
         self.assertGreater(expected, 0)
 
+    def test_summarise_empty_outcomes(self):
+        self.assertEqual(cb.summarise([]), (None, None, None, None))
+
+    def test_summarise_unmapped_modal_is_hold(self):
+        # A high-probability outcome whose label isn't in the 5-rung ladder (bps=None)
+        # must classify as 'hold' (conservative), not a fabricated direction.
+        outcomes = [
+            {"label": "75+ bps increase", "bps": None, "probability": 0.80},
+            {"label": "No change", "bps": 0, "probability": 0.20},
+        ]
+        modal, modal_prob, expected, direction = cb.summarise(outcomes)
+        self.assertEqual(modal, "75+ bps increase")
+        self.assertEqual(direction, "hold")
+
 
 if __name__ == "__main__":
     unittest.main()

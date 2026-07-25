@@ -92,5 +92,15 @@ def summarise(outcomes: list[dict[str, Any]]):
     total = sum(o["probability"] for o in priced)
     expected = round(sum(o["probability"] * o["bps"] for o in priced) / total, 2) if total else None
     modal_bps = modal.get("bps")
-    direction = "hold" if not modal_bps else ("hawkish" if modal_bps > 0 else "dovish")
+    # Unmapped modal labels (bps is None) only arise if Polymarket adds a rung outside the
+    # standard 5-step ladder. We can't classify direction for those, so we treat them the
+    # same as a genuine "no change" — 'hold' — which emits no board lean (conservative).
+    # Deliberately stays within the {hawkish, dovish, hold} enum: a null would violate the
+    # schema and be misread as a downward signal by the board.
+    if modal_bps is None or modal_bps == 0:
+        direction = "hold"
+    elif modal_bps > 0:
+        direction = "hawkish"
+    else:
+        direction = "dovish"
     return modal["label"], round(modal["probability"], 6), expected, direction
