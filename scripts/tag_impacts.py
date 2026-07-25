@@ -24,7 +24,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from validate_impact_tags import valid_asset_ids, validate_item_output
+from validate_impact_tags import CONFIDENCES, DIRECTIONS, valid_asset_ids, validate_item_output
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
@@ -38,10 +38,12 @@ MODEL = "claude-haiku-4-5"
 SCHEMA_VERSION = 1
 MAX_ATTEMPTS = 3
 PRUNE_DAYS = 7
-# Cap items per model call. One batched call for every pending item overruns the
-# response token budget and truncates the JSON (stop_reason=max_tokens) -> the whole
-# array is unparseable and every item is lost. Chunking keeps each call's JSON small.
+MAX_TOKENS = 8192
+# Token-aware chunking: cap items per model call so the response never hits the
+# output-token ceiling. A batch closes at BATCH_SIZE items OR MAX_BATCH_CHARS of
+# headline text, whichever comes first (long headlines close a batch early).
 BATCH_SIZE = 15
+MAX_BATCH_CHARS = 4000
 
 
 # --------------------------------------------------------------------------- #
@@ -208,15 +210,85 @@ def _ensure_entry(ledger: dict[str, Any], index: dict[str, Any], row: dict[str, 
 # --------------------------------------------------------------------------- #
 # Anthropic Messages API (raw urllib) + prompt
 # --------------------------------------------------------------------------- #
-def call_claude(prompt: str, *, timeout: int = 60) -> str:
-    """Raw Messages API call. Returns the assistant text. Raises on any failure."""
+SYSTEM_INSTRUCTION = (
+    "You tag financial-news headlines for their directional impact on a CLOSED list "
+    "of assets. Use ONLY the asset ids allowed by the tool schema — never invent one. "
+    "For every supplied itemId return exactly one result object; an empty tags array "
+    "is a valid, expected answer when the headline has no clear asset impact."
+)
+
+
+def build_tool(valid_ids: set[str]) -> dict[str, Any]:
+    """A forced tool whose schema pins assetId/direction/confidence to closed enums,
+    so the model physically cannot return an unlisted asset or malformed JSON — the
+    old free-text-JSON path could truncate or fence-wrap and lose the whole batch."""
+    return {
+        "name": "record_impact_tags",
+        "description": "Record the directional market impact of each supplied news headline.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "itemId": {"type": "string"},
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "assetId": {"type": "string", "enum": sorted(valid_ids)},
+                                        "direction": {"type": "string", "enum": sorted(DIRECTIONS)},
+                                        "confidence": {"type": "string", "enum": sorted(CONFIDENCES)},
+                                        "mechanism": {"type": "string"},
+                                    },
+                                    "required": ["assetId", "direction", "confidence", "mechanism"],
+                                },
+                            },
+                        },
+                        "required": ["itemId", "tags"],
+                    },
+                },
+            },
+            "required": ["results"],
+        },
+        # Cache the tool + system prefix across a run's chunks. The vocab is below
+        # Haiku's ~2048-token cache minimum today, so this is currently a no-op, but it
+        # costs nothing and engages automatically if the asset list ever grows.
+        "cache_control": {"type": "ephemeral"},
+    }
+
+
+def build_user_message(pending_items: list[dict[str, str]]) -> str:
+    lines = [
+        f"itemId={item['id']}\n"
+        f"   headline: {item.get('headline', '')}\n"
+        f"   source domain: {item.get('domain', '')}\n"
+        f"   topic: {item.get('topic', '')}\n"
+        f"   seenAt: {item.get('seenAt', '')}"
+        for item in pending_items
+    ]
+    return "Tag these items:\n\n" + "\n\n".join(lines)
+
+
+def call_model(pending_items: list[dict[str, str]], valid_ids: set[str], *, timeout: int = 90) -> dict[str, Any]:
+    """Forced-tool Messages API call → ``{"results": [...], "stopReason": str}``.
+
+    Raises on any transport/API failure so a whole-chunk outage fails open upstream.
+    Structured tool output means there is no free text to parse and no fences to strip.
+    """
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise RuntimeError("ANTHROPIC_API_KEY not set")
     body = json.dumps({
         "model": MODEL,
-        "max_tokens": 8192,
-        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": MAX_TOKENS,
+        "system": [{"type": "text", "text": SYSTEM_INSTRUCTION, "cache_control": {"type": "ephemeral"}}],
+        "tools": [build_tool(valid_ids)],
+        "tool_choice": {"type": "tool", "name": "record_impact_tags"},
+        "messages": [{"role": "user", "content": build_user_message(pending_items)}],
     }).encode("utf-8")
     req = urllib.request.Request(
         "https://api.anthropic.com/v1/messages",
@@ -230,64 +302,39 @@ def call_claude(prompt: str, *, timeout: int = 60) -> str:
     )
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         payload = json.loads(resp.read().decode("utf-8"))
-    parts = [b.get("text", "") for b in payload.get("content", []) if b.get("type") == "text"]
-    return "".join(parts)
-
-
-def build_prompt(registry: dict[str, Any], pending_items: list[dict[str, str]]) -> str:
-    assets = [a for a in registry.get("assets", []) if isinstance(a, dict) and a.get("id")]
-    vocab = "\n".join(f"- {a['id']} — {a.get('label', a['id'])}" for a in assets)
-    lines = []
-    for idx, item in enumerate(pending_items, start=1):
-        lines.append(
-            f"{idx}. itemId={item['id']}\n"
-            f"   headline: {item.get('headline', '')}\n"
-            f"   source domain: {item.get('domain', '')}\n"
-            f"   topic: {item.get('topic', '')}\n"
-            f"   seenAt: {item.get('seenAt', '')}"
-        )
-    items_block = "\n".join(lines)
-    return (
-        "You tag financial-news headlines for their directional impact on a CLOSED "
-        "list of assets. Use ONLY these asset ids (never invent one):\n"
-        f"{vocab}\n\n"
-        "For each numbered item below, decide which listed assets the headline moves "
-        "and in which direction. An empty tags array is a valid, expected answer when "
-        "there is no clear asset impact.\n\n"
-        f"{items_block}\n\n"
-        "Return STRICT JSON ONLY — no prose, no markdown fences — as an array:\n"
-        '[{"itemId": "<id from above>", "tags": [{"assetId": "<one listed id>", '
-        '"direction": "up|down|mixed", "confidence": "high|medium|low", '
-        '"mechanism": "<one concise sentence>"}]}]\n'
+    tool_block = next(
+        (b for b in payload.get("content", [])
+         if b.get("type") == "tool_use" and b.get("name") == "record_impact_tags"),
+        None,
     )
+    results = tool_block.get("input", {}).get("results", []) if tool_block else []
+    return {"results": results if isinstance(results, list) else [], "stopReason": payload.get("stop_reason")}
 
 
-def _strip_fences(text: str) -> str:
-    stripped = text.strip()
-    if stripped.startswith("```"):
-        stripped = stripped.split("\n", 1)[-1] if "\n" in stripped else ""
-        if stripped.rstrip().endswith("```"):
-            stripped = stripped.rstrip()[:-3]
-    return stripped.strip()
-
-
-def _parse_output_by_id(text: str) -> dict[str, Any]:
-    """Parse the model text into ``{itemId: raw_item_obj}``.
-
-    Returns ``{}`` on any parse failure so every pending item is treated as
-    absent from the output (i.e. malformed → tagFailed).
-    """
-    try:
-        parsed = json.loads(_strip_fences(text))
-    except (ValueError, TypeError):
-        return {}
-    if not isinstance(parsed, list):
-        return {}
+def _results_by_id(results: list[Any]) -> dict[str, Any]:
     by_id: dict[str, Any] = {}
-    for obj in parsed:
+    for obj in results:
         if isinstance(obj, dict) and isinstance(obj.get("itemId"), str):
             by_id[obj["itemId"]] = obj
     return by_id
+
+
+def plan_batches(pending_items: list[dict[str, str]]) -> list[list[dict[str, str]]]:
+    """Token-aware chunking: close a batch at BATCH_SIZE items or MAX_BATCH_CHARS of
+    headline text, whichever comes first, so long headlines never overflow a call."""
+    batches: list[list[dict[str, str]]] = []
+    batch: list[dict[str, str]] = []
+    chars = 0
+    for item in pending_items:
+        cost = len(str(item.get("headline", ""))) + 80  # headline + per-item framing
+        if batch and (len(batch) >= BATCH_SIZE or chars + cost > MAX_BATCH_CHARS):
+            batches.append(batch)
+            batch, chars = [], 0
+        batch.append(item)
+        chars += cost
+    if batch:
+        batches.append(batch)
+    return batches
 
 
 # --------------------------------------------------------------------------- #
@@ -297,14 +344,15 @@ def tag_pending(
     ledger: dict[str, Any],
     pending_items: list[dict[str, str]],
     *,
-    caller: Callable[[str], str] = call_claude,
+    caller: Callable[..., dict[str, Any]] = call_model,
     now: datetime | None = None,
 ) -> dict[str, Any]:
-    """Send pending items to the model in one batched call and fold results in.
+    """Tag pending items in token-aware chunks and fold results in.
 
-    Fail-open: if the caller raises (missing key, network, non-200, bad JSON,
-    timeout) this is a whole-batch OUTAGE — leave every pending item untouched
-    (no new entries, no attempts burned) and return the ledger unchanged.
+    ``caller(items, valid_ids)`` returns ``{"results": [...], "stopReason": str}``.
+    Fail-open: if the caller raises (missing key, network, non-200, timeout) that is
+    a whole-chunk OUTAGE — leave only that chunk's items untouched (no attempts burned)
+    and carry on with the other chunks.
     """
     if now is None:
         now = datetime.now(timezone.utc)
@@ -314,15 +362,11 @@ def tag_pending(
     registry = load_json(ASSET_BOARD)
     valid_ids = valid_asset_ids(registry)
     index = {i["id"]: i for i in ledger.get("items", [])}
+    tagged_n = dropped_n = truncated_n = 0
 
-    # Send in bounded chunks so one call's JSON never exceeds the model's output
-    # budget. Each chunk fails open INDEPENDENTLY: a caller outage on one chunk
-    # leaves only that chunk's items untouched; other chunks still tag.
-    for start in range(0, len(pending_items), BATCH_SIZE):
-        chunk = pending_items[start:start + BATCH_SIZE]
-        prompt = build_prompt(registry, chunk)
+    for chunk in plan_batches(pending_items):
         try:
-            text = caller(prompt)
+            response = caller(chunk, valid_ids)
         except Exception as exc:  # noqa: BLE001 — outage of any kind must fail open
             print(
                 f"[tag_impacts] model call failed ({exc.__class__.__name__}: {exc}); "
@@ -330,20 +374,33 @@ def tag_pending(
             )
             continue
 
-        by_id = _parse_output_by_id(text)
+        results = response.get("results", []) if isinstance(response, dict) else []
+        if isinstance(response, dict) and response.get("stopReason") == "max_tokens":
+            truncated_n += 1
+            print(
+                f"[tag_impacts] a chunk of {len(chunk)} hit max_tokens; "
+                "items missing from the truncated result will retry next run."
+            )
+        by_id = _results_by_id(results)
         for row in chunk:
             raw = by_id.get(row["id"])
             result = validate_item_output(raw, valid_ids) if raw is not None else None
             entry = _ensure_entry(ledger, index, row)
             if result is None:
-                # Malformed / missing model output for this item → tagFailed, burn one attempt.
+                # Missing (truncated) or schema-invalid output for this item → tagFailed.
                 entry["attempts"] = entry.get("attempts", 0) + 1
                 entry["taggedAtUtc"] = None
                 entry["tagState"] = "unavailable" if entry["attempts"] >= MAX_ATTEMPTS else "tagFailed"
+                dropped_n += 1
             else:
                 entry["tagState"] = "tagged"
                 entry["tags"] = result
                 entry["taggedAtUtc"] = _iso(now)
+                tagged_n += 1
+
+    if dropped_n or truncated_n:
+        note = f", {truncated_n} chunk(s) truncated" if truncated_n else ""
+        print(f"[tag_impacts] tagged {tagged_n}, dropped {dropped_n} this run{note}.")
     return ledger
 
 
@@ -354,7 +411,7 @@ def write_ledger(ledger: dict[str, Any]) -> None:
     )
 
 
-def run(*, caller: Callable[[str], str] = call_claude, now: datetime | None = None) -> int:
+def run(*, caller: Callable[..., dict[str, Any]] = call_model, now: datetime | None = None) -> int:
     if now is None:
         now = datetime.now(timezone.utc)
     ledger = load_ledger(now)

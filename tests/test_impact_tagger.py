@@ -6,7 +6,6 @@ test ever touches the network.
 """
 from __future__ import annotations
 
-import json
 import sys
 import unittest
 from datetime import datetime, timedelta, timezone
@@ -52,17 +51,16 @@ def _good_tag(asset_id: str = "gold") -> dict:
     }
 
 
-def _caller_returning(payload) -> object:
-    text = payload if isinstance(payload, str) else json.dumps(payload)
-
-    def _caller(prompt: str) -> str:  # noqa: ARG001
-        return text
+def _caller_returning(results, *, stop_reason: str = "tool_use") -> object:
+    # New caller contract: (items, valid_ids) -> {"results": [...], "stopReason": str}
+    def _caller(items, valid_ids):  # noqa: ARG001
+        return {"results": list(results), "stopReason": stop_reason}
 
     return _caller
 
 
 def _caller_raising(exc: Exception) -> object:
-    def _caller(prompt: str) -> str:  # noqa: ARG001
+    def _caller(items, valid_ids):  # noqa: ARG001
         raise exc
 
     return _caller
@@ -198,13 +196,21 @@ class TaggerTests(unittest.TestCase):
         self.assertEqual(entry["tagState"], "tagFailed")
         self.assertEqual(entry["attempts"], 1)
 
-    def test_unparseable_batch_marks_all_pending_tagfailed(self) -> None:
+    def test_empty_results_marks_all_pending_tagfailed(self) -> None:
+        # Model returned a tool call with no result objects for our items.
         ledger = _empty_ledger()
-        tagger.tag_pending(
-            ledger, [_item("a"), _item("b")], caller=_caller_returning("this is not json"), now=NOW
-        )
+        tagger.tag_pending(ledger, [_item("a"), _item("b")], caller=_caller_returning([]), now=NOW)
         self.assertEqual({i["tagState"] for i in ledger["items"]}, {"tagFailed"})
         self.assertTrue(all(i["attempts"] == 1 for i in ledger["items"]))
+
+    def test_truncated_chunk_leaves_missing_items_to_retry(self) -> None:
+        # stop_reason=max_tokens: only some itemIds came back; the rest must tagFail (retry).
+        ledger = _empty_ledger()
+        caller = _caller_returning([{"itemId": "a", "tags": [_good_tag("gold")]}], stop_reason="max_tokens")
+        tagger.tag_pending(ledger, [_item("a"), _item("b")], caller=caller, now=NOW)
+        by_id = {i["id"]: i for i in ledger["items"]}
+        self.assertEqual(by_id["a"]["tagState"], "tagged")
+        self.assertEqual(by_id["b"]["tagState"], "tagFailed")
 
     def test_retry_of_tagfailed_can_succeed(self) -> None:
         ledger = _empty_ledger()
@@ -260,17 +266,15 @@ class TaggerTests(unittest.TestCase):
 
 
 # --------------------------------------------------------------------------- #
-# Batching (chunk so one call's JSON never exceeds the model output budget)
+# Token-aware batching + forced-tool contract
 # --------------------------------------------------------------------------- #
 class TaggerBatchingTests(unittest.TestCase):
     @staticmethod
-    def _caller_tagging_prompt_items(calls: list) -> object:
-        import re
-
-        def _caller(prompt: str) -> str:
-            calls.append(prompt)
-            ids = re.findall(r"itemId=(\S+)", prompt)
-            return json.dumps([{"itemId": i, "tags": [_good_tag("gold")]} for i in ids])
+    def _caller_tagging_items(calls: list) -> object:
+        def _caller(items, valid_ids):  # noqa: ARG001
+            calls.append(list(items))
+            return {"results": [{"itemId": i["id"], "tags": [_good_tag("gold")]} for i in items],
+                    "stopReason": "tool_use"}
 
         return _caller
 
@@ -278,31 +282,49 @@ class TaggerBatchingTests(unittest.TestCase):
         ledger = _empty_ledger()
         items = [_item(f"n{i}") for i in range(tagger.BATCH_SIZE + 5)]  # -> 2 chunks
         calls: list = []
-        tagger.tag_pending(ledger, items, caller=self._caller_tagging_prompt_items(calls), now=NOW)
+        tagger.tag_pending(ledger, items, caller=self._caller_tagging_items(calls), now=NOW)
         self.assertEqual(len(calls), 2)
         self.assertEqual(len(ledger["items"]), tagger.BATCH_SIZE + 5)
         self.assertTrue(all(i["tagState"] == "tagged" for i in ledger["items"]))
-        # each chunk carried at most BATCH_SIZE items
-        for prompt in calls:
-            self.assertLessEqual(prompt.count("itemId="), tagger.BATCH_SIZE)
+        for chunk in calls:
+            self.assertLessEqual(len(chunk), tagger.BATCH_SIZE)
 
     def test_one_chunk_outage_does_not_sink_the_other_chunk(self) -> None:
-        import re
         ledger = _empty_ledger()
         items = [_item(f"n{i}") for i in range(tagger.BATCH_SIZE + 3)]  # -> 2 chunks
         state = {"n": 0}
 
-        def caller(prompt: str) -> str:
+        def caller(items_arg, valid_ids):  # noqa: ARG001
             state["n"] += 1
             if state["n"] == 1:
                 raise OSError("outage on first chunk")
-            ids = re.findall(r"itemId=(\S+)", prompt)
-            return json.dumps([{"itemId": i, "tags": []} for i in ids])
+            return {"results": [{"itemId": i["id"], "tags": []} for i in items_arg], "stopReason": "tool_use"}
 
         tagger.tag_pending(ledger, items, caller=caller, now=NOW)
-        # first chunk left untouched (absent); second chunk (3 items) tagged
         self.assertEqual(len(ledger["items"]), 3)
         self.assertTrue(all(i["tagState"] == "tagged" for i in ledger["items"]))
+
+    def test_plan_batches_closes_on_item_count(self) -> None:
+        items = [_item(f"n{i}") for i in range(tagger.BATCH_SIZE * 2 + 1)]  # short headlines
+        self.assertEqual([len(b) for b in tagger.plan_batches(items)],
+                         [tagger.BATCH_SIZE, tagger.BATCH_SIZE, 1])
+
+    def test_plan_batches_closes_early_on_char_budget(self) -> None:
+        long = "x" * (tagger.MAX_BATCH_CHARS // 2 + 1)  # two won't fit in one batch
+        items = [{**_item(f"n{i}"), "headline": long} for i in range(5)]
+        batches = tagger.plan_batches(items)
+        self.assertGreater(len(batches), 1)
+        self.assertTrue(all(len(b) < tagger.BATCH_SIZE for b in batches))
+
+
+class TaggerToolContractTests(unittest.TestCase):
+    def test_build_tool_pins_enums_to_the_closed_vocabulary(self) -> None:
+        tool = tagger.build_tool({"gold", "wti"})
+        self.assertEqual(tool["name"], "record_impact_tags")
+        tag = tool["input_schema"]["properties"]["results"]["items"]["properties"]["tags"]["items"]["properties"]
+        self.assertEqual(set(tag["assetId"]["enum"]), {"gold", "wti"})
+        self.assertEqual(set(tag["direction"]["enum"]), {"up", "down", "mixed"})
+        self.assertEqual(set(tag["confidence"]["enum"]), {"high", "medium", "low"})
 
 
 # --------------------------------------------------------------------------- #
