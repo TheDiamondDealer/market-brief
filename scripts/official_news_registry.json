@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "asx": {
     "sourcePage": "https://www.asx.com.au/markets/trade-our-cash-market/announcements",
-    "endpointTemplate": "https://www.asx.com.au/asx/1/company/{ticker}/announcements?count={count}&market_sensitive=false",
+    "endpointTemplate": "https://asx.api.markitdigital.com/asx-research/1.0/companies/{ticker}/announcements?itemsPerPage={count}",
     "countPerTicker": 12,
     "maxRecords": 120,
     "lookbackDays": 45,

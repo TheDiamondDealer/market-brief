@@ -13,48 +13,58 @@ import update_official_news as news  # noqa: E402
 
 
 class OfficialNewsCollectorTests(unittest.TestCase):
-    def test_asx_collector_accepts_official_metadata_and_fallback_url(self) -> None:
+    def test_asx_collector_accepts_markit_metadata_and_company_url(self) -> None:
+        # Repaired endpoint: the legacy /asx/1/company/... JSON API was retired (404s);
+        # the collector now reads the public Markit Digital backend that fronts asx.com.au.
         config = {
             "sourcePage": "https://www.asx.com.au/markets/trade-our-cash-market/announcements",
-            "endpointTemplate": "https://www.asx.com.au/asx/1/company/{ticker}/announcements?count={count}&market_sensitive=false",
+            "endpointTemplate": "https://asx.api.markitdigital.com/asx-research/1.0/companies/{ticker}/announcements?itemsPerPage={count}",
             "countPerTicker": 5,
             "maxRecords": 10,
             "lookbackDays": 3650,
             "tickers": ["LYC"],
         }
         payload = {
-            "data": [{
-                "id": "02999999",
-                "issuer_code": "LYC",
-                "issuer_short_name": "Lynas Rare Earths",
-                "header": "Quarterly Activities Report",
-                "document_release_date": "2026-07-15T23:30:00+10:00",
-                "market_sensitive": True,
-                "announcement_type_description": "Periodic Reports",
-                "number_of_pages": 18,
-            }]
+            "data": {
+                "symbol": "LYC",
+                "displayName": "LYNAS RARE EARTHS LIMITED",
+                "issueType": "CS",
+                "items": [{
+                    "announcementType": "QUARTERLY ACTIVITIES REPORT",
+                    "date": "2026-07-15T13:30:00.000Z",
+                    "documentKey": "02999999-6A1234567",
+                    "fileSize": "512KB",
+                    "headline": "Quarterly Activities Report",
+                    "isPriceSensitive": True,
+                    "url": "",
+                }],
+            }
         }
         with patch.object(news, "request_json", return_value=payload), patch.object(news.time, "sleep"):
             result = news.collect_asx(config, {}, "2026-07-16T00:00:00Z")
         self.assertEqual(result["status"], "current")
         self.assertEqual(result["records"][0]["ticker"], "LYC")
         self.assertTrue(result["records"][0]["marketSensitive"])
+        self.assertEqual(result["records"][0]["announcementType"], "QUARTERLY ACTIVITIES REPORT")
         self.assertEqual(result["records"][0]["observedAt"], "2026-07-15T13:30:00Z")
         self.assertEqual(
             result["records"][0]["sourceUrl"],
-            "https://www.asx.com.au/asx/1/file/02999999/announcement",
+            "https://www.asx.com.au/markets/company/LYC",
         )
 
     def test_asx_identity_mismatch_is_rejected(self) -> None:
         config = {
             "sourcePage": "https://www.asx.com.au/markets/trade-our-cash-market/announcements",
-            "endpointTemplate": "https://www.asx.com.au/asx/1/company/{ticker}/announcements?count={count}&market_sensitive=false",
+            "endpointTemplate": "https://asx.api.markitdigital.com/asx-research/1.0/companies/{ticker}/announcements?itemsPerPage={count}",
             "countPerTicker": 5,
             "maxRecords": 10,
             "lookbackDays": 3650,
             "tickers": ["LYC"],
         }
-        payload = {"data": [{"id": "1", "issuer_code": "BHP", "header": "Wrong issuer"}]}
+        # Response identity (data.symbol) does not match the requested ticker.
+        payload = {"data": {"symbol": "BHP", "displayName": "BHP", "items": [
+            {"headline": "Wrong issuer", "date": "2026-07-15T13:30:00.000Z", "documentKey": "1", "announcementType": "X"}
+        ]}}
         with patch.object(news, "request_json", return_value=payload), patch.object(news.time, "sleep"):
             result = news.collect_asx(config, {}, "2026-07-16T00:00:00Z")
         self.assertEqual(result["status"], "failed")
@@ -103,7 +113,7 @@ class OfficialNewsCollectorTests(unittest.TestCase):
         }
         config = {
             "sourcePage": "https://www.asx.com.au/markets/trade-our-cash-market/announcements",
-            "endpointTemplate": "https://www.asx.com.au/asx/1/company/{ticker}/announcements?count={count}&market_sensitive=false",
+            "endpointTemplate": "https://asx.api.markitdigital.com/asx-research/1.0/companies/{ticker}/announcements?itemsPerPage={count}",
             "countPerTicker": 5,
             "maxRecords": 10,
             "lookbackDays": 45,
@@ -119,7 +129,7 @@ class OfficialNewsIntegrationTests(unittest.TestCase):
     def test_registry_uses_only_official_asx_and_fed_endpoints(self) -> None:
         registry = json.loads((ROOT / "scripts" / "official_news_registry.json").read_text(encoding="utf-8"))
         self.assertGreaterEqual(len(registry["asx"]["tickers"]), 20)
-        self.assertTrue(registry["asx"]["endpointTemplate"].startswith("https://www.asx.com.au/"))
+        self.assertTrue(registry["asx"]["endpointTemplate"].startswith("https://asx.api.markitdigital.com/"))
         self.assertEqual(len(registry["fed"]["feeds"]), 4)
         self.assertTrue(all(row["url"].startswith("https://www.federalreserve.gov/feeds/") for row in registry["fed"]["feeds"]))
 
