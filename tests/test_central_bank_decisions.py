@@ -175,6 +175,7 @@ class CentralBankWiringTests(unittest.TestCase):
         index_html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         self.assertIn("features/rate-decisions/rate-decisions-data.js", index_html)
         self.assertIn('data-view="rate-decisions"', index_html)
+        self.assertIn('data-shell-view="rate-decisions"', index_html)
         self.assertIn('id="view-rate-decisions"', index_html)
         loader = (ROOT / "site" / "core" / "feature-loader.js").read_text(encoding="utf-8")
         self.assertIn("route: 'rate-decisions'", loader)
