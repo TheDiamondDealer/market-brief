@@ -1,0 +1,1403 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-07-25T11:12:53Z",
+  "provider": {
+    "id": "polymarket",
+    "name": "Polymarket",
+    "searchEndpoint": "https://gamma-api.polymarket.com/public-search",
+    "documentationUrl": "https://docs.polymarket.com/market-data/overview",
+    "readOnly": true,
+    "jurisdictionNote": "Read-only public market data only. No wallet, authentication, deposits or order endpoints. Australia is close-only for Polymarket order placement."
+  },
+  "collection": {
+    "status": "current",
+    "banksCovered": 9,
+    "lastSuccessfulAt": "2026-07-25T11:12:53Z",
+    "error": null
+  },
+  "banks": [
+    {
+      "id": "fed",
+      "name": "Federal Reserve",
+      "currency": "USD",
+      "boardAssetId": "dxy",
+      "flag": "🇺🇸",
+      "meetings": [
+        {
+          "decisionDate": "2026-07-29",
+          "decisionDateTime": "2026-07-29T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.0045,
+              "probabilityPercent": 0.45,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0045
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.7455,
+              "probabilityPercent": 74.55,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.7455
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.2495,
+              "probabilityPercent": 24.95,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.2495
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.0065,
+              "probabilityPercent": 0.65,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0065
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.7455,
+          "expectedBps": 6.33,
+          "impliedDirection": "hold",
+          "liquidityUsd": 91808588.32,
+          "marketUrl": "https://polymarket.com/event/fed-decision-in-july-181"
+        },
+        {
+          "decisionDate": "2026-09-16",
+          "decisionDateTime": "2026-09-16T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.0205,
+              "probabilityPercent": 2.05,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0205
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.036,
+              "probabilityPercent": 3.6,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.036
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.405,
+              "probabilityPercent": 40.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.405
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.535,
+              "probabilityPercent": 53.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.535
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.0095,
+              "probabilityPercent": 0.95,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0095
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "25 bps increase",
+          "modalProbability": 0.535,
+          "expectedBps": 11.85,
+          "impliedDirection": "hawkish",
+          "liquidityUsd": 4332497.03,
+          "marketUrl": "https://polymarket.com/event/fed-decision-in-september-762"
+        },
+        {
+          "decisionDate": "2026-10-28",
+          "decisionDateTime": "2026-10-28T23:59:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.023,
+              "probabilityPercent": 2.3,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.023
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.095,
+              "probabilityPercent": 9.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.095
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.535,
+              "probabilityPercent": 53.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.535
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.305,
+              "probabilityPercent": 30.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.305
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.0125,
+              "probabilityPercent": 1.25,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0125
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.535,
+          "expectedBps": 4.87,
+          "impliedDirection": "hold",
+          "liquidityUsd": 329943.44,
+          "marketUrl": "https://polymarket.com/event/fed-decision-in-october-20260617190323537"
+        }
+      ]
+    },
+    {
+      "id": "ecb",
+      "name": "European Central Bank",
+      "currency": "EUR",
+      "boardAssetId": null,
+      "flag": "🇪🇺",
+      "meetings": [
+        {
+          "decisionDate": "2026-09-10",
+          "decisionDateTime": "2026-09-10T11:59:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.001,
+              "probabilityPercent": 0.1,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.001
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.011,
+              "probabilityPercent": 1.1,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.011
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.105,
+              "probabilityPercent": 10.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.105
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.795,
+              "probabilityPercent": 79.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.795
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.028,
+              "probabilityPercent": 2.8,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.028
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "25 bps increase",
+          "modalProbability": 0.795,
+          "expectedBps": 22.29,
+          "impliedDirection": "hawkish",
+          "liquidityUsd": 140690.61,
+          "marketUrl": "https://polymarket.com/event/ecb-interest-rates-september-2026-20260616222636097"
+        },
+        {
+          "decisionDate": "2026-10-29",
+          "decisionDateTime": "2026-10-29T11:59:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.095,
+              "probabilityPercent": 9.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.095
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.07,
+              "probabilityPercent": 7.0,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.07
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.565,
+              "probabilityPercent": 56.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.565
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.225,
+              "probabilityPercent": 22.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.225
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.045,
+              "probabilityPercent": 4.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.045
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.565,
+          "expectedBps": 1.37,
+          "impliedDirection": "hold",
+          "liquidityUsd": 212.2,
+          "marketUrl": "https://polymarket.com/event/ecb-interest-rates-october-2026-20260723225848778"
+        }
+      ]
+    },
+    {
+      "id": "boe",
+      "name": "Bank of England",
+      "currency": "GBP",
+      "boardAssetId": null,
+      "flag": "🇬🇧",
+      "meetings": [
+        {
+          "decisionDate": "2026-07-30",
+          "decisionDateTime": "2026-07-30T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.005,
+              "probabilityPercent": 0.5,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.005
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.001,
+              "probabilityPercent": 0.1,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.001
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.983,
+              "probabilityPercent": 98.3,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.983
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.017,
+              "probabilityPercent": 1.7,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.017
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.001,
+              "probabilityPercent": 0.1,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.001
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.983,
+          "expectedBps": 0.2,
+          "impliedDirection": "hold",
+          "liquidityUsd": 79792.56,
+          "marketUrl": "https://polymarket.com/event/bank-of-england-decision-in-july"
+        },
+        {
+          "decisionDate": "2026-09-17",
+          "decisionDateTime": "2026-09-17T23:59:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.001,
+              "probabilityPercent": 0.1,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.001
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.002,
+              "probabilityPercent": 0.2,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.002
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.655,
+              "probabilityPercent": 65.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.655
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.3545,
+              "probabilityPercent": 35.45,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.3545
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.004,
+              "probabilityPercent": 0.4,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.004
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.655,
+          "expectedBps": 8.82,
+          "impliedDirection": "hold",
+          "liquidityUsd": 63432.83,
+          "marketUrl": "https://polymarket.com/event/bank-of-england-decision-in-september-20260623013317237"
+        }
+      ]
+    },
+    {
+      "id": "boj",
+      "name": "Bank of Japan",
+      "currency": "JPY",
+      "boardAssetId": null,
+      "flag": "🇯🇵",
+      "meetings": [
+        {
+          "decisionDate": "2026-07-31",
+          "decisionDateTime": "2026-07-31T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.001,
+              "probabilityPercent": 0.1,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.001
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.001,
+              "probabilityPercent": 0.1,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.001
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.9805,
+              "probabilityPercent": 98.05,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.9805
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.0205,
+              "probabilityPercent": 2.05,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0205
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.9805,
+          "expectedBps": 0.51,
+          "impliedDirection": "hold",
+          "liquidityUsd": 301746.61,
+          "marketUrl": "https://polymarket.com/event/bank-of-japan-decision-in-july-659"
+        },
+        {
+          "decisionDate": "2026-09-18",
+          "decisionDateTime": "2026-09-18T15:59:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.715,
+              "probabilityPercent": 71.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.715
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.27,
+              "probabilityPercent": 27.0,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.27
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.0115,
+              "probabilityPercent": 1.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0115
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.715,
+          "expectedBps": 7.22,
+          "impliedDirection": "hold",
+          "liquidityUsd": 83419.64,
+          "marketUrl": "https://polymarket.com/event/bank-of-japan-decision-in-september-20260616002734979"
+        }
+      ]
+    },
+    {
+      "id": "rba",
+      "name": "Reserve Bank of Australia",
+      "currency": "AUD",
+      "boardAssetId": "aud",
+      "flag": "🇦🇺",
+      "meetings": [
+        {
+          "decisionDate": "2026-08-11",
+          "decisionDateTime": "2026-08-11T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.0125,
+              "probabilityPercent": 1.25,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0125
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.63,
+              "probabilityPercent": 63.0,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.63
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.3305,
+              "probabilityPercent": 33.05,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.3305
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.007,
+              "probabilityPercent": 0.7,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.007
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.63,
+          "expectedBps": 8.38,
+          "impliedDirection": "hold",
+          "liquidityUsd": 33300.28,
+          "marketUrl": "https://polymarket.com/event/reserve-bank-of-australia-decision-in-august"
+        }
+      ]
+    },
+    {
+      "id": "boc",
+      "name": "Bank of Canada",
+      "currency": "CAD",
+      "boardAssetId": null,
+      "flag": "🇨🇦",
+      "meetings": [
+        {
+          "decisionDate": "2026-09-02",
+          "decisionDateTime": "2026-09-02T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.015,
+              "probabilityPercent": 1.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.015
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.022,
+              "probabilityPercent": 2.2,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.022
+                }
+              ]
+            },
+            {
+              "label": "No Change",
+              "bps": 0,
+              "probability": 0.81,
+              "probabilityPercent": 81.0,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.81
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.131,
+              "probabilityPercent": 13.1,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.131
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.0065,
+              "probabilityPercent": 0.65,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0065
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No Change",
+          "modalProbability": 0.81,
+          "expectedBps": 2.34,
+          "impliedDirection": "hold",
+          "liquidityUsd": 9337.85,
+          "marketUrl": "https://polymarket.com/event/bank-of-canada-decision-in-september-20260701223913897"
+        },
+        {
+          "decisionDate": "2026-10-28",
+          "decisionDateTime": "2026-10-28T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.0295,
+              "probabilityPercent": 2.95,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0295
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.0315,
+              "probabilityPercent": 3.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0315
+                }
+              ]
+            },
+            {
+              "label": "No Change",
+              "bps": 0,
+              "probability": 0.815,
+              "probabilityPercent": 81.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.815
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.055,
+              "probabilityPercent": 5.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.055
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.011,
+              "probabilityPercent": 1.1,
+              "probabilitySource": "last trade",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.011
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No Change",
+          "modalProbability": 0.815,
+          "expectedBps": -0.36,
+          "impliedDirection": "hold",
+          "liquidityUsd": 2300.79,
+          "marketUrl": "https://polymarket.com/event/bank-of-canada-decision-in-october-20260715203359314"
+        }
+      ]
+    },
+    {
+      "id": "bok",
+      "name": "Bank of Korea",
+      "currency": "KRW",
+      "boardAssetId": null,
+      "flag": "🇰🇷",
+      "meetings": [
+        {
+          "decisionDate": "2026-08-26",
+          "decisionDateTime": "2026-08-26T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "No Change",
+              "bps": 0,
+              "probability": 0.74,
+              "probabilityPercent": 74.0,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.74
+                }
+              ]
+            },
+            {
+              "label": "50+ bps cut",
+              "bps": null,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            },
+            {
+              "label": "25 bps cut",
+              "bps": null,
+              "probability": 0.011,
+              "probabilityPercent": 1.1,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.011
+                }
+              ]
+            },
+            {
+              "label": "25 bps hike",
+              "bps": null,
+              "probability": 0.25,
+              "probabilityPercent": 25.0,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.25
+                }
+              ]
+            },
+            {
+              "label": "50+ bps hike",
+              "bps": null,
+              "probability": 0.011,
+              "probabilityPercent": 1.1,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.011
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No Change",
+          "modalProbability": 0.74,
+          "expectedBps": 0.0,
+          "impliedDirection": "hold",
+          "liquidityUsd": 11361.16,
+          "marketUrl": "https://polymarket.com/event/bank-of-korea-decision-in-august"
+        }
+      ]
+    },
+    {
+      "id": "banxico",
+      "name": "Bank of Mexico",
+      "currency": "MXN",
+      "boardAssetId": null,
+      "flag": "🇲🇽",
+      "meetings": [
+        {
+          "decisionDate": "2026-08-06",
+          "decisionDateTime": "2026-08-06T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.086,
+              "probabilityPercent": 8.6,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.086
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.8825,
+              "probabilityPercent": 88.25,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.8825
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.0025,
+              "probabilityPercent": 0.25,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0025
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.007,
+              "probabilityPercent": 0.7,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.007
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.8825,
+          "expectedBps": -1.85,
+          "impliedDirection": "hold",
+          "liquidityUsd": 78951.59,
+          "marketUrl": "https://polymarket.com/event/bank-of-mexico-decision-in-august"
+        },
+        {
+          "decisionDate": "2026-09-24",
+          "decisionDateTime": "2026-09-24T23:59:00Z",
+          "outcomes": [
+            {
+              "label": "50+ bps decrease",
+              "bps": -50,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            },
+            {
+              "label": "25 bps decrease",
+              "bps": -25,
+              "probability": 0.0745,
+              "probabilityPercent": 7.45,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0745
+                }
+              ]
+            },
+            {
+              "label": "No change",
+              "bps": 0,
+              "probability": 0.9,
+              "probabilityPercent": 90.0,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.9
+                }
+              ]
+            },
+            {
+              "label": "25 bps increase",
+              "bps": 25,
+              "probability": 0.0115,
+              "probabilityPercent": 1.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0115
+                }
+              ]
+            },
+            {
+              "label": "50+ bps increase",
+              "bps": 50,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.0015
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "No change",
+          "modalProbability": 0.9,
+          "expectedBps": -1.59,
+          "impliedDirection": "hold",
+          "liquidityUsd": 11993.77,
+          "marketUrl": "https://polymarket.com/event/bank-of-mexico-decision-in-september-20260623015231258"
+        }
+      ]
+    },
+    {
+      "id": "rbnz",
+      "name": "Reserve Bank of New Zealand",
+      "currency": "NZD",
+      "boardAssetId": null,
+      "flag": "🇳🇿",
+      "meetings": [
+        {
+          "decisionDate": "2026-09-02",
+          "decisionDateTime": "2026-09-02T00:00:00Z",
+          "outcomes": [
+            {
+              "label": "No Change",
+              "bps": 0,
+              "probability": 0.055,
+              "probabilityPercent": 5.5,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.055
+                }
+              ]
+            },
+            {
+              "label": "Increase",
+              "bps": null,
+              "probability": 0.89,
+              "probabilityPercent": 89.0,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.89
+                }
+              ]
+            },
+            {
+              "label": "Decrease",
+              "bps": null,
+              "probability": 0.024,
+              "probabilityPercent": 2.4,
+              "probabilitySource": "bid-ask midpoint",
+              "history": [
+                {
+                  "date": "2026-07-25",
+                  "observedAt": "2026-07-25T11:12:53Z",
+                  "probability": 0.024
+                }
+              ]
+            }
+          ],
+          "modalOutcome": "Increase",
+          "modalProbability": 0.89,
+          "expectedBps": 0.0,
+          "impliedDirection": "hold",
+          "liquidityUsd": 5553.51,
+          "marketUrl": "https://polymarket.com/event/reserve-bank-of-new-zealand-decision-in-september-20260710022000963"
+        }
+      ]
+    }
+  ],
+  "methodology": {
+    "interpretation": "Prices are crowd-implied probabilities of each central-bank rate outcome, not forecasts or trade recommendations.",
+    "price": "YES bid-ask midpoint when the spread is <=10 points, else last trade, else the Gamma outcome price.",
+    "history": "One snapshot per UTC day is retained for up to 90 days; new banks start with short histories that fill in daily.",
+    "jurisdiction": "Read-only public market data. No wallet, authentication, deposits or order endpoints."
+  },
+  "sourceStatus": [
+    {
+      "id": "polymarket-central-bank-decisions",
+      "source": "Polymarket public market data",
+      "status": "current",
+      "lastSuccessfulAt": "2026-07-25T11:12:53Z",
+      "expectedCadence": "Every six hours",
+      "detail": "9 central banks with live decision markets.",
+      "error": null,
+      "url": "https://docs.polymarket.com/market-data/overview"
+    }
+  ]
+}

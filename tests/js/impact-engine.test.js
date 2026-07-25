@@ -156,6 +156,50 @@ assert.ok(infl.detail.includes('CPI'));
 assert.strictEqual(aud.direction, 'up');
 assert.strictEqual(aud.source, 'rba');
 
+// --- rate-decision policy-lean signals ---
+const cbSource = {
+  generatedAtUtc: '2026-07-25T00:00:00Z',
+  collection: { status: 'current' },
+  banks: [
+    { id: 'rba', name: 'Reserve Bank of Australia', boardAssetId: 'aud',
+      meetings: [{ decisionDate: '2026-08-11', modalOutcome: '25 bps increase',
+        modalProbability: 0.62, impliedDirection: 'hawkish' }] },
+    { id: 'fed', name: 'Federal Reserve', boardAssetId: 'dxy',
+      meetings: [{ decisionDate: '2026-07-29', modalOutcome: 'No change',
+        modalProbability: 0.74, impliedDirection: 'hold' }] },          // hold -> no signal
+    { id: 'boe', name: 'Bank of England', boardAssetId: null,
+      meetings: [{ decisionDate: '2026-08-01', modalOutcome: '25 bps increase',
+        modalProbability: 0.80, impliedDirection: 'hawkish' }] },       // no board asset -> no signal
+    { id: 'boc', name: 'Bank of Canada', boardAssetId: 'cad-not-a-real-asset',
+      meetings: [{ decisionDate: '2026-09-02', modalOutcome: '25 bps decrease',
+        modalProbability: 0.52, impliedDirection: 'dovish' }] },        // <55% AND unknown asset
+    { id: 'fed2', name: 'Fed near-tie', boardAssetId: 'dxy',
+      meetings: [{ decisionDate: '2026-09-16', modalOutcome: '25 bps increase',
+        modalProbability: 0.51, impliedDirection: 'hawkish' }] },   // resolvable dxy but 0.51 < 0.55 -> no signal
+    { id: 'fed3', name: 'Fed malformed', boardAssetId: 'dxy',
+      meetings: [{ decisionDate: '2026-10-28', modalOutcome: '???',
+        modalProbability: 0.90, impliedDirection: 'sideways' }] },  // resolvable + >=55% but unknown direction -> skip
+  ],
+};
+const cbSignals = engine.deriveRateDecisionSignals(cbSource);
+assert.strictEqual(cbSignals.length, 1, 'only RBA clears the gate with a mapped asset');
+assert.strictEqual(cbSignals[0].assetId, 'aud');
+assert.strictEqual(cbSignals[0].direction, 'up');            // hawkish -> up
+assert.strictEqual(cbSignals[0].source, 'rate-decision-odds');
+assert.strictEqual(engine.deriveRateDecisionSignals({}).length, 0);   // empty-safe
+
+// folds into collect under aud
+const cbCollected = engine.collectDeterministicSignals({
+  freeData: { cot: [], rates: [] }, crowdData: { markets: [] },
+  equityData: { watchlist: [] }, cbSource,
+});
+assert.strictEqual(cbCollected.aud.counts.up, 1);
+assert.strictEqual(cbCollected.aud.net, 'up');
+// dxy resolves for fed/fed2/fed3, but none may emit: hold (fed), <55% (fed2), unknown direction (fed3).
+// Without the threshold gate fed2 would add up; without the explicit-direction skip fed3 would add down.
+assert.strictEqual(cbCollected.dxy.counts.up, 0);
+assert.strictEqual(cbCollected.dxy.counts.down, 0);
+
 // --- lookups ---
 assert.strictEqual(engine.assetByCotId('gold').id, 'gold');
 assert.strictEqual(engine.assetsByRateId('BAMLH0A0HYM2')[0].id, 'risk-assets');

@@ -73,6 +73,7 @@
         crowdData: window.crowdExpectationsData,   // NOTE: real global is crowdExpectationsData
         equityData: window.equityMarketData,
         blsSource: officialSlice(),
+        cbSource: window.centralBankDecisionsData || {},
       }, { since }) || {};
     } catch (error) {
       return null;
@@ -362,9 +363,12 @@
   else register();
   window.addEventListener('load', register, { once: true });
   loadWeekLedger();
-  // Official feeds arrive async — re-render the week view (only when it is the active
-  // route) so any in-window BLS/RBA signal folds into the trailing-7d board.
-  window.addEventListener('marketbrief:official-feeds', () => {
+  // Official feeds and central-bank decisions both arrive async — re-render the week view
+  // (only when it is the active route) so any in-window BLS/RBA or policy-lean signal folds
+  // into the trailing-7d board. Same repaint handler is reused for both events.
+  const repaintWeek = () => {
     if (router?.current?.()?.path === 'week') render();
-  });
+  };
+  window.addEventListener('marketbrief:official-feeds', repaintWeek);
+  window.addEventListener('marketbrief:central-bank-decisions', repaintWeek);
 })();

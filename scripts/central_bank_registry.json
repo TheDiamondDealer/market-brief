@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "provider": {
+    "id": "polymarket",
+    "name": "Polymarket",
+    "searchEndpoint": "https://gamma-api.polymarket.com/public-search",
+    "documentationUrl": "https://docs.polymarket.com/market-data/overview",
+    "readOnly": true,
+    "jurisdictionNote": "Read-only public market data only. No wallet, authentication, deposits or order endpoints. Australia is close-only for Polymarket order placement."
+  },
+  "discovery": { "searchLimitPerType": 30, "historyDays": 90 },
+  "banks": [
+    { "id": "fed",     "name": "Federal Reserve",            "currency": "USD", "boardAssetId": "dxy", "flag": "🇺🇸", "searchTerms": ["Fed Decision"],                     "titleKeywords": ["fed decision"] },
+    { "id": "ecb",     "name": "European Central Bank",       "currency": "EUR", "boardAssetId": null,  "flag": "🇪🇺", "searchTerms": ["ECB Interest Rates"],               "titleKeywords": ["ecb interest rates"] },
+    { "id": "boe",     "name": "Bank of England",             "currency": "GBP", "boardAssetId": null,  "flag": "🇬🇧", "searchTerms": ["Bank of England decision"],         "titleKeywords": ["bank of england decision"] },
+    { "id": "boj",     "name": "Bank of Japan",               "currency": "JPY", "boardAssetId": null,  "flag": "🇯🇵", "searchTerms": ["Bank of Japan Decision"],           "titleKeywords": ["bank of japan decision"] },
+    { "id": "rba",     "name": "Reserve Bank of Australia",   "currency": "AUD", "boardAssetId": "aud", "flag": "🇦🇺", "searchTerms": ["Reserve Bank of Australia Decision"], "titleKeywords": ["reserve bank of australia decision"] },
+    { "id": "boc",     "name": "Bank of Canada",              "currency": "CAD", "boardAssetId": null,  "flag": "🇨🇦", "searchTerms": ["Bank of Canada Decision"],          "titleKeywords": ["bank of canada decision"] },
+    { "id": "bok",     "name": "Bank of Korea",               "currency": "KRW", "boardAssetId": null,  "flag": "🇰🇷", "searchTerms": ["Bank of Korea decision"],           "titleKeywords": ["bank of korea decision"] },
+    { "id": "banxico", "name": "Bank of Mexico",              "currency": "MXN", "boardAssetId": null,  "flag": "🇲🇽", "searchTerms": ["Bank of Mexico Decision"],          "titleKeywords": ["bank of mexico decision"] },
+    { "id": "rbnz",    "name": "Reserve Bank of New Zealand", "currency": "NZD", "boardAssetId": null,  "flag": "🇳🇿", "searchTerms": ["Reserve Bank of New Zealand decision"], "titleKeywords": ["reserve bank of new zealand decision"] }
+  ]
+}

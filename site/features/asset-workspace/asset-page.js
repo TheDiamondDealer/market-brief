@@ -222,6 +222,7 @@
       crowdData: window.crowdExpectationsData,
       equityData: window.equityMarketData,
       blsSource: officialSlice(),
+      cbSource: window.centralBankDecisionsData || {},
     }) || {};
     const bucket = collected[id] || { net: 'quiet', counts: { up: 0, down: 0, mixed: 0 }, signals: [] };
     root.innerHTML = `<div class="asset-workspace">
@@ -253,10 +254,13 @@
   else registerRoutes();
   window.addEventListener('load', registerRoutes, { once: true });
   loadImpactTags();
-  // Official feeds arrive async — re-render the open dossier (AI fetch is guarded, so no
-  // double fetch) so an official signal like the RBA cash-rate appears in Observed evidence.
-  window.addEventListener('marketbrief:official-feeds', () => {
+  // Official feeds and central-bank decisions arrive async — re-render the open dossier (AI
+  // fetch is guarded, so no double fetch) so an official signal like the RBA cash-rate or the
+  // folded policy-lean appears in Observed evidence. Same repaint handler is reused for both.
+  const repaintDossier = () => {
     const path = router?.current?.()?.path || '';
     if (currentAssetId && (path.startsWith('asset/') || path.startsWith('product/'))) render(currentAssetId);
-  });
+  };
+  window.addEventListener('marketbrief:official-feeds', repaintDossier);
+  window.addEventListener('marketbrief:central-bank-decisions', repaintDossier);
 })();
