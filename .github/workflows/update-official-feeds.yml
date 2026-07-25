@@ -97,7 +97,7 @@ jobs:
               print(f"- {source['id']}: {source['status']} ({len(source['records'])} records)")
 
           ids = {source['id'] for source in data['sources']}
-          required = {'asx-announcements', 'federal-reserve-policy'}
+          required = {'asx-announcements', 'federal-reserve-policy', 'rba-media-releases', 'usda-wasde'}
           if not required.issubset(ids):
               raise SystemExit(f"Official-news migration guard failed: missing {sorted(required - ids)}")
 

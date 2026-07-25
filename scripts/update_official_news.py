@@ -40,7 +40,7 @@ BASE_SOURCE_IDS = {
     "census-eits",
     "usgs-minerals",
 }
-NEWS_SOURCE_IDS = {"asx-announcements", "federal-reserve-policy"}
+NEWS_SOURCE_IDS = {"asx-announcements", "federal-reserve-policy", "rba-media-releases", "usda-wasde"}
 
 
 def utc_now() -> str:
@@ -363,6 +363,143 @@ def collect_fed(config: dict[str, Any], previous: dict[str, Any], collected_at: 
     return result
 
 
+def collect_rba(config: dict[str, Any], previous: dict[str, Any], collected_at: str) -> dict[str, Any]:
+    source = source_template(
+        "rba-media-releases",
+        "Reserve Bank of Australia official releases",
+        "Monetary Policy",
+        "Official RSS; no API key",
+        config["sourcePage"],
+        "Official release cadence; collected every four hours on weekdays",
+        collected_at,
+    )
+    records: list[dict[str, Any]] = []
+    failures: list[str] = []
+    successful_feeds = 0
+    feeds = config.get("feeds", [])
+    cutoff = datetime.now(timezone.utc) - timedelta(days=int(config.get("lookbackDays", 180)))
+
+    # RBA's central-bank RSS feeds are latest-only (one item each), so cover the key
+    # official streams (media releases, speeches, SMP, bulletin) for AUD/ASX relevance.
+    for feed in feeds:
+        try:
+            payload = request_bytes(
+                feed["url"],
+                accept="application/rss+xml,application/rdf+xml,application/xml,text/xml;q=0.9,*/*;q=0.5",
+            )
+            root = ET.fromstring(payload)
+            items = [node for node in root.iter() if local_name(node.tag) == "item"]
+            successful_feeds += 1
+            for item in items[: int(feed.get("maxItems", config.get("maxItems", 40)))]:
+                title = element_text(item, {"title"})
+                link = entry_link(item)
+                # Official RBA links only; reject syndicated mirrors (RSS 1.0/RDF uses <dc:date>).
+                if not title or not link.startswith("https://www.rba.gov.au/"):
+                    continue
+                published_at = iso_timestamp(element_text(item, {"date", "pubdate", "published", "updated"}))
+                if published_at and datetime.fromisoformat(published_at.replace("Z", "+00:00")) < cutoff:
+                    continue
+                records.append(
+                    {
+                        "id": stable_id("rba", link),
+                        "kind": "release",
+                        "name": title,
+                        "title": title,
+                        "group": feed.get("group", "Media Releases"),
+                        "feedName": feed.get("name", config.get("feedName", "RBA official releases")),
+                        "publisher": "Reserve Bank of Australia",
+                        "publishedAt": published_at,
+                        "observedAt": published_at,
+                        "period": published_at[:10] if published_at else None,
+                        "sourceUrl": link,
+                    }
+                )
+        except Exception as exc:
+            failures.append(f"{feed.get('id', 'feed')}: {clean_text(exc)[:180]}")
+
+    by_url: dict[str, dict[str, Any]] = {}
+    for record in records:
+        current = by_url.get(record["sourceUrl"])
+        if current is None or str(record.get("observedAt") or "") > str(current.get("observedAt") or ""):
+            by_url[record["sourceUrl"]] = record
+    source["records"] = sorted(
+        by_url.values(),
+        key=lambda row: (str(row.get("observedAt") or ""), row["id"]),
+        reverse=True,
+    )[: int(config.get("maxRecords", 40))]
+    if not source["records"]:
+        return finalise_failure(source, previous, "; ".join(failures) or "RBA RSS feeds returned no records")
+    result = finalise_success(
+        source,
+        status="partial" if failures else "current",
+        detail=(
+            f"{len(source['records'])} official RBA releases from {successful_feeds}/"
+            f"{len(feeds)} configured RBA feeds; {len(failures)} feed failures."
+        ),
+    )
+    result["error"] = "; ".join(failures)[:600] if failures else None
+    return result
+
+
+def collect_usda(config: dict[str, Any], previous: dict[str, Any], collected_at: str) -> dict[str, Any]:
+    source = source_template(
+        "usda-wasde",
+        "USDA WASDE (World Agricultural Supply & Demand Estimates)",
+        "Agriculture",
+        "USDA ESMIS public API; no API key",
+        config["sourcePage"],
+        "Monthly release; collected every four hours on weekdays",
+        collected_at,
+    )
+    records: list[dict[str, Any]] = []
+    cutoff = datetime.now(timezone.utc) - timedelta(days=int(config.get("lookbackDays", 400)))
+    try:
+        payload = request_json(config["endpoint"])
+        results = payload.get("results") if isinstance(payload, dict) else None
+        if not isinstance(results, list):
+            raise ValueError("USDA ESMIS response did not contain a results array")
+        for row in results[: int(config.get("maxItems", 24))]:
+            if not isinstance(row, dict):
+                continue
+            title = clean_text(row.get("title")) or "USDA WASDE report"
+            released_at = iso_timestamp(row.get("release_datetime"))
+            if released_at and datetime.fromisoformat(released_at.replace("Z", "+00:00")) < cutoff:
+                continue
+            files = row.get("files") if isinstance(row.get("files"), list) else []
+            file_url = next((str(item) for item in files if str(item).startswith("https://")), "")
+            source_url = file_url or config["sourcePage"]
+            if not source_url.startswith("https://"):
+                continue
+            identity = clean_text(row.get("id")) or source_url
+            records.append(
+                {
+                    "id": stable_id("usda", identity),
+                    "kind": "release",
+                    "name": title,
+                    "title": title,
+                    "group": "Agriculture",
+                    "feedName": config.get("feedName", "USDA WASDE"),
+                    "publisher": "USDA World Agricultural Outlook Board",
+                    "releasedAt": released_at,
+                    "observedAt": released_at,
+                    "period": released_at[:10] if released_at else None,
+                    "sourceUrl": source_url,
+                }
+            )
+    except Exception as exc:
+        return finalise_failure(source, previous, clean_text(exc) or "USDA ESMIS API returned no records")
+
+    by_id: dict[str, dict[str, Any]] = {record["id"]: record for record in records}
+    source["records"] = sorted(
+        by_id.values(),
+        key=lambda row: (str(row.get("observedAt") or ""), row["id"]),
+        reverse=True,
+    )[: int(config.get("maxRecords", 12))]
+    if not source["records"]:
+        return finalise_failure(source, previous, "USDA ESMIS API returned no usable WASDE records")
+    return finalise_success(source, status="current", detail=f"{len(source['records'])} USDA WASDE releases.")
+
+
 def collection_summary(sources: list[dict[str, Any]]) -> tuple[str, int, int, int]:
     successful = sum(1 for source in sources if source.get("status") in {"current", "partial", "delayed"})
     unavailable = sum(1 for source in sources if source.get("status") == "unavailable")
@@ -418,6 +555,8 @@ def build_dataset(base_data: dict[str, Any], previous: dict[str, Any], registry:
     news_sources = [
         collect_asx(registry["asx"], previous, collected_at),
         collect_fed(registry["fed"], previous, collected_at),
+        collect_rba(registry["rba"], previous, collected_at),
+        collect_usda(registry["usda"], previous, collected_at),
     ]
     sources = [source for source in base_data["sources"] if source.get("id") not in NEWS_SOURCE_IDS] + news_sources
     overall, successful, failed, unavailable = collection_summary(sources)
@@ -427,6 +566,8 @@ def build_dataset(base_data: dict[str, Any], previous: dict[str, Any], registry:
         {
             "asxAnnouncements": "Public per-company ASX announcement metadata and official document links are collected for a configured watchlist. This is not the licensed complete real-time ComNews service.",
             "federalReserveReleases": "Official Federal Reserve RSS headline and link metadata is collected for monetary policy, speeches, testimony, and credit/liquidity or balance-sheet releases.",
+            "rbaMediaReleases": "Official Reserve Bank of Australia media-release headline and link metadata is collected from the public RBA RSS feed for AUD and ASX-relevant policy coverage.",
+            "usdaWasde": "Official USDA World Agricultural Supply and Demand Estimates (WASDE) release metadata and document links are collected from the public USDA ESMIS API as a scheduled agricultural mover.",
             "newsInterpretation": "Official announcement and policy-release records are evidence inputs only; the collector does not infer market direction or investment conclusions.",
         }
     )

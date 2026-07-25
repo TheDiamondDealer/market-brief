@@ -18,5 +18,26 @@
       {"id": "testimony", "name": "Testimony", "group": "Testimony", "url": "https://www.federalreserve.gov/feeds/testimony.xml", "maxItems": 10},
       {"id": "liquidity", "name": "Credit, liquidity and balance sheet", "group": "Liquidity & Balance Sheet", "url": "https://www.federalreserve.gov/feeds/clp.xml", "maxItems": 15}
     ]
+  },
+  "rba": {
+    "sourcePage": "https://www.rba.gov.au/media-releases/",
+    "feedName": "RBA official releases",
+    "lookbackDays": 180,
+    "maxItems": 40,
+    "maxRecords": 40,
+    "feeds": [
+      {"id": "media-releases", "name": "Media releases", "group": "Media Releases", "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml"},
+      {"id": "speeches", "name": "Speeches", "group": "Speeches", "url": "https://www.rba.gov.au/rss/rss-cb-speeches.xml"},
+      {"id": "smp", "name": "Statement on Monetary Policy", "group": "Monetary Policy", "url": "https://www.rba.gov.au/rss/rss-cb-smp.xml"},
+      {"id": "bulletin", "name": "Bulletin", "group": "Bulletin", "url": "https://www.rba.gov.au/rss/rss-cb-bulletin.xml"}
+    ]
+  },
+  "usda": {
+    "sourcePage": "https://www.usda.gov/oce/commodity/wasde",
+    "endpoint": "https://usda.library.cornell.edu/api/v1/release/findByIdentifier/wasde",
+    "feedName": "USDA WASDE",
+    "lookbackDays": 400,
+    "maxItems": 24,
+    "maxRecords": 12
   }
 }
