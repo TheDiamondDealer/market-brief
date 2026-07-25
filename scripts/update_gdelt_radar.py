@@ -13,6 +13,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -28,13 +29,29 @@ USER_AGENT = os.environ.get(
     "MarketBriefResearch/1.0 (+https://github.com/TheDiamondDealer/market-brief)",
 )
 MAX_ARTICLES = 48
+# GDELT DOC 2.0 rate-limits rapid bursts (observed: HTTP 429 across a 6-query burst).
+# Space successful requests so the hourly collection stays "current" rather than
+# degrading to "partial"/"stale". Override with GDELT_REQUEST_DELAY_SECONDS (0 disables).
+INTER_REQUEST_DELAY_SECONDS = max(0.0, float(os.environ.get("GDELT_REQUEST_DELAY_SECONDS", "1.5")))
 
 QUERY_BUCKETS = (
     {
         "id": "strategic-materials",
         "name": "Strategic materials",
-        "query": '("rare earth" OR "critical mineral" OR uranium OR copper OR gold OR lithium)',
-        "assets": ("rare-earths", "uranium", "copper", "gold", "lithium"),
+        "query": '("rare earth" OR "critical mineral" OR uranium OR copper OR gold OR silver OR lithium)',
+        "assets": ("rare-earths", "uranium", "copper", "gold", "silver", "lithium"),
+    },
+    {
+        "id": "ags-softs",
+        "name": "Agriculture & softs",
+        "query": '(wheat OR grain OR cocoa OR coffee OR harvest OR drought OR "crop failure" OR "export ban")',
+        "assets": ("wheat", "cocoa", "coffee"),
+    },
+    {
+        "id": "gas-markets",
+        "name": "Gas markets",
+        "query": '(TTF OR NBP OR "gas storage" OR LNG OR pipeline OR "natural gas")',
+        "assets": ("gas-us", "gas-uk"),
     },
     {
         "id": "semiconductors-ai",
@@ -69,6 +86,9 @@ MATERIAL_TERMS = {
     "sanction": 12,
     "export ban": 16,
     "export control": 14,
+    "drought": 12,
+    "crop failure": 14,
+    "frost": 9,
     "tariff": 10,
     "acquisition": 10,
     "merger": 10,
@@ -99,7 +119,10 @@ ASSET_TERMS = {
     "brent": ("brent", "opec", "crude oil"),
     "wti": ("wti", "crude oil"),
     "gas-us": ("henry hub", "us natural gas"),
-    "gas-uk": ("lng", "european gas", "uk gas", "natural gas"),
+    "gas-uk": ("lng", "european gas", "uk gas", "natural gas", "ttf", "nbp", "title transfer facility", "national balancing point", "gas storage", "pipeline"),
+    "wheat": ("wheat", "grain", "cereal"),
+    "cocoa": ("cocoa",),
+    "coffee": ("coffee", "arabica", "robusta"),
     "rates": ("central bank", "interest rate", "rate cut", "rate hike", "inflation", "cpi", "pce"),
     "us-dollar": ("us dollar", "dollar index", "fed", "federal reserve"),
     "defence": ("defence", "defense", "pentagon", "military"),
@@ -254,7 +277,7 @@ def collect(previous: dict[str, Any], max_records: int = 50, timespan: str = "24
     raw_count = 0
     successes = 0
 
-    for bucket in QUERY_BUCKETS:
+    for index, bucket in enumerate(QUERY_BUCKETS):
         try:
             payload = request_json(query_url(str(bucket["query"]), max_records, timespan))
             raw_articles = payload.get("articles", []) if isinstance(payload, dict) else []
@@ -272,6 +295,11 @@ def collect(previous: dict[str, Any], max_records: int = 50, timespan: str = "24
                 articles[item["id"]] = merge_article(existing, item) if existing else item
         except Exception as exc:
             errors.append(f"{bucket['id']}: {type(exc).__name__}: {exc}")
+            continue
+        # Throttle only between real successful requests (a failing request falls through
+        # to `continue` above, so an offline/mocked run never sleeps) and never after the last.
+        if INTER_REQUEST_DELAY_SECONDS > 0 and index < len(QUERY_BUCKETS) - 1:
+            time.sleep(INTER_REQUEST_DELAY_SECONDS)
 
     selected = sorted(
         articles.values(),
