@@ -922,10 +922,7 @@ git commit -m "feat(rate-decisions): fold CB policy-lean into the pressure board
       </section>
 ```
 
-- [ ] **Step 5: Register the route allow-list.** Grep for every place the `cot` route is enumerated as a known/supported view and add `rate-decisions` alongside it:
-
-Run: `grep -rn "'cot'" site/app.js site/free-data-ui.js site/core/router.js`
-For each allow-list array that contains `'cot'` (e.g. a `supported`/known-views list in `site/app.js` / `site/free-data-ui.js`), add `'rate-decisions'`. If no allow-list gates it (route driven purely by `core.router`), no change is needed — Step 8's smoke confirms navigation works.
+- [ ] **Step 5: Route registration is done by the feature module (Task 7), NOT an allow-list — no edit here.** In this app each feature view registers its OWN router handler that activates its section: see `site/features/political-flow/political-page.js` (`router.register('trackers', …)` + an `activate()` toggling `.active` on `#view-trackers`). `app.js`'s `allowed` array (`['home','week','regime','triggers','assets','products','archive']`) and `free-data-ui`'s `supported` array (`['cot','rates','events']`) are each ONLY for that controller's own views — do **NOT** add `rate-decisions` to either (it would double-register / fight the feature's own handler). `rate-decisions` is registered by `rate-decisions-page.js` in Task 7. Confirm you did not touch any `supported`/`allowed` array.
 
 - [ ] **Step 6: Add the manifest route** in `site/core/feature-loader.js`, inside the `manifest` array (after the `crowd-expectations` entry, line 53):
 ```javascript
@@ -949,11 +946,11 @@ class CentralBankWiringTests(unittest.TestCase):
         self.assertIn("rate-decision-odds", engine)
 ```
 
-- [ ] **Step 8: Run tests + smoke navigation**
+- [ ] **Step 8: Run the structural test + syntax check**
 
-Run: `python -m unittest tests.test_central_bank_decisions -v` (all OK).
-Then `python -m http.server 8099 --directory site`, click the "Rate decisions" nav item.
-Expected: URL becomes `#rate-decisions`, the `#view-rate-decisions` section becomes active (shows the "Loading…" placeholder — the page module lands in Task 7). No console errors.
+Run: `python -m unittest tests.test_central_bank_decisions -v` — all OK (the new `CentralBankWiringTests` confirms the eager script, nav button, view container, manifest route, and engine signal are all present).
+Also `node --check site/features/rate-decisions/rate-decisions-data.js` — no syntax errors.
+(The clickable-nav smoke needs Task 7's route registration, so navigating to `#rate-decisions` will NOT yet activate the section at this point — that is expected until Task 7. The controller runs the full Playwright nav+render smoke after Task 7.)
 
 - [ ] **Step 9: Commit**
 
@@ -985,8 +982,18 @@ git commit -m "feat(rate-decisions): eager data global + nav/view scaffold + rou
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;').replaceAll("'", '&#039;'));
 
+  const router = core.router;
+  const views = core.adapters?.views;
+
   // Only the RBA has an official "last actual" print today (the rba-cash-rate series).
   const OFFICIAL_SERIES_BY_BANK = { rba: 'rba-cash-rate' };
+
+  // Activate this view's <section> (mirrors command-page.js / political-page.js). The feature
+  // registers its OWN route (see the tail) — app.js/free-data-ui only own their own views.
+  function activate() {
+    if (views?.activate?.('rate-decisions', { scroll: false })) return;
+    document.querySelectorAll('.view').forEach((node) => node.classList.toggle('active', node.id === 'view-rate-decisions'));
+  }
 
   function data() { return window.centralBankDecisionsData || { banks: [], collection: {} }; }
 
@@ -1061,8 +1068,17 @@ git commit -m "feat(rate-decisions): eager data global + nav/view scaffold + rou
       : '<div class="command-empty">No central-bank decision markets are currently available.</div>';
   }
 
-  if (document.getElementById('view-rate-decisions')) render();
-  core.router?.subscribe?.((route) => { if (route.name === 'rate-decisions') render(); });
+  function show() { activate(); render(); }
+  function registerRoute() {
+    if (!router || registerRoute.done) return;
+    registerRoute.done = true;
+    router.register('rate-decisions', show);
+    if (router.current?.()?.path === 'rate-decisions') router.dispatch('#rate-decisions', { source: 'rate-decisions-ready' });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', registerRoute, { once: true });
+  else registerRoute();
+  window.addEventListener('load', registerRoute, { once: true });
+  // Repaint in place when data arrives (mount is static in index.html; harmless if not active).
   window.addEventListener('marketbrief:central-bank-decisions', render);
   window.addEventListener('marketbrief:official-feeds', render);
 })();
@@ -1096,10 +1112,9 @@ git commit -m "feat(rate-decisions): eager data global + nav/view scaffold + rou
 .rd-methodology { font-size: 11px; opacity: .6; margin-top: 14px; }
 ```
 
-- [ ] **Step 3: Smoke the full view**
+- [ ] **Step 3: Syntax-check the module (visual smoke is the controller's)**
 
-Run `python -m http.server 8099 --directory site`, open `http://localhost:8099/#rate-decisions`.
-Expected: bank cards render (Fed/ECB/BoE/BoJ/RBA/BoC/BoK/Banxico/RBNZ where markets exist), each meeting shows the 5-outcome ladder with the modal highlighted, sparklines show "history building…" on first load, RBA shows a "Last actual" line from the official cash-rate print. No console errors.
+Run `node --check site/features/rate-decisions/rate-decisions-page.js` — no syntax errors. Your environment is headless, so do NOT try to open a browser: the controller runs the full Playwright nav+render smoke (click the "Rate decisions" nav item → `#view-rate-decisions` activates → bank cards render with the 5-outcome ladder, modal highlighted, "history building…" sparklines, and RBA's "Last actual" line from the official cash-rate print). Report the module as DONE and let the controller do the visual pass.
 
 - [ ] **Step 4: Commit**
 
