@@ -14,6 +14,7 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -30,9 +31,13 @@ USER_AGENT = os.environ.get(
 )
 MAX_ARTICLES = 48
 # GDELT DOC 2.0 rate-limits rapid bursts (observed: HTTP 429 across a 6-query burst).
-# Space successful requests so the hourly collection stays "current" rather than
-# degrading to "partial"/"stale". Override with GDELT_REQUEST_DELAY_SECONDS (0 disables).
-INTER_REQUEST_DELAY_SECONDS = max(0.0, float(os.environ.get("GDELT_REQUEST_DELAY_SECONDS", "1.5")))
+# Space EVERY request (before each call, not just after a success) so a mid-burst 429
+# doesn't cascade through the remaining buckets, keeping the hourly run "current"
+# instead of "partial". Override with GDELT_REQUEST_DELAY_SECONDS (0 disables).
+INTER_REQUEST_DELAY_SECONDS = max(0.0, float(os.environ.get("GDELT_REQUEST_DELAY_SECONDS", "3.0")))
+# If a query is rate-limited anyway, back off once and retry that single query before
+# giving up on it. Override with GDELT_RATELIMIT_BACKOFF_SECONDS (0 disables the retry).
+RATE_LIMIT_BACKOFF_SECONDS = max(0.0, float(os.environ.get("GDELT_RATELIMIT_BACKOFF_SECONDS", "10.0")))
 
 QUERY_BUCKETS = (
     {
@@ -147,6 +152,18 @@ def request_json(url: str, timeout: int = 45) -> Any:
         if "json" not in content_type.lower():
             raise ValueError(f"Unexpected content type: {content_type}")
         return json.loads(response.read().decode("utf-8-sig", errors="replace"))
+
+
+def fetch_query(url: str, timeout: int = 45) -> Any:
+    """request_json with a single rate-limit retry: on HTTP 429, back off once and
+    retry the same query before surfacing the failure to the caller."""
+    try:
+        return request_json(url, timeout=timeout)
+    except urllib.error.HTTPError as exc:
+        if exc.code == 429 and RATE_LIMIT_BACKOFF_SECONDS > 0:
+            time.sleep(RATE_LIMIT_BACKOFF_SECONDS)
+            return request_json(url, timeout=timeout)
+        raise
 
 
 def normalized(value: Any) -> str:
@@ -278,8 +295,12 @@ def collect(previous: dict[str, Any], max_records: int = 50, timespan: str = "24
     successes = 0
 
     for index, bucket in enumerate(QUERY_BUCKETS):
+        # Space every request (before the call, skipping the first) so a mid-burst 429
+        # doesn't cascade through the remaining buckets. Mocked tests patch `time`.
+        if index and INTER_REQUEST_DELAY_SECONDS > 0:
+            time.sleep(INTER_REQUEST_DELAY_SECONDS)
         try:
-            payload = request_json(query_url(str(bucket["query"]), max_records, timespan))
+            payload = fetch_query(query_url(str(bucket["query"]), max_records, timespan))
             raw_articles = payload.get("articles", []) if isinstance(payload, dict) else []
             if not isinstance(raw_articles, list):
                 raise ValueError("GDELT payload did not contain an articles list")
@@ -296,10 +317,6 @@ def collect(previous: dict[str, Any], max_records: int = 50, timespan: str = "24
         except Exception as exc:
             errors.append(f"{bucket['id']}: {type(exc).__name__}: {exc}")
             continue
-        # Throttle only between real successful requests (a failing request falls through
-        # to `continue` above, so an offline/mocked run never sleeps) and never after the last.
-        if INTER_REQUEST_DELAY_SECONDS > 0 and index < len(QUERY_BUCKETS) - 1:
-            time.sleep(INTER_REQUEST_DELAY_SECONDS)
 
     selected = sorted(
         articles.values(),

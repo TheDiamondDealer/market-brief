@@ -48,7 +48,8 @@ class GdeltRadarTests(unittest.TestCase):
                 "verificationNote": "Confirm against an official source.", "duplicateCount": 1,
             }],
         }
-        with patch.object(update, "request_json", side_effect=OSError("offline")):
+        with patch.object(update, "request_json", side_effect=OSError("offline")), \
+             patch.object(update, "time"):
             payload = update.collect(previous)
         self.assertEqual(payload["collection"]["status"], "stale")
         self.assertEqual(payload["articles"][0]["id"], "old")
