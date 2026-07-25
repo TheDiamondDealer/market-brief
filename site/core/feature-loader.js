@@ -49,7 +49,7 @@
     Object.freeze({ route: 'calendar', styles: ['features/calendar/calendar-page.css'], scripts: ['features/calendar/calendar-data.js', 'features/calendar/calendar-page.js'] }),
     Object.freeze({ route: 'macro', styles: ['features/macro-monitor/macro-page.css'], scripts: ['features/macro-monitor/macro-page.js'] }),
     Object.freeze({ route: 'equities', styles: ['features/market-watch/market-watch-page.css'], scripts: ['equity-data.js', 'features/market-watch/market-watch-page.js'] }),
-    Object.freeze({ route: 'official-feeds', styles: ['features/official-feeds/official-feeds-page.css'], scripts: ['features/official-feeds/official-feeds-data.js', 'features/official-feeds/official-feeds-health.js', 'features/official-feeds/official-feeds-page.js'] }),
+    Object.freeze({ route: 'official-feeds', styles: ['features/official-feeds/official-feeds-page.css'], scripts: ['features/official-feeds/official-feeds-health.js', 'features/official-feeds/official-feeds-page.js'] }),
     Object.freeze({ route: 'crowd-expectations', styles: ['features/crowd-expectations/crowd-page.css'], scripts: ['features/crowd-expectations/crowd-data.js', 'features/crowd-expectations/crowd-health.js', 'features/crowd-expectations/crowd-command.js', 'features/crowd-expectations/crowd-asset.js', 'features/crowd-expectations/crowd-page.js'] }),
     Object.freeze({ route: 'sources', styles: ['features/source-health/source-health-page.css'], scripts: ['features/source-health/source-health-page.js'] }),
     Object.freeze({ route: 'week', styles: ['features/week/week-page.css'], scripts: ['features/week/week-page.js'] })

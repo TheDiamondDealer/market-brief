@@ -223,9 +223,13 @@ class OfficialFeedIntegrationTests(unittest.TestCase):
     def test_feature_manifest_loads_official_feed_assets(self) -> None:
         text = (ROOT / "site" / "core" / "feature-loader.js").read_text(encoding="utf-8")
         self.assertIn("route: 'official-feeds'", text)
-        self.assertIn("features/official-feeds/official-feeds-data.js", text)
         self.assertIn("features/official-feeds/official-feeds-health.js", text)
         self.assertIn("features/official-feeds/official-feeds-page.js", text)
+        # The data loader is now EAGER (board routes consume window.officialFeedsData), so it
+        # loads from index.html rather than the route manifest (which would double-fetch).
+        self.assertNotIn("features/official-feeds/official-feeds-data.js", text)
+        index_html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("features/official-feeds/official-feeds-data.js", index_html)
 
     def test_source_health_extension_is_idempotent(self) -> None:
         text = (ROOT / "site" / "features" / "official-feeds" / "official-feeds-health.js").read_text(encoding="utf-8")

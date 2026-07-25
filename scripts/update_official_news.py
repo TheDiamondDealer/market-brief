@@ -371,6 +371,72 @@ def collect_fed(config: dict[str, Any], previous: dict[str, Any], collected_at: 
     return result
 
 
+def _rba_date_to_iso(text: str) -> str | None:
+    try:
+        return datetime.strptime(text.strip(), "%d-%b-%Y").replace(tzinfo=timezone.utc).isoformat().replace("+00:00", "Z")
+    except ValueError:
+        return None
+
+
+def parse_rba_cash_rate(csv_text: str) -> dict[str, Any] | None:
+    """Latest cash-rate change from the RBA A2 'Changes in Monetary Policy' CSV.
+
+    Column 0 = date (DD-Mon-YYYY), col 1 = change in the cash rate target, col 2 =
+    the new target. Pre-1990 rows carry ranges ('-0.50 to -1.00') and are skipped;
+    the modern rows are single signed values ('+0.25'). Returns the most recent
+    single-value row as ``{change, level, date}`` (change>0 = a hike), or None.
+    """
+    latest: dict[str, Any] | None = None
+    for line in csv_text.splitlines():
+        cells = [cell.strip() for cell in line.split(",")]
+        if len(cells) < 3:
+            continue
+        date = _rba_date_to_iso(cells[0])
+        if not date:
+            continue
+        try:
+            change = float(cells[1].replace("+", ""))
+            level = float(cells[2])
+        except ValueError:
+            continue  # a range like "-0.50 to -1.00", or a non-numeric header cell
+        latest = {"change": change, "level": level, "date": date}
+    return latest
+
+
+def rba_cash_rate_record(config: dict[str, Any], failures: list[str]) -> dict[str, Any] | None:
+    """Fetch + parse the A2 CSV into a numeric 'series' record the impact engine can
+    turn into a deterministic aud signal. Returns None (and records a soft failure)
+    when the feed is absent or unparseable — the RSS releases still populate."""
+    url = config.get("cashRateUrl")
+    if not url:
+        return None
+    try:
+        parsed = parse_rba_cash_rate(request_bytes(url).decode("utf-8-sig", errors="replace"))
+    except Exception as exc:
+        failures.append(f"cash-rate: {clean_text(exc)[:180]}")
+        return None
+    if not parsed:
+        failures.append("cash-rate: no parseable change row in the A2 table")
+        return None
+    move = "raised" if parsed["change"] > 0 else "lowered" if parsed["change"] < 0 else "held"
+    return {
+        "id": "rba-cash-rate",
+        "kind": "series",
+        "name": "RBA cash rate target",
+        "title": f"RBA {move} the cash rate to {parsed['level']:.2f}%",
+        "group": "Monetary Policy",
+        "feedName": "Cash rate",
+        "publisher": "Reserve Bank of Australia",
+        "value": parsed["level"],
+        "change": parsed["change"],
+        "unit": "%",
+        "observedAt": parsed["date"],
+        "releasedAt": parsed["date"],
+        "period": parsed["date"][:10],
+        "sourceUrl": "https://www.rba.gov.au/statistics/cash-rate/",
+    }
+
+
 def collect_rba(config: dict[str, Any], previous: dict[str, Any], collected_at: str) -> dict[str, Any]:
     source = source_template(
         "rba-media-releases",
@@ -425,24 +491,31 @@ def collect_rba(config: dict[str, Any], previous: dict[str, Any], collected_at: 
         except Exception as exc:
             failures.append(f"{feed.get('id', 'feed')}: {clean_text(exc)[:180]}")
 
+    cash_record = rba_cash_rate_record(config, failures)
+
     by_url: dict[str, dict[str, Any]] = {}
     for record in records:
         current = by_url.get(record["sourceUrl"])
         if current is None or str(record.get("observedAt") or "") > str(current.get("observedAt") or ""):
             by_url[record["sourceUrl"]] = record
-    source["records"] = sorted(
+    release_records = sorted(
         by_url.values(),
         key=lambda row: (str(row.get("observedAt") or ""), row["id"]),
         reverse=True,
     )[: int(config.get("maxRecords", 40))]
+    # The cash-rate series leads (it is the deterministic aud mover) and is exempt
+    # from the release cap; the RSS releases follow.
+    source["records"] = ([cash_record] if cash_record else []) + release_records
     if not source["records"]:
         return finalise_failure(source, previous, "; ".join(failures) or "RBA RSS feeds returned no records")
     result = finalise_success(
         source,
         status="partial" if failures else "current",
         detail=(
-            f"{len(source['records'])} official RBA releases from {successful_feeds}/"
-            f"{len(feeds)} configured RBA feeds; {len(failures)} feed failures."
+            f"{len(release_records)} official RBA releases from {successful_feeds}/"
+            f"{len(feeds)} configured RBA feeds"
+            + (" + cash-rate series" if cash_record else "")
+            + f"; {len(failures)} feed failures."
         ),
     )
     result["error"] = "; ".join(failures)[:600] if failures else None

@@ -208,6 +208,47 @@ class RbaAndUsdaCollectorTests(unittest.TestCase):
         self.assertEqual(result["status"], "failed")
         self.assertEqual(result["records"], [])
 
+    def test_parse_rba_cash_rate_takes_latest_and_skips_ranges(self) -> None:
+        csv_text = "\n".join([
+            "A2 CHANGES IN MONETARY POLICY",
+            "Title,Change in Cash Rate Target,New Cash Rate Target",
+            "23-Jan-1990,-0.50 to -1.00,17.00 to 17.50",   # pre-modern range -> skipped
+            "18-Mar-2026,+0.25,4.10",
+            "06-May-2026,+0.25,4.35",
+        ])
+        self.assertEqual(
+            news.parse_rba_cash_rate(csv_text),
+            {"change": 0.25, "level": 4.35, "date": "2026-05-06T00:00:00Z"},
+        )
+
+    def test_rba_collector_leads_with_cash_rate_series_record(self) -> None:
+        rss = b"""<?xml version="1.0"?>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://purl.org/rss/1.0/">
+          <item rdf:about="https://www.rba.gov.au/media-releases/2026/mr-26-15.html">
+            <title>Statement by the Reserve Bank Board</title>
+            <link>https://www.rba.gov.au/media-releases/2026/mr-26-15.html</link>
+            <dc:date>2026-07-08T05:30:00+00:00</dc:date></item></rdf:RDF>"""
+        csv = b"Title,Change in Cash Rate Target,New Cash Rate Target\n06-May-2026,+0.25,4.35\n"
+
+        def fake_bytes(url, *args, **kwargs):
+            return csv if url.endswith(".csv") else rss
+
+        config = {
+            "sourcePage": "https://www.rba.gov.au/media-releases/",
+            "cashRateUrl": "https://www.rba.gov.au/statistics/tables/csv/a2-data.csv",
+            "lookbackDays": 3650, "maxItems": 40, "maxRecords": 40,
+            "feeds": [{"id": "media-releases", "name": "Media releases", "group": "Media Releases",
+                       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml"}],
+        }
+        with patch.object(news, "request_bytes", side_effect=fake_bytes):
+            result = news.collect_rba(config, {}, "2026-07-16T00:00:00Z")
+        self.assertEqual(result["records"][0]["id"], "rba-cash-rate")  # leads
+        cash = result["records"][0]
+        self.assertEqual(cash["kind"], "series")
+        self.assertEqual(cash["change"], 0.25)
+        self.assertEqual(cash["value"], 4.35)
+        self.assertEqual(cash["observedAt"], "2026-05-06T00:00:00Z")
+
 
 class OfficialNewsIntegrationTests(unittest.TestCase):
     def test_registry_includes_rba_and_usda_blocks(self) -> None:
