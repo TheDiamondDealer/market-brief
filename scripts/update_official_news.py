@@ -145,13 +145,15 @@ def finalise_failure(source: dict[str, Any], previous: dict[str, Any], error: An
     return source
 
 
-def asx_source_url(raw_url: Any, announcement_id: str) -> str:
+def asx_source_url(raw_url: Any, ticker: str) -> str:
     value = clean_text(raw_url)
     if value:
         if value.startswith("https://"):
             return value
         return urllib.parse.urljoin("https://www.asx.com.au", value)
-    return f"https://www.asx.com.au/asx/1/file/{urllib.parse.quote(announcement_id)}/announcement"
+    # The Markit backend returns an empty per-item url; link to the issuer's public
+    # ASX company page, which lists the announcement (the retired /asx/1/file path 404s).
+    return f"https://www.asx.com.au/markets/company/{urllib.parse.quote(ticker)}"
 
 
 def collect_asx(config: dict[str, Any], previous: dict[str, Any], collected_at: str) -> dict[str, Any]:
@@ -178,27 +180,33 @@ def collect_asx(config: dict[str, Any], previous: dict[str, Any], collected_at: 
         url = config["endpointTemplate"].format(ticker=urllib.parse.quote(ticker), count=count)
         try:
             payload = request_json(url)
-            rows = payload.get("data") if isinstance(payload, dict) else None
+            data = payload.get("data") if isinstance(payload, dict) else None
+            if not isinstance(data, dict):
+                raise ValueError("response did not contain a data object")
+            # Identity guard: the Markit response carries the resolved symbol; reject a
+            # company page that does not match the ticker we requested.
+            response_symbol = clean_text(data.get("symbol")).upper()
+            if response_symbol and response_symbol != ticker:
+                failures.append(f"{ticker}: issuer mismatch {response_symbol}")
+                continue
+            rows = data.get("items")
             if not isinstance(rows, list):
-                raise ValueError("response did not contain a data array")
+                raise ValueError("response did not contain an items array")
             successful_tickers += 1
+            company = clean_text(data.get("displayName")) or ticker
             for row in rows:
                 if not isinstance(row, dict):
                     continue
-                issuer_code = clean_text(row.get("issuer_code")).upper()
-                if issuer_code and issuer_code != ticker:
-                    failures.append(f"{ticker}: issuer mismatch {issuer_code}")
-                    continue
-                announcement_id = clean_text(row.get("id"))
-                headline = clean_text(row.get("header") or row.get("title"))
+                announcement_id = clean_text(row.get("documentKey"))
+                headline = clean_text(row.get("headline"))
                 if not announcement_id or not headline:
                     continue
-                released_at = iso_timestamp(row.get("document_release_date") or row.get("document_date"))
+                released_at = iso_timestamp(row.get("date"))
                 if released_at:
                     released_dt = datetime.fromisoformat(released_at.replace("Z", "+00:00"))
                     if released_dt < cutoff:
                         continue
-                source_url = asx_source_url(row.get("url"), announcement_id)
+                source_url = asx_source_url(row.get("url"), ticker)
                 records.append(
                     {
                         "id": f"asx-{announcement_id}",
@@ -206,14 +214,14 @@ def collect_asx(config: dict[str, Any], previous: dict[str, Any], collected_at: 
                         "name": headline,
                         "title": headline,
                         "ticker": ticker,
-                        "company": clean_text(row.get("issuer_short_name") or row.get("issuer_full_name")) or ticker,
+                        "company": company,
                         "releasedAt": released_at,
                         "filedAt": released_at,
                         "observedAt": released_at,
                         "period": released_at[:10] if released_at else None,
-                        "marketSensitive": bool(row.get("market_sensitive")),
-                        "announcementType": clean_text(row.get("announcement_type_description")) or "ASX announcement",
-                        "pages": row.get("number_of_pages") if isinstance(row.get("number_of_pages"), int) else None,
+                        "marketSensitive": bool(row.get("isPriceSensitive")),
+                        "announcementType": clean_text(row.get("announcementType")) or "ASX announcement",
+                        "pages": None,
                         "sourceUrl": source_url,
                     }
                 )
