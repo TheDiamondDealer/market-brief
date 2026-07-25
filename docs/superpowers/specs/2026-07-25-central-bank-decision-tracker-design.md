@@ -3,7 +3,10 @@
 - **Date:** 2026-07-25
 - **Author:** Chris Ozkoch (with Claude)
 - **Status:** Draft for review
-- **Arc:** MRKT-EDGE parity upgrades, **Slice 1 of 5**
+- **Arc:** MRKT-EDGE parity upgrades — **Slice 1 of 5**. Confirmed order: (1) CB decision
+  tracker → (2) live-ish per-headline AI analysis + tap-to-expand impact chips → (3)
+  chart-anchored home (our own chart + our deterministic levels overlaid, not a bare embed)
+  → (4) surface supports/flip on the home board → (5) tame the 7,000px wall.
 - **Repo:** `TheDiamondDealer/market-brief`
 
 ## 1. Goal
