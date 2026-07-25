@@ -281,6 +281,28 @@ class TaggerTests(unittest.TestCase):
         self.assertEqual(entry["attempts"], 1)
         self.assertEqual(entry["tagState"], "tagFailed")
 
+    def test_tagged_item_stores_the_note(self) -> None:
+        ledger = _empty_ledger()
+        payload = [{"itemId": "a", "tags": [_good_tag("gold")], "note": "  Sanctions lift crude.  "}]
+        tagger.tag_pending(ledger, [_item("a")], caller=_caller_returning(payload), now=NOW)
+        entry = ledger["items"][0]
+        self.assertEqual(entry["tagState"], "tagged")
+        self.assertEqual(entry["note"], "Sanctions lift crude.")
+
+    def test_tagged_item_without_note_stores_empty_string(self) -> None:
+        ledger = _empty_ledger()
+        payload = [{"itemId": "a", "tags": []}]  # empty tags, no note key
+        tagger.tag_pending(ledger, [_item("a")], caller=_caller_returning(payload), now=NOW)
+        entry = ledger["items"][0]
+        self.assertEqual(entry["tagState"], "tagged")
+        self.assertEqual(entry["note"], "")
+
+    def test_new_entry_initialises_note_key(self) -> None:
+        ledger = _empty_ledger()
+        payload = [{"itemId": "a", "tags": "nope"}]  # malformed -> tagFailed
+        tagger.tag_pending(ledger, [_item("a")], caller=_caller_returning(payload), now=NOW)
+        self.assertEqual(ledger["items"][0]["note"], "")
+
 
 # --------------------------------------------------------------------------- #
 # Token-aware batching + forced-tool contract
@@ -342,6 +364,17 @@ class TaggerToolContractTests(unittest.TestCase):
         self.assertEqual(set(tag["assetId"]["enum"]), {"gold", "wti"})
         self.assertEqual(set(tag["direction"]["enum"]), {"up", "down", "mixed"})
         self.assertEqual(set(tag["confidence"]["enum"]), {"high", "medium", "low"})
+
+    def test_build_tool_includes_optional_note(self) -> None:
+        tool = tagger.build_tool({"gold", "wti"})
+        result_items = tool["input_schema"]["properties"]["results"]["items"]
+        self.assertIn("note", result_items["properties"])
+        self.assertEqual(result_items["properties"]["note"]["type"], "string")
+        # optional: an omitted note must never be a schema violation
+        self.assertNotIn("note", result_items["required"])
+
+    def test_schema_version_is_two(self) -> None:
+        self.assertEqual(tagger.SCHEMA_VERSION, 2)
 
 
 # --------------------------------------------------------------------------- #

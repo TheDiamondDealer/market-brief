@@ -24,7 +24,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from validate_impact_tags import CONFIDENCES, DIRECTIONS, valid_asset_ids, validate_item_output
+from validate_impact_tags import CONFIDENCES, DIRECTIONS, clean_note, valid_asset_ids, validate_item_output
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
@@ -35,7 +35,7 @@ CONFLICT_PATH = SITE / "data" / "conflict-watch.json"
 LEDGER_PATH = SITE / "data" / "impact-tags.json"
 
 MODEL = "claude-haiku-4-5"
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 MAX_ATTEMPTS = 3
 PRUNE_DAYS = 7
 MAX_TOKENS = 8192
@@ -200,6 +200,7 @@ def _ensure_entry(ledger: dict[str, Any], index: dict[str, Any], row: dict[str, 
         "tagState": "tagFailed",
         "attempts": 0,
         "taggedAtUtc": None,
+        "note": "",
         "tags": [],
     }
     ledger.setdefault("items", []).append(entry)
@@ -214,7 +215,11 @@ SYSTEM_INSTRUCTION = (
     "You tag financial-news headlines for their directional impact on a CLOSED list "
     "of assets. Use ONLY the asset ids allowed by the tool schema — never invent one. "
     "For every supplied itemId return exactly one result object; an empty tags array "
-    "is a valid, expected answer when the headline has no clear asset impact."
+    "is a valid, expected answer when the headline has no clear asset impact. "
+    "Also return a `note`: one or two plain-English sentences on how the headline "
+    "transmits to the assets you tagged — the net 'why it matters'. Ground the note "
+    "ONLY in the assets you tagged; never mention an asset you did not tag. If you "
+    "return no tags, return an empty note."
 )
 
 
@@ -234,6 +239,10 @@ def build_tool(valid_ids: set[str]) -> dict[str, Any]:
                         "type": "object",
                         "properties": {
                             "itemId": {"type": "string"},
+                            "note": {
+                                "type": "string",
+                                "description": "One or two plain sentences on why this headline matters for the assets you tagged; empty string when there are no tags.",
+                            },
                             "tags": {
                                 "type": "array",
                                 "items": {
@@ -395,6 +404,7 @@ def tag_pending(
             else:
                 entry["tagState"] = "tagged"
                 entry["tags"] = result
+                entry["note"] = clean_note(raw)
                 entry["taggedAtUtc"] = _iso(now)
                 tagged_n += 1
 
