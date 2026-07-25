@@ -1,20 +1,20 @@
 .rd-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-.rd-bank { border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 14px; background: rgba(255,255,255,.02); }
+.rd-bank { border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 14px; background: var(--bg-elevated); }
 .rd-bank-head { display: flex; gap: 10px; align-items: center; margin-bottom: 6px; }
 .rd-flag { font-size: 20px; }
 .rd-ccy { font-size: 12px; opacity: .6; }
 .rd-actual { font-size: 12px; opacity: .75; margin: 4px 0 10px; }
 .rd-actual span { opacity: .6; }
-.rd-meeting { border-top: 1px solid rgba(255,255,255,.06); padding-top: 10px; margin-top: 10px; }
+.rd-meeting { border-top: 1px solid var(--border-subtle); padding-top: 10px; margin-top: 10px; }
 .rd-meeting header { display: flex; justify-content: space-between; align-items: center; }
 .rd-meeting h4 { margin: 0; font-size: 13px; }
 .rd-lean { font-size: 11px; text-transform: uppercase; padding: 2px 6px; border-radius: 999px; }
-.rd-lean-hawkish { background: rgba(34,197,94,.15); color: #22c55e; }
-.rd-lean-dovish { background: rgba(239,68,68,.15); color: #ef4444; }
-.rd-lean-hold { background: rgba(148,163,184,.15); color: #94a3b8; }
+.rd-lean-hawkish { background: rgba(32,201,121,.15); color: var(--positive); }
+.rd-lean-dovish { background: rgba(244,91,105,.15); color: var(--negative); }
+.rd-lean-hold { background: rgba(112,119,132,.15); color: var(--text-muted); }
 .rd-outcome { display: grid; grid-template-columns: 92px 1fr 46px 96px; gap: 8px; align-items: center; padding: 3px 0; font-size: 12px; }
 .rd-outcome.is-modal { font-weight: 600; }
-.rd-outcome-bar { background: rgba(255,255,255,.06); border-radius: 4px; height: 8px; overflow: hidden; }
+.rd-outcome-bar { background: var(--border-subtle); border-radius: var(--radius-sm); height: 8px; overflow: hidden; }
 .rd-outcome-bar span { display: block; height: 100%; background: currentColor; opacity: .55; }
 .rd-outcome.is-modal .rd-outcome-bar span { opacity: .9; }
 .rd-spark { width: 96px; height: 24px; opacity: .7; }

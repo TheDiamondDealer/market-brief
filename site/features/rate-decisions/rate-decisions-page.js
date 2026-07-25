@@ -31,8 +31,8 @@
     return null;
   }
 
-  function sparkline(history = []) {
-    const points = history.filter((p) => Number.isFinite(Number(p.probability)));
+  function sparkline(history) {
+    const points = (Array.isArray(history) ? history : []).filter((p) => Number.isFinite(Number(p.probability)));
     if (points.length < 2) return '<span class="rd-spark-empty">history building…</span>';
     const w = 96, h = 24;
     const xs = (i) => (points.length === 1 ? 0 : (i / (points.length - 1)) * w);
