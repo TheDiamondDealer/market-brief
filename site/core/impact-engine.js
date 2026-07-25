@@ -190,13 +190,48 @@
     return signals;
   }
 
-  function collectDeterministicSignals({ freeData, crowdData, equityData, blsSource } = {}, options = {}) {
+  // Market-implied central-bank policy lean. Conservative + honest: only banks whose
+  // currency we track as a board asset, only when the modal outcome is a decisive
+  // (>=55%) non-"no change" call. A priced-in expectation is a slow policy lean, not an
+  // event-day trade — kept as its own source so it never conflates with the official
+  // print signal (e.g. the RBA cash-rate 'rba' source).
+  function deriveRateDecisionSignals(cbSource = {}) {
+    const banks = Array.isArray(cbSource.banks) ? cbSource.banks : [];
+    const at = typeof cbSource.generatedAtUtc === 'string' ? cbSource.generatedAtUtc.slice(0, 10) : null;
+    const status = cbSource.collection?.status || 'current';
+    const signals = [];
+    banks.forEach((bank) => {
+      if (!bank.boardAssetId) return;
+      const asset = assetById(bank.boardAssetId);
+      if (!asset) return;
+      const meeting = (bank.meetings || [])[0];
+      if (!meeting) return;
+      const modalProb = Number(meeting.modalProbability);
+      const direction = meeting.impliedDirection;
+      if (!Number.isFinite(modalProb) || modalProb < 0.55 || direction === 'hold') return;
+      signals.push({
+        assetId: asset.id,
+        direction: direction === 'hawkish' ? 'up' : 'down',
+        tier: 'observed',
+        source: 'rate-decision-odds',
+        label: `${bank.name} policy lean`,
+        detail: `Market-implied ${bank.name} decision (${meeting.decisionDate || 'date unavailable'}): ${meeting.modalOutcome} at ${Math.round(modalProb * 100)}% — a ${direction} lean for ${asset.label}. This is a priced-in expectation, not an event-day move.`,
+        at,
+        status,
+        href: '',
+      });
+    });
+    return signals;
+  }
+
+  function collectDeterministicSignals({ freeData, crowdData, equityData, blsSource, cbSource } = {}, options = {}) {
     const all = [
       ...deriveCotSignals(freeData),
       ...deriveRateSignals(freeData),
       ...deriveCrowdSignals(crowdData),
       ...deriveEtfSignals(equityData),
       ...deriveBlsPrintSignals(blsSource),
+      ...deriveRateDecisionSignals(cbSource),
     ];
     // options.since: ISO YYYY-MM-DD window floor. Signals with an unknown date
     // (at: null) are excluded from windowed aggregation — an undated signal must
@@ -228,6 +263,7 @@
     deriveCrowdSignals,
     deriveEtfSignals,
     deriveBlsPrintSignals,
+    deriveRateDecisionSignals,
     collectDeterministicSignals,
     assetById,
     assetByCotId,
