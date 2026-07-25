@@ -38,6 +38,10 @@ MODEL = "claude-haiku-4-5"
 SCHEMA_VERSION = 1
 MAX_ATTEMPTS = 3
 PRUNE_DAYS = 7
+# Cap items per model call. One batched call for every pending item overruns the
+# response token budget and truncates the JSON (stop_reason=max_tokens) -> the whole
+# array is unparseable and every item is lost. Chunking keeps each call's JSON small.
+BATCH_SIZE = 15
 
 
 # --------------------------------------------------------------------------- #
@@ -211,7 +215,7 @@ def call_claude(prompt: str, *, timeout: int = 60) -> str:
         raise RuntimeError("ANTHROPIC_API_KEY not set")
     body = json.dumps({
         "model": MODEL,
-        "max_tokens": 4096,
+        "max_tokens": 8192,
         "messages": [{"role": "user", "content": prompt}],
     }).encode("utf-8")
     req = urllib.request.Request(
@@ -309,33 +313,37 @@ def tag_pending(
 
     registry = load_json(ASSET_BOARD)
     valid_ids = valid_asset_ids(registry)
-    prompt = build_prompt(registry, pending_items)
-
-    try:
-        text = caller(prompt)
-    except Exception as exc:  # noqa: BLE001 — outage of any kind must fail open
-        print(
-            f"[tag_impacts] model call failed ({exc.__class__.__name__}: {exc}); "
-            f"leaving {len(pending_items)} pending item(s) untagged this run."
-        )
-        return ledger
-
-    by_id = _parse_output_by_id(text)
     index = {i["id"]: i for i in ledger.get("items", [])}
 
-    for row in pending_items:
-        raw = by_id.get(row["id"])
-        result = validate_item_output(raw, valid_ids) if raw is not None else None
-        entry = _ensure_entry(ledger, index, row)
-        if result is None:
-            # Malformed / missing model output for this item → tagFailed, burn one attempt.
-            entry["attempts"] = entry.get("attempts", 0) + 1
-            entry["taggedAtUtc"] = None
-            entry["tagState"] = "unavailable" if entry["attempts"] >= MAX_ATTEMPTS else "tagFailed"
-        else:
-            entry["tagState"] = "tagged"
-            entry["tags"] = result
-            entry["taggedAtUtc"] = _iso(now)
+    # Send in bounded chunks so one call's JSON never exceeds the model's output
+    # budget. Each chunk fails open INDEPENDENTLY: a caller outage on one chunk
+    # leaves only that chunk's items untouched; other chunks still tag.
+    for start in range(0, len(pending_items), BATCH_SIZE):
+        chunk = pending_items[start:start + BATCH_SIZE]
+        prompt = build_prompt(registry, chunk)
+        try:
+            text = caller(prompt)
+        except Exception as exc:  # noqa: BLE001 — outage of any kind must fail open
+            print(
+                f"[tag_impacts] model call failed ({exc.__class__.__name__}: {exc}); "
+                f"leaving {len(chunk)} pending item(s) untagged this run."
+            )
+            continue
+
+        by_id = _parse_output_by_id(text)
+        for row in chunk:
+            raw = by_id.get(row["id"])
+            result = validate_item_output(raw, valid_ids) if raw is not None else None
+            entry = _ensure_entry(ledger, index, row)
+            if result is None:
+                # Malformed / missing model output for this item → tagFailed, burn one attempt.
+                entry["attempts"] = entry.get("attempts", 0) + 1
+                entry["taggedAtUtc"] = None
+                entry["tagState"] = "unavailable" if entry["attempts"] >= MAX_ATTEMPTS else "tagFailed"
+            else:
+                entry["tagState"] = "tagged"
+                entry["tags"] = result
+                entry["taggedAtUtc"] = _iso(now)
     return ledger
 
 
