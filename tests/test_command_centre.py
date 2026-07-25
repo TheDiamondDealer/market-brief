@@ -87,6 +87,49 @@ class CommandCentreTests(unittest.TestCase):
         self.assertIn("prefers-reduced-motion", self.styles)
         self.assertIn("@media (max-width: 700px)", self.daily_styles)
 
+    # --- PR-3 Task 2: home Pressure Board (Today) (spec S5.2) ---------------
+
+    def test_pressure_board_leads_the_home_render_via_the_pr1_engine(self) -> None:
+        self.assertIn("collectDeterministicSignals", self.page)
+        self.assertIn("pressure-board", self.page)
+        self.assertIn('href="#asset/', self.page)
+        # The board must be inserted right after the hero verdict and before heroStats().
+        # Search render()'s template-literal call sites ("${fn()}"), not the function
+        # declarations (which textually precede render() earlier in the file).
+        hero_at = self.page.index('<header class="command-hero">')
+        board_at = self.page.index("${pressureBoard()}")
+        hero_stats_at = self.page.index("${heroStats()}")
+        self.assertLess(hero_at, board_at, "Pressure board call must come after the hero markup")
+        self.assertLess(board_at, hero_stats_at, "Pressure board call must come before heroStats()")
+
+    def test_pressure_board_degrades_honestly_when_engine_or_board_missing(self) -> None:
+        self.assertIn("Pressure board unavailable", self.page)
+
+    def test_top_drivers_ledger_fetch_is_guarded_and_ranked(self) -> None:
+        for marker in (
+            "Top drivers",
+            "top-drivers",
+            "data/impact-tags.json",
+            "tagState",
+            "No AI-tagged drivers in the current window",
+        ):
+            with self.subTest(marker=marker):
+                self.assertIn(marker, self.page)
+        self.assertIn("try", self.page)
+        self.assertIn("catch", self.page)
+
+    def test_watchpoints_today_section_present(self) -> None:
+        self.assertIn("Watchpoints", self.page)
+
+    def test_pressure_board_additive_css_present(self) -> None:
+        combined = self.styles + self.daily_styles
+        for marker in (".pressure-board", ".pressure-row", ".top-drivers", ".watchpoints"):
+            with self.subTest(marker=marker):
+                self.assertIn(marker, combined)
+        # Spot-check a couple of pre-existing rules survive untouched.
+        self.assertIn("command-daily-grid", self.daily_styles)
+        self.assertIn("min-width: 0", self.daily_styles)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,154 @@
+/* PR-3 Task 3: Week view (#week) - trailing-7d board grammar + day digest +
+   COT/crowd/week-ahead (spec S5.3). Additive only - reuses .pressure-board /
+   .pressure-family / .pressure-rows / .pressure-row* (command-daily.css),
+   .command-panel / .command-section-heading / .command-kicker / .command-empty
+   / .command-daily-label / .command-trigger-list (command-page.css),
+   .watchpoints-grid / .watchpoints-column / .watchpoints-calendar* / .data-state
+   (command-daily.css / base.css) and .impact-chips (chips.css) as class names
+   only - no existing rule anywhere in the app is touched by this file. */
+
+.week-page {
+  display: grid;
+  gap: 24px;
+}
+
+.week-hero-note {
+  max-width: 780px;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.week-day-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.week-day-card {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  padding: 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+}
+
+.week-day-card > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.week-day-card > header h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.week-day-headline {
+  padding: 9px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.week-day-headline:first-of-type {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.week-day-headline h4 {
+  margin: 0 0 4px;
+  color: var(--text-primary);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.week-day-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.week-day-meta a {
+  color: var(--info);
+  text-decoration: none;
+}
+
+.week-signal-list {
+  display: grid;
+  gap: 8px;
+}
+
+.week-signal-row {
+  display: grid;
+  gap: 5px;
+  padding: 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.week-signal-row:hover,
+.week-signal-row:focus-visible {
+  border-color: var(--border-strong);
+  background: var(--bg-selected);
+}
+
+.week-signal-row-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.week-signal-row-head strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.week-signal-direction {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.week-signal-direction.up { color: var(--positive); }
+.week-signal-direction.down { color: var(--negative); }
+.week-signal-direction.mixed { color: var(--warning); }
+
+.week-signal-row p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .week-day-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .week-signal-row-head { flex-direction: column; align-items: flex-start; gap: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .week-page * { scroll-behavior: auto !important; }
+}
