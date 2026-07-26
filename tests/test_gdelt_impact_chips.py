@@ -37,6 +37,28 @@ class GdeltImpactChipsTests(unittest.TestCase):
         self.assertIn(".gdelt-ai-chips", self.styles)
         self.assertIn(".gdelt-ai-note", self.styles)
 
+    def test_why_it_matters_expander_present(self) -> None:
+        self.assertIn("gdelt-why", self.page)
+        self.assertIn("data-gdelt-why", self.page)
+        self.assertIn("gdelt-why-panel", self.page)
+        self.assertIn("Why it matters", self.page)
+
+    def test_expander_is_accessible_and_honest(self) -> None:
+        self.assertIn("aria-expanded", self.page)
+        self.assertIn("aria-controls", self.page)
+        self.assertIn("· unverified", self.page)  # honesty framing preserved
+        self.assertNotIn("real-time", self.page)        # never overclaim liveness
+
+    def test_expander_reads_note_and_tracks_expanded_state(self) -> None:
+        self.assertIn("expandedNotes", self.page)        # module-level open-state set
+        self.assertIn("whyItMattersMarkup", self.page)   # dedicated builder
+        self.assertIn("gdelt-why-prov", self.page)       # provenance line
+
+    def test_why_panel_css_present(self) -> None:
+        self.assertIn(".gdelt-why", self.styles)
+        self.assertIn(".gdelt-why-panel", self.styles)
+        self.assertIn("prefers-reduced-motion", self.styles)
+
 
 if __name__ == "__main__":
     unittest.main()

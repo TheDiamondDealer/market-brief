@@ -34,3 +34,19 @@
 .gdelt-radar footer a { color: inherit; }
 @media (max-width: 960px) { .gdelt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .gdelt-radar summary { align-items: flex-start; } .gdelt-status { justify-items: start; min-width: 0; } .gdelt-grid { grid-template-columns: 1fr; } .gdelt-radar footer { flex-direction: column; } }
+.gdelt-why { display: inline-flex; align-items: center; gap: 7px; margin-top: 10px; padding: 6px 11px 6px 9px; border: 1px solid var(--border-subtle); border-radius: 9px; background: var(--bg-panel); color: var(--text-primary); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+.gdelt-why:hover { border-color: var(--accent); }
+.gdelt-why:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.gdelt-why-caret { color: var(--accent); font-size: 10px; display: inline-block; }
+.gdelt-why[aria-expanded="true"] .gdelt-why-caret { transform: rotate(90deg); }
+.gdelt-why-panel { margin-top: 9px; border: 1px solid var(--border-subtle); border-left: 2px solid var(--accent); border-radius: 10px; background: var(--bg-panel); padding: 12px 13px; }
+.gdelt-why-panel[hidden] { display: none; }
+.gdelt-why-note { margin: 0 0 10px; font-size: 13px; line-height: 1.5; color: var(--text-primary); }
+.gdelt-why-mechs { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 6px; }
+.gdelt-why-mechs li { font-size: 12px; line-height: 1.45; color: var(--text-muted); }
+.gdelt-why-asset { font-weight: 600; }
+.gdelt-why-asset.up { color: var(--positive); }
+.gdelt-why-asset.down { color: var(--negative); }
+.gdelt-why-asset.mixed { color: var(--warning); }
+.gdelt-why-prov { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; color: var(--text-muted); letter-spacing: .03em; border-top: 1px dashed var(--border-subtle); padding-top: 9px; }
+@media (prefers-reduced-motion: no-preference) { .gdelt-why-caret { transition: transform 160ms ease; } }

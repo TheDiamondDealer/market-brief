@@ -10,6 +10,8 @@
   let impactTags = null;
   let impactTagsFailed = false;
   let impactTagsFetchStarted = false;
+  const expandedNotes = new Set();
+  const DIR_ARROW = { up: '↑', down: '↓', mixed: '↔' };
 
   function data() {
     return window.gdeltRadarData || { collection: { status: 'unavailable' }, articles: [], topics: [] };
@@ -68,6 +70,38 @@
     return strip ? `<span class="gdelt-ai-chips">${strip}</span>` : '';
   }
 
+  function whyAssetLabel(assetId) {
+    const asset = (window.marketAssetBoard?.assets || []).find((entry) => entry.id === assetId);
+    return asset ? asset.label : String(assetId || 'Unknown asset');
+  }
+
+  function whyItMattersMarkup(item) {
+    const entry = impactTagsById().get(item.id);
+    if (!entry || entry.tagState !== 'tagged') return '';
+    if (!core.impactChips || !window.marketAssetBoard?.assets) return '';
+    const tags = Array.isArray(entry.tags) ? entry.tags : [];
+    const note = typeof entry.note === 'string' ? entry.note.trim() : '';
+    // Shown only when there is something to say: a synthesis note or >=1 mechanism.
+    if (!note && !tags.length) return '';
+
+    const id = String(item.id);
+    const panelId = `gdelt-why-${id}`;
+    const open = expandedNotes.has(id);
+    const model = (impactTags && typeof impactTags.model === 'string' && impactTags.model) || 'AI';
+    const domain = item.domain || 'source';
+
+    const noteHtml = note ? `<p class="gdelt-why-note">${escapeHtml(note)}</p>` : '';
+    const mechs = tags.map((tag) => {
+      const dir = ['up', 'down', 'mixed'].includes(tag.direction) ? tag.direction : 'mixed';
+      return `<li><span class="gdelt-why-asset ${dir}">${escapeHtml(whyAssetLabel(tag.assetId))} ${DIR_ARROW[dir]}</span> — ${escapeHtml(tag.mechanism || 'Mechanism not specified.')}</li>`;
+    }).join('');
+    const mechsHtml = mechs ? `<ul class="gdelt-why-mechs">${mechs}</ul>` : '';
+    const prov = `<p class="gdelt-why-prov">AI reading · ${escapeHtml(model)} · ${escapeHtml(domain)} · unverified</p>`;
+
+    return `<button type="button" class="gdelt-why" data-gdelt-why="${escapeHtml(id)}" aria-expanded="${open}" aria-controls="${escapeHtml(panelId)}"><span class="gdelt-why-caret" aria-hidden="true">▸</span> Why it matters</button>
+      <div class="gdelt-why-panel" id="${escapeHtml(panelId)}"${open ? '' : ' hidden'}>${noteHtml}${mechsHtml}${prov}</div>`;
+  }
+
   function relativeTime(value) {
     if (!value) return 'Time unavailable';
     const milliseconds = Date.parse(value);
@@ -92,6 +126,7 @@
       <div class="gdelt-source"><strong>${escapeHtml(item.domain || 'Source unavailable')}</strong><span>${escapeHtml(item.sourceCountry || 'Country unavailable')}</span><span>${escapeHtml(item.language || 'Language unavailable')}</span></div>
       <div class="gdelt-tags">${(item.assets || []).slice(0, 5).map((asset) => `<span>${escapeHtml(asset)}</span>`).join('')}</div>
       ${aiChipsMarkup(item)}
+      ${whyItMattersMarkup(item)}
       <p>${escapeHtml(item.verificationNote || 'Discovery lead only. Confirm against an official source.')}</p>
     </article>`).join('');
   }
@@ -133,6 +168,15 @@
       topic = button.dataset.gdeltTopic || 'all';
       mount.dataset.fingerprint = '';
       render();
+    }));
+
+    mount.querySelectorAll('[data-gdelt-why]').forEach((button) => button.addEventListener('click', () => {
+      const id = button.dataset.gdeltWhy;
+      const panel = document.getElementById(`gdelt-why-${id}`);
+      const open = !expandedNotes.has(id);
+      if (open) { expandedNotes.add(id); } else { expandedNotes.delete(id); }
+      if (panel) { panel.toggleAttribute('hidden', !open); }
+      button.setAttribute('aria-expanded', String(open));
     }));
   }
 
