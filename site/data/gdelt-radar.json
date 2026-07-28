@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-07-28T09:46:41Z",
+  "generatedAtUtc": "2026-07-28T12:12:02Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 4,
-    "rawArticleCount": 200,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-07-28T09:46:41Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-07-28T12:12:02Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,24 +52,75 @@
   ],
   "articles": [
     {
-      "id": "d5e041fb08097d942282",
-      "title": "Konya Ovası mora büründü : Lavantada Türkiyenin ilk 5 ine girdi",
-      "url": "https://www.konhaber.com/guncel/konya_ovasi_mora_burundu_lavantada_turkiye_nin_ilk_5_ine_girdi-2005519h",
-      "domain": "konhaber.com",
+      "id": "4ca8a94d708cf3dcf70e",
+      "title": "Bar to Fed rate hike this week remains high even as markets see a chance",
+      "url": "https://finance.yahoo.com/economy/policy/articles/bar-fed-rate-hike-week-100354833.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-28T11:15:00Z",
+      "firstSeenAt": "2026-07-28T11:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 37,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5fe814177881880645e3",
+      "title": "RBA Signals More Rate Hikes Possible as Australia Battles Stubborn Inflation",
+      "url": "http://www.econotimes.com/RBA-Signals-More-Rate-Hikes-Possible-as-Australia-Battles-Stubborn-Inflation-1747900",
+      "domain": "econotimes.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-07-28T06:15:00Z",
+      "firstSeenAt": "2026-07-28T06:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 31,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "50304ae139517b7811e5",
+      "title": "Meta 14 milyar dolarlık yapay zekâ yükünü BlackRockla paylaştı",
+      "url": "https://www.dunya.com/is-dunyasi/meta-14-milyar-dolarlik-yapay-zeka-yukunu-blackrockla-paylasti-haberi-833958",
+      "domain": "dunya.com",
       "language": "Turkish",
       "sourceCountry": "Turkey",
-      "seenAt": "2026-07-28T09:15:00Z",
-      "firstSeenAt": "2026-07-28T09:15:00Z",
+      "seenAt": "2026-07-28T11:15:00Z",
+      "firstSeenAt": "2026-07-28T11:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -78,112 +129,556 @@
       "duplicateCount": 1
     },
     {
-      "id": "235c6b62c5378ec606bc",
-      "title": "El Mediterráneo desplaza a Rusia en el mapa del gas europeo",
-      "url": "https://es.euronews.com/my-europe/2026/07/28/el-mediterraneo-desplaza-a-rusia-en-el-mapa-del-gas-europeo-con-chipre-y-argelia-como-nuev",
-      "domain": "es.euronews.com",
-      "language": "Spanish",
+      "id": "6d604a8c376df9b86771",
+      "title": "Κύπρος : TotalEnergies και Eni « ξεκλειδώνουν » το Cronos",
+      "url": "https://www.skai.gr/news/business/totalenergies-kai-eni-ksekleidonoun-to-cronos-apo-to-2028-i-paragogi-lng",
+      "domain": "skai.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-28T11:15:00Z",
+      "firstSeenAt": "2026-07-28T11:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e4b95d3a908567ea8dd4",
+      "title": "قطر للطاقة تمدد القوة القاهرة على شحنات الغاز إلى أوروبا",
+      "url": "https://www.shorouknews.com/news/view.aspx?cdate=28072026&id=82c428f9-8ebe-49d9-9321-53298bb714a7",
+      "domain": "shorouknews.com",
+      "language": "Arabic",
+      "sourceCountry": "Egypt",
+      "seenAt": "2026-07-28T11:15:00Z",
+      "firstSeenAt": "2026-07-28T11:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "11c1ef8bef248b71b149",
+      "title": "TotalEnergies et Eni lancent leur projet dextraction de gaz au large de Chypre",
+      "url": "https://www.abcbourse.com/marches/newsContent/700454",
+      "domain": "abcbourse.com",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-07-28T11:00:00Z",
+      "firstSeenAt": "2026-07-28T11:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "acfe8c7dd2f67182df5d",
+      "title": "Gas Europa : scorte ai minimi , inverno a rischio e prezzi alle stelle",
+      "url": "https://www.adnkronos.com/economia/gas-europa-scorte-ai-minimi-inverno-a-rischio-e-prezzi-alle-stelle_3lGcwhQpSIr2crt5t7mCcp",
+      "domain": "adnkronos.com",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-07-28T10:45:00Z",
+      "firstSeenAt": "2026-07-28T10:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "487f53fba41792285aa0",
+      "title": "Enerji savaşının faturası ağır oldu ! Avrupada gaz fiyatları 3 katına fırladı",
+      "url": "https://www.hurhaber.com/ekonomi-haberleri/enerji-savasinin-faturasi-agir-oldu-avrupa-da-gaz-fiyatlari-3-katina-firladi-510023",
+      "domain": "hurhaber.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-28T10:45:00Z",
+      "firstSeenAt": "2026-07-28T10:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5d2c517e97c00acfa5b8",
+      "title": "Индия задумалась о закупках арктического СПГ :: Новости дня / ВЗГЛЯД",
+      "url": "https://vz.ru/news/2026/7/28/1438305.html",
+      "domain": "vz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-28T10:15:00Z",
+      "firstSeenAt": "2026-07-28T10:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "36adfe9067599b11c5d6",
+      "title": "China Criticizes US Smearing , Sanction Threat Against Chinese AI Firms",
+      "url": "https://english.aawsat.com/technology/5300481-china-criticizes-us-smearing-sanction-threats-against-chinese-ai-firms",
+      "domain": "english.aawsat.com",
+      "language": "English",
+      "sourceCountry": "Syria",
+      "seenAt": "2026-07-27T14:45:00Z",
+      "firstSeenAt": "2026-07-27T14:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f8807aa5afd50e3e1601",
+      "title": "RBA chief unsure if more rate hikes needed to tame inflation",
+      "url": "https://finance.yahoo.com/economy/policy/articles/rbas-chief-unsure-more-rate-030655790.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-28T09:15:00Z",
-      "firstSeenAt": "2026-07-28T09:15:00Z",
+      "seenAt": "2026-07-28T03:45:00Z",
+      "firstSeenAt": "2026-07-28T03:45:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "macro-policy"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "dbeb12ce34240fc54d53",
-      "title": "Eni : via a progetto Cronos a Cipro , produzione gas verso 500 mln piedi cubi / giorno",
-      "url": "https://www.ilsole24ore.com/art/eni-via-progetto-cronos-cipro-produzione-gas-500-mln-piedi-cubigiorno-AJgJNqX",
-      "domain": "ilsole24ore.com",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-07-28T09:15:00Z",
-      "firstSeenAt": "2026-07-28T09:15:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "d1c627f2ffd31c68559b",
-      "title": "Пламен Димитров пред ФАКТИ : Договорът с „ Боташ може да отвори пътя на руския газ под етикета Turkish Blend ᐉ Новини от Fakti . bg - Мнения",
-      "url": "https://fakti.bg/mnenia/1070594-plamen-dimitrov-pred-fakti-dogovorat-s-botash-moje-da-otvori-pata-na-ruskia-gaz-pod-etiketa-turkish-blend",
-      "domain": "fakti.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-07-28T09:15:00Z",
-      "firstSeenAt": "2026-07-28T09:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
+      "materialityScore": 25,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "9e90e22d9eedb649f622",
-      "title": "Eni investe in progetto Cronos , dal 2028 gas dalloffshore a Cipro",
-      "url": "https://www.ecodibergamo.it/stories/premium/ambiente-e-energia/eni-investe-in-progetto-cronos-dal-2028-gas-dalloffshore-a-cipro-o_3918362_11/",
-      "domain": "ecodibergamo.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-07-28T09:15:00Z",
-      "firstSeenAt": "2026-07-28T09:15:00Z",
+      "id": "8a3d72c5f8b8263945a1",
+      "title": "Rate Cut hopes fade as State Bank keeps Key Interest Rate unchanged at 11 . 5pc",
+      "url": "https://en.dailypakistan.com.pk/27-Jul-2026/rate-cut-hopes-fade-as-state-bank-keeps-key-interest-rate-unchanged-at-11-5pc",
+      "domain": "en.dailypakistan.com.pk",
+      "language": "English",
+      "sourceCountry": "Pakistan",
+      "seenAt": "2026-07-27T13:30:00Z",
+      "firstSeenAt": "2026-07-27T13:30:00Z",
       "topicIds": [
-        "gas-markets"
+        "macro-policy"
       ],
       "topics": [
-        "Gas markets"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
-      "materialityScore": 26,
+      "materialityScore": 25,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9d22b6866712d8507de4",
+      "title": "Why Broadcom Needed Samsung for Its AI Future ?",
+      "url": "https://memeburn.com/why-broadcom-needed-samsung-for-its-ai-future/",
+      "domain": "memeburn.com",
+      "language": "English",
+      "sourceCountry": "South Africa",
+      "seenAt": "2026-07-28T10:00:00Z",
+      "firstSeenAt": "2026-07-28T10:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ac77423f2b32f7f21577",
+      "title": "Eni и Total приняли окончательное инвестрешение по морскому газовому проекту Cronos на Кипре",
+      "url": "https://www.interfax.ru/world/1106048",
+      "domain": "interfax.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-28T10:00:00Z",
+      "firstSeenAt": "2026-07-28T10:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "682be1abdb84611c1ff6",
+      "title": "전력망 교체 넘어 AI 데이터센터로 … HD현대일렉 , 전력 수요 폭증 올라탔다 ( 종합 )",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026072817360930553",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-28T09:45:00Z",
+      "firstSeenAt": "2026-07-28T09:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f7f0c0bd19673b78c8a8",
+      "title": "Moonshot AI heralds new generation of Asian AI champions",
+      "url": "https://www.businesstimes.com.sg/wealth/wealth-investing/moonshot-ai-heralds-new-generation-asian-ai-champions",
+      "domain": "businesstimes.com.sg",
+      "language": "English",
+      "sourceCountry": "Singapore",
+      "seenAt": "2026-07-28T09:45:00Z",
+      "firstSeenAt": "2026-07-28T09:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8437d374eb89bc128424",
+      "title": "Алексей Зубец спрогнозировал годовую инфляцию на уровне 8 %",
+      "url": "http://govoritmoskva.ru/news/500260/",
+      "domain": "govoritmoskva.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-28T09:45:00Z",
+      "firstSeenAt": "2026-07-28T09:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0198999c8135cf6290cc",
+      "title": "Reuters : Европа встретит зиму с низкими запасами энергоресурсов",
+      "url": "http://govoritmoskva.ru/news/500261/",
+      "domain": "govoritmoskva.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-28T09:45:00Z",
+      "firstSeenAt": "2026-07-28T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "61b6935aaab8ecbb50c3",
+      "title": "Gazprom : ABDnin LNG hakimiyeti Avrupada gaz fiyatlarını katına çıkardı",
+      "url": "https://www.bloomberght.com/gazprom-abdnin-lng-hakimiyeti-avrupa-da-gaz-fiyatlarini-uc-katina-cikardi-3783952",
+      "domain": "bloomberght.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-28T09:45:00Z",
+      "firstSeenAt": "2026-07-28T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b33ec7981665ee7d62a3",
+      "title": "Ρεβυθούσα και Αλεξανδρούπολη στο στόχαστρο του Ιράν",
+      "url": "https://www.inewsgr.com/441/revythousa-kai-alexandroupoli-sto-stochastro-tou-iran.htm",
+      "domain": "inewsgr.com",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-07-28T09:45:00Z",
+      "firstSeenAt": "2026-07-28T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "db9ec77c3b86c8a9b810",
+      "title": "Компанії Європи зможуть перевозити російський СПГ",
+      "url": "https://24tv.ua/economy/kompaniyi-yevropi-zmozhut-perevoziti-rosiyskiy-spg-chomu-prichina_n3113165",
+      "domain": "24tv.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-07-28T09:45:00Z",
+      "firstSeenAt": "2026-07-28T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "26719c78f7a173ad9810",
+      "title": "Rusyadan ABDye gaz tepkisi : Fiyatı 3 katına çıkardılar !",
+      "url": "https://www.sozcu.com.tr/rusya-dan-abd-ye-gaz-tepkisi-fiyati-3-katina-cikardilar-p340363",
+      "domain": "sozcu.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-07-28T09:30:00Z",
+      "firstSeenAt": "2026-07-28T09:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0d97b92a32d983af1464",
+      "title": "[ 유럽 특징주 ] EU의 러 LNG 운송 제재 완화로 웃고 있는 토탈 … 아시아 수출 계속",
+      "url": "https://www.newspim.com/news/view/20260728001096",
+      "domain": "newspim.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-28T09:30:00Z",
+      "firstSeenAt": "2026-07-28T09:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -208,7 +703,33 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "20c9aab1788942098977",
+      "title": "ВТБ пересмотрел прогноз по ключевой ставке и росту ВВП на 2026 год",
+      "url": "https://sibnovosti.ru/news/455904/",
+      "domain": "sibnovosti.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-07-28T09:15:00Z",
+      "firstSeenAt": "2026-07-28T09:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -237,7 +758,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -262,89 +783,33 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "81699ef82466dacb3bc7",
-      "title": "Кадыров опроверг информацию о надвигающемся дефиците продуктов в Чечне :: Новости дня / ВЗГЛЯД",
-      "url": "https://vz.ru/news/2026/7/28/1438274.html",
-      "domain": "vz.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-07-28T08:30:00Z",
-      "firstSeenAt": "2026-07-28T08:30:00Z",
+      "id": "8e46d3304d593f634433",
+      "title": "欧元跌至月内低点 美联储决议前美元强势施压 - CFi . CN 中财网",
+      "url": "http://www.cfi.net.cn/p20260728000543.html",
+      "domain": "cfi.net.cn",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-07-28T09:00:00Z",
+      "firstSeenAt": "2026-07-28T09:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "868fe502a01bad40dd52",
-      "title": "Κερδισμένη η TotalEnergies , η ΕΕ κάνει πίσω στις κυρώσεις για το ρωσικό LNG",
-      "url": "https://www.euro2day.gr/news/world/article/2362117/kerdismenh-h-totalenergies-h-ee-kanei-piso-stis-ky.html",
-      "domain": "euro2day.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T08:30:00Z",
-      "firstSeenAt": "2026-07-28T08:30:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "3d25894ca1c5b6e36bb3",
-      "title": "TotalEnergies et Eni lancent le développement du champ gazier Cronos au large de",
-      "url": "https://www.abcbourse.com/marches/newsContent/700441",
-      "domain": "abcbourse.com",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-07-28T08:30:00Z",
-      "firstSeenAt": "2026-07-28T08:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -369,7 +834,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -394,7 +859,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -419,58 +884,59 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "dc856fd75dad0fd4c570",
-      "title": "Žně jsou v plném proudu . Ozimý ječmen je téměř sklizený , pšenice pokračuje",
-      "url": "https://jicinsky.denik.cz/kraj-a-okoli/zne-jsou-v-plnem-proudu-ozimy-jecmen-je-temer-sklizeny-psenice-pokracuje/",
-      "domain": "jicinsky.denik.cz",
-      "language": "Czech",
-      "sourceCountry": "Czech Republic",
-      "seenAt": "2026-07-28T08:15:00Z",
-      "firstSeenAt": "2026-07-28T08:15:00Z",
+      "id": "52ec9bcb4897ec7f2e63",
+      "title": "Aleksandras Izgorodinas . Energijos kainos didino infliacijos ir palūkanų normų lūkesčius",
+      "url": "https://www.lrt.lt/naujienos/verslo-pozicija/692/3004110/aleksandras-izgorodinas-energijos-kainos-didino-infliacijos-ir-palukanu-normu-lukescius",
+      "domain": "lrt.lt",
+      "language": "Lithuanian",
+      "sourceCountry": "Lithuania",
+      "seenAt": "2026-07-28T08:30:00Z",
+      "firstSeenAt": "2026-07-28T08:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "1fd14130f6bdce9adddc",
-      "title": "Totalenergies : TotalEnergies valide le projet gazier Cronos ciblant le marché européen",
-      "url": "https://www.tradingsat.com/totalenergies-FR0000120271/actualites/totalenergies-chypre-totalenergies-valide-le-projet-gazier-cronos-ciblant-le-marche-europeen-1167550.html",
-      "domain": "tradingsat.com",
-      "language": "French",
-      "sourceCountry": "France",
+      "id": "4a37a2ab5edfbe5b3baf",
+      "title": "Aleksandras Izgorodinas . Kylančios energijos kainos padidino infliacijos ir palūkanų normų lūkesčius",
+      "url": "https://www.15min.lt/verslas/naujiena/finansai/aleksandras-izgorodinas-kylancios-energijos-kainos-padidino-infliacijos-ir-palukanu-normu-lukescius-662-2732214",
+      "domain": "15min.lt",
+      "language": "Lithuanian",
+      "sourceCountry": "Lithuania",
       "seenAt": "2026-07-28T08:15:00Z",
       "firstSeenAt": "2026-07-28T08:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "macro-policy"
       ],
       "topics": [
-        "Gas markets"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -499,42 +965,11 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "da7e501c823c4ee701c4",
-      "title": "Η TotalEnergies και η Eni δίνουν το πράσινο φως στο κοίτασμα φυσικού ...",
-      "url": "https://www.capital.gr/diethni/4007530/i-totalenergies-kai-i-eni-dinoun-to-prasino-fos-sto-koitasma-fusikou-aeriou-stin-kupro-gia-tin-paragogi-lng/",
-      "domain": "capital.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T07:30:00Z",
-      "firstSeenAt": "2026-07-28T07:30:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
       "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
       "id": "0d03d2dacbee76e03760",
@@ -562,23 +997,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "f1f1bfc84ffe93574cfe",
-      "title": "Κύπρος : Η Eni δίνει το « πράσινο φως » για το κοίτασμα Cronos - Στόχος το πρώτο κυπριακό φυσικό αέριο στην αγορά το 2028",
-      "url": "https://www.naftemporiki.gr/business/2143545/kypros-i-eni-dinei-to-prasino-fos-gia-to-koitasma-cronos-stochos-to-proto-kypriako-fysiko-aerio-stin-agora-to-2028/",
-      "domain": "naftemporiki.gr",
+      "id": "da7e501c823c4ee701c4",
+      "title": "Η TotalEnergies και η Eni δίνουν το πράσινο φως στο κοίτασμα φυσικού ...",
+      "url": "https://www.capital.gr/diethni/4007530/i-totalenergies-kai-i-eni-dinoun-to-prasino-fos-sto-koitasma-fusikou-aeriou-stin-kupro-gia-tin-paragogi-lng/",
+      "domain": "capital.gr",
       "language": "Greek",
       "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T07:15:00Z",
-      "firstSeenAt": "2026-07-28T07:15:00Z",
+      "seenAt": "2026-07-28T07:30:00Z",
+      "firstSeenAt": "2026-07-28T07:30:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -612,31 +1051,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "c79d08bf7627243d3205",
-      "title": "Eni investe in progetto Cronos , dal 2028 gas dalloffshore a Cipro",
-      "url": "https://www.larena.it/argomenti/economia/economia-nazionale/eni-investe-in-progetto-cronos-dal-2028-gas-dall-offshore-a-cipro-1.13082738",
-      "domain": "larena.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-07-28T07:00:00Z",
-      "firstSeenAt": "2026-07-28T07:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "a56aca0a72ee1f692b63",
       "title": "美가 막을수록 더 강해졌다 中 반도체 , IPO 대박 · 노광장비 생산 … 기술자립 가속 [ 디브리핑 ]",
       "url": "https://biz.heraldcorp.com/article/10823113",
@@ -662,24 +1076,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "623cd7691a9c03007bd8",
-      "title": "Wheat import decision sparks farmer outcry",
-      "url": "https://tribune.com.pk/story/2620696/wheat-import-decision-sparks-farmer-outcry",
-      "domain": "tribune.com.pk",
-      "language": "English",
-      "sourceCountry": "Pakistan",
+      "id": "68dbd88391c7ae679354",
+      "title": "超级央行周前瞻 ： 静观其变 ， 等待下一个加息窗口 _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202607283823384113.html",
+      "domain": "finance.eastmoney.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
       "seenAt": "2026-07-28T06:30:00Z",
       "firstSeenAt": "2026-07-28T06:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -688,52 +1102,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "b6965649baebb5701002",
-      "title": "Пламен Димитров пред ФАКТИ : Договорът с „ Боташ може да отвори пътя на руския газ под етикета Turkish Blend ᐉ Новини от Fakti . bg - България",
-      "url": "https://fakti.bg/bulgaria/1070594-plamen-dimitrov-pred-fakti-dogovorat-s-botash-moje-da-otvori-pata-na-ruskia-gaz-pod-etiketa-turkish-blend",
-      "domain": "fakti.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
+      "id": "6f0c7d583c09a4427325",
+      "title": "Inflation in Russland außer Kontrolle ? Bank senkt Wachstumsprognose auf null",
+      "url": "https://www.hna.de/wirtschaft/auf-null-inflation-in-russland-ausser-kontrolle-russische-zentralbank-senkt-wachstumsprognose-zr-94415732.html",
+      "domain": "hna.de",
+      "language": "German",
+      "sourceCountry": "Germany",
       "seenAt": "2026-07-28T06:30:00Z",
       "firstSeenAt": "2026-07-28T06:30:00Z",
       "topicIds": [
-        "gas-markets"
+        "macro-policy"
       ],
       "topics": [
-        "Gas markets"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "470e0ab287874e8a198b",
-      "title": "Η Ευρώπη μετά το ενεργειακό σοκ : Το πετρέλαιο δεν ακρίβυνε όσο περιμέναμε , αλλά έρχεται σκληρός χειμώνας",
-      "url": "https://www.in.gr/2026/07/28/economy/i-eyropi-meta-to-energeiako-sok-to-petrelaio-den-akrivyne-oso-perimename-alla-erxetai-skliros-xeimonas/",
-      "domain": "in.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T06:30:00Z",
-      "firstSeenAt": "2026-07-28T06:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -792,24 +1178,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "7b85b07d0b207740878c",
-      "title": "Upały będą groźne dla kukurydzy . Ważą się losy plonowania",
-      "url": "https://www.farmer.pl/produkcja-roslinna/upaly-beda-grozne-dla-kukurydzy-waza-sie-losy-plonowania,180970.html",
-      "domain": "farmer.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-07-28T06:00:00Z",
-      "firstSeenAt": "2026-07-28T06:00:00Z",
+      "id": "dfbf78684766c5a8ab6e",
+      "title": "房市最壞已過 ？ 台經院曝 「 政策天花板 」 現形 青安3 . 0只救這類產品 - 地產天下",
+      "url": "https://estate.ltn.com.tw/article/28525",
+      "domain": "estate.ltn.com.tw",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-07-28T06:15:00Z",
+      "firstSeenAt": "2026-07-28T06:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -818,85 +1204,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "4f924b4545ced0c82528",
-      "title": "Oil Prices Extend Losses as U . S .- Iran Calm Holds for Another Night",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Extend-Losses-as-US-Iran-Calm-Holds-for-Another-Night.html",
-      "domain": "oilprice.com",
+      "id": "dd849185d185173359e4",
+      "title": "FxWirePro : AUD / USD dips after RBA Governor speech",
+      "url": "http://www.econotimes.com/FxWirePro-AUD-USD-dips-after-RBA-Governor-speech-1747903",
+      "domain": "econotimes.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-07-28T05:45:00Z",
-      "firstSeenAt": "2026-07-28T05:45:00Z",
+      "seenAt": "2026-07-28T06:15:00Z",
+      "firstSeenAt": "2026-07-28T06:15:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "macro-policy"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "e17e6edff3cab88253ea",
-      "title": "Thailand Bets Heavily On Natural Gas For Its Economic Growth",
-      "url": "https://www.chiangraitimes.com/business/thailand-bets-heavily-on-natural-gas/",
-      "domain": "chiangraitimes.com",
-      "language": "English",
-      "sourceCountry": "Thailand",
-      "seenAt": "2026-07-28T05:45:00Z",
-      "firstSeenAt": "2026-07-28T05:45:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "6d6fdafa3ac3597ee926",
-      "title": "В Волховском районе Ленинградской области построены сети газораспределения по трем деревням",
-      "url": "https://energyland.info/news-show--neftegaz-285448",
-      "domain": "energyland.info",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-07-28T05:45:00Z",
-      "firstSeenAt": "2026-07-28T05:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -923,19 +1248,71 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "57af88a519fc0c196c2b",
-      "title": "Τραμπ : « Υπάρχουν καλές πιθανότητες για συμφωνία »- Η Ιράν διαψεύδει συνομιλίες",
-      "url": "https://www.sigmalive.com/news/international/1323704/tramp-yparkhoyn-kales-pithanotites-ghia-simfonia-h-iran-diapseudei-sinomilies",
-      "domain": "sigmalive.com",
-      "language": "Greek",
-      "sourceCountry": "Cyprus",
+      "id": "19f059f2d7c00735dada",
+      "title": "US Stock Market : Fed inflation fight puts Kevin Warsh credibility to the test",
+      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/us-stock-market-feds-inflation-fight-puts-kevin-warshs-credibility-to-the-test/articleshow/132675969.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-07-28T05:45:00Z",
+      "firstSeenAt": "2026-07-28T05:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c4acc22b7c3ab8028389",
+      "title": "대통령 질책에 ... 인니 중앙은행 총재 , 임기 2년 남기고 사임 - 국제ㅣ한국일보",
+      "url": "https://www.hankookilbo.com/news/article/A2026072810480003376",
+      "domain": "hankookilbo.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-07-28T05:45:00Z",
+      "firstSeenAt": "2026-07-28T05:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4f924b4545ced0c82528",
+      "title": "Oil Prices Extend Losses as U . S .- Iran Calm Holds for Another Night",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Extend-Losses-as-US-Iran-Calm-Holds-for-Another-Night.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
       "seenAt": "2026-07-28T05:45:00Z",
       "firstSeenAt": "2026-07-28T05:45:00Z",
       "topicIds": [
@@ -952,391 +1329,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "01c15867dd6f68139005",
-      "title": "Kombajn mezi paneláky : Tak vypadají ostravské žně , farma láká na vlastní hovězí",
-      "url": "https://moravskoslezsky.denik.cz/zpravy-region/kombajn-mezi-panelaky-tak-vypadaji-ostravske-zne-farma-laka-na-vlastni-hovezi/",
-      "domain": "moravskoslezsky.denik.cz",
-      "language": "Czech",
-      "sourceCountry": "Czech Republic",
-      "seenAt": "2026-07-28T05:15:00Z",
-      "firstSeenAt": "2026-07-28T05:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "26f7b71b3e4349b94115",
-      "title": "Συνεχίζεται ο πόλεμος νεύρων ανάμεσα σε ΗΠΑ και Ιράν : Ο Τραμπ βλέπει συμφωνία , η Τεχεράνη δηλώνει ότι δεν διαπραγματεύεται",
-      "url": "https://newpost.gr/eidiseis/synechizetai-o-polemos-neyron-anamesa-se-ipa-kai-iran-o-tramp-vlepei-symfonia-i-techerani-dilonei-oti-den-diapragmateyetai/",
-      "domain": "newpost.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T05:15:00Z",
-      "firstSeenAt": "2026-07-28T05:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "93bb22d4ca7688ec7d2f",
-      "title": "Ιράν : Ο Τραμπ μιλά για πιθανότητα συμφωνίας , ενώ η Τεχεράνη δεν διεξάγει καμιά διαπραγμάτευση",
-      "url": "https://www.news247.gr/kosmos/iran-o-trab-mila-gia-pithanotita-simfonias-eno-i-texerani-den-diexagei-kamia-diapragmatefsi/",
-      "domain": "news247.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T05:15:00Z",
-      "firstSeenAt": "2026-07-28T05:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3adb0a5afb78e623902b",
-      "title": "ENI ( ETR : ENI ) Shares Down 0 % – Here What Happened",
-      "url": "https://www.themarketsdaily.com/2026/07/28/eni-etreni-shares-down-0-heres-what-happened.html",
-      "domain": "themarketsdaily.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-28T05:15:00Z",
-      "firstSeenAt": "2026-07-28T05:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9bca626abd59e2a1f153",
-      "title": "Aşırı sıcaklar : Alman çiftçisi üretim modelini değiştiriyor",
-      "url": "https://www.dw.com/tr/a%C5%9F%C4%B1r%C4%B1-s%C4%B1caklar-alman-%C3%A7ift%C3%A7isi-%C3%BCretim-modelini-de%C4%9Fi%C5%9Ftiriyor/a-78128079",
-      "domain": "dw.com",
-      "language": "Turkish",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-07-28T05:00:00Z",
-      "firstSeenAt": "2026-07-28T05:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "40733698902ef8508955",
-      "title": "Seoul shares tank on tech slump , bourse operator issues circuit breaker",
-      "url": "https://www.prokerala.com/news/articles/a1793261.html",
-      "domain": "prokerala.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-07-28T05:00:00Z",
-      "firstSeenAt": "2026-07-28T05:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "656665570bc7205295ab",
-      "title": "ΗΠΑ – Ιράν : Ο Τραμπ βλέπει συμφωνία , η Τεχεράνη διαψεύδει τις διαπραγματεύσεις – Η πρόταση των μεσολαβητών για τα Στενά του Ορμούζ",
-      "url": "https://www.topontiki.gr/2026/07/28/ipa-iran-o-trab-vlepi-simfonia-i-techerani-diapsevdi-tis-diapragmatefsis-i-protasi-ton-mesolaviton-gia-ta-stena-tou-ormouz/",
-      "domain": "topontiki.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T05:00:00Z",
-      "firstSeenAt": "2026-07-28T05:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3b37dc41ae0853b77f55",
-      "title": "Oil price dives as US and Iran pause attacks",
-      "url": "https://kaieteurnewsonline.com/2026/07/28/oil-price-dives-as-us-and-iran-pause-attacks/",
-      "domain": "kaieteurnewsonline.com",
-      "language": "English",
-      "sourceCountry": "Guyana",
-      "seenAt": "2026-07-28T04:30:00Z",
-      "firstSeenAt": "2026-07-28T04:30:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "2eb2ac1c7f6307fef3fa",
-      "title": "Micron Has Surged Nearly 700 % Over the Past Year -- Here Is What the Valuation Says About Its Next Move",
-      "url": "https://www.fool.com/investing/2026/07/28/micron-has-surged-nearly-700-over-the-past-year-he/",
-      "domain": "fool.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-07-28T04:30:00Z",
-      "firstSeenAt": "2026-07-28T04:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6e15f8a59216d299410b",
-      "title": "Ο Τραμπ βλέπει « καλές πιθανότητες » για αποτελέσματα στις συνομιλίες με το Ιράν και απειλεί με νέους βομβαρδισμούς",
-      "url": "https://www.newsit.gr/kosmos/o-tramp-vlepei-kales-pithanotites-gia-apotelesmata-stis-synomilies-me-to-iran-kai-apeilei-me-neous-vomvardismous/4738482/",
-      "domain": "newsit.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T04:30:00Z",
-      "firstSeenAt": "2026-07-28T04:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ec27ecff49f97356a284",
-      "title": "Ο Ντόναλντ Τραμπ βλέπει « καλές πιθανότητες » για αποτελέσματα στις συνομιλίες με το Ιράν και απειλεί με νέους βομβαρδισμούς",
-      "url": "https://www.inewsgr.com/93/o-ntonalnt-trab-vlepei-kales-pithanotites-gia-apotelesmata-stis-synomilies-me-to-iran-kai-apeilei-me-neous-vomvardismous.htm",
-      "domain": "inewsgr.com",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-07-28T04:30:00Z",
-      "firstSeenAt": "2026-07-28T04:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3570aeac590633bb755c",
-      "title": "Denizlide buğdayın yeni çeşitleri sahada - Denizli Haberleri",
-      "url": "https://www.yeniasir.com.tr/ege/denizli/2026/07/28/denizlide-bugdayin-yeni-cesitleri-sahada",
-      "domain": "yeniasir.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-07-28T04:15:00Z",
-      "firstSeenAt": "2026-07-28T04:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c4dd5059979f4d44bcc4",
-      "title": "مع ارتفاع درجات الحرارة .. طريقة تحضير ألذ نكهة آيس كريم في البيت",
-      "url": "https://www.almasryalyoum.com/news/details/4325193",
-      "domain": "almasryalyoum.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-07-28T04:15:00Z",
-      "firstSeenAt": "2026-07-28T04:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2564f6560ef29e129247",
-      "title": "엔비디아 - 오픈AI , 초대형 AIDC 추진 … 최대 2500억달러 자금지원",
-      "url": "https://zdnet.co.kr/view/?no=20260728084813",
-      "domain": "zdnet.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-07-28T04:15:00Z",
-      "firstSeenAt": "2026-07-28T04:15:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1348,11 +1341,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-07-28T09:15:00Z",
-      "lastSuccessfulAt": "2026-07-28T09:46:41Z",
+      "observationDate": "2026-07-28T11:15:00Z",
+      "lastSuccessfulAt": "2026-07-28T12:12:02Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 200 returned records across 4/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
