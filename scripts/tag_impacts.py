@@ -38,6 +38,12 @@ MODEL = "claude-haiku-4-5"
 SCHEMA_VERSION = 2
 MAX_ATTEMPTS = 3
 PRUNE_DAYS = 7
+# Hard cap on shipped ledger size. The 7-day prune alone let impact-tags.json
+# grow past the static-site byte budget as daily headline volume rose; keeping
+# the newest MAX_LEDGER_ITEMS bounds the client payload well under 400 KB even
+# once every kept item carries a note. Far above one refresh's input count, so
+# dropped rows have already aged out of the radar feed (never re-tagged).
+MAX_LEDGER_ITEMS = 360
 MAX_TOKENS = 8192
 # Token-aware chunking: cap items per model call so the response never hits the
 # output-token ceiling. A batch closes at BATCH_SIZE items OR MAX_BATCH_CHARS of
@@ -169,6 +175,24 @@ def prune_ledger(ledger: dict[str, Any], now: datetime, days: int = PRUNE_DAYS) 
         if dt is None or dt >= cutoff:
             kept.append(item)
     ledger["items"] = kept
+    return ledger
+
+
+def cap_ledger(ledger: dict[str, Any], max_items: int = MAX_LEDGER_ITEMS) -> dict[str, Any]:
+    """Bound the ledger to the ``max_items`` newest items by ``seenAt``.
+
+    Runs after prune as a size guard so the shipped ``impact-tags.json`` stays
+    under the static-site byte budget. Original ledger order is preserved; only
+    the oldest rows are dropped (an unparseable ``seenAt`` sorts oldest, so bad
+    dates go first). No-op when already within the cap.
+    """
+    items = ledger.get("items", [])
+    if len(items) <= max_items:
+        return ledger
+    oldest = datetime.min.replace(tzinfo=timezone.utc)
+    newest_first = sorted(items, key=lambda it: _parse_iso(it.get("seenAt")) or oldest, reverse=True)
+    keep = {it.get("id") for it in newest_first[:max_items]}
+    ledger["items"] = [it for it in items if it.get("id") in keep]
     return ledger
 
 
@@ -436,6 +460,7 @@ def run(*, caller: Callable[..., dict[str, Any]] = call_model, now: datetime | N
     ledger["schemaVersion"] = SCHEMA_VERSION
     ledger["model"] = MODEL
     ledger["generatedAtUtc"] = _iso(now)
+    cap_ledger(ledger)
     write_ledger(ledger)
     tagged = sum(1 for i in ledger["items"] if i.get("tagState") == "tagged")
     print(f"[tag_impacts] wrote {LEDGER_PATH.relative_to(ROOT)} ({tagged} tagged, {len(ledger['items'])} total).")

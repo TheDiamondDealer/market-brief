@@ -173,6 +173,44 @@ class LedgerHousekeepingTests(unittest.TestCase):
         pending = tagger.select_pending(ledger, [_item("capped")])
         self.assertEqual(pending, [])
 
+    def test_cap_keeps_newest_items_by_seen_at(self) -> None:
+        ledger = _empty_ledger()
+        ledger["items"] = [
+            _item("older", seen_at="2026-07-20T00:00:00Z"),
+            _item("newest", seen_at="2026-07-24T00:00:00Z"),
+            _item("oldest", seen_at="2026-07-18T00:00:00Z"),
+            _item("newer", seen_at="2026-07-23T00:00:00Z"),
+        ]
+        tagger.cap_ledger(ledger, max_items=2)
+        # keeps the two newest by seenAt, preserving original ledger order
+        self.assertEqual([i["id"] for i in ledger["items"]], ["newest", "newer"])
+
+    def test_cap_is_noop_when_within_limit(self) -> None:
+        ledger = _empty_ledger()
+        ledger["items"] = [
+            _item("a", seen_at="2026-07-24T00:00:00Z"),
+            _item("b", seen_at="2026-07-23T00:00:00Z"),
+        ]
+        tagger.cap_ledger(ledger, max_items=5)
+        self.assertEqual([i["id"] for i in ledger["items"]], ["a", "b"])
+
+    def test_cap_drops_unparseable_dates_first(self) -> None:
+        ledger = _empty_ledger()
+        ledger["items"] = [
+            _item("fresh", seen_at="2026-07-24T00:00:00Z"),
+            _item("weird", seen_at="never"),
+            _item("stale", seen_at="2026-07-10T00:00:00Z"),
+        ]
+        tagger.cap_ledger(ledger, max_items=2)
+        # an unparseable date sorts oldest, so it is dropped before real-dated rows
+        self.assertEqual({i["id"] for i in ledger["items"]}, {"fresh", "stale"})
+
+    def test_default_item_cap_is_bounded_for_the_byte_budget(self) -> None:
+        # keep the shipped ledger comfortably under the 400 KB static-audit budget
+        self.assertIsInstance(tagger.MAX_LEDGER_ITEMS, int)
+        self.assertGreaterEqual(tagger.MAX_LEDGER_ITEMS, 200)
+        self.assertLessEqual(tagger.MAX_LEDGER_ITEMS, 380)
+
 
 # --------------------------------------------------------------------------- #
 # Tagger state machine (injected fake caller)
