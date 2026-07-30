@@ -1,5 +1,18 @@
 # Regime State
 
+> **31 July 2026 amendment — VERDICT: ACUTE STAGFLATION INTACT; DISORDERLY RISK-OFF EXPRESSION FRACTURED BY INTERVENTION AND AI CONCENTRATION.**
+> - **Physical core:** Brent **$89.03** remains above $80; impaired routes, refinery outages, record product cracks and US10Y at **4.68%** preserve the supply-shock frame.
+> - **Signal invalidations:** DXY closed **99.94**, below its <100 invalidation, and USD/JPY closed **159.225**, below its <160 invalidation.
+> - **Yen:** probable official intervention repaired the weak-yen signal. A carry unwind is **not confirmed** because US equities rallied and no credit widening was verified.
+> - **Equities:** Microsoft +15.5% drove Nasdaq +2.8%, but the index at **25,122** remains below 25,900 and Apple/Amazon split after hours.
+> - **Gold:** spot **$4,110** remains below the formal $4,150 override even though August futures settled at $4,160.60.
+>
+> **Active interpretation:** remove strong-dollar and weak-yen as confirming pillars. Describe the regime as acute stagflation with policy- and AI-driven divergence, not broad disorderly liquidation.
+>
+> **Re-strengthen disorderly risk-off if:** DXY reclaims 101.5; USD/JPY reclaims 162 without intervention; Nasdaq falls with weak breadth and wider credit; or Brent reclaims $100 / US10Y exceeds 4.75%.
+>
+> **Shift toward stabilisation if:** Brent falls below $85 with repaired physical flows and US10Y below 4.45%, while DXY remains below 100 and Nasdaq closes above 26,400.
+
 > **24 July 2026 amendment — VERDICT: SHIFTED INTO ACUTE STAGFLATION / DISORDERLY RISK-OFF.** Brent closed $100.69 with tanker attacks and Gulf loading activity near 2.5mbpd over seven days versus about 6mbpd over the prior 30 days. US10Y closed 4.71% (real 10Y 2.43%), September Fed hike pricing reached 81.4%, DXY 101.47, Nasdaq 25,137.69 on weak breadth, and spot gold $4,043.14 below its bearish trigger. The two-session gold haven divergence failed; the inverse rates/dollar sign-flip is re-confirmed. Escalation: US10Y >4.75%, DXY >102 or credit deterioration. De-escalation cluster remains Brent < $76 with repaired flows, US10Y <4.45%, DXY <100 and September hike pricing <50%.
 
 ## Standing frame (13 July 2026)
