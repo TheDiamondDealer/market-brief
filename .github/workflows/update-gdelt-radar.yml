@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: update-gdelt-radar
@@ -50,3 +52,10 @@ jobs:
           git add site/data/gdelt-radar.json site/data/impact-tags.json
           git commit -m "Refresh GDELT discovery radar + impact tags"
           git push
+
+  deploy:
+    needs: refresh
+    if: ${{ needs.refresh.result == 'success' }}
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      ref: main

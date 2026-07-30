@@ -96,6 +96,18 @@ class WorkflowPublishingContractTests(unittest.TestCase):
         self.assertIn("git add site/data/gdelt-radar.json site/data/impact-tags.json", text)
         self.assertNotIn("continue-on-error: true", text)
 
+    def test_gdelt_workflow_deploys_latest_main_after_refresh(self) -> None:
+        # The GDELT collector commits impact-tags.json (the "why it matters" notes) with the
+        # default GITHUB_TOKEN, which cannot trigger deploy-pages via its push event. Like the
+        # other collectors it must chain a reusable deploy of latest main once the refresh
+        # succeeds, and grant the Pages token scopes that reusable deploy requires.
+        text = self.read("update-gdelt-radar.yml")
+        self.assertIn("pages: write", text)
+        self.assertIn("id-token: write", text)
+        self.assertIn("uses: ./.github/workflows/deploy-pages.yml", text)
+        self.assertIn("needs: refresh", text)
+        self.assertIn("ref: main", text)
+
     def test_owner_protection_checklist_names_required_check_and_bypass_risk(self) -> None:
         text = (ROOT / "docs" / "REPOSITORY-PROTECTION.md").read_text(encoding="utf-8")
         self.assertIn("offline-validation", text)
