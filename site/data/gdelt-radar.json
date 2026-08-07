@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-07T19:58:45Z",
+  "generatedAtUtc": "2026-08-07T22:54:17Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 4,
-    "rawArticleCount": 200,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-07T19:58:45Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-07T22:54:17Z",
+    "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,40 +52,43 @@
   ],
   "articles": [
     {
-      "id": "a508a0510ab4d4f3313f",
-      "title": "July heat produces flash drought with more than half of North Dakota affected - InForum | Fargo , Moorhead and West Fargo news , weather and sports",
-      "url": "https://www.inforum.com/news/north-dakota/july-heat-produces-flash-drought-with-more-than-half-of-north-dakota-affected",
-      "domain": "inforum.com",
+      "id": "1cf77afd0275e5f70dfe",
+      "title": "B2Gold surges after securing exploitation permit approval for Mali mine ( BTG : NYSE )",
+      "url": "https://seekingalpha.com/news/4629387-b2gold-granted-fekola-regional-exploitation-permit-by-mali-government",
+      "domain": "seekingalpha.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-07T19:30:00Z",
-      "firstSeenAt": "2026-08-07T19:30:00Z",
+      "seenAt": "2026-08-07T19:45:00Z",
+      "firstSeenAt": "2026-08-07T19:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 38,
+      "materialityScore": 35,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "6fb2b3db7887fd473373",
-      "title": "Russia sanctions bill passes Senate targeting Putin oil and gas",
-      "url": "https://www.foxnews.com/politics/lindsey-grahams-final-mission-punish-putin-clears-senate-after-yearlong-fight",
-      "domain": "foxnews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-07T18:00:00Z",
-      "firstSeenAt": "2026-08-07T18:00:00Z",
+      "id": "da60a8a70fcb8340ac40",
+      "title": "El empleo cae sorpresivamente en EE . UU . y aumenta la incertidumbre económica en un año electoral clave",
+      "url": "https://www.clarin.com/mundo/empleo-cae-sorpresivamente-eeuu-aumenta-incertidumbre-economica-ano-electoral-clave_0_ERZPk6Jtvl.html",
+      "domain": "clarin.com",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-08-07T22:30:00Z",
+      "firstSeenAt": "2026-08-07T22:30:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -97,7 +100,188 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 32,
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "65f88719cec929e6387b",
+      "title": "Southeast Asia Next Growth Engine Runs on AI Infrastructure , United Overseas Bank Says",
+      "url": "https://finance.yahoo.com/technology/ai/articles/southeast-asia-next-growth-engine-143030560.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-07T22:15:00Z",
+      "firstSeenAt": "2026-08-07T22:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e75ec223d6668ca997f1",
+      "title": "Nvidia ends week up more than 10 % as AI chip fears ease",
+      "url": "https://finance.yahoo.com/technology/article/nvidia-ends-week-up-more-than-10-as-ai-chip-fears-ease-205751147.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-07T22:00:00Z",
+      "firstSeenAt": "2026-08-07T22:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2fe9248097a1dbbe5737",
+      "title": "[ 주간증시전망 ] 다음주 코스피 6000~7000⋯ 外人 수급은 정책이 변수",
+      "url": "https://www.etoday.co.kr/news/view/2612219",
+      "domain": "etoday.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-07T21:30:00Z",
+      "firstSeenAt": "2026-08-07T21:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f18c4113da5f4bf9c9d4",
+      "title": "[ 베스트 _ xC6CC _ 스트 ] 삼성전자 · SK하이닉스 밀린 한 주 … 상상인증권은 85 % 급등",
+      "url": "https://www.etoday.co.kr/news/view/2612275",
+      "domain": "etoday.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-07T21:30:00Z",
+      "firstSeenAt": "2026-08-07T21:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c1b464fd471b0cf86390",
+      "title": "Macroeconomia : agenda settimanale e rilevanza dei market movers",
+      "url": "https://www.borsaitaliana.it/borsa/notizie/radiocor/finanza/dettaglio/macroeconomia-agenda-settimanale-e-rilevanza-dei-market-movers-nRC_07082026_2000_603206414.html",
+      "domain": "borsaitaliana.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-08-07T21:30:00Z",
+      "firstSeenAt": "2026-08-07T21:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d117cc2396def45091e5",
+      "title": "Yhdysvaltojen työllisyysluvut alittivat odotukset , mikä sai pörssit nousuun",
+      "url": "https://www.ess.fi/uutissuomalainen/9682761",
+      "domain": "ess.fi",
+      "language": "Finnish",
+      "sourceCountry": "Finland",
+      "seenAt": "2026-08-07T21:30:00Z",
+      "firstSeenAt": "2026-08-07T21:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "baf49a709ba17cb51166",
+      "title": "Gold miners surge more than 20 % in breakout week",
+      "url": "https://www.mining.com/gold-miners-surge-more-than-20-in-breakout-week/",
+      "domain": "mining.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-08-07T21:00:00Z",
+      "firstSeenAt": "2026-08-07T21:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -123,83 +307,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 31,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "55d836c7cdf10573661f",
-      "title": "Sobretaxa dos EUA pode impactar 36 % do volume de exportaes do Nordeste , calcula Etene",
-      "url": "https://jc.uol.com.br/economia/2026/08/07/sobretaxa-dos-eua-pode-impactar-36-do-volume-de-exportacoes-do-nordeste-calcula-etene.html",
-      "domain": "jc.uol.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-07T19:30:00Z",
-      "firstSeenAt": "2026-08-07T19:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e79342628b71e8346b26",
-      "title": "AMD to Acquire AI Chip Start - up Taalas in Bid to Challenge NVIDIA",
-      "url": "https://techstory.in/amd-to-acquire-ai-chip-start-up-taalas-in-bid-to-challenge-nvidia/",
-      "domain": "techstory.in",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-07T18:15:00Z",
-      "firstSeenAt": "2026-08-07T18:15:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7624699231f66ced8b51",
-      "title": "След натиска на Тръмп : RWE се отказва от вятърните си проекти в САЩ",
-      "url": "https://www.bgonair.bg/a/4-world/426747-sled-natiska-na-tramp-rwe-se-otkazva-ot-vyatarnite-si-proekti-v-sasht",
-      "domain": "bgonair.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-08-07T18:00:00Z",
-      "firstSeenAt": "2026-08-07T18:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
+      "materialityScore": 25,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -226,6 +334,309 @@
         "us-dollar"
       ],
       "materialityScore": 25,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3d2a99f351d61395b3c6",
+      "title": "Giá vàng chiều 6 / 8 : Giá vàng trong nước tiếp tục tăng",
+      "url": "https://voh.com.vn/gia-vang/gia-vang-chieu-68-gia-vang-trong-nuoc-tiep-tuc-tang-662471.html",
+      "domain": "voh.com.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-07T20:30:00Z",
+      "firstSeenAt": "2026-08-07T20:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6706ebbb4e46bdf6ecb0",
+      "title": "聯準會9月將升息 ？ ING ： 匯市在 「 華許與戰爭 」 之間拉鋸 | 財經 | 三立新聞網 SETN . COM",
+      "url": "https://www.setn.com/news/1885564",
+      "domain": "setn.com",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-08-07T20:30:00Z",
+      "firstSeenAt": "2026-08-07T20:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0f07992ee976dde243f2",
+      "title": "Minerales críticos y agua marchan por sendas contrarias en América Latina",
+      "url": "https://confirmado.net/minerales-criticos-y-agua-marchan-por-sendas-contrarias-en-america-latina/",
+      "domain": "confirmado.net",
+      "language": "Spanish",
+      "sourceCountry": "Ecuador",
+      "seenAt": "2026-08-07T20:00:00Z",
+      "firstSeenAt": "2026-08-07T20:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5c38f9bc5aaf0eb3b720",
+      "title": "Konžská republika vyšetruje tajomné zásielky do Číny . V exportovanom kobalte sa mal nachádzať urán",
+      "url": "https://hnonline.sk/svet/96295930-konzska-republika-vysetruje-tajomne-zasielky-do-ciny-v-exportovanom-kobalte-sa-mal-nachadzat-uran",
+      "domain": "hnonline.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-08-07T20:00:00Z",
+      "firstSeenAt": "2026-08-07T20:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5a57612290e2ab259d27",
+      "title": "Omicidio del geologo ticinese nella Repubblica Centrafricana , aperta unindagine",
+      "url": "https://www.ticinonews.ch/ticino/omicidio-del-geologo-ticinese-nella-repubblica-centrafricana-aperta-unindagine-440300",
+      "domain": "ticinonews.ch",
+      "language": "Italian",
+      "sourceCountry": "Switzerland",
+      "seenAt": "2026-08-07T20:00:00Z",
+      "firstSeenAt": "2026-08-07T20:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fca4a2c74b4888f092b9",
+      "title": "Chile Inflation Falls to 3 . 5 % as Fuel Prices Drop",
+      "url": "https://www.riotimesonline.com/chile-inflation-july-2026-35-percent/",
+      "domain": "riotimesonline.com",
+      "language": "English",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-08-07T19:45:00Z",
+      "firstSeenAt": "2026-08-07T19:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4ac7a21618808fc056e9",
+      "title": "Colombia ingresa en una nueva era política : qué cambios propone Abelardo De la Espriella en la economía",
+      "url": "https://www.ambito.com/economia/colombia-ingresa-una-nueva-era-politica-que-cambios-propone-abelardo-la-espriella-la-n6308318",
+      "domain": "ambito.com",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-08-07T19:45:00Z",
+      "firstSeenAt": "2026-08-07T19:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9738cd21d9e91aa0f4af",
+      "title": "El Banco Central advirtió que si se estira la guerra en Medio Oriente podría ser un riesgo para la economía argentina",
+      "url": "https://www.mdzol.com/dinero/el-banco-central-advirtio-que-si-se-estira-la-guerra-medio-oriente-podria-ser-un-riesgo-la-economia-argentina-n1581736",
+      "domain": "mdzol.com",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-08-07T19:45:00Z",
+      "firstSeenAt": "2026-08-07T19:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "82ad9b58c2e142174d55",
+      "title": "KDR prešetrí správy o prítomnosti uránu v zásielkach kobaltu pre Čínu",
+      "url": "https://www.teraz.sk/zahranicie/kdr-presetri-spravy-o-pritomnosti-ur/983555-clanok.html",
+      "domain": "teraz.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-08-07T18:45:00Z",
+      "firstSeenAt": "2026-08-07T18:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e79342628b71e8346b26",
+      "title": "AMD to Acquire AI Chip Start - up Taalas in Bid to Challenge NVIDIA",
+      "url": "https://techstory.in/amd-to-acquire-ai-chip-start-up-taalas-in-bid-to-challenge-nvidia/",
+      "domain": "techstory.in",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-07T18:15:00Z",
+      "firstSeenAt": "2026-08-07T18:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0068c757b800c046db48",
+      "title": "Canadá amplia los permisos para extraer oro y plata en Marruecos",
+      "url": "https://www.larazon.es/economia/canada-amplia-permisos-extraer-oro-plata-marruecos_202608076a761069a046ad6ebca4238f.html",
+      "domain": "larazon.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-08-07T18:00:00Z",
+      "firstSeenAt": "2026-08-07T18:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -309,32 +720,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "7da618a675fb2f11e426",
-      "title": "2 . 800 millones de dólares , cuatro pozos submarinos y un objetivo : convertir a Chipre en el próximo proveedor de gas de Europa",
-      "url": "https://www.xataka.com/energia/2-800-millones-dolares-cuatro-pozos-submarinos-objetivo-convertir-a-chipre-proximo-proveedor-gas-europa",
-      "domain": "xataka.com",
-      "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-08-07T17:45:00Z",
-      "firstSeenAt": "2026-08-07T17:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "273fb9e10f7af072d465",
       "title": "Could Taiwan Semiconductor Manufacturing ( TSM ) Be the Most Critical Bottleneck in the AI Chip Boom ?",
       "url": "https://www.insidermonkey.com/blog/could-taiwan-semiconductor-tsm-be-the-most-critical-bottleneck-in-the-ai-chip-boom-1808105/",
@@ -385,110 +770,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "ed0d0796fd48a59ca79c",
-      "title": "Ceny zbóż nadal stoją w miejscu . Rolnicy czekają , a skupy walczą o konsumpcję",
-      "url": "https://www.farmer.pl/produkcja-roslinna/ceny-zboz-nadal-stoja-w-miejscu-rolnicy-czekaja-a-skupy-walcza-o-konsumpcje,181527.html",
-      "domain": "farmer.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-08-07T17:30:00Z",
-      "firstSeenAt": "2026-08-07T17:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4c1c9f9e32f9ec9c19a3",
-      "title": "Żniwa 2026 w Wielkopolsce . Sprawdzamy plony i ceny za zboża i rzepak",
-      "url": "https://www.farmer.pl/produkcja-roslinna/zboza/zniwa-2026-w-wielkopolsce-sprawdzamy-plony-i-ceny-za-zboza-i-rzepak,181580.html",
-      "domain": "farmer.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-08-07T17:30:00Z",
-      "firstSeenAt": "2026-08-07T17:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b96060238e894bc12499",
-      "title": "Żniwa 2026 . GUS mówi o spadkach , rolnicy pokazują skalę strat . „ Nie ma opłacalności",
-      "url": "https://www.farmer.pl/produkcja-roslinna/zniwa-2026-gus-mowi-o-spadkach-rolnicy-pokazuja-skale-strat-nie-ma-oplacalnosci,181576.html",
-      "domain": "farmer.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-08-07T17:30:00Z",
-      "firstSeenAt": "2026-08-07T17:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8d54116e9edeeea1eff5",
-      "title": "河北邯郸曲周县科技小院助力农业增效 帮乡亲们把好收成变为好收益",
-      "url": "https://news.cau.edu.cn/mtndnew/2bd098fc71164ec083bc2e38ba2313f9.htm",
-      "domain": "news.cau.edu.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-07T17:30:00Z",
-      "firstSeenAt": "2026-08-07T17:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "98f83ad2302d63c88eb0",
       "title": "Parliament panel seeks deeper India - US collaboration in AI , quantum tech , semiconductors to boost economic growth",
       "url": "https://www.moneycontrol.com/news/business/economy/parliament-panel-seeks-deeper-india-us-collaboration-in-ai-quantum-tech-semiconductors-to-boost-economic-growth-13998379.html",
@@ -514,50 +795,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "1a1e467be29650bc2a41",
-      "title": "ANF | FAO : Küresel gıda fiyatları temmuz ayında yükseldi",
-      "url": "https://anf-news.com/dunya/fao-kuresel-gida-fiyatlari-temmuz-ayinda-yukseldi-231830",
-      "domain": "anf-news.com",
-      "language": "Turkish",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-08-07T17:15:00Z",
-      "firstSeenAt": "2026-08-07T17:15:00Z",
+      "id": "71c211c46bb67a525b7b",
+      "title": "Usa : rapporto occupazione debole , ma Fed guardera linflazione prima di decidere sui tassi",
+      "url": "https://www.borsaitaliana.it/borsa/notizie/radiocor/economia/dettaglio/usa-rapporto-occupazione-debole-ma-fed-guardera--l-inflazione-prima-di-decidere-sui-tassi-nRC_07082026_1841_526964703.html",
+      "domain": "borsaitaliana.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-08-07T17:30:00Z",
+      "firstSeenAt": "2026-08-07T17:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a11c7222c59faec90906",
-      "title": "Canicules et sécheresse : un été de pertes et de désespoir pour lagriculture - 07 / 08 / 2026 à 17 : 59",
-      "url": "https://www.boursorama.com/actualite-economique/actualites/canicules-et-secheresse-un-ete-de-pertes-et-de-desespoir-pour-l-agriculture-1b811dbaa9166539cb46d339409c31ca",
-      "domain": "boursorama.com",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-07T17:15:00Z",
-      "firstSeenAt": "2026-08-07T17:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -585,7 +840,36 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b36cdd6561f05fc75187",
+      "title": "DRC probes how 5 , 000 tonnes of uranium leaked into cobalt exports",
+      "url": "https://www.mining.com/drc-probes-how-5000-tonnes-of-uranium-leaked-into-cobalt-exports/",
+      "domain": "mining.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-08-07T16:30:00Z",
+      "firstSeenAt": "2026-08-07T16:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -610,160 +894,65 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "3a0a7d343eb41acbceab",
-      "title": "Τρόφιμα : Σε υψηλό τριετίας οι τιμές παγκοσμίως – Καύσωνες και πόλεμοι αυξάνουν το κόστος των καλλιεργειών",
-      "url": "https://www.inewsgr.com/351/trofima-se-ypsilo-trietias-oi-times-pagkosmios--kafsones-kai-polemoi-afxanoun-to-kostos-ton-kalliergeion.htm",
-      "domain": "inewsgr.com",
-      "language": "Greek",
-      "sourceCountry": "Greece",
+      "id": "b82655f9646ae075ba84",
+      "title": "Il piccolo cubo che contiene il mondo",
+      "url": "https://www.rsi.ch/cultura/societa/Il-piccolo-cubo-che-contiene-il-mondo--3929811.html",
+      "domain": "rsi.ch",
+      "language": "Italian",
+      "sourceCountry": "Switzerland",
       "seenAt": "2026-08-07T16:15:00Z",
       "firstSeenAt": "2026-08-07T16:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "6f7711bb7fb239abd875",
-      "title": "Жара и война : мировые цены на продовольствие бьют рекорды",
-      "url": "https://haqqin.az/newsarchive/390312",
-      "domain": "haqqin.az",
-      "language": "Russian",
-      "sourceCountry": "Azerbaijan",
+      "id": "9e146294b0e375c0c7a6",
+      "title": "Склад смартфона – які метали містить гаджет та навіщо їх переробляти",
+      "url": "https://24tv.ua/tech/sklad-smartfona-yaki-metali-mistit-gadzhet-navishho-yih-pereroblyati_n3119477",
+      "domain": "24tv.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
       "seenAt": "2026-08-07T15:45:00Z",
       "firstSeenAt": "2026-08-07T15:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6ed8fac297eff08055d5",
-      "title": "Sikarutto ajoi sadat viljelijät ahtaalle – viljan ostajat kieltäytyvät ­vastaanottamasta satoa | Kymenlaakso",
-      "url": "https://yle.fi/a/74-20239891",
-      "domain": "yle.fi",
-      "language": "Finnish",
-      "sourceCountry": "Finland",
-      "seenAt": "2026-08-07T15:45:00Z",
-      "firstSeenAt": "2026-08-07T15:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "364e92b6f79647b6247f",
-      "title": "Transgaz seeks to become shareholder in US LNG terminal developer",
-      "url": "https://www.thediplomat.ro/2026/08/07/transgaz-seeks-to-become-shareholder-in-us-lng-terminal-developer/",
-      "domain": "thediplomat.ro",
-      "language": "English",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-08-07T15:45:00Z",
-      "firstSeenAt": "2026-08-07T15:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f208156df69e6d852121",
-      "title": "Италия стана най - големият вносител на втечнен природен газ в ЕС",
-      "url": "https://www.segabg.com/hot/category-economy/italiya-stana-nay-golemiyat-vnositel-na-vtechnen-priroden-gaz-es",
-      "domain": "segabg.com",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-08-07T15:15:00Z",
-      "firstSeenAt": "2026-08-07T15:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3c5b784a245ca2f89b4e",
-      "title": "Natural Gas Supply : सिलेंडर युग को बाय - बाय ! मनेंद्रगढ़ में पाइप लाइन से घर - घर पहुंच रही घरेलू नैचुरल गैस , पहला बिल देख उपभोक्ता टेंशन में | Domestic Natural Gas Is Reaching Homes Via Pipeline In Manendragarh",
-      "url": "https://www.patrika.com/koria-news/domestic-natural-gas-is-reaching-homes-via-pipeline-in-manendragarh-20814431",
-      "domain": "patrika.com",
-      "language": "Hindi",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-07T15:15:00Z",
-      "firstSeenAt": "2026-08-07T15:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -789,83 +978,36 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "1e7d87737140d50e7b11",
-      "title": "Bappenas : Kopi dan kakao sumber penghidupan jutaan keluarga Indonesia",
-      "url": "https://www.antaranews.com/berita/5685001/bappenas-kopi-dan-kakao-sumber-penghidupan-jutaan-keluarga-indonesia",
-      "domain": "antaranews.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
+      "id": "3661c5d56927fce42da0",
+      "title": "India import dependence continues to be shaped by economic growth , manufacturing base : Govt to Parl",
+      "url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/indias-import-dependence-continues-to-be-shaped-by-economic-growth-manufacturing-base-govt-to-parl/articleshow/133036581.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
       "seenAt": "2026-08-07T15:00:00Z",
       "firstSeenAt": "2026-08-07T15:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fc23e90779fafe50c6c4",
-      "title": "Οι ΗΠΑ θα πληρώσουν 1 , 2 δισ . δολάρια σε γερμανική εταιρεία για να μην εγκαταστήσει υπεράκτιο αιολικό πάρκο",
-      "url": "https://www.protothema.gr/world/article/1862116/oi-ipa-tha-plirosoun-12-dis-dolaria-se-germaniki-etaireia-gia-na-min-egatastisei-uperaktio-aioliko-parko/",
-      "domain": "protothema.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-07T15:00:00Z",
-      "firstSeenAt": "2026-08-07T15:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2db527c0d5eb6d19b864",
-      "title": "مقابل 1 . 2 مليار دولار .. RWE تنسحب من رياح أمريكا",
-      "url": "https://24.ae/article/964815/%D9%85%D9%82%D8%A7%D8%A8%D9%84-12-%D9%85%D9%84%D9%8A%D8%A7%D8%B1-%D8%AF%D9%88%D9%84%D8%A7%D8%B1-RWE-%D8%AA%D9%86%D8%B3%D8%AD%D8%A8-%D9%85%D9%86-%D8%B1%D9%8A%D8%A7%D8%AD-%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D8%A7-",
-      "domain": "24.ae",
-      "language": "Arabic",
-      "sourceCountry": "United Arab Emirates",
-      "seenAt": "2026-08-07T15:00:00Z",
-      "firstSeenAt": "2026-08-07T15:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -891,109 +1033,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "770d334443c48d249497",
-      "title": "Global food prices hit three - year high on back of conflict and extreme weather",
-      "url": "https://www.irishtimes.com/business/farming-food/2026/08/07/global-food-prices-hit-three-year-high-on-back-of-conflict-and-extreme-weather/",
-      "domain": "irishtimes.com",
-      "language": "English",
-      "sourceCountry": "Ireland",
-      "seenAt": "2026-08-07T14:45:00Z",
-      "firstSeenAt": "2026-08-07T14:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "db32b78a1a25fe5bbfd9",
-      "title": "Canicules : la récolte française de maïs tombe à son plus bas niveau depuis 1980",
-      "url": "https://www.lefigaro.fr/conjoncture/canicules-la-recolte-francaise-de-mais-tombe-a-son-plus-bas-niveau-depuis-1980-20260807",
-      "domain": "lefigaro.fr",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-07T14:45:00Z",
-      "firstSeenAt": "2026-08-07T14:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5427f3a0cb86bb658556",
-      "title": "RGC Resources Q3 Earnings Call Highlights",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/rgc-resources-q3-earnings-call-140430912.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-07T14:45:00Z",
-      "firstSeenAt": "2026-08-07T14:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6b41ed19e79a050fe2e4",
-      "title": "Saipem avanza sul maxi progetto Rovuma Lng in Mozambico . Firmata una lettera di intenti da 32 milioni con ExxonMobil",
-      "url": "https://www.milanofinanza.it/news/saipem-avanza-sul-maxi-progetto-rovuma-lng-in-mozambico-firmata-una-lettera-di-intenti-da-32-milioni-202608071620036724",
-      "domain": "milanofinanza.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-08-07T14:45:00Z",
-      "firstSeenAt": "2026-08-07T14:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1018,7 +1058,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1043,7 +1083,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1069,83 +1109,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1cdb39ea00bbe9db0919",
-      "title": "La production française de maïs attendue au plus bas depuis 1980 - 07 / 08 / 2026 à 15 : 51",
-      "url": "https://www.boursorama.com/actualite-economique/actualites/la-production-francaise-de-mais-attendue-au-plus-bas-depuis-1980-afe660bb24ed07104108be0412fabb2c",
-      "domain": "boursorama.com",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-07T14:30:00Z",
-      "firstSeenAt": "2026-08-07T14:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "250603996095abe8ecfb",
-      "title": "Най - големият вносител на втечнен природен газ в ЕС е Италия",
-      "url": "https://duma.bg/nay-golemiyat-vnositel-na-vtechnen-priroden-gaz-v-es-e-italiya-n323737",
-      "domain": "duma.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-08-07T14:30:00Z",
-      "firstSeenAt": "2026-08-07T14:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "52c14dc4330ba90f8f7a",
-      "title": "У Баку заявили про готовність постачати газ до України",
-      "url": "https://www.bagnet.org/news/economics/1401963/u-baku-zayavili-pro-gotovnist-postachati-gaz-do-ukrayini",
-      "domain": "bagnet.org",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-07T14:30:00Z",
-      "firstSeenAt": "2026-08-07T14:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1170,105 +1134,193 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "d57e727b36cc1aae6c96",
-      "title": "Санкции , инвестиции и Каспий : почему без Баку не обойтись ни Анкаре , ни Брюсселю",
-      "url": "https://zerkalo.az/sanktsii-investitsii-i-kaspij-pochemu-bez-baku-ne-obojtis-ni-ankare-ni-bryusselyu/",
-      "domain": "zerkalo.az",
-      "language": "Russian",
-      "sourceCountry": "Azerbaijan",
-      "seenAt": "2026-08-07T14:15:00Z",
-      "firstSeenAt": "2026-08-07T14:15:00Z",
+      "id": "431076362e4109df8a69",
+      "title": "Chênh lệch giá vàng giảm mạnh còn dưới 5 triệu / lượng",
+      "url": "https://thanhnien.vn/chenh-lech-gia-vang-giam-manh-con-duoi-5-trieu-luong-185260807172125492.htm",
+      "domain": "thanhnien.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-07T14:00:00Z",
+      "firstSeenAt": "2026-08-07T14:00:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "3ab17204bd798b97f20b",
-      "title": "Govt to procure one LNG cargo from Aramco Trading Singapore",
-      "url": "https://www.bssnews.net/news/412560",
-      "domain": "bssnews.net",
-      "language": "English",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-08-07T14:15:00Z",
-      "firstSeenAt": "2026-08-07T14:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e40085d60b3c34d49a2f",
-      "title": "UAE Adnoc expands tanker fleet in $1 . 3bn deal",
-      "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2862450-uae-s-adnoc-expands-tanker-fleet-in-1.3bn-deal",
-      "domain": "argusmedia.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-07T14:15:00Z",
-      "firstSeenAt": "2026-08-07T14:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d1a7ee4d696a769c7607",
-      "title": "India rolls out $2 . 5 billion compressed biogas program",
-      "url": "http://www.indiagazette.com/news/279226297/india-rolls-out-25-billion-compressed-biogas-program",
-      "domain": "indiagazette.com",
-      "language": "English",
-      "sourceCountry": "India",
+      "id": "809b63105307fced5a86",
+      "title": "Bumech uruchamia ścianę wydobywczą w kopalni Silesia",
+      "url": "https://nettg.pl/bumech-uruchamia-sciane-wydobywcza-w-kopalni-silesia",
+      "domain": "nettg.pl",
+      "language": "Polish",
+      "sourceCountry": "Poland",
       "seenAt": "2026-08-07T13:45:00Z",
       "firstSeenAt": "2026-08-07T13:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "06839141883b9c3fd57d",
+      "title": "Rozmowa netTG . pl - odcinek 46 - prof . Jan Kozak , Instytut …",
+      "url": "https://nettg.pl/rozmowa-nettg-pl-odcinek-46-prof-jan-kozak-instytut-lukasiewicz-ai",
+      "domain": "nettg.pl",
+      "language": "Polish",
+      "sourceCountry": "Poland",
+      "seenAt": "2026-08-07T13:45:00Z",
+      "firstSeenAt": "2026-08-07T13:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "982f8bd3b90296b83a2e",
+      "title": "SK하이닉스 , 용인 · 청주 팹에 54조 투자 … 수요 선제 대응",
+      "url": "https://www.munhwa.com:443/article/11608087",
+      "domain": "munhwa.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-08-07T13:45:00Z",
+      "firstSeenAt": "2026-08-07T13:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b5f1d7905cc3c5fe612e",
+      "title": "Bajan combustibles , pero suben el pollo y el arroz",
+      "url": "https://hoy.com.do/economia/bajan-combustibles-suben-pollo-arroz_1097874.html",
+      "domain": "hoy.com.do",
+      "language": "Spanish",
+      "sourceCountry": "Dominican Republic",
+      "seenAt": "2026-08-07T13:45:00Z",
+      "firstSeenAt": "2026-08-07T13:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5aad7a5d159ee9ee5265",
+      "title": "SK hynix commits USD 39 . 42 billion to expand AI memory chip fabs",
+      "url": "https://aninews.in/news/business/sk-hynix-commits-usd-3942-billion-to-expand-ai-memory-chip-fabs20260807173745/",
+      "domain": "aninews.in",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-07T13:30:00Z",
+      "firstSeenAt": "2026-08-07T13:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3488bf6757c9f7cff5aa",
+      "title": "Узбекистан наращивает мощности ИИ : страна намерена войти в число мировых лидеров - Новости Узбекистана сегодня : nuz . uz",
+      "url": "https://nuz.uz/2026/08/07/uzbekistan-narashhivaet-moshhnosti-ii-strana-namerena-vojti-v-chislo-mirovyh-liderov/",
+      "domain": "nuz.uz",
+      "language": "Russian",
+      "sourceCountry": "Uzbekistan",
+      "seenAt": "2026-08-07T13:30:00Z",
+      "firstSeenAt": "2026-08-07T13:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1282,11 +1334,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-07T19:30:00Z",
-      "lastSuccessfulAt": "2026-08-07T19:58:45Z",
+      "observationDate": "2026-08-07T22:30:00Z",
+      "lastSuccessfulAt": "2026-08-07T22:54:17Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 200 returned records across 4/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
+      "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
