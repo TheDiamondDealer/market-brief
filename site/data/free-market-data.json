@@ -1,6 +1,6 @@
 {
-  "generatedAt": "8 August 2026, 7:59 AM AEST",
-  "generatedAtUtc": "2026-08-07T21:59:02+00:00",
+  "generatedAt": "8 August 2026, 1:41 PM AEST",
+  "generatedAtUtc": "2026-08-08T03:41:54+00:00",
   "rates": [
     {
       "id": "DGS2",
@@ -1164,7 +1164,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "BITCOIN - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -2887,23 +2887,17 @@
       "name": "Canadian Dollar",
       "market": "CANADIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
       "category": "Leveraged funds",
-      "reportDate": "2026-07-28",
-      "long": 26391,
-      "short": 128886,
-      "net": -102495,
-      "weekChange": -4118,
-      "fourWeekChange": -14394,
-      "openInterest": 372447,
-      "netPercentile5y": 1.2,
+      "reportDate": "2026-08-04",
+      "long": 24786,
+      "short": 126534,
+      "net": -101748,
+      "weekChange": 747,
+      "fourWeekChange": -15791,
+      "openInterest": 365083,
+      "netPercentile5y": 1.5,
       "crowding": "Crowded short",
       "historyCount": 260,
       "history52": [
-        {
-          "date": "2025-08-05",
-          "long": 21819,
-          "short": 51711,
-          "net": -29892
-        },
         {
           "date": "2025-08-12",
           "long": 20286,
@@ -3209,6 +3203,12 @@
           "long": 26391,
           "short": 128886,
           "net": -102495
+        },
+        {
+          "date": "2026-08-04",
+          "long": 24786,
+          "short": 126534,
+          "net": -101748
         }
       ],
       "source": "CFTC Commitments of Traders",
@@ -3222,7 +3222,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "CANADIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "stale-retained",
+      "dataState": "current",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -6652,7 +6652,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "MEXICAN PESO - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -14549,23 +14549,17 @@
       "name": "Soybeans",
       "market": "SOYBEANS - CHICAGO BOARD OF TRADE",
       "category": "Managed money",
-      "reportDate": "2026-07-28",
-      "long": 199637,
-      "short": 39158,
-      "net": 160479,
-      "weekChange": 29974,
-      "fourWeekChange": 122330,
-      "openInterest": 1020108,
-      "netPercentile5y": 86.5,
+      "reportDate": "2026-08-04",
+      "long": 179499,
+      "short": 46975,
+      "net": 132524,
+      "weekChange": -27955,
+      "fourWeekChange": 62945,
+      "openInterest": 990408,
+      "netPercentile5y": 78.8,
       "crowding": "Elevated long",
       "historyCount": 260,
       "history52": [
-        {
-          "date": "2025-08-05",
-          "long": 99566,
-          "short": 153160,
-          "net": -53594
-        },
         {
           "date": "2025-08-12",
           "long": 99633,
@@ -14871,6 +14865,12 @@
           "long": 199637,
           "short": 39158,
           "net": 160479
+        },
+        {
+          "date": "2026-08-04",
+          "long": 179499,
+          "short": 46975,
+          "net": 132524
         }
       ],
       "source": "CFTC Commitments of Traders",
@@ -14884,7 +14884,7 @@
         "exchange": "CHICAGO BOARD OF TRADE",
         "marketName": "SOYBEANS - CHICAGO BOARD OF TRADE"
       },
-      "dataState": "stale-retained",
+      "dataState": "current",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -15584,7 +15584,7 @@
     {
       "source": "CFTC Commitments of Traders",
       "status": "partial",
-      "detail": "british-pound: <urlopen error _ssl.c:993: The handshake operation timed out>; canadian-dollar: The read operation timed out; soybeans: <urlopen error [Errno 104] Connection reset by peer> Retained previously verified rows for: british-pound, canadian-dollar, soybeans.",
+      "detail": "british-pound: The read operation timed out; bitcoin-cme: The read operation timed out; mexican-peso: The read operation timed out Retained previously verified rows for: british-pound, bitcoin-cme, mexican-peso.",
       "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
     }
   ],
