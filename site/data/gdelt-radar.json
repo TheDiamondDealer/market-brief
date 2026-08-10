@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-10T18:01:46Z",
+  "generatedAtUtc": "2026-08-10T20:02:17Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-10T18:01:46Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-10T20:02:17Z",
+    "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,58 +52,6 @@
   ],
   "articles": [
     {
-      "id": "9aeb419bea4e722631d6",
-      "title": "Pourquoi lexplosion des coûts de liPhone 18 Pro va bouleverser ...",
-      "url": "https://www.zdnet.fr/actualites/pourquoi-lexplosion-des-couts-de-liphone-18-pro-va-bouleverser-le-marche-mobile-499541.htm",
-      "domain": "zdnet.fr",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-10T16:30:00Z",
-      "firstSeenAt": "2026-08-10T16:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 40,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "24b774b61587ee3f8c26",
-      "title": "Rate hike pressure eased by slowdown | The Manila Times",
-      "url": "https://www.manilatimes.net/2026/08/11/business/top-business/rate-hike-pressure-eased-by-slowdown/2402280",
-      "domain": "manilatimes.net",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-08-10T16:45:00Z",
-      "firstSeenAt": "2026-08-10T16:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 37,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "d0f14bf61316c1167736",
       "title": "Intel files $15 billion stock offering to fund AI infrastructure expansion",
       "url": "https://timesofindia.indiatimes.com/technology/tech-news/intel-files-15-billion-stock-offering-to-fund-ai-infrastructure-expansion/articleshow/133118947.cms",
@@ -122,7 +70,293 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 33,
+      "materialityScore": 27,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "153f6af8acd2aeaababe",
+      "title": "No change in fuel prices for Aug 11",
+      "url": "https://tribune.com.pk/story/2623134/no-change-in-fuel-prices-for-aug-11",
+      "domain": "tribune.com.pk",
+      "language": "English",
+      "sourceCountry": "Pakistan",
+      "seenAt": "2026-08-10T19:45:00Z",
+      "firstSeenAt": "2026-08-10T19:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1e1f457441b32398cb71",
+      "title": "Intel announces $15B share sale to fund AI buildout",
+      "url": "https://www.dailysabah.com/business/tech/intel-announces-15b-share-sale-to-fund-ai-buildout",
+      "domain": "dailysabah.com",
+      "language": "English",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-10T19:15:00Z",
+      "firstSeenAt": "2026-08-10T19:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "773a50939ff4409722d4",
+      "title": "ЕС остается крупнейшим покупателем российского газа , пишет CREA",
+      "url": "https://ria.ru/20260810/es-2110092621.html",
+      "domain": "ria.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-10T19:15:00Z",
+      "firstSeenAt": "2026-08-10T19:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "089b159a7b9c2abe47eb",
+      "title": "MP Materials ( MP ) Stock Is Rising Today : What Behind the Rally in Rare Earth Stocks ?",
+      "url": "https://247wallst.com/investing/2026/08/10/mp-materials-mp-stock-is-rising-today-whats-behind-the-rally-in-rare-earth-stocks/",
+      "domain": "247wallst.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T19:00:00Z",
+      "firstSeenAt": "2026-08-10T19:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6efd801805b044b12bf1",
+      "title": "MDN Energy Stories of Interest : Mon , Aug 10 , 2026 - Marcellus Drilling News",
+      "url": "https://marcellusdrilling.com/2026/08/mdns-energy-stories-of-interest-mon-aug-10-2026/",
+      "domain": "marcellusdrilling.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T19:00:00Z",
+      "firstSeenAt": "2026-08-10T19:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b823ffe8f3465af5da98",
+      "title": "У липні видобуток нафти в ОПЕК зростав завдяки країнам Перської затоки",
+      "url": "https://epravda.com.ua/energetika/u-lipni-vidobutok-nafti-v-opek-zrostav-zavdyaki-krajinam-perskoji-zatoki-824498/",
+      "domain": "epravda.com.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-08-10T19:00:00Z",
+      "firstSeenAt": "2026-08-10T19:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f557b1f70892af6cd994",
+      "title": "American Resources CEO joins Trump - hosted mining roundtable in Washington",
+      "url": "https://www.proactiveinvestors.com/companies/news/1096806/american-resources-ceo-joins-trump-hosted-mining-roundtable-in-washington-1096806.html",
+      "domain": "proactiveinvestors.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T18:15:00Z",
+      "firstSeenAt": "2026-08-10T18:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1f17772c63bf95a52166",
+      "title": "Spanien kauft so viel russisches Gas wie nie",
+      "url": "https://www.hna.de/wirtschaft/gas-wie-nie-spanien-kauft-so-viel-russisches-zr-94435188.html",
+      "domain": "hna.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-10T18:15:00Z",
+      "firstSeenAt": "2026-08-10T18:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8d2b5ec53f4ef99876ae",
+      "title": "Spanien kauft so viel russisches Gas wie nie",
+      "url": "http://www.soester-anzeiger.de/wirtschaft/gas-wie-nie-spanien-kauft-so-viel-russisches-zr-94435188.html",
+      "domain": "soester-anzeiger.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-10T18:15:00Z",
+      "firstSeenAt": "2026-08-10T18:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "88717ef07d81d15ace9a",
+      "title": "trump kept pushing bill imposing 100 tariffs what india preparing import next from russia",
+      "url": "https://www.prabhasakshi.com/business/trump-kept-pushing-bill-imposing-100-tariffs-what-india-preparing-import-next-from-russia",
+      "domain": "prabhasakshi.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-10T11:00:00Z",
+      "firstSeenAt": "2026-08-10T11:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 24,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -147,7 +381,119 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 27,
+      "materialityScore": 21,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "68d259e4d59d83786d91",
+      "title": "갈때까지 갔네 애플 , CXMT 칩 시험적용 … 삼전 · 닉스 단기 영향은 미미",
+      "url": "https://www.munhwa.com:443/article/11608552",
+      "domain": "munhwa.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-08-10T18:00:00Z",
+      "firstSeenAt": "2026-08-10T18:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9e183c6bbc8e04731473",
+      "title": "Spanien kauft so viel russisches Gas wie nie",
+      "url": "http://www.merkur.de/wirtschaft/gas-wie-nie-spanien-kauft-so-viel-russisches-zr-94435188.html",
+      "domain": "merkur.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-10T17:45:00Z",
+      "firstSeenAt": "2026-08-10T17:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ed03014b0cfd0d4d68fe",
+      "title": "Promising Mining Stocks To Consider – August 10th",
+      "url": "https://www.tickerreport.com/banking-finance/13537679/promising-mining-stocks-to-consider-august-10th.html",
+      "domain": "tickerreport.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T17:30:00Z",
+      "firstSeenAt": "2026-08-10T17:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b890e34d51e4b96d6099",
+      "title": "유가 , 호르무즈 불확실성에 급등 … 美비축유는 43년來 최저",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=01502246645546336&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-10T17:15:00Z",
+      "firstSeenAt": "2026-08-10T17:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -172,7 +518,94 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "89a1cbdb8b88375799fb",
+      "title": "« Россия зарабатывает € 60 млн в день »: в Германии возмутились огромным выплатам Кремлю от EС",
+      "url": "https://abnews.ru/news/2026/8/10/rossiya-zarabatyvaet-e-60-mln-v-den-v-germanii-vozmutilis-ogromnym-vyplatam-kremlyu-ot-es",
+      "domain": "abnews.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-10T17:00:00Z",
+      "firstSeenAt": "2026-08-10T17:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e0f0276a0a6d366d7a00",
+      "title": "Goldman Sachs anticipa otra suba del oro hasta fin de año : por qué es clave para la Argentina",
+      "url": "https://www.ambito.com/finanzas/goldman-sachs-anticipa-otra-suba-del-oro-fin-ano-que-es-clave-la-argentina-n6308938",
+      "domain": "ambito.com",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-08-10T16:45:00Z",
+      "firstSeenAt": "2026-08-10T16:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "11753a4a7bb42b78610f",
+      "title": "U . S . Bets $400 Million on Australian Scandium Miner to Break China Grip",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Bets-400-Million-on-Australian-Scandium-Miner-to-Break-Chinas-Grip.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T16:45:00Z",
+      "firstSeenAt": "2026-08-10T16:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -197,60 +630,123 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "82fbbb4646adc0256e1a",
-      "title": "Gold could reclaim $5 , 000 / oz in two years , prices could gain 9 % in 2026 - Catalyst Fund Miller",
-      "url": "http://www.kitco.com/news/article/2026-08-10/gold-could-reclaim-5000oz-two-years-prices-could-gain-9-2026-catalyst-funds",
-      "domain": "kitco.com",
+      "id": "738aab61688462801cd4",
+      "title": "Energy Sector Rotation and Falling Oil Prices Pressure TotalEnergies SE ( TTE )",
+      "url": "https://finance.yahoo.com/energy/articles/energy-sector-rotation-falling-oil-161152521.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
-      "sourceCountry": "China",
+      "sourceCountry": "United States",
       "seenAt": "2026-08-10T16:45:00Z",
       "firstSeenAt": "2026-08-10T16:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "gold",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "6e69c1c7af2442e25ba6",
-      "title": "US stocks dip ahead of key inflation data",
-      "url": "https://www.freemalaysiatoday.com/category/business/2026/08/10/us-stocks-dip-ahead-of-key-inflation-data",
+      "id": "8958cd56d1635ec94f0c",
+      "title": "ANI : Индия расширила число поставщиков нефти с 27 до 41 страны",
+      "url": "https://life.ru/p/1910247",
+      "domain": "life.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-10T16:45:00Z",
+      "firstSeenAt": "2026-08-10T16:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6eed417986911f896954",
+      "title": "Europe wary as gas stocks languish at lows while winter looms",
+      "url": "https://www.freemalaysiatoday.com/category/world/2026/08/10/europe-wary-as-gas-stocks-languish-at-lows-while-winter-looms",
       "domain": "freemalaysiatoday.com",
       "language": "English",
       "sourceCountry": "Malaysia",
       "seenAt": "2026-08-10T16:45:00Z",
       "firstSeenAt": "2026-08-10T16:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f4b988620b533ddcd969",
+      "title": "Russia Rebuilds Nuclear Workforce at Iran Bushehr Plant",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Russia-Rebuilds-Nuclear-Workforce-at-Irans-Bushehr-Plant.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T16:45:00Z",
+      "firstSeenAt": "2026-08-10T16:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -275,7 +771,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -300,57 +796,34 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "b864509cad756304a87f",
-      "title": "Global Market |Bank of Japan signals vigilance on Yen weakness , keeps door open for rate hikes",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-bank-of-japan-signals-vigilance-on-yen-weakness-keeps-door-open-for-rate-hikes/articleshow/133094512.cms",
-      "domain": "economictimes.indiatimes.com",
+      "id": "988a323675c0e638dbb2",
+      "title": "Iran changed the rules in Hormuz . The Gulf is changing the rules for Iran",
+      "url": "https://www.aljazeera.com/opinions/2026/8/10/iran-changed-the-rules-in-hormuz-the-gulf-is-changing-the-rules-for-iran",
+      "domain": "aljazeera.com",
       "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-10T10:15:00Z",
-      "firstSeenAt": "2026-08-10T10:15:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T16:00:00Z",
+      "firstSeenAt": "2026-08-10T16:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "26bf5c21bfd82a538b22",
-      "title": "BC estuda medidas para evitar ofensas e ameaças no Pix",
-      "url": "https://www.otempo.com.br/economia/2026/8/10/bc-estuda-medida-para-inibir-ofensas-e-ameacas-em-mensagens-nas-transacoes-via-pix",
-      "domain": "otempo.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-10T15:45:00Z",
-      "firstSeenAt": "2026-08-10T15:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -359,23 +832,85 @@
       "duplicateCount": 1
     },
     {
-      "id": "2c09ab38aa6b7f91d5a4",
-      "title": "The AI Memory Shortage Could Make These 4 Stocks Winners",
-      "url": "https://investorplace.com/hypergrowthinvesting/2026/08/the-ai-memory-shortage-could-make-these-4-stocks-winners/",
-      "domain": "investorplace.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-10T15:30:00Z",
-      "firstSeenAt": "2026-08-10T15:30:00Z",
+      "id": "b174a2bfefeff0715191",
+      "title": "扬威全国传统武术公开赛 ， 连城拳健儿勇揽11金13银1铜 - 连城",
+      "url": "http://ly.fjsen.com/2026-08/10/content_32233470.htm",
+      "domain": "ly.fjsen.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-10T15:45:00Z",
+      "firstSeenAt": "2026-08-10T15:45:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d7d18056281adac82940",
+      "title": "UAE oil company announces new investments to bypass Hormuz",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/uae-oil-company-announces-new-investments-bypass-hormuz",
+      "domain": "middleeasteye.net",
+      "language": "English",
+      "sourceCountry": "Israel",
+      "seenAt": "2026-08-10T15:45:00Z",
+      "firstSeenAt": "2026-08-10T15:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "438162adb58c714f6eb9",
+      "title": "Газовите запаси в Европа са на най - ниското си ниво от 2021 г . ᐉ Новини от Fakti . bg - Свят",
+      "url": "https://fakti.bg/world/1073539-gazovite-zapasi-v-evropa-sa-na-nai-niskoto-si-nivo-ot-2021-g",
+      "domain": "fakti.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-08-10T15:45:00Z",
+      "firstSeenAt": "2026-08-10T15:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -409,24 +944,85 @@
       "duplicateCount": 1
     },
     {
-      "id": "3754d71e964c4dfbd76e",
-      "title": "BNR se așteaptă la o scădere puternică a inflației în trimestrul al treilea . Economia rămâne , însă , în dificultate",
-      "url": "https://click.ro/actualitate/national/bnr-se-asteapta-la-o-scadere-puternica-a-inflatiei-2548894.html",
-      "domain": "click.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
+      "id": "c545713e81c18f33a2f2",
+      "title": "Страна БРИКС нашла еще почти полтора десятка новых поставщиков нефти",
+      "url": "https://lenta.ru/news/2026/08/10/strana-briks-nashla-esche-pochti-poltora-desyatka-novyh-postavschikov-nefti/",
+      "domain": "lenta.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
       "seenAt": "2026-08-10T15:15:00Z",
       "firstSeenAt": "2026-08-10T15:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "49648f7eb4b84627eb96",
+      "title": "ОД АРМИЈА НА ТЕРЕН ДО АЛТЕРНАТИВНИ ПАТИШТА ЗА ГАС : Како Балтикот и Полска се спремаат за најлошото",
+      "url": "https://vecer.mk/svet/d3ab5e83-6d83-43a6-b4e2-10256b7ee070-1",
+      "domain": "vecer.mk",
+      "language": "Macedonian",
+      "sourceCountry": "Macedonia",
+      "seenAt": "2026-08-10T15:15:00Z",
+      "firstSeenAt": "2026-08-10T15:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "418959fb5e9466be9869",
+      "title": "锂电产业链最严重分化 ： 上游暴跌三成 ， 中游暴涨三倍 - 虎嗅网",
+      "url": "https://www.huxiu.com/article/4882088.html",
+      "domain": "huxiu.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-10T14:45:00Z",
+      "firstSeenAt": "2026-08-10T14:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -460,24 +1056,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "e7bc29147ba806aa0f0b",
-      "title": "« المركزي » يكشف أحدث بيانات التضخم يوليو 2026 .. ومصرفية : السياسة النقدية تواصل تحقيق المستهدف",
-      "url": "https://www.elwatannews.com/news/details/8336827",
-      "domain": "elwatannews.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
+      "id": "2a25ef14cdc4b7216a89",
+      "title": "Gas naturale oltre 59 euro al Ttf : cosa c è dietro il balzo dei prezzi",
+      "url": "https://www.soldionline.it/notizie/forex-commodities/gas-naturale-oltre-59-euro-al-ttf-cosa-ce-dietro-il-balzo-dei-prezzi",
+      "domain": "soldionline.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
       "seenAt": "2026-08-10T14:45:00Z",
       "firstSeenAt": "2026-08-10T14:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -486,24 +1085,114 @@
       "duplicateCount": 1
     },
     {
-      "id": "d5cd323be8b989206ff4",
-      "title": "El Gobierno nacional acelera con la reforma del Banco Central",
-      "url": "https://www.elancasti.com.ar/politica-y-economia/el-gobierno-nacional-acelera-la-reforma-del-banco-central-n618980",
-      "domain": "elancasti.com.ar",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
+      "id": "076cebeee4e55543889f",
+      "title": "Полша и балтийските държави засилват охраната на критичната инфраструктура заради опасения от руска провокация ᐉ Новини от Fakti . bg - Свят",
+      "url": "https://fakti.bg/world/1073523-polsha-i-baltiiskite-darjavi-zasilvat-ohranata-na-kritichnata-infrastruktura-zaradi-opasenia-ot-ruska-provokacia",
+      "domain": "fakti.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
       "seenAt": "2026-08-10T14:45:00Z",
       "firstSeenAt": "2026-08-10T14:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "56eb240c131859b7cae5",
+      "title": "Συναγερμός στην Ευρώπη για τα αποθέματα φυσικού αερίου ενόψει χειμώνα - Ο συνδυασμός παραγόντων που εντείνει την ανησυχία",
+      "url": "https://www.iefimerida.gr/kosmos/synagermos-stin-eyropi-gia-ta-apothemata-fysikoy-aerioy",
+      "domain": "iefimerida.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-10T14:45:00Z",
+      "firstSeenAt": "2026-08-10T14:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "14295992d380afa3edbd",
+      "title": "Argentina Los Azules copper project nears investment decision",
+      "url": "https://www.mining.com/argentina-los-azules-copper-project-nears-investment-decision/",
+      "domain": "mining.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-08-10T14:30:00Z",
+      "firstSeenAt": "2026-08-10T14:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f2906629b9934b81553a",
+      "title": "AIDC+存储芯片+华为鲲鹏+大基金持股 ！ 公司上半年净利暴增715倍",
+      "url": "https://www.yicai.com/vip/news/103312596.html",
+      "domain": "yicai.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-10T14:30:00Z",
+      "firstSeenAt": "2026-08-10T14:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -587,50 +1276,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "1b3509dbc9d43f107ea8",
-      "title": "توقعات بتصاعد معدلات التضخم خلال النصف الثاني من عام 2026",
-      "url": "https://www.shorouknews.com/news/view.aspx?cdate=10082026&id=edfb8d9f-f325-48e1-9288-e760d6be9092",
-      "domain": "shorouknews.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-10T14:15:00Z",
-      "firstSeenAt": "2026-08-10T14:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "46b41f4cde8acc0cee4a",
-      "title": "The Fed Is Failing Its Mandate , But It Could Change Soon",
-      "url": "https://www.zerohedge.com/markets/fed-failing-its-mandate-it-could-change-soon",
-      "domain": "zerohedge.com",
+      "id": "b427c4f522c193f6322d",
+      "title": "Current price of oil as of August 10 , 2026",
+      "url": "https://fortune.com/article/price-of-oil-08-10-2026/",
+      "domain": "fortune.com",
       "language": "English",
       "sourceCountry": "United States",
       "seenAt": "2026-08-10T14:15:00Z",
       "firstSeenAt": "2026-08-10T14:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -639,24 +1305,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "4a4f382b3fd93db6275c",
-      "title": "البنك المركزي : ارتفاع المعدل السنوي الأساسي للتضخم إلى 14 . 7 % بنهاية يوليو",
-      "url": "https://www.shorouknews.com/news/view.aspx?cdate=10082026&id=4bfb1fc2-1b60-4268-a72b-2c37b7856574",
-      "domain": "shorouknews.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
+      "id": "e24dd526dd3ed308da5f",
+      "title": "Argelia se afianza como primer suministrador de gas de España con el 47 % de las ventas en julio",
+      "url": "https://www.diariosur.es/economia/argelia-afianza-primer-suministrador-gas-espana-ventas-20260810142438-ntrc.html",
+      "domain": "diariosur.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
       "seenAt": "2026-08-10T14:15:00Z",
       "firstSeenAt": "2026-08-10T14:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -683,7 +1352,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -708,569 +1377,6 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "edf0ccd835d152b9be46",
-      "title": "Luis Caputo frente a dos pruebas de fuego : la inflación de julio del Indec y la licitación de dólares",
-      "url": "https://www.rionegro.com.ar/economia/luis-caputo-frente-a-dos-pruebas-de-fuego-la-inflacion-de-julio-del-indec-y-la-licitacion-de-dolares-4677726/",
-      "domain": "rionegro.com.ar",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-10T14:00:00Z",
-      "firstSeenAt": "2026-08-10T14:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8f55d42795586a917ad2",
-      "title": "Tarcísio critica gestão do PT na economia ; Haddad aconselha a não indicar Campos Neto",
-      "url": "https://www.infomoney.com.br/politica/tarcisio-critica-gestao-do-pt-na-economia-haddad-aconselha-a-nao-indicar-campos-neto/",
-      "domain": "infomoney.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-10T13:45:00Z",
-      "firstSeenAt": "2026-08-10T13:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "479045f75225c0ce032b",
-      "title": "صعود التضخم السنوي بعد 3 أشهر من التراجع مدفوعا بزيادات قطاع الأغذية والمشروبات",
-      "url": "https://www.shorouknews.com/news/view.aspx?cdate=10082026&id=740bde88-a2a8-4875-8992-4883df22d074",
-      "domain": "shorouknews.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-10T13:00:00Z",
-      "firstSeenAt": "2026-08-10T13:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a8041e0f95475a524fa4",
-      "title": "BNR anunță când va începe să scadă puternic inflația . Când ar putea reveni la normal prețurile",
-      "url": "https://www.mediafax.ro/economic/bnr-anunta-cand-va-incepe-sa-scada-puternic-inflatia-23787946",
-      "domain": "mediafax.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-08-10T13:00:00Z",
-      "firstSeenAt": "2026-08-10T13:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "416dc71c1a7bcd30f1ce",
-      "title": "تباين سياسات البنوك المركزية في عام 2026 : الموضوع الكلي الذي يجب على كل متداول فهمه – تلفزيون الفجر",
-      "url": "https://alfajertv.com/cocktail/economy/738392.html",
-      "domain": "alfajertv.com",
-      "language": "Arabic",
-      "sourceCountry": "Israel",
-      "seenAt": "2026-08-10T13:00:00Z",
-      "firstSeenAt": "2026-08-10T13:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "aa1e2581f47b53342fe7",
-      "title": "« JustMarkets »: تباين سياسات البنوك المركزية في عام 2026 .. الموضوع الكلي الذي يجب على كل متداول فهمه",
-      "url": "https://www.emaratalyoum.com/business/arab-and-inter/2026-08-10-1.2072802",
-      "domain": "emaratalyoum.com",
-      "language": "Arabic",
-      "sourceCountry": "United Arab Emirates",
-      "seenAt": "2026-08-10T13:00:00Z",
-      "firstSeenAt": "2026-08-10T13:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3ae4418e985f3405607a",
-      "title": "괴물 이 탄생하기 전에 [ 똑똑 ! 한국사회 ]",
-      "url": "https://www.hani.co.kr/arti/opinion/column/1272275.html",
-      "domain": "hani.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-10T11:45:00Z",
-      "firstSeenAt": "2026-08-10T11:45:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8743dc4f98ae67b8e946",
-      "title": "美元走弱提振白银突破箱体压力 ， 短期有望继续走高 ？_ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20260810/32330558.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-10T11:45:00Z",
-      "firstSeenAt": "2026-08-10T11:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f06df670dd824c016f3b",
-      "title": "AI가 바꾼 PEF 투자지도 코스톤아시아 , 3000억대 우진기전 품는다 [ fn마켓워치 ]",
-      "url": "https://www.fnnews.com/news/202608101827358647",
-      "domain": "fnnews.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-10T10:30:00Z",
-      "firstSeenAt": "2026-08-10T10:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1f660213ce46994ae8b4",
-      "title": "정청래 분당 생각조차 안 해 봐 … 대구서 1등 했으니 알아서들 해주세요 ( 종합 )",
-      "url": "https://www.fnnews.com/news/202608101745551310",
-      "domain": "fnnews.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-10T10:30:00Z",
-      "firstSeenAt": "2026-08-10T10:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7322bc6759897032282c",
-      "title": "지금 사면 배당금만 7 %?… 삼성전자 , 200조 역대급 배당 전망",
-      "url": "https://www.wikitree.co.kr/articles/1151540",
-      "domain": "wikitree.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-10T10:30:00Z",
-      "firstSeenAt": "2026-08-10T10:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "99e6ba77cde5b25aa0df",
-      "title": "TSMC · 소니 , 日이미지센서 공장에 9조원 투자 검토",
-      "url": "https://zdnet.co.kr/view/?no=20260810163147",
-      "domain": "zdnet.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-10T10:30:00Z",
-      "firstSeenAt": "2026-08-10T10:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d45998913d47460c1b16",
-      "title": "SK하이닉스 , EUV 공정 고도화 … 신소재 PSM 도입 시작",
-      "url": "https://zdnet.co.kr/view/?no=20260810112930",
-      "domain": "zdnet.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-10T10:30:00Z",
-      "firstSeenAt": "2026-08-10T10:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b63576c4b6fbd26296cc",
-      "title": "South Korea to launch $3 . 5 billion chip fund , speed development of semiconductor hubs",
-      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/08/10/south-korea-s-lee-wants-military-airbase-relocated-by-mid-2028-for-chip-cluster",
-      "domain": "internazionale.it",
-      "language": "English",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-08-10T10:30:00Z",
-      "firstSeenAt": "2026-08-10T10:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a998839192443f6c5731",
-      "title": "Decizia BNR care îi privește pe toți românii . Avertismentul lui Negrescu , răspunsul tranșant al lui Chirieac . Va fi cum spune Nazare ?",
-      "url": "https://www.dcnews.ro/decizia-bnr-care-ii-priveste-pe-toti-romanii-avertismentul-lui-negrescu-raspunsul-transant-al-lui-chirieac-va-fi-cum-spune-nazare_1074909.html",
-      "domain": "dcnews.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-08-10T10:30:00Z",
-      "firstSeenAt": "2026-08-10T10:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5d7985ef3767add853ce",
-      "title": "South Korea President Lee orders Gwangju Air base relocation by mid - 2028 for chip hub",
-      "url": "https://news.webindia123.com/news/Articles/Business/20260810/4485248.html",
-      "domain": "news.webindia123.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-10T10:15:00Z",
-      "firstSeenAt": "2026-08-10T10:15:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f13d5750b57104383e1b",
-      "title": "얼어붙은 코스피 투심 … 하락장에 예탁금 33조 · 빚투 9조원 감소",
-      "url": "https://www.etoday.co.kr/news/view/2612868",
-      "domain": "etoday.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-10T10:00:00Z",
-      "firstSeenAt": "2026-08-10T10:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "397002008808cddde7e0",
-      "title": "日本央行释放鹰派信号 ： 加息步伐或快于市场预期",
-      "url": "https://usstock.jrj.com.cn/2026/08/10162158056790.shtml",
-      "domain": "usstock.jrj.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-10T09:45:00Z",
-      "firstSeenAt": "2026-08-10T09:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bf293b3557cee0e52698",
-      "title": "日本央行释放鹰派信号 ： 加息步伐或快于市场预期",
-      "url": "https://www.stcn.com/article/detail/4066946.html",
-      "domain": "stcn.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-10T09:45:00Z",
-      "firstSeenAt": "2026-08-10T09:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "753bcc9e69fae3af8a12",
-      "title": "If a Stock Market Crash Is Coming , History Says Investors Who Do This Will Turn a Big Profit",
-      "url": "https://www.fool.com/investing/2026/08/10/stock-market-crash-investors-do-this-big-profit/",
-      "domain": "fool.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-10T09:45:00Z",
-      "firstSeenAt": "2026-08-10T09:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "97ce15482dbbd1fa2aae",
-      "title": "Ekonom Nilai Destry Damayanti Tepat untuk Jaga Kesinambungan Kebijakan Moneter BI",
-      "url": "https://ekonomi.republika.co.id/berita/tjjrh7370/ekonom-nilai-destry-damayanti-tepat-untuk-jaga-kesinambungan-kebijakan-moneter-bi",
-      "domain": "ekonomi.republika.co.id",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-08-10T09:45:00Z",
-      "firstSeenAt": "2026-08-10T09:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7674a921cd7bcd0fce90",
-      "title": "美伊高层博弈 成最新油价定价主线 _ 国际原油市场 _ 黄金网 _ 中金在线",
-      "url": "http://gold.cnfol.com/guojiyuanyousc/20260810/32330388.shtml",
-      "domain": "gold.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-10T09:45:00Z",
-      "firstSeenAt": "2026-08-10T09:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
       "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
@@ -1283,11 +1389,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-10T17:00:00Z",
-      "lastSuccessfulAt": "2026-08-10T18:01:46Z",
+      "observationDate": "2026-08-10T19:45:00Z",
+      "lastSuccessfulAt": "2026-08-10T20:02:17Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
+      "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
