@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-11T11:55:30Z",
+  "generatedAtUtc": "2026-08-11T15:15:06Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -8,14 +8,14 @@
     "documentationUrl": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
   },
   "collection": {
-    "status": "stale",
+    "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 0,
-    "rawArticleCount": 0,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-11T11:03:37Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-11T15:15:06Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,65 +52,14 @@
   ],
   "articles": [
     {
-      "id": "9aeb419bea4e722631d6",
-      "title": "Pourquoi lexplosion des coûts de liPhone 18 Pro va bouleverser ...",
-      "url": "https://www.zdnet.fr/actualites/pourquoi-lexplosion-des-couts-de-liphone-18-pro-va-bouleverser-le-marche-mobile-499541.htm",
-      "domain": "zdnet.fr",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-10T16:30:00Z",
-      "firstSeenAt": "2026-08-10T16:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 28,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3c1869490a4314b8f1f9",
-      "title": "Baker Hughes wins contract for Kutei Northern Hub subsea systems",
-      "url": "https://finance.yahoo.com/energy/articles/baker-hughes-wins-contract-kutei-090222973.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-11T09:30:00Z",
-      "firstSeenAt": "2026-08-11T09:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c9b773db5f9ce0d0f302",
-      "title": "지금이 저가매수 기회 美매체 극찬한 한국 AI 메모리주 … 마이크론보다 낫다",
-      "url": "https://www.heraldk.com/article/2026081101200419380",
-      "domain": "heraldk.com",
+      "id": "2ed3203d1eeb8215ed97",
+      "title": "[ AI MY 뉴스 ] 뉴욕 반도체주 프리뷰 ... 엔비디아 반등 시도 · 인텔은 약세",
+      "url": "https://www.newspim.com/news/view/20260811001134",
+      "domain": "newspim.com",
       "language": "Korean",
       "sourceCountry": "South Korea",
-      "seenAt": "2026-08-11T09:30:00Z",
-      "firstSeenAt": "2026-08-11T09:30:00Z",
+      "seenAt": "2026-08-11T14:45:00Z",
+      "firstSeenAt": "2026-08-11T14:45:00Z",
       "topicIds": [
         "semiconductors-ai"
       ],
@@ -128,51 +77,75 @@
       "duplicateCount": 1
     },
     {
-      "id": "9aee117d8fa85f07fcf9",
-      "title": "Intel : Αύξηση κεφαλαίου κατά 20 δισ . δολάρια",
-      "url": "https://www.capital.gr/diethni/4010209/intel-auxisi-kefalaiou-sta-20-dis-dolaria/",
-      "domain": "capital.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-11T09:30:00Z",
-      "firstSeenAt": "2026-08-11T09:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "24b774b61587ee3f8c26",
-      "title": "Rate hike pressure eased by slowdown | The Manila Times",
-      "url": "https://www.manilatimes.net/2026/08/11/business/top-business/rate-hike-pressure-eased-by-slowdown/2402280",
-      "domain": "manilatimes.net",
+      "id": "a91b0a17ed6c62ada5a5",
+      "title": "Were starting a position in a memory maker that was just put in the Bullpen",
+      "url": "https://www.cnbc.com/2026/08/11/were-starting-a-position-in-a-memory-maker-that-was-just-put-in-the-bullpen.html",
+      "domain": "cnbc.com",
       "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-08-10T16:45:00Z",
-      "firstSeenAt": "2026-08-10T16:45:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-11T14:30:00Z",
+      "firstSeenAt": "2026-08-11T14:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 25,
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dba128c67be661c4c898",
+      "title": "Samsung Widens Its DRAM Lead as Micron Closes In on SK Hyni",
+      "url": "https://memeburn.com/samsung-widens-its-dram-lead-as-micron-closes-in-on-sk-hyni/",
+      "domain": "memeburn.com",
+      "language": "English",
+      "sourceCountry": "South Africa",
+      "seenAt": "2026-08-11T14:00:00Z",
+      "firstSeenAt": "2026-08-11T14:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b32de2b70e69c027decb",
+      "title": "Startups : Nvidia negocia pacote de US$ 500B para infraestrutura de IA",
+      "url": "https://www.infomoney.com.br/business/startups-nvidia-negocia-pacote-de-us-500b-para-infraestrutura-de-ia/",
+      "domain": "infomoney.com.br",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-08-11T13:45:00Z",
+      "firstSeenAt": "2026-08-11T13:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -204,14 +177,14 @@
       "duplicateCount": 1
     },
     {
-      "id": "65fe85ccea0b244e4b97",
-      "title": "Intel Announces $15 Bln Stock Offering ; Shares Fall In Pre - Market",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69265370-intel-announces-dollar-15-bln-stock-offering-shares-fall-in-pre-market-020.htm",
-      "domain": "finanznachrichten.de",
-      "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-10T13:00:00Z",
-      "firstSeenAt": "2026-08-10T13:00:00Z",
+      "id": "13816ac4be6eb4825f1f",
+      "title": "Intel ने शेयर बेचकर जुटाए 20 अरब डॉलर , इस भारी - भरकम रकम को यहां खर्च करेगी कंपनी",
+      "url": "https://www.livehindustan.com/business/intel-20-billion-share-sale-ai-chips-tsmc-expansion-investment-check-details-201786446927833.html",
+      "domain": "livehindustan.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-11T12:30:00Z",
+      "firstSeenAt": "2026-08-11T12:30:00Z",
       "topicIds": [
         "semiconductors-ai"
       ],
@@ -222,30 +195,80 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 21,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "6ead4524fd90acb1c521",
-      "title": "US - Finanzminister Scott Bessent behauptet , die Straße von Hormus würde in zwei Jahren irrelevant werden",
-      "url": "https://www.freiewelt.net/artikel/redaktion/konflikte/us-finanzminister-scott-bessent-behauptet-die-strasse-von-hormus-wuerde-in-zwei-jahren-irrelevant-werden/44822",
-      "domain": "freiewelt.net",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-11T08:30:00Z",
-      "firstSeenAt": "2026-08-11T08:30:00Z",
+      "id": "eaa6f7ef3f3848a65958",
+      "title": "Studija otkriva : AI će više potaknuti proizvodnju fosilnih goriva nego zelenu energiju",
+      "url": "https://www.24sata.hr/tech/studija-otkriva-ai-ce-vise-potaknuti-proizvodnju-fosilnih-goriva-nego-zelenu-energiju-1146697",
+      "domain": "24sata.hr",
+      "language": "Croatian",
+      "sourceCountry": "Croatia",
+      "seenAt": "2026-08-11T11:30:00Z",
+      "firstSeenAt": "2026-08-11T11:30:00Z",
       "topicIds": [
-        "gas-markets"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Gas markets"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c9b773db5f9ce0d0f302",
+      "title": "지금이 저가매수 기회 美매체 극찬한 한국 AI 메모리주 … 마이크론보다 낫다",
+      "url": "https://www.heraldk.com/article/2026081101200419380",
+      "domain": "heraldk.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-11T09:30:00Z",
+      "firstSeenAt": "2026-08-11T09:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9aee117d8fa85f07fcf9",
+      "title": "Intel : Αύξηση κεφαλαίου κατά 20 δισ . δολάρια",
+      "url": "https://www.capital.gr/diethni/4010209/intel-auxisi-kefalaiou-sta-20-dis-dolaria/",
+      "domain": "capital.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-11T09:30:00Z",
+      "firstSeenAt": "2026-08-11T09:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -272,33 +295,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a7b7ff3571eafbf41872",
-      "title": "Assurance auto . Conduite sous stupéfiants : jusqu à 400 % de majoration supplémentaire pour pouvoir être assuré",
-      "url": "https://www.lalsace.fr/magazine-automobile/2026/08/11/conduite-sous-stupefiants-jusqu-a-400-de-majoration-supplementaire-pour-pouvoir-etre-assure",
-      "domain": "lalsace.fr",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-11T08:30:00Z",
-      "firstSeenAt": "2026-08-11T08:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -323,7 +320,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -348,160 +345,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "572987ea5932e1f35738",
-      "title": "油价风险仍在 、 通胀远未达标 ， 澳洲联储的 暂停 能持续多久 ？_ 国际原油市场 _ 黄金网 _ 中金在线",
-      "url": "http://gold.cnfol.com/guojiyuanyousc/20260811/32331474.shtml",
-      "domain": "gold.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-11T08:15:00Z",
-      "firstSeenAt": "2026-08-11T08:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1a727e2903d79e307b4d",
-      "title": "Harga Emas Dunia Tembus US$ 4 . 400 , Mampukah Bertahan ?",
-      "url": "https://momsmoney.kontan.co.id/news/harga-emas-dunia-tembus-us-4400-mampukah-bertahan",
-      "domain": "momsmoney.kontan.co.id",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-08-11T08:15:00Z",
-      "firstSeenAt": "2026-08-11T08:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d0cf7da9a5af40c1c01a",
-      "title": "Европа входит в отопительный сезон с низкими запасами газа : в Латвии могут вырасти цены",
-      "url": "https://www.gorod.lv/novosti/368303-evropa-vhodit-v-otopitelnyi-sezon-s-nizkimi-zapasami-gaza-v-latvii-mogut-vyrasti-tseny",
-      "domain": "gorod.lv",
-      "language": "Russian",
-      "sourceCountry": "Latvia",
-      "seenAt": "2026-08-11T08:00:00Z",
-      "firstSeenAt": "2026-08-11T08:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f35ab940e37796c05b7f",
-      "title": "金价破4400美元创新高 有望重回5千美元",
-      "url": "https://www.epochtimes.com/gb/26/8/11/n14827467.htm",
-      "domain": "epochtimes.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-11T08:00:00Z",
-      "firstSeenAt": "2026-08-11T08:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1978e2a8f0ffd5ccdeb9",
-      "title": "Франция и Испания оказались под прицелом критики за рост импорта российского СПГ",
-      "url": "https://www.pravda.ru/economics/2387350-eu-russian-lng-imports/",
-      "domain": "pravda.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-11T07:45:00Z",
-      "firstSeenAt": "2026-08-11T07:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "27bfa310aada72c91426",
-      "title": "Калвитис : Latvijas gāze обеспечила необходимый объем природного газа на предстоящий отопительный сезон",
-      "url": "https://rus.delfi.lv/biznes/37448553/biznes/120129856/kalvitis-latvijas-gaze-obespechila-neobhodimyy-obem-prirodnogo-gaza-na-predstoyashchiy-otopitelnyy-sezon",
-      "domain": "rus.delfi.lv",
-      "language": "Russian",
-      "sourceCountry": "Latvia",
-      "seenAt": "2026-08-11T07:45:00Z",
-      "firstSeenAt": "2026-08-11T07:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -526,7 +370,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -551,84 +395,7 @@
         "ai-infrastructure",
         "semiconductors"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6dfd51272cd7d0f55f55",
-      "title": "Argelia se afianza como primer suministrador de gas de España",
-      "url": "https://www.lavozdegalicia.es/noticia/economia/2026/08/11/argelia-afianza-primer-suministrador-gas-espana/0003_202608G11P24992.htm",
-      "domain": "lavozdegalicia.es",
-      "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-08-11T06:15:00Z",
-      "firstSeenAt": "2026-08-11T06:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a3a08bdf94bd92a4ee86",
-      "title": "Automobile . Conduite sous stupéfiants : jusqu à 400 % de majoration supplémentaire pour pouvoir être assuré",
-      "url": "https://www.leprogres.fr/magazine-automobile/2026/08/11/conduite-sous-stupefiants-jusqu-a-400-de-majoration-supplementaire-pour-pouvoir-etre-assure",
-      "domain": "leprogres.fr",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-11T06:15:00Z",
-      "firstSeenAt": "2026-08-11T06:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "964a472da3362cc29e2f",
-      "title": "Assurance auto . Conduite sous stupéfiants : jusqu à 400 % de majoration supplémentaire pour pouvoir être assuré",
-      "url": "https://www.vosgesmatin.fr/magazine-automobile/2026/08/11/conduite-sous-stupefiants-jusqu-a-400-de-majoration-supplementaire-pour-pouvoir-etre-assure",
-      "domain": "vosgesmatin.fr",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-11T06:15:00Z",
-      "firstSeenAt": "2026-08-11T06:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -652,57 +419,6 @@
       "assets": [
         "ai-infrastructure",
         "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f2e8dd4d95ce36843544",
-      "title": "SBP Projects Ambitious Economic Growth In FY27",
-      "url": "https://propakistani.pk/2026/08/11/sbp-projects-ambitious-economic-growth-in-fy27/",
-      "domain": "propakistani.pk",
-      "language": "English",
-      "sourceCountry": "Pakistan",
-      "seenAt": "2026-08-11T05:30:00Z",
-      "firstSeenAt": "2026-08-11T05:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "debd44525e2cca09fe1b",
-      "title": "Евросоюз остался крупнейшим покупателем российского газа :: Новости дня / ВЗГЛЯД",
-      "url": "https://vz.ru/news/2026/8/11/1441775.html",
-      "domain": "vz.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-11T05:00:00Z",
-      "firstSeenAt": "2026-08-11T05:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -761,57 +477,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "4d3a59050ff8eb2d525c",
-      "title": "美联储加息生变 ？ 黄金 ， 持续飙涨 ！",
-      "url": "https://futures.jrj.com.cn/2026/08/11115558065887.shtml",
-      "domain": "futures.jrj.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-11T04:30:00Z",
-      "firstSeenAt": "2026-08-11T04:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "091dd2d61130d4caf4f1",
-      "title": "« Россия зарабатывает 60 млн евро в день »: в Германии возмутились огромным выплатам Кремлю от EС | Москва",
-      "url": "https://fedpress.ru/news/77/policy/3447437",
-      "domain": "fedpress.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-11T04:15:00Z",
-      "firstSeenAt": "2026-08-11T04:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "1d7f0f2fa997dc9b0fa0",
       "title": "AI 거품과 메가 프로젝트 도박에 저당잡힌 한국 사회",
       "url": "https://www.pressian.com/pages/articles/2026081110311339164",
@@ -829,289 +494,6 @@
       "assets": [
         "ai-infrastructure",
         "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "415dbd1773ccd0e2bfd9",
-      "title": "日圓回吐近半漲幅 市場關注日本央行升息步伐 | 國際 | 三立新聞網 SETN . COM",
-      "url": "https://www.setn.com/news/1887463",
-      "domain": "setn.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-08-11T04:00:00Z",
-      "firstSeenAt": "2026-08-11T04:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e559c5fa40df7480a98c",
-      "title": "Singapore GDP grows 5 . 9 per cent in Q2 , government raises 2026 forecast on AI boom",
-      "url": "https://www.asiaone.com/money/singapore-gdp-q2-2026-forecast",
-      "domain": "asiaone.com",
-      "language": "English",
-      "sourceCountry": "Singapore",
-      "seenAt": "2026-08-11T04:00:00Z",
-      "firstSeenAt": "2026-08-11T04:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f564a4cae893e6539322",
-      "title": "Что будет , если резко снизить ключевую ставку вдвое",
-      "url": "https://1prime.ru/20260811/stavka-872160455.html",
-      "domain": "1prime.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-11T04:00:00Z",
-      "firstSeenAt": "2026-08-11T04:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a1ddcc47302175fea2df",
-      "title": "Para Guzmán , la morosidad no es un asunto entre privados y el BCRA tiene el mandato de atacar el problema",
-      "url": "https://www.ambito.com/economia/para-guzman-la-morosidad-no-es-un-asunto-privados-y-el-bcra-tiene-el-mandato-atacar-el-problema-n6309293",
-      "domain": "ambito.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-11T04:00:00Z",
-      "firstSeenAt": "2026-08-11T04:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3b4d7e289a00cfeca3f2",
-      "title": "বৈরী আবহাওয়ায় এলএনজি কার্গো ভিড়তে না পারায় আবারও গ্যাস সংকট",
-      "url": "https://www.dhakatimes24.com/2026/08/11/410273",
-      "domain": "dhakatimes24.com",
-      "language": "Bengali",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-08-11T03:30:00Z",
-      "firstSeenAt": "2026-08-11T03:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d2adf4a936e927f7e6ee",
-      "title": "Spanien kauft so viel russisches Gas wie nie",
-      "url": "https://www.hna.de/wirtschaft/russisches-gas-wie-nie-spanien-kauft-so-viel-zr-94435188.html",
-      "domain": "hna.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-11T03:30:00Z",
-      "firstSeenAt": "2026-08-11T03:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fa51474df640a1b9d6b7",
-      "title": "Harga Emas 2026 Potensi Terbang ke US$5 . 200 , Efek Dolar AS Melemah",
-      "url": "https://market.bisnis.com/read/20260811/235/1995216/harga-emas-2026-potensi-terbang-ke-us5200-efek-dolar-as-melemah",
-      "domain": "market.bisnis.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-08-11T03:30:00Z",
-      "firstSeenAt": "2026-08-11T03:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b7ecc3b5b0840c9b9174",
-      "title": "Ujian Calon Tunggal Gubernur BI Jaga Independensi Bank Sentral",
-      "url": "https://finansial.bisnis.com/read/20260811/11/1995202/ujian-calon-tunggal-gubernur-bi-jaga-independensi-bank-sentral",
-      "domain": "finansial.bisnis.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-08-11T03:30:00Z",
-      "firstSeenAt": "2026-08-11T03:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5c602b14fff96bb1de5c",
-      "title": "日圓回吐近半漲幅 市場關注日本央行升息步伐 | 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202608110028.aspx",
-      "domain": "cna.com.tw",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-08-11T03:30:00Z",
-      "firstSeenAt": "2026-08-11T03:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c75840e6e6b7a310f912",
-      "title": "干预日元汇率 ： 美国长期的考量与短暂的效果",
-      "url": "http://www.ftchinese.com/story/001110543",
-      "domain": "ftchinese.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-11T03:00:00Z",
-      "firstSeenAt": "2026-08-11T03:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fd67588279812684df84",
-      "title": "Construction crew damages gas pipeline in Cañon City",
-      "url": "https://www.canoncitydailyrecord.com/2026/08/10/construction-crew-damages-gas-pipeline-in-canon-city/",
-      "domain": "canoncitydailyrecord.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-11T02:45:00Z",
-      "firstSeenAt": "2026-08-11T02:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1220,24 +602,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "47dc96572ade9cb4d845",
-      "title": "抢钱俱乐部 ： 黄金强势上涨 ， 多头目标4465进行 _ 中金在线财经号",
-      "url": "http://mp.cnfol.com/27813/article/1786401218-142628882.html",
-      "domain": "mp.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
+      "id": "00c0a83bcf69fe020ba2",
+      "title": "삼성 · SK , 美 투자 확대에 마이크론 미국산 메모리는 우리가 유일 … 장기계약 더 늘어",
+      "url": "https://biz.heraldcorp.com/article/10836779",
+      "domain": "biz.heraldcorp.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
       "seenAt": "2026-08-11T02:30:00Z",
       "firstSeenAt": "2026-08-11T02:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1246,24 +627,623 @@
       "duplicateCount": 1
     },
     {
-      "id": "717079374db88c352957",
-      "title": "日圓回吐近半漲幅 市場關注日本央行升息步伐 | 國際",
-      "url": "https://www.cna.com.tw:443/news/aopl/202608110028.aspx",
-      "domain": "cna.com.tw",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-08-11T02:30:00Z",
-      "firstSeenAt": "2026-08-11T02:30:00Z",
+      "id": "46a1dc18b9ce906b3d97",
+      "title": "SEC Clears Path for Data Center Securitizations as AI Financing Demand Surges",
+      "url": "http://www.econotimes.com/SEC-Clears-Path-for-Data-Center-Securitizations-as-AI-Financing-Demand-Surges-1749110",
+      "domain": "econotimes.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-11T02:15:00Z",
+      "firstSeenAt": "2026-08-11T02:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "23c6531f3e81cf1944af",
+      "title": "전환 비용 50 % 폭증 부담 … 중국 AI 기업들 , 국산 칩 대신 엔비디아 고수",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026081108342449977",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-11T02:00:00Z",
+      "firstSeenAt": "2026-08-11T02:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "85b2bd209abc80c32a4d",
+      "title": "7월 누계 반도체 수출 2333억弗 … 하반기 전망도 好好",
+      "url": "https://www.fnnews.com/news/202608110630440392",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-11T01:45:00Z",
+      "firstSeenAt": "2026-08-11T01:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2d05445c5f8cc55a2a26",
+      "title": "앤트로픽 , AIDC 구축 · 운영회사 만든다 [ 글로벌AI브리핑 ]",
+      "url": "https://www.fnnews.com/news/202608110733493314",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-11T01:45:00Z",
+      "firstSeenAt": "2026-08-11T01:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f07ec9a01f72037b1041",
+      "title": "삼전 · 닉스 사두길 잘했죠 ... 가수 소유 , 10년 장기투자로 대박",
+      "url": "https://www.fnnews.com/news/202608110733000753",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-11T01:45:00Z",
+      "firstSeenAt": "2026-08-11T01:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5a70ba7d42fc7efae5a6",
+      "title": "반도체 훈풍인데 … 소부장 한미반도체 · 한화세미텍 상반기 부진 , 왜 ?",
+      "url": "https://www.fnnews.com/news/202608110630531412",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-11T01:45:00Z",
+      "firstSeenAt": "2026-08-11T01:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4fe7df4c5c7b5d308d92",
+      "title": "Intel to launch $15B stock sale amid AI boom , advanced packaging demand",
+      "url": "https://siliconangle.com/2026/08/10/intel-launch-15b-stock-sale-amid-ai-boom-advanced-packaging-demand/",
+      "domain": "siliconangle.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-11T01:00:00Z",
+      "firstSeenAt": "2026-08-11T01:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "14c677b1b17c71817ba0",
+      "title": "삼전 · SK하닉 급락에도 소부장은 선방 … 반도체 낙수효과 시험대",
+      "url": "https://www.etoday.co.kr/news/view/2612887",
+      "domain": "etoday.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-11T01:00:00Z",
+      "firstSeenAt": "2026-08-11T01:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e3c84023180c38369144",
+      "title": "인텔 , AI 투자 위해 상장 후 첫 유상증자 … 150억 달러 실탄 조달",
+      "url": "http://www.koreatimes.com/article/20260810/1625014",
+      "domain": "koreatimes.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-11T00:15:00Z",
+      "firstSeenAt": "2026-08-11T00:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7de4808a80e6479f652c",
+      "title": "엔비디아 , 월가와 손잡고 710조원 조달 추진⋯AI 인프라 투자 확대",
+      "url": "http://inews24.com/view/1993692",
+      "domain": "inews24.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-08-11T00:15:00Z",
+      "firstSeenAt": "2026-08-11T00:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "141c32760626cdd974e8",
+      "title": "Industrial War Footing As North Asian Giants Prep Semiconductor Sector ?",
+      "url": "https://www.chinatechnews.com/2026/08/11/127037-industrial-war-footing-as-north-asian-giants-prep-semiconductor-sector",
+      "domain": "chinatechnews.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-11T00:15:00Z",
+      "firstSeenAt": "2026-08-11T00:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "240bcdc6a7a3ef5b384f",
+      "title": "Beyond chips : Penang targets global medtech growth",
+      "url": "https://www.businesstimes.com.sg/international/asean/penang-looks-beyond-chips-bigger-medtech-push",
+      "domain": "businesstimes.com.sg",
+      "language": "English",
+      "sourceCountry": "Singapore",
+      "seenAt": "2026-08-10T23:45:00Z",
+      "firstSeenAt": "2026-08-10T23:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a11adcab75d2f394c4e1",
+      "title": "South Korea to launch $3 . 5 billion chip fund , speed development of semiconductor hubs",
+      "url": "https://japantoday.com/category/tech/south-korea-to-launch-3.5-billion-chip-fund-speed-development-of-semiconductor-hubs",
+      "domain": "japantoday.com",
+      "language": "English",
+      "sourceCountry": "Japan",
+      "seenAt": "2026-08-10T23:45:00Z",
+      "firstSeenAt": "2026-08-10T23:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2279f1edfb1eb45a3f47",
+      "title": "Dont Assume Micron Will Share SanDisk Fate . Here Why .",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/don-t-assume-micron-share-150002220.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T23:00:00Z",
+      "firstSeenAt": "2026-08-10T23:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fe15fcae01906c517b18",
+      "title": "Semiconductor Equipment Makers vs . Chip Designers : Who Actually Winning the AI Cycle ?",
+      "url": "https://www.fool.com/investing/2026/08/10/semiconductor-equipment-makers-vs-chip-designers-w/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T22:15:00Z",
+      "firstSeenAt": "2026-08-10T22:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1f901c1671e7060c38a7",
+      "title": "Amazonun yeni veri merkezi ABDnin en büyük karbon kaynağı",
+      "url": "https://www.donanimhaber.com/amazon-un-yeni-veri-merkezi-abd-nin-en-buyuk-karbon-kaynagi--209111",
+      "domain": "donanimhaber.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-10T22:15:00Z",
+      "firstSeenAt": "2026-08-10T22:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bbd8cce4637069290d76",
+      "title": "Why AMD Stock Tumbled 18 % in July | The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/08/10/why-amd-stock-tumbled-18-in-july/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T22:15:00Z",
+      "firstSeenAt": "2026-08-10T22:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "228c5ba929667c9b87c0",
+      "title": "[ 오늘장특징주 ] 엔비디아 , 애플 , 인텔",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=02932326645546336&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-10T22:00:00Z",
+      "firstSeenAt": "2026-08-10T22:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c98aec0d804be5a7a0d1",
+      "title": "[ 美특징주 ] 퀀텀 컴퓨팅 , 엇갈린 실적에 시간외 2 % ↓ … 영업비용 크게 증가",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=02866726645546336&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-10T22:00:00Z",
+      "firstSeenAt": "2026-08-10T22:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fb0545a797b6680f2108",
+      "title": "Data center moratorium heads to Southport Board of Aldermen",
+      "url": "https://www.wect.com/2026/08/10/southport-aldermen-consider-data-center-freeze-thursday-meeting/",
+      "domain": "wect.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-10T20:45:00Z",
+      "firstSeenAt": "2026-08-10T20:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1e1f457441b32398cb71",
+      "title": "Intel announces $15B share sale to fund AI buildout",
+      "url": "https://www.dailysabah.com/business/tech/intel-announces-15b-share-sale-to-fund-ai-buildout",
+      "domain": "dailysabah.com",
+      "language": "English",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-10T19:15:00Z",
+      "firstSeenAt": "2026-08-10T19:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "68d259e4d59d83786d91",
+      "title": "갈때까지 갔네 애플 , CXMT 칩 시험적용 … 삼전 · 닉스 단기 영향은 미미",
+      "url": "https://www.munhwa.com:443/article/11608552",
+      "domain": "munhwa.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-08-10T18:00:00Z",
+      "firstSeenAt": "2026-08-10T18:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c25dc779e62dcd9c3e9a",
+      "title": "Chipmakers tout Pax Silica as opportunity to upgrade industry",
+      "url": "https://bworldonline.com/economy/2026/08/10/769330/chipmakers-tout-pax-silica-as-opportunity-to-upgrade-industry/",
+      "domain": "bworldonline.com",
+      "language": "English",
+      "sourceCountry": "Philippines",
+      "seenAt": "2026-08-10T17:00:00Z",
+      "firstSeenAt": "2026-08-10T17:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "becfea95f3378542b49a",
+      "title": "Seipi : Pax Silica could turn PH into manufacturing hub",
+      "url": "https://www.manilatimes.net/2026/08/11/business/top-business/seipi-pax-silica-could-turn-ph-into-manufacturing-hub/2402276",
+      "domain": "manilatimes.net",
+      "language": "English",
+      "sourceCountry": "Philippines",
+      "seenAt": "2026-08-10T16:45:00Z",
+      "firstSeenAt": "2026-08-10T16:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e840188cf4fa2d142368",
+      "title": "Veri merkezinin atık ısısıyla sebze yetiştirecekler : Sunucuların üstüne çiftlik geliyor",
+      "url": "https://www.chip.com.tr/guncel/veri-merkezinin-atik-isisiyla-sebze-yetistirecekler-sunucularin-ustune-ciftlik-geliyor_182627.html",
+      "domain": "chip.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-10T16:30:00Z",
+      "firstSeenAt": "2026-08-10T16:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1276,12 +1256,12 @@
     {
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
-      "status": "stale",
-      "observationDate": "2026-08-11T09:30:00Z",
-      "lastSuccessfulAt": "2026-08-11T11:03:37Z",
+      "status": "partial",
+      "observationDate": "2026-08-11T14:45:00Z",
+      "lastSuccessfulAt": "2026-08-11T15:15:06Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 0 returned records across 0/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
