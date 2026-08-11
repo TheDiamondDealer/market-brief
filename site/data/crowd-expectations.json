@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-10T19:16:19Z",
+  "generatedAtUtc": "2026-08-11T02:27:33Z",
   "provider": {
     "id": "polymarket",
     "name": "Polymarket",
@@ -12,16 +12,16 @@
   },
   "collection": {
     "status": "current",
-    "rawMarketCount": 998,
+    "rawMarketCount": 1000,
     "selectedMarketCount": 48,
-    "lastSuccessfulAt": "2026-08-10T19:16:19Z",
+    "lastSuccessfulAt": "2026-08-11T02:27:33Z",
     "error": null
   },
   "categories": [
     {
       "id": "monetary-policy",
       "name": "Monetary Policy & Macro",
-      "count": 11
+      "count": 9
     },
     {
       "id": "trade-industrial-policy",
@@ -46,7 +46,7 @@
     {
       "id": "us-policy-elections",
       "name": "US Policy & Elections",
-      "count": 13
+      "count": 15
     }
   ],
   "markets": [
@@ -65,15 +65,15 @@
       "bestBid": 0.005,
       "bestAsk": 0.006,
       "spread": 0.001,
-      "liquidity": 352876.77,
-      "volume24h": 698922.29,
-      "volumeTotal": 3625404.62,
-      "openInterest": 6470434.11,
+      "liquidity": 382686.14,
+      "volume24h": 690180.15,
+      "volumeTotal": 3653661.44,
+      "openInterest": 6652739.05,
       "qualityScore": 100,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $352,877",
-        "24h volume $698,922",
+        "Liquidity $382,686",
+        "24h volume $690,180",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -88,8 +88,8 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "description": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal funds range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target federal funds rate is changed by versus the level it was prior to the Federal Reserve's September 2026 meeting.\n\nIf the target federal funds rate is changed to a level not expressed in the displayed options, the change will be rounded up to the nearest 25 and will resolve to the relevant bracket. (e.g. if there's a cut/increase of 12.5 bps it will be considered to be 25 bps)\n\nThe resolution source for this market is the FOMC’s statement after its meeting scheduled for September 15-16, 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.\n\nThe level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.\n\nThis market may resolve as soon as the FOMC’s statement for their September meeting with relevant data is issued. If no statement is released by the end date of the next scheduled meeting, this market will resolve to the \"No change\" bracket.",
       "endDate": "2026-09-16T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/fed-decision-in-september-762",
       "restricted": true,
       "acceptingOrders": true,
@@ -109,6 +109,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0055
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0055
         }
       ],
       "status": "current"
@@ -124,19 +129,19 @@
       "probabilityPercent": 0.35,
       "probabilitySource": "bid-ask midpoint",
       "change24hPoints": 0.1,
-      "change7dPoints": -3.05,
+      "change7dPoints": -2.6,
       "bestBid": 0.003,
       "bestAsk": 0.004,
       "spread": 0.001,
-      "liquidity": 1051678.77,
-      "volume24h": 606506.95,
-      "volumeTotal": 5357374.0,
-      "openInterest": 5767641.11,
+      "liquidity": 952708.23,
+      "volume24h": 570117.53,
+      "volumeTotal": 5492126.75,
+      "openInterest": 5669238.89,
       "qualityScore": 99,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $1,051,679",
-        "24h volume $606,507",
+        "Liquidity $952,708",
+        "24h volume $570,118",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -150,8 +155,8 @@
       "resolutionSource": "https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730",
       "description": "This market will resolve to “Yes” if IMF Portwatch publishes a 7-day moving average of transit calls (“Arrivals of Ships”) for the Strait of Hormuz equal to or above 60 for any date between market creation and August 15, 2026. Otherwise, this market will resolve to “No”.\n\nDaily transit calls include container, dry bulk, roll-on/roll-off, general cargo, and tanker ships. Ships not reported by IMF Portwatch will not be considered.\n\nThis market will resolve as soon as IMF Portwatch publishes a 7-day moving average of transit calls equal to or above the specified level, or once data has been published for the final date in the specified period and no such value has been published. If no data has been published for the final date of the specified period within 14 calendar days (ET) after the end of that period, this market will resolve based on data published up to that point.\n\nRevisions to previously published data points made within this market’s timeframe will be considered. However, they will not disqualify a previously published data point from qualifying. Revisions to previously published data points after data is published for August 15, 2026, however, will not be considered.\n\nIn case of obvious data integrity issues (i.e., erroneous data), the market may remain open until the end of the third calendar day (ET) after the date on which such data is first released to allow for corrections. Data integrity issues refer only to clerical or other similar errors in the underlying data, and do not include cases where IMF Portwatch differs from alternative sources.\n\nThe resolution source for this market will be IMF Portwatch, specifically the transit calls data published for the Strait of Hormuz at https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730, both in the c",
       "endDate": "2026-08-15T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-august-31-20260702154212320",
       "restricted": true,
       "acceptingOrders": true,
@@ -226,6 +231,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0035
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0035
         }
       ],
       "status": "current"
@@ -237,24 +247,24 @@
       "eventTitle": "What will WTI Crude Oil (WTI) hit in August 2026?",
       "categoryId": "energy-commodities",
       "category": "Energy & Commodities",
-      "probability": 0.022,
-      "probabilityPercent": 2.2,
+      "probability": 0.016,
+      "probabilityPercent": 1.6,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -1.6,
-      "change7dPoints": -1.95,
-      "bestBid": 0.018,
-      "bestAsk": 0.026,
-      "spread": 0.008,
-      "liquidity": 206350.37,
-      "volume24h": 71619.58,
-      "volumeTotal": 477193.74,
-      "openInterest": 2512226.3,
+      "change24hPoints": -2.1,
+      "change7dPoints": -2.0,
+      "bestBid": 0.013,
+      "bestAsk": 0.019,
+      "spread": 0.006,
+      "liquidity": 206386.24,
+      "volume24h": 77670.1,
+      "volumeTotal": 483268.65,
+      "openInterest": 2541393.81,
       "qualityScore": 90,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $206,350",
-        "24h volume $71,620",
-        "Spread 0.80 points",
+        "Liquidity $206,386",
+        "24h volume $77,670",
+        "Spread 0.60 points",
         "Resolution source supplied"
       ],
       "relevanceScore": 6,
@@ -264,8 +274,8 @@
       "resolutionSource": "https://pythdata.app/explore?search=WTI",
       "description": "This market will resolve to \"Yes\" if, at any point after market creation and during a trading session of August 2026, any 1-minute candle for the Active Month of WTI Crude Oil futures has a final \"High\" or \"Low\" price equal to or beyond (above for ↑ High Prices, below for ↓ Low Prices) the listed price. Otherwise, this market will resolve to \"No\".\n\nPrices will be used exactly as published by Pyth, without rounding.\n\nIf the Active Month contract does not trade at all during the listed time frame, this market will resolve to \"No\".\n\nOnly prices achieved during an applicable trading session of the specified timeframe's business days will be considered. The trading session for a given business day typically begins at 6:00 PM ET on the prior calendar date. Under the standard schedule, trading is open from 6:00:00 PM ET Sunday through 5:00:00 PM ET Friday, with a daily break from 5:00:00 PM ET to 6:00:00 PM ET, except where modified by holiday or special-session hours.\n\nThe active month changes at the start of the second trading session prior to the nearest listed contract's last trading session. At that point, the next listed contract becomes the active month (i.e., for the final three trading sessions of the nearest listed contract, the contract for the next month is the active month).\n\nPer CME contract specifications for WTI Crude Oil (CL) futures, a contract's last trading day is three business days prior to the 25th calendar day of the month preceding the contract's delivery month (or four business days prior if the 25th calendar day is not a business day).\n\nFor example, if the 25th of the month is a Saturday, the last trading session for the nearest listed contract is the session for Tuesday the 21st, and the next listed contract becomes the active month at the start of ",
       "endDate": "2026-09-01T03:59:59.999Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/what-price-will-wti-hit-in-august-2026",
       "restricted": true,
       "acceptingOrders": true,
@@ -285,6 +295,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.022
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.016
         }
       ],
       "status": "current"
@@ -304,15 +319,15 @@
       "bestBid": null,
       "bestAsk": 0.001,
       "spread": 0.001,
-      "liquidity": 41136.46,
-      "volume24h": 25458.34,
-      "volumeTotal": 63118.58,
-      "openInterest": 338101.61,
+      "liquidity": 42871.75,
+      "volume24h": 51062.52,
+      "volumeTotal": 88722.76,
+      "openInterest": 338476.44,
       "qualityScore": 85,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $41,136",
-        "24h volume $25,458",
+        "Liquidity $42,872",
+        "24h volume $51,063",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -323,8 +338,8 @@
       "resolutionSource": "https://arena.ai/leaderboard/text/overall-no-style-control",
       "description": "This market will resolve according to the company which owns the model which has the highest arena rank based on the arena.ai Text Arena (Overall) when the table under the \"Leaderboard\" tab is checked on August 31, 2026, 12:00 PM ET.\n\nResults from the \"Rank\" column under the \"Text Arena | Overall\" Leaderboard tab at https://arena.ai/leaderboard/text/overall-no-style-control with style control off (Adjustments: None) and filtered for \"Models\" will be used to resolve this market.\n\nModels will be ordered primarily by their leaderboard rank at the market’s check time. If two or more models are tied on rank, they will be ordered by their Arena score, including any underlying, unrounded, granular values reflected in the data below the leaderboard. If a tie still remains, alphabetical order of company names as listed in this market group will be used as a final tiebreaker (e.g., if the two models are tied by exact arena score, “Google” would be ranked ahead of “SpaceXAI”). This market will resolve based on the company that occupies first place under this ranking.\n\nThe resolution source for this market is the arena.ai Text Arena (Overall). If this resolution source is unavailable at check time, this market will remain open until the leaderboard comes back online and will resolve based on the first check after it becomes available. If it becomes permanently unavailable, this market will resolve to \"Other\".",
       "endDate": "2026-08-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-august-20260717015626546",
       "restricted": true,
       "acceptingOrders": true,
@@ -333,6 +348,11 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.001
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
           "probability": 0.001
         }
       ],
@@ -349,19 +369,19 @@
       "probabilityPercent": 24.5,
       "probabilitySource": "bid-ask midpoint",
       "change24hPoints": 4.0,
-      "change7dPoints": -2.5,
+      "change7dPoints": -2.0,
       "bestBid": 0.24,
       "bestAsk": 0.25,
       "spread": 0.01,
-      "liquidity": 103338.24,
-      "volume24h": 418001.31,
-      "volumeTotal": 5965080.7,
-      "openInterest": 2154684.12,
-      "qualityScore": 86,
+      "liquidity": 295201.12,
+      "volume24h": 440729.55,
+      "volumeTotal": 5993972.85,
+      "openInterest": 2140993.34,
+      "qualityScore": 89,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $103,338",
-        "24h volume $418,001",
+        "Liquidity $295,201",
+        "24h volume $440,730",
         "Spread 1.00 points",
         "Resolution source supplied"
       ],
@@ -373,8 +393,8 @@
       "resolutionSource": "https://www.congress.gov/bill/119th-congress/house-bill/3633",
       "description": "This market will resolve to \"Yes\" if the Digital Asset Market Clarity Act of 2025 (H.R.3633) is passed by both chambers of the U.S. Congress and signed into law by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nThe primary resolution source is Congress.gov’s legislation tracker (https://www.congress.gov/bill/119th-congress/house-bill/3633) and other official information from the government of the United States, however other credible reporting may be used.",
       "endDate": "2027-01-01T05:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/clarity-act-signed-into-law-in-2026",
       "restricted": true,
       "acceptingOrders": true,
@@ -414,34 +434,39 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.245
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.245
         }
       ],
       "status": "current"
     },
     {
-      "id": "2252242",
-      "slug": "will-the-fed-decrease-interest-rates-by-50-bps-after-the-september-2026-meeting-863",
-      "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
+      "id": "2252243",
+      "slug": "will-the-fed-decrease-interest-rates-by-25-bps-after-the-september-2026-meeting-586",
+      "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
       "eventTitle": "Fed Decision in September?",
       "categoryId": "monetary-policy",
       "category": "Monetary Policy & Macro",
-      "probability": 0.0085,
-      "probabilityPercent": 0.85,
+      "probability": 0.0155,
+      "probabilityPercent": 1.55,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -0.1,
-      "change7dPoints": -0.1,
-      "bestBid": 0.008,
-      "bestAsk": 0.009,
+      "change24hPoints": -0.35,
+      "change7dPoints": 0.5,
+      "bestBid": 0.015,
+      "bestAsk": 0.016,
       "spread": 0.001,
-      "liquidity": 328322.02,
-      "volume24h": 597012.33,
-      "volumeTotal": 3105270.86,
-      "openInterest": 6470434.11,
+      "liquidity": 830032.02,
+      "volume24h": 648530.87,
+      "volumeTotal": 6436197.88,
+      "openInterest": 6652739.05,
       "qualityScore": 100,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $328,322",
-        "24h volume $597,012",
+        "Liquidity $830,032",
+        "24h volume $648,531",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -456,17 +481,92 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "description": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal funds range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target federal funds rate is changed by versus the level it was prior to the Federal Reserve's September 2026 meeting.\n\nIf the target federal funds rate is changed to a level not expressed in the displayed options, the change will be rounded up to the nearest 25 and will resolve to the relevant bracket. (e.g. if there's a cut/increase of 12.5 bps it will be considered to be 25 bps)\n\nThe resolution source for this market is the FOMC’s statement after its meeting scheduled for September 15-16, 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.\n\nThe level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.\n\nThis market may resolve as soon as the FOMC’s statement for their September meeting with relevant data is issued. If no statement is released by the end date of the next scheduled meeting, this market will resolve to the \"No change\" bracket.",
       "endDate": "2026-09-16T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/fed-decision-in-september-762",
       "restricted": true,
       "acceptingOrders": true,
       "readOnly": true,
       "history": [
         {
+          "date": "2026-07-27",
+          "observedAt": "2026-07-27T19:53:49Z",
+          "probability": 0.0415
+        },
+        {
+          "date": "2026-07-28",
+          "observedAt": "2026-07-28T19:53:06Z",
+          "probability": 0.0385
+        },
+        {
+          "date": "2026-07-29",
+          "observedAt": "2026-07-29T19:42:52Z",
+          "probability": 0.0215
+        },
+        {
+          "date": "2026-07-30",
+          "observedAt": "2026-07-30T19:51:53Z",
+          "probability": 0.0295
+        },
+        {
+          "date": "2026-07-31",
+          "observedAt": "2026-07-31T19:52:20Z",
+          "probability": 0.0215
+        },
+        {
+          "date": "2026-08-01",
+          "observedAt": "2026-08-01T19:33:24Z",
+          "probability": 0.0185
+        },
+        {
+          "date": "2026-08-02",
+          "observedAt": "2026-08-02T19:34:10Z",
+          "probability": 0.0115
+        },
+        {
+          "date": "2026-08-03",
+          "observedAt": "2026-08-03T19:57:37Z",
+          "probability": 0.0115
+        },
+        {
+          "date": "2026-08-04",
+          "observedAt": "2026-08-04T19:56:11Z",
+          "probability": 0.0145
+        },
+        {
+          "date": "2026-08-05",
+          "observedAt": "2026-08-05T19:54:26Z",
+          "probability": 0.0125
+        },
+        {
+          "date": "2026-08-06",
+          "observedAt": "2026-08-06T09:05:18Z",
+          "probability": 0.0125
+        },
+        {
+          "date": "2026-08-07",
+          "observedAt": "2026-08-07T19:15:03Z",
+          "probability": 0.0165
+        },
+        {
+          "date": "2026-08-08",
+          "observedAt": "2026-08-08T18:57:47Z",
+          "probability": 0.0195
+        },
+        {
+          "date": "2026-08-09",
+          "observedAt": "2026-08-09T19:00:19Z",
+          "probability": 0.021
+        },
+        {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.0085
+          "probability": 0.0105
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0155
         }
       ],
       "status": "current"
@@ -478,23 +578,23 @@
       "eventTitle": "Strait of Hormuz traffic returns to normal by...?",
       "categoryId": "geopolitics-security",
       "category": "Geopolitics & Security",
-      "probability": 0.0335,
-      "probabilityPercent": 3.35,
+      "probability": 0.0345,
+      "probabilityPercent": 3.45,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -1.15,
-      "change7dPoints": -10.15,
-      "bestBid": 0.033,
-      "bestAsk": 0.034,
+      "change24hPoints": -0.7,
+      "change7dPoints": -10.05,
+      "bestBid": 0.034,
+      "bestAsk": 0.035,
       "spread": 0.001,
-      "liquidity": 1236994.15,
-      "volume24h": 552324.95,
-      "volumeTotal": 11479934.53,
-      "openInterest": 5767641.11,
-      "qualityScore": 99,
+      "liquidity": 1062890.09,
+      "volume24h": 375030.63,
+      "volumeTotal": 11514146.09,
+      "openInterest": 5669238.89,
+      "qualityScore": 96,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $1,236,994",
-        "24h volume $552,325",
+        "Liquidity $1,062,890",
+        "24h volume $375,031",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -508,8 +608,8 @@
       "resolutionSource": "https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730",
       "description": "This market will resolve to “Yes” if IMF Portwatch publishes a 7-day moving average of transit calls (“Arrivals of Ships”) for the Strait of Hormuz equal to or above 60 for any date between market creation and August 31, 2026. Otherwise, this market will resolve to “No”.\n\nDaily transit calls include container, dry bulk, roll-on/roll-off, general cargo, and tanker ships. Ships not reported by IMF Portwatch will not be considered.\n\nThis market will resolve as soon as IMF Portwatch publishes a 7-day moving average of transit calls equal to or above the specified level, or once data has been published for the final date in the specified period and no such value has been published. If no data has been published for the final date of the specified period within 14 calendar days (ET) after the end of that period, this market will resolve based on data published up to that point.\n\nRevisions to previously published data points made within this market’s timeframe will be considered. However, they will not disqualify a previously published data point from qualifying. Revisions to previously published data points after data is published for August 31, 2026, however, will not be considered.\n\nIn case of obvious data integrity issues (i.e., erroneous data), the market may remain open until the end of the third calendar day (ET) after the date on which such data is first released to allow for corrections. Data integrity issues refer only to clerical or other similar errors in the underlying data, and do not include cases where IMF Portwatch differs from alternative sources.\n\nThe resolution source for this market will be IMF Portwatch, specifically the transit calls data published for the Strait of Hormuz at https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730, both in the c",
       "endDate": "2026-08-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-august-31-20260702154212320",
       "restricted": true,
       "acceptingOrders": true,
@@ -649,35 +749,40 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0335
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0345
         }
       ],
       "status": "current"
     },
     {
-      "id": "3102467",
-      "slug": "will-wti-dip-to-65-in-august-2026",
-      "question": "Will WTI Crude Oil (WTI) hit (LOW) $65 in August?",
+      "id": "3096411",
+      "slug": "will-wti-reach-110-in-august-2026",
+      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $110 in August?",
       "eventTitle": "What will WTI Crude Oil (WTI) hit in August 2026?",
       "categoryId": "energy-commodities",
       "category": "Energy & Commodities",
-      "probability": 0.105,
-      "probabilityPercent": 10.5,
+      "probability": 0.0445,
+      "probabilityPercent": 4.45,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -3.5,
-      "change7dPoints": -7.5,
-      "bestBid": 0.1,
-      "bestAsk": 0.11,
-      "spread": 0.01,
-      "liquidity": 60827.13,
-      "volume24h": 38420.86,
-      "volumeTotal": 260168.65,
-      "openInterest": 2512226.3,
+      "change24hPoints": 0.3,
+      "change7dPoints": -2.05,
+      "bestBid": 0.043,
+      "bestAsk": 0.046,
+      "spread": 0.003,
+      "liquidity": 73742.56,
+      "volume24h": 42970.52,
+      "volumeTotal": 397304.75,
+      "openInterest": 2541393.81,
       "qualityScore": 86,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $60,827",
-        "24h volume $38,421",
-        "Spread 1.00 points",
+        "Liquidity $73,743",
+        "24h volume $42,971",
+        "Spread 0.30 points",
         "Resolution source supplied"
       ],
       "relevanceScore": 6,
@@ -687,8 +792,8 @@
       "resolutionSource": "https://pythdata.app/explore?search=WTI",
       "description": "This market will resolve to \"Yes\" if, at any point after market creation and during a trading session of August 2026, any 1-minute candle for the Active Month of WTI Crude Oil futures has a final \"High\" or \"Low\" price equal to or beyond (above for ↑ High Prices, below for ↓ Low Prices) the listed price. Otherwise, this market will resolve to \"No\".\n\nPrices will be used exactly as published by Pyth, without rounding.\n\nIf the Active Month contract does not trade at all during the listed time frame, this market will resolve to \"No\".\n\nOnly prices achieved during an applicable trading session of the specified timeframe's business days will be considered. The trading session for a given business day typically begins at 6:00 PM ET on the prior calendar date. Under the standard schedule, trading is open from 6:00:00 PM ET Sunday through 5:00:00 PM ET Friday, with a daily break from 5:00:00 PM ET to 6:00:00 PM ET, except where modified by holiday or special-session hours.\n\nThe active month changes at the start of the second trading session prior to the nearest listed contract's last trading session. At that point, the next listed contract becomes the active month (i.e., for the final three trading sessions of the nearest listed contract, the contract for the next month is the active month).\n\nPer CME contract specifications for WTI Crude Oil (CL) futures, a contract's last trading day is three business days prior to the 25th calendar day of the month preceding the contract's delivery month (or four business days prior if the 25th calendar day is not a business day).\n\nFor example, if the 25th of the month is a Saturday, the last trading session for the nearest listed contract is the session for Tuesday the 21st, and the next listed contract becomes the active month at the start of ",
       "endDate": "2026-09-01T03:59:59.999Z",
-      "updatedAt": "2026-08-10T19:09:59.212548Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/what-price-will-wti-hit-in-august-2026",
       "restricted": true,
       "acceptingOrders": true,
@@ -697,7 +802,12 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.105
+          "probability": 0.047
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0445
         }
       ],
       "status": "current"
@@ -713,19 +823,19 @@
       "probabilityPercent": 93.5,
       "probabilitySource": "bid-ask midpoint",
       "change24hPoints": 1.0,
-      "change7dPoints": -1.0,
+      "change7dPoints": null,
       "bestBid": 0.93,
       "bestAsk": 0.94,
       "spread": 0.01,
-      "liquidity": 87054.13,
-      "volume24h": 9555.55,
-      "volumeTotal": 307965.34,
-      "openInterest": 338101.61,
+      "liquidity": 94664.31,
+      "volume24h": 11059.01,
+      "volumeTotal": 309663.08,
+      "openInterest": 338476.44,
       "qualityScore": 82,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $87,054",
-        "24h volume $9,556",
+        "Liquidity $94,664",
+        "24h volume $11,059",
         "Spread 1.00 points",
         "Resolution source supplied"
       ],
@@ -736,8 +846,8 @@
       "resolutionSource": "https://arena.ai/leaderboard/text/overall-no-style-control",
       "description": "This market will resolve according to the company which owns the model which has the highest arena rank based on the arena.ai Text Arena (Overall) when the table under the \"Leaderboard\" tab is checked on August 31, 2026, 12:00 PM ET.\n\nResults from the \"Rank\" column under the \"Text Arena | Overall\" Leaderboard tab at https://arena.ai/leaderboard/text/overall-no-style-control with style control off (Adjustments: None) and filtered for \"Models\" will be used to resolve this market.\n\nModels will be ordered primarily by their leaderboard rank at the market’s check time. If two or more models are tied on rank, they will be ordered by their Arena score, including any underlying, unrounded, granular values reflected in the data below the leaderboard. If a tie still remains, alphabetical order of company names as listed in this market group will be used as a final tiebreaker (e.g., if the two models are tied by exact arena score, “Google” would be ranked ahead of “SpaceXAI”). This market will resolve based on the company that occupies first place under this ranking.\n\nThe resolution source for this market is the arena.ai Text Arena (Overall). If this resolution source is unavailable at check time, this market will remain open until the leaderboard comes back online and will resolve based on the first check after it becomes available. If it becomes permanently unavailable, this market will resolve to \"Other\".",
       "endDate": "2026-08-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-august-20260717015626546",
       "restricted": true,
       "acceptingOrders": true,
@@ -746,6 +856,11 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.935
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
           "probability": 0.935
         }
       ],
@@ -766,15 +881,15 @@
       "bestBid": 0.001,
       "bestAsk": 0.002,
       "spread": 0.001,
-      "liquidity": 109227.13,
-      "volume24h": 4417.17,
-      "volumeTotal": 1089567.38,
-      "openInterest": 578479.32,
+      "liquidity": 116479.93,
+      "volume24h": 3750.79,
+      "volumeTotal": 1090030.27,
+      "openInterest": 578740.88,
       "qualityScore": 82,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $109,227",
-        "24h volume $4,417",
+        "Liquidity $116,480",
+        "24h volume $3,751",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -786,8 +901,8 @@
       "resolutionSource": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
       "description": "This market will resolve to the individual who officially holds the position of the head of state of Venezuela on Dec 31, 2026 at 12 PM ET.\n\nFor the purposes of this market, \"officially holds\" refers to the individual that was formally appointed, confirmed (if confirmation is required), and sworn in as the head of state of Venezuela or otherwise confirmed by official government information as being the head of state of Venezuela. \n\nIf the Venezuelan government does not clearly state who is the head of state, the market will resolve to the individual who is listed as the Head of State by the UN (see: https://www.un.org/dgacm/en/content/protocol/hshgnfa).  \n\nIn the event that more than one official head of state is listed by the Venezuelan  government, this market will resolve to the individual who is listed as having primary status. If no distinction is made, the market will resolve to the individual who first assumed the position. \n\nIf no individual holds the position this market will resolve to “No Head of State”. \n\nThe following do NOT constitute \"officially holding\" the role: nominated, announced, or designated as the head of state of Venezuela but appointment not yet effective; appointed with an effective date after Dec 31, 2026; previously served as the head of state of Venezuela but term has expired, resigned, or been terminated before Dec 31, 2026; serving as the head of state of Venezuela in a consultant, contractor, or unofficial capacity; named as successor or heir apparent to the head of state of Venezuela but not yet appointed; or holding a different role with oversight of the head of state of Venezuela but not the specified position itself.\n\nThe primary resolution source will be official information from the UN recognized government of Venezuela. If the Gov",
       "endDate": "2026-12-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/venezuela-leader-end-of-2026",
       "restricted": true,
       "acceptingOrders": true,
@@ -797,35 +912,40 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0015
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0015
         }
       ],
       "status": "current"
     },
     {
-      "id": "2252245",
-      "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-september-2026-meeting-649",
-      "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
+      "id": "2252242",
+      "slug": "will-the-fed-decrease-interest-rates-by-50-bps-after-the-september-2026-meeting-863",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
       "eventTitle": "Fed Decision in September?",
       "categoryId": "monetary-policy",
       "category": "Monetary Policy & Macro",
-      "probability": 0.435,
-      "probabilityPercent": 43.5,
+      "probability": 0.0085,
+      "probabilityPercent": 0.85,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 8.0,
-      "change7dPoints": -12.0,
-      "bestBid": 0.43,
-      "bestAsk": 0.44,
-      "spread": 0.01,
-      "liquidity": 272257.68,
-      "volume24h": 921905.83,
-      "volumeTotal": 5277499.79,
-      "openInterest": 6470434.11,
-      "qualityScore": 97,
+      "change24hPoints": -0.1,
+      "change7dPoints": -0.1,
+      "bestBid": 0.008,
+      "bestAsk": 0.009,
+      "spread": 0.001,
+      "liquidity": 396193.03,
+      "volume24h": 573683.73,
+      "volumeTotal": 3129939.37,
+      "openInterest": 6652739.05,
+      "qualityScore": 100,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $272,258",
-        "24h volume $921,906",
-        "Spread 1.00 points",
+        "Liquidity $396,193",
+        "24h volume $573,684",
+        "Spread 0.10 points",
         "Resolution source supplied"
       ],
       "relevanceScore": 5,
@@ -839,8 +959,8 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "description": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal funds range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target federal funds rate is changed by versus the level it was prior to the Federal Reserve's September 2026 meeting.\n\nIf the target federal funds rate is changed to a level not expressed in the displayed options, the change will be rounded up to the nearest 25 and will resolve to the relevant bracket. (e.g. if there's a cut/increase of 12.5 bps it will be considered to be 25 bps)\n\nThe resolution source for this market is the FOMC’s statement after its meeting scheduled for September 15-16, 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.\n\nThe level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.\n\nThis market may resolve as soon as the FOMC’s statement for their September meeting with relevant data is issued. If no statement is released by the end date of the next scheduled meeting, this market will resolve to the \"No change\" bracket.",
       "endDate": "2026-09-16T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/fed-decision-in-september-762",
       "restricted": true,
       "acceptingOrders": true,
@@ -849,7 +969,12 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.435
+          "probability": 0.0085
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0085
         }
       ],
       "status": "current"
@@ -864,20 +989,20 @@
       "probability": 0.465,
       "probabilityPercent": 46.5,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -5.0,
-      "change7dPoints": -11.0,
+      "change24hPoints": -2.0,
+      "change7dPoints": -12.0,
       "bestBid": 0.46,
       "bestAsk": 0.47,
       "spread": 0.01,
-      "liquidity": 334009.86,
-      "volume24h": 105107.64,
-      "volumeTotal": 7625354.79,
-      "openInterest": 1732450.43,
-      "qualityScore": 96,
+      "liquidity": 338011.32,
+      "volume24h": 76398.57,
+      "volumeTotal": 7643412.81,
+      "openInterest": 1732704.1,
+      "qualityScore": 92,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $334,010",
-        "24h volume $105,108",
+        "Liquidity $338,011",
+        "24h volume $76,399",
         "Spread 1.00 points",
         "Resolution source supplied"
       ],
@@ -891,8 +1016,8 @@
       "resolutionSource": "https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730",
       "description": "This market will resolve to “Yes” if IMF Portwatch publishes a 7-day moving average of transit calls (“Arrivals of Ships”) for the Strait of Hormuz equal to or above 60 for any date between market creation and December 31, 2026. Otherwise, this market will resolve to “No”.\n\nDaily transit calls include container, dry bulk, roll-on/roll-off, general cargo, and tanker ships. Ships not reported by IMF Portwatch will not be considered.\n\nThis market will resolve as soon as IMF Portwatch publishes a 7-day moving average of transit calls equal to or above the specified level, or once data has been published for the final date in the specified period and no such value has been published. If no data has been published for the final date of the specified period within 14 calendar days (ET) after the end of that period, this market will resolve based on data published up to that point.\n\nRevisions to previously published data points made within this market’s timeframe will be considered. However, they will not disqualify a previously published data point from qualifying. Revisions to previously published data points after data is published for December 31, 2026, however, will not be considered.\n\nIn case of obvious data integrity issues (i.e., erroneous data), the market may remain open until the end of the third calendar day (ET) after the date on which such data is first released to allow for corrections. Data integrity issues refer only to clerical or other similar errors in the underlying data, and do not include cases where IMF Portwatch differs from alternative sources.\n\nThe resolution source for this market will be IMF Portwatch, specifically the transit calls data published for the Strait of Hormuz at https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730, both in t",
       "endDate": "2026-12-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31",
       "restricted": true,
       "acceptingOrders": true,
@@ -1032,35 +1157,40 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.465
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.465
         }
       ],
       "status": "current"
     },
     {
-      "id": "3096411",
-      "slug": "will-wti-reach-110-in-august-2026",
-      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $110 in August?",
+      "id": "3096409",
+      "slug": "will-wti-reach-130-in-august-2026",
+      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $130 in August?",
       "eventTitle": "What will WTI Crude Oil (WTI) hit in August 2026?",
       "categoryId": "energy-commodities",
       "category": "Energy & Commodities",
-      "probability": 0.047,
-      "probabilityPercent": 4.7,
+      "probability": 0.0125,
+      "probabilityPercent": 1.25,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 0.4,
-      "change7dPoints": -1.8,
-      "bestBid": 0.043,
-      "bestAsk": 0.051,
-      "spread": 0.008,
-      "liquidity": 61961.53,
-      "volume24h": 37686.72,
-      "volumeTotal": 392013.09,
-      "openInterest": 2512226.3,
+      "change24hPoints": 0.05,
+      "change7dPoints": 0.2,
+      "bestBid": 0.011,
+      "bestAsk": 0.014,
+      "spread": 0.003,
+      "liquidity": 63560.76,
+      "volume24h": 28644.33,
+      "volumeTotal": 244876.37,
+      "openInterest": 2541393.81,
       "qualityScore": 86,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $61,962",
-        "24h volume $37,687",
-        "Spread 0.80 points",
+        "Liquidity $63,561",
+        "24h volume $28,644",
+        "Spread 0.30 points",
         "Resolution source supplied"
       ],
       "relevanceScore": 6,
@@ -1070,17 +1200,17 @@
       "resolutionSource": "https://pythdata.app/explore?search=WTI",
       "description": "This market will resolve to \"Yes\" if, at any point after market creation and during a trading session of August 2026, any 1-minute candle for the Active Month of WTI Crude Oil futures has a final \"High\" or \"Low\" price equal to or beyond (above for ↑ High Prices, below for ↓ Low Prices) the listed price. Otherwise, this market will resolve to \"No\".\n\nPrices will be used exactly as published by Pyth, without rounding.\n\nIf the Active Month contract does not trade at all during the listed time frame, this market will resolve to \"No\".\n\nOnly prices achieved during an applicable trading session of the specified timeframe's business days will be considered. The trading session for a given business day typically begins at 6:00 PM ET on the prior calendar date. Under the standard schedule, trading is open from 6:00:00 PM ET Sunday through 5:00:00 PM ET Friday, with a daily break from 5:00:00 PM ET to 6:00:00 PM ET, except where modified by holiday or special-session hours.\n\nThe active month changes at the start of the second trading session prior to the nearest listed contract's last trading session. At that point, the next listed contract becomes the active month (i.e., for the final three trading sessions of the nearest listed contract, the contract for the next month is the active month).\n\nPer CME contract specifications for WTI Crude Oil (CL) futures, a contract's last trading day is three business days prior to the 25th calendar day of the month preceding the contract's delivery month (or four business days prior if the 25th calendar day is not a business day).\n\nFor example, if the 25th of the month is a Saturday, the last trading session for the nearest listed contract is the session for Tuesday the 21st, and the next listed contract becomes the active month at the start of ",
       "endDate": "2026-09-01T03:59:59.999Z",
-      "updatedAt": "2026-08-10T19:09:59.212548Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/what-price-will-wti-hit-in-august-2026",
       "restricted": true,
       "acceptingOrders": true,
       "readOnly": true,
       "history": [
         {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.047
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0125
         }
       ],
       "status": "current"
@@ -1100,15 +1230,15 @@
       "bestBid": 0.001,
       "bestAsk": 0.002,
       "spread": 0.001,
-      "liquidity": 49117.24,
-      "volume24h": 8962.83,
-      "volumeTotal": 104679.32,
-      "openInterest": 338101.61,
+      "liquidity": 49355.45,
+      "volume24h": 8875.9,
+      "volumeTotal": 104680.42,
+      "openInterest": 338476.44,
       "qualityScore": 81,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $49,117",
-        "24h volume $8,963",
+        "Liquidity $49,355",
+        "24h volume $8,876",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -1119,8 +1249,8 @@
       "resolutionSource": "https://arena.ai/leaderboard/text/overall-no-style-control",
       "description": "This market will resolve according to the company which owns the model which has the highest arena rank based on the arena.ai Text Arena (Overall) when the table under the \"Leaderboard\" tab is checked on August 31, 2026, 12:00 PM ET.\n\nResults from the \"Rank\" column under the \"Text Arena | Overall\" Leaderboard tab at https://arena.ai/leaderboard/text/overall-no-style-control with style control off (Adjustments: None) and filtered for \"Models\" will be used to resolve this market.\n\nModels will be ordered primarily by their leaderboard rank at the market’s check time. If two or more models are tied on rank, they will be ordered by their Arena score, including any underlying, unrounded, granular values reflected in the data below the leaderboard. If a tie still remains, alphabetical order of company names as listed in this market group will be used as a final tiebreaker (e.g., if the two models are tied by exact arena score, “Google” would be ranked ahead of “SpaceXAI”). This market will resolve based on the company that occupies first place under this ranking.\n\nThe resolution source for this market is the arena.ai Text Arena (Overall). If this resolution source is unavailable at check time, this market will remain open until the leaderboard comes back online and will resolve based on the first check after it becomes available. If it becomes permanently unavailable, this market will resolve to \"Other\".",
       "endDate": "2026-08-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-august-20260717015626546",
       "restricted": true,
       "acceptingOrders": true,
@@ -1134,6 +1264,11 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.0015
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
           "probability": 0.0015
         }
       ],
@@ -1149,20 +1284,20 @@
       "probability": 0.595,
       "probabilityPercent": 59.5,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -1.0,
-      "change7dPoints": -26.0,
+      "change24hPoints": 4.0,
+      "change7dPoints": -30.0,
       "bestBid": 0.59,
       "bestAsk": 0.6,
       "spread": 0.01,
-      "liquidity": 61136.22,
-      "volume24h": 54864.23,
-      "volumeTotal": 188008.84,
-      "openInterest": 153768.09,
+      "liquidity": 55696.56,
+      "volume24h": 48103.89,
+      "volumeTotal": 203091.32,
+      "openInterest": 168989.26,
       "qualityScore": 80,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $61,136",
-        "24h volume $54,864",
+        "Liquidity $55,697",
+        "24h volume $48,104",
         "Spread 1.00 points",
         "Resolution source supplied"
       ],
@@ -1174,8 +1309,8 @@
       "resolutionSource": "https://scvotes.gov/",
       "description": "The first round of the 2026 special Republican Party primary for the United States Senate election in South Carolina will be held on August 11, 2026, with a potential runoff on August 25, 2026.\n\nThis market will resolve according to the candidate that wins the most votes in the first round of the special Republican Primary for US Senator from South Carolina.\n\nCandidates will be primarily ranked by the number of valid votes received in the specified election. If two or more candidates are tied on valid votes, ties will be broken by alphabetical order of the candidates' first names, as listed in this market group. This market will resolve to the candidate that occupies the highest finishing position after applying this ranking.\n\nIf the results of this election are not definitively known by December 31, 2026, this market will resolve to “Other.”\n\nThe primary resolution source for this market will be information from the State of South Carolina, such as official statewide results published by the South Carolina Election Commission (https://scvotes.gov/); however, an overwhelming consensus of credible reporting may suffice.",
       "endDate": "2026-08-11T23:59:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/south-carolina-senate-special-republican-primary-first-round-winner-20260721172033648",
       "restricted": true,
       "acceptingOrders": true,
@@ -1195,35 +1330,40 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.595
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.595
         }
       ],
       "status": "current"
     },
     {
-      "id": "2252243",
-      "slug": "will-the-fed-decrease-interest-rates-by-25-bps-after-the-september-2026-meeting-586",
-      "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
+      "id": "2252245",
+      "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-september-2026-meeting-649",
+      "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
       "eventTitle": "Fed Decision in September?",
       "categoryId": "monetary-policy",
       "category": "Monetary Policy & Macro",
-      "probability": 0.0105,
-      "probabilityPercent": 1.05,
+      "probability": 0.425,
+      "probabilityPercent": 42.5,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -1.05,
-      "change7dPoints": -0.1,
-      "bestBid": 0.01,
-      "bestAsk": 0.011,
-      "spread": 0.001,
-      "liquidity": 874416.42,
-      "volume24h": 478055.22,
-      "volumeTotal": 6255786.28,
-      "openInterest": 6470434.11,
+      "change24hPoints": 7.0,
+      "change7dPoints": -12.0,
+      "bestBid": 0.42,
+      "bestAsk": 0.43,
+      "spread": 0.01,
+      "liquidity": 350086.21,
+      "volume24h": 1018279.25,
+      "volumeTotal": 5407350.88,
+      "openInterest": 6652739.05,
       "qualityScore": 97,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $874,416",
-        "24h volume $478,055",
-        "Spread 0.10 points",
+        "Liquidity $350,086",
+        "24h volume $1,018,279",
+        "Spread 1.00 points",
         "Resolution source supplied"
       ],
       "relevanceScore": 5,
@@ -1237,87 +1377,22 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "description": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal funds range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target federal funds rate is changed by versus the level it was prior to the Federal Reserve's September 2026 meeting.\n\nIf the target federal funds rate is changed to a level not expressed in the displayed options, the change will be rounded up to the nearest 25 and will resolve to the relevant bracket. (e.g. if there's a cut/increase of 12.5 bps it will be considered to be 25 bps)\n\nThe resolution source for this market is the FOMC’s statement after its meeting scheduled for September 15-16, 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.\n\nThe level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.\n\nThis market may resolve as soon as the FOMC’s statement for their September meeting with relevant data is issued. If no statement is released by the end date of the next scheduled meeting, this market will resolve to the \"No change\" bracket.",
       "endDate": "2026-09-16T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/fed-decision-in-september-762",
       "restricted": true,
       "acceptingOrders": true,
       "readOnly": true,
       "history": [
         {
-          "date": "2026-07-27",
-          "observedAt": "2026-07-27T19:53:49Z",
-          "probability": 0.0415
-        },
-        {
-          "date": "2026-07-28",
-          "observedAt": "2026-07-28T19:53:06Z",
-          "probability": 0.0385
-        },
-        {
-          "date": "2026-07-29",
-          "observedAt": "2026-07-29T19:42:52Z",
-          "probability": 0.0215
-        },
-        {
-          "date": "2026-07-30",
-          "observedAt": "2026-07-30T19:51:53Z",
-          "probability": 0.0295
-        },
-        {
-          "date": "2026-07-31",
-          "observedAt": "2026-07-31T19:52:20Z",
-          "probability": 0.0215
-        },
-        {
-          "date": "2026-08-01",
-          "observedAt": "2026-08-01T19:33:24Z",
-          "probability": 0.0185
-        },
-        {
-          "date": "2026-08-02",
-          "observedAt": "2026-08-02T19:34:10Z",
-          "probability": 0.0115
-        },
-        {
-          "date": "2026-08-03",
-          "observedAt": "2026-08-03T19:57:37Z",
-          "probability": 0.0115
-        },
-        {
-          "date": "2026-08-04",
-          "observedAt": "2026-08-04T19:56:11Z",
-          "probability": 0.0145
-        },
-        {
-          "date": "2026-08-05",
-          "observedAt": "2026-08-05T19:54:26Z",
-          "probability": 0.0125
-        },
-        {
-          "date": "2026-08-06",
-          "observedAt": "2026-08-06T09:05:18Z",
-          "probability": 0.0125
-        },
-        {
-          "date": "2026-08-07",
-          "observedAt": "2026-08-07T19:15:03Z",
-          "probability": 0.0165
-        },
-        {
-          "date": "2026-08-08",
-          "observedAt": "2026-08-08T18:57:47Z",
-          "probability": 0.0195
-        },
-        {
-          "date": "2026-08-09",
-          "observedAt": "2026-08-09T19:00:19Z",
-          "probability": 0.021
-        },
-        {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.0105
+          "probability": 0.435
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.425
         }
       ],
       "status": "current"
@@ -1332,20 +1407,20 @@
       "probability": 0.145,
       "probabilityPercent": 14.5,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -4.0,
-      "change7dPoints": -9.0,
+      "change24hPoints": -3.0,
+      "change7dPoints": -10.0,
       "bestBid": 0.14,
       "bestAsk": 0.15,
       "spread": 0.01,
-      "liquidity": 421944.68,
-      "volume24h": 104604.02,
-      "volumeTotal": 2567504.11,
-      "openInterest": 687302.84,
-      "qualityScore": 96,
+      "liquidity": 431487.5,
+      "volume24h": 75316.88,
+      "volumeTotal": 2594901.83,
+      "openInterest": 687089.45,
+      "qualityScore": 92,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $421,945",
-        "24h volume $104,604",
+        "Liquidity $431,488",
+        "24h volume $75,317",
         "Spread 1.00 points",
         "Resolution source supplied"
       ],
@@ -1359,8 +1434,8 @@
       "resolutionSource": "https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730",
       "description": "This market will resolve to “Yes” if IMF Portwatch publishes a 7-day moving average of transit calls (“Arrivals of Ships”) for the Strait of Hormuz equal to or above 60 for any date between market creation and September 30, 2026. Otherwise, this market will resolve to “No”.\n\nDaily transit calls include container, dry bulk, roll-on/roll-off, general cargo, and tanker ships. Ships not reported by IMF Portwatch will not be considered.\n\nThis market will resolve as soon as IMF Portwatch publishes a 7-day moving average of transit calls equal to or above the specified level, or once data has been published for the final date in the specified period and no such value has been published. If no data has been published for the final date of the specified period within 14 calendar days (ET) after the end of that period, this market will resolve based on data published up to that point.\n\nRevisions to previously published data points made within this market’s timeframe will be considered. However, they will not disqualify a previously published data point from qualifying. Revisions to previously published data points after data is published for September 30, 2026, however, will not be considered.\n\nIn case of obvious data integrity issues (i.e., erroneous data), the market may remain open until the end of the third calendar day (ET) after the date on which such data is first released to allow for corrections. Data integrity issues refer only to clerical or other similar errors in the underlying data, and do not include cases where IMF Portwatch differs from alternative sources.\n\nThe resolution source for this market will be IMF Portwatch, specifically the transit calls data published for the Strait of Hormuz at https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730, both in",
       "endDate": "2026-09-30T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-september-30-20260702154339440",
       "restricted": true,
       "acceptingOrders": true,
@@ -1500,6 +1575,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.145
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.145
         }
       ],
       "status": "current"
@@ -1514,20 +1594,20 @@
       "probability": 0.0045,
       "probabilityPercent": 0.45,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -1.75,
+      "change24hPoints": -1.35,
       "change7dPoints": null,
       "bestBid": 0.004,
       "bestAsk": 0.005,
       "spread": 0.001,
-      "liquidity": 266105.63,
-      "volume24h": 379606.23,
-      "volumeTotal": 824662.83,
-      "openInterest": 2145077.57,
+      "liquidity": 274856.5,
+      "volume24h": 387947.3,
+      "volumeTotal": 851479.9,
+      "openInterest": 2129103.23,
       "qualityScore": 92,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $266,106",
-        "24h volume $379,606",
+        "Liquidity $274,856",
+        "24h volume $387,947",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -1539,8 +1619,8 @@
       "resolutionSource": "https://dumatv.ru/fractions",
       "description": "Parliamentary elections are to be scheduled to be held in Russia in September 2026.\n\nThis market will resolve according to the political party that gains the greatest number of seats in the next Russian State Duma election, compared to before the election.\n\nIf the results are not known definitively by September 30, 2027, 11:59 PM ET, this market will resolve to \"Other\".\n\nIn the event of a tie between multiple parties for the most seats gained, this market will resolve in favor of the party that received a greater number of valid votes. In the event that results in a tie, this market will resolve in favor of the party whose listed abbreviation appears first in alphabetical order.\n\nThis market's resolution will be based solely on the number of seats gained by the named party in the State Duma of the Federal Assembly of the Russian Federation.\n\nThis market will resolve based on the results of this election, as indicated by a consensus of credible reporting. If there is ambiguity, this market will resolve based solely on the official results reported by Russian government sources such as the Central Election Commission of the Russian Federation.\n\nNote: Per market rules, the market will resolve according to the number of seats won by the listed party “compared to [the number of seats they held] before the election,” specifically meaning the party’s seat count in the outgoing State Duma as of 12:00 PM Moscow time on the calendar day immediately preceding the official scheduled date of the 2026 Russian parliamentary election, as determined by a consensus of credible reporting; if there is ambiguity, this market will resolve based solely on Russian government sources such as the State Duma or its official media outlets (e.g., https://dumatv.ru/fractions).",
       "endDate": "2026-09-30T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/which-party-will-gain-most-seats-in-russian-parliamentary-election",
       "restricted": true,
       "acceptingOrders": true,
@@ -1565,6 +1645,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0045
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0045
         }
       ],
       "status": "current"
@@ -1576,23 +1661,23 @@
       "eventTitle": "How many Fed rate cuts in 2026?",
       "categoryId": "monetary-policy",
       "category": "Monetary Policy & Macro",
-      "probability": 0.8525,
-      "probabilityPercent": 85.25,
+      "probability": 0.8575,
+      "probabilityPercent": 85.75,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -0.5,
-      "change7dPoints": -3.5,
-      "bestBid": 0.852,
-      "bestAsk": 0.853,
+      "change24hPoints": null,
+      "change7dPoints": -3.0,
+      "bestBid": 0.857,
+      "bestAsk": 0.858,
       "spread": 0.001,
-      "liquidity": 123227.21,
-      "volume24h": 35788.28,
-      "volumeTotal": 7130363.04,
-      "openInterest": 1805454.52,
+      "liquidity": 160165.56,
+      "volume24h": 35919.22,
+      "volumeTotal": 7131456.67,
+      "openInterest": 1810866.39,
       "qualityScore": 90,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $123,227",
-        "24h volume $35,788",
+        "Liquidity $160,166",
+        "24h volume $35,919",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -1607,8 +1692,8 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "description": "This market will resolve according to the exact amount of cuts of 25 basis points in 2026 by the Fed (including any cuts made during the December meeting).\n\nEmergency rate cuts outside of scheduled FOMC meetings will also count toward the total number of cuts in 2026. This market will remain open until December 31, 2026, 11:59 PM ET, to account for any such emergency actions.\n\nFor example, if the Fed cuts rates by 50 bps after a meeting, it would be considered 2 cuts (of 25 bps each).\n\nThis market will resolve early to \"No\" if the specified number of cuts becomes impossible — i.e., if more cuts have already occurred than the strike in question.\n\nNote that cuts between 1–24 bps (inclusive) will also be considered 1 rate cut.\n\nThe resolution source for this market will be FOMC statements after meetings scheduled in 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm. The level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.",
       "endDate": "2026-12-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:09:59.212548Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/how-many-fed-rate-cuts-in-2026",
       "restricted": true,
       "acceptingOrders": true,
@@ -1618,59 +1703,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.8525
-        }
-      ],
-      "status": "current"
-    },
-    {
-      "id": "616912",
-      "slug": "will-10-fed-rate-cuts-happen-in-2026",
-      "question": "Will 10 Fed rate cuts happen in 2026?",
-      "eventTitle": "How many Fed rate cuts in 2026?",
-      "categoryId": "monetary-policy",
-      "category": "Monetary Policy & Macro",
-      "probability": 0.0015,
-      "probabilityPercent": 0.15,
-      "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": null,
-      "change7dPoints": null,
-      "bestBid": 0.001,
-      "bestAsk": 0.002,
-      "spread": 0.001,
-      "liquidity": 481919.0,
-      "volume24h": 6151.71,
-      "volumeTotal": 4858851.3,
-      "openInterest": 1805454.52,
-      "qualityScore": 89,
-      "qualityGrade": "A",
-      "qualityReasons": [
-        "Liquidity $481,919",
-        "24h volume $6,152",
-        "Spread 0.10 points",
-        "Resolution source supplied"
-      ],
-      "relevanceScore": 6,
-      "assets": [
-        "gold",
-        "rates",
-        "semiconductors",
-        "silver",
-        "us-dollar"
-      ],
-      "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-      "description": "This market will resolve according to the exact amount of cuts of 25 basis points in 2026 by the Fed (including any cuts made during the December meeting).\n\nEmergency rate cuts outside of scheduled FOMC meetings will also count toward the total number of cuts in 2026. This market will remain open until December 31, 2026, 11:59 PM ET, to account for any such emergency actions.\n\nFor example, if the Fed cuts rates by 50 bps after a meeting, it would be considered 2 cuts (of 25 bps each).\n\nThis market will resolve early to \"No\" if the specified number of cuts becomes impossible — i.e., if more cuts have already occurred than the strike in question.\n\nNote that cuts between 1–24 bps (inclusive) will also be considered 1 rate cut.\n\nThe resolution source for this market will be FOMC statements after meetings scheduled in 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm. The level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.",
-      "endDate": "2026-12-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/how-many-fed-rate-cuts-in-2026",
-      "restricted": true,
-      "acceptingOrders": true,
-      "readOnly": true,
-      "history": [
+        },
         {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.0015
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.8575
         }
       ],
       "status": "current"
@@ -1690,15 +1727,15 @@
       "bestBid": 0.58,
       "bestAsk": 0.59,
       "spread": 0.01,
-      "liquidity": 209545.82,
-      "volume24h": 68193.45,
-      "volumeTotal": 7066406.65,
-      "openInterest": 1472676.59,
+      "liquidity": 246968.94,
+      "volume24h": 67030.08,
+      "volumeTotal": 7068324.32,
+      "openInterest": 1472953.85,
       "qualityScore": 87,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $209,546",
-        "24h volume $68,193",
+        "Liquidity $246,969",
+        "24h volume $67,030",
         "Spread 1.00 points",
         "Resolution source supplied"
       ],
@@ -1713,8 +1750,8 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
       "description": "This market will resolve to “Yes” if the upper bound of the target federal funds rate is increased at any point between January 1, 2026 and the Fed's December 2026 meeting, currently scheduled for December 8-9, 2026. Otherwise, this market will resolve to “No”.\n\nThis market may not resolve to \"No\" until the Fed has released its rate change decision following its December meeting.\n\nThe primary resolution source for this market will be the official website of the Federal Reserve (https://www.federalreserve.gov/monetarypolicy/openmarket.htm), however a consensus of credible reporting may also be used.",
       "endDate": "2026-12-09T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/fed-rate-hike-in-2026",
       "restricted": true,
       "acceptingOrders": true,
@@ -1829,69 +1866,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.585
-        }
-      ],
-      "status": "current"
-    },
-    {
-      "id": "616904",
-      "slug": "will-2-fed-rate-cuts-happen-in-2026",
-      "question": "Will 2 Fed rate cuts happen in 2026?",
-      "eventTitle": "How many Fed rate cuts in 2026?",
-      "categoryId": "monetary-policy",
-      "category": "Monetary Policy & Macro",
-      "probability": 0.0325,
-      "probabilityPercent": 3.25,
-      "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 0.4,
-      "change7dPoints": 0.75,
-      "bestBid": 0.032,
-      "bestAsk": 0.033,
-      "spread": 0.001,
-      "liquidity": 212235.62,
-      "volume24h": 9194.97,
-      "volumeTotal": 2482117.31,
-      "openInterest": 1805454.52,
-      "qualityScore": 86,
-      "qualityGrade": "A",
-      "qualityReasons": [
-        "Liquidity $212,236",
-        "24h volume $9,195",
-        "Spread 0.10 points",
-        "Resolution source supplied"
-      ],
-      "relevanceScore": 6,
-      "assets": [
-        "gold",
-        "rates",
-        "semiconductors",
-        "silver",
-        "us-dollar"
-      ],
-      "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-      "description": "This market will resolve according to the exact amount of cuts of 25 basis points in 2026 by the Fed (including any cuts made during the December meeting).\n\nEmergency rate cuts outside of scheduled FOMC meetings will also count toward the total number of cuts in 2026. This market will remain open until December 31, 2026, 11:59 PM ET, to account for any such emergency actions.\n\nFor example, if the Fed cuts rates by 50 bps after a meeting, it would be considered 2 cuts (of 25 bps each).\n\nThis market will resolve early to \"No\" if the specified number of cuts becomes impossible — i.e., if more cuts have already occurred than the strike in question.\n\nNote that cuts between 1–24 bps (inclusive) will also be considered 1 rate cut.\n\nThe resolution source for this market will be FOMC statements after meetings scheduled in 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm. The level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.",
-      "endDate": "2026-12-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/how-many-fed-rate-cuts-in-2026",
-      "restricted": true,
-      "acceptingOrders": true,
-      "readOnly": true,
-      "history": [
-        {
-          "date": "2026-08-08",
-          "observedAt": "2026-08-08T18:57:47Z",
-          "probability": 0.0315
         },
         {
-          "date": "2026-08-09",
-          "observedAt": "2026-08-09T19:00:19Z",
-          "probability": 0.0285
-        },
-        {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.0325
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.585
         }
       ],
       "status": "current"
@@ -1911,15 +1890,15 @@
       "bestBid": 0.003,
       "bestAsk": 0.005,
       "spread": 0.002,
-      "liquidity": 208134.96,
-      "volume24h": 5514.24,
-      "volumeTotal": 2428920.8,
-      "openInterest": 1805454.52,
+      "liquidity": 204189.59,
+      "volume24h": 5705.28,
+      "volumeTotal": 2429127.2,
+      "openInterest": 1810866.39,
       "qualityScore": 86,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $208,135",
-        "24h volume $5,514",
+        "Liquidity $204,190",
+        "24h volume $5,705",
         "Spread 0.20 points",
         "Resolution source supplied"
       ],
@@ -1934,8 +1913,8 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
       "description": "This market will resolve according to the exact amount of cuts of 25 basis points in 2026 by the Fed (including any cuts made during the December meeting).\n\nEmergency rate cuts outside of scheduled FOMC meetings will also count toward the total number of cuts in 2026. This market will remain open until December 31, 2026, 11:59 PM ET, to account for any such emergency actions.\n\nFor example, if the Fed cuts rates by 50 bps after a meeting, it would be considered 2 cuts (of 25 bps each).\n\nThis market will resolve early to \"No\" if the specified number of cuts becomes impossible — i.e., if more cuts have already occurred than the strike in question.\n\nNote that cuts between 1–24 bps (inclusive) will also be considered 1 rate cut.\n\nThe resolution source for this market will be FOMC statements after meetings scheduled in 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm. The level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.",
       "endDate": "2026-12-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/how-many-fed-rate-cuts-in-2026",
       "restricted": true,
       "acceptingOrders": true,
@@ -1944,6 +1923,11 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.004
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
           "probability": 0.004
         }
       ],
@@ -1956,23 +1940,23 @@
       "eventTitle": "Where will the next next round of US-Iran peace talks be...?",
       "categoryId": "geopolitics-security",
       "category": "Geopolitics & Security",
-      "probability": 0.4775,
-      "probabilityPercent": 47.75,
+      "probability": 0.4825,
+      "probabilityPercent": 48.25,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -0.6,
-      "change7dPoints": 12.3,
-      "bestBid": 0.477,
-      "bestAsk": 0.478,
+      "change24hPoints": -0.55,
+      "change7dPoints": 15.0,
+      "bestBid": 0.482,
+      "bestAsk": 0.483,
       "spread": 0.001,
-      "liquidity": 113520.88,
-      "volume24h": 21602.47,
-      "volumeTotal": 563411.89,
-      "openInterest": 196214.99,
+      "liquidity": 102086.41,
+      "volume24h": 22409.29,
+      "volumeTotal": 565688.41,
+      "openInterest": 198255.41,
       "qualityScore": 86,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $113,521",
-        "24h volume $21,602",
+        "Liquidity $102,086",
+        "24h volume $22,409",
         "Spread 0.10 points",
         "Resolution source supplied"
       ],
@@ -1984,8 +1968,8 @@
       "resolutionSource": "https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks",
       "description": "On June 22, the first round of U.S.-Iran diplomatic talks in Switzerland concluded, with mediators reporting progress toward a roadmap for a final deal and follow-on technical talks expected to continue (see: https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks).\n\nThis market will resolve according to the country in which the next formal senior-level round of peace talks between representatives of the United States and Iran begins by September 30, 2026, 11:59 PM ET.\n\nA qualifying round must be a deliberate in-person diplomatic meeting or negotiating round concerning US-Iran relations, involving senior representatives of both the United States and Iran who are acting in an official capacity and are authorized to conduct or materially direct diplomacy on behalf of their governments.\n\nIndirect in-person diplomacy through designated mediators, facilitators, or interlocutors will qualify, provided senior representatives of both the United States and Iran are participating in the same formal diplomatic process with the knowledge and authorization of their respective governments. The representatives need not be in the same room at the same time.\n\nFollow-on technical talks from the June 22 Switzerland round will not qualify by themselves. Technical, staff-level, working-group, implementation, monitoring, preparatory, or deconfliction meetings will not qualify unless they occur as part of a new formally convened senior-level U.S.-Iran peace-talks round.\n\nBrief greetings, chance encounters, photo opportunities, ceremonial appearances, or talks not deliberately aimed at diplomacy or negotiation will not count.\n\nThe meeting must be in-person (including indirect in-person meetings) and must be publicly acknowledged by either gover",
       "endDate": "2026-09-30T23:59:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/where-will-the-next-next-round-of-us-iran-peace-talks-beptptpt-20260623023740663",
       "restricted": true,
       "acceptingOrders": true,
@@ -2050,169 +2034,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.4775
-        }
-      ],
-      "status": "current"
-    },
-    {
-      "id": "3310013",
-      "slug": "will-wti-reach-85-in-august-2026",
-      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $85 in August?",
-      "eventTitle": "What will WTI Crude Oil (WTI) hit in August 2026?",
-      "categoryId": "energy-commodities",
-      "category": "Energy & Commodities",
-      "probability": 0.675,
-      "probabilityPercent": 67.5,
-      "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 25.0,
-      "change7dPoints": -2.0,
-      "bestBid": 0.67,
-      "bestAsk": 0.68,
-      "spread": 0.01,
-      "liquidity": 20247.63,
-      "volume24h": 143745.52,
-      "volumeTotal": 509552.79,
-      "openInterest": 2512226.3,
-      "qualityScore": 83,
-      "qualityGrade": "A",
-      "qualityReasons": [
-        "Liquidity $20,248",
-        "24h volume $143,746",
-        "Spread 1.00 points",
-        "Resolution source supplied"
-      ],
-      "relevanceScore": 6,
-      "assets": [
-        "wti"
-      ],
-      "resolutionSource": "https://pythdata.app/explore?search=WTI",
-      "description": "This market will resolve to \"Yes\" if, at any point after market creation and during a trading session of August 2026, any 1-minute candle for the Active Month of WTI Crude Oil futures has a final \"High\" or \"Low\" price equal to or beyond (above for ↑ High Prices, below for ↓ Low Prices) the listed price. Otherwise, this market will resolve to \"No\".\n\nPrices will be used exactly as published by Pyth, without rounding.\n\nIf the Active Month contract does not trade at all during the listed time frame, this market will resolve to \"No\".\n\nOnly prices achieved during an applicable trading session of the specified timeframe's business days will be considered. The trading session for a given business day typically begins at 6:00 PM ET on the prior calendar date. Under the standard schedule, trading is open from 6:00:00 PM ET Sunday through 5:00:00 PM ET Friday, with a daily break from 5:00:00 PM ET to 6:00:00 PM ET, except where modified by holiday or special-session hours.\n\nThe active month changes at the start of the second trading session prior to the nearest listed contract's last trading session. At that point, the next listed contract becomes the active month (i.e., for the final three trading sessions of the nearest listed contract, the contract for the next month is the active month).\n\nPer CME contract specifications for WTI Crude Oil (CL) futures, a contract's last trading day is three business days prior to the 25th calendar day of the month preceding the contract's delivery month (or four business days prior if the 25th calendar day is not a business day).\n\nFor example, if the 25th of the month is a Saturday, the last trading session for the nearest listed contract is the session for Tuesday the 21st, and the next listed contract becomes the active month at the start of ",
-      "endDate": "2026-09-01T03:59:59.999Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/what-price-will-wti-hit-in-august-2026",
-      "restricted": true,
-      "acceptingOrders": true,
-      "readOnly": true,
-      "history": [
-        {
-          "date": "2026-08-09",
-          "observedAt": "2026-08-09T19:00:19Z",
-          "probability": 0.425
         },
         {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.675
-        }
-      ],
-      "status": "current"
-    },
-    {
-      "id": "2976202",
-      "slug": "iran-full-airspace-closure-by-august-15",
-      "question": "Iran full airspace closure by August 15?",
-      "eventTitle": "Iran full airspace closure by...?",
-      "categoryId": "geopolitics-security",
-      "category": "Geopolitics & Security",
-      "probability": 0.038,
-      "probabilityPercent": 3.8,
-      "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -0.85,
-      "change7dPoints": -6.7,
-      "bestBid": 0.037,
-      "bestAsk": 0.039,
-      "spread": 0.002,
-      "liquidity": 27628.13,
-      "volume24h": 19761.8,
-      "volumeTotal": 629445.22,
-      "openInterest": 399032.55,
-      "qualityScore": 82,
-      "qualityGrade": "A",
-      "qualityReasons": [
-        "Liquidity $27,628",
-        "24h volume $19,762",
-        "Spread 0.20 points",
-        "Resolution source supplied"
-      ],
-      "relevanceScore": 4,
-      "assets": [
-        "brent",
-        "gold",
-        "us-dollar",
-        "wti"
-      ],
-      "resolutionSource": "https://www.iranintl.com/en/202602289115",
-      "description": "This market will resolve to “Yes” if Iran initiates a general closure of its airspace, that is not solely due to weather conditions, between market creation and the specified date, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nA “general closure” refers to a cancellation or suspension of aviation which is generally applicable to all commercial flights transiting Iranian airspace (“Tehran FIR”). A qualifying closure must apply generally to all of Iran or the Tehran FIR; limited cancellations, delays, or partial closures will not qualify. A closure which applies generally to commercial aviation across Iranian airspace, with limited exceptions for certain categories of flights, however, will qualify (e.g. exceptions for certain flights pre-approved by the Iranian Civil Aviation Authority may be permitted).\n\nQualifying previous examples include the February 28, 2026 total closure of Iranian airspace (https://www.iranintl.com/en/202602289115) and the January 2026 total closure of Iranian airspace except to international flights with express governmental permission (https://www.reuters.com/world/middle-east/iran-shuts-airspace-most-flights-flightradar24-says-2026-01-14/). Non-qualifying examples include the January 27, 2026 partial closure of Iranian airspace around the Strait of Hormuz (https://www.aa.com.tr/en/middle-east/iran-issues-airspace-notice-for-military-drills-near-strait-of-hormuz/3812508), the April 2024 closure of Iran’s western airspace (https://www.reuters.com/world/middle-east/iranian-airports-cancel-flights-until-monday-morning-2024-04-14/), and the January 25 - April 25, 2026 VFR (Visual Flight Rules) flights suspension which did not broadly close commercial aviation in Iran (https://www.intellinews.com/iran-suspends-general-aviation-and-vfr-fl",
-      "endDate": "2026-08-15T23:59:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/iran-full-airspace-closure-byptptpt-20260625195253028",
-      "restricted": true,
-      "acceptingOrders": true,
-      "readOnly": true,
-      "history": [
-        {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.038
-        }
-      ],
-      "status": "current"
-    },
-    {
-      "id": "2686771",
-      "slug": "iran-full-airspace-closure-by-august-31-20260625195254151-668",
-      "question": "Iran full airspace closure by August 31?",
-      "eventTitle": "Iran full airspace closure by...?",
-      "categoryId": "geopolitics-security",
-      "category": "Geopolitics & Security",
-      "probability": 0.105,
-      "probabilityPercent": 10.5,
-      "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 2.0,
-      "change7dPoints": -11.0,
-      "bestBid": 0.1,
-      "bestAsk": 0.11,
-      "spread": 0.01,
-      "liquidity": 36435.09,
-      "volume24h": 11407.81,
-      "volumeTotal": 1131746.51,
-      "openInterest": 399032.55,
-      "qualityScore": 82,
-      "qualityGrade": "A",
-      "qualityReasons": [
-        "Liquidity $36,435",
-        "24h volume $11,408",
-        "Spread 1.00 points",
-        "Resolution source supplied"
-      ],
-      "relevanceScore": 4,
-      "assets": [
-        "brent",
-        "gold",
-        "us-dollar",
-        "wti"
-      ],
-      "resolutionSource": "https://www.iranintl.com/en/202602289115",
-      "description": "This market will resolve to “Yes” if Iran initiates a general closure of its airspace, that is not solely due to weather conditions, between market creation and the specified date, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nA “general closure” refers to a cancellation or suspension of aviation which is generally applicable to all commercial flights transiting Iranian airspace (“Tehran FIR”). A qualifying closure must apply generally to all of Iran or the Tehran FIR; limited cancellations, delays, or partial closures will not qualify. A closure which applies generally to commercial aviation across Iranian airspace, with limited exceptions for certain categories of flights, however, will qualify (e.g. exceptions for certain flights pre-approved by the Iranian Civil Aviation Authority may be permitted).\n\nQualifying previous examples include the February 28, 2026 total closure of Iranian airspace (https://www.iranintl.com/en/202602289115) and the January 2026 total closure of Iranian airspace except to international flights with express governmental permission (https://www.reuters.com/world/middle-east/iran-shuts-airspace-most-flights-flightradar24-says-2026-01-14/). Non-qualifying examples include the January 27, 2026 partial closure of Iranian airspace around the Strait of Hormuz (https://www.aa.com.tr/en/middle-east/iran-issues-airspace-notice-for-military-drills-near-strait-of-hormuz/3812508), the April 2024 closure of Iran’s western airspace (https://www.reuters.com/world/middle-east/iranian-airports-cancel-flights-until-monday-morning-2024-04-14/), and the January 25 - April 25, 2026 VFR (Visual Flight Rules) flights suspension which did not broadly close commercial aviation in Iran (https://www.intellinews.com/iran-suspends-general-aviation-and-vfr-fl",
-      "endDate": "2026-08-31T23:59:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/iran-full-airspace-closure-byptptpt-20260625195253028",
-      "restricted": true,
-      "acceptingOrders": true,
-      "readOnly": true,
-      "history": [
-        {
-          "date": "2026-08-09",
-          "observedAt": "2026-08-09T19:00:19Z",
-          "probability": 0.085
-        },
-        {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.105
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.4825
         }
       ],
       "status": "current"
@@ -2224,23 +2050,23 @@
       "eventTitle": "Next round of US-Iran peace talks by...?",
       "categoryId": "geopolitics-security",
       "category": "Geopolitics & Security",
-      "probability": 0.525,
-      "probabilityPercent": 52.5,
+      "probability": 0.515,
+      "probabilityPercent": 51.5,
       "probabilitySource": "bid-ask midpoint",
       "change24hPoints": null,
-      "change7dPoints": -11.0,
-      "bestBid": 0.52,
-      "bestAsk": 0.53,
+      "change7dPoints": -13.0,
+      "bestBid": 0.51,
+      "bestAsk": 0.52,
       "spread": 0.01,
-      "liquidity": 96244.0,
-      "volume24h": 39476.7,
-      "volumeTotal": 199500.88,
-      "openInterest": 287395.28,
-      "qualityScore": 82,
+      "liquidity": 105198.59,
+      "volume24h": 42152.74,
+      "volumeTotal": 204662.38,
+      "openInterest": 291858.35,
+      "qualityScore": 86,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $96,244",
-        "24h volume $39,477",
+        "Liquidity $105,199",
+        "24h volume $42,153",
         "Spread 1.00 points",
         "Resolution source supplied"
       ],
@@ -2252,8 +2078,8 @@
       "resolutionSource": "https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks",
       "description": "On June 22, the first round of U.S.-Iran diplomatic talks in Switzerland concluded, with mediators reporting progress toward a roadmap for a final deal and follow-on technical talks expected to continue.(see: https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks). \n\nThis market will resolve to “Yes” if the next formal senior-level round of peace talks between representatives of the United States and Iran begins by the listed date, 11:59 PM ET. Otherwise, this market will resolve to “No.”\n\nA qualifying round must be a deliberate in-person diplomatic meeting or negotiating round concerning US-Iran relations, involving senior representatives of both the United States and Iran who are acting in an official capacity and are authorized to conduct or materially direct diplomacy on behalf of their governments.\n\nIndirect in-person diplomacy through designated mediators, facilitators, or interlocutors will qualify, provided senior representatives of both the United States and Iran are participating in the same formal diplomatic process with the knowledge and authorization of their respective governments. The representatives need not be in the same room at the same time.\n\nFollow-on technical talks from the June 22 Switzerland round will not qualify by themselves. Technical, staff-level, working-group, implementation, monitoring, preparatory, or deconfliction meetings will not qualify unless they occur as part of a new formally convened senior-level U.S.-Iran peace-talks round.\n\nBrief greetings, chance encounters, photo opportunities, ceremonial appearances, or talks not deliberately aimed at diplomacy or negotiation will not count.\n\nThe meeting must be in-person (including indirect in-person meetings) and must be publicly acknowl",
       "endDate": "2026-09-30T23:59:00Z",
-      "updatedAt": "2026-08-10T19:09:59.212548Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/next-round-of-us-iran-peace-talks-byptptpt-20260623022722982",
       "restricted": true,
       "acceptingOrders": true,
@@ -2263,6 +2089,65 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.525
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.515
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "3102467",
+      "slug": "will-wti-dip-to-65-in-august-2026",
+      "question": "Will WTI Crude Oil (WTI) hit (LOW) $65 in August?",
+      "eventTitle": "What will WTI Crude Oil (WTI) hit in August 2026?",
+      "categoryId": "energy-commodities",
+      "category": "Energy & Commodities",
+      "probability": 0.1,
+      "probabilityPercent": 10.0,
+      "probabilitySource": "bid-ask midpoint",
+      "change24hPoints": -3.5,
+      "change7dPoints": -3.5,
+      "bestBid": 0.09,
+      "bestAsk": 0.11,
+      "spread": 0.02,
+      "liquidity": 64321.3,
+      "volume24h": 38101.71,
+      "volumeTotal": 260892.71,
+      "openInterest": 2541393.81,
+      "qualityScore": 83,
+      "qualityGrade": "A",
+      "qualityReasons": [
+        "Liquidity $64,321",
+        "24h volume $38,102",
+        "Spread 2.00 points",
+        "Resolution source supplied"
+      ],
+      "relevanceScore": 6,
+      "assets": [
+        "wti"
+      ],
+      "resolutionSource": "https://pythdata.app/explore?search=WTI",
+      "description": "This market will resolve to \"Yes\" if, at any point after market creation and during a trading session of August 2026, any 1-minute candle for the Active Month of WTI Crude Oil futures has a final \"High\" or \"Low\" price equal to or beyond (above for ↑ High Prices, below for ↓ Low Prices) the listed price. Otherwise, this market will resolve to \"No\".\n\nPrices will be used exactly as published by Pyth, without rounding.\n\nIf the Active Month contract does not trade at all during the listed time frame, this market will resolve to \"No\".\n\nOnly prices achieved during an applicable trading session of the specified timeframe's business days will be considered. The trading session for a given business day typically begins at 6:00 PM ET on the prior calendar date. Under the standard schedule, trading is open from 6:00:00 PM ET Sunday through 5:00:00 PM ET Friday, with a daily break from 5:00:00 PM ET to 6:00:00 PM ET, except where modified by holiday or special-session hours.\n\nThe active month changes at the start of the second trading session prior to the nearest listed contract's last trading session. At that point, the next listed contract becomes the active month (i.e., for the final three trading sessions of the nearest listed contract, the contract for the next month is the active month).\n\nPer CME contract specifications for WTI Crude Oil (CL) futures, a contract's last trading day is three business days prior to the 25th calendar day of the month preceding the contract's delivery month (or four business days prior if the 25th calendar day is not a business day).\n\nFor example, if the 25th of the month is a Saturday, the last trading session for the nearest listed contract is the session for Tuesday the 21st, and the next listed contract becomes the active month at the start of ",
+      "endDate": "2026-09-01T03:59:59.999Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/what-price-will-wti-hit-in-august-2026",
+      "restricted": true,
+      "acceptingOrders": true,
+      "readOnly": true,
+      "history": [
+        {
+          "date": "2026-08-10",
+          "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.105
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.1
         }
       ],
       "status": "current"
@@ -2274,23 +2159,23 @@
       "eventTitle": "Next round of US-Iran peace talks by...?",
       "categoryId": "geopolitics-security",
       "category": "Geopolitics & Security",
-      "probability": 0.0245,
-      "probabilityPercent": 2.45,
+      "probability": 0.0215,
+      "probabilityPercent": 2.15,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -2.05,
-      "change7dPoints": -18.05,
-      "bestBid": 0.023,
-      "bestAsk": 0.026,
+      "change24hPoints": -2.35,
+      "change7dPoints": -16.85,
+      "bestBid": 0.02,
+      "bestAsk": 0.023,
       "spread": 0.003,
-      "liquidity": 75656.62,
-      "volume24h": 16115.57,
-      "volumeTotal": 396110.87,
-      "openInterest": 287395.28,
+      "liquidity": 92325.18,
+      "volume24h": 18141.52,
+      "volumeTotal": 401163.04,
+      "openInterest": 291858.35,
       "qualityScore": 81,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $75,657",
-        "24h volume $16,116",
+        "Liquidity $92,325",
+        "24h volume $18,142",
         "Spread 0.30 points",
         "Resolution source supplied"
       ],
@@ -2302,8 +2187,8 @@
       "resolutionSource": "https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks",
       "description": "On June 22, the first round of U.S.-Iran diplomatic talks in Switzerland concluded, with mediators reporting progress toward a roadmap for a final deal and follow-on technical talks expected to continue.(see: https://www.aljazeera.com/news/2026/6/22/us-iran-agree-on-roadmap-towards-final-deal-in-switzerland-talks). \n\nThis market will resolve to “Yes” if the next formal senior-level round of peace talks between representatives of the United States and Iran begins by the listed date, 11:59 PM ET. Otherwise, this market will resolve to “No.”\n\nA qualifying round must be a deliberate in-person diplomatic meeting or negotiating round concerning US-Iran relations, involving senior representatives of both the United States and Iran who are acting in an official capacity and are authorized to conduct or materially direct diplomacy on behalf of their governments.\n\nIndirect in-person diplomacy through designated mediators, facilitators, or interlocutors will qualify, provided senior representatives of both the United States and Iran are participating in the same formal diplomatic process with the knowledge and authorization of their respective governments. The representatives need not be in the same room at the same time.\n\nFollow-on technical talks from the June 22 Switzerland round will not qualify by themselves. Technical, staff-level, working-group, implementation, monitoring, preparatory, or deconfliction meetings will not qualify unless they occur as part of a new formally convened senior-level U.S.-Iran peace-talks round.\n\nBrief greetings, chance encounters, photo opportunities, ceremonial appearances, or talks not deliberately aimed at diplomacy or negotiation will not count.\n\nThe meeting must be in-person (including indirect in-person meetings) and must be publicly acknowl",
       "endDate": "2026-08-15T23:59:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/next-round-of-us-iran-peace-talks-byptptpt-20260623022722982",
       "restricted": true,
       "acceptingOrders": true,
@@ -2313,6 +2198,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0245
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0215
         }
       ],
       "status": "current"
@@ -2324,24 +2214,24 @@
       "eventTitle": "Crude Oil all time high by...?",
       "categoryId": "energy-commodities",
       "category": "Energy & Commodities",
-      "probability": 0.0355,
-      "probabilityPercent": 3.55,
+      "probability": 0.0435,
+      "probabilityPercent": 4.35,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 0.5,
-      "change7dPoints": -1.15,
-      "bestBid": 0.034,
-      "bestAsk": 0.037,
-      "spread": 0.003,
-      "liquidity": 64696.0,
-      "volume24h": 6671.61,
-      "volumeTotal": 967757.46,
-      "openInterest": 746681.81,
+      "change24hPoints": 1.3,
+      "change7dPoints": 0.4,
+      "bestBid": 0.04,
+      "bestAsk": 0.047,
+      "spread": 0.007,
+      "liquidity": 59909.59,
+      "volume24h": 11256.28,
+      "volumeTotal": 974081.55,
+      "openInterest": 751988.89,
       "qualityScore": 81,
       "qualityGrade": "A",
       "qualityReasons": [
-        "Liquidity $64,696",
-        "24h volume $6,672",
-        "Spread 0.30 points",
+        "Liquidity $59,910",
+        "24h volume $11,256",
+        "Spread 0.70 points",
         "Resolution source supplied"
       ],
       "relevanceScore": 3,
@@ -2352,8 +2242,8 @@
       "resolutionSource": "https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.quotes.html",
       "description": "This market will resolve to \"Yes\" if, on any trading day after market creation, the official daily high price published by the CME Group for the Active Month (front month) of CME Crude Oil (CL) futures is greater than $147.27 by the final trading day on or before the specified date. Otherwise, this market will resolve to \"No\".\n\nFor CME Crude Oil (CL) futures contracts, the active month is the nearest of the contract months listed. The active month becomes a non-active month effective two business days prior to the spot month expiration. For example, if the spot month expires on a Friday the next listed contract will be considered the Active Month on the Wednesday prior to the spot month expiration.\n\nThis market will resolve as soon as a high price greater than the listed value is published, or once finalized data for the final trading day of the specified time period is published and a high price greater than $147.27 has not been achieved.\n\nThe resolution source for this market is the CME Group website (https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.quotes.html) — specifically, the daily \"High\" prices for the Active Month of Crude Oil (CL) futures.",
       "endDate": "2026-09-30T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/crude-oil-all-time-high-by",
       "restricted": true,
       "acceptingOrders": true,
@@ -2363,6 +2253,77 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0355
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0435
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "2952488",
+      "slug": "israel-x-iran-ceasefire-continues-through-august-15-20260716224448969-246-815-987-693",
+      "question": "Israel x Iran ceasefire continues through August 15?",
+      "eventTitle": "Israel x Iran ceasefire continues through...?",
+      "categoryId": "geopolitics-security",
+      "category": "Geopolitics & Security",
+      "probability": 0.965,
+      "probabilityPercent": 96.5,
+      "probabilitySource": "bid-ask midpoint",
+      "change24hPoints": 0.95,
+      "change7dPoints": 21.0,
+      "bestBid": 0.963,
+      "bestAsk": 0.967,
+      "spread": 0.004,
+      "liquidity": 89097.01,
+      "volume24h": 129295.74,
+      "volumeTotal": 1563158.97,
+      "openInterest": 1481393.03,
+      "qualityScore": 79,
+      "qualityGrade": "B",
+      "qualityReasons": [
+        "Liquidity $89,097",
+        "24h volume $129,296",
+        "Spread 0.40 points",
+        "Resolution source not supplied",
+        "Grade capped below A until a resolution source is identifiable"
+      ],
+      "relevanceScore": 9,
+      "assets": [
+        "gold",
+        "us-dollar"
+      ],
+      "resolutionSource": null,
+      "description": "This market will resolve to \"Yes\" if a state of ceasefire remains in effect between Israel and Iran through the listed date, 11:59 PM Iran Standard Time (IRST). Otherwise this market will resolve to “No”. \n\nA state of ceasefire will be considered to no longer be in effect between Israel and Iran if either Israel or Iran takes a qualifying military action against the other country between market creation and the listed date, 11:59 PM IRST.\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by Israel or Iran, that directly impacts the other country. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nMunitions destroyed or intercepted before impact;\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nAny munition that is intercepted or destroyed before impact does not constitute a qualifying military action. Debris, fragments, or any wreckage from intercepted munitions that land on Israel or Iran do not constitute a military action regardless of any damage incurred.\n\nA military action will be considered to impact Israel or Iran if it directly impacts the terrestrial territory of Israel or Iran, including any internal waters. Maritime territory and airspace ar",
+      "endDate": "2026-08-15T23:59:00Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+      "restricted": true,
+      "acceptingOrders": true,
+      "readOnly": true,
+      "history": [
+        {
+          "date": "2026-08-08",
+          "observedAt": "2026-08-08T18:57:47Z",
+          "probability": 0.905
+        },
+        {
+          "date": "2026-08-09",
+          "observedAt": "2026-08-09T19:00:19Z",
+          "probability": 0.935
+        },
+        {
+          "date": "2026-08-10",
+          "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.958
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.965
         }
       ],
       "status": "current"
@@ -2374,26 +2335,25 @@
       "eventTitle": "Israel x Iran ceasefire continues through...?",
       "categoryId": "geopolitics-security",
       "category": "Geopolitics & Security",
-      "probability": 0.9985,
-      "probabilityPercent": 99.85,
+      "probability": 0.9995,
+      "probabilityPercent": 99.95,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 0.25,
-      "change7dPoints": 11.35,
-      "bestBid": 0.998,
-      "bestAsk": 0.999,
+      "change24hPoints": 0.1,
+      "change7dPoints": 13.45,
+      "bestBid": 0.999,
+      "bestAsk": 1.0,
       "spread": 0.001,
-      "liquidity": 127059.83,
-      "volume24h": 378766.37,
-      "volumeTotal": 2304041.9,
-      "openInterest": 1472346.4,
+      "liquidity": 124482.4,
+      "volume24h": 95551.9,
+      "volumeTotal": 2308438.26,
+      "openInterest": 1481393.03,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $127,060",
-        "24h volume $378,766",
+        "Liquidity $124,482",
+        "24h volume $95,552",
         "Spread 0.10 points",
-        "Resolution source not supplied",
-        "Grade capped below A until a resolution source is identifiable"
+        "Resolution source not supplied"
       ],
       "relevanceScore": 9,
       "assets": [
@@ -2403,8 +2363,8 @@
       "resolutionSource": null,
       "description": "This market will resolve to \"Yes\" if a state of ceasefire remains in effect between Israel and Iran through the listed date, 11:59 PM Iran Standard Time (IRST). Otherwise this market will resolve to “No”. \n\nA state of ceasefire will be considered to no longer be in effect between Israel and Iran if either Israel or Iran takes a qualifying military action against the other country between market creation and the listed date, 11:59 PM IRST.\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by Israel or Iran, that directly impacts the other country. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nMunitions destroyed or intercepted before impact;\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nAny munition that is intercepted or destroyed before impact does not constitute a qualifying military action. Debris, fragments, or any wreckage from intercepted munitions that land on Israel or Iran do not constitute a military action regardless of any damage incurred.\n\nA military action will be considered to impact Israel or Iran if it directly impacts the terrestrial territory of Israel or Iran, including any internal waters. Maritime territory and airspace ar",
       "endDate": "2026-08-09T23:59:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
       "restricted": true,
       "acceptingOrders": true,
@@ -2449,67 +2409,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.9985
-        }
-      ],
-      "status": "current"
-    },
-    {
-      "id": "2952488",
-      "slug": "israel-x-iran-ceasefire-continues-through-august-15-20260716224448969-246-815-987-693",
-      "question": "Israel x Iran ceasefire continues through August 15?",
-      "eventTitle": "Israel x Iran ceasefire continues through...?",
-      "categoryId": "geopolitics-security",
-      "category": "Geopolitics & Security",
-      "probability": 0.958,
-      "probabilityPercent": 95.8,
-      "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 2.3,
-      "change7dPoints": 15.3,
-      "bestBid": 0.957,
-      "bestAsk": 0.959,
-      "spread": 0.002,
-      "liquidity": 108567.22,
-      "volume24h": 181115.94,
-      "volumeTotal": 1528464.91,
-      "openInterest": 1472346.4,
-      "qualityScore": 79,
-      "qualityGrade": "B",
-      "qualityReasons": [
-        "Liquidity $108,567",
-        "24h volume $181,116",
-        "Spread 0.20 points",
-        "Resolution source not supplied",
-        "Grade capped below A until a resolution source is identifiable"
-      ],
-      "relevanceScore": 9,
-      "assets": [
-        "gold",
-        "us-dollar"
-      ],
-      "resolutionSource": null,
-      "description": "This market will resolve to \"Yes\" if a state of ceasefire remains in effect between Israel and Iran through the listed date, 11:59 PM Iran Standard Time (IRST). Otherwise this market will resolve to “No”. \n\nA state of ceasefire will be considered to no longer be in effect between Israel and Iran if either Israel or Iran takes a qualifying military action against the other country between market creation and the listed date, 11:59 PM IRST.\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by Israel or Iran, that directly impacts the other country. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nMunitions destroyed or intercepted before impact;\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nAny munition that is intercepted or destroyed before impact does not constitute a qualifying military action. Debris, fragments, or any wreckage from intercepted munitions that land on Israel or Iran do not constitute a military action regardless of any damage incurred.\n\nA military action will be considered to impact Israel or Iran if it directly impacts the terrestrial territory of Israel or Iran, including any internal waters. Maritime territory and airspace ar",
-      "endDate": "2026-08-15T23:59:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
-      "restricted": true,
-      "acceptingOrders": true,
-      "readOnly": true,
-      "history": [
-        {
-          "date": "2026-08-08",
-          "observedAt": "2026-08-08T18:57:47Z",
-          "probability": 0.905
         },
         {
-          "date": "2026-08-09",
-          "observedAt": "2026-08-09T19:00:19Z",
-          "probability": 0.935
-        },
-        {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.958
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.9995
         }
       ],
       "status": "current"
@@ -2521,24 +2425,24 @@
       "eventTitle": "Trump out as President by August 31?",
       "categoryId": "us-policy-elections",
       "category": "US Policy & Elections",
-      "probability": 0.005,
-      "probabilityPercent": 0.5,
+      "probability": 0.0055,
+      "probabilityPercent": 0.55,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -0.15,
-      "change7dPoints": -0.35,
-      "bestBid": 0.004,
+      "change24hPoints": -0.1,
+      "change7dPoints": -0.3,
+      "bestBid": 0.005,
       "bestAsk": 0.006,
-      "spread": 0.002,
-      "liquidity": 316687.1,
-      "volume24h": 95795.3,
-      "volumeTotal": 1012719.57,
-      "openInterest": 661772.44,
+      "spread": 0.001,
+      "liquidity": 360116.18,
+      "volume24h": 128120.35,
+      "volumeTotal": 1066318.33,
+      "openInterest": 645795.51,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $316,687",
-        "24h volume $95,795",
-        "Spread 0.20 points",
+        "Liquidity $360,116",
+        "24h volume $128,120",
+        "Spread 0.10 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
       ],
@@ -2550,8 +2454,8 @@
       "resolutionSource": null,
       "description": "This market will resolve to “Yes” if Donald Trump resigns or is removed as President or otherwise ceases to be the President of the United States for any period of time by August 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nAn announcement of Donald Trump's resignation/removal before this market's end date will immediately resolve this market to \"Yes\", regardless of when the announced resignation/removal goes into effect.\n\nOnly permanent removal from office will qualify. Temporary removal (e.g. temporary invocation of the 25th Amendment under Section 3 or a Section 4 invocation not sustained by both Houses of Congress) or impeachment without removal will not count.\n\nA sustained invocation of the Twenty-Fifth Amendment, Section 4 (i.e., if both Houses of Congress, by two-thirds vote, uphold the Vice President and Cabinet’s determination of presidential inability) will qualify for a \"Yes\" resolution. \n\nThe resolution source for this market will be a consensus of credible reporting.",
       "endDate": "2026-08-31T23:59:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/trump-out-as-president-by-august-31-20260730185655928",
       "restricted": true,
       "acceptingOrders": true,
@@ -2606,6 +2510,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.005
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0055
         }
       ],
       "status": "current"
@@ -2617,23 +2526,23 @@
       "eventTitle": "Fed rate hike by...?",
       "categoryId": "monetary-policy",
       "category": "Monetary Policy & Macro",
-      "probability": 0.44,
-      "probabilityPercent": 44.0,
+      "probability": 0.43,
+      "probabilityPercent": 43.0,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 8.5,
-      "change7dPoints": -11.5,
-      "bestBid": 0.43,
-      "bestAsk": 0.45,
+      "change24hPoints": 7.5,
+      "change7dPoints": -12.5,
+      "bestBid": 0.42,
+      "bestAsk": 0.44,
       "spread": 0.02,
-      "liquidity": 62095.44,
-      "volume24h": 15299.56,
-      "volumeTotal": 751951.89,
-      "openInterest": 213175.04,
+      "liquidity": 62653.72,
+      "volume24h": 16855.68,
+      "volumeTotal": 753588.47,
+      "openInterest": 213763.19,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $62,095",
-        "24h volume $15,300",
+        "Liquidity $62,654",
+        "24h volume $16,856",
         "Spread 2.00 points",
         "Resolution source supplied"
       ],
@@ -2648,8 +2557,8 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
       "description": "This market will resolve to “Yes” if the upper bound of the target federal funds rate is increased at any point between December 16, 2025 and the completion of the listed Federal Open Market Committee (FOMC) meeting (inclusive of any rate hike announced as a result of the listed meeting). Otherwise, this market will resolve to “No”.\n\nIf the listed meeting does not take place within 7 calendar days (ET) of its scheduled end date, 11:59 PM ET, and no qualifying rate hike has been announced, this market will resolve to \"No\".\n\nEmergency rate hikes will qualify.\n\nThe primary resolution source for this market will be the official website of the Federal Reserve (https://www.federalreserve.gov/monetarypolicy/openmarket.htm), however a consensus of credible reporting may also be used.",
       "endDate": "2026-12-09T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/fed-rate-hike-by",
       "restricted": true,
       "acceptingOrders": true,
@@ -2659,6 +2568,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.44
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.43
         }
       ],
       "status": "current"
@@ -2678,15 +2592,15 @@
       "bestBid": 0.06,
       "bestAsk": 0.07,
       "spread": 0.01,
-      "liquidity": 542799.7,
-      "volume24h": 6194.7,
-      "volumeTotal": 10528682.84,
-      "openInterest": 3507066.78,
+      "liquidity": 544180.39,
+      "volume24h": 7093.18,
+      "volumeTotal": 10529871.14,
+      "openInterest": 3507110.1,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $542,800",
-        "24h volume $6,195",
+        "Liquidity $544,180",
+        "24h volume $7,093",
         "Spread 1.00 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
@@ -2699,8 +2613,8 @@
       "resolutionSource": null,
       "description": "This market will resolve to “Yes” if Donald Trump resigns or is removed as President or otherwise ceases to be the President of the United States for any period of time by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nAn announcement of Donald Trump's resignation/removal before this market's end date will immediately resolve this market to \"Yes\", regardless of when the announced resignation/removal goes into effect.\n\nOnly permanent removal from office will qualify. Temporary removal (e.g. temporary invocation of the 25th Amendment under Section 3 or a Section 4 invocation not sustained by both Houses of Congress) or impeachment without removal will not count.\n\nA sustained invocation of the Twenty-Fifth Amendment, Section 4 (i.e., if both Houses of Congress, by two-thirds vote, uphold the Vice President and Cabinet’s determination of presidential inability) will qualify for a \"Yes\" resolution. \n\nThe resolution source for this market will be a consensus of credible reporting.",
       "endDate": "2026-12-31T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/trump-out-as-president-before-2027",
       "restricted": true,
       "acceptingOrders": true,
@@ -2709,6 +2623,11 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.065
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
           "probability": 0.065
         }
       ],
@@ -2729,15 +2648,15 @@
       "bestBid": 0.48,
       "bestAsk": 0.49,
       "spread": 0.01,
-      "liquidity": 74553.46,
-      "volume24h": 5099.53,
-      "volumeTotal": 413229.56,
-      "openInterest": 213175.04,
+      "liquidity": 92576.13,
+      "volume24h": 5002.22,
+      "volumeTotal": 413252.25,
+      "openInterest": 213763.19,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $74,553",
-        "24h volume $5,100",
+        "Liquidity $92,576",
+        "24h volume $5,002",
         "Spread 1.00 points",
         "Resolution source supplied"
       ],
@@ -2752,8 +2671,8 @@
       "resolutionSource": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
       "description": "This market will resolve to “Yes” if the upper bound of the target federal funds rate is increased at any point between December 16, 2025 and the completion of the listed Federal Open Market Committee (FOMC) meeting (inclusive of any rate hike announced as a result of the listed meeting). Otherwise, this market will resolve to “No”.\n\nIf the listed meeting does not take place within 7 calendar days (ET) of its scheduled end date, 11:59 PM ET, and no qualifying rate hike has been announced, this market will resolve to \"No\".\n\nEmergency rate hikes will qualify.\n\nThe primary resolution source for this market will be the official website of the Federal Reserve (https://www.federalreserve.gov/monetarypolicy/openmarket.htm), however a consensus of credible reporting may also be used.",
       "endDate": "2026-12-09T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/fed-rate-hike-by",
       "restricted": true,
       "acceptingOrders": true,
@@ -2763,57 +2682,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.485
-        }
-      ],
-      "status": "current"
-    },
-    {
-      "id": "2896080",
-      "slug": "will-person-f-be-the-new-republican-nominee-for-senate-in-south-carolina-20260712140628838",
-      "question": "Will Darline Graham Nordone be the new republican nominee for Senate in South Carolina?",
-      "eventTitle": "South Carolina Republican Senate Special Primary Winner",
-      "categoryId": "us-policy-elections",
-      "category": "US Policy & Elections",
-      "probability": 0.397,
-      "probabilityPercent": 39.7,
-      "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -2.65,
-      "change7dPoints": -23.4,
-      "bestBid": 0.396,
-      "bestAsk": 0.398,
-      "spread": 0.002,
-      "liquidity": 103903.05,
-      "volume24h": 27588.34,
-      "volumeTotal": 527407.19,
-      "openInterest": 304208.34,
-      "qualityScore": 79,
-      "qualityGrade": "B",
-      "qualityReasons": [
-        "Liquidity $103,903",
-        "24h volume $27,588",
-        "Spread 0.20 points",
-        "Resolution source not supplied",
-        "Grade capped below A until a resolution source is identifiable"
-      ],
-      "relevanceScore": 7,
-      "assets": [
-        "rates",
-        "us-dollar"
-      ],
-      "resolutionSource": null,
-      "description": "This market will resolve according to the winner of the special Republican Primary for United States Senator from South Carolina, including any potential runoff.\n\nIf no 2026 special South Carolina Republican Senate Primary takes place by November 2, 2026, 11:59 PM ET, this market will resolve according to the candidate who is the official Republican nominee to contest the November 3, 2026 South Carolina U.S. Senate election.\n\nIf the results of the special primary are not definitively known, or if there is no Republican nominee to contest the November 3, 2026 South Carolina U.S. Senate election, by November 2, 2026, 11:59 PM ET, this market will resolve to \"Other\".\n\nThe resolution source for this market will be the first announcement of the results from the South Carolina Republican party, however an overwhelming consensus of credible reporting may suffice.",
-      "endDate": "2026-08-11T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/south-carolina-republican-senate-special-primary-winner-20260712135206676",
-      "restricted": true,
-      "acceptingOrders": true,
-      "readOnly": true,
-      "history": [
+        },
         {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.397
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.485
         }
       ],
       "status": "current"
@@ -2828,23 +2701,22 @@
       "probability": 0.935,
       "probabilityPercent": 93.5,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 2.0,
-      "change7dPoints": 35.5,
+      "change24hPoints": 3.0,
+      "change7dPoints": 49.0,
       "bestBid": 0.93,
       "bestAsk": 0.94,
       "spread": 0.01,
-      "liquidity": 103675.08,
-      "volume24h": 461640.4,
-      "volumeTotal": 7800499.45,
-      "openInterest": 1705274.95,
+      "liquidity": 87670.29,
+      "volume24h": 343378.45,
+      "volumeTotal": 7917910.33,
+      "openInterest": 1750748.72,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $103,675",
-        "24h volume $461,640",
+        "Liquidity $87,670",
+        "24h volume $343,378",
         "Spread 1.00 points",
-        "Resolution source not supplied",
-        "Grade capped below A until a resolution source is identifiable"
+        "Resolution source not supplied"
       ],
       "relevanceScore": 6,
       "assets": [
@@ -2854,8 +2726,8 @@
       "resolutionSource": null,
       "description": "This market will resolve to “Yes” if there is a continuous 14-day period during which the United States does not take a qualifying military action against Iran that begins at any time between market creation and the specified end date, 11:59 PM ET. Otherwise this market will resolve to “No.”\n\nThe first day of the 14-day period will be the calendar date (ET) after the most recent qualifying military action (or the date of market creation, if no qualifying action has occurred). The period runs through 12:00 PM ET on the 14th calendar day. This market resolves to “Yes” if any such period is completed where the most recent qualifying military action occurred on or before the specified end date (ET).\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by the United States, that directly impacts Iran. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nMunitions destroyed or intercepted before impact;\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nAny munition that is intercepted or destroyed before impact does not constitute a qualifying military action. Debris, fragments, or any wreckage from intercepted munitions that land on Iran do not constitute a milit",
       "endDate": "2026-07-31T23:59:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/us-x-iran-effective-ceasfire-byptptpt-2-week-pause-20260715194822042",
       "restricted": true,
       "acceptingOrders": true,
@@ -2865,57 +2737,11 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.935
-        }
-      ],
-      "status": "current"
-    },
-    {
-      "id": "2937527",
-      "slug": "us-x-iran-effective-ceasfire-by-august-31-20260715194822047",
-      "question": "US x Iran Effective Ceasefire by August 31?",
-      "eventTitle": "US x Iran Effective Ceasefire by...? (2 week pause)",
-      "categoryId": "geopolitics-security",
-      "category": "Geopolitics & Security",
-      "probability": 0.955,
-      "probabilityPercent": 95.5,
-      "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 2.5,
-      "change7dPoints": 20.0,
-      "bestBid": 0.95,
-      "bestAsk": 0.96,
-      "spread": 0.01,
-      "liquidity": 130989.7,
-      "volume24h": 209375.31,
-      "volumeTotal": 1571831.69,
-      "openInterest": 1705274.95,
-      "qualityScore": 79,
-      "qualityGrade": "B",
-      "qualityReasons": [
-        "Liquidity $130,990",
-        "24h volume $209,375",
-        "Spread 1.00 points",
-        "Resolution source not supplied",
-        "Grade capped below A until a resolution source is identifiable"
-      ],
-      "relevanceScore": 6,
-      "assets": [
-        "gold",
-        "us-dollar"
-      ],
-      "resolutionSource": null,
-      "description": "This market will resolve to “Yes” if there is a continuous 14-day period during which the United States does not take a qualifying military action against Iran that begins at any time between market creation and the specified end date, 11:59 PM ET. Otherwise this market will resolve to “No.”\n\nThe first day of the 14-day period will be the calendar date (ET) after the most recent qualifying military action (or the date of market creation, if no qualifying action has occurred). The period runs through 12:00 PM ET on the 14th calendar day. This market resolves to “Yes” if any such period is completed where the most recent qualifying military action occurred on or before the specified end date (ET).\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by the United States, that directly impacts Iran. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nMunitions destroyed or intercepted before impact;\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nAny munition that is intercepted or destroyed before impact does not constitute a qualifying military action. Debris, fragments, or any wreckage from intercepted munitions that land on Iran do not constitute a milit",
-      "endDate": "2026-08-31T23:59:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/us-x-iran-effective-ceasfire-byptptpt-2-week-pause-20260715194822042",
-      "restricted": true,
-      "acceptingOrders": true,
-      "readOnly": true,
-      "history": [
+        },
         {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.955
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.935
         }
       ],
       "status": "current"
@@ -2930,20 +2756,20 @@
       "probability": 0.945,
       "probabilityPercent": 94.5,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": 2.0,
-      "change7dPoints": 27.0,
+      "change24hPoints": 4.0,
+      "change7dPoints": 35.5,
       "bestBid": 0.94,
       "bestAsk": 0.95,
       "spread": 0.01,
-      "liquidity": 116049.0,
-      "volume24h": 136068.0,
-      "volumeTotal": 1347389.05,
-      "openInterest": 1705274.95,
+      "liquidity": 112212.66,
+      "volume24h": 79959.37,
+      "volumeTotal": 1361875.78,
+      "openInterest": 1750748.72,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $116,049",
-        "24h volume $136,068",
+        "Liquidity $112,213",
+        "24h volume $79,959",
         "Spread 1.00 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
@@ -2956,8 +2782,8 @@
       "resolutionSource": null,
       "description": "This market will resolve to “Yes” if there is a continuous 14-day period during which the United States does not take a qualifying military action against Iran that begins at any time between market creation and the specified end date, 11:59 PM ET. Otherwise this market will resolve to “No.”\n\nThe first day of the 14-day period will be the calendar date (ET) after the most recent qualifying military action (or the date of market creation, if no qualifying action has occurred). The period runs through 12:00 PM ET on the 14th calendar day. This market resolves to “Yes” if any such period is completed where the most recent qualifying military action occurred on or before the specified end date (ET).\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by the United States, that directly impacts Iran. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nMunitions destroyed or intercepted before impact;\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nAny munition that is intercepted or destroyed before impact does not constitute a qualifying military action. Debris, fragments, or any wreckage from intercepted munitions that land on Iran do not constitute a milit",
       "endDate": "2026-08-14T23:59:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/us-x-iran-effective-ceasfire-byptptpt-2-week-pause-20260715194822042",
       "restricted": true,
       "acceptingOrders": true,
@@ -2967,6 +2793,67 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.945
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.945
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "2937527",
+      "slug": "us-x-iran-effective-ceasfire-by-august-31-20260715194822047",
+      "question": "US x Iran Effective Ceasefire by August 31?",
+      "eventTitle": "US x Iran Effective Ceasefire by...? (2 week pause)",
+      "categoryId": "geopolitics-security",
+      "category": "Geopolitics & Security",
+      "probability": 0.95,
+      "probabilityPercent": 95.0,
+      "probabilitySource": "bid-ask midpoint",
+      "change24hPoints": 0.5,
+      "change7dPoints": 25.5,
+      "bestBid": 0.94,
+      "bestAsk": 0.96,
+      "spread": 0.02,
+      "liquidity": 109317.35,
+      "volume24h": 71247.27,
+      "volumeTotal": 1594093.21,
+      "openInterest": 1750748.72,
+      "qualityScore": 79,
+      "qualityGrade": "B",
+      "qualityReasons": [
+        "Liquidity $109,317",
+        "24h volume $71,247",
+        "Spread 2.00 points",
+        "Resolution source not supplied",
+        "Grade capped below A until a resolution source is identifiable"
+      ],
+      "relevanceScore": 6,
+      "assets": [
+        "gold",
+        "us-dollar"
+      ],
+      "resolutionSource": null,
+      "description": "This market will resolve to “Yes” if there is a continuous 14-day period during which the United States does not take a qualifying military action against Iran that begins at any time between market creation and the specified end date, 11:59 PM ET. Otherwise this market will resolve to “No.”\n\nThe first day of the 14-day period will be the calendar date (ET) after the most recent qualifying military action (or the date of market creation, if no qualifying action has occurred). The period runs through 12:00 PM ET on the 14th calendar day. This market resolves to “Yes” if any such period is completed where the most recent qualifying military action occurred on or before the specified end date (ET).\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by the United States, that directly impacts Iran. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nMunitions destroyed or intercepted before impact;\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nAny munition that is intercepted or destroyed before impact does not constitute a qualifying military action. Debris, fragments, or any wreckage from intercepted munitions that land on Iran do not constitute a milit",
+      "endDate": "2026-08-31T23:59:00Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/us-x-iran-effective-ceasfire-byptptpt-2-week-pause-20260715194822042",
+      "restricted": true,
+      "acceptingOrders": true,
+      "readOnly": true,
+      "history": [
+        {
+          "date": "2026-08-10",
+          "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.955
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.95
         }
       ],
       "status": "current"
@@ -2982,19 +2869,19 @@
       "probabilityPercent": 2.95,
       "probabilitySource": "bid-ask midpoint",
       "change24hPoints": 0.7,
-      "change7dPoints": 0.6,
+      "change7dPoints": 0.65,
       "bestBid": 0.029,
       "bestAsk": 0.03,
       "spread": 0.001,
-      "liquidity": 501723.29,
-      "volume24h": 5725.22,
-      "volumeTotal": 4317403.71,
-      "openInterest": 1238444.44,
+      "liquidity": 495921.44,
+      "volume24h": 7093.88,
+      "volumeTotal": 4319064.11,
+      "openInterest": 1238425.6,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $501,723",
-        "24h volume $5,725",
+        "Liquidity $495,921",
+        "24h volume $7,094",
         "Spread 0.10 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
@@ -3007,8 +2894,8 @@
       "resolutionSource": null,
       "description": "This market will resolve according to the winner of the 2026 Nobel Peace Prize, as announced by the Norwegian Nobel Committee.\n\nIf multiple listed individuals or entities jointly receive the prize, the market will resolve to a single winner. If Donald Trump, Volodymyr Zelenskyy,  Benjamin Netanyahu, Vladimir Putin, or Elon Musk are among the recipients, the market will resolve to the highest-ranked among them in that exact order of precedence. If none of those five are among the winners and the prize is awarded jointly to at least one listed individual and at least one listed organization, the market will resolve in favor of the individual. If no prioritized individuals are among the winners and all listed recipients are of the same type (all individuals or all organizations), the market will resolve to the person whose last name, or the entity’s name, comes first in alphabetical order as listed in this market.\n\nIf no official announcement regarding the 2026 Nobel Peace Prize has been made by March 31, 2027, 11:59 PM ET, this market will resolve to \"Other.\"\n\nThe resolution source for this market will be the first official announcement from the Norwegian Nobel Committee.",
       "endDate": "2026-10-10T00:00:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/nobel-peace-prize-winner-2026-139",
       "restricted": true,
       "acceptingOrders": true,
@@ -3018,6 +2905,62 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0295
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0295
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "3120761",
+      "slug": "nato-x-russia-military-clash-by-august-31-2026",
+      "question": "NATO x Russia military clash by August 31, 2026?",
+      "eventTitle": "NATO x Russia military clash by...?",
+      "categoryId": "geopolitics-security",
+      "category": "Geopolitics & Security",
+      "probability": 0.0315,
+      "probabilityPercent": 3.15,
+      "probabilitySource": "bid-ask midpoint",
+      "change24hPoints": -0.75,
+      "change7dPoints": -2.05,
+      "bestBid": 0.027,
+      "bestAsk": 0.036,
+      "spread": 0.009,
+      "liquidity": 104380.41,
+      "volume24h": 6403.81,
+      "volumeTotal": 360326.67,
+      "openInterest": 798323.15,
+      "qualityScore": 79,
+      "qualityGrade": "B",
+      "qualityReasons": [
+        "Liquidity $104,380",
+        "24h volume $6,404",
+        "Spread 0.90 points",
+        "Resolution source not supplied",
+        "Grade capped below A until a resolution source is identifiable"
+      ],
+      "relevanceScore": 6,
+      "assets": [
+        "gold",
+        "us-dollar"
+      ],
+      "resolutionSource": null,
+      "description": "This market will resolve to \"Yes\" if there is a military encounter between the military forces of a NATO country and Russia between market creation and August 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"military encounter\" is defined as any incident involving the use of force such as missile strikes, artillery fire, exchange of gunfire, or other forms of direct military engagement between NATO and Russian military forces. Non-violent actions, such as airspace violations, firing of warning shots (such as the June, 2021 Black Sea Confrontations between Russian forces and HMS Defender), or cyberattacks will not qualify.\n\nInterception of missiles or other one-way attack or loitering munitions (e.g. Shahed drones) which are targeting a 3rd party other than the listed countries or their respective forces will not alone qualify. Shooting down UAVs which are not munitions (e.g. MQ-9, Orlan 10, Orion, Bayraktar TB2, etc.) will qualify.\n\nIntentional physical collisions, including aerial interceptions and naval ramming without the direct use of weaponry, such as the 2023 Black Sea incident—where a Russian Su-27 damaged a U.S. MQ-9 Reaper drone's propeller, leading to its crash— will not qualify regardless of damage.\n\nMilitary contractors will qualify only if confirmed to be operating under the direct command or coordination of the respective state’s armed forces (e.g. the Battle of Khasham would not qualify).\n\nThe resolution source for this market will be a consensus of credible reporting.",
+      "endDate": "2026-08-31T00:00:00Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/nato-x-russia-military-clash-in-2025",
+      "restricted": true,
+      "acceptingOrders": true,
+      "readOnly": true,
+      "history": [
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0315
         }
       ],
       "status": "current"
@@ -3032,20 +2975,20 @@
       "probability": 0.865,
       "probabilityPercent": 86.5,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -1.0,
+      "change24hPoints": -2.0,
       "change7dPoints": 1.0,
       "bestBid": 0.86,
       "bestAsk": 0.87,
       "spread": 0.01,
-      "liquidity": 201528.44,
-      "volume24h": 82351.18,
-      "volumeTotal": 5217084.58,
-      "openInterest": 3093726.92,
+      "liquidity": 207628.0,
+      "volume24h": 35587.25,
+      "volumeTotal": 5220887.48,
+      "openInterest": 3102281.44,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $201,528",
-        "24h volume $82,351",
+        "Liquidity $207,628",
+        "24h volume $35,587",
         "Spread 1.00 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
@@ -3058,8 +3001,8 @@
       "resolutionSource": null,
       "description": "This market will resolve according to the party that wins control of the United States House of Representatives in the 2026 United States midterm election.\n\nA party wins control of the United States House of Representatives if it wins a majority of the chamber’s voting seats. If no party wins a majority of voting seats, the chamber will be deemed controlled by the party with which the first elected Speaker of the House of the Congress that convenes after the 2026 midterm election is affiliated.\n\nThe following rules govern the counting of seats for determining which party wins control of the chamber.\n\nAll House elections in the 2026 United States midterm election that elect voting members and determine representation in the upcoming 120th Congress are included. Where a seat is decided by a runoff, the runoff result will determine attribution of that seat.\n\nSeats are attributed to the party under which the member was elected. If a member-elect changes party affiliation, or vacates their seat, between election day and the formal organization of Congress, the seat is attributed to the party under which the member was elected.\n\nHouse members elected as independents who formally caucus with, or, for newly elected members, who announce their intent to caucus with, a party are included in that party’s count. If the caucus decisions of members of the House elected as independents cannot be determined on the date of the election, this market may remain open until the earlier of (i) an announcement from the relevant members of their intents to caucus, or (ii) January 4th, 11:59 PM ET of the following calendar year. If no such announcement is made by January 4th, 11:59 PM ET of the following calendar year, the member will not count towards the seat count of any party.\n\nThe resoluti",
       "endDate": "2026-11-03T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
       "restricted": true,
       "acceptingOrders": true,
@@ -3074,62 +3017,112 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.865
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.865
         }
       ],
       "status": "current"
     },
     {
-      "id": "562803",
-      "slug": "will-the-republican-party-control-the-house-after-the-2026-midterm-elections",
-      "question": "Will the Republican Party control the House after the 2026 Midterm elections?",
-      "eventTitle": "Which party will win the House in 2026?",
+      "id": "3006208",
+      "slug": "will-amanda-bell-be-the-wi-06-democratic-nominee-20260716185219519",
+      "question": "Will Amanda Bell be the WI-06 Democratic nominee?",
+      "eventTitle": "WI-06 Democratic Primary Winner",
       "categoryId": "us-policy-elections",
       "category": "US Policy & Elections",
-      "probability": 0.125,
-      "probabilityPercent": 12.5,
+      "probability": 0.1475,
+      "probabilityPercent": 14.75,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -1.0,
-      "change7dPoints": -1.0,
-      "bestBid": 0.12,
-      "bestAsk": 0.13,
-      "spread": 0.01,
-      "liquidity": 223959.38,
-      "volume24h": 32135.75,
-      "volumeTotal": 4115377.48,
-      "openInterest": 3093726.92,
+      "change24hPoints": 6.9,
+      "change7dPoints": 1.25,
+      "bestBid": 0.147,
+      "bestAsk": 0.148,
+      "spread": 0.001,
+      "liquidity": 36559.82,
+      "volume24h": 9332.74,
+      "volumeTotal": 16410.15,
+      "openInterest": 14753.81,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $223,959",
-        "24h volume $32,136",
-        "Spread 1.00 points",
-        "Resolution source not supplied",
-        "Grade capped below A until a resolution source is identifiable"
+        "Liquidity $36,560",
+        "24h volume $9,333",
+        "Spread 0.10 points",
+        "Resolution source supplied"
       ],
       "relevanceScore": 5,
       "assets": [
         "rates",
         "us-dollar"
       ],
-      "resolutionSource": null,
-      "description": "This market will resolve according to the party that wins control of the United States House of Representatives in the 2026 United States midterm election.\n\nA party wins control of the United States House of Representatives if it wins a majority of the chamber’s voting seats. If no party wins a majority of voting seats, the chamber will be deemed controlled by the party with which the first elected Speaker of the House of the Congress that convenes after the 2026 midterm election is affiliated.\n\nThe following rules govern the counting of seats for determining which party wins control of the chamber.\n\nAll House elections in the 2026 United States midterm election that elect voting members and determine representation in the upcoming 120th Congress are included. Where a seat is decided by a runoff, the runoff result will determine attribution of that seat.\n\nSeats are attributed to the party under which the member was elected. If a member-elect changes party affiliation, or vacates their seat, between election day and the formal organization of Congress, the seat is attributed to the party under which the member was elected.\n\nHouse members elected as independents who formally caucus with, or, for newly elected members, who announce their intent to caucus with, a party are included in that party’s count. If the caucus decisions of members of the House elected as independents cannot be determined on the date of the election, this market may remain open until the earlier of (i) an announcement from the relevant members of their intents to caucus, or (ii) January 4th, 11:59 PM ET of the following calendar year. If no such announcement is made by January 4th, 11:59 PM ET of the following calendar year, the member will not count towards the seat count of any party.\n\nThe resoluti",
-      "endDate": "2026-11-03T00:00:00Z",
-      "updatedAt": "2026-08-10T19:09:59.212548Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
+      "resolutionSource": "https://democrats.org/",
+      "description": "This market will resolve according to the candidate who wins the nomination for the Democratic Party to contest the WI-06 congressional district seat in the U.S. House of Representatives in the 2026 midterm elections. The Democratic primary is scheduled to take place on August 11, 2026.\n\nIf no nominee is announced by November 3, 2026, 11:59PM ET, this market will resolve to \"Other\".\n\nThe resolution source for this market will be a consensus of official Democrat sources, including https://democrats.org/.\n\nAny replacement of the nominee before election day will not change the resolution of the market.",
+      "endDate": "2026-08-11T23:59:00Z",
+      "updatedAt": "2026-08-11T02:21:59.55969Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/wi-06-democratic-primary-winner-20260716185219518",
       "restricted": true,
       "acceptingOrders": true,
       "readOnly": true,
       "history": [
         {
-          "date": "2026-08-09",
-          "observedAt": "2026-08-09T19:00:19Z",
-          "probability": 0.135
-        },
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.1475
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "3449326",
+      "slug": "will-russia-target-kyiv-by-august-14-2026-20260809090411471",
+      "question": "Will Russia target Kyiv by August 14, 2026?",
+      "eventTitle": "Will Russia target Kyiv by...?",
+      "categoryId": "geopolitics-security",
+      "category": "Geopolitics & Security",
+      "probability": 0.9965,
+      "probabilityPercent": 99.65,
+      "probabilitySource": "bid-ask midpoint",
+      "change24hPoints": 16.15,
+      "change7dPoints": null,
+      "bestBid": 0.995,
+      "bestAsk": 0.998,
+      "spread": 0.003,
+      "liquidity": 48173.28,
+      "volume24h": 58423.59,
+      "volumeTotal": 58681.26,
+      "openInterest": 28895.36,
+      "qualityScore": 79,
+      "qualityGrade": "B",
+      "qualityReasons": [
+        "Liquidity $48,173",
+        "24h volume $58,424",
+        "Spread 0.30 points",
+        "Resolution source not supplied",
+        "Grade capped below A until a resolution source is identifiable"
+      ],
+      "relevanceScore": 4,
+      "assets": [
+        "gold",
+        "us-dollar"
+      ],
+      "resolutionSource": null,
+      "description": "This market will resolve to “Yes” if Russia targets Kyiv through a qualifying military action between market creation and the specified date, Kyiv time. Otherwise, this market will resolve to “No.”\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by Russia, directed at Kyiv. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nMilitary action that consists primarily or exclusively of munitions that are intercepted before impact will still qualify if they constitute a qualifying military action during the specified timeframe; whether the munitions were intercepted, where the munitions landed, and whether damage resulted will not be considered.\n\nA military action will be considered directed at Kyiv if it targets any location within the city of Kyiv.\n\nThe occurrence, attribution, timing, and target of a qualifying military action will be primarily determined based on a consensus of information available from the resolution sources. Where multiple sources conflict regarding the occurrence, attribution, timing, or target of a relevant military action, this market will remain open until the earlier of: i) the c",
+      "endDate": "2026-08-14T23:59:00Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/will-russia-target-kyiv-byptptpt-20260809090433109",
+      "restricted": true,
+      "acceptingOrders": true,
+      "readOnly": true,
+      "history": [
         {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.125
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.9965
         }
       ],
       "status": "current"
@@ -3141,24 +3134,24 @@
       "eventTitle": "Florida Governor Republican Primary Winner",
       "categoryId": "us-policy-elections",
       "category": "US Policy & Elections",
-      "probability": 0.0065,
-      "probabilityPercent": 0.65,
+      "probability": 0.007,
+      "probabilityPercent": 0.7,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": null,
-      "change7dPoints": -0.7,
+      "change24hPoints": 0.15,
+      "change7dPoints": -0.65,
       "bestBid": 0.006,
-      "bestAsk": 0.007,
-      "spread": 0.001,
-      "liquidity": 125123.72,
-      "volume24h": 122129.0,
-      "volumeTotal": 1591411.62,
-      "openInterest": 1128739.24,
+      "bestAsk": 0.008,
+      "spread": 0.002,
+      "liquidity": 105013.56,
+      "volume24h": 46344.55,
+      "volumeTotal": 1592114.39,
+      "openInterest": 1129183.76,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $125,124",
-        "24h volume $122,129",
-        "Spread 0.10 points",
+        "Liquidity $105,014",
+        "24h volume $46,345",
+        "Spread 0.20 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
       ],
@@ -3170,8 +3163,8 @@
       "resolutionSource": null,
       "description": "This market will resolve according to the winner of the Republican Primary for Governor of Florida, scheduled to take place on August 18, 2026.\n\nIf no 2026 Florida Republican Gubernatorial Primary takes place, this market will resolve to “Other.”\n\nThe resolution source for this market will be the first official announcement of the results from the Florida Republican Party; however, an overwhelming consensus of credible reporting may suffice.",
       "endDate": "2026-08-18T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/republican-nominee-for-florida-governor",
       "restricted": true,
       "acceptingOrders": true,
@@ -3206,37 +3199,41 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0065
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.007
         }
       ],
       "status": "current"
     },
     {
-      "id": "3324624",
-      "slug": "untitled-market-1-20260803235754057",
-      "question": "US-Iran Hormuz Agreement by August 15?",
-      "eventTitle": "US-Iran Hormuz Agreement by...?",
+      "id": "2976202",
+      "slug": "iran-full-airspace-closure-by-august-15",
+      "question": "Iran full airspace closure by August 15?",
+      "eventTitle": "Iran full airspace closure by...?",
       "categoryId": "geopolitics-security",
       "category": "Geopolitics & Security",
-      "probability": 0.075,
-      "probabilityPercent": 7.5,
+      "probability": 0.0315,
+      "probabilityPercent": 3.15,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": null,
-      "change7dPoints": null,
-      "bestBid": 0.07,
-      "bestAsk": 0.08,
-      "spread": 0.01,
-      "liquidity": 32764.68,
-      "volume24h": 27866.79,
-      "volumeTotal": 260492.46,
-      "openInterest": 108069.03,
+      "change24hPoints": -1.5,
+      "change7dPoints": -13.35,
+      "bestBid": 0.024,
+      "bestAsk": 0.039,
+      "spread": 0.015,
+      "liquidity": 24854.06,
+      "volume24h": 44594.01,
+      "volumeTotal": 660738.24,
+      "openInterest": 400023.06,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $32,765",
-        "24h volume $27,867",
-        "Spread 1.00 points",
-        "Resolution source not supplied",
-        "Grade capped below A until a resolution source is identifiable"
+        "Liquidity $24,854",
+        "24h volume $44,594",
+        "Spread 1.50 points",
+        "Resolution source supplied"
       ],
       "relevanceScore": 4,
       "assets": [
@@ -3245,12 +3242,12 @@
         "us-dollar",
         "wti"
       ],
-      "resolutionSource": null,
-      "description": "This market will resolve to “Yes” if a diplomatic agreement between the United States and Iran over traffic in the strait of Hormuz is announced by the specified date, 11:59 PM ET.\n\nA diplomatic agreement refers to an official agreement, treaty, deal, or substantially similar diplomatic instrument that establishes agreed actions, policies, obligations, or commitments between the United States and Iran.\n\nA qualifying diplomatic agreement must establish Iranian policies, obligations, or commitments  aimed at permitting, restoring, or increasing vessel or shipping traffic through the Strait of Hormuz.\n\nAll listed countries must announce their acceptance of the same qualifying diplomatic agreement for the Payout Condition to be met. A joint announcement will qualify, as will separate announcements from each entity of its own acceptance of an agreement which, taken together, directly indicate that all the listed countries accepted the same agreement. Separate announcements of individual policies will not qualify if the policies are not announced as part of a diplomatic agreement.\n\nEach announcement must be a declarative statement that clearly and unambiguously communicates acceptance of an agreement. Statements that reference ongoing negotiations or a prospective agreement, or that allude to or express support for an agreement without confirming acceptance of the agreement, do not qualify. A qualifying announcement need not reference the agreement by name or use specific terminology, provided it clearly communicates acceptance of an agreement.\n \nWhether announcements from the listed countries represent a diplomatic agreement and whether such an agreement qualifies will be primarily determined through the announcements themselves. Where an announcement is made by all listed c",
+      "resolutionSource": "https://www.iranintl.com/en/202602289115",
+      "description": "This market will resolve to “Yes” if Iran initiates a general closure of its airspace, that is not solely due to weather conditions, between market creation and the specified date, 11:59 PM ET. Otherwise, this market will resolve to “No”.\n\nA “general closure” refers to a cancellation or suspension of aviation which is generally applicable to all commercial flights transiting Iranian airspace (“Tehran FIR”). A qualifying closure must apply generally to all of Iran or the Tehran FIR; limited cancellations, delays, or partial closures will not qualify. A closure which applies generally to commercial aviation across Iranian airspace, with limited exceptions for certain categories of flights, however, will qualify (e.g. exceptions for certain flights pre-approved by the Iranian Civil Aviation Authority may be permitted).\n\nQualifying previous examples include the February 28, 2026 total closure of Iranian airspace (https://www.iranintl.com/en/202602289115) and the January 2026 total closure of Iranian airspace except to international flights with express governmental permission (https://www.reuters.com/world/middle-east/iran-shuts-airspace-most-flights-flightradar24-says-2026-01-14/). Non-qualifying examples include the January 27, 2026 partial closure of Iranian airspace around the Strait of Hormuz (https://www.aa.com.tr/en/middle-east/iran-issues-airspace-notice-for-military-drills-near-strait-of-hormuz/3812508), the April 2024 closure of Iran’s western airspace (https://www.reuters.com/world/middle-east/iranian-airports-cancel-flights-until-monday-morning-2024-04-14/), and the January 25 - April 25, 2026 VFR (Visual Flight Rules) flights suspension which did not broadly close commercial aviation in Iran (https://www.intellinews.com/iran-suspends-general-aviation-and-vfr-fl",
       "endDate": "2026-08-15T23:59:00Z",
-      "updatedAt": "2026-08-10T19:12:00.27183Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
-      "sourceUrl": "https://polymarket.com/event/us-iran-hormuz-agreement-byptptpt-20260803235957575",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/iran-full-airspace-closure-byptptpt-20260625195253028",
       "restricted": true,
       "acceptingOrders": true,
       "readOnly": true,
@@ -3258,7 +3255,12 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.075
+          "probability": 0.038
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0315
         }
       ],
       "status": "current"
@@ -3273,20 +3275,20 @@
       "probability": 0.0015,
       "probabilityPercent": 0.15,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": null,
+      "change24hPoints": 0.1,
       "change7dPoints": null,
       "bestBid": 0.001,
       "bestAsk": 0.002,
       "spread": 0.001,
-      "liquidity": 1862790.2,
-      "volume24h": 738116.33,
-      "volumeTotal": 942426.19,
-      "openInterest": 12061804.66,
+      "liquidity": 1853228.07,
+      "volume24h": 291299.37,
+      "volumeTotal": 946311.91,
+      "openInterest": 11623818.66,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $1,862,790",
-        "24h volume $738,116",
+        "Liquidity $1,853,228",
+        "24h volume $291,299",
         "Spread 0.10 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
@@ -3299,8 +3301,8 @@
       "resolutionSource": null,
       "description": "This market will resolve to “Yes” if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to “No”.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of the democratic nominee before election day will not change the resolution of the market.",
       "endDate": "2028-11-07T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/democratic-presidential-nominee-2028",
       "restricted": true,
       "acceptingOrders": true,
@@ -3309,6 +3311,62 @@
         {
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
+          "probability": 0.0015
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0015
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "559690",
+      "slug": "will-kim-kardashian-win-the-2028-democratic-presidential-nomination",
+      "question": "Will Kim Kardashian win the 2028 Democratic presidential nomination?",
+      "eventTitle": "Democratic Presidential Nominee 2028",
+      "categoryId": "us-policy-elections",
+      "category": "US Policy & Elections",
+      "probability": 0.0015,
+      "probabilityPercent": 0.15,
+      "probabilitySource": "bid-ask midpoint",
+      "change24hPoints": null,
+      "change7dPoints": -0.1,
+      "bestBid": 0.001,
+      "bestAsk": 0.002,
+      "spread": 0.001,
+      "liquidity": 2647144.19,
+      "volume24h": 252798.65,
+      "volumeTotal": 42713733.86,
+      "openInterest": 11623818.66,
+      "qualityScore": 79,
+      "qualityGrade": "B",
+      "qualityReasons": [
+        "Liquidity $2,647,144",
+        "24h volume $252,799",
+        "Spread 0.10 points",
+        "Resolution source not supplied",
+        "Grade capped below A until a resolution source is identifiable"
+      ],
+      "relevanceScore": 3,
+      "assets": [
+        "rates",
+        "us-dollar"
+      ],
+      "resolutionSource": null,
+      "description": "This market will resolve to “Yes” if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to “No”.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of the democratic nominee before election day will not change the resolution of the market.",
+      "endDate": "2028-11-07T00:00:00Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/democratic-presidential-nominee-2028",
+      "restricted": true,
+      "acceptingOrders": true,
+      "readOnly": true,
+      "history": [
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
           "probability": 0.0015
         }
       ],
@@ -3321,23 +3379,23 @@
       "eventTitle": "Democratic Presidential Nominee 2028",
       "categoryId": "us-policy-elections",
       "category": "US Policy & Elections",
-      "probability": 0.0015,
-      "probabilityPercent": 0.15,
+      "probability": 0.0025,
+      "probabilityPercent": 0.25,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -0.1,
-      "change7dPoints": -0.1,
-      "bestBid": 0.001,
-      "bestAsk": 0.002,
+      "change24hPoints": 0.1,
+      "change7dPoints": null,
+      "bestBid": 0.002,
+      "bestAsk": 0.003,
       "spread": 0.001,
-      "liquidity": 2718236.64,
-      "volume24h": 210947.06,
-      "volumeTotal": 40696721.71,
-      "openInterest": 12061804.66,
+      "liquidity": 2694163.16,
+      "volume24h": 204053.83,
+      "volumeTotal": 40867317.99,
+      "openInterest": 11623818.66,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $2,718,237",
-        "24h volume $210,947",
+        "Liquidity $2,694,163",
+        "24h volume $204,054",
         "Spread 0.10 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
@@ -3350,8 +3408,8 @@
       "resolutionSource": null,
       "description": "This market will resolve to “Yes” if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to “No”.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of the democratic nominee before election day will not change the resolution of the market.",
       "endDate": "2028-11-07T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/democratic-presidential-nominee-2028",
       "restricted": true,
       "acceptingOrders": true,
@@ -3361,34 +3419,39 @@
           "date": "2026-08-10",
           "observedAt": "2026-08-10T19:16:19Z",
           "probability": 0.0015
+        },
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0025
         }
       ],
       "status": "current"
     },
     {
-      "id": "559666",
-      "slug": "will-tim-walz-win-the-2028-democratic-presidential-nomination-475",
-      "question": "Will Tim Walz win the 2028 Democratic presidential nomination?",
+      "id": "559657",
+      "slug": "will-stephen-a-smith-win-the-2028-democratic-presidential-nomination-914",
+      "question": "Will Stephen A. Smith win the 2028 Democratic presidential nomination?",
       "eventTitle": "Democratic Presidential Nominee 2028",
       "categoryId": "us-policy-elections",
       "category": "US Policy & Elections",
-      "probability": 0.0015,
-      "probabilityPercent": 0.15,
+      "probability": 0.0045,
+      "probabilityPercent": 0.45,
       "probabilitySource": "bid-ask midpoint",
-      "change24hPoints": -0.1,
-      "change7dPoints": -0.1,
-      "bestBid": 0.001,
-      "bestAsk": 0.002,
+      "change24hPoints": 0.1,
+      "change7dPoints": null,
+      "bestBid": 0.004,
+      "bestAsk": 0.005,
       "spread": 0.001,
-      "liquidity": 2852890.34,
-      "volume24h": 193280.72,
-      "volumeTotal": 42972659.44,
-      "openInterest": 12061804.66,
+      "liquidity": 1326926.53,
+      "volume24h": 54994.48,
+      "volumeTotal": 21578645.53,
+      "openInterest": 11623818.66,
       "qualityScore": 79,
       "qualityGrade": "B",
       "qualityReasons": [
-        "Liquidity $2,852,890",
-        "24h volume $193,281",
+        "Liquidity $1,326,927",
+        "24h volume $54,994",
         "Spread 0.10 points",
         "Resolution source not supplied",
         "Grade capped below A until a resolution source is identifiable"
@@ -3401,17 +3464,119 @@
       "resolutionSource": null,
       "description": "This market will resolve to “Yes” if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to “No”.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of the democratic nominee before election day will not change the resolution of the market.",
       "endDate": "2028-11-07T00:00:00Z",
-      "updatedAt": "2026-08-10T19:13:59.604128Z",
-      "collectedAt": "2026-08-10T19:16:19Z",
+      "updatedAt": "2026-08-11T02:23:58.916155Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
       "sourceUrl": "https://polymarket.com/event/democratic-presidential-nominee-2028",
       "restricted": true,
       "acceptingOrders": true,
       "readOnly": true,
       "history": [
         {
-          "date": "2026-08-10",
-          "observedAt": "2026-08-10T19:16:19Z",
-          "probability": 0.0015
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0045
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "561996",
+      "slug": "will-tucker-carlson-win-the-2028-republican-presidential-nomination",
+      "question": "Will Tucker Carlson win the 2028 Republican presidential nomination?",
+      "eventTitle": "Republican Presidential Nominee 2028",
+      "categoryId": "us-policy-elections",
+      "category": "US Policy & Elections",
+      "probability": 0.0235,
+      "probabilityPercent": 2.35,
+      "probabilitySource": "bid-ask midpoint",
+      "change24hPoints": -0.15,
+      "change7dPoints": 1.0,
+      "bestBid": 0.023,
+      "bestAsk": 0.024,
+      "spread": 0.001,
+      "liquidity": 317285.78,
+      "volume24h": 42957.19,
+      "volumeTotal": 13239223.35,
+      "openInterest": 10402323.61,
+      "qualityScore": 79,
+      "qualityGrade": "B",
+      "qualityReasons": [
+        "Liquidity $317,286",
+        "24h volume $42,957",
+        "Spread 0.10 points",
+        "Resolution source not supplied",
+        "Grade capped below A until a resolution source is identifiable"
+      ],
+      "relevanceScore": 3,
+      "assets": [
+        "rates",
+        "us-dollar"
+      ],
+      "resolutionSource": null,
+      "description": "This market will resolve to “Yes” if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to “No”.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of the Republican nominee before election day will not change the resolution of the market.",
+      "endDate": "2028-11-07T00:00:00Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/republican-presidential-nominee-2028",
+      "restricted": true,
+      "acceptingOrders": true,
+      "readOnly": true,
+      "history": [
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0235
+        }
+      ],
+      "status": "current"
+    },
+    {
+      "id": "561979",
+      "slug": "will-ron-desantis-win-the-2028-republican-presidential-nomination",
+      "question": "Will Ron DeSantis win the 2028 Republican presidential nomination?",
+      "eventTitle": "Republican Presidential Nominee 2028",
+      "categoryId": "us-policy-elections",
+      "category": "US Policy & Elections",
+      "probability": 0.0305,
+      "probabilityPercent": 3.05,
+      "probabilitySource": "bid-ask midpoint",
+      "change24hPoints": null,
+      "change7dPoints": null,
+      "bestBid": 0.03,
+      "bestAsk": 0.031,
+      "spread": 0.001,
+      "liquidity": 290972.47,
+      "volume24h": 32226.39,
+      "volumeTotal": 15221097.2,
+      "openInterest": 10402323.61,
+      "qualityScore": 79,
+      "qualityGrade": "B",
+      "qualityReasons": [
+        "Liquidity $290,972",
+        "24h volume $32,226",
+        "Spread 0.10 points",
+        "Resolution source not supplied",
+        "Grade capped below A until a resolution source is identifiable"
+      ],
+      "relevanceScore": 3,
+      "assets": [
+        "rates",
+        "us-dollar"
+      ],
+      "resolutionSource": null,
+      "description": "This market will resolve to “Yes” if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to “No”.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of the Republican nominee before election day will not change the resolution of the market.",
+      "endDate": "2028-11-07T00:00:00Z",
+      "updatedAt": "2026-08-11T02:25:58.680045Z",
+      "collectedAt": "2026-08-11T02:27:33Z",
+      "sourceUrl": "https://polymarket.com/event/republican-presidential-nominee-2028",
+      "restricted": true,
+      "acceptingOrders": true,
+      "readOnly": true,
+      "history": [
+        {
+          "date": "2026-08-11",
+          "observedAt": "2026-08-11T02:27:33Z",
+          "probability": 0.0305
         }
       ],
       "status": "current"
@@ -3419,22 +3584,23 @@
   ],
   "shocks": [
     {
-      "marketId": "3310013",
-      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $85 in August?",
-      "probabilityPercent": 67.5,
-      "change24hPoints": 25.0,
-      "qualityGrade": "A",
-      "qualityScore": 83,
+      "marketId": "3449326",
+      "question": "Will Russia target Kyiv by August 14, 2026?",
+      "probabilityPercent": 99.65,
+      "change24hPoints": 16.15,
+      "qualityGrade": "B",
+      "qualityScore": 79,
       "assets": [
-        "wti"
+        "gold",
+        "us-dollar"
       ],
-      "sourceUrl": "https://polymarket.com/event/what-price-will-wti-hit-in-august-2026"
+      "sourceUrl": "https://polymarket.com/event/will-russia-target-kyiv-byptptpt-20260809090433109"
     },
     {
       "marketId": "1808547",
       "question": "Fed Rate Hike by September 2026 Meeting?",
-      "probabilityPercent": 44.0,
-      "change24hPoints": 8.5,
+      "probabilityPercent": 43.0,
+      "change24hPoints": 7.5,
       "qualityGrade": "B",
       "qualityScore": 79,
       "assets": [
@@ -3449,8 +3615,8 @@
     {
       "marketId": "2252245",
       "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
-      "probabilityPercent": 43.5,
-      "change24hPoints": 8.0,
+      "probabilityPercent": 42.5,
+      "change24hPoints": 7.0,
       "qualityGrade": "A",
       "qualityScore": 97,
       "assets": [
@@ -3463,19 +3629,17 @@
       "sourceUrl": "https://polymarket.com/event/fed-decision-in-september-762"
     },
     {
-      "marketId": "2176270",
-      "question": "Strait of Hormuz traffic returns to normal by December 31?",
-      "probabilityPercent": 46.5,
-      "change24hPoints": -5.0,
-      "qualityGrade": "A",
-      "qualityScore": 96,
+      "marketId": "3006208",
+      "question": "Will Amanda Bell be the WI-06 Democratic nominee?",
+      "probabilityPercent": 14.75,
+      "change24hPoints": 6.9,
+      "qualityGrade": "B",
+      "qualityScore": 79,
       "assets": [
-        "brent",
-        "gold",
-        "us-dollar",
-        "wti"
+        "rates",
+        "us-dollar"
       ],
-      "sourceUrl": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31"
+      "sourceUrl": "https://polymarket.com/event/wi-06-democratic-primary-winner-20260716185219518"
     }
   ],
   "methodology": {
@@ -3491,10 +3655,10 @@
       "id": "polymarket-public-market-data",
       "source": "Polymarket public market data",
       "status": "current",
-      "observationDate": "2026-08-10T19:13:59.604128Z",
-      "lastSuccessfulAt": "2026-08-10T19:16:19Z",
+      "observationDate": "2026-08-11T02:25:58.680045Z",
+      "lastSuccessfulAt": "2026-08-11T02:27:33Z",
       "expectedCadence": "Every six hours",
-      "detail": "48 balanced relevant markets retained from 998 active markets.",
+      "detail": "48 balanced relevant markets retained from 1000 active markets.",
       "error": null,
       "url": "https://docs.polymarket.com/market-data/overview"
     }
