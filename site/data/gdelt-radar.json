@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-17T21:38:26Z",
+  "generatedAtUtc": "2026-08-17T22:39:04Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -8,14 +8,14 @@
     "documentationUrl": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
   },
   "collection": {
-    "status": "stale",
+    "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 0,
-    "rawArticleCount": 0,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-17T19:40:30Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-17T22:39:04Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,76 +52,73 @@
   ],
   "articles": [
     {
-      "id": "ff86fa760cfb27cf0c85",
-      "title": "Ukrainian Strikes Halt Most Russian Grain Export Capacity in Black Sea Region",
-      "url": "https://www.themoscowtimes.com/2026/08/17/ukrainian-strikes-halt-most-russian-grain-export-capacity-in-black-sea-region-a93517",
-      "domain": "themoscowtimes.com",
+      "id": "0f28d4946642fde5e51d",
+      "title": "[ 사설 ] 데이터센터 속도전에 빅테크 임대기지 우려 커진다",
+      "url": "https://www.hani.co.kr/arti/opinion/editorial/1273318.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T22:00:00Z",
+      "firstSeenAt": "2026-08-17T22:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "18447fe1db7bb1282e7e",
+      "title": "데이터센터발 물 · 전력 부족 , 시민에 전가 … 한국의 미래 되나",
+      "url": "https://www.hani.co.kr/arti/society/environment/1273323.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T22:00:00Z",
+      "firstSeenAt": "2026-08-17T22:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "884baed93264174d0b92",
+      "title": "US Tells 35 Allies To Choose Sides as Washington Threatens To Expel Anyone Joining China Bloc",
+      "url": "https://www.ibtimes.co.uk/us-warns-allies-choose-between-american-chinese-ai-alliances-1814718",
+      "domain": "ibtimes.co.uk",
       "language": "English",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-17T16:30:00Z",
-      "firstSeenAt": "2026-08-17T16:30:00Z",
+      "sourceCountry": "United Kingdom",
+      "seenAt": "2026-08-17T22:00:00Z",
+      "firstSeenAt": "2026-08-17T22:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 42,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c794afda739af23647a0",
-      "title": "Rate Hike Forecast : 4 Reasons Why Wall Street Is Souring on a Sept . Move",
-      "url": "https://www.businessinsider.com/why-wall-street-is-abandoning-higher-interest-rates-federal-reserve-2026-8",
-      "domain": "businessinsider.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-17T17:00:00Z",
-      "firstSeenAt": "2026-08-17T17:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 31,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4311f3f61adcb9aef59d",
-      "title": "Gas price rebound drove inflation up to 3 % in July : StatCan",
-      "url": "https://cheknews.ca/gas-price-rebound-drove-inflation-up-to-3-in-july-statcan-1342364/",
-      "domain": "cheknews.ca",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-17T19:00:00Z",
-      "firstSeenAt": "2026-08-17T19:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -130,24 +127,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "32d041e022e85c391e79",
-      "title": "Oro , yuan e riserve valutarie . La strategia silenziosa che la Cina porta avanti da quasi due anni",
-      "url": "https://www.money.it/oro-yuan-e-riserve-valutarie-la-strategia-silenziosa-che-la-cina-porta-avanti-da-quasi-due-anni",
-      "domain": "money.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-08-17T19:00:00Z",
-      "firstSeenAt": "2026-08-17T19:00:00Z",
+      "id": "896a5c83113ce4f83c39",
+      "title": "Πού θα « σπρώξει » $105 δισ . η Nvidia για λογαριασμό της OpenAI",
+      "url": "https://www.euro2day.gr/news/world/article/2364570/poy-tha-sproxei-105-dis-h-nvidia-gia-logariasmo-th.html",
+      "domain": "euro2day.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-17T21:45:00Z",
+      "firstSeenAt": "2026-08-17T21:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -156,440 +152,123 @@
       "duplicateCount": 1
     },
     {
-      "id": "90ef984351c850d211f6",
-      "title": "Canada PM Carney Expects to Talk With Trump on Pending 50 % Duty 2nd Update",
-      "url": "https://www.morningstar.com/news/dow-jones/202608176265/canada-pm-carney-expects-to-talk-with-trump-on-pending-50-duty-2nd-update",
-      "domain": "morningstar.com",
-      "language": "English",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-17T19:00:00Z",
-      "firstSeenAt": "2026-08-17T19:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f945f2f0c5e78b963595",
-      "title": "Why the NZX is hitting records despite economic gloom - Generate Wealth Weekly",
-      "url": "https://www.nzherald.co.nz/business/personal-finance/investment/why-the-nzx-is-hitting-records-despite-economic-gloom-generate-wealth-weekly/RGZSOI67IJHLVJDBHUX3GPC2E4/",
-      "domain": "nzherald.co.nz",
-      "language": "English",
-      "sourceCountry": "New Zealand",
-      "seenAt": "2026-08-17T19:00:00Z",
-      "firstSeenAt": "2026-08-17T19:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f10b302ba26b9a70c419",
-      "title": "Japan slowing growth fuels policy divide between Tokyo , Bank of Japan",
-      "url": "https://aa.com.tr/en/economy/japan-s-slowing-growth-fuels-policy-divide-between-tokyo-bank-of-japan/4029669",
-      "domain": "aa.com.tr",
-      "language": "English",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T18:30:00Z",
-      "firstSeenAt": "2026-08-17T18:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d63d2beee7302a41c8fc",
-      "title": "Российская пшеница подешевела до минимума с 2024 года",
-      "url": "https://vesti.az/v-mire/rossiiskaya-psenica-podesevela-do-minimuma-s-2024-goda-610700",
-      "domain": "vesti.az",
-      "language": "Russian",
-      "sourceCountry": "Azerbaijan",
-      "seenAt": "2026-08-17T18:15:00Z",
-      "firstSeenAt": "2026-08-17T18:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d360767cdb8256e8f582",
-      "title": "JPMorgan warns a brutal grocery shock could hit boomers , as USDA says prices may jump 12 . 3 %. Is your nest egg ready ?",
-      "url": "https://finance.yahoo.com/economy/articles/jpmorgan-warns-brutal-grocery-shock-173000391.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-17T18:15:00Z",
-      "firstSeenAt": "2026-08-17T18:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1631a991b2086be8d995",
-      "title": "Stelter Brings on Economic Dunce Krugman to Say US Not in Recession",
-      "url": "https://www.newsbusters.org/blogs/nb/kevin-tober/2022/07/31/stelter-brings-economic-dunce-krugman-say-us-not-recession",
-      "domain": "newsbusters.org",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-17T18:15:00Z",
-      "firstSeenAt": "2026-08-17T18:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a336c77f2e84bc6743e1",
-      "title": "Cosecha récord temprana de chardonnay pone de relieve el impacto del cambio climático en los viñedos franceses",
-      "url": "https://forbes.com.mx/cosecha-record-temprana-de-chardonnay-pone-de-relieve-el-impacto-del-cambio-climatico-en-los-vinedos-franceses/",
-      "domain": "forbes.com.mx",
-      "language": "Spanish",
-      "sourceCountry": "Mexico",
-      "seenAt": "2026-08-17T18:00:00Z",
-      "firstSeenAt": "2026-08-17T18:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cc1d42541aaee231c7ba",
-      "title": "Kukuruzu u Pomoravlju zbog suše neophodno navodnjavanje : Uz vodu prinos bar duplo veći ( FOTO )",
-      "url": "https://www.novosti.rs/srbija/vesti/1638530/kukuruzu-pomoravlju-neophodno-navodnjavanje-vodu-prinos-bar-duplo-veci-foto",
-      "domain": "novosti.rs",
-      "language": "Serbian",
-      "sourceCountry": "Serbia",
-      "seenAt": "2026-08-17T17:45:00Z",
-      "firstSeenAt": "2026-08-17T17:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "66b756b9ae36bf386d7e",
-      "title": "Impulsan segundo boom cacaotero – Novedades de Tabasco",
-      "url": "https://novedadesdetabasco.com.mx/2026/08/17/impulsan-segundo-boom-cacaotero/",
-      "domain": "novedadesdetabasco.com.mx",
-      "language": "Spanish",
-      "sourceCountry": "Mexico",
-      "seenAt": "2026-08-17T17:45:00Z",
-      "firstSeenAt": "2026-08-17T17:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dc08f80f96ba035865d5",
-      "title": "Plinta fuzariozė : ministerija ragina ūkininkus laiku apsaugoti pasėlius",
-      "url": "https://www.respublika.lt/lt/naujienos/lietuva/lietuvos_politika/plinta-fuzarioze-ministerija-ragina-ukininkus-laiku-apsaugoti-paselius/",
-      "domain": "respublika.lt",
-      "language": "Lithuanian",
-      "sourceCountry": "Lithuania",
-      "seenAt": "2026-08-17T17:45:00Z",
-      "firstSeenAt": "2026-08-17T17:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d234adcf912ebad93250",
-      "title": "tranzyt zboża z Ukrainy . Bryłka apeluje do rządu o jawność",
-      "url": "https://dorzeczy.pl/ekonomia/929755/tranzyt-zboza-z-ukrainy-brylka-apeluje-do-rzadu-o-jawnosc.html",
-      "domain": "dorzeczy.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-08-17T17:45:00Z",
-      "firstSeenAt": "2026-08-17T17:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "aa0d59b488b07d92273e",
-      "title": "Judging the RBI by the wrong rule",
-      "url": "https://www.business-standard.com/opinion/columns/judging-the-rbi-by-the-wrong-rule-126081701516_1.html",
-      "domain": "business-standard.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-17T17:45:00Z",
-      "firstSeenAt": "2026-08-17T17:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "aa6bf5e3b569e6635fba",
-      "title": "EXPLAINER - Europe drought deepens as rivers shrink , crops suffer , supply chains falter",
-      "url": "https://aa.com.tr/en/europe/explainer-europe-s-drought-deepens-as-rivers-shrink-crops-suffer-supply-chains-falter/4028891",
-      "domain": "aa.com.tr",
-      "language": "English",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-16T19:45:00Z",
-      "firstSeenAt": "2026-08-16T19:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6bfc224d2b4cce5d90a1",
-      "title": "ارتفاع معدل التضخم في كندا بسبب حرب إيران",
-      "url": "https://gate.ahram.org.eg/News/5890365.aspx",
-      "domain": "gate.ahram.org.eg",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-17T17:00:00Z",
-      "firstSeenAt": "2026-08-17T17:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ad6c3ab9a3774e838de5",
-      "title": "Digital payments now make up 64 . 7 % of Philippines retail transactions",
-      "url": "https://www.philstar.com/business/2026/08/18/2549941/digital-payments-now-make-647-philippines-retail-transactions",
-      "domain": "philstar.com",
+      "id": "e6caa28bfd44040a9d17",
+      "title": "Coherent Begins Customer Sampling of 300mm High Thermal Conductivity Silicon Carbide Substrates for AI Infrastructure",
+      "url": "https://www.manilatimes.net/2026/08/18/tmt-newswire/globenewswire/coherent-begins-customer-sampling-of-300mm-high-thermal-conductivity-silicon-carbide-substrates-for-ai-infrastructure/2407135",
+      "domain": "manilatimes.net",
       "language": "English",
       "sourceCountry": "Philippines",
-      "seenAt": "2026-08-17T16:45:00Z",
-      "firstSeenAt": "2026-08-17T16:45:00Z",
+      "seenAt": "2026-08-17T21:30:00Z",
+      "firstSeenAt": "2026-08-17T21:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "3283c236f58bf1737cae",
-      "title": "Medziročná inflácia v Kanade sa v júli zrýchlila na 3 %",
-      "url": "https://www.teraz.sk/ekonomika/medzirocna-inflacia-v-kanade-sa-v-ju/985630-clanok.html",
-      "domain": "teraz.sk",
-      "language": "Slovak",
-      "sourceCountry": "Slovak Republic",
-      "seenAt": "2026-08-17T16:45:00Z",
-      "firstSeenAt": "2026-08-17T16:45:00Z",
+      "id": "9aaee7e6855406200931",
+      "title": "AI 호황을 공유하는 길 , 퇴직연금 기금화와 청년연금",
+      "url": "https://www.hani.co.kr/arti/economy/economy_general/1273320.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T21:00:00Z",
+      "firstSeenAt": "2026-08-17T21:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "ac8ae2422d2f051cdd95",
-      "title": "Japonyada düşük büyüme ile yüksek enflasyonun BoJu ve hükümeti ikil",
-      "url": "https://www.kibrispostasi.com/c50-EKONOMI/n611079-japonyada-dusuk-buyume-ile-yuksek-enflasyonun-boju-ve-hukumeti-ikilemde-birakabilecegi-ongoruluyor",
+      "id": "be9c05ae76c6f0df36a1",
+      "title": "Gombe Governor To Ashaka Cement : Fix Roads Damaged By Heavy Trucks",
+      "url": "https://leadership.ng/gombe-governor-to-ashaka-cement-fix-roads-damaged-by-heavy-trucks/",
+      "domain": "leadership.ng",
+      "language": "English",
+      "sourceCountry": "Nigeria",
+      "seenAt": "2026-08-17T21:00:00Z",
+      "firstSeenAt": "2026-08-17T21:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3d552035331a1c932a95",
+      "title": "유가 90달러 · 30년물 5 . 31 %… 이란 리스크에 美증시↓ [ 월스트리트in ]",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=01987686645548632&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T21:00:00Z",
+      "firstSeenAt": "2026-08-17T21:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6400b3b6080ac43d1ea1",
+      "title": "Nvidia , SB Energyye 1 , 5 milyar dolar yatırım yapacak",
+      "url": "https://www.kibrispostasi.com/c50-EKONOMI/n611097-nvidia-sb-energyye-15-milyar-dolar-yatirim-yapacak",
       "domain": "kibrispostasi.com",
       "language": "Turkish",
       "sourceCountry": "Cyprus",
-      "seenAt": "2026-08-17T16:30:00Z",
-      "firstSeenAt": "2026-08-17T16:30:00Z",
+      "seenAt": "2026-08-17T20:15:00Z",
+      "firstSeenAt": "2026-08-17T20:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -598,76 +277,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "e4ec2d0987f1b5817264",
-      "title": "Japonya ekonomisi çıkmaza girdi : Faiz mi , teşvik mi ?",
-      "url": "https://www.dunya.com/ekonomi/japonya-ekonomisi-cikmaza-girdi-faiz-mi-tesvik-mi-haberi-836553",
-      "domain": "dunya.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T16:00:00Z",
-      "firstSeenAt": "2026-08-17T16:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "830b9eb0f5a36b051228",
-      "title": "Cea mai slabă recoltă de grâu din 1970 ! Ce se întâmplă cu prețurile cerealelor",
-      "url": "https://revista-ferma.ro/cea-mai-slaba-recolta-de-grau-din-1970-ce-se-intampla-cu-preturile-cerealelor/",
-      "domain": "revista-ferma.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-08-17T15:00:00Z",
-      "firstSeenAt": "2026-08-17T15:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d6ec90210cc126a420d5",
-      "title": "Consumer inflation ticked up to 3 % in July , Statistics Canada says - National",
-      "url": "https://globalnews.ca/news/12023818/consumer-price-index-inflation-july/",
-      "domain": "globalnews.ca",
+      "id": "9fec1963c719366e482e",
+      "title": "Stanley Druckenmiller Opens Positions in Hut 8 , Riot Platforms And Bitdeer",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/stanley-druckenmiller-opens-positions-hut-194500376.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-17T14:00:00Z",
-      "firstSeenAt": "2026-08-17T14:00:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T20:15:00Z",
+      "firstSeenAt": "2026-08-17T20:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -676,414 +302,448 @@
       "duplicateCount": 1
     },
     {
-      "id": "e5a5eb5737990c10c0ef",
-      "title": "Під окупацією Росії залишається 20 % сільськогосподарських земель України | Новини України",
-      "url": "https://biz.liga.net/ua/agriculture/news/ukraina-otsinyla-potentsiynyy-urozhay-na-tymchasovo-okupovaniy-terytorii",
-      "domain": "biz.liga.net",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-17T13:45:00Z",
-      "firstSeenAt": "2026-08-17T13:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "973d3d92d1a5e2e74313",
-      "title": "Ціна кукурудзи в Одесі знизилася до $190 за тонну",
-      "url": "https://www.fixygen.ua/news/20260817/tsina-kukurudzi-v-odesi-znizilasya-do-190-za-tonnu.html",
-      "domain": "fixygen.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-17T13:45:00Z",
-      "firstSeenAt": "2026-08-17T13:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a9359e7d204bd0136a5c",
-      "title": "Polska największym producentem kukurydzy w UE . Przyspieszone dojrzewanie",
-      "url": "https://www.farmer.pl/produkcja-roslinna/polska-najwiekszym-producentem-kukurydzy-w-ue-przyspieszone-dojrzewanie,181995.html",
-      "domain": "farmer.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-08-17T13:00:00Z",
-      "firstSeenAt": "2026-08-17T13:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ba28612b1532608ec654",
-      "title": "BB sets 54 % higher agri and rural credit target",
-      "url": "https://www.thedailystar.net/business/news/bb-sets-54-higher-agri-and-rural-credit-target-4249791",
-      "domain": "thedailystar.net",
+      "id": "bdb24472f7e2294376e8",
+      "title": "FinancialContent - Marvell Technology , FormFactor , and Applied Materials Shares Are Soaring , What You Need To Know",
+      "url": "https://markets.financialcontent.com/stocks/article/stockstory-2026-8-17-marvell-technology-formfactor-and-applied-materials-shares-are-soaring-what-you-need-to-know",
+      "domain": "markets.financialcontent.com",
       "language": "English",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-08-17T13:00:00Z",
-      "firstSeenAt": "2026-08-17T13:00:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T20:15:00Z",
+      "firstSeenAt": "2026-08-17T20:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "3c592e7383bb9990548f",
-      "title": "Rusya Ukraynanın Tuna kapısını vurdu - Dünya Gazetesi",
-      "url": "https://www.dunya.com/ekonomi/rusya-ukraynanin-tuna-kapisini-vurdu-tahil-ticaretinde-risk-buyuyor-haberi-836512",
-      "domain": "dunya.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T12:45:00Z",
-      "firstSeenAt": "2026-08-17T12:45:00Z",
+      "id": "09dfa77541607160b78d",
+      "title": "FinancialContent - Why MACOM ( MTSI ) Stock Is Trading Up Today",
+      "url": "https://markets.financialcontent.com/stocks/article/stockstory-2026-8-17-why-macom-mtsi-stock-is-trading-up-today",
+      "domain": "markets.financialcontent.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T20:15:00Z",
+      "firstSeenAt": "2026-08-17T20:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "dd6be640da1b525b8ad3",
-      "title": "Режим ЧС из - за засухи готовятся ввести в Новосибирской области | Новосибирская область",
-      "url": "https://fedpress.ru/news/54/economy/3448225",
-      "domain": "fedpress.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-17T12:45:00Z",
-      "firstSeenAt": "2026-08-17T12:45:00Z",
+      "id": "d0070fe93dc6b5ed395a",
+      "title": "Solidum welcomes Palawan bid for Pax Silica Hub , stresses safeguards",
+      "url": "https://bworldonline.com/the-nation/2026/08/17/770835/solidum-welcomes-palawan-bid-for-pax-silica-hub-stresses-safeguards/",
+      "domain": "bworldonline.com",
+      "language": "English",
+      "sourceCountry": "Philippines",
+      "seenAt": "2026-08-17T20:15:00Z",
+      "firstSeenAt": "2026-08-17T20:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "691b184442f41ee2a0fa",
-      "title": "Japonyada Büyüme ve Enflasyon İkilemi",
-      "url": "https://www.haberler.com/ekonomi/japonya-da-dusuk-buyume-ile-yuksek-enflasyonun-boj-20152342-haberi/",
-      "domain": "haberler.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T12:45:00Z",
-      "firstSeenAt": "2026-08-17T12:45:00Z",
+      "id": "733ad0246e88cbcd2210",
+      "title": "CXMT supera Tencent e simboliza nova era da tecnologia chinesa",
+      "url": "https://www.infomoney.com.br/mercados/cxmt-supera-tencent-e-simboliza-nova-era-da-tecnologia-chinesa/",
+      "domain": "infomoney.com.br",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-08-17T19:45:00Z",
+      "firstSeenAt": "2026-08-17T19:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "886fd891df4c31f62c0e",
-      "title": "Експорт зернових в Україні від початку нового сезону перевищив торішній показник на 9 , 8 % – Мінагрополітики",
-      "url": "https://interfax.com.ua/news/economic/1193693.html",
-      "domain": "interfax.com.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-17T11:00:00Z",
-      "firstSeenAt": "2026-08-17T11:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6f9a31d2e0c641dcd7c0",
-      "title": "美联储加息预期放缓 ， 美元指数接近前低 ， 谨防破位 ？_ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20260817/32336923.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-17T11:00:00Z",
-      "firstSeenAt": "2026-08-17T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "16cb36684fcbcdc77a38",
-      "title": "موعد اجتماع البنك المركزي المصري في أغسطس 2026 .. ماذا ينتظر سعر الفائدة ؟",
-      "url": "https://www.dostor.org/5670118",
-      "domain": "dostor.org",
+      "id": "118a78678c4656105b3d",
+      "title": "سامسونغ تدخل سباق الروبوتات البشرية",
+      "url": "https://www.aljazeera.net/tech/2026/8/17/%D8%B3%D8%A7%D9%85%D8%B3%D9%88%D9%86%D8%BA-%D8%AA%D8%AF%D8%AE%D9%84-%D8%B3%D8%A8%D8%A7%D9%82-%D8%A7%D9%84%D8%B1%D9%88%D8%A8%D9%88%D8%AA%D8%A7%D8%AA-%D8%A7%D9%84%D8%A8%D8%B4%D8%B1%D9%8A%D8%A9",
+      "domain": "aljazeera.net",
       "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-17T10:15:00Z",
-      "firstSeenAt": "2026-08-17T10:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bf90dad18c0daf535317",
-      "title": "خبيرة مصرفية : خفض الفائدة مرهون باستمرار انخفاض التضخم واستقرار سوق الصرف",
-      "url": "https://www.dostor.org/5670081",
-      "domain": "dostor.org",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-17T10:15:00Z",
-      "firstSeenAt": "2026-08-17T10:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a456516dbf8d05a75fe7",
-      "title": "Световните пазари навлизат в новата седмица с противоречива комбинация от фактори",
-      "url": "https://www.investor.bg/a/538-pazari/435174-svetovnite-pazari-navlizat-v-novata-sedmitsa-s-protivorechiva-kombinatsiya-ot-faktori",
-      "domain": "investor.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-08-17T09:45:00Z",
-      "firstSeenAt": "2026-08-17T09:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c77c00ca6dfb08543bd4",
-      "title": "Justas Eimontas . Geopolitika perėmė grūdų rinkos vairą",
-      "url": "https://www.lrt.lt/naujienos/verslo-pozicija/692/3024154/justas-eimontas-geopolitika-pereme-grudu-rinkos-vaira",
-      "domain": "lrt.lt",
-      "language": "Lithuanian",
-      "sourceCountry": "Lithuania",
-      "seenAt": "2026-08-17T09:30:00Z",
-      "firstSeenAt": "2026-08-17T09:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "68358053896b00e086cf",
-      "title": "Ціна пшениці в Україні за тиждень не змінилася , тонни соняшнику - впала на $110 , а ріпаку на експорт",
-      "url": "https://interfax.com.ua/news/economic/1193644.html",
-      "domain": "interfax.com.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-17T09:15:00Z",
-      "firstSeenAt": "2026-08-17T09:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "426e7484409fd7402ae3",
-      "title": "Kahve Dünyası nın sahibi Birol Altınkılıç 66 yaşında hayatını kaybetti !",
-      "url": "https://www.egehaber.com/kahve-dunyasinin-sahibi-birol-altinkilic-66-yasinda-hayatini-kaybetti",
-      "domain": "egehaber.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T09:15:00Z",
-      "firstSeenAt": "2026-08-17T09:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2ea5693c621d9eb8e895",
-      "title": "Продукция Штраус не дешевеет , несмотря на снижение мировых цен на кофе и какао",
-      "url": "https://www.newsru.co.il/finance/17aug2026/strauss_121.html",
-      "domain": "newsru.co.il",
-      "language": "Russian",
       "sourceCountry": "Israel",
+      "seenAt": "2026-08-17T19:45:00Z",
+      "firstSeenAt": "2026-08-17T19:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "95c2d3cb8dc7f8660fac",
+      "title": "LG ve Nvidiadan Dev Yapay Zeka Hamlesi : İnsansı Robotlar , AI Fabrikaları ve Otonom Sürüş Geliyor",
+      "url": "https://donanimgunlugu.com/lg-ve-nvidiadan-dev-yapay-zeka-ham-436217",
+      "domain": "donanimgunlugu.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-17T19:15:00Z",
+      "firstSeenAt": "2026-08-17T19:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6b06684f484ff2a4748a",
+      "title": "Yapay zeka dünyasında bu hafta ( 17 Ağustos 2026 )",
+      "url": "https://www.donanimhaber.com/yapay-zeka-dunyasinda-bu-hafta-17-agustos-2026--209420",
+      "domain": "donanimhaber.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-17T19:00:00Z",
+      "firstSeenAt": "2026-08-17T19:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "de55603bdc8f677b1b17",
+      "title": "Nvidia , SB Energyye 1 , 5 milyar dolar yatırım yapacak",
+      "url": "https://www.aa.com.tr/tr/ekonomi/nvidia-sb-energyye-1-5-milyar-dolar-yatirim-yapacak/4029764",
+      "domain": "aa.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-17T19:00:00Z",
+      "firstSeenAt": "2026-08-17T19:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f88fe7282b58f5df75c2",
+      "title": "Power Semis Soar Monday : Wolfspeed , STMicro and On Semiconductor Rally on Vera Rubin Ramp Signals",
+      "url": "https://finance.yahoo.com/technology/articles/power-semis-soar-monday-wolfspeed-171805368.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T17:45:00Z",
+      "firstSeenAt": "2026-08-17T17:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e6e422b44577ab1a5611",
+      "title": "Camtek ( CAMT ) Q2 2026 Earnings Call Transcript",
+      "url": "https://www.fool.com/earnings/call-transcripts/2026/08/17/camtek-camt-q2-2026-earnings-call-transcript/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T17:15:00Z",
+      "firstSeenAt": "2026-08-17T17:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "240929f5425f09cbd45b",
+      "title": "The next silicon ? AI data centre material faces price spike amid China supply crunch",
+      "url": "https://www.scmp.com/tech/tech-trends/article/3364327/next-silicon-ai-data-centre-material-faces-price-spike-amid-china-supply-crunch",
+      "domain": "scmp.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-17T14:30:00Z",
+      "firstSeenAt": "2026-08-17T14:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4864d0a7e177bb6e4d77",
+      "title": "나야 ? 삼전닉스야 ?… 한국 1등 신랑감 이 돼도 고민",
+      "url": "https://www.etnews.com/20260817000148",
+      "domain": "etnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T14:15:00Z",
+      "firstSeenAt": "2026-08-17T14:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b970e681324efb105677",
+      "title": "MKS Inc . Earns 2026 Zhen Ding Technology Group Distinguished Contribution Awards for Service Excellence and Technology Innovation",
+      "url": "https://www.manilatimes.net/2026/08/17/tmt-newswire/globenewswire/mks-inc-earns-2026-zhen-ding-technology-group-distinguished-contribution-awards-for-service-excellence-and-technology-innovation/2406868",
+      "domain": "manilatimes.net",
+      "language": "English",
+      "sourceCountry": "Philippines",
+      "seenAt": "2026-08-17T13:45:00Z",
+      "firstSeenAt": "2026-08-17T13:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ee85fccd751cc2a27a71",
+      "title": "뉴욕증시 프리뷰 , 앤스로픽發 AI 훈풍 속 주가 선물 혼조 … 기술주 강세",
+      "url": "https://www.newspim.com/news/view/20260817000276",
+      "domain": "newspim.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T13:45:00Z",
+      "firstSeenAt": "2026-08-17T13:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "72e2d0dbfc016d0cd732",
+      "title": "KLA Corporation Had a Tough Month : 60 % Returns Will Come According to This Wall Street Stalwart",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/kla-corporation-had-tough-month-124913813.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T13:30:00Z",
+      "firstSeenAt": "2026-08-17T13:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d70407cdfe322defe1fb",
+      "title": "Yapay zekâ rallisine dot - com uyarısı : Avrupanın 440 milyar euroluk riski",
+      "url": "https://www.dunya.com/ekonomi/yapay-zeka-rallisine-dot-com-uyarisi-avrupanin-440-milyar-euroluk-riski-haberi-836525",
+      "domain": "dunya.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-17T12:45:00Z",
+      "firstSeenAt": "2026-08-17T12:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9d9b53d50d11666ffea3",
+      "title": "Big investors hunt for tomorrow AI winners as capex angst fades",
+      "url": "https://bworldonline.com/technology/2026/08/17/770587/big-investors-hunt-for-tomorrows-ai-winners-as-capex-angst-fades/",
+      "domain": "bworldonline.com",
+      "language": "English",
+      "sourceCountry": "Philippines",
+      "seenAt": "2026-08-17T10:15:00Z",
+      "firstSeenAt": "2026-08-17T10:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d7a26f56517835ff4115",
+      "title": "2014 से 2026 तक .. पीएम मोदी के लाल किले से दिए भाषाणों में अब जमीन - आसमान का अंतर , बिजली - शौचालय के मुद्दों से भटके रास्ता - pm narendra modi independence day speeches focus change developed india 2047",
+      "url": "https://navbharattimes.indiatimes.com/india/pm-narendra-modi-independence-day-speeches-focus-change-developed-india-2047/articleshow/133290849.cms",
+      "domain": "navbharattimes.indiatimes.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
       "seenAt": "2026-08-17T09:15:00Z",
       "firstSeenAt": "2026-08-17T09:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1092,24 +752,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "bf8b88ae65dd96a3df15",
-      "title": "С ракети и дронове Украйна по братски свали ударно цената на руската пшеница",
-      "url": "https://www.actualno.com/economy/s-raketi-i-dronove-ukrajna-po-bratski-svali-udarno-cenata-na-ruskata-pshenica-news_2629575.html",
-      "domain": "actualno.com",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
+      "id": "d832ca7fdb644fce46ba",
+      "title": "One of the Biggest Chip ETFs Has Averaged 14 % a Year Since 2001 and Just Made 118 % in Twelve Months",
+      "url": "https://www.fool.com/investing/2026/08/17/one-of-the-biggest-chip-etfs-has-averaged-14-a-yea/",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
       "seenAt": "2026-08-17T08:45:00Z",
       "firstSeenAt": "2026-08-17T08:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1118,128 +777,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "e270ccfd07f8f478f308",
-      "title": "ارتفاع أسعار القمح الأحمر الصلب إلى أعلى مستوياتها منذ 3 أسابيع",
-      "url": "https://gate.ahram.org.eg/News/5889915.aspx",
-      "domain": "gate.ahram.org.eg",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-17T08:45:00Z",
-      "firstSeenAt": "2026-08-17T08:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ad55f9d804d72ddf2b93",
-      "title": "Birol Altınkılıç hayatını kaybetti | Kahve Dünyası ve Altınmarkanın kurucusu vefat etti",
-      "url": "https://www.odatv.com/ekonomi/is-dunyasi/birol-altinkilic-hayatini-kaybetti-kahve-dunyasi-ve-altinmarkanin-kurucusu-vefat-etti-120159017",
-      "domain": "odatv.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T08:45:00Z",
-      "firstSeenAt": "2026-08-17T08:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "eedc01d1aaa82631d247",
-      "title": "小麦新品种 天宁138 通过国家初审 _ 中华网",
-      "url": "https://hea.china.com/articles/20260817/202608171942267.html",
-      "domain": "hea.china.com",
-      "language": "Chinese",
+      "id": "31208c0164ab69fa3da8",
+      "title": "Hermes Testing 1H26 profit more than triples on rising AI testing demand",
+      "url": "https://www.digitimes.com/news/a20260816PD201/testing-demand-profit-revenue-equipment.html",
+      "domain": "digitimes.com",
+      "language": "English",
       "sourceCountry": "China",
-      "seenAt": "2026-08-17T08:00:00Z",
-      "firstSeenAt": "2026-08-17T08:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d04fc7da3c534163a1d8",
-      "title": "Birol Altınkılıç kimdir ? | NTV Haber",
-      "url": "https://www.ntv.com.tr/turkiye/galeri-en-zengin-100-turk-listesindeydi-birol-altinkilic-yasamini-yitirdi-1737679",
-      "domain": "ntv.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T08:00:00Z",
-      "firstSeenAt": "2026-08-17T08:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "eb1c8952aa8f7099da17",
-      "title": "Расширен запрет на ввоз сельскохозяйственной и кормовой продукции из России и Беларуси",
-      "url": "https://www.gorod.lv/novosti/368440-rasshiren-zapret-na-vvoz-selskohozyaistvennoi-i-kormovoi-produktsii-iz-rossii-i-belarusi",
-      "domain": "gorod.lv",
-      "language": "Russian",
-      "sourceCountry": "Latvia",
       "seenAt": "2026-08-17T07:45:00Z",
       "firstSeenAt": "2026-08-17T07:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1248,24 +802,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "62bda4996b418503a09d",
-      "title": "Birol Altınkılıç neden öldü , ölüm sebebi ne ? Kahve Dünyası nın sahibi",
-      "url": "https://www.timeturk.com/birol-altinkilic-neden-oldu-olum-sebebi-ne-kahve-dunyasinin-sahibi",
-      "domain": "timeturk.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
+      "id": "bbcb8fee1639e39e4f49",
+      "title": "TSMC Doubles Advanced Packaging Capacity Over Three Years , Samsung Goes All - In on 2nm Mass Production",
+      "url": "https://www.design-reuse.com/news/202530979-tsmc-doubles-advanced-packaging-capacity-over-three-years-samsung-goes-all-in-on-2nm-mass-production/",
+      "domain": "design-reuse.com",
+      "language": "English",
+      "sourceCountry": "China",
       "seenAt": "2026-08-17T07:30:00Z",
       "firstSeenAt": "2026-08-17T07:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1274,24 +827,423 @@
       "duplicateCount": 1
     },
     {
-      "id": "fdbe44b56ae9327a89b4",
-      "title": "TMO 11 , 5 Milyon Ton Ürün Aldı , 120 Milyar Lira Ödedi",
-      "url": "https://www.haberler.com/ekonomi/tmo-hububat-ureticilerine-120-milyar-lira-odeme-20151124-haberi/",
-      "domain": "haberler.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
+      "id": "2ed7444986b0c33d4237",
+      "title": "Unisem appoints chief technology officer",
+      "url": "https://www.thestar.com.my/business/business-news/2026/08/17/unisem-appoints-chief-technology-officer",
+      "domain": "thestar.com.my",
+      "language": "English",
+      "sourceCountry": "Malaysia",
       "seenAt": "2026-08-17T07:30:00Z",
       "firstSeenAt": "2026-08-17T07:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ef73fa597e10cc53c651",
+      "title": "금리 인상 · AI 거품 우려 모두 완화 … 코스피 반등할까 [ 주간증시전망 ]",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=01492406645548304&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T07:30:00Z",
+      "firstSeenAt": "2026-08-17T07:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "89e88de269f930bd7b53",
+      "title": "Lam Research to train 3 , 500 students in semiconductor skills over five years",
+      "url": "https://www.humanresourcesonline.net/lam-research-to-train-3-500-students-in-semiconductor-skills-over-five-years",
+      "domain": "humanresourcesonline.net",
+      "language": "English",
+      "sourceCountry": "Singapore",
+      "seenAt": "2026-08-17T07:30:00Z",
+      "firstSeenAt": "2026-08-17T07:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "30195797997e62c299f6",
+      "title": "HBM4E 곧 온다 ⋯더 치열해진 첨단 패키징 경쟁",
+      "url": "https://www.etoday.co.kr/news/view/2614797",
+      "domain": "etoday.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T07:15:00Z",
+      "firstSeenAt": "2026-08-17T07:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3b839049de381b0f9d24",
+      "title": "TSMC , 7월 매출 45 % ↑ … AI 회의론에도 칩 수요 견조",
+      "url": "https://www.etoday.co.kr/news/view/2612857",
+      "domain": "etoday.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T07:15:00Z",
+      "firstSeenAt": "2026-08-17T07:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3f6194ffc193217ac814",
+      "title": "Why This Memory Chip Boom May Have More Staying Power Than History Suggests",
+      "url": "https://www.fool.com/investing/2026/08/17/why-this-memory-chip-boom-may-have-more-staying-po/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T06:30:00Z",
+      "firstSeenAt": "2026-08-17T06:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "11fd5861f941fb55a34c",
+      "title": "최태원 · 빌 게이츠 1년새 두차례 회동 ... SMR 동맹 강화",
+      "url": "http://www.newstomato.com/ReadNews.aspx?no=1310435",
+      "domain": "newstomato.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T06:15:00Z",
+      "firstSeenAt": "2026-08-17T06:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d85b905dbf20b395ccd8",
+      "title": "Amazon , Alphabet , and Microsoft Are Dropping Nearly $600 Billion on Capital Expenditures : 1 Clear Winner Emerges",
+      "url": "https://www.fool.com/investing/2026/08/16/amazon-alphabet-and-microsoft-are-dropping-nearly/",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T05:15:00Z",
+      "firstSeenAt": "2026-08-17T05:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "eaab3d2b4a0989904f0d",
+      "title": "해외는 물부터 확보하고 투자 ... 한국만 거꾸로",
+      "url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003258551&PAGE_CD=N0002&CMPT_CD=M0112",
+      "domain": "ohmynews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T05:00:00Z",
+      "firstSeenAt": "2026-08-17T05:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "86aa32fdef62afa76a77",
+      "title": "Aheesa Digital VIHAAN Chip Marks Milestone in India Semiconductor Journey , ETTelecom",
+      "url": "https://telecom.economictimes.indiatimes.com/news/devices/dli-backed-aheesa-digital-achieves-first-pass-silicon-success-with-broadband-chip-vihaan-meity/133284698",
+      "domain": "telecom.economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-17T04:45:00Z",
+      "firstSeenAt": "2026-08-17T04:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cd953ab2d7d448037e70",
+      "title": "SK Hynix Stock Trades at Around 5 Times Next Year Earnings Even After Revenue Grew 257 %. Here What a Multiple That Low Usually Signals About a Cyclical Business .",
+      "url": "https://www.fool.com/investing/2026/08/16/sk-hynixs-stock-trades-at-around-5-times-next-year/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T04:00:00Z",
+      "firstSeenAt": "2026-08-17T04:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0f0d5d1340b3aa347417",
+      "title": "2026 FMS Shows Storage And Memory Market Continued Growth",
+      "url": "https://www.forbes.com/sites/tomcoughlin/2026/08/16/2026-fms-shows-storage-and-memory-market-continued-growth/",
+      "domain": "forbes.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T03:45:00Z",
+      "firstSeenAt": "2026-08-17T03:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a81053d0693b1da377ae",
+      "title": "[ 미국 특징주 ] 美 애플 , 중국산 메모리 쓰지 말라 … AI 공급난에 반도체 갈등 격화",
+      "url": "https://www.newspim.com/news/view/20260817000052",
+      "domain": "newspim.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T03:45:00Z",
+      "firstSeenAt": "2026-08-17T03:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a1e16b595aca034bc8bc",
+      "title": "Modi pledges more chip plants , mass AI training , and an export push in Independence Day address",
+      "url": "https://www.digitimes.com/news/a20260817VL200/training-manufacturing-policy.html",
+      "domain": "digitimes.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-17T03:15:00Z",
+      "firstSeenAt": "2026-08-17T03:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "db789742d908823695b2",
+      "title": "Bangkok Post - Thailand Positions THECA 2026 as Asia Hub for Electronics , AI & Mobility",
+      "url": "https://www.bangkokpost.com/thailand/pr/3296952/thailand-positions-theca-2026-as-asias-hub-for-electronics-ai-mobility",
+      "domain": "bangkokpost.com",
+      "language": "English",
+      "sourceCountry": "Thailand",
+      "seenAt": "2026-08-17T03:00:00Z",
+      "firstSeenAt": "2026-08-17T03:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d402c984a82624b1d107",
+      "title": "Japan economy grows slower than expected in April - June",
+      "url": "https://www.freemalaysiatoday.com/category/business/2026/08/17/japan-s-economy-grows-slower-than-expected-in-april-june",
+      "domain": "freemalaysiatoday.com",
+      "language": "English",
+      "sourceCountry": "Malaysia",
+      "seenAt": "2026-08-17T03:00:00Z",
+      "firstSeenAt": "2026-08-17T03:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7293c2e9f3a01c807139",
+      "title": "AI 패권 다투는 중국도 녹색 기준 … 한국은 데이터센터 속도전만",
+      "url": "https://www.hani.co.kr/arti/economy/it/1273187.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-17T01:15:00Z",
+      "firstSeenAt": "2026-08-17T01:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1304,12 +1256,12 @@
     {
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
-      "status": "stale",
-      "observationDate": "2026-08-17T19:00:00Z",
-      "lastSuccessfulAt": "2026-08-17T19:40:30Z",
+      "status": "partial",
+      "observationDate": "2026-08-17T22:00:00Z",
+      "lastSuccessfulAt": "2026-08-17T22:39:04Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 0 returned records across 0/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
