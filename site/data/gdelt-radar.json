@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-18T07:52:23Z",
+  "generatedAtUtc": "2026-08-18T10:44:40Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 1,
-    "rawArticleCount": 50,
+    "successfulQueryCount": 4,
+    "rawArticleCount": 200,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-18T07:52:23Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-18T10:44:40Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,119 +52,681 @@
   ],
   "articles": [
     {
-      "id": "668a50e29ccda2d9a03b",
-      "title": "30 - year Treasury yield : Three things that could drive it even higher",
-      "url": "https://www.cnbc.com/2026/08/18/30-year-treasury-yield-three-things-that-could-drive-it-even-higher.html",
-      "domain": "cnbc.com",
+      "id": "ff86fa760cfb27cf0c85",
+      "title": "Ukrainian Strikes Halt Most Russian Grain Export Capacity in Black Sea Region",
+      "url": "https://www.themoscowtimes.com/2026/08/17/ukrainian-strikes-halt-most-russian-grain-export-capacity-in-black-sea-region-a93517",
+      "domain": "themoscowtimes.com",
+      "language": "English",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-17T16:30:00Z",
+      "firstSeenAt": "2026-08-17T16:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 36,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "df8e2294d5466f08cf31",
+      "title": "Argentina LNG Seeks RIGI Approval for $51 Billion Export Project",
+      "url": "https://finance.yahoo.com/energy/articles/argentina-lng-seeks-rigi-approval-015747805.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-18T06:45:00Z",
-      "firstSeenAt": "2026-08-18T06:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "918a65cfeb2d025a7735",
-      "title": "Politiaksjoner i hele fylket",
-      "url": "https://www.rbnett.no/nyheter/s/d4r9yX/politiaksjoner-i-hele-fylket",
-      "domain": "rbnett.no",
-      "language": "Norwegian",
-      "sourceCountry": "Norway",
-      "seenAt": "2026-08-18T06:45:00Z",
-      "firstSeenAt": "2026-08-18T06:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "db09065b25b7fada910c",
-      "title": "Langrin takes BOJ reins as inflation spikes - Jamaica Observer",
-      "url": "https://www.jamaicaobserver.com/2026/08/18/langrin-takes-boj-reins-inflation-spikes/",
-      "domain": "jamaicaobserver.com",
-      "language": "English",
-      "sourceCountry": "Jamaica",
-      "seenAt": "2026-08-18T06:30:00Z",
-      "firstSeenAt": "2026-08-18T06:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c73755004aaa2da7e203",
-      "title": "משקיע העל מזהיר ממפולת : ״ אלה המילים המסוכנות בעולם ההשקעות ״",
-      "url": "https://www.globes.co.il/news/article.aspx?did=1001552598",
-      "domain": "globes.co.il",
-      "language": "Hebrew",
-      "sourceCountry": "Israel",
-      "seenAt": "2026-08-18T06:30:00Z",
-      "firstSeenAt": "2026-08-18T06:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ee01b78c97993e623f8d",
-      "title": "日本前外汇掌门人 语出惊人 ： 日本央行每次会议都该加息 ， 利率直冲2 . 5 %_ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20260818/32338042.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
       "seenAt": "2026-08-18T06:15:00Z",
       "firstSeenAt": "2026-08-18T06:15:00Z",
       "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 28,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "25b3e3e29ae162d4bc92",
+      "title": "Жнива тривають : аграрії вже зібрали понад 30 , 8 млн тонн зерна | Кабінет Міністрів України",
+      "url": "https://www.kmu.gov.ua:443/news/zhnyva-tryvaiut-ahrarii-vzhe-zibraly-ponad-308-mln-tonn-zerna",
+      "domain": "kmu.gov.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c9dd1f4248ab7fa248b8",
+      "title": "Explained : Why a super El Niño leaves tropical commodities acutely exposed",
+      "url": "https://economictimes.indiatimes.com/news/economy/agriculture/explained-why-a-super-el-nio-leaves-tropical-commodities-acutely-exposed/articleshow/133317721.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "857cf70f458492c6941b",
+      "title": "Dürre : Bauernverband erwartet deutlich kleinere Ernte",
+      "url": "https://www.handelsblatt.com/politik/deutschland/duerre-bauernverband-erwartet-deutlich-kleinere-ernte/100247958.html",
+      "domain": "handelsblatt.com",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1622aa4d32eff2f30730",
+      "title": "塔克拉玛干的年轻新农人 （ 追梦人 · 青春让理想闪光 ）_ 腾讯新闻",
+      "url": "https://news.qq.com/rain/a/20260816A03R9400",
+      "domain": "news.qq.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9056242c86cf41907c4f",
+      "title": "Dürre 2026 : Deutsche Ernte bricht ein – Bauern fordern Sofortmaßnahmen",
+      "url": "https://www.hna.de/wirtschaft/bauern-unter-druck-hitze-duerre-krieg-wirken-sich-auf-lebensmittel-aus-zr-94448582.html",
+      "domain": "hna.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5fb1c430bd1cfb45ebb8",
+      "title": "Dürre 2026 : Deutsche Ernte bricht ein – Bauern fordern Sofortmaßnahmen",
+      "url": "http://www.fnp.de/wirtschaft/bauern-unter-druck-hitze-duerre-krieg-wirken-sich-auf-lebensmittel-aus-zr-94448582.html",
+      "domain": "fnp.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3a4d74ba01ceab870c29",
+      "title": "Landwirtschaft : Bauernverband erwartet deutlich kleinere Ernte",
+      "url": "https://www.handelsblatt.com/politik/deutschland/landwirtschaft-bauernverband-erwartet-deutlich-kleinere-ernte/100247913.html",
+      "domain": "handelsblatt.com",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cb2f56f71ddce3ee6213",
+      "title": "Dürre 2026 : Deutsche Ernte bricht ein – Bauern fordern Sofortmaßnahmen",
+      "url": "http://www.az-online.de/wirtschaft/bauern-unter-druck-hitze-duerre-krieg-wirken-sich-auf-lebensmittel-aus-zr-94448582.html",
+      "domain": "az-online.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "be2751086637ae6f9a7a",
+      "title": "Ernte 2026 : Bauern verzweifeln an Hitze - Folgen – steigen jetzt Lebensmittelpreise ?",
+      "url": "https://www.morgenpost.de/wirtschaft/article412895129/bauern-verzweifeln-an-hitze-folgen-steigen-jetzt-die-lebensmittelpreise.html",
+      "domain": "morgenpost.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3156bef66efcec16d63d",
+      "title": "জরুরি গ্যাসের চাহিদা মেটাতে ২ কার্গো এলএনজি আমদানির অনুমোদন",
+      "url": "https://www.arthosuchak.com/archives/970606/%E0%A6%9C%E0%A6%B0%E0%A7%81%E0%A6%B0%E0%A6%BF-%E0%A6%97%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B8%E0%A7%87%E0%A6%B0-%E0%A6%9A%E0%A6%BE%E0%A6%B9%E0%A6%BF%E0%A6%A6%E0%A6%BE-%E0%A6%AE%E0%A7%87%E0%A6%9F/",
+      "domain": "arthosuchak.com",
+      "language": "Bengali",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "15a692a54a968a29515b",
+      "title": "OPC Energy Issues NIS 600 Million of New Series E Bonds",
+      "url": "https://www.prnewswire.com/news-releases/opc-energy-issues-nis-600-million-of-new-series-e-bonds-302853912.html",
+      "domain": "prnewswire.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c266980bc82cab278f8f",
+      "title": "OPC Energy Issues NIS 600 Million of New Series E Bonds",
+      "url": "http://www.prnewswire.com/news-releases/opc-energy-issues-nis-600-million-of-new-series-e-bonds-302853912.html",
+      "domain": "prnewswire.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9bb70fb046bd1de45a07",
+      "title": "If I Were in My 20s , Id Buy This Unstoppable Vanguard ETF and Hold It Forever",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/were-20s-id-buy-unstoppable-094700837.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-18T10:15:00Z",
+      "firstSeenAt": "2026-08-18T10:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d99029877bfd10757065",
+      "title": "ExxonMobil fecha mil milhões para megaprojeto de gás – Observador",
+      "url": "https://observador.pt/2026/08/18/exxonmobil-fecha-contratos-de-quase-1-000-milhoes-de-euros-para-megaprojeto-de-gas-em-mocambique/",
+      "domain": "observador.pt",
+      "language": "Portuguese",
+      "sourceCountry": "Portugal",
+      "seenAt": "2026-08-18T09:45:00Z",
+      "firstSeenAt": "2026-08-18T09:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a2e8416cac6eeae4b9a8",
+      "title": "В Україні вже намолотили майже 31 млн т зерна нового врожаю",
+      "url": "https://ua.korrespondent.net/business/economics/4903862-v-ukraini-vzhe-namolotyly-maizhe-31-mln-t-zerna-novoho-vrozhaui",
+      "domain": "ua.korrespondent.net",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-08-18T09:30:00Z",
+      "firstSeenAt": "2026-08-18T09:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6dd9e45c4e6f062a96d2",
+      "title": "В Украине уже обмолотили почти 31 млн тонн зерна нового урожая",
+      "url": "https://korrespondent.net/business/economics/4903862-v-ukrayne-uzhe-obmolotyly-pochty-31-mln-tonn-zerna-novoho-urozhaia",
+      "domain": "korrespondent.net",
+      "language": "Russian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-08-18T09:30:00Z",
+      "firstSeenAt": "2026-08-18T09:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a2f8afbae9b1257a65fe",
+      "title": "Спека в Європі вдарила по сільському господарству : менше овочів , зерна і молока",
+      "url": "https://delo.ua/news/jevropa-vtracaje-vrozai-cerez-speku-fermeri-yakix-krayin-postrazdali-naibilse-470916/",
+      "domain": "delo.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-08-18T09:30:00Z",
+      "firstSeenAt": "2026-08-18T09:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dc0ede46782f3528add0",
+      "title": "Explainer - Why a super El Niño leaves tropical commodities acutely exposed",
+      "url": "https://wiky.com/2026/08/18/explainer-why-a-super-el-nino-leaves-tropical-commodities-acutely-exposed/",
+      "domain": "wiky.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-18T09:15:00Z",
+      "firstSeenAt": "2026-08-18T09:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3cbb043ff11467a0e2e1",
+      "title": "塔克拉玛干的年轻新农人 （ 追梦人 · 青春让理想闪光 ）",
+      "url": "https://www.oeeee.com/html/202608/18/1734513.html",
+      "domain": "oeeee.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-18T09:15:00Z",
+      "firstSeenAt": "2026-08-18T09:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d4aead533fd2a3df0e62",
+      "title": "Landwirtschaft : Bauernverband erwartet deutlich kleinere Ernte - Wirtschaft",
+      "url": "https://www.rhein-zeitung.de/deutschland-welt/wirtschaft/bauernverband-erwartet-deutlich-kleinere-ernte_arid-4148307.html",
+      "domain": "rhein-zeitung.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T09:15:00Z",
+      "firstSeenAt": "2026-08-18T09:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d38c473997cc672892e8",
+      "title": "DEVON ENERGY - Integrating The Delaware Basin : Devon ...",
+      "url": "https://www.euro-petrole.com/integrating-the-delaware-basin-devon-energy-reaches-final-investment-decision-on-solitude-pipeline-system-n-i-30508",
+      "domain": "euro-petrole.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-18T09:15:00Z",
+      "firstSeenAt": "2026-08-18T09:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fccc7ec930ee6d90dba2",
+      "title": "Head - To - Head Contrast : PTT Public ( PCHUY ) versus Its Peers",
+      "url": "https://www.tickerreport.com/banking-finance/13547843/head-to-head-contrast-ptt-public-pchuy-versus-its-peers.html",
+      "domain": "tickerreport.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-18T09:15:00Z",
+      "firstSeenAt": "2026-08-18T09:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "57c80c8cf761f9eb0451",
+      "title": "김성환 8월 중 산업용 지역요금제 , 신규댐 건설 계획 공개",
+      "url": "https://biz.heraldcorp.com/article/10844473",
+      "domain": "biz.heraldcorp.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-18T09:15:00Z",
+      "firstSeenAt": "2026-08-18T09:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "15e1b1421d9693add5fe",
+      "title": "Türkiyenin 1 trilyon liralık yapay zeka planı devreye girdi",
+      "url": "https://www.dunya.com/ekonomi/turkiyenin-1-trilyon-liralik-yapay-zeka-plani-devreye-girdi-haberi-836671",
+      "domain": "dunya.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-18T09:15:00Z",
+      "firstSeenAt": "2026-08-18T09:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "14bfcc4c0d35bd665b54",
+      "title": "Tschechiens Wirtschaft wächst solide - Notenbank bleibt vorsichtig",
+      "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69339154-tschechiens-wirtschaft-waechst-solide-notenbank-bleibt-vorsichtig-349.htm",
+      "domain": "finanznachrichten.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T09:15:00Z",
+      "firstSeenAt": "2026-08-18T09:15:00Z",
+      "topicIds": [
         "macro-policy"
       ],
       "topics": [
@@ -182,14 +744,193 @@
       "duplicateCount": 1
     },
     {
-      "id": "8ee9bcb0d6795e7cb697",
-      "title": "Lessons from global experience for Sri Lanka inflation target",
-      "url": "https://www.ft.lk/columns/Lessons-from-global-experience-for-Sri-Lanka-s-inflation-target/4-795978",
-      "domain": "ft.lk",
+      "id": "10ac9d2d7b06c2652b64",
+      "title": "Landwirtschaft : Bauernverband erwartet deutlich kleinere Ernte",
+      "url": "https://www.zeit.de/news/2026-08/18/minister-verspricht-bauern-hilfe-erst-nach-erntebilanz",
+      "domain": "zeit.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T09:00:00Z",
+      "firstSeenAt": "2026-08-18T09:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6b0cd010a5f303075649",
+      "title": "Bauernverband erwartet deutlich kleinere Ernte in Deutschland",
+      "url": "https://www.finanzen.net/nachricht/aktien/bauernverband-erwartet-deutlich-kleinere-ernte-in-deutschland-15884131",
+      "domain": "finanzen.net",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T09:00:00Z",
+      "firstSeenAt": "2026-08-18T09:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "032825eaed991eac127d",
+      "title": "Bauernverband erwartet deutlich kleinere Ernte",
+      "url": "http://www.op-online.de/wirtschaft/bauernverband-erwartet-deutlich-kleinere-ernte-zr-94448141.html",
+      "domain": "op-online.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T09:00:00Z",
+      "firstSeenAt": "2026-08-18T09:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "687a10dc546d0381d9f4",
+      "title": "Dürre , Preisflaute , Kostendruck : Jetzt wird es für viele Agrarbetriebe existenziell",
+      "url": "https://www.topagrar.com/markt/news/erntecrash-2026-rukwied-warnt-vor-liquiditatsnot-der-bauern-und-fordert-hilfe-20028292.html",
+      "domain": "topagrar.com",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-18T09:00:00Z",
+      "firstSeenAt": "2026-08-18T09:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0067f8572229f86f7bfb",
+      "title": "Le nombre de passages dans le détroit dOrmuz reste très bas , inférieur à dix - données - 18 / 08 / 2026 à 10 : 03",
+      "url": "https://www.boursorama.com/bourse/actualites/le-nombre-de-passages-dans-le-detroit-d-ormuz-reste-tres-bas-inferieur-a-dix-donnees-81a5864474b996fbfd5c23d1fccc8988",
+      "domain": "boursorama.com",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-08-18T09:00:00Z",
+      "firstSeenAt": "2026-08-18T09:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "33aed1a98ca133efddda",
+      "title": "ExxonMobil avança com megaprojeto de gás em Moçambique com contratos de 947 ME",
+      "url": "https://sapo.pt/artigo/exxonmobil-avanca-com-megaprojeto-de-gas-em-mocambique-com-contratos-de-947-me-6a841728c50b1ad9042e1ee8",
+      "domain": "sapo.pt",
+      "language": "Portuguese",
+      "sourceCountry": "Portugal",
+      "seenAt": "2026-08-18T09:00:00Z",
+      "firstSeenAt": "2026-08-18T09:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "aafb11e9922dd820ef59",
+      "title": "EU plans most far - reaching sanctions against Russia in coming month – The Irish Times",
+      "url": "https://www.irishtimes.com/world/europe/2026/08/17/eu-plans-most-far-reaching-sanctions-against-russia-in-coming-months/",
+      "domain": "irishtimes.com",
       "language": "English",
-      "sourceCountry": "Sri Lanka",
-      "seenAt": "2026-08-18T06:00:00Z",
-      "firstSeenAt": "2026-08-18T06:00:00Z",
+      "sourceCountry": "Ireland",
+      "seenAt": "2026-08-17T21:45:00Z",
+      "firstSeenAt": "2026-08-17T21:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f1c8e359e0da66cce62e",
+      "title": "Global Market : Japan 10 - year JGB yield hits three - decade high on BOJ rate hike bets",
+      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-japans-10-year-jgb-yield-hits-three-decade-high-on-boj-rate-hike-bets/articleshow/133311165.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-18T04:30:00Z",
+      "firstSeenAt": "2026-08-18T04:30:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -201,7 +942,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 26,
+      "materialityScore": 25,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -234,76 +975,49 @@
       "duplicateCount": 1
     },
     {
-      "id": "a61bbf5d8e118dfea114",
-      "title": "Iran wary of more economic pain : What else could the Trump administration do ?",
-      "url": "https://www.businesstoday.in/world/story/iran-wary-of-more-economic-pain-what-else-could-the-trump-administration-do-549684-2026-08-18",
-      "domain": "businesstoday.in",
+      "id": "195ece0bfeb76ddfebfd",
+      "title": "YPF - led Argentina LNG seeks approval for $51 - billion investment",
+      "url": "https://www.worldoil.com/news/2026/8/17/ypf-led-argentina-lng-seeks-approval-for-51-billion-investment/",
+      "domain": "worldoil.com",
       "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-18T04:30:00Z",
-      "firstSeenAt": "2026-08-18T04:30:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-17T15:30:00Z",
+      "firstSeenAt": "2026-08-17T15:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
-      "materialityScore": 20,
+      "materialityScore": 22,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "097c28004b6f82c7ce9d",
-      "title": "국제금값 이틀째 강세 … 美연준 금리인상 기대 후퇴 영향",
-      "url": "https://www.edaily.co.kr/News/Read?newsId=03362006645548632&mediaCodeNo=257",
-      "domain": "edaily.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-18T04:30:00Z",
-      "firstSeenAt": "2026-08-18T04:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c6ca23de96b81eee6f0d",
-      "title": "Горячо - холодно . Российская экономика подошла к важной развилке",
-      "url": "https://1prime.ru/20260818/leron-872312807.html",
-      "domain": "1prime.ru",
+      "id": "1f76cec3b3c9978bfdc4",
+      "title": "Наводнения , засухи , крупные пожары : супер Эль - Ниньо устроит климату встряску",
+      "url": "https://www.teleport2001.ru/news/2026-08-18/218034-navodneniya-zasukhi-krupnye-pozhary-super-el-nino-ustroit-klimatu-vstryasku.html",
+      "domain": "teleport2001.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
-      "seenAt": "2026-08-18T04:15:00Z",
-      "firstSeenAt": "2026-08-18T04:15:00Z",
+      "seenAt": "2026-08-18T08:45:00Z",
+      "firstSeenAt": "2026-08-18T08:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -312,24 +1026,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "476ea59789f6921c58c4",
-      "title": "海外流动性会出问题么 ？ - 华尔街见闻",
-      "url": "https://wallstreetcn.com/articles/3779660",
-      "domain": "wallstreetcn.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-18T04:00:00Z",
-      "firstSeenAt": "2026-08-18T04:00:00Z",
+      "id": "1845b872ea07d91e12bd",
+      "title": "한미반도체 , 1300억원 투입해 8공장 신설 … AI 장비 쇼티지 선제 대응",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026081813400167201",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-18T08:45:00Z",
+      "firstSeenAt": "2026-08-18T08:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -338,872 +1051,39 @@
       "duplicateCount": 1
     },
     {
-      "id": "69fd865169f9b08ed90c",
-      "title": "日本前外汇掌门人 语出惊人 ： 日本央行每次会议都该加息 ， 利率直冲2 . 5 %_ 金市直播 _ 黄金网 _ 中金在线",
-      "url": "http://gold.cnfol.com/jinshizhibo/20260818/32338025.shtml",
-      "domain": "gold.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-18T03:15:00Z",
-      "firstSeenAt": "2026-08-18T03:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "30a9b2f74de9fc09de40",
-      "title": "BSP says inflation to ease gradually , risks remain on upside",
-      "url": "https://interaksyon.philstar.com/business/2026/08/18/317912/bsp-says-inflation-to-ease-gradually-risks-remain-on-upside/",
-      "domain": "interaksyon.philstar.com",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-08-18T03:00:00Z",
-      "firstSeenAt": "2026-08-18T03:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "490710a351569c64dbdc",
-      "title": "黄金价格反攻突破4400美元 新一轮上行周期还有多远 ？ _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608173843478540.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-18T02:15:00Z",
-      "firstSeenAt": "2026-08-18T02:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5ef56fc6569136c5605b",
-      "title": "欧美股市全线杀跌 ！ 美伊谈判骤然升级 ， 油价疯涨 ！ 三只 黑天鹅 乱舞 ！ 恐慌指数飙升 - 期货 - 金融界",
-      "url": "https://futures.jrj.com.cn/2026/08/18073458145610.shtml",
-      "domain": "futures.jrj.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-18T02:00:00Z",
-      "firstSeenAt": "2026-08-18T02:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ce03c97b52bc45e30c21",
-      "title": "加拿大通膨數據升溫 、 美關稅威脅迫近 加幣兌美元承壓",
-      "url": "https://n.yam.com/Article/20260818272413",
-      "domain": "n.yam.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-08-18T02:00:00Z",
-      "firstSeenAt": "2026-08-18T02:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "28b2777b82f809dd0786",
-      "title": "日本前外汇掌门人 语出惊人 ： 日本央行每次会议都该加息 ， 利率直冲2 . 5 %- 外汇 - 金融界",
-      "url": "https://forex.jrj.com.cn/2026/08/18083358146189.shtml",
-      "domain": "forex.jrj.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-18T02:00:00Z",
-      "firstSeenAt": "2026-08-18T02:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f9491a631e41c1805d63",
-      "title": "华尔街传奇投资人警告 ： 2027年美国或陷衰退 ， 美股恐迎一轮大跌 _ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20260818/32337926.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-18T01:15:00Z",
-      "firstSeenAt": "2026-08-18T01:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a2465cc729495be2c5ec",
-      "title": "Esta es la cotización del real hoy en pesos uruguayos al cierre del lunes 17 de agosto de 2026",
-      "url": "https://www.elpais.com.uy/negocios/finanzas/esta-es-la-cotizacion-del-real-hoy-en-pesos-uruguayos-al-cierre-del-lunes-17-de-agosto-de-2026",
-      "domain": "elpais.com.uy",
-      "language": "Spanish",
-      "sourceCountry": "Uruguay",
-      "seenAt": "2026-08-18T00:30:00Z",
-      "firstSeenAt": "2026-08-18T00:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bece79886299949b0b94",
-      "title": "黄金价格反攻突破4400美元 新一轮上行周期还有多远 ？",
-      "url": "https://finance.sina.com.cn/roll/2026-08-18/doc-ininsscw8744241.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-18T00:30:00Z",
-      "firstSeenAt": "2026-08-18T00:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a7fbc17b386958f413e1",
-      "title": "Após 6 anos de espera , pedido de vista tira de pauta projeto voltado à populao LGBT em Campinas",
-      "url": "https://g1.globo.com/sp/campinas-regiao/noticia/2026/08/17/apos-6-anos-de-espera-pedido-de-vista-tira-de-pauta-projeto-voltado-a-populacao-lgbt-em-campinas.ghtml",
-      "domain": "g1.globo.com",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-18T00:00:00Z",
-      "firstSeenAt": "2026-08-18T00:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cc5f7e28164c0a686531",
-      "title": "TSX down more than 50 points despite commodity gains , while U . S . markets slide",
-      "url": "https://www.thepeterboroughexaminer.com/business/tsx-down-more-than-50-points-despite-commodity-gains-while-us-markets-slide/article_e592d9a9-4ea7-5088-89b0-952deefc3e20.html",
-      "domain": "thepeterboroughexaminer.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-18T00:00:00Z",
-      "firstSeenAt": "2026-08-18T00:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ba4e9cd3e2e31a5fef3b",
-      "title": "Brian Langrin appointed BOJ governor - Jamaica Observer",
-      "url": "https://www.jamaicaobserver.com/2026/08/17/brian-langrin-appointed-boj-governor/",
-      "domain": "jamaicaobserver.com",
-      "language": "English",
-      "sourceCountry": "Jamaica",
-      "seenAt": "2026-08-17T23:00:00Z",
-      "firstSeenAt": "2026-08-17T23:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "91fdaf949895dd56ca6f",
-      "title": "Traders Get Pickier in Emerging - Market Inflation - Linked Debt",
-      "url": "https://www.livemint.com/market/traders-get-pickier-in-emerging-market-inflation-linked-debt-11787001634597.html",
-      "domain": "livemint.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-17T22:45:00Z",
-      "firstSeenAt": "2026-08-17T22:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "25b371fd0d9a13dbc086",
-      "title": "TSX down more than 50 points despite commodity gains , while U . S . markets slide – Winnipeg Free Press",
-      "url": "https://www.winnipegfreepress.com/business/2026/08/17/tsx-down-more-than-50-points-despite-commodity-gains-while-u-s-markets-slide",
-      "domain": "winnipegfreepress.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-17T22:00:00Z",
-      "firstSeenAt": "2026-08-17T22:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ed6a23a0bcbf284d742a",
-      "title": "Canada | Le rebond de linflation en juillet ne ferait pas changer davis la Banque du Canada",
-      "url": "https://www.lapresse.ca/affaires/economie/2026-08-17/canada/le-rebond-de-l-inflation-en-juillet-ne-ferait-pas-changer-d-avis-la-banque-du-canada.php",
-      "domain": "lapresse.ca",
-      "language": "French",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-17T22:00:00Z",
-      "firstSeenAt": "2026-08-17T22:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "30650882e4a22d6c2cce",
-      "title": "Nigeria Inflation Eases to 15 . 43 % as Rates Stay at 26 . 5 %",
-      "url": "https://zalebs.com/business/nigerias-july-inflation-slows-to-15-43-as-central-bank-holds-rate/",
-      "domain": "zalebs.com",
-      "language": "English",
-      "sourceCountry": "South Africa",
-      "seenAt": "2026-08-17T21:30:00Z",
-      "firstSeenAt": "2026-08-17T21:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ea0c22f7affcf0304eb5",
-      "title": "Agentes rebajan su proyección sobre el dólar e inflación - Negocios",
-      "url": "https://www.abc.com.py/negocios/2026/08/17/agentes-rebajan-su-proyeccion-sobre-el-dolar-e-inflacion/",
-      "domain": "abc.com.py",
-      "language": "Spanish",
-      "sourceCountry": "Paraguay",
-      "seenAt": "2026-08-17T21:30:00Z",
-      "firstSeenAt": "2026-08-17T21:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "051ee1f5f21cc9b1c3f2",
-      "title": "هل تعود مصر إلى رفع الفائدة ؟.. صندوق النقد يوصي بالتشديد وخبراء يترقبون مسار التضخم",
-      "url": "https://arabic.cnn.com/middle-east/article/2026/08/17/egypt-raising-interest-rates-imf-experts-monitoring-inflation",
-      "domain": "arabic.cnn.com",
-      "language": "Arabic",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-17T21:15:00Z",
-      "firstSeenAt": "2026-08-17T21:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d1fdbed95960bb3367b4",
-      "title": "美日欧九月货币政策线索密集披露 ， 政策分化渐趋清晰 ， 九成受访者预计美联储维持利率不变",
-      "url": "https://finance.jrj.com.cn/2026/08/18033058145300.shtml",
-      "domain": "finance.jrj.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-17T21:15:00Z",
-      "firstSeenAt": "2026-08-17T21:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6294e81dabf0411e66f3",
-      "title": "臺銀看金價 本周戰4 , 500美元 - 投資理財",
-      "url": "https://www.chinatimes.com/newspapers/20260818000395-260208",
-      "domain": "chinatimes.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-08-17T21:00:00Z",
-      "firstSeenAt": "2026-08-17T21:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7d7e8c72b8a3a89e156d",
-      "title": "BSP says it can still take monetary action amid looming inflation risks",
-      "url": "https://bworldonline.com/top-stories/2026/08/18/770759/bsp-says-it-can-still-take-monetary-action-amid-looming-inflation-risks/",
-      "domain": "bworldonline.com",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-08-17T20:15:00Z",
-      "firstSeenAt": "2026-08-17T20:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cde041976cce4b22ea50",
-      "title": "GOP Rep . Bacon : Trump Doesnt Communicate Voter Economic Pain Well",
-      "url": "https://www.breitbart.com/politics/2026/08/16/gop-rep-bacon-trump-doesnt-communicate-voters-economic-pain-well/",
-      "domain": "breitbart.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-17T20:00:00Z",
-      "firstSeenAt": "2026-08-17T20:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4311f3f61adcb9aef59d",
-      "title": "Gas price rebound drove inflation up to 3 % in July : StatCan",
-      "url": "https://cheknews.ca/gas-price-rebound-drove-inflation-up-to-3-in-july-statcan-1342364/",
-      "domain": "cheknews.ca",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-17T19:00:00Z",
-      "firstSeenAt": "2026-08-17T19:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "32d041e022e85c391e79",
-      "title": "Oro , yuan e riserve valutarie . La strategia silenziosa che la Cina porta avanti da quasi due anni",
-      "url": "https://www.money.it/oro-yuan-e-riserve-valutarie-la-strategia-silenziosa-che-la-cina-porta-avanti-da-quasi-due-anni",
-      "domain": "money.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-08-17T19:00:00Z",
-      "firstSeenAt": "2026-08-17T19:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "90ef984351c850d211f6",
-      "title": "Canada PM Carney Expects to Talk With Trump on Pending 50 % Duty 2nd Update",
-      "url": "https://www.morningstar.com/news/dow-jones/202608176265/canada-pm-carney-expects-to-talk-with-trump-on-pending-50-duty-2nd-update",
-      "domain": "morningstar.com",
-      "language": "English",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-17T19:00:00Z",
-      "firstSeenAt": "2026-08-17T19:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f10b302ba26b9a70c419",
-      "title": "Japan slowing growth fuels policy divide between Tokyo , Bank of Japan",
-      "url": "https://aa.com.tr/en/economy/japan-s-slowing-growth-fuels-policy-divide-between-tokyo-bank-of-japan/4029669",
-      "domain": "aa.com.tr",
-      "language": "English",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T18:30:00Z",
-      "firstSeenAt": "2026-08-17T18:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1631a991b2086be8d995",
-      "title": "Stelter Brings on Economic Dunce Krugman to Say US Not in Recession",
-      "url": "https://www.newsbusters.org/blogs/nb/kevin-tober/2022/07/31/stelter-brings-economic-dunce-krugman-say-us-not-recession",
-      "domain": "newsbusters.org",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-17T18:15:00Z",
-      "firstSeenAt": "2026-08-17T18:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "aa0d59b488b07d92273e",
-      "title": "Judging the RBI by the wrong rule",
-      "url": "https://www.business-standard.com/opinion/columns/judging-the-rbi-by-the-wrong-rule-126081701516_1.html",
-      "domain": "business-standard.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-17T17:45:00Z",
-      "firstSeenAt": "2026-08-17T17:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6bfc224d2b4cce5d90a1",
-      "title": "ارتفاع معدل التضخم في كندا بسبب حرب إيران",
-      "url": "https://gate.ahram.org.eg/News/5890365.aspx",
-      "domain": "gate.ahram.org.eg",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-17T17:00:00Z",
-      "firstSeenAt": "2026-08-17T17:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ad6c3ab9a3774e838de5",
-      "title": "Digital payments now make up 64 . 7 % of Philippines retail transactions",
-      "url": "https://www.philstar.com/business/2026/08/18/2549941/digital-payments-now-make-647-philippines-retail-transactions",
-      "domain": "philstar.com",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-08-17T16:45:00Z",
-      "firstSeenAt": "2026-08-17T16:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ac8ae2422d2f051cdd95",
-      "title": "Japonyada düşük büyüme ile yüksek enflasyonun BoJu ve hükümeti ikil",
-      "url": "https://www.kibrispostasi.com/c50-EKONOMI/n611079-japonyada-dusuk-buyume-ile-yuksek-enflasyonun-boju-ve-hukumeti-ikilemde-birakabilecegi-ongoruluyor",
-      "domain": "kibrispostasi.com",
-      "language": "Turkish",
-      "sourceCountry": "Cyprus",
-      "seenAt": "2026-08-17T16:30:00Z",
-      "firstSeenAt": "2026-08-17T16:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e4ec2d0987f1b5817264",
-      "title": "Japonya ekonomisi çıkmaza girdi : Faiz mi , teşvik mi ?",
-      "url": "https://www.dunya.com/ekonomi/japonya-ekonomisi-cikmaza-girdi-faiz-mi-tesvik-mi-haberi-836553",
-      "domain": "dunya.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T16:00:00Z",
-      "firstSeenAt": "2026-08-17T16:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ba28612b1532608ec654",
-      "title": "BB sets 54 % higher agri and rural credit target",
-      "url": "https://www.thedailystar.net/business/news/bb-sets-54-higher-agri-and-rural-credit-target-4249791",
-      "domain": "thedailystar.net",
-      "language": "English",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-08-17T13:00:00Z",
-      "firstSeenAt": "2026-08-17T13:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "691b184442f41ee2a0fa",
-      "title": "Japonyada Büyüme ve Enflasyon İkilemi",
-      "url": "https://www.haberler.com/ekonomi/japonya-da-dusuk-buyume-ile-yuksek-enflasyonun-boj-20152342-haberi/",
+      "id": "d697959acff6fc49df59",
+      "title": "Türkiyenin Yapay Zeka Eylem Planı Açıklandı",
+      "url": "https://www.haberler.com/ekonomi/turkiye-den-yapay-zeka-cagina-mukemmel-adim-20154314-haberi/",
       "domain": "haberler.com",
       "language": "Turkish",
       "sourceCountry": "Turkey",
-      "seenAt": "2026-08-17T12:45:00Z",
-      "firstSeenAt": "2026-08-17T12:45:00Z",
+      "seenAt": "2026-08-18T08:45:00Z",
+      "firstSeenAt": "2026-08-18T08:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2be564e5bd0c279b5f88",
+      "title": "《 國際金融 》 黃金被賣3個月 韓散戶重新轉戰 - 財經",
+      "url": "https://www.chinatimes.com/realtimenews/20260818003115-260410",
+      "domain": "chinatimes.com",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-08-18T08:45:00Z",
+      "firstSeenAt": "2026-08-18T08:45:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -1215,85 +1095,186 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "6f9a31d2e0c641dcd7c0",
-      "title": "美联储加息预期放缓 ， 美元指数接近前低 ， 谨防破位 ？_ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20260817/32336923.shtml",
-      "domain": "forex.cnfol.com",
+      "id": "c1eb764c6063089f0ae5",
+      "title": "Kemarau Panjang , 500 Hektare Sawah di Desa Rias Bangka Selatan Terancam Gagal Tanam",
+      "url": "https://bangka.tribunnews.com/lokal/1693394/kemarau-panjang-500-hektare-sawah-di-desa-rias-bangka-selatan-terancam-gagal-tanam",
+      "domain": "bangka.tribunnews.com",
+      "language": "Indonesian",
+      "sourceCountry": "Indonesia",
+      "seenAt": "2026-08-18T08:30:00Z",
+      "firstSeenAt": "2026-08-18T08:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "aebc617f4631d8172f71",
+      "title": "Karu tieto Euroopan ruoantuotannosta",
+      "url": "https://www.is.fi/ulkomaat/art-2000012212326.html",
+      "domain": "is.fi",
+      "language": "Finnish",
+      "sourceCountry": "Finland",
+      "seenAt": "2026-08-18T08:30:00Z",
+      "firstSeenAt": "2026-08-18T08:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0a11554c8a2fc0556bcf",
+      "title": "AB Gaz Depoları Son 5 Yılın En Düşük Seviyesinde",
+      "url": "https://www.haberler.com/ekonomi/avrupa-nin-dogal-gaz-depolarinda-doluluk-son-5-20154232-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-18T08:30:00Z",
+      "firstSeenAt": "2026-08-18T08:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "01047c8d40d71a5834b5",
+      "title": "齐鲁银行滨州分行 ： 依托核心企业链式授信 精准破解粮食收购融资难题",
+      "url": "https://baijiahao.baidu.com/s?id=1873845387145439803",
+      "domain": "baijiahao.baidu.com",
       "language": "Chinese",
       "sourceCountry": "China",
-      "seenAt": "2026-08-17T11:00:00Z",
-      "firstSeenAt": "2026-08-17T11:00:00Z",
+      "seenAt": "2026-08-18T08:15:00Z",
+      "firstSeenAt": "2026-08-18T08:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "16cb36684fcbcdc77a38",
-      "title": "موعد اجتماع البنك المركزي المصري في أغسطس 2026 .. ماذا ينتظر سعر الفائدة ؟",
-      "url": "https://www.dostor.org/5670118",
-      "domain": "dostor.org",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-17T10:15:00Z",
-      "firstSeenAt": "2026-08-17T10:15:00Z",
+      "id": "bcf7881cef9c5b179a1b",
+      "title": "Рост числа газовозов зафиксирован в России",
+      "url": "https://arh-info.ru/economic/44923172-rost-chisla-gazovozov-zafiksirovan-v-rossii.html",
+      "domain": "arh-info.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-18T08:15:00Z",
+      "firstSeenAt": "2026-08-18T08:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "bf90dad18c0daf535317",
-      "title": "خبيرة مصرفية : خفض الفائدة مرهون باستمرار انخفاض التضخم واستقرار سوق الصرف",
-      "url": "https://www.dostor.org/5670081",
-      "domain": "dostor.org",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-17T10:15:00Z",
-      "firstSeenAt": "2026-08-17T10:15:00Z",
+      "id": "d2dff81eea536b316b2a",
+      "title": "Що вирощуватимуть в України через 25 років сорго , просо , нут , сочевиця , спельта та тритикале",
+      "url": "https://news.telegraf.com.ua/ukr/ukraina/5947671-zamist-zvichaynoi-pshenitsi-fioletove-zerno-ta-ekzotichni-kulturi-shcho-rostime-v-ukraini-cherez-25-rokiv",
+      "domain": "news.telegraf.com.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-08-18T07:30:00Z",
+      "firstSeenAt": "2026-08-18T07:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d49008bba43d12778366",
+      "title": "2071 e giden yol yapay zekâdan geçiyor - Haber 7 Yazarı İsmail Vefa Ak",
+      "url": "https://www.haber7.com/yazarlar/ismail-vefa-ak/3652112-2071e-giden-yol-yapay-zekadan-geciyor",
+      "domain": "haber7.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-18T07:30:00Z",
+      "firstSeenAt": "2026-08-18T07:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1305,11 +1286,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-18T06:45:00Z",
-      "lastSuccessfulAt": "2026-08-18T07:52:23Z",
+      "observationDate": "2026-08-18T10:15:00Z",
+      "lastSuccessfulAt": "2026-08-18T10:44:40Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 200 returned records across 4/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
