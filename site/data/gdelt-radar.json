@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-19T22:39:18Z",
+  "generatedAtUtc": "2026-08-19T23:34:44Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-19T22:39:18Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-19T23:34:44Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,217 +52,64 @@
   ],
   "articles": [
     {
-      "id": "3e96fe9917c508f70453",
-      "title": "Irak implora a Irán que le permita exportar petróleo por el Estrecho de Ormuz : Somos un país afectado – El Financiero",
-      "url": "https://www.elfinanciero.com.mx/mundo/2026/08/19/irak-implora-a-iran-que-le-permita-exportar-petroleo-por-el-estrecho-de-ormuz-somos-un-pais-afectado/",
-      "domain": "elfinanciero.com.mx",
-      "language": "Spanish",
-      "sourceCountry": "Mexico",
-      "seenAt": "2026-08-19T17:15:00Z",
-      "firstSeenAt": "2026-08-19T17:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 27,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4e16862912fee3c7cb74",
-      "title": "تركيا تعرض التنقيب عن النفط والغاز في سوريا برا وبحرا",
-      "url": "https://www.aljazeera.net/ebusiness/2026/8/19/%D8%AA%D8%B1%D9%83%D9%8A%D8%A7-%D8%AA%D8%B9%D8%B1%D8%B6-%D8%A7%D9%84%D8%AA%D9%86%D9%82%D9%8A%D8%A8-%D8%B9%D9%86-%D8%A7%D9%84%D9%86%D9%81%D8%B7-%D9%88%D8%A7%D9%84%D8%BA%D8%A7%D8%B2-%D9%81%D9%8A",
-      "domain": "aljazeera.net",
-      "language": "Arabic",
-      "sourceCountry": "Israel",
-      "seenAt": "2026-08-19T21:45:00Z",
-      "firstSeenAt": "2026-08-19T21:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d9e088b0d478b7fd6eec",
-      "title": "Lula diz que soberania não pode ficar no discurso - PontoPoder",
-      "url": "https://diariodonordeste.verdesmares.com.br/pontopoder/lula-diz-que-soberania-nao-pode-ficar-no-discurso-1.3785372",
-      "domain": "diariodonordeste.verdesmares.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-19T21:45:00Z",
-      "firstSeenAt": "2026-08-19T21:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "46c905a33da375f75123",
-      "title": "Швейцария расширила санкции против российского СПГ и финансового сектора",
-      "url": "https://vm.ru/news/1351653-shvejcariya-rasshirila-sankcii-protiv-rossijskogo-spg-i-finansovogo-sektora",
-      "domain": "vm.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-19T21:30:00Z",
-      "firstSeenAt": "2026-08-19T21:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "97fb91a75ab0f8c73eec",
-      "title": "US Natural Gas Futures Reach Four - Week High",
-      "url": "https://www.marinelink.com/news/us-natural-gas-futures-reach-fourweek-542239",
-      "domain": "marinelink.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-19T21:15:00Z",
-      "firstSeenAt": "2026-08-19T21:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "830541549a0ba4b00a5a",
-      "title": "Gas , lItalia è più avanti dellEuropa : scorte quasi all 80 %",
-      "url": "https://it.euronews.com/my-europe/2026/08/19/gas-litalia-e-piu-avanti-delleuropa-scorte-quasi-all80",
-      "domain": "it.euronews.com",
-      "language": "Italian",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-19T21:00:00Z",
-      "firstSeenAt": "2026-08-19T21:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d1a26945f4ab714aae7b",
-      "title": "Lula diz que soberania não pode ficar apenas no discurso e quer mais investimentos na defesa do país",
-      "url": "https://www.diariodepernambuco.com.br/politica/2026/08/11721653-lula-diz-que-soberania-nao-pode-ficar-apenas-no-discurso-e-quer-mais-investimentos-na-defesa-do-pais.html",
-      "domain": "diariodepernambuco.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-19T21:00:00Z",
-      "firstSeenAt": "2026-08-19T21:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e295c0db12d0fe7f3888",
-      "title": "로이터 삼성전자 , 파운드리 가격 최대 15 % 인상",
-      "url": "http://www.newstomato.com/ReadNews.aspx?no=1310784",
-      "domain": "newstomato.com",
+      "id": "5734deffd0c9ac64d009",
+      "title": "美재무부 구원투수 에 국채금리 급락 … 뉴욕증시 3대 지수 상승 [ 투자360 ]",
+      "url": "https://biz.heraldcorp.com/article/10846034",
+      "domain": "biz.heraldcorp.com",
       "language": "Korean",
       "sourceCountry": "South Korea",
-      "seenAt": "2026-08-19T20:45:00Z",
-      "firstSeenAt": "2026-08-19T20:45:00Z",
+      "seenAt": "2026-08-19T23:15:00Z",
+      "firstSeenAt": "2026-08-19T23:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cab53db69453101344d1",
+      "title": "구글 , 반도체기업 마벨과 AI칩 동맹 … 최대 17조원 지분 인수권",
+      "url": "https://biz.heraldcorp.com/article/10846041",
+      "domain": "biz.heraldcorp.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T23:15:00Z",
+      "firstSeenAt": "2026-08-19T23:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ce32ac3ec93cfad3b468",
+      "title": "마벨 , 구글과 반도체 개발 · 공급 계약⋯17조원 신주인수권도 부여",
+      "url": "http://inews24.com/view/1996495",
+      "domain": "inews24.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-08-19T23:15:00Z",
+      "firstSeenAt": "2026-08-19T23:15:00Z",
       "topicIds": [
         "semiconductors-ai"
       ],
@@ -305,14 +152,14 @@
       "duplicateCount": 1
     },
     {
-      "id": "83d5c8b6961c34926970",
-      "title": "This Billionaire Tech Investor Is Betting Big on SpaceX and Chip Stocks",
-      "url": "https://www.fool.com/investing/2026/08/19/this-billionaire-tech-investor-is-betting-big-on-s/?source=iedfolrf0000001",
-      "domain": "fool.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-19T20:30:00Z",
-      "firstSeenAt": "2026-08-19T20:30:00Z",
+      "id": "e295c0db12d0fe7f3888",
+      "title": "로이터 삼성전자 , 파운드리 가격 최대 15 % 인상",
+      "url": "http://www.newstomato.com/ReadNews.aspx?no=1310784",
+      "domain": "newstomato.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T20:45:00Z",
+      "firstSeenAt": "2026-08-19T20:45:00Z",
       "topicIds": [
         "semiconductors-ai"
       ],
@@ -330,114 +177,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "3c388120eea04db14a37",
-      "title": "Románia amerikai gázt hozna Európába : hazánk is a célországok között van",
-      "url": "https://www.vg.hu/nemzetkozi-gazdasag/2026/08/romania-strategiai-befektetes-amerikai-lng-transgaz",
-      "domain": "vg.hu",
-      "language": "Hungarian",
-      "sourceCountry": "Hungary",
-      "seenAt": "2026-08-19T20:00:00Z",
-      "firstSeenAt": "2026-08-19T20:00:00Z",
+      "id": "83d5c8b6961c34926970",
+      "title": "This Billionaire Tech Investor Is Betting Big on SpaceX and Chip Stocks",
+      "url": "https://www.fool.com/investing/2026/08/19/this-billionaire-tech-investor-is-betting-big-on-s/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-19T20:30:00Z",
+      "firstSeenAt": "2026-08-19T20:30:00Z",
       "topicIds": [
-        "energy-security"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Energy & security"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ccce87f7faf09c511c94",
-      "title": "Lula diz que soberania não pode ficar no discurso e defende mais investimentos em defesa",
-      "url": "https://www.correiodopovo.com.br/not%C3%ADcias/pol%C3%ADtica/lula-diz-que-soberania-nao-pode-ficar-no-discurso-e-defende-mais-investimentos-em-defesa-1.1740521",
-      "domain": "correiodopovo.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-19T19:15:00Z",
-      "firstSeenAt": "2026-08-19T19:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3914c8141db5f65d84a3",
-      "title": "سوريا تنتج 14 . 8 مليون برميل من النفط في النصف الأول من 2026",
-      "url": "https://www.aljazeera.net/ebusiness/2026/8/19/%D8%B3%D9%88%D8%B1%D9%8A%D8%A7-%D8%AA%D9%86%D8%AA%D8%AC-14-8-%D9%85%D9%84%D9%8A%D9%88%D9%86-%D8%A8%D8%B1%D9%85%D9%8A%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D9%86%D9%81%D8%B7-%D9%81%D9%8A",
-      "domain": "aljazeera.net",
-      "language": "Arabic",
-      "sourceCountry": "Israel",
-      "seenAt": "2026-08-19T18:30:00Z",
-      "firstSeenAt": "2026-08-19T18:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c63f237b8493086defe4",
-      "title": "GNL en Río Negro : El barco fábrica Hilli Episeyo dejó África y viaja para su puesta a punto antes venir al país",
-      "url": "https://www.rionegro.com.ar/energia/gnl-en-rio-negro-el-barco-fabrica-hilli-episeyo-dejo-africa-y-viaja-para-su-puesta-a-punto-antes-venir-al-pais-4689035/",
-      "domain": "rionegro.com.ar",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-19T18:30:00Z",
-      "firstSeenAt": "2026-08-19T18:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -471,64 +227,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "7256abcec66d21349d1e",
-      "title": "Hürmüzde kriz derinleşiyor : Deniz trafiği yavaşlamaya devam ediyor",
-      "url": "https://www.kibrispostasi.com/c37-DUNYA/n611254-hurmuzde-kriz-derinlesiyor-deniz-trafigi-yavaslamaya-devam-ediyor",
-      "domain": "kibrispostasi.com",
-      "language": "Turkish",
-      "sourceCountry": "Cyprus",
-      "seenAt": "2026-08-19T18:00:00Z",
-      "firstSeenAt": "2026-08-19T18:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ceb79ad89e97298954ff",
-      "title": "El precio del petróleo supera los US$92 , 75 el barril y amenaza con gatillar nuevamente la inflación global",
-      "url": "https://www.mdzol.com/dinero/el-precio-del-petroleo-supera-los-us9275-el-barril-y-amenaza-gatillar-nuevamente-la-inflacion-global-n1589019",
-      "domain": "mdzol.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-19T17:30:00Z",
-      "firstSeenAt": "2026-08-19T17:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "d37de727e59773f3e759",
       "title": "Marvell Shares Jump 7 % as Google Chip Deal Confirms Custom AI Silicon Partnership , Analysts",
       "url": "https://www.ibtimes.com.au/marvell-google-ai-accelerator-chips-partnership-1874278",
@@ -546,209 +244,6 @@
       "assets": [
         "ai-infrastructure",
         "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6ee54ce79c760292d878",
-      "title": "Argentina busca consolidar corredor a través de Chile para exportar gas de Vaca Muerta hacia Asia",
-      "url": "https://elpinguino.com/noticia/2026/08/19/argentina-busca-consolidar-corredor-a-traves-de-chile-para-exportar-gas-de-vaca-muerta-hacia-asia",
-      "domain": "elpinguino.com",
-      "language": "Spanish",
-      "sourceCountry": "Chile",
-      "seenAt": "2026-08-19T17:15:00Z",
-      "firstSeenAt": "2026-08-19T17:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0f969230055342b32ae6",
-      "title": "Comparing EOG Resources ( NYSE : EOG ) & Golar LNG ( NASDAQ : GLNG )",
-      "url": "https://www.tickerreport.com/banking-finance/13550132/comparing-eog-resources-nyseeog-golar-lng-nasdaqglng.html",
-      "domain": "tickerreport.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-19T17:00:00Z",
-      "firstSeenAt": "2026-08-19T17:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "89ede3180df232e67d33",
-      "title": "جريدة البلاد | سوريا تسجل طفرة بإنتاج النفط والغاز خلال النصف الأول",
-      "url": "https://www.albiladpress.com/news/2026/6519/finance/1014961.html",
-      "domain": "albiladpress.com",
-      "language": "Arabic",
-      "sourceCountry": "Bahrain",
-      "seenAt": "2026-08-19T15:30:00Z",
-      "firstSeenAt": "2026-08-19T15:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "62e17a43e31e6a63597c",
-      "title": "ConocoPhillips ( COP ) Has Low - Cost Inventory and a Major Cash Flow Catalyst Ahead",
-      "url": "https://finance.yahoo.com/energy/articles/conocophillips-cop-low-cost-inventory-145705934.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-19T15:30:00Z",
-      "firstSeenAt": "2026-08-19T15:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f6953440121f5cabd437",
-      "title": "আরও ১৪ কার্গো এলএনজি আমদানির অনুমোদন",
-      "url": "https://www.jugantor.com/economics/1142692",
-      "domain": "jugantor.com",
-      "language": "Bengali",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-08-19T15:30:00Z",
-      "firstSeenAt": "2026-08-19T15:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "51a1722554ccc900e182",
-      "title": "আরও ১৪ কার্গো এলএনজি আমদানির অনুমোদন",
-      "url": "https://www.jugantor.com/national/1142692",
-      "domain": "jugantor.com",
-      "language": "Bengali",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-08-19T15:30:00Z",
-      "firstSeenAt": "2026-08-19T15:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5f4ee6e083e0633e64fd",
-      "title": "Газ у Європі подорожчав удвічі : на континент чекає важка зима",
-      "url": "https://delo.ua/news/zima-bude-dorogoyu-u-jevropi-gaz-podorozcav-udvici-a-elektrika-na-50-471032/",
-      "domain": "delo.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-19T15:00:00Z",
-      "firstSeenAt": "2026-08-19T15:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -832,35 +327,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "925dfd1660bc77c01649",
-      "title": "Irak pide a Irán un estatus especial para la exportación de crudo en estrecho de Ormuz | Internacional | Noticias",
-      "url": "https://www.eluniverso.com/noticias/internacional/irak-pide-a-iran-un-estatus-especial-para-la-exportacion-de-crudo-en-estrecho-de-ormuz-nota/",
-      "domain": "eluniverso.com",
-      "language": "Spanish",
-      "sourceCountry": "Ecuador",
-      "seenAt": "2026-08-19T14:00:00Z",
-      "firstSeenAt": "2026-08-19T14:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "6dc1e9c1329d745ea1b8",
       "title": "Gujarat eyes AI , semiconductor , data centre partnerships during US visit",
       "url": "https://aninews.in/news/business/gujarat-eyes-ai-semiconductor-data-centre-partnerships-during-us-visit20260819182918/",
@@ -903,89 +369,6 @@
       "assets": [
         "ai-infrastructure",
         "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b541cc724e08196421d4",
-      "title": "Sources : Samsung Hikes Chipmaking Prices by Up to 15 % on Demand Spike",
-      "url": "https://english.aawsat.com/technology/5308695-sources-samsung-hikes-chipmaking-prices-15-demand-spike",
-      "domain": "english.aawsat.com",
-      "language": "English",
-      "sourceCountry": "Syria",
-      "seenAt": "2026-08-19T12:45:00Z",
-      "firstSeenAt": "2026-08-19T12:45:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "04950a5b54c2ffb9e0a0",
-      "title": "EIA Lowers Henry Hub Gas Price Forecasts",
-      "url": "https://www.rigzone.com/news/eia_lowers_henry_hub_gas_price_forecasts-19-aug-2026-184410-article/",
-      "domain": "rigzone.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-19T12:45:00Z",
-      "firstSeenAt": "2026-08-19T12:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ed089c169a03d3d32334",
-      "title": "Govt to offer city gas distributers 200 scm extra gas to push household PNG switch",
-      "url": "https://www.dailyexcelsior.com/govt-to-offer-city-gas-distributers-200-scm-extra-gas-to-push-household-png-switch/",
-      "domain": "dailyexcelsior.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-19T12:45:00Z",
-      "firstSeenAt": "2026-08-19T12:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1061,93 +444,6 @@
       "assets": [
         "ai-infrastructure",
         "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9e89fdf4c6708813413c",
-      "title": "阿联酋暂停与伊朗一切贸易金融往来 ， 背后发生了什么 ？",
-      "url": "https://www.163.com/dy/article/L4M88LTG0534A4SC.html",
-      "domain": "163.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-19T10:00:00Z",
-      "firstSeenAt": "2026-08-19T10:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fec9d00391dafb14c660",
-      "title": "Energy Secretary Chris Wright visits Lea County to boost nuclear and oil production",
-      "url": "https://www.abqjournal.com/news/wright-trump-administrations-goal-to-unleash-us-energy-production/3104931",
-      "domain": "abqjournal.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-19T09:30:00Z",
-      "firstSeenAt": "2026-08-19T09:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4d66f8bc6380c2b7f95b",
-      "title": "Avrupada doğal gaz fiyatı 63 avronun altına geriledi",
-      "url": "https://www.haberler.com/ekonomi/avrupa-da-dogal-gaz-63-avrodan-islem-goruyor-20157640-haberi/",
-      "domain": "haberler.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-19T09:30:00Z",
-      "firstSeenAt": "2026-08-19T09:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1281,35 +577,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "5f0da8cc7c762a3209a6",
-      "title": "Объединение пассажиров попросило увеличить субсидии для автобусов на газе",
-      "url": "https://1prime.ru/20260819/passazhiry-872494163.html",
-      "domain": "1prime.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-19T08:00:00Z",
-      "firstSeenAt": "2026-08-19T08:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "07115e0f401eaeef6fbf",
       "title": "Aixtron : Steht die Aktie bald bei 20 Euro ?",
       "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69349240-aixtron-steht-die-aktie-bald-bei-20-euro-088.htm",
@@ -1335,27 +602,648 @@
       "duplicateCount": 1
     },
     {
-      "id": "037f29973dc30a584f1e",
-      "title": "Trump annuncia : Hormuz è territorio degli Stati Uniti . LIran : Illusioni",
-      "url": "https://www.iltempo.it/esteri/2026/08/19/news/trump-annuncia-hormuz-e-territorio-degli-stati-uniti-l-iran-illusioni--48890067/",
-      "domain": "iltempo.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-08-19T07:45:00Z",
-      "firstSeenAt": "2026-08-19T07:45:00Z",
+      "id": "e4a04c383b2efb837e80",
+      "title": "SKT , 美 자회사 거점 집결 … 효율성 · 시너지 확보 총력",
+      "url": "https://www.etnews.com/20260819000284",
+      "domain": "etnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T07:30:00Z",
+      "firstSeenAt": "2026-08-19T07:30:00Z",
       "topicIds": [
-        "energy-security"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Energy & security"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e1c0a566340d6c41c6af",
+      "title": "Why Investors Are Moving On From Synopsys ( SNPS )",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/why-investors-moving-synopsys-snps-194830437.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-19T07:15:00Z",
+      "firstSeenAt": "2026-08-19T07:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cf04141ba31f68ccf1da",
+      "title": "반도체 덕에 韓 성장률 전망 껑충 … KDI , 올해로 3 . 2 % 상향",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026081914475870919",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T07:00:00Z",
+      "firstSeenAt": "2026-08-19T07:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4ce58984e239453c8531",
+      "title": "Micron Technology ( MU ) Gains as AI Boom Reshapes the Memory Industry",
+      "url": "https://finance.yahoo.com/technology/ai/articles/micron-technology-mu-gains-ai-194743287.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-19T06:45:00Z",
+      "firstSeenAt": "2026-08-19T06:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7ddfa97c715e0f5dc7a8",
+      "title": "Global Market : Chinese stocks slide as semiconductor and robotics shares tumble",
+      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-chinese-stocks-slide-as-semiconductor-and-robotics-shares-tumble/articleshow/133339210.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-19T06:45:00Z",
+      "firstSeenAt": "2026-08-19T06:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a1b965f59b43a8f5c2ad",
+      "title": "KDI : Рост экономики РК в этом году составит 3 , 2 %",
+      "url": "https://world.kbs.co.kr/service/news_view.htm?lang=r&Seq_Code=86848",
+      "domain": "world.kbs.co.kr",
+      "language": "Russian",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T06:30:00Z",
+      "firstSeenAt": "2026-08-19T06:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c6b6297027896b7a2725",
+      "title": "Yapay zekâda trilyonluk plan",
+      "url": "https://www.milliyet.com.tr/ekonomi/yapay-zekada-trilyonluk-plan-7643899",
+      "domain": "milliyet.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-19T05:15:00Z",
+      "firstSeenAt": "2026-08-19T05:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4e4ade04aa1cf87a51e1",
+      "title": "From heated rivalry to frenemies : Inside the cutthroat business of ruling tech in Asia",
+      "url": "https://edition.cnn.com/2026/08/18/tech/asia-tech-frenemy-intl-hnk",
+      "domain": "edition.cnn.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-19T04:45:00Z",
+      "firstSeenAt": "2026-08-19T04:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "042f18e89f07ffb57f43",
+      "title": "[ AI로 읽는 경제 ] 반도체 호황 , 일자리까지 번졌다 … 하반기 8000명 증가 전망",
+      "url": "https://www.newspim.com/news/view/20260819000215",
+      "domain": "newspim.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T04:30:00Z",
+      "firstSeenAt": "2026-08-19T04:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "00f5c5051ad525c3e65e",
+      "title": "Global Market : Japan shares slide as chip stocks tumble on global tech rout",
+      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-japan-shares-slide-as-chip-stocks-tumble-on-global-tech-rout/articleshow/133336887.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-19T04:30:00Z",
+      "firstSeenAt": "2026-08-19T04:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "60a112f975e0aff9d427",
+      "title": "Türkiye yapay zekâ yol haritasını güncelledi",
+      "url": "https://www.sabah.com.tr/ekonomi/turkiye-yapay-zeka-yol-haritasini-guncelledi-7644003",
+      "domain": "sabah.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-19T04:30:00Z",
+      "firstSeenAt": "2026-08-19T04:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "58f069e0506e0ff131b5",
+      "title": "Elon Musk SpaceX Stock Just Closed Above Its $135 IPO Price for the First Time in Weeks . Is the Rebound a Buy Signal ?",
+      "url": "https://www.fool.com/investing/2026/08/18/elon-musks-spacex-stock-just-closed-above-135/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-19T04:30:00Z",
+      "firstSeenAt": "2026-08-19T04:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "63984f914540ee7ed3bf",
+      "title": "SEMICON Taiwan 2026 Highlights AI - Driven Manufacturing Transformation",
+      "url": "https://www.thailand-business-news.com/pr-news/semicon-taiwan-2026-highlights-ai-driven-manufacturing-transformation",
+      "domain": "thailand-business-news.com",
+      "language": "English",
+      "sourceCountry": "Thailand",
+      "seenAt": "2026-08-19T04:15:00Z",
+      "firstSeenAt": "2026-08-19T04:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "90e4806c401bf6546f32",
+      "title": "신성이엔지 , 스타트업 협업 넓힌다 … ESS · AI 데이터센터로 사업 보폭 확대",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026081909472098397",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T04:15:00Z",
+      "firstSeenAt": "2026-08-19T04:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e4de003feaab4a8a326f",
+      "title": "KT , 국산 AI 반도체 · LLM 통합한 NPU LLM 스테이션 출시",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026081909500221609",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T04:15:00Z",
+      "firstSeenAt": "2026-08-19T04:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f68d3659c3b3fa8d8067",
+      "title": "아이에이 , AI 인프라 신사업 추진 … 100억원 주주배정 유증",
+      "url": "https://zdnet.co.kr/view/?no=20260819093022",
+      "domain": "zdnet.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T02:30:00Z",
+      "firstSeenAt": "2026-08-19T02:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "75a97fb0a2f764cdc5f9",
+      "title": "Cadence is a chip stock left behind by the AI boom . Why the CEO says that a mistake",
+      "url": "https://www.cnbc.com/2026/08/18/cadence-is-a-chip-stock-left-behind-by-the-ai-boom-why-the-ceo-says-thats-a-mistake.html",
+      "domain": "cnbc.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-19T02:30:00Z",
+      "firstSeenAt": "2026-08-19T02:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "52a20640fa9e54247534",
+      "title": "日상장사 순이익률 9 . 1 % 역대 최고 … 소비자에 비용 넘겼다",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=03266886645548960&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T02:15:00Z",
+      "firstSeenAt": "2026-08-19T02:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9247bbfb7387ea60a47f",
+      "title": "Yapay zekâda trilyonluk hedef ! Türkiyenin 2026 - 2030 eylem planı hazır",
+      "url": "https://www.turkiyegazetesi.com.tr/ekonomi/yapay-zekada-trilyonluk-hedef-turkiyenin-2026-2030-eylem-plani-hazir-1810089",
+      "domain": "turkiyegazetesi.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-19T01:45:00Z",
+      "firstSeenAt": "2026-08-19T01:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0f7ac04e6bba62b12020",
+      "title": "بعمر 25 عامًا فقط وبدون شهادة جامعية .. بريطاني يصبح أصغر ملياردير في أوروبا بفضل شركته للذكاء الاصطناعي",
+      "url": "https://www.akhbarona.com/last/431033.html",
+      "domain": "akhbarona.com",
+      "language": "Arabic",
+      "sourceCountry": "Morocco",
+      "seenAt": "2026-08-19T01:30:00Z",
+      "firstSeenAt": "2026-08-19T01:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "63ffb3fd731d441d379a",
+      "title": "Dubuque to consider six - month data center moratorium , survey shows residents oppose facilities",
+      "url": "https://www.kcrg.com/2026/08/18/dubuque-consider-six-month-data-center-moratorium-survey-shows-residents-oppose-facilities/",
+      "domain": "kcrg.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-19T01:30:00Z",
+      "firstSeenAt": "2026-08-19T01:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fd8245f0e3e49e66859c",
+      "title": "이철우 경북도지사 2028년까지 대구와 행정통합 이뤄낼 것 [ 민선 9기 광역단체장에게 듣는다 ]",
+      "url": "https://segye.com:443/newsView/20260818518141",
+      "domain": "segye.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T01:15:00Z",
+      "firstSeenAt": "2026-08-19T01:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "28631e8d4e76683538fb",
+      "title": "모빌린트 , 해군 함정에 AI 반도체 공급 … 국방 AI 시장 확대",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026081909262168926",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T01:00:00Z",
+      "firstSeenAt": "2026-08-19T01:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "229f483376cefafceb12",
+      "title": "아이에이 , 100억 주주배정 유증 … AI 데이터센터 신사업에 투입",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=02883126645548960&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T00:45:00Z",
+      "firstSeenAt": "2026-08-19T00:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fb11f9d6ee40c6cdf762",
+      "title": "한성크린텍 , SK하이닉스 청주 팹 수처리 수주 … 총 368억 규모 예상",
+      "url": "https://www.etoday.co.kr/news/view/2615729",
+      "domain": "etoday.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T00:30:00Z",
+      "firstSeenAt": "2026-08-19T00:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "610d098e205c0ad03300",
+      "title": "국제유가 · 미국 국채금리 동반 상승에 뉴욕증시 하락나스닥 1 . 33 % ↓",
+      "url": "https://www.newsway.co.kr/news/view?ud=2026081907293413965",
+      "domain": "newsway.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-19T00:15:00Z",
+      "firstSeenAt": "2026-08-19T00:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1369,11 +1257,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-19T21:45:00Z",
-      "lastSuccessfulAt": "2026-08-19T22:39:18Z",
+      "observationDate": "2026-08-19T23:15:00Z",
+      "lastSuccessfulAt": "2026-08-19T23:34:44Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
