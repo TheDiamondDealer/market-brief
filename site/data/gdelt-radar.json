@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-20T13:57:30Z",
+  "generatedAtUtc": "2026-08-20T14:53:32Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 1,
-    "rawArticleCount": 50,
+    "successfulQueryCount": 2,
+    "rawArticleCount": 100,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-20T13:57:30Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-20T14:53:32Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,24 +52,149 @@
   ],
   "articles": [
     {
-      "id": "cc9a9eceb6bc8e515a73",
-      "title": "Цены на зерно резко выросли почти до трехлетнего максимума Новости « Серебряного Дождя »",
-      "url": "https://silver.ru/news/tseny-na-zerno-rezko-vyrosli-pochti-do-trekhletnego-maksimuma/",
-      "domain": "silver.ru",
+      "id": "45c46b1b1c74a2eeb81f",
+      "title": "Rekord - Tief der Gasspeicher sorgt für „ hohe Nervosität",
+      "url": "https://www.focus.de/finanzen/news/rekord-tief-der-gasspeicher-sorgt-fuer-hohe-nervositaet_8dc6dd71-92cd-4485-b6df-6830e9ad8c3e.html",
+      "domain": "focus.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-20T14:30:00Z",
+      "firstSeenAt": "2026-08-20T14:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "10e75564ef9de6aeec59",
+      "title": "European Commission : Gas stocks stand at 62 %; no immediate concerns regarding supplies",
+      "url": "http://www.mexicostar.com/news/279254011/european-commission-gas-stocks-stand-at-62-no-immediate-concerns-regarding-supplies",
+      "domain": "mexicostar.com",
+      "language": "English",
+      "sourceCountry": "Mexico",
+      "seenAt": "2026-08-20T14:15:00Z",
+      "firstSeenAt": "2026-08-20T14:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "505a07f7c5aeb330aa82",
+      "title": "Скандинавская страна впервые стала основным поставщиком газа в Евросоюз",
+      "url": "https://lenta.ru/news/2026/08/20/skandinavskaya-strana-vpervye-stala-osnovnym-postavschikom-gaza-v-evrosoyuz/",
+      "domain": "lenta.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
+      "seenAt": "2026-08-20T13:45:00Z",
+      "firstSeenAt": "2026-08-20T13:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "59dd0889c71747827e01",
+      "title": "Could EQT ( EQT ) Be a Major Winner From LNG and Data Center Power Demand ?",
+      "url": "https://finance.yahoo.com/energy/articles/could-eqt-eqt-major-winner-125543750.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-20T13:45:00Z",
+      "firstSeenAt": "2026-08-20T13:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "066a97dc2d338587274a",
+      "title": "Prediction : Micron Stock Could Go Parabolic After Aug . 26",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/prediction-micron-stock-could-parabolic-132200845.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-20T13:45:00Z",
+      "firstSeenAt": "2026-08-20T13:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d8ba3af0f874dfb52276",
+      "title": "Абас Арагчи реагира на икономическите санкции на Тръмп срещу държави , подпомагащи Иран",
+      "url": "https://www.vesti.bg/sviat/abas-aragchi-reagira-na-ikonomicheskite-sankcii-na-trymp-sreshtu-dyrzhavi-podpomagashti-iran-6268044",
+      "domain": "vesti.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
       "seenAt": "2026-08-20T13:30:00Z",
       "firstSeenAt": "2026-08-20T13:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -78,50 +203,48 @@
       "duplicateCount": 1
     },
     {
-      "id": "878927dc9255d55c4b17",
-      "title": "Через удари по чорноморських портах злетіли ціни на пшеницю",
-      "url": "https://for-ua.com/article/1261021",
-      "domain": "for-ua.com",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-20T13:15:00Z",
-      "firstSeenAt": "2026-08-20T13:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "467c9afb4d65f7cefb8c",
-      "title": "Grains Rally : Wheat Leads , Soy and Corn Rise",
-      "url": "https://www.riotimesonline.com/grains-soy-corn-latam-thursday-august-20-2026/",
-      "domain": "riotimesonline.com",
+      "id": "79aff6828955edc1ef53",
+      "title": "Cornyn Cosponsors Bill to Reform the Permitting Process , Unleash American Energy",
+      "url": "https://www.texasgopvote.com/energy/cornyn-cosponsors-bill-reform-permitting-process-unleash-american-energy-0017110",
+      "domain": "texasgopvote.com",
       "language": "English",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-20T11:45:00Z",
-      "firstSeenAt": "2026-08-20T11:45:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-20T00:45:00Z",
+      "firstSeenAt": "2026-08-20T00:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 21,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bf0f908f1a5465d3376d",
+      "title": "Sorge vor neuer Energiekrise : Droht Europas Gasmarkt der härteste Winter seit 2022 ?",
+      "url": "https://www.n-tv.de/wirtschaft/Droht-Europas-Gasmarkt-der-haerteste-Winter-seit-2022-id31214372.html",
+      "domain": "n-tv.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-20T12:15:00Z",
+      "firstSeenAt": "2026-08-20T12:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -130,24 +253,298 @@
       "duplicateCount": 1
     },
     {
-      "id": "68a2bbb10da95ca005ed",
-      "title": "Рязък скок на цените на пшеницата , 97 % от износа през Черно и Азо ...",
-      "url": "https://frognews.bg/novini/riazak-skok-tsenite-pshenitsata-97procenta-iznosa-prez-cherno-azovsko-more-sprian.html",
-      "domain": "frognews.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
+      "id": "3e1f2372fd49b65205f6",
+      "title": "African Energy Chamber / Press release | Mozambique Liquefied Natural Gas ( LNG ) Restart , Gas - to - Power Push Shape African Energy Week ( AEW ) 2026 Investment Discussion",
+      "url": "https://africanenergychamber.africa-newsroom.com/press/mozambiques-liquefied-natural-gas-lng-restart-gastopower-push-shape-african-energy-week-aew-2026-investment-discussion",
+      "domain": "africanenergychamber.africa-newsroom.com",
+      "language": "English",
+      "sourceCountry": "South Africa",
+      "seenAt": "2026-08-20T12:15:00Z",
+      "firstSeenAt": "2026-08-20T12:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "34322e0c1c899b60aedf",
+      "title": "Заставить Путина голодать ? Невозможно ! ( WirtschaftsWoche Heute , Германия )",
+      "url": "https://inosmi.ru/20260820/rossiya-279777647.html",
+      "domain": "inosmi.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-20T11:30:00Z",
+      "firstSeenAt": "2026-08-20T11:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8c66813ce526e920eddf",
+      "title": "کراچی کو ٹیکنالوجی اور مصنوعی ذہانت کا مرکز بنانے کا بڑا منصوبہ",
+      "url": "https://www.express.pk/story/2828270/a-major-plan-to-make-karachi-a-hub-for-technology-and-artificial-intelligence-2828270",
+      "domain": "express.pk",
+      "language": "Urdu",
+      "sourceCountry": "Pakistan",
+      "seenAt": "2026-08-20T11:30:00Z",
+      "firstSeenAt": "2026-08-20T11:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "da4f60dac01107ddaa36",
+      "title": "[ 해동 패키징 포럼 ] 산학연 전문가 200명 결집 … 첨단 패키징 기술 동향 공유",
+      "url": "https://www.etnews.com/20260820000215",
+      "domain": "etnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T11:15:00Z",
+      "firstSeenAt": "2026-08-20T11:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f28186ad3e6eac1d2404",
+      "title": "삼전닉스 흔들리면 롤러코스피 답 없다 … 알고 있지만 뼈 때린 외신",
+      "url": "https://www.etnews.com/20260820000398",
+      "domain": "etnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T11:15:00Z",
+      "firstSeenAt": "2026-08-20T11:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5ab807e17af698a8542d",
+      "title": "[ ET톡 ] 코리아 디스카운트 깨는 삼성전자 · SK하이닉스",
+      "url": "https://www.etnews.com/20260820000348",
+      "domain": "etnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T11:15:00Z",
+      "firstSeenAt": "2026-08-20T11:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "06d8fda8d70c5ea249ba",
+      "title": "Dari Siborong - Borong ke Nusantara , 35 Tahun Perjalanan BPR NBP Perkuat Ekonomi Rakyat",
+      "url": "https://analisadaily.com/berita/baca/2026/08/20/1076774/dari-siborong-borong-ke-nusantara-35-tahun-perjalanan-bpr-nbp-perkuat-ekonomi-rakyat/",
+      "domain": "analisadaily.com",
+      "language": "Indonesian",
+      "sourceCountry": "Indonesia",
+      "seenAt": "2026-08-20T10:45:00Z",
+      "firstSeenAt": "2026-08-20T10:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "09ccfa96270bbdb62608",
+      "title": "광주 반도체 팹 4기→9개 검토 … 투자규모 더 커지나",
+      "url": "https://www.hani.co.kr/arti/economy/marketing/1273898.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T10:45:00Z",
+      "firstSeenAt": "2026-08-20T10:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ee54ef32dcad0159063b",
+      "title": "삼전닉스 , 250조 환원 시동 … 주주친화 바람 재계로 번진다",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=05503846645549288&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T10:45:00Z",
+      "firstSeenAt": "2026-08-20T10:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dced49d0a377a737e581",
+      "title": "Doğal gazda kış öncesi dikkat çeken tablo : Türkiye yüzde 100 e ulaştı , Avrupa dip seviyede",
+      "url": "https://www.ahaber.com.tr/galeri/ekonomi/dogal-gazda-dikkat-ceken-tablo-turkiye-yuzde-100e-ulasti-avrupa-dip-seviyede",
+      "domain": "ahaber.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-20T10:30:00Z",
+      "firstSeenAt": "2026-08-20T10:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fd26deaeb75e95ed2c3d",
+      "title": "3대 메가프로젝트 반영시 2040년 전력수요 27GW↑ , 대형 원전 19기 용량",
+      "url": "https://www.busan.com/view/busan/view.php?code=2026082017244021505",
+      "domain": "busan.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T10:30:00Z",
+      "firstSeenAt": "2026-08-20T10:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b7cd73458feb72eabc96",
+      "title": "업체끼리 칩 담보대출 · 금융보증 … AI 순환금융 혁신인가 뇌관인가",
+      "url": "https://www.hani.co.kr/arti/economy/finance/1273887.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
       "seenAt": "2026-08-20T10:15:00Z",
       "firstSeenAt": "2026-08-20T10:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -156,24 +553,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "bf32f6e8c8089012b430",
-      "title": "Депутат Рады Скороход : Украина не может продать 61 млн тонн зерна из - за портов",
-      "url": "https://life.ru/p/1914016",
-      "domain": "life.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
+      "id": "285a0274ec71e9592588",
+      "title": "HPCL eyes LNG supply diversification beyond Middle East ; plans Rs 5 , 000 crore gas investment in 3 - 5 years : ED Natural Gas Anuj Mehrotra",
+      "url": "https://www.moneycontrol.com/news/business/earnings/hpcl-eyes-lng-supply-diversification-beyond-middle-east-plans-rs-5-000-crore-gas-investment-in-3-5-years-ed-natural-gas-anuj-mehrotra-14011436.html",
+      "domain": "moneycontrol.com",
+      "language": "English",
+      "sourceCountry": "India",
       "seenAt": "2026-08-20T10:00:00Z",
       "firstSeenAt": "2026-08-20T10:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -182,24 +578,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "7a98989716eab1382b26",
-      "title": "Yılın en çok kazandıran hasadı oldu : Parasını duyan tarlaya sarı altın ekti",
-      "url": "https://www.sozcu.com.tr/yilin-en-cok-kazandiran-hasadi-oldu-parasini-duyan-tarlaya-sari-altin-ekti-p351093",
-      "domain": "sozcu.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
+      "id": "9b22272fa0c6d7a48952",
+      "title": "AI Hardware Boom Creates $12 . 4 Trillion S & P 500 Powerhouse - IT News Africa - African Business Technology News",
+      "url": "https://www.itnewsafrica.com/2026/08/ai-hardware-boom-creates-12-4-trillion-sp-500-powerhouse/",
+      "domain": "itnewsafrica.com",
+      "language": "English",
+      "sourceCountry": "South Africa",
       "seenAt": "2026-08-20T10:00:00Z",
       "firstSeenAt": "2026-08-20T10:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -208,24 +603,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "2faa2ac99112485c0e24",
-      "title": "أزمة النفط وتهديدات ترامب ترفعان أسعار الحبوب الزراعية الأمريكية",
-      "url": "https://www.dostor.org/5673648",
-      "domain": "dostor.org",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
+      "id": "d3c8a770123704824f2c",
+      "title": "TSMC , 1 . 6나노칩 개발 성공 … 올 4분기 양산",
+      "url": "https://www.heraldk.com/article/2026081923112401935",
+      "domain": "heraldk.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
       "seenAt": "2026-08-20T10:00:00Z",
       "firstSeenAt": "2026-08-20T10:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -234,24 +628,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "f548d84ea18dbb7eb110",
-      "title": "Світові покупці пшениці готуються до дефіциту через атаки в Чорному морі",
-      "url": "https://glavnoe.in.ua/news/svitovi-pokupczi-pshenyczi-hotuyutsya-do-deficzytu-cherez-ataky-v-chornomu-mori",
-      "domain": "glavnoe.in.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Unknown",
+      "id": "63bc9449978e8a734e51",
+      "title": "메모리 이어 파운드리도 볕든다 … 삼성전자 실적 쌍끌이 기대감",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=05182406645549288&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
       "seenAt": "2026-08-20T09:45:00Z",
       "firstSeenAt": "2026-08-20T09:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -260,76 +653,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "61d418379673969f7f03",
-      "title": "„ Akola group : grūdų kokybė yra didesnė problema nei augančios jų kainos",
-      "url": "https://diena.lt/naujienos/verslas/ekonomika/akola-group-grudu-kokybe-yra-didesne-problema-nei-augancios-ju-kainos-1770935",
-      "domain": "diena.lt",
-      "language": "Lithuanian",
-      "sourceCountry": "Lithuania",
-      "seenAt": "2026-08-20T09:45:00Z",
-      "firstSeenAt": "2026-08-20T09:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2242e484d7477a7e410f",
-      "title": "Lestate da incubo dellagricoltura europea",
-      "url": "https://www.huffingtonpost.it/esteri/2026/08/20/news/crisi_agricoltura_europa_clima-22556915/",
-      "domain": "huffingtonpost.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-08-20T09:30:00Z",
-      "firstSeenAt": "2026-08-20T09:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "808d5894026ab4d07a35",
-      "title": "Світові ціни на пшеницю зросли через удари по портах України та Росії",
-      "url": "https://24tv.ua/economy/svitovi-tsini-pshenitsyu-zrosli-cherez-udari-po-portah-ukrayini_n3126820",
-      "domain": "24tv.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
+      "id": "d1569f91071b6df9c556",
+      "title": "Samsung unveils next - gen 3D - memory vision at FMS 2026 , charting AI infrastructure future",
+      "url": "https://cyprus-mail.com/2026/08/20/samsung-unveils-next-gen-3d-memory-vision-at-fms-2026-charting-ai-infrastructure-future",
+      "domain": "cyprus-mail.com",
+      "language": "English",
+      "sourceCountry": "Cyprus",
       "seenAt": "2026-08-20T09:15:00Z",
       "firstSeenAt": "2026-08-20T09:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -338,24 +678,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "d5a97832de1714e3c4ad",
-      "title": "„ Akola group : grūdų kokybė yra didesnė problema nei augančios jų kainos",
-      "url": "https://www.lrt.lt/naujienos/verslas/4/3027124/akola-group-grudu-kokybe-yra-didesne-problema-nei-augancios-ju-kainos",
-      "domain": "lrt.lt",
-      "language": "Lithuanian",
-      "sourceCountry": "Lithuania",
+      "id": "64502b964416885d1afe",
+      "title": "Lack of low - carbon power could deter AI data center investment : Executive",
+      "url": "https://focustaiwan.tw/business/202608200013",
+      "domain": "focustaiwan.tw",
+      "language": "English",
+      "sourceCountry": "Taiwan",
       "seenAt": "2026-08-20T09:15:00Z",
       "firstSeenAt": "2026-08-20T09:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -364,76 +703,123 @@
       "duplicateCount": 1
     },
     {
-      "id": "36e7269f2f3416b7efd3",
-      "title": "Εκτοξεύονται οι τιμές στο σιτάρι λόγω του πολέμου στην Ουκρανία",
-      "url": "https://www.euro2day.gr/news/world/article/2364876/ektoxeyontai-oi-times-sto-sitari-logo-toy-polemoy.html",
-      "domain": "euro2day.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
+      "id": "85b06b9cd629c766f597",
+      "title": "단순 투자는 아니지만 … 삼성전자 보유 美 마벨 지분가치 5년새 7배 껑충 [ 비즈360 ]",
+      "url": "https://biz.heraldcorp.com/article/10846916",
+      "domain": "biz.heraldcorp.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T09:15:00Z",
+      "firstSeenAt": "2026-08-20T09:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "855d73469fe68eaf244c",
+      "title": "В Германии заявили о рекордно низком уровне заполнения газохранилищ",
+      "url": "https://1prime.ru/20260820/germanija-872539683.html",
+      "domain": "1prime.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-20T09:00:00Z",
+      "firstSeenAt": "2026-08-20T09:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d3ccc357acf3cb8b8b0d",
+      "title": "Sıcak hava Avrupanın kış hesabını bozdu : Fiyatlar yüzde 120 yükseldi",
+      "url": "https://www.dunya.com/ekonomi/sicak-hava-avrupanin-kis-hesabini-bozdu-fiyatlar-yuzde-120-yukseldi-haberi-836987",
+      "domain": "dunya.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-20T08:45:00Z",
+      "firstSeenAt": "2026-08-20T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7b35d7a3727ef5a0a10e",
+      "title": "Avrupada doğal gaz krizi büyürken Türkiyenin depolama tesisleri tam kapasiteye ulaştı",
+      "url": "https://ekonomi.haber7.com/ekonomi/haber/3652741-avrupada-dogal-gaz-krizi-buyurken-turkiyenin-depolama-tesisleri-tam-kapasiteye-ulasti",
+      "domain": "ekonomi.haber7.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
       "seenAt": "2026-08-20T08:15:00Z",
       "firstSeenAt": "2026-08-20T08:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "811b7130a1e3ecbd5c9f",
-      "title": "В Шампани начался самый ранний в истории сбор винограда из - за жары и засухи",
-      "url": "https://unn.ua/ru/news/v-shampani-nachalsya-samii-rannii-v-istorii-sbor-vinograda-iz-za-zhari-i-zasukhi",
-      "domain": "unn.ua",
-      "language": "Russian",
-      "sourceCountry": "Unknown",
+      "id": "4edc4ba1ce4bdc7056a3",
+      "title": "Europe gas prices have doubled , with the worst yet to come",
+      "url": "https://www.euronews.com/business/2026/08/20/europes-gas-prices-have-doubled-with-the-worst-yet-to-come",
+      "domain": "euronews.com",
+      "language": "English",
+      "sourceCountry": "United States",
       "seenAt": "2026-08-20T08:15:00Z",
       "firstSeenAt": "2026-08-20T08:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "07cf2180c3c843dd705d",
-      "title": "Режим ЧС ввели из - за засухи в Новосибирской области",
-      "url": "https://nsknews.info/news/rezim-cs-vveli-iz-za-zasuxi-v-novosibirskoi-oblasti",
-      "domain": "nsknews.info",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-20T07:30:00Z",
-      "firstSeenAt": "2026-08-20T07:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -442,466 +828,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "14259735ecea094394fb",
-      "title": "Dar vienas sektorius Rusijoje artėja prie kracho : „ Daugelis neišgyvens jau šio sezono",
-      "url": "https://www.lrytas.lt/verslas/rinkos-pulsas/2026/08/20/news/dar-vienas-sektorius-rusijoje-arteja-prie-kracho-daugelis-neisgyvens-jau-sio-sezono--43586874",
-      "domain": "lrytas.lt",
-      "language": "Lithuanian",
-      "sourceCountry": "Lithuania",
-      "seenAt": "2026-08-20T07:15:00Z",
-      "firstSeenAt": "2026-08-20T07:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1c94e0948b0d36fccdf0",
-      "title": "Terremoto en Risaralda : cosecha cafetera en riesgo por daños en viviendas y beneficiaderos",
-      "url": "https://www.pulzo.com/economia/terremoto-en-risaralda-cosecha-cafetera-en-riesgo-por-danos-en-viviendas-y-beneficiaderos-PP5279280A",
-      "domain": "pulzo.com",
-      "language": "Spanish",
-      "sourceCountry": "Colombia",
-      "seenAt": "2026-08-20T07:15:00Z",
-      "firstSeenAt": "2026-08-20T07:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1d2377175dcdefa9bd32",
-      "title": "Οι επιθέσεις στη Μαύρη Θάλασσα πιέζουν την αγορά σιταριού",
-      "url": "https://www.capital.gr/diethni/4011495/oi-epitheseis-sti-mauri-thalassa-sfiggoun-tin-agora-sitariou-anebainoun-oi-times/",
-      "domain": "capital.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-20T07:15:00Z",
-      "firstSeenAt": "2026-08-20T07:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "798006fc1b23633d1b94",
-      "title": "Mentan ajak lulusan Untad jadi pencipta lapangan kerja",
-      "url": "https://www.antaranews.com/berita/5703051/mentan-ajak-lulusan-untad-jadi-pencipta-lapangan-kerja",
-      "domain": "antaranews.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-08-20T06:45:00Z",
-      "firstSeenAt": "2026-08-20T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bf7bb42436e6e7252af5",
-      "title": "Xung đột , thời tiết cực đoan đe dọa đẩy giá lương thực toàn cầu",
-      "url": "https://baotintuc.vn/the-gioi/xung-dot-thoi-tiet-cuc-doan-de-doa-day-gia-luong-thuc-toan-cau-20260820123922747.htm",
-      "domain": "baotintuc.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-20T06:30:00Z",
-      "firstSeenAt": "2026-08-20T06:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "921284c34f52e1d627df",
-      "title": "Prețul grâului urcă la maximul ultimilor trei ani , iar Constanța devine ruta - cheie pentru cerealele Ucrainei",
-      "url": "https://www.antena3.ro/economic/pretul-graului-urca-la-maximul-ultimilor-trei-ani-iar-constanta-devine-ruta-cheie-pentru-cerealele-ucrainei-800103.html",
-      "domain": "antena3.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-08-20T06:00:00Z",
-      "firstSeenAt": "2026-08-20T06:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dc4deb718fb30e7d52b0",
-      "title": "Dar vienas sektorius Rusijoje artėja prie kracho : „ Daugelis neišgyvens jau šio sezono",
-      "url": "https://www.lrytas.lt/verslas/rinkos-pulsas/2026/08/20/news/dar-vienas-sektorius-rusijoje-arteja-prie-kracho-daugelis-neisgyvens-jau-sio-sezono--43586874/",
-      "domain": "lrytas.lt",
-      "language": "Lithuanian",
-      "sourceCountry": "Lithuania",
-      "seenAt": "2026-08-20T05:15:00Z",
-      "firstSeenAt": "2026-08-20T05:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "87b3be43dbbcfb3292fa",
-      "title": "Consumo de milho é recorde e supera 100 milhões de toneladas - 19 / 08 / 2026 - Vaivém",
-      "url": "https://www1.folha.uol.com.br/colunas/vaivem/2026/08/consumo-de-milho-e-recorde-e-supera-100-milhoes-de-toneladas.shtml",
-      "domain": "www1.folha.uol.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-20T02:45:00Z",
-      "firstSeenAt": "2026-08-20T02:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a0124ae20304496b7db9",
-      "title": "V Českých Budějovicích dnes začíná 52 . ročník agrosalonu Země živitelka",
-      "url": "https://www.tyden.cz/v-ceskych-budejovicich-dnes-zacina-52-rocnik-agrosalonu-zeme-zivitelka",
-      "domain": "tyden.cz",
-      "language": "Czech",
-      "sourceCountry": "Czech Republic",
-      "seenAt": "2026-08-20T02:30:00Z",
-      "firstSeenAt": "2026-08-20T02:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9f1aea52d04fe4dc5960",
-      "title": "Для ринку пшениці це гірше , ніж Ормузька протока для нафти : FT про блокування чорноморських портів",
-      "url": "https://vv.com.ua/20260819/dlia-rinky-pshenici-ce-girshe-nij-ormyzka-protoka-dlia-nafti-ft-pro-blokyvannia-chornomorskih-portiv/",
-      "domain": "vv.com.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-20T02:00:00Z",
-      "firstSeenAt": "2026-08-20T02:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2f08fcb7c4e859d924c9",
-      "title": "El Niño amenință recoltele de cafea , cacao și zahăr . Produsele care s - ar putea scumpi",
-      "url": "https://adevarul.ro/stiri-externe/in-lume/el-nino-ameninta-recoltele-de-cafea-cacao-si-2550786.html",
-      "domain": "adevarul.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-08-20T01:15:00Z",
-      "firstSeenAt": "2026-08-20T01:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0916dd509e5bac41b3c4",
-      "title": "The World Most Valuable Food Commodities",
-      "url": "https://www.bursa.ro/the-worlds-most-valuable-food-commodities-03139950",
-      "domain": "bursa.ro",
-      "language": "English",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-08-19T23:30:00Z",
-      "firstSeenAt": "2026-08-19T23:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "95d3f9eface0266acb67",
-      "title": "Farmer Focus : Combine breakdowns and variable crop yields",
-      "url": "https://www.fwi.co.uk/arable/farmer-focus/farmer-focus-combine-breakdowns-and-variable-crop-yields",
-      "domain": "fwi.co.uk",
-      "language": "English",
-      "sourceCountry": "United Kingdom",
-      "seenAt": "2026-08-19T23:30:00Z",
-      "firstSeenAt": "2026-08-19T23:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ea69668e2a0678f0e5c7",
-      "title": "Bereketli yağışlar Malya Tarım İşletmesinde sertifikalı tohum verimini artırdı",
-      "url": "https://www.aa.com.tr/tr/ekonomi/bereketli-yagislar-malya-tarim-isletmesinde-sertifikali-tohum-verimini-artirdi/4032232",
-      "domain": "aa.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-19T22:45:00Z",
-      "firstSeenAt": "2026-08-19T22:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "446e1d3240d46dfdd799",
-      "title": "V Č . Budějovicích dnes začíná 52 . ročník agrosalonu Země živitelka",
-      "url": "https://www.ceskenoviny.cz/zpravy/v-c-budejovicich-dnes-zacina-52-rocnik-agrosalonu-zeme-zivitelka/2863846",
-      "domain": "ceskenoviny.cz",
-      "language": "Czech",
-      "sourceCountry": "Czech Republic",
-      "seenAt": "2026-08-19T22:45:00Z",
-      "firstSeenAt": "2026-08-19T22:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "402ef9af930cee8257d2",
-      "title": "Ціни на пшеницю - удари по портах підняли ринок до максимумів - новини економіки",
-      "url": "https://zn.ua/ukr/ECONOMICS/tsini-na-pshenitsju-zletili-cherez-udari-po-portakh-u-chornomu-mori-ft.html",
-      "domain": "zn.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-19T21:30:00Z",
-      "firstSeenAt": "2026-08-19T21:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0347f455ab7721beba83",
-      "title": "Для ринку пшениці це гірше , ніж Ормузька протока для нафти : FT про блокування чорноморських портів",
-      "url": "https://www.unian.ua/economics/agro/dlya-rinku-pshenici-ce-girshe-nizh-ormuzka-protoka-dlya-nafti-ft-pro-blokuvannya-chornomorskih-portiv-13475022.html",
-      "domain": "unian.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-19T21:30:00Z",
-      "firstSeenAt": "2026-08-19T21:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b802822d8f231a8e29c0",
-      "title": "Will my production meet my grain marketing plan ? Asking for a friend",
-      "url": "https://ocj.com/2026/08/will-my-production-meet-my-grain-marketing-plan-asking-for-a-friend/",
-      "domain": "ocj.com",
+      "id": "a67790d6b26cdb1b45db",
+      "title": "FinancialContent - Applied Materials Q2 Earnings Call : Our Top 5 Analyst Questions",
+      "url": "https://markets.financialcontent.com/stocks/article/stockstory-2026-8-20-applied-materialss-q2-earnings-call-our-top-5-analyst-questions",
+      "domain": "markets.financialcontent.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-19T21:30:00Z",
-      "firstSeenAt": "2026-08-19T21:30:00Z",
+      "seenAt": "2026-08-20T08:15:00Z",
+      "firstSeenAt": "2026-08-20T08:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -910,362 +853,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "72870abf0c7d796a0df4",
-      "title": "Для рынка пшеницы это хуже , чем Ормузский пролив для нефти : FT о блокировке черноморских портов",
-      "url": "https://www.unian.net/economics/agro/dlya-rynka-pshenicy-eto-huzhe-chem-ormuzskiy-proliv-dlya-nefti-ft-o-blokirovke-chernomorskih-portov-13475019.html",
-      "domain": "unian.net",
-      "language": "Russian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-19T21:00:00Z",
-      "firstSeenAt": "2026-08-19T21:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1dc851ad5a1b29074f27",
-      "title": "FT сравнила сбой экспорта в Черном море с блокадой Ормузского пролива",
-      "url": "https://news.mail.ru/economics/72053110/",
-      "domain": "news.mail.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-19T21:00:00Z",
-      "firstSeenAt": "2026-08-19T21:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dd838fdcdd24112de826",
-      "title": "El exceso hídrico frena el desarrollo de los cultivos de colza y trigo",
-      "url": "https://rurales.elpais.com.uy/agricultura/el-exceso-hidrico-frena-el-desarrollo-de-los-cultivos-de-colza-y-trigo",
-      "domain": "rurales.elpais.com.uy",
-      "language": "Spanish",
-      "sourceCountry": "Uruguay",
-      "seenAt": "2026-08-19T21:00:00Z",
-      "firstSeenAt": "2026-08-19T21:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "95cada1a42d7967160b7",
-      "title": "Burası Türkiyenin hububat ambarı ! Sivasta hasat devam ediyor",
-      "url": "https://www.gazetevatan.com/sehirler/sivas/burasi-turkiyenin-hububat-ambari-sivasta-hasat-devam-ediyor-2399220",
-      "domain": "gazetevatan.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-19T20:30:00Z",
-      "firstSeenAt": "2026-08-19T20:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "22dc90291fbcdbd72968",
-      "title": "Урожай зерновых в России приближается к 100 млн тонн",
-      "url": "https://profile.ru/news/economy/urozhaj-zernovyh-v-rossii-priblizhaetsya-k-100-mln-tonn-1892712/",
-      "domain": "profile.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-19T18:00:00Z",
-      "firstSeenAt": "2026-08-19T18:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "88f3b5a9f0635b81cd01",
-      "title": "توقعات بارتفاع أسعار الغذاء العالمية 11 . 8 % خلال العام الجاري",
-      "url": "https://www.dostor.org/5673180",
-      "domain": "dostor.org",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-19T17:15:00Z",
-      "firstSeenAt": "2026-08-19T17:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f2e4fb1cac4b7d3a88e8",
-      "title": "Pritet rritje globale e çmimit të ushqimeve bazë Parashikimi i Oxford Economics . Ndikojnë lufta dhe valët e nxehtësisë",
-      "url": "https://telegraf.al/ekonomi/pritet-rritje-globale-e-cmimit-te-ushqimeve-baze-parashikimi-i-oxford-economics-ndikojne-lufta-dhe-valet-e-nxehtesise/",
-      "domain": "telegraf.al",
-      "language": "Albanian",
-      "sourceCountry": "Albania",
-      "seenAt": "2026-08-19T16:00:00Z",
-      "firstSeenAt": "2026-08-19T16:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ca8b4f3140ace5c430a7",
-      "title": "Глобальные цены на продовольствие в 2026 году могут вырасти на двузначные величины",
-      "url": "https://knews.kg/2026/08/19/globalnye-tseny-na-prodovolstvie-v-2026-godu-mogut-vyrasti-na-dvuznachnye-velichiny/",
-      "domain": "knews.kg",
-      "language": "Russian",
-      "sourceCountry": "Kyrgyzstan",
-      "seenAt": "2026-08-19T15:45:00Z",
-      "firstSeenAt": "2026-08-19T15:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9dd0436206321c288d6d",
-      "title": "В Ульяновской области собрали более 1 , 26 млн тонн зерна | Новости Ульяновска . Смотреть онлайн",
-      "url": "https://misanec.ru/2026/08/19/%D0%B2-%D1%83%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B9-%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8-%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D0%BB%D0%B8-%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5-126/",
-      "domain": "misanec.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-19T15:30:00Z",
-      "firstSeenAt": "2026-08-19T15:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0a9523d45b3fd128e0b8",
-      "title": "В Румынии фермеры требуют тотального контроля над транзитом зерна с Украины",
-      "url": "https://life.ru/p/1913753",
-      "domain": "life.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-19T15:15:00Z",
-      "firstSeenAt": "2026-08-19T15:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6aef51407b7699b2c675",
-      "title": "Рекордный урожай зерновых в Ростовской области : проблемы с экспортом - 19 августа 2026",
-      "url": "https://161.ru/text/economics/2026/08/19/76596737/",
-      "domain": "161.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-19T15:00:00Z",
-      "firstSeenAt": "2026-08-19T15:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d5c6ddd0bbcbc3a824e3",
-      "title": "Super El Niño : Έρχεται νέο κύμα ακρίβειας στα τρόφιμα ; Οι αγορές φοβούνται το χειρότερο",
-      "url": "https://www.newsbeast.gr/world/arthro/13302592/super-el-nino-erchetai-neo-kyma-akriveias-sta-trofima-oi-agores-fovountai-to-cheirotero",
-      "domain": "newsbeast.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-19T14:45:00Z",
-      "firstSeenAt": "2026-08-19T14:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c4913b584acaf788b6b3",
-      "title": "Outback Steakhouse Rolls | The Fresh Loaf",
-      "url": "https://www.thefreshloaf.com/node/2570/outback-steakhouse-rolls",
-      "domain": "thefreshloaf.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-19T14:45:00Z",
-      "firstSeenAt": "2026-08-19T14:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5ba39a667cb3105c9219",
-      "title": "Росстат уточнил данные по сокращению посевных площадей в 2026 году",
-      "url": "https://www.interfax.ru/russia/1110149",
+      "id": "4c0be88f29c6b1e42114",
+      "title": "ПХГ ЕС заполнены на 61 , 61 %, темп закачки ниже обычного",
+      "url": "https://www.interfax.ru/business/1110253",
       "domain": "interfax.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
-      "seenAt": "2026-08-19T14:45:00Z",
-      "firstSeenAt": "2026-08-19T14:45:00Z",
+      "seenAt": "2026-08-20T07:45:00Z",
+      "firstSeenAt": "2026-08-20T07:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1274,24 +878,373 @@
       "duplicateCount": 1
     },
     {
-      "id": "1bb8f38eb8a434d3114e",
-      "title": "Удари по Чорному морі : атаковані 5 зерновозів біля російських портів",
-      "url": "https://lb.ua/world/2026/08/19/760014_bloomberg_pyat_zernovoziv_buli.html",
-      "domain": "lb.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-19T14:00:00Z",
-      "firstSeenAt": "2026-08-19T14:00:00Z",
+      "id": "98a53616788b90377cf4",
+      "title": "Минтруд России разработал проект правил по охране труда для газовой отрасли",
+      "url": "https://www.garant.ru/news/2205043/",
+      "domain": "garant.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-20T07:45:00Z",
+      "firstSeenAt": "2026-08-20T07:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "54e6a701664d1a4f6b9c",
+      "title": "Samsung to break ground on KRW6 trillion Onyang HBM packaging plant in September",
+      "url": "https://www.digitimes.com/news/a20260820VL203/samsung-hbm-packaging-plant-production.html",
+      "domain": "digitimes.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-20T07:45:00Z",
+      "firstSeenAt": "2026-08-20T07:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "50b17e593ba50ff34255",
+      "title": "Applied Materials Rockets 98 % in 2026 : How Does AMAT Compare to Lam Research and KLA as AI Capex Powers Chip Gear Stocks ?",
+      "url": "https://finance.yahoo.com/technology/articles/applied-materials-rockets-98-2026-192238941.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-20T07:30:00Z",
+      "firstSeenAt": "2026-08-20T07:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9880560a5e9c10519787",
+      "title": "Россия стала меньше торговать с Японией",
+      "url": "https://lenta.ru/news/2026/08/20/rossiya-stala-menshe-torgovat-s-yaponiey/",
+      "domain": "lenta.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-20T07:15:00Z",
+      "firstSeenAt": "2026-08-20T07:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "14b2d839b581517baf9c",
+      "title": "Италия запаслась газом к зиме уже на 80 %, значительно опережая Европу",
+      "url": "https://ru.euronews.com/my-europe/2026/08/20/gas-in-italy",
+      "domain": "ru.euronews.com",
+      "language": "Russian",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-20T06:45:00Z",
+      "firstSeenAt": "2026-08-20T06:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "17b2cb7b2ef43a4a980e",
+      "title": "앤스로픽 , 데이터센터 확보 박차 ... 텍사스 시설 자금 조달 마무리",
+      "url": "https://www.fnnews.com/news/202608201335100050",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T06:45:00Z",
+      "firstSeenAt": "2026-08-20T06:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "77973f038307d8abce24",
+      "title": "„ Hätten wir noch unsere AKW , wäre genügend Gas zum Heizen da e – Leser diskutieren über die Gasspeicher",
+      "url": "https://www.focus.de/die-debatte/haetten-wir-noch-unsere-akw-waere-genuegend-gas-zum-heizen-da-e-leser-diskutieren-ueber-die-gasspeicher_0bda73f8-0623-4e93-b8c4-679dce681786.html",
+      "domain": "focus.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-20T06:30:00Z",
+      "firstSeenAt": "2026-08-20T06:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a6338b4781d51363ca3e",
+      "title": "Россия за семь месяцев поставила Китаю рекордные 4 , 226 миллиона тонн СПГ",
+      "url": "https://1prime.ru/20260820/rossija-872531967.html",
+      "domain": "1prime.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-20T06:30:00Z",
+      "firstSeenAt": "2026-08-20T06:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dd1f7320a1c26894f3fd",
+      "title": "TSMC , 1 . 6나노칩 개발 성공 … 올 4분기 양산",
+      "url": "https://biz.heraldcorp.com/article/10847000",
+      "domain": "biz.heraldcorp.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T06:30:00Z",
+      "firstSeenAt": "2026-08-20T06:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2ebf3002bdee4bdf871c",
+      "title": "Forecasts for Hot US Temperatures Lift Nat - Gas Prices",
+      "url": "https://finance.yahoo.com/markets/commodities/articles/forecasts-hot-us-temperatures-lift-192954261.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-20T06:15:00Z",
+      "firstSeenAt": "2026-08-20T06:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5a8d1843bc6c995d07ff",
+      "title": "TSMC , 1 . 6나노 개발 완료 … 칩 패러다임 다시 쓴다",
+      "url": "https://www.fnnews.com/news/202608201351031492",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T06:15:00Z",
+      "firstSeenAt": "2026-08-20T06:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1a26b7d9df26cfb620f9",
+      "title": "기술도 돈도 美 필요 없다 ⋯中 , 첨단산업 탈미국 가속",
+      "url": "http://inews24.com/view/1996724",
+      "domain": "inews24.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-08-20T06:15:00Z",
+      "firstSeenAt": "2026-08-20T06:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6af97c276adf37b01c1e",
+      "title": "산업 입지는 전력이 결정 … AI 시대 전기국가 전략 본격화",
+      "url": "https://zdnet.co.kr/view/?no=20260820141424",
+      "domain": "zdnet.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T06:15:00Z",
+      "firstSeenAt": "2026-08-20T06:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bbcb1f4f44c7bcf05cb5",
+      "title": "AI 반도체 , 성능은↑ 전력은↓ 外 [ 과학게시판 ]",
+      "url": "http://inews24.com/view/1996680",
+      "domain": "inews24.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-08-20T06:15:00Z",
+      "firstSeenAt": "2026-08-20T06:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a20e0987a1c8c08da46f",
+      "title": "주민 반발에 표심 잃을라 데이터센터 빗장 걸어 잠근 美 … AI 혁명 브레이크 [ AI 인포그래픽 ]",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026082011190505776",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-20T05:30:00Z",
+      "firstSeenAt": "2026-08-20T05:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1305,11 +1258,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-20T13:30:00Z",
-      "lastSuccessfulAt": "2026-08-20T13:57:30Z",
+      "observationDate": "2026-08-20T14:30:00Z",
+      "lastSuccessfulAt": "2026-08-20T14:53:32Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
