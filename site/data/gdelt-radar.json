@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-21T22:39:29Z",
+  "generatedAtUtc": "2026-08-21T23:36:23Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 3,
-    "rawArticleCount": 150,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-21T22:39:29Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-21T23:36:23Z",
+    "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,293 +52,114 @@
   ],
   "articles": [
     {
-      "id": "ba39313e93927f7c6045",
-      "title": "USA , Dollar | Eksplosjon i USAs rentekostnader : Kan tvinge sentralbanken til å endre inflasjonsmålet",
-      "url": "https://www.nettavisen.no/okonomi/eksplosjon-i-usas-rentekostnader-kan-tvinge-sentralbanken-til-a-endre-inflasjonsmalet/s/80-95-4316",
-      "domain": "nettavisen.no",
-      "language": "Norwegian",
-      "sourceCountry": "Norway",
-      "seenAt": "2026-08-21T22:15:00Z",
-      "firstSeenAt": "2026-08-21T22:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "19787ccf2fda16d29c62",
-      "title": "Jorge Rodríguez niega contratación de Hanke para dolarizar",
-      "url": "https://www.el-carabobeno.com/jorge-rodriguez-desmiente-contratacion-de-hanke-para-dolarizacion/",
-      "domain": "el-carabobeno.com",
-      "language": "Spanish",
-      "sourceCountry": "Venezuela",
-      "seenAt": "2026-08-21T21:30:00Z",
-      "firstSeenAt": "2026-08-21T21:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9ac834c22eb623abc44f",
-      "title": "IMF test looms as Sri Lanka economic stability meets public pain : Ravi K",
-      "url": "https://www.ft.lk/top-story/IMF-test-looms-as-Sri-Lanka-s-economic-stability-meets-public-pain-Ravi-K/26-796380",
-      "domain": "ft.lk",
-      "language": "English",
-      "sourceCountry": "Sri Lanka",
-      "seenAt": "2026-08-21T21:00:00Z",
-      "firstSeenAt": "2026-08-21T21:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c7d415c0b97b2024cc02",
-      "title": "Brazil GNA II halts power generation indefinitely",
-      "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2867803-brazil-s-gna-ii-halts-power-generation-indefinitely",
-      "domain": "argusmedia.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-21T01:30:00Z",
-      "firstSeenAt": "2026-08-21T01:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0aaa447e9d41649e3da0",
-      "title": "Japan core inflation accelerates in July on weak yen , Iran war , bolstering case for rate hike",
-      "url": "https://www.businesstimes.com.sg/international/global/japans-core-inflation-accelerates-july-weak-yen-iran-war-bolstering-case-rate-hike",
-      "domain": "businesstimes.com.sg",
-      "language": "English",
-      "sourceCountry": "Singapore",
-      "seenAt": "2026-08-21T01:00:00Z",
-      "firstSeenAt": "2026-08-21T01:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0b7d4245d0b13b382549",
-      "title": "Japan core inflation accelerates in July , bolsters case for rate hike",
-      "url": "https://finance.yahoo.com/economy/policy/articles/japans-core-inflation-accelerates-july-234151348.html",
+      "id": "88414c664323a6d1ede5",
+      "title": "Why Did Critical Metals Stock Just Gain 22 . 6 %?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/why-did-critical-metals-stock-221457581.html",
       "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-21T00:15:00Z",
-      "firstSeenAt": "2026-08-21T00:15:00Z",
+      "seenAt": "2026-08-21T22:45:00Z",
+      "firstSeenAt": "2026-08-21T22:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 25,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "c7788501bf75a30ad9e5",
-      "title": "Trump 90 - Day Inflation Band - Aid : Why His Beef Tariff Pause Wont Help Consumers",
-      "url": "https://247wallst.com/investing/2026/08/21/trumps-90-day-inflation-band-aid-why-his-beef-tariff-pause-wont-help-consumers/",
-      "domain": "247wallst.com",
+      "id": "c85fed1a2cc42c2179c7",
+      "title": "DENARIUS METALS ANNOUNCES CLOSING OF STRATEGIC INVESTMENT IN COPPER GIANT RESOURCES AND CONCURRENT PRIVATE PLACEMENT WITH TRAFIGURA",
+      "url": "http://www.prnewswire.com/news-releases/denarius-metals-announces-closing-of-strategic-investment-in-copper-giant-resources-and-concurrent-private-placement-with-trafigura-302857539.html",
+      "domain": "prnewswire.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-21T15:45:00Z",
-      "firstSeenAt": "2026-08-21T15:45:00Z",
+      "seenAt": "2026-08-21T22:30:00Z",
+      "firstSeenAt": "2026-08-21T22:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 24,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "b03576c7923ab9fa9341",
-      "title": "Омана и Иран обсудили возобновление судоходства через Ормузский пролив",
-      "url": "https://1prime.ru/20260821/iran--872600258.html",
-      "domain": "1prime.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-21T20:30:00Z",
-      "firstSeenAt": "2026-08-21T20:30:00Z",
+      "id": "8ede09ee36fe8135b591",
+      "title": "B . C . company starts approval process for new major mine NE of Kamloops",
+      "url": "https://vancouversun.com:443/business/bc-company-starts-approval-process-for-new-major-mine-northeast-of-kamloops",
+      "domain": "vancouversun.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-08-21T17:00:00Z",
+      "firstSeenAt": "2026-08-21T17:00:00Z",
       "topicIds": [
-        "energy-security"
+        "strategic-materials"
       ],
       "topics": [
-        "Energy & security"
+        "Strategic materials"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 22,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "2723a8cc0cedb24b801f",
-      "title": "J . P . Morgan destaca resiliencia económica de RD y proyecta crecimiento de 4 . 5 %",
-      "url": "https://www.elcaribe.com.do/panorama/dinero/j-p-morgan-resiliencia-economica-de-rd-proyecta-crecimiento/",
-      "domain": "elcaribe.com.do",
+      "id": "99891bfc704d4f6d6722",
+      "title": "Los fundamentales mantendrán el brillo del oro",
+      "url": "https://www.expansion.com/opinion/2026/08/21/6a888dc5468aeb43308b4589.html",
+      "domain": "expansion.com",
       "language": "Spanish",
-      "sourceCountry": "Dominican Republic",
-      "seenAt": "2026-08-21T20:00:00Z",
-      "firstSeenAt": "2026-08-21T20:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6c8a03e284ae21f35f97",
-      "title": "US signals support for LNG in IMO net - zero rules",
-      "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2868184-us-signals-support-for-lng-in-imo-net-zero-rules",
-      "domain": "argusmedia.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-21T20:00:00Z",
-      "firstSeenAt": "2026-08-21T20:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3ba8edc240b6073f6ced",
-      "title": "التضخم والطاقة والتوترات الإقليمية .. 4 خبراء يرصدون مسار الفائدة حتى نهاية العام",
-      "url": "https://www.dostor.org/5675217",
-      "domain": "dostor.org",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
+      "sourceCountry": "Spain",
       "seenAt": "2026-08-21T19:15:00Z",
       "firstSeenAt": "2026-08-21T19:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -347,24 +168,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "dccb65388e1826ac2abe",
-      "title": "Julio Velarde continuará al frente del BCRP : el Poder Ejecutivo ratifica su designación , pero aún falta un paso más",
-      "url": "https://www.infobae.com/peru/2026/08/21/julio-velarde-continuara-al-frente-del-bcrp-el-poder-ejecutivo-ratifica-su-designacion-pero-aun-falta-un-paso-mas/",
-      "domain": "infobae.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-21T18:45:00Z",
-      "firstSeenAt": "2026-08-21T18:45:00Z",
+      "id": "70cda6d50919ee9b5cc9",
+      "title": "Giá vàng hôm nay ( 21 / 8 ): Vàng miếng và vàng nhẫn cùng tăng mạnh",
+      "url": "https://voh.com.vn/gia-vang/gia-vang-hom-nay-218-vang-mieng-va-vang-nhan-cung-tang-manh-664477.html",
+      "domain": "voh.com.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T19:15:00Z",
+      "firstSeenAt": "2026-08-21T19:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -373,532 +197,114 @@
       "duplicateCount": 1
     },
     {
-      "id": "109183fc5d022303d7ba",
-      "title": "Almanyada doğal gaz depolarının doluluk oranı tartışma konusu oldu",
-      "url": "https://www.kibrispostasi.com/c50-EKONOMI/n611511-almanyada-dogal-gaz-depolarinin-doluluk-orani-tartisma-konusu-oldu",
-      "domain": "kibrispostasi.com",
-      "language": "Turkish",
-      "sourceCountry": "Cyprus",
-      "seenAt": "2026-08-21T18:45:00Z",
-      "firstSeenAt": "2026-08-21T18:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d57e0d77ab0efbd057c6",
-      "title": "Swiss National Bank prepared to cut rates below zero if needed : SNB Petra Tschudin",
-      "url": "https://www.moneycontrol.com/news/business/swiss-national-bank-prepared-to-cut-rates-below-zero-if-needed-snb-s-petra-tschudin-14012611.html",
-      "domain": "moneycontrol.com",
+      "id": "d5a70b574dc5fce5122b",
+      "title": "Kazakhstan Role in Pax Silica After WAICO - The Times Of Central Asia",
+      "url": "https://timesca.com/kazakhstans-role-in-pax-silica-after-waico/",
+      "domain": "timesca.com",
       "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-21T18:00:00Z",
-      "firstSeenAt": "2026-08-21T18:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "469b92a822287cbc923e",
-      "title": "Almanyada kış zor geçecek : Doğalgaz depoları doldurulamıyor",
-      "url": "https://www.f5haber.com/ekonomi/almanyada-kis-zor-gececek-dogalgaz-depolari-doldurulamiyor-6964589",
-      "domain": "f5haber.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-21T18:00:00Z",
-      "firstSeenAt": "2026-08-21T18:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4911b8dd85a3407bbdc7",
-      "title": "Sind die Gasspeicher halb voll oder halb leer ? | Nachrichten aus aller Welt",
-      "url": "https://www.lz.de/ueberregional/topthemen/24400603_Sind-die-Gasspeicher-halb-voll-oder-halb-leer.html",
-      "domain": "lz.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T17:45:00Z",
-      "firstSeenAt": "2026-08-21T17:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fd812eb5776bb6e06a22",
-      "title": "Una embarcacción fabricada en Texas suministrará el gas desde Puerto Bahía en el Caribe para enfrentar la escasez",
-      "url": "https://www.las2orillas.co/una-embarcacion-fabricada-en-texas-suministrara-el-gas-desde-puerto-bahia-en-el-caribe-para-enfrentar-la-escasez/",
-      "domain": "las2orillas.co",
-      "language": "Spanish",
-      "sourceCountry": "Colombia",
-      "seenAt": "2026-08-21T17:30:00Z",
-      "firstSeenAt": "2026-08-21T17:30:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "9a2ceff08907dc00ae91",
-      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
-      "url": "https://www.epochtimes.de/politik/deutschland/sind-die-gasspeicher-halb-voll-oder-halb-leer-a5587826.html",
-      "domain": "epochtimes.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T17:00:00Z",
-      "firstSeenAt": "2026-08-21T17:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fc82f1061d4a3c29e055",
-      "title": "Zwischen null und zwei Prozent : Schweizer Notenbank : KI kann Inflation anschieben",
-      "url": "https://www.n-tv.de/ticker/Schweizer-Notenbank-KI-kann-Inflation-anschieben-id31220276.html",
-      "domain": "n-tv.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T17:00:00Z",
-      "firstSeenAt": "2026-08-21T17:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "05e388b55df3c1bab322",
-      "title": "Un service logistique complet dans le premier ensemble portuaire européen : feu vert à la coentreprise CMA CGM / Totalenergies dans le ravitaillement GNL",
-      "url": "https://www.bfmtv.com/economie/entreprises/energie/un-service-logistique-complet-dans-le-premier-ensemble-portuaire-europeen-feu-vert-a-la-coentreprise-cma-cgm-totalenergies-dans-le-ravitaillement-gnl_AD-202608210452.html",
-      "domain": "bfmtv.com",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-21T17:00:00Z",
-      "firstSeenAt": "2026-08-21T17:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5f8c3b417621a80b0d96",
-      "title": "Las exportaciones energéticas se duplicaron y dejaron un superávit de casi u$s900 millones en julio",
-      "url": "https://www.ambito.com/energia/las-exportaciones-energeticas-se-duplicaron-y-dejaron-un-superavit-casi-us900-millones-julio-n6313393",
-      "domain": "ambito.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-21T17:00:00Z",
-      "firstSeenAt": "2026-08-21T17:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "28e3ee7a9453a4342ab8",
-      "title": "India buys its most expensive LNG in years as war upends market",
-      "url": "https://www.moneycontrol.com/news/business/companies/india-buys-its-most-expensive-lng-in-years-as-war-upends-market-14012623.html",
-      "domain": "moneycontrol.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-21T17:00:00Z",
-      "firstSeenAt": "2026-08-21T17:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cf42856839a673d80856",
-      "title": "India buys its most expensive LNG in years as war upends market",
-      "url": "https://economictimes.indiatimes.com/industry/energy/oil-gas/india-buys-its-most-expensive-lng-in-years-as-war-upends-market/articleshow/133409410.cms",
-      "domain": "economictimes.indiatimes.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-21T17:00:00Z",
-      "firstSeenAt": "2026-08-21T17:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c36a4e6d6be4f9c460df",
-      "title": "Индия купила партию СПГ по рекордно высокой цене",
-      "url": "https://lenta.ru/news/2026/08/21/indiya-kupila-partiyu-spg-po-rekordno-vysokoy-tsene/",
-      "domain": "lenta.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
+      "sourceCountry": "Kyrgyzstan",
       "seenAt": "2026-08-21T16:45:00Z",
       "firstSeenAt": "2026-08-21T16:45:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
-      "id": "77ab870bcb23b52d7002",
-      "title": "MDN Energy Stories of Interest : Fri , Aug 21 , 2026 - Marcellus Drilling News",
-      "url": "https://marcellusdrilling.com/2026/08/mdns-energy-stories-of-interest-fri-aug-21-2026/",
-      "domain": "marcellusdrilling.com",
+      "id": "394cf88a9fb3bae5d045",
+      "title": "Australia must stay realistic in metals race : Panel",
+      "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2867950-australia-must-stay-realistic-in-metals-race-panel",
+      "domain": "argusmedia.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-21T16:45:00Z",
-      "firstSeenAt": "2026-08-21T16:45:00Z",
+      "seenAt": "2026-08-21T15:45:00Z",
+      "firstSeenAt": "2026-08-21T15:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "d25c1648113b95853e58",
-      "title": "Southern Africa : South Africa Inflation Falls to 4 . 3 Percent As Rate Hold Case Builds",
-      "url": "https://allafrica.com/stories/202608210507.html",
-      "domain": "allafrica.com",
-      "language": "English",
-      "sourceCountry": "Nigeria",
-      "seenAt": "2026-08-21T16:45:00Z",
-      "firstSeenAt": "2026-08-21T16:45:00Z",
+      "id": "c3d80768b95d6c2e0b40",
+      "title": "紫金矿业 ( 601899 . SH ) 发布半年度业绩 ， 归母净利润391 . 7亿元 ， 同比增长68 . 17 %_ 股市直播 _ 市场 _ 中金在线",
+      "url": "http://sc.stock.cnfol.com/gushizhibo/20260821/32343598.shtml",
+      "domain": "sc.stock.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T15:45:00Z",
+      "firstSeenAt": "2026-08-21T15:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "e1119b4ad8d2160d38bd",
-      "title": "CGC mira al Pacífico con su estrategia de exportar GNL por Chile",
-      "url": "https://www.iprofesional.com/energia/462768-cgc-mira-al-pacifico-con-su-estrategia-de-exportar-gnl-por-chile",
-      "domain": "iprofesional.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-21T16:45:00Z",
-      "firstSeenAt": "2026-08-21T16:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "18e6d23abddffb0815f8",
-      "title": "Ebara , Doosan team up on LNG compressor development",
-      "url": "https://jp.ibtimes.com/ebara-doosan-team-lng-compressor-development-103912",
-      "domain": "jp.ibtimes.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-21T16:45:00Z",
-      "firstSeenAt": "2026-08-21T16:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1513bfb097019c3df1f7",
-      "title": "Bruxelas aprova joint - venture de gigantes francesas para abastecimento de navios com GNL",
-      "url": "https://sapo.pt/artigo/bruxelas-aprova-joint-venture-de-gigantes-francesas-para-abastecimento-de-navios-com-gnl-6a887860e58eb3a3e65f69eb",
-      "domain": "sapo.pt",
-      "language": "Portuguese",
-      "sourceCountry": "Portugal",
-      "seenAt": "2026-08-21T16:45:00Z",
-      "firstSeenAt": "2026-08-21T16:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0c66e39422ef24fb73ec",
-      "title": "Iraq calls for raising its OPEC output limit – Shafaqna English | International Shia News & Fatwas",
-      "url": "https://en.shafaqna.com/472562/iraq-calls-for-raising-its-opec-output-limit/",
-      "domain": "en.shafaqna.com",
-      "language": "English",
-      "sourceCountry": "Saudi Arabia",
-      "seenAt": "2026-08-21T16:45:00Z",
-      "firstSeenAt": "2026-08-21T16:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "05924a24e280564921d7",
-      "title": "Oil Nears $100 as Trump Economic D - Day Raises the Stakes",
-      "url": "https://finance.yahoo.com/energy/articles/oil-nears-100-trump-economic-150115760.html",
+      "id": "e7731260b4f7ca7a9915",
+      "title": "USA Rare Earth Rises 8 %, Critical Metals Jumps 10 %, MP Materials Climbs 5 % as the Resource Sector Catches a Bid",
+      "url": "https://finance.yahoo.com/markets/commodities/articles/usa-rare-earth-rises-8-142609271.html",
       "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-21T16:30:00Z",
-      "firstSeenAt": "2026-08-21T16:30:00Z",
+      "seenAt": "2026-08-21T15:00:00Z",
+      "firstSeenAt": "2026-08-21T15:00:00Z",
       "topicIds": [
-        "energy-security"
+        "strategic-materials"
       ],
       "topics": [
-        "Energy & security"
+        "Strategic materials"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -907,347 +313,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "c09472a6614f5d6de6aa",
-      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
-      "url": "https://www.nw.de/nachrichten/wirtschaft/24400602_Sind-die-Gasspeicher-halb-voll-oder-halb-leer.html",
-      "domain": "nw.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T16:15:00Z",
-      "firstSeenAt": "2026-08-21T16:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bcf4aba65adf316977d5",
-      "title": "Вагенкнехт выступила за возврат к поставкам газа из РФ из - за полупустых хранилищ",
-      "url": "https://vm.ru/news/1352171-s-vystupila-za-vozvrat-k-postavkam-gaza-iz-rf-iz-za-polupustyh-hranilish",
-      "domain": "vm.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-21T16:15:00Z",
-      "firstSeenAt": "2026-08-21T16:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4e3cdab5d46f325d7baa",
-      "title": "جريدة البلاد | العراق يستهدف رفع إنتاج النفط إلى 8 - 10 ملايين برميل يومياً خلال 6 سنوات",
-      "url": "https://www.albiladpress.com/news/2026/6521/finance/1015311.html",
-      "domain": "albiladpress.com",
-      "language": "Arabic",
-      "sourceCountry": "Bahrain",
-      "seenAt": "2026-08-21T16:15:00Z",
-      "firstSeenAt": "2026-08-21T16:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2174baed21971bc31634",
-      "title": "Iraq working to expand oil exports via Türkiye , Syria , Jordan : PM",
-      "url": "https://www.dailysabah.com/business/economy/iraq-working-to-expand-oil-exports-via-turkiye-syria-jordan-pm",
-      "domain": "dailysabah.com",
-      "language": "English",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-21T16:00:00Z",
-      "firstSeenAt": "2026-08-21T16:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fe1bb8110b18316c84c1",
-      "title": "Ιράκ : Στόχος η παραγωγή 10 εκατ . βαρελιών πετρελαίου ημερησίως στην επόμενη εξαετία",
-      "url": "https://www.newsit.gr/oikonomia/diethni/irak-stoxos-i-paragogi-10-ekat-varelion-petrelaiou-imerisios-stin-epomeni-eksaetia/4755167/",
-      "domain": "newsit.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-21T16:00:00Z",
-      "firstSeenAt": "2026-08-21T16:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7eabaafa9e4efa9a6d84",
-      "title": "« Провал государства »: Вагенкнехт потребовала отставки министра экономики ФРГ из - за полупустых газохранилищ",
-      "url": "https://runews24.ru/politics/21/08/2026/proval-gosudarstva-vagenknext-potrebovala-otstavki-ministra-ekonomiki-frg-iz-za-polupustyix-gazoxranilishh",
-      "domain": "runews24.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-21T15:45:00Z",
-      "firstSeenAt": "2026-08-21T15:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "13c394875d9c09200664",
-      "title": "Gobierno de Keiko Fujimori oficializa ratificación de Julio Velarde como presidente del Banco Central de Reserva del Perú | hnews | Política",
-      "url": "https://larepublica.pe/politica/2026/08/21/gobierno-de-keiko-fujimori-oficializa-ratificacion-de-julio-velarde-como-presidente-del-banco-central-de-reserva-del-peru-hnews-448497",
-      "domain": "larepublica.pe",
-      "language": "Spanish",
-      "sourceCountry": "Peru",
-      "seenAt": "2026-08-21T15:45:00Z",
-      "firstSeenAt": "2026-08-21T15:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "75ae28917f65cf7c90a7",
-      "title": "Gobierno de Keiko Fujimori oficializa ratificación de Julio Velarde como presidente del Banco Central de Reserva del Perú | hnews | Política",
-      "url": "https://larepublica.pe:443/politica/2026/08/21/gobierno-de-keiko-fujimori-oficializa-ratificacion-de-julio-velarde-como-presidente-del-banco-central-de-reserva-del-peru-hnews-448497",
-      "domain": "larepublica.pe",
-      "language": "Spanish",
-      "sourceCountry": "Peru",
-      "seenAt": "2026-08-21T15:45:00Z",
-      "firstSeenAt": "2026-08-21T15:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ad4c47de6c7c02f3ba87",
-      "title": "Oil markets : Iraq wants production at 8 - 10 million bpd",
-      "url": "https://www.bnnbloomberg.ca/markets/oil/2026/08/21/iraq-aims-to-boost-oil-output-to-8-10-million-bpd-in-six-years/",
-      "domain": "bnnbloomberg.ca",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-21T15:45:00Z",
-      "firstSeenAt": "2026-08-21T15:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "60292c061704d57f6a15",
-      "title": "Μεταξύ σφύρας και άκμονος οι τιμές ρεύματος στην Ευρώπη",
-      "url": "https://www.naftemporiki.gr/green/energy/2152133/metaxy-sfyras-kai-akmonos-oi-times-reymatos-stin-eyropi/",
-      "domain": "naftemporiki.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-21T15:45:00Z",
-      "firstSeenAt": "2026-08-21T15:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e3c00b44ca3dce7f09e1",
-      "title": "Kekeringan Ekstrem Dorong Inflasi di Jerman dan Eropa",
-      "url": "https://www.dw.com/id/kekeringan-di-jerman-dan-eropa-bikin-biaya-meningkat/a-78453905",
-      "domain": "dw.com",
-      "language": "Indonesian",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T15:15:00Z",
-      "firstSeenAt": "2026-08-21T15:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b2f8e54a6714c8ab2447",
-      "title": "Julio Velarde va por 25 años en el BCR : apuesta por una mejora de la economía y enfrenta el reto de frenar el alza de precios",
-      "url": "https://rpp.pe/economia/economia/julio-velarde-va-por-25-anos-en-el-bcr-apuesta-por-una-mejora-de-la-economia-y-enfrenta-el-reto-de-frenar-el-alza-de-precios-noticia-1702858",
-      "domain": "rpp.pe",
-      "language": "Spanish",
-      "sourceCountry": "Peru",
-      "seenAt": "2026-08-21T15:15:00Z",
-      "firstSeenAt": "2026-08-21T15:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bd26c9e0f94971328e50",
-      "title": "Versorgungssicherheit : Sind die Gasspeicher halb voll oder halb leer ?",
-      "url": "https://www.oz-online.de/artikel/1680197/Sind-die-Gasspeicher-halb-voll-oder-halb-leer",
-      "domain": "oz-online.de",
-      "language": "German",
-      "sourceCountry": "Germany",
+      "id": "ad365b77d8c6f6ad258b",
+      "title": "Saudi Arabia Economy , सऊदी के हाथ लगेगा तेल से भी बड़ा खजाना ! अरेबियन शील्ड क्या है , जिसकी खुदाई कराने को बेताब हैं प्रिंस MBS - saudi next major economic opportunity in rocks beneath know what is arabian shield - Asian countries News",
+      "url": "https://navbharattimes.indiatimes.com/world/asian-countries/saudi-next-major-economic-opportunity-in-rocks-beneath-know-what-is-arabian-shield/articleshow/133405269.cms",
+      "domain": "navbharattimes.indiatimes.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
       "seenAt": "2026-08-21T14:45:00Z",
       "firstSeenAt": "2026-08-21T14:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1256,24 +342,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "cf2885592b67c84d75dc",
-      "title": "West Africa : Nigeria Inflation Slows to 15 . 4 Percent in July As Rate - Cut Bets Build",
-      "url": "https://allafrica.com/stories/202608210510.html",
-      "domain": "allafrica.com",
+      "id": "1c7ce5d1d31491137a1a",
+      "title": "Red Rock Resources ( LON : RRR ) Shares Down 4 . 8 % – Here What Happened",
+      "url": "https://www.dailypolitical.com/2026/08/21/red-rock-resources-lonrrr-shares-down-4-8-heres-what-happened.html",
+      "domain": "dailypolitical.com",
       "language": "English",
-      "sourceCountry": "Nigeria",
-      "seenAt": "2026-08-21T14:45:00Z",
-      "firstSeenAt": "2026-08-21T14:45:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T13:45:00Z",
+      "firstSeenAt": "2026-08-21T13:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1282,24 +371,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "e795af45d3f9369e846b",
-      "title": "В Молдавии заявили , что повышение тарифа на газ ударит по карману граждан",
-      "url": "https://1prime.ru/20260821/moldavija-872591851.html",
-      "domain": "1prime.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-21T14:45:00Z",
-      "firstSeenAt": "2026-08-21T14:45:00Z",
+      "id": "72b9df43d7161c717e3a",
+      "title": "Virginia Beach City Council to oppose seabed mining off Eastern Shore",
+      "url": "https://www.dailypress.com/2026/08/21/virginia-beach-oppose-seabed-mining-eastern-shore/",
+      "domain": "dailypress.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T13:30:00Z",
+      "firstSeenAt": "2026-08-21T13:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1308,23 +400,114 @@
       "duplicateCount": 1
     },
     {
-      "id": "3b298740b59cabe2389e",
-      "title": "德国储气水平跌至历年同期最低 - 新华网",
-      "url": "http://www.xinhuanet.com/20260821/0f98c6ae112c4a60a1b2519097d26f8c/c.html",
-      "domain": "xinhuanet.com",
+      "id": "043ce37e698783ea33f0",
+      "title": "Gold & Silver Price Surge ( 21 August 2026 ); India Market Gold Rate Update",
+      "url": "https://www.divyabhaskar.co.in/business/news/gold-silver-price-hike-india-21-august-2026-latest-update-138791489.html",
+      "domain": "divyabhaskar.co.in",
+      "language": "Gujarati",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-21T12:15:00Z",
+      "firstSeenAt": "2026-08-21T12:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9a52dff9120b1bd7026b",
+      "title": "Mining shares lead the FTSE 100 as gold pushes above $4 , 500",
+      "url": "https://www.proactiveinvestors.co.uk/companies/news/1097397/mining-shares-lead-the-ftse-100-as-gold-pushes-above-4-500-1097397.html",
+      "domain": "proactiveinvestors.co.uk",
+      "language": "English",
+      "sourceCountry": "United Kingdom",
+      "seenAt": "2026-08-21T12:15:00Z",
+      "firstSeenAt": "2026-08-21T12:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "38dd18a879b771451a1b",
+      "title": "Copper Just Overtook Iron Ore at BHP Group ( BHP ). Is Its Portfolio Finally Re - Rating ?",
+      "url": "https://finance.yahoo.com/markets/commodities/articles/copper-just-overtook-iron-ore-010149340.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T10:45:00Z",
+      "firstSeenAt": "2026-08-21T10:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4e924668ffc61ce6b128",
+      "title": "京东方A主力资金大举加仓 ！ 一周逾83亿元净流入 ！ _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202608213849332617.html",
+      "domain": "finance.eastmoney.com",
       "language": "Chinese",
       "sourceCountry": "China",
-      "seenAt": "2026-08-21T14:30:00Z",
-      "firstSeenAt": "2026-08-21T14:30:00Z",
+      "seenAt": "2026-08-21T10:45:00Z",
+      "firstSeenAt": "2026-08-21T10:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1333,23 +516,926 @@
       "duplicateCount": 1
     },
     {
-      "id": "d624c8b8d53b470ce7da",
-      "title": "Gasspeicher nicht voll genug ? Expertin nennt Worst - Case - Szenario",
-      "url": "https://www.otz.de/wirtschaft/article412924456/gasspeicher-nicht-voll-genug-expertin-nennt-worst-case-szenario.html",
-      "domain": "otz.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T14:30:00Z",
-      "firstSeenAt": "2026-08-21T14:30:00Z",
+      "id": "89d434d45fb7e2de7433",
+      "title": "Giá vàng chiều 21 / 8 : Vàng SJC tiến sát mốc 150 triệu đồng / lượng",
+      "url": "https://baomoi.com/gia-vang-chieu-21-8-vang-sjc-tien-sat-moc-150-trieu-dong-luong-c55882237.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T10:30:00Z",
+      "firstSeenAt": "2026-08-21T10:30:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8912ec0fc78ee462a573",
+      "title": "Giá vàng nhận lực đỡ từ động thái mua lại trái phiếu của Bộ Tài chính Mỹ",
+      "url": "https://baomoi.com/gia-vang-nhan-luc-do-tu-dong-thai-mua-lai-trai-phieu-cua-bo-tai-chinh-my-c55882209.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T10:30:00Z",
+      "firstSeenAt": "2026-08-21T10:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "713667da11ec3d33baa1",
+      "title": "京东方A ， 主力资金大举加仓 ！ 一周逾83亿元净流入 ！",
+      "url": "https://www.stcn.com/article/detail/4096551.html",
+      "domain": "stcn.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T09:15:00Z",
+      "firstSeenAt": "2026-08-21T09:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "94efc1c3686635d78af8",
+      "title": "Công bố kết quả giám định kim cương trong vụ án buôn lậu xuyên quốc gia",
+      "url": "https://baomoi.com/cong-bo-ket-qua-giam-dinh-kim-cuong-trong-vu-an-buon-lau-xuyen-quoc-gia-c55881267.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T09:00:00Z",
+      "firstSeenAt": "2026-08-21T09:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "146972e6920828bd46f3",
+      "title": "Giá vàng ngày 21 / 8 : Giá vàng trong nước chỉ cao hơn thế giới 2 triệu đồng / lượng , mức chênh thấp nhất trong nhiều năm qua",
+      "url": "https://baomoi.com/gia-vang-ngay-21-8-gia-vang-trong-nuoc-chi-cao-hon-the-gioi-2-trieu-dong-luong-muc-chenh-thap-nhat-trong-nhieu-nam-qua-c55880343.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T06:45:00Z",
+      "firstSeenAt": "2026-08-21T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4e3005e9d77d3e2ec918",
+      "title": "A股异动丨金价升至4543美元 ， 黄金股集体大涨 ， 湖南白银 、 白银有色等多股涨停 _ 期市动态 _ 期货 _ 中金在线",
+      "url": "http://futures.cnfol.com/qishidongtai/20260821/32342464.shtml",
+      "domain": "futures.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T06:15:00Z",
+      "firstSeenAt": "2026-08-21T06:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e77b09236fc1dcfe48e0",
+      "title": "What is Arabian Shield ? Why Saudi Arabia is keen to dig geological formation",
+      "url": "https://www.thenationalnews.com/business/energy/2026/08/21/what-is-the-arabian-shield-and-why-is-saudi-arabia-keen-to-dig-in/",
+      "domain": "thenationalnews.com",
+      "language": "English",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-08-21T05:45:00Z",
+      "firstSeenAt": "2026-08-21T05:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b8d49c9c2147992f104e",
+      "title": "海外催化+需求预期改善 ！ 锂矿概念走强 融资客最新抢筹股曝光 _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202608213849103343.html",
+      "domain": "finance.eastmoney.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T05:45:00Z",
+      "firstSeenAt": "2026-08-21T05:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b3132063fabb986ab4f5",
+      "title": "Thủ đoạn hô biến kim cương buôn lậu của một giám đốc ở PNJ",
+      "url": "https://dantri.com.vn/phap-luat/thu-doan-ho-bien-kim-cuong-buon-lau-cua-mot-giam-doc-o-pnj-20260821104513252.htm",
+      "domain": "dantri.com.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T05:15:00Z",
+      "firstSeenAt": "2026-08-21T05:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "78800bb20511ce0d712e",
+      "title": "午评 ： 创指低开高走涨超1 % 黄金股持续大涨 _ 市场测评 _ 市场 _ 中金在线",
+      "url": "http://sc.stock.cnfol.com/shichangceping/20260821/32342480.shtml",
+      "domain": "sc.stock.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T05:00:00Z",
+      "firstSeenAt": "2026-08-21T05:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "390cc3b9a7ece8c17d1e",
+      "title": "Kuniko unearths fresh NSW gold targets in Lachlan fold belt",
+      "url": "https://www.smh.com.au/business/companies/kuniko-unearths-fresh-nsw-gold-targets-in-lachlan-fold-belt-20260821-p60qf4.html",
+      "domain": "smh.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-08-21T04:45:00Z",
+      "firstSeenAt": "2026-08-21T04:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a7b43cea46b261a4fd93",
+      "title": "Giá bạc trong nước lên mức 65 triệu đồng / kg",
+      "url": "http://vov.vn/thi-truong/gia-bac-hom-nay-gia-bac-trong-nuoc-len-muc-65-trieu-dongkg-post1325990.vov",
+      "domain": "vov.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T04:30:00Z",
+      "firstSeenAt": "2026-08-21T04:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f8dae472c05b8d0ac94e",
+      "title": "Giá vàng hôm nay ( 21 / 8 ): Bất ngờ giá mua vào SJC",
+      "url": "https://tienphong.vn/gia-vang-hom-nay-218-bat-ngo-gia-mua-vao-sjc-post1869705.tpo",
+      "domain": "tienphong.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T04:30:00Z",
+      "firstSeenAt": "2026-08-21T04:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1e14ffbba5cf73b0bfde",
+      "title": "Kuniko unearths fresh NSW gold targets in Lachlan fold belt",
+      "url": "https://www.brisbanetimes.com.au/business/companies/kuniko-unearths-fresh-nsw-gold-targets-in-lachlan-fold-belt-20260821-p60qf4.html",
+      "domain": "brisbanetimes.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-08-21T04:15:00Z",
+      "firstSeenAt": "2026-08-21T04:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e24cb8241450a578536f",
+      "title": "Giá vàng hôm nay ( 21 / 8 ): Bất ngờ giá mua vào SJC",
+      "url": "https://baomoi.com/gia-vang-hom-nay-21-8-bat-ngo-gia-mua-vao-sjc-c55879171.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T04:15:00Z",
+      "firstSeenAt": "2026-08-21T04:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ca806da834d7f0a415e7",
+      "title": "45 projects to explore critical minerals in Bastar cleared",
+      "url": "https://www.hindustantimes.com/india-news/45-projects-to-explore-critical-minerals-in-bastar-cleared-101787251170755.html",
+      "domain": "hindustantimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-21T03:45:00Z",
+      "firstSeenAt": "2026-08-21T03:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "417e92333ebb43e7e0b1",
+      "title": "Đã có kết quả giám định kim cương trong vụ án buôn lậu xuyên quốc gia",
+      "url": "https://baomoi.com/da-co-ket-qua-giam-dinh-kim-cuong-trong-vu-an-buon-lau-xuyen-quoc-gia-c55878542.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T03:45:00Z",
+      "firstSeenAt": "2026-08-21T03:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "93e919b9b84048719769",
+      "title": "Catamarca , tierra de oro , plata y litio : la usura que crece bajo el gobierno de Raúl Jalil",
+      "url": "https://elintransigente.com/2026/08/catamarca-usura-pueblos-interior/",
+      "domain": "elintransigente.com",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-08-21T03:45:00Z",
+      "firstSeenAt": "2026-08-21T03:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8d4bc50892d6b0b8e9a5",
+      "title": "有色 / 贵金属 | 沪铝 ： 南美主产国铜矿产量下滑加深原料端供应担忧 _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202608213848543572.html",
+      "domain": "finance.eastmoney.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T03:30:00Z",
+      "firstSeenAt": "2026-08-21T03:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8b5171774b151ea1535b",
+      "title": "Solis Minerals targets rising lithium and copper demand with Brazil and Peru drilling",
+      "url": "https://www.proactiveinvestors.com/companies/news/1097094/solis-minerals-targets-rising-lithium-and-copper-demand-with-brazil-and-peru-drilling-1097094.html",
+      "domain": "proactiveinvestors.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T03:30:00Z",
+      "firstSeenAt": "2026-08-21T03:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "457cf05105a74ac844c4",
+      "title": "有色 / 贵金属 | 隔夜外盘贵金属强弱分化 Comex金银比回落 铂钯比回升 _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202608213848516227.html",
+      "domain": "finance.eastmoney.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T03:30:00Z",
+      "firstSeenAt": "2026-08-21T03:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3588b23b4725f666de43",
+      "title": "Cổ phiếu PNJ tăng trần sau thông tin mới trong vụ buôn lậu kim cương",
+      "url": "https://dantri.com.vn/kinh-doanh/co-phieu-pnj-tang-tran-sau-thong-tin-moi-trong-vu-buon-lau-kim-cuong-20260821095551575.htm",
+      "domain": "dantri.com.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T03:30:00Z",
+      "firstSeenAt": "2026-08-21T03:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0c829e211627a09be652",
+      "title": "加息预期大幅缓和 有色金属反弹行情启动 - CFi . CN 中财网",
+      "url": "http://www.cfi.net.cn/p20260821000391.html",
+      "domain": "cfi.net.cn",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T03:15:00Z",
+      "firstSeenAt": "2026-08-21T03:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "121e8bd61e508562908b",
+      "title": "Princeton Critical Minerals Raises $16M to Scale Lithium Production Technologies",
+      "url": "https://cleantechnica.com/2026/08/20/princeton-critical-minerals-raises-16m-to-scale-lithium-production-technologies/",
+      "domain": "cleantechnica.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T03:15:00Z",
+      "firstSeenAt": "2026-08-21T03:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "003286acf903dc0ae20d",
+      "title": "Giá vàng ngày 21 / 8 : Bảng giá tại các công ty vàng bạc đá quý",
+      "url": "https://baomoi.com/gia-vang-ngay-21-8-bang-gia-tai-cac-cong-ty-vang-bac-da-quy-c55878531.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T03:15:00Z",
+      "firstSeenAt": "2026-08-21T03:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1ca4b79443da77511e0b",
+      "title": "一张图看商品支撑阻力 ： 金银油气+铂钯铜农产品期货 ( 2026年8月21日 )_ 期市动态 _ 期货 _ 中金在线",
+      "url": "http://futures.cnfol.com/qishidongtai/20260821/32342115.shtml",
+      "domain": "futures.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T03:00:00Z",
+      "firstSeenAt": "2026-08-21T03:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a96a4df7268319e795ce",
+      "title": "Giá vàng hôm nay 21 - 8 : SJC tăng mạnh 3 , 3 triệu đồng / lượng",
+      "url": "https://baomoi.com/gia-vang-hom-nay-21-8-sjc-tang-manh-3-3-trieu-dong-luong-c55878456.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T03:00:00Z",
+      "firstSeenAt": "2026-08-21T03:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e7079fba49a2c16572aa",
+      "title": "Giá vàng hôm nay ( 21 - 8 ): Vàng miếng và vàng nhẫn cùng tăng mạnh",
+      "url": "https://www.qdnd.vn/kinh-te/tin-tuc/gia-vang-hom-nay-21-8-vang-mieng-va-vang-nhan-cung-tang-manh-1054076",
+      "domain": "qdnd.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T02:00:00Z",
+      "firstSeenAt": "2026-08-21T02:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "51ae3c6832c4191da010",
+      "title": "一张图看商品支撑阻力 ： 金银油气+铂钯铜农产品期货 ( 2026年8月21日 )_ 金市直播 _ 黄金网 _ 中金在线",
+      "url": "http://gold.cnfol.com/jinshizhibo/20260821/32342090.shtml",
+      "domain": "gold.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T01:30:00Z",
+      "firstSeenAt": "2026-08-21T01:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d81209ed0ecfe8296249",
+      "title": "High - grade Ima resource boosts Idaho tungsten revival",
+      "url": "https://www.mining.com/high-grade-ima-resource-boosts-idaho-tungsten-revival/",
+      "domain": "mining.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-08-21T01:00:00Z",
+      "firstSeenAt": "2026-08-21T01:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "aa0112c8e840443395a2",
+      "title": "Giá vàng hôm nay ngày 21 / 8 : Vàng thế giới vượt 4 . 500 USD , vàng trong nước tăng hơn 3 triệu đồng / lượng",
+      "url": "https://thoibaotaichinhvietnam.vn/gia-vang-hom-nay-ngay-21-8-vang-the-gioi-vuot-4-500-usd-vang-trong-nuoc-tang-hon-3-trieu-dong-luong-202642.html",
+      "domain": "thoibaotaichinhvietnam.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T01:00:00Z",
+      "firstSeenAt": "2026-08-21T01:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c266733396a7e8737804",
+      "title": "Mỹ mở đường vào mỏ đất hiếm châu Phi | BÁO SÀI GÒN GIẢI PHÓNG",
+      "url": "https://www.sggp.org.vn/my-mo-duong-vao-mo-dat-hiem-chau-phi-post868072.html",
+      "domain": "sggp.org.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-21T00:30:00Z",
+      "firstSeenAt": "2026-08-21T00:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1363,11 +1449,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-21T22:15:00Z",
-      "lastSuccessfulAt": "2026-08-21T22:39:29Z",
+      "observationDate": "2026-08-21T22:45:00Z",
+      "lastSuccessfulAt": "2026-08-21T23:36:23Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
