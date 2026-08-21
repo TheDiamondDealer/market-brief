@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-21T14:52:17Z",
+  "generatedAtUtc": "2026-08-21T17:43:18Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-21T14:52:17Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-21T17:43:18Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,14 +52,90 @@
   ],
   "articles": [
     {
-      "id": "89b1cf79bb675a5bf3cf",
-      "title": "Anunț de la BNR pentru toți românii . Ce se întâmplă cu inflația până la final de an . Ce urmează pentru prețuri",
-      "url": "https://www.capital.ro/anunt-de-la-bnr-pentru-toti-romanii-ce-se-intampla-cu-inflatia-pana-la-final-de-an-ce-urmeaza-pentru-preturi.html",
-      "domain": "capital.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-08-21T14:30:00Z",
-      "firstSeenAt": "2026-08-21T14:30:00Z",
+      "id": "c7788501bf75a30ad9e5",
+      "title": "Trump 90 - Day Inflation Band - Aid : Why His Beef Tariff Pause Wont Help Consumers",
+      "url": "https://247wallst.com/investing/2026/08/21/trumps-90-day-inflation-band-aid-why-his-beef-tariff-pause-wont-help-consumers/",
+      "domain": "247wallst.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T15:45:00Z",
+      "firstSeenAt": "2026-08-21T15:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 30,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9a2ceff08907dc00ae91",
+      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "https://www.epochtimes.de/politik/deutschland/sind-die-gasspeicher-halb-voll-oder-halb-leer-a5587826.html",
+      "domain": "epochtimes.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T17:00:00Z",
+      "firstSeenAt": "2026-08-21T17:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "331e45c6d44f33025d3b",
+      "title": "SEMI launches chip materials alliance",
+      "url": "https://www.taipeitimes.com/News/biz/archives/2026/08/22/2003862904",
+      "domain": "taipeitimes.com",
+      "language": "English",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-08-21T17:00:00Z",
+      "firstSeenAt": "2026-08-21T17:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fc82f1061d4a3c29e055",
+      "title": "Zwischen null und zwei Prozent : Schweizer Notenbank : KI kann Inflation anschieben",
+      "url": "https://www.n-tv.de/ticker/Schweizer-Notenbank-KI-kann-Inflation-anschieben-id31220276.html",
+      "domain": "n-tv.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T17:00:00Z",
+      "firstSeenAt": "2026-08-21T17:00:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -78,14 +154,114 @@
       "duplicateCount": 1
     },
     {
-      "id": "05b28e2f45ee4d3baace",
-      "title": "地缘冲突加剧通胀粘性 ECB利率2027年或近3 %- CFi . CN 中财网",
-      "url": "http://www.cfi.net.cn/p20260821004609.html",
-      "domain": "cfi.net.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-21T13:30:00Z",
-      "firstSeenAt": "2026-08-21T13:30:00Z",
+      "id": "c36a4e6d6be4f9c460df",
+      "title": "Индия купила партию СПГ по рекордно высокой цене",
+      "url": "https://lenta.ru/news/2026/08/21/indiya-kupila-partiyu-spg-po-rekordno-vysokoy-tsene/",
+      "domain": "lenta.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-21T16:45:00Z",
+      "firstSeenAt": "2026-08-21T16:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "77ab870bcb23b52d7002",
+      "title": "MDN Energy Stories of Interest : Fri , Aug 21 , 2026 - Marcellus Drilling News",
+      "url": "https://marcellusdrilling.com/2026/08/mdns-energy-stories-of-interest-fri-aug-21-2026/",
+      "domain": "marcellusdrilling.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T16:45:00Z",
+      "firstSeenAt": "2026-08-21T16:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5c34a4660f8e089ef735",
+      "title": "Fujifilm triples Oita post - CMP cleaner capacity for AI chips",
+      "url": "https://jp.ibtimes.com/fujifilm-triples-oita-post-cmp-cleaner-capacity-ai-chips-103920",
+      "domain": "jp.ibtimes.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T16:45:00Z",
+      "firstSeenAt": "2026-08-21T16:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8c82561d6c3ca731c40c",
+      "title": "Micron To Pour $10 Billion Into US Hub To Invent Post - DRAM AI Tech",
+      "url": "https://hothardware.com/news/micron-pours-10-billion-us-hub-invent-post-dram-ai-tech",
+      "domain": "hothardware.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T16:45:00Z",
+      "firstSeenAt": "2026-08-21T16:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d25c1648113b95853e58",
+      "title": "Southern Africa : South Africa Inflation Falls to 4 . 3 Percent As Rate Hold Case Builds",
+      "url": "https://allafrica.com/stories/202608210507.html",
+      "domain": "allafrica.com",
+      "language": "English",
+      "sourceCountry": "Nigeria",
+      "seenAt": "2026-08-21T16:45:00Z",
+      "firstSeenAt": "2026-08-21T16:45:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -104,24 +280,73 @@
       "duplicateCount": 1
     },
     {
-      "id": "949c2683360ea8ab7870",
-      "title": "未来十年黄金升值空间有多大 ？ 五大逻辑告诉你答案 _ 新闻频道 _ 中华网",
-      "url": "https://news.china.com/socialgd/10000169/20260821/49691487.html",
-      "domain": "news.china.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-21T13:30:00Z",
-      "firstSeenAt": "2026-08-21T13:30:00Z",
+      "id": "c09472a6614f5d6de6aa",
+      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "https://www.nw.de/nachrichten/wirtschaft/24400602_Sind-die-Gasspeicher-halb-voll-oder-halb-leer.html",
+      "domain": "nw.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T16:15:00Z",
+      "firstSeenAt": "2026-08-21T16:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bcf4aba65adf316977d5",
+      "title": "Вагенкнехт выступила за возврат к поставкам газа из РФ из - за полупустых хранилищ",
+      "url": "https://vm.ru/news/1352171-s-vystupila-za-vozvrat-k-postavkam-gaza-iz-rf-iz-za-polupustyh-hranilish",
+      "domain": "vm.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-21T16:15:00Z",
+      "firstSeenAt": "2026-08-21T16:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7ed2bb4e8092395f613f",
+      "title": "Aehr Test Systems to Participate in the Jefferies Semiconductor , IT Hardware & Communications Technology Conference on August 25 , 2026",
+      "url": "http://www.tennesseedaily.com/news/279255958/aehr-test-systems-to-participate-in-the-jefferies-semiconductor-it-hardware-communications-technology-conference-on-august-25-2026",
+      "domain": "tennesseedaily.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T16:15:00Z",
+      "firstSeenAt": "2026-08-21T16:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -182,6 +407,489 @@
       "duplicateCount": 1
     },
     {
+      "id": "883ed1b141e283c5f165",
+      "title": "Intel Embarks on $15 Billion Stock Offering to Capitalize on AI Demand",
+      "url": "https://smallbiztrends.com/intel-embarks-on-15-billion-stock-offering-to-capitalize-on-ai-demand/",
+      "domain": "smallbiztrends.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-20T18:45:00Z",
+      "firstSeenAt": "2026-08-20T18:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 21,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7eabaafa9e4efa9a6d84",
+      "title": "« Провал государства »: Вагенкнехт потребовала отставки министра экономики ФРГ из - за полупустых газохранилищ",
+      "url": "https://runews24.ru/politics/21/08/2026/proval-gosudarstva-vagenknext-potrebovala-otstavki-ministra-ekonomiki-frg-iz-za-polupustyix-gazoxranilishh",
+      "domain": "runews24.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-21T15:45:00Z",
+      "firstSeenAt": "2026-08-21T15:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "13c394875d9c09200664",
+      "title": "Gobierno de Keiko Fujimori oficializa ratificación de Julio Velarde como presidente del Banco Central de Reserva del Perú | hnews | Política",
+      "url": "https://larepublica.pe/politica/2026/08/21/gobierno-de-keiko-fujimori-oficializa-ratificacion-de-julio-velarde-como-presidente-del-banco-central-de-reserva-del-peru-hnews-448497",
+      "domain": "larepublica.pe",
+      "language": "Spanish",
+      "sourceCountry": "Peru",
+      "seenAt": "2026-08-21T15:45:00Z",
+      "firstSeenAt": "2026-08-21T15:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "75ae28917f65cf7c90a7",
+      "title": "Gobierno de Keiko Fujimori oficializa ratificación de Julio Velarde como presidente del Banco Central de Reserva del Perú | hnews | Política",
+      "url": "https://larepublica.pe:443/politica/2026/08/21/gobierno-de-keiko-fujimori-oficializa-ratificacion-de-julio-velarde-como-presidente-del-banco-central-de-reserva-del-peru-hnews-448497",
+      "domain": "larepublica.pe",
+      "language": "Spanish",
+      "sourceCountry": "Peru",
+      "seenAt": "2026-08-21T15:45:00Z",
+      "firstSeenAt": "2026-08-21T15:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e3c00b44ca3dce7f09e1",
+      "title": "Kekeringan Ekstrem Dorong Inflasi di Jerman dan Eropa",
+      "url": "https://www.dw.com/id/kekeringan-di-jerman-dan-eropa-bikin-biaya-meningkat/a-78453905",
+      "domain": "dw.com",
+      "language": "Indonesian",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T15:15:00Z",
+      "firstSeenAt": "2026-08-21T15:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b2f8e54a6714c8ab2447",
+      "title": "Julio Velarde va por 25 años en el BCR : apuesta por una mejora de la economía y enfrenta el reto de frenar el alza de precios",
+      "url": "https://rpp.pe/economia/economia/julio-velarde-va-por-25-anos-en-el-bcr-apuesta-por-una-mejora-de-la-economia-y-enfrenta-el-reto-de-frenar-el-alza-de-precios-noticia-1702858",
+      "domain": "rpp.pe",
+      "language": "Spanish",
+      "sourceCountry": "Peru",
+      "seenAt": "2026-08-21T15:15:00Z",
+      "firstSeenAt": "2026-08-21T15:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bd26c9e0f94971328e50",
+      "title": "Versorgungssicherheit : Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "https://www.oz-online.de/artikel/1680197/Sind-die-Gasspeicher-halb-voll-oder-halb-leer",
+      "domain": "oz-online.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T14:45:00Z",
+      "firstSeenAt": "2026-08-21T14:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cf2885592b67c84d75dc",
+      "title": "West Africa : Nigeria Inflation Slows to 15 . 4 Percent in July As Rate - Cut Bets Build",
+      "url": "https://allafrica.com/stories/202608210510.html",
+      "domain": "allafrica.com",
+      "language": "English",
+      "sourceCountry": "Nigeria",
+      "seenAt": "2026-08-21T14:45:00Z",
+      "firstSeenAt": "2026-08-21T14:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e795af45d3f9369e846b",
+      "title": "В Молдавии заявили , что повышение тарифа на газ ударит по карману граждан",
+      "url": "https://1prime.ru/20260821/moldavija-872591851.html",
+      "domain": "1prime.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-21T14:45:00Z",
+      "firstSeenAt": "2026-08-21T14:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3b298740b59cabe2389e",
+      "title": "德国储气水平跌至历年同期最低 - 新华网",
+      "url": "http://www.xinhuanet.com/20260821/0f98c6ae112c4a60a1b2519097d26f8c/c.html",
+      "domain": "xinhuanet.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T14:30:00Z",
+      "firstSeenAt": "2026-08-21T14:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d624c8b8d53b470ce7da",
+      "title": "Gasspeicher nicht voll genug ? Expertin nennt Worst - Case - Szenario",
+      "url": "https://www.otz.de/wirtschaft/article412924456/gasspeicher-nicht-voll-genug-expertin-nennt-worst-case-szenario.html",
+      "domain": "otz.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T14:30:00Z",
+      "firstSeenAt": "2026-08-21T14:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cf883b64859bd53973a1",
+      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "https://www.muensterschezeitung.de/nachrichten/wirtschaft/sind-die-gasspeicher-halb-voll-oder-halb-leer-3623768",
+      "domain": "muensterschezeitung.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T14:30:00Z",
+      "firstSeenAt": "2026-08-21T14:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "89b1cf79bb675a5bf3cf",
+      "title": "Anunț de la BNR pentru toți românii . Ce se întâmplă cu inflația până la final de an . Ce urmează pentru prețuri",
+      "url": "https://www.capital.ro/anunt-de-la-bnr-pentru-toti-romanii-ce-se-intampla-cu-inflatia-pana-la-final-de-an-ce-urmeaza-pentru-preturi.html",
+      "domain": "capital.ro",
+      "language": "Romanian",
+      "sourceCountry": "Romania",
+      "seenAt": "2026-08-21T14:30:00Z",
+      "firstSeenAt": "2026-08-21T14:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1a97e8424a88eb5538f3",
+      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "https://www.welt.de/newsticker/dpa_nt/infoline_nt/wirtschaft_nt/article6a87a3761c4720d4165465b0/sind-die-gasspeicher-halb-voll-oder-halb-leer.html",
+      "domain": "welt.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T14:00:00Z",
+      "firstSeenAt": "2026-08-21T14:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "616c5ad6d1540b301d3a",
+      "title": "[ AI MY 뉴스 ] 뉴욕 반도체주 프리뷰 ... 美 장기금리 진정에 반도체주 숨통 · 엔비디아↑",
+      "url": "https://www.newspim.com/news/view/20260821000958",
+      "domain": "newspim.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-21T13:45:00Z",
+      "firstSeenAt": "2026-08-21T13:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "aab33b7ab1ed9d65ca27",
+      "title": "Billionaire Investor Philippe Laffont Has Nearly 23 % of Coatue Management Portfolio Invested in 3 Artificial Intelligence ( AI ) Stocks",
+      "url": "https://www.fool.com/investing/2026/08/21/billionaire-investor-philippe-laffont-has-nearly-2/?source=iedfolrf0000001",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T13:45:00Z",
+      "firstSeenAt": "2026-08-21T13:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ccbd7c67cabe08624af9",
+      "title": "Low German gas storage levels trigger backlash from political fringes",
+      "url": "https://www.yahoo.com/news/politics/articles/low-german-gas-storage-levels-124833217.html",
+      "domain": "yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-21T13:30:00Z",
+      "firstSeenAt": "2026-08-21T13:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "895612314e40a8f25854",
+      "title": "ЕК не вижда проблем с полупразните хранилища , но цената на газа се удвои",
+      "url": "https://www.investor.bg/a/518-energetika/435435-ek-ne-vizhda-problem-s-polupraznite-hranilishta-no-tsenata-na-gaza-se-udvoi",
+      "domain": "investor.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-08-21T13:30:00Z",
+      "firstSeenAt": "2026-08-21T13:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "05b28e2f45ee4d3baace",
+      "title": "地缘冲突加剧通胀粘性 ECB利率2027年或近3 %- CFi . CN 中财网",
+      "url": "http://www.cfi.net.cn/p20260821004609.html",
+      "domain": "cfi.net.cn",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-21T13:30:00Z",
+      "firstSeenAt": "2026-08-21T13:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "30b8b46b2b08213704ea",
       "title": "Velkahuolet ravistelevat markkinoita",
       "url": "https://www.hs.fi/visio/art-2000012215235.html",
@@ -208,24 +916,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "70bf11dcb1d1e90e2120",
-      "title": "Ceny zbóż rosną , ale rolnicy tracą na nawozach . Na tonę mocznika potrzeba już 3 , 4 t pszenicy ! [ Podcast odc . 74 ]",
-      "url": "https://www.topagrar.pl/articles/zboza/ceny-zboz-rosna-ale-rolnicy-traca-na-nawozach-na-tone-mocznika-potrzeba-juz-3-4-t-pszenicy-podcast-odc-74-2689019",
-      "domain": "topagrar.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
+      "id": "22e143dd3f45390ca714",
+      "title": "Gas : Experte schlägt Alarm – Deutsche Gasspeicher auf „ historischem Tiefstand",
+      "url": "https://www.thueringer-allgemeine.de/wirtschaft/article412925282/experte-schlaegt-alarm-fuellstand-deutscher-gasspeicher-auf-historischem-tiefstand.html",
+      "domain": "thueringer-allgemeine.de",
+      "language": "German",
+      "sourceCountry": "Germany",
       "seenAt": "2026-08-21T12:15:00Z",
       "firstSeenAt": "2026-08-21T12:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -234,25 +941,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "b38c77b07feda3b64038",
-      "title": "Gold पहुंचा ₹1 . 60 लाख के पर , चांदी भी ₹2 . 50 लाख के करीब , क्या अब निवेश करने का समय आ गया है ?",
-      "url": "https://hindi.moneycontrol.com/news/your-money/gold-on-rupees-1-60-lakh-silver-near-rupees-2-50-lakhs-it-this-best-time-to-invest-in-bullion-2433210.html",
-      "domain": "hindi.moneycontrol.com",
-      "language": "Hindi",
-      "sourceCountry": "India",
+      "id": "50b1510b651488bc0a25",
+      "title": "Versorgungssicherheit : Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "https://www.rnz.de/politik/wirtschaft-regional_artikel,-Versorgungssicherheit-Sind-die-Gasspeicher-halb-voll-oder-halb-leer-_arid,2409328.html",
+      "domain": "rnz.de",
+      "language": "German",
+      "sourceCountry": "Germany",
       "seenAt": "2026-08-21T12:15:00Z",
       "firstSeenAt": "2026-08-21T12:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "gold",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -261,26 +966,175 @@
       "duplicateCount": 1
     },
     {
-      "id": "f7366a4da99649e4a93e",
-      "title": "Войни и суша удрят цената на хляба , очаква се поскъпвяне",
-      "url": "https://www.burgasinfo.com/news/view/2/153829",
-      "domain": "burgasinfo.com",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
+      "id": "e52be163a7017e97d944",
+      "title": "Versorgungssicherheit : Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "https://www.news.de/wirtschaft/859923794/sind-die-gasspeicher-halb-voll-oder-halb-leer-versorgungssicherheit-news-der-dpa-aktuell-zu-erdgas-energie-und-verbraucher/1/",
+      "domain": "news.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T12:15:00Z",
+      "firstSeenAt": "2026-08-21T12:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cd6b81002da669424bb9",
+      "title": "Sind die Gasspeicher halb voll oder halb leer ? - Wirtschaft",
+      "url": "https://www.pz-news.de/wirtschaft_artikel,-Sind-die-Gasspeicher-halb-voll-oder-halb-leer-_arid,2365091.html",
+      "domain": "pz-news.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T12:15:00Z",
+      "firstSeenAt": "2026-08-21T12:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "80b8338fe9415ec25486",
+      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "http://www.come-on.de/wirtschaft/sind-die-gasspeicher-halb-voll-oder-halb-leer-zr-94453160.html",
+      "domain": "come-on.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T12:15:00Z",
+      "firstSeenAt": "2026-08-21T12:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1a1bf228723f275df40a",
+      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "http://www.op-online.de/wirtschaft/sind-die-gasspeicher-halb-voll-oder-halb-leer-zr-94453160.html",
+      "domain": "op-online.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T12:15:00Z",
+      "firstSeenAt": "2026-08-21T12:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c81b2509f32dd77bead1",
+      "title": "Sind die Gasspeicher halb voll oder halb leer ?",
+      "url": "http://www.az-online.de/wirtschaft/sind-die-gasspeicher-halb-voll-oder-halb-leer-zr-94453160.html",
+      "domain": "az-online.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T12:15:00Z",
+      "firstSeenAt": "2026-08-21T12:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8e45440c1c232bf53c58",
+      "title": "Aehr Test Systems to Participate in the Jefferies Semiconductor , IT Hardware & Communications Technology Conference on August 25 , 2026",
+      "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69375277-aehr-test-systems-to-participate-in-the-jefferies-semiconductor-it-hardware-communications-technology-conference-on-august-25-2026-200.htm",
+      "domain": "finanznachrichten.de",
+      "language": "English",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T12:15:00Z",
+      "firstSeenAt": "2026-08-21T12:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "313a82a432d870e50260",
+      "title": "Investing in Semiconductors : The Trillion - Dollar Cycle and Its Chokepoints",
+      "url": "https://www.livetradingnews.com/investing-in-semiconductors",
+      "domain": "livetradingnews.com",
+      "language": "English",
+      "sourceCountry": "United States",
       "seenAt": "2026-08-21T11:15:00Z",
       "firstSeenAt": "2026-08-21T11:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -306,7 +1160,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -332,967 +1186,80 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "852379559886bfe7b188",
-      "title": "The wheat is there . Can the Black Sea move it ?",
-      "url": "https://www.agweek.com/business/markets/the-wheat-is-there-can-the-black-sea-move-it",
-      "domain": "agweek.com",
+      "id": "2461ae5586b704077f2e",
+      "title": "Why Germany gas storage levels are so low",
+      "url": "https://www.dw.com/en/germany-energy-crisis-oil-gas-storage-lng-russia-graphic/a-78440677",
+      "domain": "dw.com",
       "language": "English",
-      "sourceCountry": "United States",
+      "sourceCountry": "Germany",
       "seenAt": "2026-08-21T11:00:00Z",
       "firstSeenAt": "2026-08-21T11:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "79ddd8078d31f33d17b8",
-      "title": "Malya Tarım İşletmesinde hububat hasadının ardından balya mesaisi sürüyor",
-      "url": "https://www.haber1.com/guncel/malya-tarim-isletmesinde-hububat-hasadinin-ardindan-balya-mesaisi-suruyor/",
-      "domain": "haber1.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
+      "id": "427faea8b46fdb45eafb",
+      "title": "Gas : Experte schlägt Alarm – Deutsche Gasspeicher auf „ historischem Tiefstand",
+      "url": "https://www.morgenpost.de/wirtschaft/article412925282/experte-schlaegt-alarm-fuellstand-deutscher-gasspeicher-auf-historischem-tiefstand.html",
+      "domain": "morgenpost.de",
+      "language": "German",
+      "sourceCountry": "Germany",
       "seenAt": "2026-08-21T11:00:00Z",
       "firstSeenAt": "2026-08-21T11:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "9ec0fa650885258cc549",
-      "title": "Russia sends new batch of grain to Armenia via Azerbaijan",
-      "url": "https://news.am/en/news/1056792",
-      "domain": "news.am",
-      "language": "English",
-      "sourceCountry": "Armenia",
+      "id": "c48608b50a4082e92f38",
+      "title": "Gas : Experte schlägt Alarm – Deutsche Gasspeicher auf „ historischem Tiefstand",
+      "url": "https://www.harzkurier.de/wirtschaft/article412925282/experte-schlaegt-alarm-fuellstand-deutscher-gasspeicher-auf-historischem-tiefstand.html",
+      "domain": "harzkurier.de",
+      "language": "German",
+      "sourceCountry": "Germany",
       "seenAt": "2026-08-21T11:00:00Z",
       "firstSeenAt": "2026-08-21T11:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fa25a8b083757f940488",
-      "title": "Nintendo confirme la hausse de prix de la Switch 2 avant la rentrée",
-      "url": "https://www.generation-nt.com/actualites/nintendo-hausse-prix-switch-2-2080017",
-      "domain": "generation-nt.com",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-21T11:00:00Z",
-      "firstSeenAt": "2026-08-21T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1860fa110213cd7221b4",
-      "title": "Inflazione , famiglie europee meno preoccupate : cosa segnala la Bce",
-      "url": "https://www.soldionline.it/notizie/macroeconomia/inflazione-famiglie-europee-meno-preoccupate-cosa-segnala-la-bce",
-      "domain": "soldionline.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-08-21T11:00:00Z",
-      "firstSeenAt": "2026-08-21T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6e27ccc118b721153a47",
-      "title": "Kann Putin von der schlechten Ernte in Europa profitieren ?",
-      "url": "https://www.gmx.at/magazine/politik/russland-krieg-ukraine/putin-schlechten-ernte-europa-profitieren-42636824",
-      "domain": "gmx.at",
-      "language": "German",
-      "sourceCountry": "Austria",
-      "seenAt": "2026-08-21T10:30:00Z",
-      "firstSeenAt": "2026-08-21T10:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "822e867e7e26e53f71ce",
-      "title": "Гречка дорожает : почему растет цена и чего ждать дальше",
-      "url": "https://www.nakanune.ru/news/2026/8/21/22884309/",
-      "domain": "nakanune.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-21T10:30:00Z",
-      "firstSeenAt": "2026-08-21T10:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2726b9e8175b5fe64c27",
-      "title": "Bitkisel üretimde bu yıl beklenen 140 milyon tonluk rekorun lokomotifi tahıl ve meyveler olacak",
-      "url": "https://www.aa.com.tr/tr/ekonomi/bitkisel-uretimde-bu-yil-beklenen-140-milyon-tonluk-rekorun-lokomotifi-tahil-ve-meyveler-olacak/4033550",
-      "domain": "aa.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-21T10:30:00Z",
-      "firstSeenAt": "2026-08-21T10:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "527532ff433c2d4b409c",
-      "title": "Kur dingo 50 tonų Rusijos aukso : tokio dalyko seniai nebuvo",
-      "url": "https://www.15min.lt/naujiena/aktualu/pasaulis/kur-dingo-50-tonu-rusijos-aukso-tokio-dalyko-seniai-nebuvo-57-2747666",
-      "domain": "15min.lt",
-      "language": "Lithuanian",
-      "sourceCountry": "Lithuania",
-      "seenAt": "2026-08-21T10:30:00Z",
-      "firstSeenAt": "2026-08-21T10:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "504ab5c79a4b21e0b4e0",
-      "title": "خفض الفائدة أم مواجهة التضخم ، ماذا ينتظر السياسة النقدية في النصف الثاني من 2026 ؟",
-      "url": "https://www.vetogate.com/5716381",
-      "domain": "vetogate.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-21T10:30:00Z",
-      "firstSeenAt": "2026-08-21T10:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "41326c9e3aedabca13c6",
-      "title": "Гана прогнозує скорочення врожаю какао на 13 % у наступному сезоні",
-      "url": "https://interfax.com.ua/news/economic/1194886.html",
-      "domain": "interfax.com.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-21T10:00:00Z",
-      "firstSeenAt": "2026-08-21T10:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c0202f6da0730a02a8ba",
-      "title": "Kann Putin von der schlechten Ernte in Europa profitieren ?",
-      "url": "https://web.de/magazine/politik/russland-krieg-ukraine/putin-schlechten-ernte-europa-profitieren-42636824",
-      "domain": "web.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T10:00:00Z",
-      "firstSeenAt": "2026-08-21T10:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b10727f35b9d07a888dd",
-      "title": "Медианная оценка инфляции в еврозоне снизилась второй месяц подряд",
-      "url": "https://1prime.ru/20260821/otsenka-872577599.html",
-      "domain": "1prime.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-21T10:00:00Z",
-      "firstSeenAt": "2026-08-21T10:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f0535c373d4ca70be103",
-      "title": "EZB - Mitglied Kazaks : Zentralbank ist gut aufgestellt , um bei Bedarf zu handeln , um die Inflation auf 2 % zu bringen",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69373599-ezb-mitglied-kazaks-zentralbank-ist-gut-aufgestellt-um-bei-bedarf-zu-handeln-um-die-inflation-auf-2-zu-bringen-545.htm",
-      "domain": "finanznachrichten.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T10:00:00Z",
-      "firstSeenAt": "2026-08-21T10:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "236774778c418977871b",
-      "title": "Pšeničná krize . Kvůli bojům v Černém moři hrozí části světa nedostatek obilí",
-      "url": "https://www.novinky.cz/clanek/ekonomika-psenicna-krize-kvuli-bojum-v-cernem-mori-hrozi-casti-sveta-nedostatek-obili-40593604",
-      "domain": "novinky.cz",
-      "language": "Czech",
-      "sourceCountry": "Czech Republic",
-      "seenAt": "2026-08-21T09:00:00Z",
-      "firstSeenAt": "2026-08-21T09:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "99483ab99f12d426fde7",
-      "title": "On - farm grain storage : Upfront costs pay future dividends | The Land",
-      "url": "https://www.theland.com.au/story/9334215/on-farm-grain-storage-upfront-costs-pay-future-dividends/",
-      "domain": "theland.com.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-08-21T09:00:00Z",
-      "firstSeenAt": "2026-08-21T09:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "113129c3dbb43c303951",
-      "title": "Агрохолдинг « СТЕПЬ » полностью перешел на российские семена",
-      "url": "https://www.vedomosti.ru/press_releases/2026/08/21/agroholding-step-polnostyu-pereshel-na-rossiiskie-semena",
-      "domain": "vedomosti.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-21T09:00:00Z",
-      "firstSeenAt": "2026-08-21T09:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7860fe36111322af62d1",
-      "title": "从 储蓄过剩 到 债券过剩 全球政府债券收益率居高不下敲响警钟 - 股票 - 金融界",
-      "url": "https://stock.jrj.com.cn/2026/08/21162658202858.shtml",
-      "domain": "stock.jrj.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-21T09:00:00Z",
-      "firstSeenAt": "2026-08-21T09:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cf92774e3a3ff842c696",
-      "title": "EZB : Inflationserwartungen der Konsumenten sinken im Juli leicht",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69372933-ezb-inflationserwartungen-der-konsumenten-sinken-im-juli-leicht-015.htm",
-      "domain": "finanznachrichten.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T09:00:00Z",
-      "firstSeenAt": "2026-08-21T09:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2c4380df2d7f66cdae00",
-      "title": "Japan : Kerninflation steigt auf 1 , 8 Prozent im Juli",
-      "url": "https://www.fuw.ch/japan-kerninflation-steigt-auf-1-8-prozent-im-juli-385110651506",
-      "domain": "fuw.ch",
-      "language": "German",
-      "sourceCountry": "Switzerland",
-      "seenAt": "2026-08-21T08:45:00Z",
-      "firstSeenAt": "2026-08-21T08:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "932a95097f877ed55dce",
-      "title": "Jaga Status Lumbung Pangan Nasional , Indramayu Kunci 92 . 888 Hektare Menjadi Lahan Pertanian Abadi",
-      "url": "https://bandung.kompas.com/read/2026/08/21/142858578/jaga-status-lumbung-pangan-nasional-indramayu-kunci-92888-hektare-menjadi",
-      "domain": "bandung.kompas.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-08-21T08:00:00Z",
-      "firstSeenAt": "2026-08-21T08:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b838f1c56d7e0ffc5da5",
-      "title": "视频丨多瑙河低水位影响匈牙利航运 经济恐受损",
-      "url": "https://baijiahao.baidu.com/s?id=1874116076442525240",
-      "domain": "baijiahao.baidu.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-21T08:00:00Z",
-      "firstSeenAt": "2026-08-21T08:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9e218c01aa7e65dcdeae",
-      "title": "Au Japon , linflation grimpe à 1 , 8 % en juillet , tirée par les prix des hydrocarbures et la chute du yen",
-      "url": "https://www.bfmtv.com/economie/international/au-japon-l-inflation-grimpe-a-1-8-en-juillet-tiree-par-les-prix-des-hydrocarbures-et-la-chute-du-yen_AD-202608210145.html",
-      "domain": "bfmtv.com",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-08-21T07:45:00Z",
-      "firstSeenAt": "2026-08-21T07:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "74786168f82286b6b070",
-      "title": "Пшеницу и ячмень из России отправят сегодня в Армению через Азербайджан",
-      "url": "https://vestikavkaza.ru/news/psenicu-i-acmen-iz-rossii-otpravat-segodna-v-armeniu-cerez-azerbajdzan.html",
-      "domain": "vestikavkaza.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-21T07:30:00Z",
-      "firstSeenAt": "2026-08-21T07:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5c492bc186f5b08e9048",
-      "title": "Treasury Bond Buybacks Evoke Memory of Fed Operation Twist",
-      "url": "https://finance.yahoo.com/economy/policy/articles/treasury-bond-buybacks-evoke-memory-184647427.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-21T07:00:00Z",
-      "firstSeenAt": "2026-08-21T07:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3a58e28ac3b98194aa7b",
-      "title": "核心CPI连续七个月低于2 %， 日本央行为何还要加息 ？_ 期市动态 _ 期货 _ 中金在线",
-      "url": "http://futures.cnfol.com/qishidongtai/20260821/32342498.shtml",
-      "domain": "futures.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-21T06:15:00Z",
-      "firstSeenAt": "2026-08-21T06:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4c5a9a1197267b55248a",
-      "title": "Hitze macht Kartoffeln kleiner und Mais früher erntereif",
-      "url": "http://www.soester-anzeiger.de/lokales/welver/eine-rekordernte-wird-es-nicht-hitze-macht-pommes-kartoffeln-kleiner-und-mais-frueher-erntereif-94452630.html",
-      "domain": "soester-anzeiger.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T06:00:00Z",
-      "firstSeenAt": "2026-08-21T06:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6d89e78b31f4587101ff",
-      "title": "Комбайнер Виктор Мухаев о работе в элитном хозяйстве , детской мечте и современной технике на полях",
-      "url": "https://www.sb.by/articles/s-zabotoy-o-khlebnom-kolose.html",
-      "domain": "sb.by",
-      "language": "Russian",
-      "sourceCountry": "Belarus",
-      "seenAt": "2026-08-21T05:45:00Z",
-      "firstSeenAt": "2026-08-21T05:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0c2b2e65f96cd2eb3548",
-      "title": "威士忌桶陳咖啡遇上職人可可 ！ 伯朗攜手TERRA推出中秋限定 「 月光漫旅 」 禮盒",
-      "url": "https://n.yam.com/Article/20260821449757",
-      "domain": "n.yam.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-08-21T05:45:00Z",
-      "firstSeenAt": "2026-08-21T05:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a3e22429dcdacfe59c75",
-      "title": "日圓貶值反噬 ！ 日本通膨又爆表 9月升息 「 倒數計時 」？ - 財經",
-      "url": "https://www.chinatimes.com/realtimenews/20260821002460-260410",
-      "domain": "chinatimes.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-08-21T05:45:00Z",
-      "firstSeenAt": "2026-08-21T05:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5d0ecf29afc38dc7a462",
-      "title": "SK海力士计划斥资数十万亿韩元在日本东北部的宫城县建设存储芯片工厂 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608213848722055.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-21T05:45:00Z",
-      "firstSeenAt": "2026-08-21T05:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3a66418a6d549f42589b",
-      "title": "【 财经分析 】 能源推升7月英国通胀逆转上行 经济疲弱约束央行加息空间 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608203848132651.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-21T05:45:00Z",
-      "firstSeenAt": "2026-08-21T05:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d5616726b564dd865cf5",
-      "title": "„ Weizen als Waffe gegen Deutschland : Greift Putin die deutschen Bauern an ?",
-      "url": "http://www.merkur.de/politik/kornkrieg-gegen-deutschland-greift-putin-jetzt-die-deutschen-bauern-an-zr-94453179.html",
-      "domain": "merkur.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T04:45:00Z",
-      "firstSeenAt": "2026-08-21T04:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e63f8b35ae234221e68a",
-      "title": "„ Weizen als Waffe gegen Deutschland : Greift Putin die deutschen Bauern an ?",
-      "url": "https://www.merkur.de/politik/kornkrieg-gegen-deutschland-greift-putin-jetzt-die-deutschen-bauern-an-zr-94453179.html",
-      "domain": "merkur.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T04:45:00Z",
-      "firstSeenAt": "2026-08-21T04:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8d416a3153f4aae5d467",
-      "title": "Analysis - War - hit European markets are far from down and out",
-      "url": "https://finance.yahoo.com/markets/world-indices/articles/analysis-war-hit-european-markets-040138182.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-21T04:30:00Z",
-      "firstSeenAt": "2026-08-21T04:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3d8f62abe85d0d067b0c",
-      "title": "Hitze macht Kartoffeln kleiner und Mais früher erntereif",
-      "url": "http://www.soester-anzeiger.de/lokales/welver/eine-rekordernte-wird-es-nicht-hitze-macht-kartoffeln-kleiner-und-mais-frueher-erntereif-94452630.html",
-      "domain": "soester-anzeiger.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T04:15:00Z",
-      "firstSeenAt": "2026-08-21T04:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7e89291b93a788098cc7",
-      "title": "„ Weizen als Waffe gegen Deutschland : Greift Putin die deutschen Bauern an ?",
-      "url": "https://www.az-online.de/politik/kornkrieg-gegen-deutschland-greift-putin-jetzt-die-deutschen-bauern-an-zr-94453179.html",
-      "domain": "az-online.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-21T04:15:00Z",
-      "firstSeenAt": "2026-08-21T04:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1306,11 +1273,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-21T14:30:00Z",
-      "lastSuccessfulAt": "2026-08-21T14:52:17Z",
+      "observationDate": "2026-08-21T17:00:00Z",
+      "lastSuccessfulAt": "2026-08-21T17:43:18Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
