@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-22T11:33:44Z",
+  "generatedAtUtc": "2026-08-22T13:43:21Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 3,
-    "rawArticleCount": 150,
+    "successfulQueryCount": 2,
+    "rawArticleCount": 100,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-22T11:33:44Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-22T13:43:21Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,52 +52,269 @@
   ],
   "articles": [
     {
-      "id": "c174d0cd464adeae85dc",
-      "title": "Trump tariffs heap up as Canada tries to curb US reliance",
-      "url": "https://www.digitaljournal.com/article/trump-tariffs-heap-up-as-canada-tries-to-curb-us-reliance/",
-      "domain": "digitaljournal.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-22T11:00:00Z",
-      "firstSeenAt": "2026-08-22T11:00:00Z",
+      "id": "c3038631b2bec7310c58",
+      "title": "В России собрали 75 млн тонн пшеницы на 9 млн больше , чем в прошлом году",
+      "url": "https://www.vesti.ru/ns/v-rossii-sobrali-75-mln-tonn-pshenicy-na-9-mln-bolshe-chem-v-proshlom-godu",
+      "domain": "vesti.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-22T13:15:00Z",
+      "firstSeenAt": "2026-08-22T13:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 36,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "0ed5b4659ab515184450",
-      "title": "Trump tariffs heap up as Canada tries to curb US reliance",
-      "url": "https://www.hurriyetdailynews.com/trump-tariffs-heap-up-as-canada-tries-to-curb-us-reliance-225920",
-      "domain": "hurriyetdailynews.com",
-      "language": "English",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-08-22T10:00:00Z",
-      "firstSeenAt": "2026-08-22T10:00:00Z",
+      "id": "49f0eed5e5c05a10a757",
+      "title": "Κλιματική αλλαγή : Πώς θα παράγουμε τροφή στο μέλλον",
+      "url": "https://www.skai.gr/news/environment/klimatiki-allagi-pos-tha-paragoume-trofi-sto-mellon",
+      "domain": "skai.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-22T13:15:00Z",
+      "firstSeenAt": "2026-08-22T13:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 36,
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "446f8e29f9e4bb009714",
+      "title": "Китай е под натиск , докато САЩ удрят Иран с най - тежките санкции в историята",
+      "url": "https://www.bgonair.bg/a/4-world/428129-kitay-e-pod-natisk-dokato-sasht-udryat-iran-s-nay-tezhkite-sanktsii-v-istoriyata",
+      "domain": "bgonair.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-08-22T13:15:00Z",
+      "firstSeenAt": "2026-08-22T13:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "69c8bc5b33bbc5b8a8e7",
+      "title": "Giá cà phê thế giới liên tục giảm mạnh",
+      "url": "https://baomoi.com/gia-ca-phe-the-gioi-lien-tuc-giam-manh-c55890532.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-08-22T13:00:00Z",
+      "firstSeenAt": "2026-08-22T13:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6ef501de2ae86fbaa48d",
+      "title": "Rusiyanın buğda ixracı 16 ilin ən aşağı səviyyəsinə düşüb",
+      "url": "https://ayna.az/rusiyanin-bugda-ixraci-16-ilin-en-asagi-seviyyesine-dusub",
+      "domain": "ayna.az",
+      "language": "Azerbaijani",
+      "sourceCountry": "Azerbaijan",
+      "seenAt": "2026-08-22T12:45:00Z",
+      "firstSeenAt": "2026-08-22T12:45:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0df96f6d739da8eb8944",
+      "title": "Mudroom coffee shop opens in Shoreham",
+      "url": "https://www.newsday.com/lifestyle/restaurants/mudroom-coffee-shop-shoreham-jyt7621f",
+      "domain": "newsday.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-22T12:30:00Z",
+      "firstSeenAt": "2026-08-22T12:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3962a621f8f999fa9c4e",
+      "title": "Ռուսաստանը Ադրբեջանի տարածքով Հայաստան է առաքել ցորեն և պրոպան",
+      "url": "https://www.azatutyun.am/a/rousastany-adrbejani-taratskov-hayastan-e-arakel-tsoren-ev-propan/33836151.html",
+      "domain": "azatutyun.am",
+      "language": "Armenian",
+      "sourceCountry": "Armenia",
+      "seenAt": "2026-08-22T12:15:00Z",
+      "firstSeenAt": "2026-08-22T12:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a4f19d8f8c6315829dab",
+      "title": "Russische Marine zieht komplett aus dem Mittelmeer ab",
+      "url": "https://www.focus.de/politik/russische-marine-zieht-komplett-aus-dem-mittelmeer-ab_fda77b61-3235-4327-b842-e70d491869fa.html",
+      "domain": "focus.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-22T12:15:00Z",
+      "firstSeenAt": "2026-08-22T12:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "44c47c1eb3760f4758f0",
+      "title": "Hörmüz ABŞ - dir və nöqtə ? - İranın dar boğazda gücünün SİRRİ",
+      "url": "https://musavat.com/news/hormuz-abs-dir-ve-noqte-iranin-dar-bogazda-gucunun-sirri_1283814.html",
+      "domain": "musavat.com",
+      "language": "Azerbaijani",
+      "sourceCountry": "Azerbaijan",
+      "seenAt": "2026-08-22T12:15:00Z",
+      "firstSeenAt": "2026-08-22T12:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5db12b2fdb3837606326",
+      "title": "Vláda chce podle Šebestyána letos navýšit částku na boj se suchem",
+      "url": "https://www.ceskenoviny.cz/zpravy/vlada-chce-podle-sebestyana-letos-navysit-castku-na-boj-se-suchem/2864797",
+      "domain": "ceskenoviny.cz",
+      "language": "Czech",
+      "sourceCountry": "Czech Republic",
+      "seenAt": "2026-08-22T11:45:00Z",
+      "firstSeenAt": "2026-08-22T11:45:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -123,7 +340,7 @@
         "coffee",
         "wheat"
       ],
-      "materialityScore": 32,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -149,7 +366,36 @@
         "coffee",
         "wheat"
       ],
-      "materialityScore": 30,
+      "materialityScore": 24,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "77edc575daf74c1a9089",
+      "title": "На фона на блокирането на корабоплаването в Ормузкия пролив ! Новият премиер на Ирак мисли да увеличи добива на петрол ᐉ Новини от Fakti . bg - Свят",
+      "url": "https://fakti.bg/world/1076053-na-fona-na-blokiraneto-na-koraboplavaneto-v-ormuzkia-proliv-noviat-premier-na-irak-misli-da-uvelichi-dobiva-na-petrol",
+      "domain": "fakti.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-08-22T11:45:00Z",
+      "firstSeenAt": "2026-08-22T11:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -175,7 +421,7 @@
         "coffee",
         "wheat"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -204,33 +450,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "80f5186b5b6cabbfe441",
-      "title": "Kinh tế châu Á giảm tốc : Cỗ máy tăng trưởng toàn cầu chậm nhịp",
-      "url": "https://baomoi.com/kinh-te-chau-a-giam-toc-co-may-tang-truong-toan-cau-cham-nhip-c55889778.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-22T10:30:00Z",
-      "firstSeenAt": "2026-08-22T10:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -256,7 +476,7 @@
         "coffee",
         "wheat"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -282,7 +502,7 @@
         "coffee",
         "wheat"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -311,33 +531,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c7788501bf75a30ad9e5",
-      "title": "Trump 90 - Day Inflation Band - Aid : Why His Beef Tariff Pause Wont Help Consumers",
-      "url": "https://247wallst.com/investing/2026/08/21/trumps-90-day-inflation-band-aid-why-his-beef-tariff-pause-wont-help-consumers/",
-      "domain": "247wallst.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-21T15:45:00Z",
-      "firstSeenAt": "2026-08-21T15:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 24,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -402,24 +596,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "6e6f0a5d19ed4d4cfad0",
-      "title": "حصار أمريكا البحري يخنق صادرات النفط الإيراني",
-      "url": "https://www.newsyemen.net/news105757.html",
-      "domain": "newsyemen.net",
-      "language": "Arabic",
-      "sourceCountry": "Yemen",
+      "id": "98dfc9bde33859a76893",
+      "title": "9 ilde enerji ve doğal gaz projeleri için acele kamulaştırma",
+      "url": "https://www.birgun.net/haber/9-ilde-enerji-ve-dogal-gaz-projeleri-icin-acele-kamulastirma-730549%20class=slide-link%20target=_blank",
+      "domain": "birgun.net",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
       "seenAt": "2026-08-22T08:30:00Z",
       "firstSeenAt": "2026-08-22T08:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -454,32 +651,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "aad83c7d56d0ba8a6c56",
-      "title": "杰克森霍尔成美元关键节点 ： 抗通胀公信力若失守 ， 美元压力是否会进一步放大 ？",
-      "url": "https://finance.sina.com.cn/money/forex/forexroll/2026-08-22/doc-inipeptq0683410.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T07:45:00Z",
-      "firstSeenAt": "2026-08-22T07:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "da281cec86b794f5ee92",
       "title": "Suszenie podniosło koszty , ale uratowało zbiory . Rzepak plonował wysoko , mimo ostrej zimy",
       "url": "https://www.farmer.pl/produkcja-roslinna/suszenie-podnioslo-koszty-ale-uratowalo-zbiory-rzepak-plonowal-wysoko-mimo-ostrej-zimy,182191.html",
@@ -499,85 +670,7 @@
         "coffee",
         "wheat"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0c2a09957aebf3f1c9c4",
-      "title": "一张图 ： 波罗的海指数各船型全线回暖但周度收跌 ， 超灵便型船韧性凸显报1879 _ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20260822/32343770.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T06:00:00Z",
-      "firstSeenAt": "2026-08-22T06:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1b57147e3dabc3a9e5cb",
-      "title": "谁在买入美国国债 ？ 背后原因是什么 ？_ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20260822/32343776.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T06:00:00Z",
-      "firstSeenAt": "2026-08-22T06:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7a8da295acd13be63fbe",
-      "title": "Фед , ЕЦБ и АЦБ трябва да комуникират по - добре , а не по - малко",
-      "url": "https://www.investor.bg/a/539-banki-i-zastrahovateli/434972-fed-etsb-i-atsb-tryabva-da-komunikirat-po-dobre-a-ne-po-malko",
-      "domain": "investor.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-08-22T06:00:00Z",
-      "firstSeenAt": "2026-08-22T06:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -606,7 +699,36 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c8face3cee948f00ba76",
+      "title": "트럼프 이란은 합의 간절히 원해 … 호르무즈는 美 영토 ( 종합 )",
+      "url": "https://www.fnnews.com/news/202608221310338373",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-22T06:00:00Z",
+      "firstSeenAt": "2026-08-22T06:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -621,32 +743,6 @@
       "sourceCountry": "Germany",
       "seenAt": "2026-08-22T05:30:00Z",
       "firstSeenAt": "2026-08-22T05:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "294bb12a5631fd810071",
-      "title": "金油铜三线同时变阵 ： 黄金加多 、 原油减多 、 铜减多 ， 主力仓位正在重新排兵 _ 金市直播 _ 黄金网 _ 中金在线",
-      "url": "http://gold.cnfol.com/jinshizhibo/20260822/32343762.shtml",
-      "domain": "gold.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T05:15:00Z",
-      "firstSeenAt": "2026-08-22T05:15:00Z",
       "topicIds": [
         "ags-softs"
       ],
@@ -686,32 +782,6 @@
         "gas-us",
         "uranium",
         "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6789bab6d3f7da4b42db",
-      "title": "5 world market themes for the week ahead",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/5-world-market-themes-for-the-week-ahead/articleshow/133416904.cms",
-      "domain": "economictimes.indiatimes.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-22T04:45:00Z",
-      "firstSeenAt": "2026-08-22T04:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -833,32 +903,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "e963368636057fd8b70f",
-      "title": "Trump apuesta por carne barata para ganar votos en las legislativas ; ganaderos rechazan la medida",
-      "url": "https://www.excelsior.com.mx/internacional/trump-apuesta-por-carne-barata-para-ganar-votos-legislativas-ganaderos-rechazan-medida",
-      "domain": "excelsior.com.mx",
-      "language": "Spanish",
-      "sourceCountry": "Mexico",
-      "seenAt": "2026-08-22T03:30:00Z",
-      "firstSeenAt": "2026-08-22T03:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "235972a3458d0e83b2c9",
       "title": "700 Hektare Sawah di Bekasi Tak Bisa Ditanami , Petani : Enggak Ada Air",
       "url": "https://megapolitan.kompas.com/read/2026/08/22/09471601/700-hektare-sawah-di-bekasi-tak-bisa-ditanami-petani-enggak-ada-air",
@@ -963,84 +1007,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "150985a8c343688e0104",
-      "title": "장기금리 급등 … 금융시장 · 세계 경제에 울린 경고",
-      "url": "https://www.hani.co.kr/arti/economy/economy_general/1274130.html",
-      "domain": "hani.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-22T03:15:00Z",
-      "firstSeenAt": "2026-08-22T03:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dc995887c90ea722a46b",
-      "title": "下周前瞻 ： 全球央行年会与美国PCE数据 _ 期市动态 _ 期货 _ 中金在线",
-      "url": "http://futures.cnfol.com/qishidongtai/20260822/32343690.shtml",
-      "domain": "futures.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T03:00:00Z",
-      "firstSeenAt": "2026-08-22T03:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "61be01640bebb34f87b7",
-      "title": "通胀压力大 分析预测日本央行最快9月加息 - 国际视野",
-      "url": "https://news.voc.com.cn/news/202608/33547055.html",
-      "domain": "news.voc.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T02:30:00Z",
-      "firstSeenAt": "2026-08-22T02:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "026c6b80ade11889e275",
       "title": "FACTBOX : Black Sea grain trade strained by escalating Russia - Ukraine conflict | Hellenic Shipping News Worldwide",
       "url": "https://www.hellenicshippingnews.com/factbox-black-sea-grain-trade-strained-by-escalating-russia-ukraine-conflict/",
@@ -1096,32 +1062,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "c299ab4c5b9b11b8308b",
-      "title": "금값 다시 뛴다 … UBS 1년내 5400달러 간다",
-      "url": "https://www.edaily.co.kr/News/Read?newsId=01308726645549944&mediaCodeNo=257",
-      "domain": "edaily.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-08-22T00:45:00Z",
-      "firstSeenAt": "2026-08-22T00:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "44011974d3a63457f4bc",
       "title": "Déficit de trigo no Paraná aumenta importaes e pressiona custos de alimentos",
       "url": "https://www.gazetadopovo.com.br/parana/producao-paranaense-de-trigo-cai-e-aumenta-dependencia-de-importacoes-na-safra/",
@@ -1148,32 +1088,6 @@
       "duplicateCount": 1
     },
     {
-      "id": "563243ce053d355323ab",
-      "title": "通胀压力大 分析预测日本央行最快9月加息",
-      "url": "https://baijiahao.baidu.com/s?id=1874179467418810186",
-      "domain": "baijiahao.baidu.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T00:30:00Z",
-      "firstSeenAt": "2026-08-22T00:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
       "id": "2bc9e7685333197fad02",
       "title": "超强厄尔尼诺正在形成 良种良法保障粮食生产",
       "url": "https://www.stcn.com/article/detail/4099714.html",
@@ -1182,110 +1096,6 @@
       "sourceCountry": "China",
       "seenAt": "2026-08-22T00:00:00Z",
       "firstSeenAt": "2026-08-22T00:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a6b1b48b09a6a219dcb1",
-      "title": "时报观察 我国农业应对极端气候考验能力提升",
-      "url": "https://www.stcn.com/article/detail/4099708.html",
-      "domain": "stcn.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T00:00:00Z",
-      "firstSeenAt": "2026-08-22T00:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2d607e5ea425623a1ad4",
-      "title": "通胀压力大 分析预测日本央行最快9月加息",
-      "url": "https://baijiahao.baidu.com/s?id=1874177323599601056",
-      "domain": "baijiahao.baidu.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-22T00:00:00Z",
-      "firstSeenAt": "2026-08-22T00:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0b47375fbb762bbe57b2",
-      "title": "La economía de Perú creció levemente más de lo previsto y le da un fuerte impulso a Fujimori",
-      "url": "https://www.perfil.com/noticias/bloomberg/bc-economia-de-peru-crece-levemente-mas-de-lo-previsto-en-impulso-para-fujimori.phtml",
-      "domain": "perfil.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-22T00:00:00Z",
-      "firstSeenAt": "2026-08-22T00:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "847b73a1b772e41a061b",
-      "title": "Groningen 1 zendt live uit vanaf oogstfeest Onstwedder Gaarvn – Westerwolde Actueel",
-      "url": "https://www.westerwoldeactueel.nl/2026/08/21/groningen-1-zendt-live-uit-vanaf-oogstfeest-onstwedder-gaarvn/",
-      "domain": "westerwoldeactueel.nl",
-      "language": "Dutch",
-      "sourceCountry": "Netherlands",
-      "seenAt": "2026-08-21T23:45:00Z",
-      "firstSeenAt": "2026-08-21T23:45:00Z",
       "topicIds": [
         "ags-softs"
       ],
@@ -1328,6 +1138,220 @@
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
+    },
+    {
+      "id": "4843a79c51e9376ce6a0",
+      "title": "Le pétrole avance , la situation au Moyen - Orient stagne",
+      "url": "https://www.lesaffaires.com/bourse/economie/le-petrole-avance-la-situation-au-moyen-orient-stagne/",
+      "domain": "lesaffaires.com",
+      "language": "French",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-08-21T22:45:00Z",
+      "firstSeenAt": "2026-08-21T22:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "56f19907ae62adecddea",
+      "title": "빵값 또 오르겠네 … 러 · 우 흑해 난타전 에 곡물가 급등",
+      "url": "https://biz.heraldcorp.com/article/10848594",
+      "domain": "biz.heraldcorp.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-21T22:30:00Z",
+      "firstSeenAt": "2026-08-21T22:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f62d586c61240283c325",
+      "title": "Depósitos en Banco del Bienestar : Listado completo de beneficiarios que recibirán desde 7 mil hasta 24 mil pesos en septiembre de 2026",
+      "url": "https://www.elimparcial.com/mexico/2026/08/21/depositos-en-banco-del-bienestar-listado-completo-de-beneficiarios-que-recibiran-desde-7-mil-hasta-24-mil-pesos-en-septiembre-de-2026/",
+      "domain": "elimparcial.com",
+      "language": "Spanish",
+      "sourceCountry": "Mexico",
+      "seenAt": "2026-08-21T22:30:00Z",
+      "firstSeenAt": "2026-08-21T22:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fbf8f9a7c5dfa3dba946",
+      "title": "Обвалился экспорт российской пшеницы",
+      "url": "https://haqqin.az/newsarchive/391422",
+      "domain": "haqqin.az",
+      "language": "Russian",
+      "sourceCountry": "Azerbaijan",
+      "seenAt": "2026-08-21T21:30:00Z",
+      "firstSeenAt": "2026-08-21T21:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4eeb5994131621274c01",
+      "title": "Azərbaycandan keçməklə Ermənistana buğda və propan göndəriləcək",
+      "url": "https://www.adalet.az/az/posts/detail/azerbaycandan-kecmekle-ermenistana-bugda-ve-propan-gonderilecek-1787341689",
+      "domain": "adalet.az",
+      "language": "Azerbaijani",
+      "sourceCountry": "Azerbaijan",
+      "seenAt": "2026-08-21T21:30:00Z",
+      "firstSeenAt": "2026-08-21T21:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e39941ffb9cc5762d67a",
+      "title": "Italien : Felder unter Druck – Hitze , Dürre und Schädlinge bedrohen Landwirtschaft",
+      "url": "https://www.morgenpost.de/wirtschaft/article412908073/italiens-felder-unter-druck-hitze-duerre-und-schaedlinge-bedrohen-landwirtschaft.html",
+      "domain": "morgenpost.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T21:15:00Z",
+      "firstSeenAt": "2026-08-21T21:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4c892af09d2073c06158",
+      "title": "Italien : Felder unter Druck – Hitze , Dürre und Schädlinge bedrohen Landwirtschaft",
+      "url": "https://www.thueringer-allgemeine.de/wirtschaft/article412908073/italiens-felder-unter-druck-hitze-duerre-und-schaedlinge-bedrohen-landwirtschaft.html",
+      "domain": "thueringer-allgemeine.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-21T21:15:00Z",
+      "firstSeenAt": "2026-08-21T21:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e008cb7daf1b0fa26f07",
+      "title": "Πετρέλαιο : Πάνω από τα 94 δολάρια το Brent με εβδομαδιαία αύξηση 6 , 4 %",
+      "url": "https://www.voria.gr/article/petrelaio-pano-apo-ta-94-dolaria-brent-me-ebdomadiaia-ayxisi-64",
+      "domain": "voria.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-21T21:00:00Z",
+      "firstSeenAt": "2026-08-21T21:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
     }
   ],
   "sourceStatus": [
@@ -1335,11 +1359,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-22T11:00:00Z",
-      "lastSuccessfulAt": "2026-08-22T11:33:44Z",
+      "observationDate": "2026-08-22T13:15:00Z",
+      "lastSuccessfulAt": "2026-08-22T13:43:21Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
