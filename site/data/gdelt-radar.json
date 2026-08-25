@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-25T19:44:43Z",
+  "generatedAtUtc": "2026-08-25T22:43:28Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -8,14 +8,14 @@
     "documentationUrl": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
   },
   "collection": {
-    "status": "current",
+    "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 6,
-    "rawArticleCount": 300,
+    "successfulQueryCount": 4,
+    "rawArticleCount": 200,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-25T19:44:43Z",
-    "error": null
+    "lastSuccessfulAt": "2026-08-25T22:43:28Z",
+    "error": "strategic-materials: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; ags-softs: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -71,7 +71,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 62,
+      "materialityScore": 56,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -100,33 +100,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 38,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d99fa76a160106b5a581",
-      "title": "How Trump new tariffs could impact Canada economy",
-      "url": "https://www.niagarafallsreview.ca/business/trumps-50-tariff-threats-cloud-canadas-economic-outlook-as-the-trade-war-with-the-us-intensifies/article_dd58f438-29f2-5c38-8baa-5c8e2b6f6079.html",
-      "domain": "niagarafallsreview.ca",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-25T18:00:00Z",
-      "firstSeenAt": "2026-08-25T18:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 36,
+      "materialityScore": 32,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -159,14 +133,14 @@
       "duplicateCount": 1
     },
     {
-      "id": "1161111b43c58f62d155",
-      "title": "Trump 50 % tariff threats cloud Canada economic outlook",
-      "url": "https://www.stcatharinesstandard.ca/business/trumps-50-tariff-threats-cloud-canadas-economic-outlook-as-the-trade-war-with-the-us-intensifies/article_791e3d7d-497b-5320-a985-85323864a5bd.html",
-      "domain": "stcatharinesstandard.ca",
+      "id": "d99fa76a160106b5a581",
+      "title": "How Trump new tariffs could impact Canada economy",
+      "url": "https://www.niagarafallsreview.ca/business/trumps-50-tariff-threats-cloud-canadas-economic-outlook-as-the-trade-war-with-the-us-intensifies/article_dd58f438-29f2-5c38-8baa-5c8e2b6f6079.html",
+      "domain": "niagarafallsreview.ca",
       "language": "English",
       "sourceCountry": "Canada",
-      "seenAt": "2026-08-25T14:30:00Z",
-      "firstSeenAt": "2026-08-25T14:30:00Z",
+      "seenAt": "2026-08-25T18:00:00Z",
+      "firstSeenAt": "2026-08-25T18:00:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -185,40 +159,14 @@
       "duplicateCount": 1
     },
     {
-      "id": "235569541d907e9557dc",
-      "title": "روسيا تدرس تعليق الرسوم على تصدير الحبوب حتى نهاية العام",
-      "url": "https://www.shorouknews.com/news/view.aspx?cdate=25082026&id=6700c741-80a5-4f5f-9d33-dafb397da25b",
-      "domain": "shorouknews.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-08-25T19:00:00Z",
-      "firstSeenAt": "2026-08-25T19:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6ca3792e3e52f3b8e82e",
-      "title": "[ 마켓톡스 ] BofA 반도체주 최대 10 % 하락 위험 … 장기적으로는 매수 기회",
-      "url": "https://www.edaily.co.kr/News/Read?newsId=01403846645551256&mediaCodeNo=257",
-      "domain": "edaily.co.kr",
+      "id": "18941eafc9634238fbad",
+      "title": "[ 미국 특징주 ] 엔비디아 , 루빈 데뷔에 AI 자금조달 논란까지 겹치며 성장세 시험대",
+      "url": "https://www.newspim.com/news/view/20260826000016",
+      "domain": "newspim.com",
       "language": "Korean",
       "sourceCountry": "South Korea",
-      "seenAt": "2026-08-25T19:00:00Z",
-      "firstSeenAt": "2026-08-25T19:00:00Z",
+      "seenAt": "2026-08-25T22:15:00Z",
+      "firstSeenAt": "2026-08-25T22:15:00Z",
       "topicIds": [
         "semiconductors-ai"
       ],
@@ -236,173 +184,14 @@
       "duplicateCount": 1
     },
     {
-      "id": "15cca0f0a5ed8f8cb134",
-      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
-      "url": "http://www.taiwansun.com/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
-      "domain": "taiwansun.com",
+      "id": "c56c28db14af6aebd046",
+      "title": "LNG Bunker Snapshot : Singapore LNG bunker price surges amid Middle East supply concerns",
+      "url": "https://www.hellenicshippingnews.com/lng-bunker-snapshot-singapore-lng-bunker-price-surges-amid-middle-east-supply-concerns/",
+      "domain": "hellenicshippingnews.com",
       "language": "English",
       "sourceCountry": "China",
-      "seenAt": "2026-08-25T19:00:00Z",
-      "firstSeenAt": "2026-08-25T19:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4f38980355bac3ec5e2a",
-      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
-      "url": "http://www.japanherald.com/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
-      "domain": "japanherald.com",
-      "language": "English",
-      "sourceCountry": "Japan",
-      "seenAt": "2026-08-25T19:00:00Z",
-      "firstSeenAt": "2026-08-25T19:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "792ee8fdc6b9c1331892",
-      "title": "Συναγερμός στην Ευρώπη : Ο Πούτιν εξαπολύει το ρωσικό πυρηνικό υποβρύχιο ...",
-      "url": "https://www.thetoc.gr/diethni/article/sunagermos-stin-europi-o-poutin-exapoluei-to-rosiko-puriniko-upobruxio-tis-apokalupsis-binteo/",
-      "domain": "thetoc.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-25T19:00:00Z",
-      "firstSeenAt": "2026-08-25T19:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8e06570cf8d384f9d163",
-      "title": "Mining Stocks To Add to Your Watchlist – August 25th",
-      "url": "https://www.tickerreport.com/banking-finance/13558358/mining-stocks-to-add-to-your-watchlist-august-25th.html",
-      "domain": "tickerreport.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T18:45:00Z",
-      "firstSeenAt": "2026-08-25T18:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "314e20df764ad2709d42",
-      "title": "Bauskas novadā lielākā daļa ražas jau novākta",
-      "url": "https://www.lsm.lv/raksts/zinas/ekonomika/25.08.2026-bauskas-novada-lielaka-dala-razas-jau-novakta.a660293/",
-      "domain": "lsm.lv",
-      "language": "Latvian",
-      "sourceCountry": "Latvia",
-      "seenAt": "2026-08-25T18:45:00Z",
-      "firstSeenAt": "2026-08-25T18:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3444eb37f68b6f550f7e",
-      "title": "Σε κρίσιμο σταυροδρόμι η Τουρκία μετά τις νέες απειλές των ΗΠΑ κατά του Ιράν",
-      "url": "https://www.euro2day.gr/news/world/article/2365453/se-krisimo-stayrodromi-h-toyrkia-meta-tis-nees-ape.html",
-      "domain": "euro2day.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-25T18:45:00Z",
-      "firstSeenAt": "2026-08-25T18:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "884bdb883bfc3e6a2eeb",
-      "title": "Iran Announces Discovery of Massive Offshore Gas Field Amid Ongoing U . S .- Israeli Threats – NaturalNews . com",
-      "url": "https://www.naturalnews.com/2026-08-25-iran-announces-discovery-massive-offshore-gas-field.html",
-      "domain": "naturalnews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T18:45:00Z",
-      "firstSeenAt": "2026-08-25T18:45:00Z",
+      "seenAt": "2026-08-25T22:00:00Z",
+      "firstSeenAt": "2026-08-25T22:00:00Z",
       "topicIds": [
         "energy-security",
         "gas-markets"
@@ -426,152 +215,14 @@
       "duplicateCount": 2
     },
     {
-      "id": "5703169e0a4d6ac1edd8",
-      "title": "El mundo se prepara mientras el enfrentamiento arancelario de Trump sobre Canadá se intensifica",
-      "url": "https://forbes.com.mx/el-mundo-se-prepara-mientras-el-enfrentamiento-arancelario-de-trump-sobre-canada-se-intensifica/",
-      "domain": "forbes.com.mx",
-      "language": "Spanish",
-      "sourceCountry": "Mexico",
-      "seenAt": "2026-08-25T18:45:00Z",
-      "firstSeenAt": "2026-08-25T18:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "11c278a45d3474ca990d",
-      "title": "Αποκάλυψη - Ο Trump αγνόησε προειδοποιήσεις για το Hormuz και για την αποτυχία « αλλαγής καθεστώτος » στο Ιράν",
-      "url": "https://www.bankingnews.gr/diethni/articles/895630/apokalypsi-o-trump-agnoise-proeidopoiiseis-gia-to-hormuz-kai-gia-tin-apotyxia-allagis-kathestotos-sto-iran%20title=",
-      "domain": "bankingnews.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-25T18:45:00Z",
-      "firstSeenAt": "2026-08-25T18:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "34bfd519e7d742125216",
-      "title": "Αποκάλυψη - Ο Trump αγνόησε προειδοποιήσεις για το Hormuz και για την αποτυχία « αλλαγής καθεστώτος » στο Ιράν",
-      "url": "https://www.bankingnews.gr/diethni/articles/895630/apokalypsi-o-trump-agnoise-proeidopoiiseis-gia-to-hormuz-kai-gia-tin-apotyxia-allagis-kathestotos-sto-iran",
-      "domain": "bankingnews.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-25T18:45:00Z",
-      "firstSeenAt": "2026-08-25T18:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fae3451218d2957705bf",
-      "title": "Дворец в центре Москвы : как на самом деле жила Людмила Гурченко",
-      "url": "https://lgz.ru/article/dvorecz-v-czentre-moskvy-kak-na-samom-dele-zhila-lyudmila-gurchenko/",
-      "domain": "lgz.ru",
+      "id": "d5244a6197b8cb427900",
+      "title": "ЕС разрешает перепродажу российского СПГ : эксперты не верят в возможность получения альтернативного газа ( Berliner Zeitung , Германия )",
+      "url": "https://inosmi.ru/20260825/spg-279861409.html",
+      "domain": "inosmi.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d37c0f66ac4daa98f5bf",
-      "title": "Gasspeicher : Grüne fordern Gasgipfel wegen niedriger Speicherstände",
-      "url": "https://www.zeit.de/politik/deutschland/2026-08/gasspeicher-fuellstaende-gruene-michael-kellner-fluessiggas-gxe",
-      "domain": "zeit.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0b5ff11dc4f8375066e8",
-      "title": "« أدنوك للإمداد » تشتري ناقلتي غاز بـ1 . 63 مليار درهم",
-      "url": "https://www.albayan.ae/economy/business/uae-economy/1548107",
-      "domain": "albayan.ae",
-      "language": "Arabic",
-      "sourceCountry": "United Arab Emirates",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "seenAt": "2026-08-25T22:00:00Z",
+      "firstSeenAt": "2026-08-25T22:00:00Z",
       "topicIds": [
         "energy-security",
         "gas-markets"
@@ -595,14 +246,14 @@
       "duplicateCount": 2
     },
     {
-      "id": "a927e7d0b795797dc9da",
-      "title": "Bloomberg : жителям Германии грозят дополнительные расходы на газ",
-      "url": "https://tvzvezda.ru/news/20268252046-TsUyX.html",
-      "domain": "tvzvezda.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "id": "c7638c1e5eaf1f08e210",
+      "title": "Norway Troll Gas Expansion Buys Europe Time But Not New Supply",
+      "url": "https://oilprice.com/Energy/Natural-Gas/Norways-Troll-Gas-Expansion-Buys-Europe-TimeBut-Not-New-Supply.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-25T21:45:00Z",
+      "firstSeenAt": "2026-08-25T21:45:00Z",
       "topicIds": [
         "gas-markets"
       ],
@@ -620,73 +271,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "b62c48e3460dfcb6e5ba",
-      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
-      "url": "http://www.calcuttanews.net/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
-      "domain": "calcuttanews.net",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "79c75100ab2eceffc654",
-      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
-      "url": "http://www.singaporestar.com/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
-      "domain": "singaporestar.com",
-      "language": "English",
-      "sourceCountry": "Singapore",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "32bd077b9bf1b1d8a803",
-      "title": "Screen ( DINRF ) & Its Competitors Critical Comparison",
-      "url": "https://www.themarketsdaily.com/2026/08/25/screen-dinrf-its-competitors-critical-comparison.html",
-      "domain": "themarketsdaily.com",
+      "id": "ae4a2d2f0630b7870afd",
+      "title": "Nearby homes evacuated after semi - truck hits pipeline , causing natural gas release in Iron County",
+      "url": "https://www.wjfw.com/news/local/nearby-homes-evacuated-after-semi-truck-hits-pipeline-causing-natural-gas-release-in-iron-county/article_c206f41e-5e8a-40d2-a562-1b9e08d18e48.html",
+      "domain": "wjfw.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "seenAt": "2026-08-25T21:30:00Z",
+      "firstSeenAt": "2026-08-25T21:30:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "gas-markets"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Gas markets"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -695,71 +296,21 @@
       "duplicateCount": 1
     },
     {
-      "id": "ca2fde5ffb23af61b611",
-      "title": "Fontos döntést hozott az MNB , ennyivel csökkentették az alapkamatot",
-      "url": "https://www.atv.hu/belfold/20260825/mnb-csokken-alapkamat/",
-      "domain": "atv.hu",
-      "language": "Hungarian",
-      "sourceCountry": "Hungary",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "id": "3ebcb833867ea93e7b6d",
+      "title": "Спецпредставитель Путина назвал решение ЕС энергетическим самоубийством",
+      "url": "https://lenta.ru/news/2026/08/25/spetspredstavitel-putina-nazval-reshenie-es-energeticheskim-samoubiystvom/",
+      "domain": "lenta.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-25T21:15:00Z",
+      "firstSeenAt": "2026-08-25T21:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security",
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fafcb943baf1a3d1d40e",
-      "title": "Scott Bessent and the bond market : a pointless intervention",
-      "url": "https://finance.yahoo.com/economy/policy/articles/scott-bessent-bond-market-pointless-093000349.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d77cec457148d0833f7a",
-      "title": "Τραμπ : « Καθαρίσαμε όλες τις νάρκες στα Στενά του Ορμούζ » – Νέα προειδοποίηση στο Ιράν",
-      "url": "https://www.enikos.gr/international/trab-katharisame-oles-tis-narkes-sta-stena-tou-ormouz-nea-proeidopoiisi-sto-iran/2633824/",
-      "domain": "enikos.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-08-25T18:30:00Z",
-      "firstSeenAt": "2026-08-25T18:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
+        "Energy & security",
+        "Gas markets"
       ],
       "assets": [
         "brent",
@@ -773,103 +324,30 @@
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
+      "duplicateCount": 2
     },
     {
-      "id": "1e2f55887e5a44eedf65",
-      "title": "Regierung warnt vor Geheimwaffe gegen Gas - Krise",
-      "url": "https://www.focus.de/immobilien/regierung-warnt-vor-geheimwaffe-gegen-gas-krise_e3db9188-2e22-4f0d-9701-0542cd5aa84d.html",
-      "domain": "focus.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-25T18:15:00Z",
-      "firstSeenAt": "2026-08-25T18:15:00Z",
+      "id": "8471ae627f91043e416b",
+      "title": "挪威能源大臣 ： 无论欧盟是否暂停北极钻探 ， 我们都将继续开发 - 华侨网",
+      "url": "https://www.chinesepress.com/2026/199562.html",
+      "domain": "chinesepress.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-25T21:15:00Z",
+      "firstSeenAt": "2026-08-25T21:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5a455511add2a2c830b1",
-      "title": "Bond yields drop on demand for shorter tenors - BusinessWorld Online",
-      "url": "https://bworldonline.com/banking-finance/2026/08/26/772380/bond-yields-drop-on-demand-for-shorter-tenors/",
-      "domain": "bworldonline.com",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-08-25T18:15:00Z",
-      "firstSeenAt": "2026-08-25T18:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bd8070fe9bba330c8bd9",
-      "title": "Francamente se ne infischia . Perché la Cina ha poco da perdere dalle sanzioni united states contro lIran",
-      "url": "https://www.huffingtonpost.it/economia/2026/08/25/news/iran_usa_cina_sanzioni-22586440/",
-      "domain": "huffingtonpost.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-08-25T18:15:00Z",
-      "firstSeenAt": "2026-08-25T18:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2d29f2acbdd81c742ffe",
-      "title": "Top chip analyst says the group could fall another 10 %. Here why",
-      "url": "https://www.cnbc.com/2026/08/25/top-chip-analyst-says-the-group-could-fall-another-10percent-heres-why.html",
-      "domain": "cnbc.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T18:00:00Z",
-      "firstSeenAt": "2026-08-25T18:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -895,35 +373,6 @@
       "assets": [
         "gas-uk",
         "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1fa2e87bbf337e032f37",
-      "title": "Economic Sanctions will get Iran to surrender really ?",
-      "url": "https://www.dailykos.com/stories/2026/8/24/800088711/community/economic-sanctions-will-get-iran-to-surrender-r/",
-      "domain": "dailykos.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-24T21:45:00Z",
-      "firstSeenAt": "2026-08-24T21:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -958,27 +407,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "5114eeb93e703b03fd4f",
-      "title": "Defense Forces strike Kuban refinery , Astrakhan gas processing plant overnight – General Staff",
-      "url": "https://en.interfax.com.ua/news/general/1195870.html",
-      "domain": "en.interfax.com.ua",
+      "id": "1161111b43c58f62d155",
+      "title": "Trump 50 % tariff threats cloud Canada economic outlook",
+      "url": "https://www.stcatharinesstandard.ca/business/trumps-50-tariff-threats-cloud-canadas-economic-outlook-as-the-trade-war-with-the-us-intensifies/article_791e3d7d-497b-5320-a985-85323864a5bd.html",
+      "domain": "stcatharinesstandard.ca",
       "language": "English",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-25T13:15:00Z",
-      "firstSeenAt": "2026-08-25T13:15:00Z",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-08-25T14:30:00Z",
+      "firstSeenAt": "2026-08-25T14:30:00Z",
       "topicIds": [
-        "energy-security"
+        "macro-policy"
       ],
       "topics": [
-        "Energy & security"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 24,
       "sourceTier": "discovery",
@@ -1013,109 +459,85 @@
       "duplicateCount": 1
     },
     {
-      "id": "e98c131a55a4dccb1489",
-      "title": "Automata Rare Earth Secures Key Government Approval , Accelerating Burnt Pond Toward High - Impact Fall Exploration Program",
-      "url": "https://www.juniorminingnetwork.com/junior-miner-news/press-releases/3110-cse/aree/209688-automata-rare-earth-corp-secures-key-government-approval-accelerating-burnt-pond-toward-high-impact-fall-exploration-program.html",
-      "domain": "juniorminingnetwork.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-25T12:00:00Z",
-      "firstSeenAt": "2026-08-25T12:00:00Z",
+      "id": "2d01f4f4a15d9f12b1d2",
+      "title": "Дмитриев назвал отказ ЕС от российского газа самоубийством :: Новости дня / ВЗГЛЯД",
+      "url": "https://vz.ru/news/2026/8/25/1445986.html",
+      "domain": "vz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-25T20:30:00Z",
+      "firstSeenAt": "2026-08-25T20:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security",
+        "gas-markets"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security",
+        "Gas markets"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 22,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a530d0980879e10db770",
-      "title": "Preço do trigo sobe no Brasil com oferta restrita , mas negócios estão limitados",
-      "url": "https://globorural.globo.com/agricultura/trigo/noticia/2026/08/preco-do-trigo-sobe-no-brasil-com-oferta-restrita-mas-negocios-estao-limitados.ghtml",
-      "domain": "globorural.globo.com",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-25T17:00:00Z",
-      "firstSeenAt": "2026-08-25T17:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "007ea27f10101ef9e653",
-      "title": "Yara e Coopercitrus firmam parceria para descarbonizao no cacau e caf",
-      "url": "https://globorural.globo.com/especiais/fazenda-sustentavel/noticia/2026/08/yara-e-coopercitrus-firmam-parceria-para-descarbonizacao-no-cacau-e-cafe.ghtml",
-      "domain": "globorural.globo.com",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-25T17:00:00Z",
-      "firstSeenAt": "2026-08-25T17:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4d3749e580d69f657f05",
-      "title": "American Resources to participate in defense and Africa critical minerals conferences",
-      "url": "https://www.proactiveinvestors.com/companies/news/1097569/american-resources-to-participate-in-defense-and-africa-critical-minerals-conferences-1097569.html",
-      "domain": "proactiveinvestors.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
+        "brent",
         "defence",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "3ca0c1f1714f1422f260",
+      "title": "Дмитриев назвал отказ от российского газа энергетическим самоубийством ЕС",
+      "url": "https://ria.ru/20260825/dmitriev-2113175415.html",
+      "domain": "ria.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-25T20:15:00Z",
+      "firstSeenAt": "2026-08-25T20:15:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "b12a72a8e2f80b02f027",
+      "title": "《 TAIPEI TIMES 》 Industrial production index increases - 焦點",
+      "url": "https://news.ltn.com.tw/news/focus/breakingnews/5552218",
+      "domain": "news.ltn.com.tw",
+      "language": "English",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-08-25T20:15:00Z",
+      "firstSeenAt": "2026-08-25T20:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -1124,27 +546,81 @@
       "duplicateCount": 1
     },
     {
-      "id": "47203bd613edffedad01",
-      "title": "Nine Mile Metals reports high - grade copper , zinc intersections at New Brunswick Wedge Mine",
-      "url": "https://www.proactiveinvestors.com/companies/news/1097572/nine-mile-metals-reports-high-grade-copper-zinc-intersections-at-new-brunswick-s-wedge-mine-1097572.html",
-      "domain": "proactiveinvestors.com",
+      "id": "2ecd763a4e2c83b16cf1",
+      "title": "উন্নতির পথে সার - গ্যাস সংকট",
+      "url": "https://dailyinqilab.com/national/article/932683",
+      "domain": "dailyinqilab.com",
+      "language": "Bengali",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-08-25T20:00:00Z",
+      "firstSeenAt": "2026-08-25T20:00:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "7fb0851d3d5c08b64b96",
+      "title": "Felülvizsgálják az MNB inflációs célját",
+      "url": "https://nepszava.hu/3331585_inflacio-koltsegvetesi-hiany-eurobevezetes-jegybank-atlathatosag",
+      "domain": "nepszava.hu",
+      "language": "Hungarian",
+      "sourceCountry": "Hungary",
+      "seenAt": "2026-08-25T20:00:00Z",
+      "firstSeenAt": "2026-08-25T20:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "260149bdc6219c6a2e77",
+      "title": "Code Red : The Huge Warning Signs Buried In America Economic Numbers",
+      "url": "https://dailycaller.com/2026/08/11/opinion-economy-households-purchasing-power-james-carter-john-silvia/",
+      "domain": "dailycaller.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
+      "seenAt": "2026-08-25T20:00:00Z",
+      "firstSeenAt": "2026-08-25T20:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "macro-policy"
       ],
       "topics": [
-        "Strategic materials"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -1153,27 +629,49 @@
       "duplicateCount": 1
     },
     {
-      "id": "0f35cccb2194e4801931",
-      "title": "Aftermath Silver advances drilling at Berenguela and Challacollo",
-      "url": "https://www.proactiveinvestors.com/companies/news/1097567/aftermath-silver-advances-drilling-at-berenguela-and-challacollo-1097567.html",
-      "domain": "proactiveinvestors.com",
+      "id": "bc0bae8991b4063ba07b",
+      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
+      "url": "http://www.indiagazette.com/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
+      "domain": "indiagazette.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-25T19:45:00Z",
+      "firstSeenAt": "2026-08-25T19:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c0f82adafdf9de73e8fb",
+      "title": "Warsh Goes to Wyoming . Will He Bring an Inflation Plan ?",
+      "url": "https://finance.yahoo.com/economy/policy/articles/warsh-goes-wyoming-bring-inflation-110000631.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
+      "seenAt": "2026-08-25T19:45:00Z",
+      "firstSeenAt": "2026-08-25T19:45:00Z",
       "topicIds": [
-        "strategic-materials"
+        "macro-policy"
       ],
       "topics": [
-        "Strategic materials"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -1182,24 +680,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "b9c6b7b017d717d2c1ca",
-      "title": "Чому світ може зіткнутися з кризою Finance . ua",
-      "url": "https://news.finance.ua/ua/chomu-svit-mozhe-zitknutysya-z-kryzoyu",
-      "domain": "news.finance.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
+      "id": "6ca3792e3e52f3b8e82e",
+      "title": "[ 마켓톡스 ] BofA 반도체주 최대 10 % 하락 위험 … 장기적으로는 매수 기회",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=01403846645551256&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-25T19:00:00Z",
+      "firstSeenAt": "2026-08-25T19:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -1208,24 +705,554 @@
       "duplicateCount": 1
     },
     {
-      "id": "0780f45411efaf0a059f",
-      "title": "Perspectives on Historically Low Wheat Crop",
-      "url": "https://www.ksal.com/perspectives-on-historically-low-wheat-crop/",
-      "domain": "ksal.com",
+      "id": "4f38980355bac3ec5e2a",
+      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
+      "url": "http://www.japanherald.com/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
+      "domain": "japanherald.com",
+      "language": "English",
+      "sourceCountry": "Japan",
+      "seenAt": "2026-08-25T19:00:00Z",
+      "firstSeenAt": "2026-08-25T19:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "15cca0f0a5ed8f8cb134",
+      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
+      "url": "http://www.taiwansun.com/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
+      "domain": "taiwansun.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-25T19:00:00Z",
+      "firstSeenAt": "2026-08-25T19:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "792ee8fdc6b9c1331892",
+      "title": "Συναγερμός στην Ευρώπη : Ο Πούτιν εξαπολύει το ρωσικό πυρηνικό υποβρύχιο ...",
+      "url": "https://www.thetoc.gr/diethni/article/sunagermos-stin-europi-o-poutin-exapoluei-to-rosiko-puriniko-upobruxio-tis-apokalupsis-binteo/",
+      "domain": "thetoc.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-25T19:00:00Z",
+      "firstSeenAt": "2026-08-25T19:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3444eb37f68b6f550f7e",
+      "title": "Σε κρίσιμο σταυροδρόμι η Τουρκία μετά τις νέες απειλές των ΗΠΑ κατά του Ιράν",
+      "url": "https://www.euro2day.gr/news/world/article/2365453/se-krisimo-stayrodromi-h-toyrkia-meta-tis-nees-ape.html",
+      "domain": "euro2day.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-25T18:45:00Z",
+      "firstSeenAt": "2026-08-25T18:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5703169e0a4d6ac1edd8",
+      "title": "El mundo se prepara mientras el enfrentamiento arancelario de Trump sobre Canadá se intensifica",
+      "url": "https://forbes.com.mx/el-mundo-se-prepara-mientras-el-enfrentamiento-arancelario-de-trump-sobre-canada-se-intensifica/",
+      "domain": "forbes.com.mx",
+      "language": "Spanish",
+      "sourceCountry": "Mexico",
+      "seenAt": "2026-08-25T18:45:00Z",
+      "firstSeenAt": "2026-08-25T18:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "884bdb883bfc3e6a2eeb",
+      "title": "Iran Announces Discovery of Massive Offshore Gas Field Amid Ongoing U . S .- Israeli Threats – NaturalNews . com",
+      "url": "https://www.naturalnews.com/2026-08-25-iran-announces-discovery-massive-offshore-gas-field.html",
+      "domain": "naturalnews.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
+      "seenAt": "2026-08-25T18:45:00Z",
+      "firstSeenAt": "2026-08-25T18:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "34bfd519e7d742125216",
+      "title": "Αποκάλυψη - Ο Trump αγνόησε προειδοποιήσεις για το Hormuz και για την αποτυχία « αλλαγής καθεστώτος » στο Ιράν",
+      "url": "https://www.bankingnews.gr/diethni/articles/895630/apokalypsi-o-trump-agnoise-proeidopoiiseis-gia-to-hormuz-kai-gia-tin-apotyxia-allagis-kathestotos-sto-iran",
+      "domain": "bankingnews.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-25T18:45:00Z",
+      "firstSeenAt": "2026-08-25T18:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "11c278a45d3474ca990d",
+      "title": "Αποκάλυψη - Ο Trump αγνόησε προειδοποιήσεις για το Hormuz και για την αποτυχία « αλλαγής καθεστώτος » στο Ιράν",
+      "url": "https://www.bankingnews.gr/diethni/articles/895630/apokalypsi-o-trump-agnoise-proeidopoiiseis-gia-to-hormuz-kai-gia-tin-apotyxia-allagis-kathestotos-sto-iran%20title=",
+      "domain": "bankingnews.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-25T18:45:00Z",
+      "firstSeenAt": "2026-08-25T18:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d37c0f66ac4daa98f5bf",
+      "title": "Gasspeicher : Grüne fordern Gasgipfel wegen niedriger Speicherstände",
+      "url": "https://www.zeit.de/politik/deutschland/2026-08/gasspeicher-fuellstaende-gruene-michael-kellner-fluessiggas-gxe",
+      "domain": "zeit.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0b5ff11dc4f8375066e8",
+      "title": "« أدنوك للإمداد » تشتري ناقلتي غاز بـ1 . 63 مليار درهم",
+      "url": "https://www.albayan.ae/economy/business/uae-economy/1548107",
+      "domain": "albayan.ae",
+      "language": "Arabic",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "a927e7d0b795797dc9da",
+      "title": "Bloomberg : жителям Германии грозят дополнительные расходы на газ",
+      "url": "https://tvzvezda.ru/news/20268252046-TsUyX.html",
+      "domain": "tvzvezda.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b62c48e3460dfcb6e5ba",
+      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
+      "url": "http://www.calcuttanews.net/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
+      "domain": "calcuttanews.net",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "79c75100ab2eceffc654",
+      "title": "India plans BIS certification exemptions for high - tech manufacturers : Goyal",
+      "url": "http://www.singaporestar.com/news/279264905/india-plans-bis-certification-exemptions-for-high-tech-manufacturers-goyal",
+      "domain": "singaporestar.com",
+      "language": "English",
+      "sourceCountry": "Singapore",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "32bd077b9bf1b1d8a803",
+      "title": "Screen ( DINRF ) & Its Competitors Critical Comparison",
+      "url": "https://www.themarketsdaily.com/2026/08/25/screen-dinrf-its-competitors-critical-comparison.html",
+      "domain": "themarketsdaily.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ca2fde5ffb23af61b611",
+      "title": "Fontos döntést hozott az MNB , ennyivel csökkentették az alapkamatot",
+      "url": "https://www.atv.hu/belfold/20260825/mnb-csokken-alapkamat/",
+      "domain": "atv.hu",
+      "language": "Hungarian",
+      "sourceCountry": "Hungary",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fafcb943baf1a3d1d40e",
+      "title": "Scott Bessent and the bond market : a pointless intervention",
+      "url": "https://finance.yahoo.com/economy/policy/articles/scott-bessent-bond-market-pointless-093000349.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d77cec457148d0833f7a",
+      "title": "Τραμπ : « Καθαρίσαμε όλες τις νάρκες στα Στενά του Ορμούζ » – Νέα προειδοποίηση στο Ιράν",
+      "url": "https://www.enikos.gr/international/trab-katharisame-oles-tis-narkes-sta-stena-tou-ormouz-nea-proeidopoiisi-sto-iran/2633824/",
+      "domain": "enikos.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-08-25T18:30:00Z",
+      "firstSeenAt": "2026-08-25T18:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1e2f55887e5a44eedf65",
+      "title": "Regierung warnt vor Geheimwaffe gegen Gas - Krise",
+      "url": "https://www.focus.de/immobilien/regierung-warnt-vor-geheimwaffe-gegen-gas-krise_e3db9188-2e22-4f0d-9701-0542cd5aa84d.html",
+      "domain": "focus.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-25T18:15:00Z",
+      "firstSeenAt": "2026-08-25T18:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5a455511add2a2c830b1",
+      "title": "Bond yields drop on demand for shorter tenors - BusinessWorld Online",
+      "url": "https://bworldonline.com/banking-finance/2026/08/26/772380/bond-yields-drop-on-demand-for-shorter-tenors/",
+      "domain": "bworldonline.com",
+      "language": "English",
+      "sourceCountry": "Philippines",
+      "seenAt": "2026-08-25T18:15:00Z",
+      "firstSeenAt": "2026-08-25T18:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bd8070fe9bba330c8bd9",
+      "title": "Francamente se ne infischia . Perché la Cina ha poco da perdere dalle sanzioni united states contro lIran",
+      "url": "https://www.huffingtonpost.it/economia/2026/08/25/news/iran_usa_cina_sanzioni-22586440/",
+      "domain": "huffingtonpost.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-08-25T18:15:00Z",
+      "firstSeenAt": "2026-08-25T18:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2d29f2acbdd81c742ffe",
+      "title": "Top chip analyst says the group could fall another 10 %. Here why",
+      "url": "https://www.cnbc.com/2026/08/25/top-chip-analyst-says-the-group-could-fall-another-10percent-heres-why.html",
+      "domain": "cnbc.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-25T18:00:00Z",
+      "firstSeenAt": "2026-08-25T18:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -1252,7 +1279,7 @@
         "gas-uk",
         "gas-us"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1283,7 +1310,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1308,54 +1335,23 @@
         "gas-uk",
         "gas-us"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
-    },
-    {
-      "id": "1d0f2d011ccfa59e131c",
-      "title": "De Texas a Vaca Muerta : la receta que Gabriela Aguilar ve para el boom del GNL",
-      "url": "https://eleconomista.com.ar/energia/de-texas-vaca-muerta-receta-gabriela-aguilar-ve-boom-gnl-n97657",
-      "domain": "eleconomista.com.ar",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
     }
   ],
   "sourceStatus": [
     {
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
-      "status": "current",
-      "observationDate": "2026-08-25T19:00:00Z",
-      "lastSuccessfulAt": "2026-08-25T19:44:43Z",
+      "status": "partial",
+      "observationDate": "2026-08-25T22:15:00Z",
+      "lastSuccessfulAt": "2026-08-25T22:43:28Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 300 returned records across 6/6 successful queries.",
-      "error": null,
+      "detail": "48 discovery leads selected from 200 returned records across 4/6 successful queries.",
+      "error": "strategic-materials: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; ags-softs: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
