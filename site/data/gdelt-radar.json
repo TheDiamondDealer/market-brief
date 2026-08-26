@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-26T10:50:32Z",
+  "generatedAtUtc": "2026-08-26T11:43:05Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 1,
-    "rawArticleCount": 50,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-08-26T10:50:32Z",
-    "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: URLError: <urlopen error timed out>; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-08-26T11:43:05Z",
+    "error": "ags-softs: URLError: <urlopen error timed out>; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: URLError: <urlopen error timed out>"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,14 +52,14 @@
   ],
   "articles": [
     {
-      "id": "2605171edaede63b14c1",
-      "title": "7金4银3铜 ！ 临界点量产灵巧手闯关全部赛项",
-      "url": "https://www.163.com/dy/article/L5998VHH05129QAF.html",
-      "domain": "163.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T09:30:00Z",
-      "firstSeenAt": "2026-08-26T09:30:00Z",
+      "id": "d82adcaa401e3219fbbf",
+      "title": "Salazar Resources Limited : Salazar Reports a High - Grade Tungsten - Silver Intersection at the Pijili Project , Ecuador : 2 . 00 Metres Grading 1 . 80 % W ( 2 . 27 % WO3 ) and 740 g / t Ag",
+      "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69411647-salazar-resources-limited-salazar-reports-a-high-grade-tungsten-silver-intersection-at-the-pijili-project-ecuador-2-00-metres-grading-1-80-w-2-27-296.htm",
+      "domain": "finanznachrichten.de",
+      "language": "English",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-26T11:15:00Z",
+      "firstSeenAt": "2026-08-26T11:15:00Z",
       "topicIds": [
         "strategic-materials"
       ],
@@ -73,6 +73,120 @@
         "rare-earths",
         "silver",
         "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ac560a758e4a718cba39",
+      "title": "Japan to Unveil New Oil Diversification Strategy",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Japan-to-Unveil-New-Oil-Diversification-Strategy.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-26T11:15:00Z",
+      "firstSeenAt": "2026-08-26T11:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6db9b7f6b500f6c3ffca",
+      "title": "Hormuz vale il 20 % del Gnl e il 3 % dellofferta globale di gas - Notizie",
+      "url": "https://www.ansa.it/sito/notizie/economia/2026/08/26/hormuz-vale-il-20-del-gnl-e-il-3-dellofferta-globale-di-gas_97a5af6e-4d04-400e-8581-0e5a999ab7d6.html",
+      "domain": "ansa.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-08-26T10:00:00Z",
+      "firstSeenAt": "2026-08-26T10:00:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "a849c94fb67c67da3a5e",
+      "title": "Владимир Малинов се озова начело на Газов хъб Балкан",
+      "url": "https://www.segabg.com/hot/category-economy/vladimir-malinov-se-ozova-nachelo-na-gazov-hub-balkan",
+      "domain": "segabg.com",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-08-26T10:00:00Z",
+      "firstSeenAt": "2026-08-26T10:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "52797fa7aaa1b002fae9",
+      "title": "Sanctions or missiles ? Why Gulf may not relish Trump new Iran approach | US - Israel war on Iran News",
+      "url": "https://www.aljazeera.com/news/2026/8/25/sanctions-or-missiles-why-gulf-may-not-relish-trumps-new-iran-approach",
+      "domain": "aljazeera.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-25T18:15:00Z",
+      "firstSeenAt": "2026-08-25T18:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -110,6 +224,217 @@
       "duplicateCount": 1
     },
     {
+      "id": "3e30c76147f00a3f4946",
+      "title": "India LNG import bill rises as prices , shipping costs shoot up",
+      "url": "https://www.prokerala.com/news/articles/a1804913.html",
+      "domain": "prokerala.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-26T09:45:00Z",
+      "firstSeenAt": "2026-08-26T09:45:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "7cf71370c7ba2ab8be28",
+      "title": "Hormuz vale il 20 % del Gnl e il 3 % dellofferta globale di gas",
+      "url": "https://www.larena.it/argomenti/economia/economia-nazionale/hormuz-vale-il-20-del-gnl-e-il-3-dell-offerta-globale-di-gas-1.13106361",
+      "domain": "larena.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-08-26T09:45:00Z",
+      "firstSeenAt": "2026-08-26T09:45:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "b111034313a12ddeffc1",
+      "title": "EIA sees Brent crude at USD 85 in Q3 , expects prices to ease to USD 69 in 2027",
+      "url": "https://aninews.in/news/business/eia-sees-brent-crude-at-usd-85-in-q3-expects-prices-to-ease-to-usd-69-in-202720260826143626/",
+      "domain": "aninews.in",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-26T09:45:00Z",
+      "firstSeenAt": "2026-08-26T09:45:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "2605171edaede63b14c1",
+      "title": "7金4银3铜 ！ 临界点量产灵巧手闯关全部赛项",
+      "url": "https://www.163.com/dy/article/L5998VHH05129QAF.html",
+      "domain": "163.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-08-26T09:30:00Z",
+      "firstSeenAt": "2026-08-26T09:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1b01d63a3bff6f26d699",
+      "title": "Нова услуга : Булгаргаз предлага доставки и регазификация на LNG",
+      "url": "https://www.focus-news.net/novini/Bylgaria/Nova-usluga-Bulgargaz-predlaga-dostavki-i-regazifikaciya-na-LNG-3015480",
+      "domain": "focus-news.net",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-08-26T09:00:00Z",
+      "firstSeenAt": "2026-08-26T09:00:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "c237fcc7d0175a716073",
+      "title": "Petrol değil , su politik avantaj ... Yeni çağın sessiz süper gücü hangi ülke olacak | Hangi ülke en çok su kaynaklarına sahip",
+      "url": "https://www.odatv.com/ozel/petrol-degil-su-politik-avantaj-yeni-cagin-sessiz-super-gucu-hangi-ulke-olacak-hangi-ulke-en-cok-su-kaynaklarina-sahip-120160204",
+      "domain": "odatv.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-08-26T09:00:00Z",
+      "firstSeenAt": "2026-08-26T09:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3ec68002fa883a19a686",
+      "title": "Тръмп заяви , че всички мини в Ормузкия проток са премахнати",
+      "url": "https://www.vesti.bg/sviat/trymp-zaiavi-che-vsichki-mini-v-ormuzkiia-protok-sa-premahnati-6268530",
+      "domain": "vesti.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-08-26T09:00:00Z",
+      "firstSeenAt": "2026-08-26T09:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "8fbab96e3a38579460fc",
       "title": "Africa critical minerals are a huge economic opportunity : how to seize it",
       "url": "https://theconversation.com/africas-critical-minerals-are-a-huge-economic-opportunity-how-to-seize-it-273584",
@@ -139,6 +464,106 @@
       "duplicateCount": 1
     },
     {
+      "id": "13e149c465dc4d0c9968",
+      "title": "Gaspreise in Europa steigen stark : Wer zahlt zuerst mehr ?",
+      "url": "http://www.merkur.de/politik/gaspreise-in-europa-steigen-stark-wer-zahlt-zuerst-mehr-zr-94460234.html",
+      "domain": "merkur.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-26T08:45:00Z",
+      "firstSeenAt": "2026-08-26T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9403f115f2698aba0ca1",
+      "title": "Gaspreise in Europa steigen stark : Wer zahlt zuerst mehr ?",
+      "url": "http://www.wa.de/politik/gaspreise-in-europa-steigen-stark-wer-zahlt-zuerst-mehr-zr-94460234.html",
+      "domain": "wa.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-26T08:45:00Z",
+      "firstSeenAt": "2026-08-26T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5905f5efe1a314f45992",
+      "title": "Gaspreise in Europa steigen stark : Wer zahlt zuerst mehr ?",
+      "url": "http://www.fnp.de/politik/gaspreise-in-europa-steigen-stark-wer-zahlt-zuerst-mehr-zr-94460234.html",
+      "domain": "fnp.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-26T08:45:00Z",
+      "firstSeenAt": "2026-08-26T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "16a7e5a4fd211e78385b",
+      "title": "Gaspreise in Europa steigen stark : Wer zahlt zuerst mehr ?",
+      "url": "http://www.soester-anzeiger.de/politik/gaspreise-in-europa-steigen-stark-wer-zahlt-zuerst-mehr-zr-94460234.html",
+      "domain": "soester-anzeiger.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-08-26T08:45:00Z",
+      "firstSeenAt": "2026-08-26T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "56a4bed05bbf5aaced7a",
       "title": "Металите на бъдещето и тихата война за Арктика - Бизнес Новини Стандарт",
       "url": "https://www.standartnews.com/biznes/metalite-na-badeshteto-i-tihata-voyna-za-arktika-644305.html",
@@ -160,6 +585,122 @@
         "rare-earths",
         "silver",
         "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c4b1717473d2da76a22a",
+      "title": "Qatar LNG Exports Plunge 96 % as U . S .- Iran War Disrupts Gulf Energy Trade",
+      "url": "http://www.econotimes.com/Qatar-LNG-Exports-Plunge-96-as-US-Iran-War-Disrupts-Gulf-Energy-Trade-1750463",
+      "domain": "econotimes.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-26T08:00:00Z",
+      "firstSeenAt": "2026-08-26T08:00:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "6428c7726f02cbe28031",
+      "title": "Iran War Impact : ईरान युद्ध से कतर की 5 महीने की कमाई स्वाहा ! अमेरिका की हो गई मौज",
+      "url": "https://navbharattimes.indiatimes.com/business/business-news/qatar-has-lost-over-24-billion-dollar-in-gas-sale-amid-iran-war/articleshow/133532584.cms",
+      "domain": "navbharattimes.indiatimes.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-08-26T08:00:00Z",
+      "firstSeenAt": "2026-08-26T08:00:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "358c74dce569a51dabcc",
+      "title": "한화 , 미국 LNG사업 확장 … 방산과 시너지",
+      "url": "http://www.koreatimes.com/article/20260825/1627104",
+      "domain": "koreatimes.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-08-26T08:00:00Z",
+      "firstSeenAt": "2026-08-26T08:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d729db5bfd57e6449fdc",
+      "title": "Нидерланды не успеют заполнить газовые хранилища до нужного уровня к зиме",
+      "url": "https://ria.ru/20260826/gaz-2113226315.html",
+      "domain": "ria.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-08-26T07:45:00Z",
+      "firstSeenAt": "2026-08-26T07:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -218,6 +759,85 @@
         "rare-earths",
         "silver",
         "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3868bda629c041f1ae3a",
+      "title": "Europi prijeti skuplji plin , zalihe su rekordno niske . Pogledajte kako stoji Hrvatska",
+      "url": "https://www.index.hr/vijesti/clanak/europi-prijeti-skuplji-plin-ove-zime-zbog-rekordno-niskih-zaliha/2827754.aspx",
+      "domain": "index.hr",
+      "language": "Croatian",
+      "sourceCountry": "Croatia",
+      "seenAt": "2026-08-26T07:30:00Z",
+      "firstSeenAt": "2026-08-26T07:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5dc909d0c2f3d944709e",
+      "title": "Prezzi del gas europei in rialzo : chi sarà il primo a pagare di più ?",
+      "url": "https://it.euronews.com/business/2026/08/26/prezzi-del-gas-europei-in-rialzo-chi-sara-il-primo-a-pagare-di-piu",
+      "domain": "it.euronews.com",
+      "language": "Italian",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-26T07:30:00Z",
+      "firstSeenAt": "2026-08-26T07:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5e7b0685a2e248ebeb42",
+      "title": "বিশ্ববাজারে জ্বালানি তেলের দামে পতন",
+      "url": "https://www.dhakatimes24.com/2026/08/26/411365",
+      "domain": "dhakatimes24.com",
+      "language": "Bengali",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-08-26T07:30:00Z",
+      "firstSeenAt": "2026-08-26T07:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -342,6 +962,116 @@
       "duplicateCount": 1
     },
     {
+      "id": "0f6c79b3de0fcbcdf8e0",
+      "title": "Preços do gás disparam na Europa . Quem vai sentir primeiro a subida nos preços ?",
+      "url": "https://pt.euronews.com/business/2026/08/26/europa-precos-do-gas-disparam-quem-sente-primeiro-a-subida-nas-faturas",
+      "domain": "pt.euronews.com",
+      "language": "Portuguese",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-26T07:00:00Z",
+      "firstSeenAt": "2026-08-26T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ddb7eae04fdb6028e022",
+      "title": "Europi prijeti skuplji plin ove zime : Kada će kućanstva to osjetiti na računima ?",
+      "url": "https://www.vecernji.ba/svijet/europi-prijeti-skuplji-plin-ove-zime-kada-ce-kucanstva-to-osjetiti-na-racunima-1989482",
+      "domain": "vecernji.ba",
+      "language": "Croatian",
+      "sourceCountry": "Bosnia-Herzegovina",
+      "seenAt": "2026-08-26T07:00:00Z",
+      "firstSeenAt": "2026-08-26T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dcb886eb2eddf66cde31",
+      "title": "La guerra de Irán dispara en 282 . 000 millones la factura en combustibles para los países importadores",
+      "url": "https://elpais.com/economia/2026-08-26/la-guerra-de-iran-dispara-en-282000-millones-la-factura-en-combustibles-de-los-paises-importadores.html",
+      "domain": "elpais.com",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-08-26T07:00:00Z",
+      "firstSeenAt": "2026-08-26T07:00:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "69f6238ba08710ff7177",
+      "title": "La guerra de Trump en Irán le cuesta a España 8 . 800 millones en importaciones extra de combustibles fósiles",
+      "url": "https://www.eldiario.es/economia/guerra-trump-iran-le-cuesta-espana-8-800-millones-importaciones-extra-combustibles-fosiles_1_13466316.html",
+      "domain": "eldiario.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-08-26T07:00:00Z",
+      "firstSeenAt": "2026-08-26T07:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "bf1c741731c26f8e1723",
       "title": "美债收益率回落叠加 金九 旺季预期 港股有色板块走强 江西铜业涨超11 % _ 东方财富网",
       "url": "https://finance.eastmoney.com/a/202608263854318893.html",
@@ -392,6 +1122,85 @@
         "rare-earths",
         "silver",
         "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "392ff2569412c7548b38",
+      "title": "Europi prijeti skuplji plin ove zime zbog rekordno niskih zaliha",
+      "url": "https://www.index.hr/vijesti/clanak/europi-prijeti-skuplji-plin-ove-zime-zbog-rekordno-niskih-zaliha/2827754.aspx?index_tid=1134180&index_ref=naslovnica_vijesti_najnovije_d",
+      "domain": "index.hr",
+      "language": "Croatian",
+      "sourceCountry": "Croatia",
+      "seenAt": "2026-08-26T06:30:00Z",
+      "firstSeenAt": "2026-08-26T06:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b3b385207abb0dc84b8e",
+      "title": "Цената на петрола отбеляза рязък спад на фона на надеждите за отваряне на Ормузкия проток",
+      "url": "https://www.focus-news.net/novini/mejdunarodni/Cenata-na-petrola-otbelyaza-ryazuk-spad-na-fona-na-nadezhdite-za-otvaryane-na-Ormuzkiya-protok-3015350",
+      "domain": "focus-news.net",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-08-26T06:30:00Z",
+      "firstSeenAt": "2026-08-26T06:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "39a7f303a8578ea1e3f8",
+      "title": "Europe gas prices are surging . Who will be the first to pay more ?",
+      "url": "https://finance.yahoo.com/energy/articles/europe-gas-prices-surging-first-050028137.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-26T06:15:00Z",
+      "firstSeenAt": "2026-08-26T06:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -487,6 +1296,56 @@
       "duplicateCount": 1
     },
     {
+      "id": "a4f0830760bf1d15a198",
+      "title": "Gaspreise in Europa steigen stark : Wer zahlt zuerst mehr ?",
+      "url": "https://de.euronews.com/business/2026/08/26/gaspreise-in-europa-steigen-stark-wer-zahlt-zuerst-mehr",
+      "domain": "de.euronews.com",
+      "language": "German",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-26T06:00:00Z",
+      "firstSeenAt": "2026-08-26T06:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fd693fe1f0d556fb1002",
+      "title": "US Capital Advisors Analysts Lift Earnings Estimates for CQP",
+      "url": "https://www.tickerreport.com/banking-finance/13558651/us-capital-advisors-analysts-lift-earnings-estimates-for-cqp.html",
+      "domain": "tickerreport.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-08-26T06:00:00Z",
+      "firstSeenAt": "2026-08-26T06:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "65322834e99ff6d80bc0",
       "title": "Giá vàng hôm nay 26 / 8 : Vàng nhẫn bốc hơi 1 , 5 triệu đồng , thị trường thế giới lập đỉnh 3 tháng",
       "url": "https://www.techz.vn/210-826-5-gia-vang-hom-nay-26-8-vang-nhan-boc-hoi-15-trieu-dong-thi-truong-the-gioi-lap-dinh-3-thang-ylt706759.html",
@@ -543,908 +1402,6 @@
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
-    },
-    {
-      "id": "a9bb37f4a87611d3d423",
-      "title": "早盘狂飙 ！ 黄金概念持续走强 美债危机引发资产挪移 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608263854383439.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T05:00:00Z",
-      "firstSeenAt": "2026-08-26T05:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ab19addcf3067ea656f0",
-      "title": "午盘播报 8月26日 周三 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608263854368975.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T05:00:00Z",
-      "firstSeenAt": "2026-08-26T05:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0466853b63a4ee6b221d",
-      "title": "Giá vàng SJC đứng im , vàng nhẫn giảm",
-      "url": "https://tienphong.vn/gia-vang-sjc-dung-im-vang-nhan-giam-post1871242.tpo",
-      "domain": "tienphong.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-26T04:30:00Z",
-      "firstSeenAt": "2026-08-26T04:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5d6799b1a29531fc0ee8",
-      "title": "FireFly Green Bay project leads Canada in spending efficiency for copper",
-      "url": "https://www.mining.com/fireflys-green-bay-project-leads-canada-in-spending-efficiency-for-copper/",
-      "domain": "mining.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-08-26T04:30:00Z",
-      "firstSeenAt": "2026-08-26T04:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dd3fbaf669fda231db01",
-      "title": "Democrats say Energy Fuels missed deadline to turn over materials in insider trading probe",
-      "url": "https://www.knau.org/knau-and-arizona-news/2026-08-25/democrats-say-energy-fuels-missed-deadline-to-turn-over-materials-in-insider-trading-probe",
-      "domain": "knau.org",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-26T04:15:00Z",
-      "firstSeenAt": "2026-08-26T04:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4ecfcca80d1bce3bc7e6",
-      "title": "Giá vàng SJC đứng im , vàng nhẫn giảm",
-      "url": "https://baomoi.com/gia-vang-sjc-dung-im-vang-nhan-giam-c55915309.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-26T04:15:00Z",
-      "firstSeenAt": "2026-08-26T04:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "143e6a048b977040b65b",
-      "title": "Sáng 26 / 8 , giá bạc thế giới vượt 69 USD / ounce",
-      "url": "https://baomoi.com/sang-26-8-gia-bac-the-gioi-vuot-69-usd-ounce-c55915129.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-26T04:00:00Z",
-      "firstSeenAt": "2026-08-26T04:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "024d57828e5644a8e24e",
-      "title": "有色 / 贵金属 | 隔夜内外铜价震荡走高 国内精炼铜现货进口维系亏损 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608263853844326.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T03:15:00Z",
-      "firstSeenAt": "2026-08-26T03:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8487b3522711074b9aed",
-      "title": "有色 / 贵金属 | 锌 ： 海外强势带动国内跟涨 但高库存以及偏弱的内需仍会压制涨幅 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608263853909568.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T03:15:00Z",
-      "firstSeenAt": "2026-08-26T03:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "927be349839d0000b86a",
-      "title": "Giá vàng ngày 26 / 8 : Bảng giá tại các công ty vàng bạc đá quý",
-      "url": "https://baomoi.com/gia-vang-ngay-26-8-bang-gia-tai-cac-cong-ty-vang-bac-da-quy-c55914597.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-26T03:00:00Z",
-      "firstSeenAt": "2026-08-26T03:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "323a5779fe4c78dd5d14",
-      "title": "白银市 ： 推动经济实现质效提升 - 新华网",
-      "url": "http://www.gs.xinhuanet.com/20260826/595e5fedf5ad47a8ac4a52116209238f/c.html",
-      "domain": "gs.xinhuanet.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T02:45:00Z",
-      "firstSeenAt": "2026-08-26T02:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9104058144a0fc82f4e6",
-      "title": "细分赛道全面开花 ！ 紫金矿业半年净利近400亿 、 洛阳钼业增长86 %， 有色上游迎业绩与估值共振",
-      "url": "https://fund.jrj.com.cn/2026/08/26101658236957.shtml",
-      "domain": "fund.jrj.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T02:45:00Z",
-      "firstSeenAt": "2026-08-26T02:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e920bd97fa060c2a95f0",
-      "title": "Giá vàng hôm nay 26 . 8 . 2026 : Công ty nào bán vàng miếng SJC rẻ nhất ?",
-      "url": "https://thanhnien.vn/gia-vang-hom-nay-2682026-cong-ty-nao-ban-vang-mieng-sjc-re-nhat-185260826084347204.htm",
-      "domain": "thanhnien.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-26T02:45:00Z",
-      "firstSeenAt": "2026-08-26T02:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0c2792e31133542def99",
-      "title": "中报业绩叠加政策利好催化有色行情 ， 工业有色ETF鹏华涨超2 % _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608263854235928.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T02:30:00Z",
-      "firstSeenAt": "2026-08-26T02:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "51fa74a9d99b7c12c048",
-      "title": "碳酸锂价格触底反弹 7股上半年净利翻倍 _ 能源 _ 产经频道首页 _ 财经网 - CAIJING . COM . CN",
-      "url": "http://industry.caijing.com.cn/20260826/5179475.shtml",
-      "domain": "industry.caijing.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T02:30:00Z",
-      "firstSeenAt": "2026-08-26T02:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "983a58148d8df8f02634",
-      "title": "碳酸锂价格触底反弹 7股上半年净利翻倍 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202608263853466791.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T00:30:00Z",
-      "firstSeenAt": "2026-08-26T00:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "120ee081bf0eeef1e9dd",
-      "title": "Giá vàng hôm nay ( 26 - 8 ): Giá vàng nhẫn , vàng miếng tiếp tục tăng",
-      "url": "https://baomoi.com/gia-vang-hom-nay-26-8-gia-vang-nhan-vang-mieng-tiep-tuc-tang-c55913468.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-26T00:15:00Z",
-      "firstSeenAt": "2026-08-26T00:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "af0bfe46d4c8b842ef20",
-      "title": "碳酸锂价格触底反弹 7股上半年净利翻倍 - 股票频道 - 和讯网",
-      "url": "https://stock.hexun.com/2026-08-26/224890108.html",
-      "domain": "stock.hexun.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-08-26T00:00:00Z",
-      "firstSeenAt": "2026-08-26T00:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "703b08a6075c9a0e5330",
-      "title": "Giá vàng hôm nay 26 / 8 : Vàng DOJI giảm",
-      "url": "http://vov.vn/thi-truong/gia-vang-hom-nay-268-vang-doji-giam-con-154-trieu-dongluong-post1327256.vov",
-      "domain": "vov.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-25T23:30:00Z",
-      "firstSeenAt": "2026-08-25T23:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4a4d5a1585c818280ab9",
-      "title": "Giá vàng hôm nay ( 26 - 8 ): Giá vàng nhẫn , giá vàng miếng tiếp tục tăng",
-      "url": "https://www.qdnd.vn/kinh-te/tin-tuc/gia-vang-hom-nay-26-8-gia-vang-nhan-vang-mieng-tiep-tuc-tang-1054725",
-      "domain": "qdnd.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-25T23:15:00Z",
-      "firstSeenAt": "2026-08-25T23:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "08bc652d307b9213061c",
-      "title": "Inversión de capital en minerales críticos necesita alcanzar los US$ 1 , 65 billones para satisfacer la demanda a 2035 , según Citi",
-      "url": "https://www.df.cl/internacional/economia/inversion-de-capital-en-minerales-criticos-necesita-alcanzar-los-us-1-65",
-      "domain": "df.cl",
-      "language": "Spanish",
-      "sourceCountry": "Chile",
-      "seenAt": "2026-08-25T21:45:00Z",
-      "firstSeenAt": "2026-08-25T21:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c67731b5e683af18fe00",
-      "title": "Vale pode dobrar produo de cobre e avalia terras - raras",
-      "url": "https://www.otempo.com.br/economia/2026/8/25/vale-pode-dobrar-producao-de-cobre-e-avalia-terras-raras-enquanto-projeta-alta-no-minerio-de-ferro",
-      "domain": "otempo.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-08-25T19:45:00Z",
-      "firstSeenAt": "2026-08-25T19:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8e06570cf8d384f9d163",
-      "title": "Mining Stocks To Add to Your Watchlist – August 25th",
-      "url": "https://www.tickerreport.com/banking-finance/13558358/mining-stocks-to-add-to-your-watchlist-august-25th.html",
-      "domain": "tickerreport.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T18:45:00Z",
-      "firstSeenAt": "2026-08-25T18:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4d3749e580d69f657f05",
-      "title": "American Resources to participate in defense and Africa critical minerals conferences",
-      "url": "https://www.proactiveinvestors.com/companies/news/1097569/american-resources-to-participate-in-defense-and-africa-critical-minerals-conferences-1097569.html",
-      "domain": "proactiveinvestors.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "defence",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "47203bd613edffedad01",
-      "title": "Nine Mile Metals reports high - grade copper , zinc intersections at New Brunswick Wedge Mine",
-      "url": "https://www.proactiveinvestors.com/companies/news/1097572/nine-mile-metals-reports-high-grade-copper-zinc-intersections-at-new-brunswick-s-wedge-mine-1097572.html",
-      "domain": "proactiveinvestors.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0f35cccb2194e4801931",
-      "title": "Aftermath Silver advances drilling at Berenguela and Challacollo",
-      "url": "https://www.proactiveinvestors.com/companies/news/1097567/aftermath-silver-advances-drilling-at-berenguela-and-challacollo-1097567.html",
-      "domain": "proactiveinvestors.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T16:45:00Z",
-      "firstSeenAt": "2026-08-25T16:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "31be4aa9f842d349b758",
-      "title": "Phát hiện 43 kg vàng , 3 . 000 kg bạc trị giá 78 tỷ đồng dưới cống nhưng không ai có thể đào lên",
-      "url": "https://baomoi.com/phat-hien-43-kg-vang-3-000-kg-bac-tri-gia-78-ty-dong-duoi-cong-nhung-khong-ai-co-the-dao-len-c55912166.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-25T14:00:00Z",
-      "firstSeenAt": "2026-08-25T14:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ef7cd905027ff395071d",
-      "title": "Avalon Advanced Materials Inc . to Participate in OTC Markets Clean Energy Metals Virtual Investor Conference",
-      "url": "https://www.manilatimes.net/2026/08/25/tmt-newswire/globenewswire/avalon-advanced-materials-inc-to-participate-in-otc-markets-clean-energy-metals-virtual-investor-conference/2411767",
-      "domain": "manilatimes.net",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-08-25T13:30:00Z",
-      "firstSeenAt": "2026-08-25T13:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "db3f989c62cd78ff92fb",
-      "title": "American Resources Corporation and ReElement Technologies Corporation to Participate in Defense and International Critical Minerals Conferences This Week",
-      "url": "http://www.tennesseedaily.com/news/279264269/american-resources-corporation-and-reelement-technologies-corporation-to-participate-in-defense-and-international-critical-minerals-conferences-this-week",
-      "domain": "tennesseedaily.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-08-25T13:00:00Z",
-      "firstSeenAt": "2026-08-25T13:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "defence",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8f26ecb7d9e0bc1d6416",
-      "title": "American Resources Corporation and ReElement Technologies Corporation to Participate in Defense and International Critical Minerals Conferences This Week",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69401237-american-resources-corporation-and-reelement-technologies-corporation-to-participate-in-defense-and-international-critical-minerals-conferences-this-w-200.htm",
-      "domain": "finanznachrichten.de",
-      "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-08-25T12:45:00Z",
-      "firstSeenAt": "2026-08-25T12:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "defence",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f0ce151c85ad83cb24d9",
-      "title": "Giá bạc ngày 25 / 8 : Bạc giằng co quanh 69 USD / ounce , mốc 72 USD trở thành ngưỡng quyết định , bạc trong nước giảm nhẹ",
-      "url": "https://baophapluat.vn/gia-bac-ngay-25-8-bac-giang-co-quanh-69-usd-ounce-moc-72-usd-tro-thanh-nguong-quyet-dinh-bac-trong-nuoc-giam-nhe.html",
-      "domain": "baophapluat.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-08-25T11:15:00Z",
-      "firstSeenAt": "2026-08-25T11:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
     }
   ],
   "sourceStatus": [
@@ -1452,11 +1409,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-08-26T09:30:00Z",
-      "lastSuccessfulAt": "2026-08-26T10:50:32Z",
+      "observationDate": "2026-08-26T11:15:00Z",
+      "lastSuccessfulAt": "2026-08-26T11:43:05Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
-      "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: URLError: <urlopen error timed out>; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
+      "error": "ags-softs: URLError: <urlopen error timed out>; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: URLError: <urlopen error timed out>",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
