@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-09-06T05:56:03Z",
+  "generatedAtUtc": "2026-09-06T14:09:15Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-09-06T05:56:03Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-09-06T14:09:15Z",
+    "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,1228 +52,1368 @@
   ],
   "articles": [
     {
-      "id": "3f98c9c2396dd3063e8d",
-      "title": "Labour tax raids make US gas cheaper than North Sea supplies",
-      "url": "https://wattsupwiththat.com/2026/09/05/labour-tax-raids-make-us-gas-cheaper-than-north-sea-supplies/",
-      "domain": "wattsupwiththat.com",
+      "id": "d3d29d7a034093c4153f",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.ky3.com/2026/09/06/iran-claims-strike-us-ship-strait-hormuz-fighting-escalates/",
+      "domain": "ky3.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-06T05:30:00Z",
-      "firstSeenAt": "2026-09-06T05:30:00Z",
+      "seenAt": "2026-09-06T13:00:00Z",
+      "firstSeenAt": "2026-09-06T13:00:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 36,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "b30ea64809460d9c909b",
-      "title": "Europe gas squeeze is giving Azerbaijan bigger role in energy security",
-      "url": "https://www.azernews.az/analysis/263228.html",
-      "domain": "azernews.az",
-      "language": "English",
-      "sourceCountry": "Azerbaijan",
-      "seenAt": "2026-09-06T05:15:00Z",
-      "firstSeenAt": "2026-09-06T05:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fe1d2d0d9f8c689a542d",
-      "title": "Stader LNG - Terminal soll Inbetriebnahme im September starten",
-      "url": "https://www.shz.de/pagebuilding/artikel-archiv/artikel/stader-lng-terminal-soll-inbetriebnahme-im-september-starten-51380099",
-      "domain": "shz.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-06T05:15:00Z",
-      "firstSeenAt": "2026-09-06T05:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3f328f8d7da95d3c0baf",
-      "title": "Stader LNG - Terminal soll Inbetriebnahme im September starten",
-      "url": "https://www.noz.de/deutschland-welt/niedersachsen/artikel/stader-lng-terminal-soll-inbetriebnahme-im-september-starten-51380098",
-      "domain": "noz.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-06T05:15:00Z",
-      "firstSeenAt": "2026-09-06T05:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7232738da62274edbe85",
-      "title": "下周外盘看点丨美国CPI如何影响美联储 ， 苹果秋季发布会来了",
-      "url": "https://www.yicai.com/news/103352644.html",
-      "domain": "yicai.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-06T05:15:00Z",
-      "firstSeenAt": "2026-09-06T05:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "de647a2f4a861691de5f",
-      "title": "In der Elbe : Deutschlands abgelegenste Wasserstoff - Baustelle liegt auf dieser Insel",
-      "url": "https://www.abendblatt.de/schleswig-holstein/pinneberg/article413060152/wasserstoff-baustelle-auf-der-elbe-wie-das-netz-im-norden-waechst.html",
-      "domain": "abendblatt.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-06T05:00:00Z",
-      "firstSeenAt": "2026-09-06T05:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "67ef1091a543e2a72f5c",
-      "title": "Pablo Goldin : El Banco Central está entrampado monetariamente , percibe el problema , pero no encuentra salida",
-      "url": "https://www.ambito.com/economia/pablo-goldin-el-banco-central-esta-entrampado-monetariamente-percibe-el-problema-pero-no-encuentra-salida-n6318985",
-      "domain": "ambito.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-09-06T05:00:00Z",
-      "firstSeenAt": "2026-09-06T05:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "gold",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ddee788068cad6403dd0",
-      "title": "Trump Threatens Trade Halt Unless Fed Cuts Interest Rates",
-      "url": "https://en.tempo.co/read/2119010/trump-threatens-trade-halt-unless-fed-cuts-interest-rates",
-      "domain": "en.tempo.co",
-      "language": "English",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-09-05T14:15:00Z",
-      "firstSeenAt": "2026-09-05T14:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ef2583871807f839457e",
-      "title": "Trump threatens to halt some trade unless Fed cuts rates",
-      "url": "https://www.hawaiitribune-herald.com/2026/09/05/nation-world-news/trump-threatens-to-halt-some-trade-unless-fed-cuts-rates/",
-      "domain": "hawaiitribune-herald.com",
+      "id": "1a9e55305c64122aeb35",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.wtae.com/article/iran-us-war-strait-of-hormuz-ship/73624224",
+      "domain": "wtae.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-05T11:30:00Z",
-      "firstSeenAt": "2026-09-05T11:30:00Z",
+      "seenAt": "2026-09-06T12:45:00Z",
+      "firstSeenAt": "2026-09-06T12:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 36,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "001192624eaa04d7c742",
-      "title": "Stocks fall after a surprisingly strong jobs report raises prospects of an interest rate hike",
-      "url": "https://www.timesfreepress.com/news/2026/sep/04/stocks-fall-after-a-surprisingly-strong-jobs/",
-      "domain": "timesfreepress.com",
+      "id": "64057f312b96402d83de",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.wesh.com/article/iran-us-war-strait-of-hormuz-ship/73624224",
+      "domain": "wesh.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-05T13:45:00Z",
-      "firstSeenAt": "2026-09-05T13:45:00Z",
+      "seenAt": "2026-09-06T12:45:00Z",
+      "firstSeenAt": "2026-09-06T12:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 25,
+      "materialityScore": 36,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "446b3e792594fff4450c",
-      "title": "Stocks fall as strong jobs report hints at rate hike | The Arkansas Democrat - Gazette",
-      "url": "https://www.arkansasonline.com/news/2026/sep/05/stocks-fall-as-strong-jobs-report-hints-at-rate/",
-      "domain": "arkansasonline.com",
+      "id": "8ff334eeb545fe04836a",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates – WTOP News",
+      "url": "https://wtop.com/world/2026/09/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates/",
+      "domain": "wtop.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-05T08:15:00Z",
-      "firstSeenAt": "2026-09-05T08:15:00Z",
+      "seenAt": "2026-09-06T11:15:00Z",
+      "firstSeenAt": "2026-09-06T11:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1e51530620be83871e42",
-      "title": "Stocks fall after a surprisingly strong jobs report raises prospects of an interest rate hike",
-      "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-benchmarks-mostly-rise-tech-032035804.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-05T07:30:00Z",
-      "firstSeenAt": "2026-09-05T07:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "661e1153528e20c9fa32",
-      "title": "Російський скраплений газ досі іде в Європу , Україна може це припинити",
-      "url": "https://www.unian.ua/world/rosiyskiy-skrapleniy-gaz-dosi-ide-v-yevropu-ukrajina-mozhe-ce-pripiniti-13491333.html",
-      "domain": "unian.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-09-06T03:45:00Z",
-      "firstSeenAt": "2026-09-06T03:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 30,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "1de1f4805ff978fc437d",
-      "title": "Spezialschiff zurückerwartet : Stader LNG - Terminal soll Inbetriebnahme im September starten",
-      "url": "https://www.zeit.de/news/2026-09/06/stader-lng-terminal-soll-inbetriebnahme-im-september-starten",
-      "domain": "zeit.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-06T03:15:00Z",
-      "firstSeenAt": "2026-09-06T03:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0a4adfccfa02e9c9a13e",
-      "title": "夯实京津冀天然气稳定保供能力 天津港再建一条 海上高速 - 千龙网 · 中国首都网",
-      "url": "https://china.qianlong.com/2026/0906/8723035.shtml",
-      "domain": "china.qianlong.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-06T03:15:00Z",
-      "firstSeenAt": "2026-09-06T03:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "074f773c8a0c9430e97d",
-      "title": "Inflation test , Iran escalation set up a volatile week ahead for commodity markets",
-      "url": "https://www.moneycontrol.com/news/opinion/inflation-test-iran-escalation-set-up-a-volatile-week-ahead-for-commodity-markets-14023476.html",
-      "domain": "moneycontrol.com",
+      "id": "87984574a2ba8c752e4c",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.thehindubusinessline.com/news/world/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates/article71434847.ece",
+      "domain": "thehindubusinessline.com",
       "language": "English",
       "sourceCountry": "India",
-      "seenAt": "2026-09-06T02:00:00Z",
-      "firstSeenAt": "2026-09-06T02:00:00Z",
+      "seenAt": "2026-09-06T10:15:00Z",
+      "firstSeenAt": "2026-09-06T10:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8afe9b6e8ae539e77e8c",
-      "title": "大缓和 时代终结 ！ 全球范式重构 A股迎来重估时刻 ！ 底层逻辑何在 ？ _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202609063866053086.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-06T01:15:00Z",
-      "firstSeenAt": "2026-09-06T01:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1d7ba2f834c7e037c786",
-      "title": "油价高位巨震 ！ 美联储政策成市场焦点 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202609063866051760.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-06T01:15:00Z",
-      "firstSeenAt": "2026-09-06T01:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d2d4e96ae76c10e765f0",
-      "title": "全球债市深度调整 ： 资金流向呈现哪些变化 ？ _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202609063866052291.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-06T01:15:00Z",
-      "firstSeenAt": "2026-09-06T01:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9cd89527e61866798e55",
-      "title": "环球下周看点 ： 苹果折叠屏亮相 美联储9月加息悬念迎落槌时刻 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202609063866048978.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-06T00:45:00Z",
-      "firstSeenAt": "2026-09-06T00:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c099124ecd99c49dc798",
-      "title": "The Norwegian gas plant that could safeguard Europe from Trump",
-      "url": "https://www.politico.eu/article/the-norwegian-gas-plant-that-could-safeguard-europe-from-trump/",
-      "domain": "politico.eu",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-06T00:30:00Z",
-      "firstSeenAt": "2026-09-06T00:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 30,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "330ca634ec518e158807",
-      "title": "ExxonMobil says LNG projects diversify portfolio , wont shy away from Middle East",
-      "url": "https://www.zawya.com/en/business/exxonmobil-says-lng-projects-diversify-portfolio-wont-shy-away-from-middle-east-417112",
-      "domain": "zawya.com",
-      "language": "English",
-      "sourceCountry": "United Arab Emirates",
-      "seenAt": "2026-09-05T21:30:00Z",
-      "firstSeenAt": "2026-09-05T21:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a563ebd4ba6698d83361",
-      "title": "Gold comes home as nations hedge against Americana",
-      "url": "https://www.newindianexpress.com/opinion/columns/shankkar-aiyar/2026/Sep/05/gold-comes-home-as-nations-hedge-against-americana",
-      "domain": "newindianexpress.com",
+      "id": "12cb4681ddd09e7ce5b3",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://economictimes.indiatimes.com/news/defence/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates/articleshow/133831554.cms",
+      "domain": "economictimes.indiatimes.com",
       "language": "English",
       "sourceCountry": "India",
-      "seenAt": "2026-09-05T21:15:00Z",
-      "firstSeenAt": "2026-09-05T21:15:00Z",
+      "seenAt": "2026-09-06T09:45:00Z",
+      "firstSeenAt": "2026-09-06T09:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "gold",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 14,
+      "materialityScore": 30,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "8c52553c7f298d396e96",
-      "title": "This Cattle Feedlot Turns Manure Into 1 . 2 Million MMBtu of Natural Gas a Year",
-      "url": "https://oilprice.com/Energy/Natural-Gas/Nebraska-Cattle-Feedlot-Turns-Manure-Into-12-Million-MMBtu-of-Natural-Gas-a-Yea.html",
-      "domain": "oilprice.com",
+      "id": "5a20e09eb2c997080b03",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.niagarafallsreview.ca/business/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates/article_a57959d4-f628-5d61-b697-039c4f1e273a.html",
+      "domain": "niagarafallsreview.ca",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-05T20:00:00Z",
-      "firstSeenAt": "2026-09-05T20:00:00Z",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-06T09:45:00Z",
+      "firstSeenAt": "2026-09-06T09:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 14,
+      "materialityScore": 30,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "8c1f6733691d0b7f9194",
-      "title": "Suku Bunga Tak Turun , Trump Siap Ambil Langkah Mengejutkan : Perdagangan Terancam Berhenti",
-      "url": "https://koran-jakarta.com/2026-09-06/suku-bunga-tak-turun-trump-siap-ambil-langkah-mengejutkan-perdagangan-terancam-berhenti",
-      "domain": "koran-jakarta.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-09-05T20:00:00Z",
-      "firstSeenAt": "2026-09-05T20:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7bd630f365c5fe334f71",
-      "title": "Promising Oil Stocks To Follow Now – September 5th",
-      "url": "https://www.themarketsdaily.com/2026/09/05/promising-oil-stocks-to-follow-now-september-5th.html",
-      "domain": "themarketsdaily.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-05T19:00:00Z",
-      "firstSeenAt": "2026-09-05T19:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ef0a98d947df650fcda1",
-      "title": "Los negocios millonarios de los hermanos Pérez , una sorpresa en el mundo petrolero",
-      "url": "https://www.clarin.com/economia/negocios-millonarios-hermanos-perez-sorpresa-mundo-petrolero_0_fzxeXiPQkj.html",
-      "domain": "clarin.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-09-05T19:00:00Z",
-      "firstSeenAt": "2026-09-05T19:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "01fcbf2f603be072280a",
-      "title": "Fed Chair Kevin Warsh Just Shifted the Central Bank Entire Focus on Inflation in One Sentence",
-      "url": "https://www.fool.com/investing/2026/09/05/fed-chair-kevin-warsh-just-shifted-central-bank-focus-on-inflation-in-one-sentence/?source=iedfolrf0000001",
-      "domain": "fool.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-05T18:30:00Z",
-      "firstSeenAt": "2026-09-05T18:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "aa63c1b0e49c92077dc0",
-      "title": "المعروض النقدي في مصر يرتفع 17 . 5 % خلال عام",
-      "url": "https://www.okaz.com.sa/economy/arabian/2264559",
-      "domain": "okaz.com.sa",
-      "language": "Arabic",
-      "sourceCountry": "Saudi Arabia",
-      "seenAt": "2026-09-05T18:00:00Z",
-      "firstSeenAt": "2026-09-05T18:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5b20b306a009d11885da",
-      "title": "El relevamiento del Banco Central proyectó 1 , 7 % de inflación en agosto",
-      "url": "http://www.eldia.com/politica-y-economia/en-el-banco-central-proyectan-que-la-inflacion-de-agosto-sera-de-1-7-politica-y-economia_1788617340",
-      "domain": "eldia.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-09-05T15:00:00Z",
-      "firstSeenAt": "2026-09-05T15:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4bf2245bb8ca8fc49d28",
-      "title": "Du Franc CFA à lEco : Radiographie dune métamorphose monétaire à plusieurs vitesses ( Dossier 1 / 2 )",
-      "url": "http://seneweb.com/fr/news/Economie/du-franc-cfa-a-leco-radiographie-dune-metamorphose-monetaire-a-plusieurs-vitesses-dossier-12_n_503224.html",
-      "domain": "seneweb.com",
-      "language": "French",
-      "sourceCountry": "Senegal",
-      "seenAt": "2026-09-05T14:45:00Z",
-      "firstSeenAt": "2026-09-05T14:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "abe7f880ee0c7e518662",
-      "title": "BCV : inflación en agosto descendió a 8 , 9 % - Últimas Noticias",
-      "url": "https://ultimasnoticias.com.ve/economia/bcv-inflacion-en-agosto-descendio-a-89/",
-      "domain": "ultimasnoticias.com.ve",
-      "language": "Spanish",
-      "sourceCountry": "Venezuela",
-      "seenAt": "2026-09-05T14:45:00Z",
-      "firstSeenAt": "2026-09-05T14:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "46e4b1afeef758793b6c",
-      "title": "Mozambique new central bank Chief faces forex shortage , inflation pressure – Channel Africa",
-      "url": "https://www.channelafrica.co.za/channelafrica/news/mozambique-new-central-bank-chief-faces-forex-shortage-inflation-pressure/",
-      "domain": "channelafrica.co.za",
-      "language": "English",
-      "sourceCountry": "South Africa",
-      "seenAt": "2026-09-05T14:45:00Z",
-      "firstSeenAt": "2026-09-05T14:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6621d768c3a01b8a6b30",
-      "title": "Czarny scenariusz się spełnia ? Ceny prądu i gazu lecą w górę . Eksperci mówią o powtórce z 2021 roku",
-      "url": "https://forsal.pl/gospodarka/aktualnosci/artykuly/11298094,czarny-scenariusz-sie-spelnia-ceny-pradu-i-gazu-leca-w-gore-eksperci-mowia-o-powtorce-z-2021-roku.html",
-      "domain": "forsal.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-09-05T14:30:00Z",
-      "firstSeenAt": "2026-09-05T14:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "43d5f21c90710078ff85",
-      "title": "Volz : Τεράστια πρόοδος στον Κάθετο Διάδρομο , σημαντικός ο ρόλος Εξάρχου και AKTOR",
-      "url": "https://www.euro2day.gr/news/enterprises/article/2367805/volz-terastia-proodos-ston-katheto-diadromo-shmant.html",
-      "domain": "euro2day.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-09-05T13:30:00Z",
-      "firstSeenAt": "2026-09-05T13:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cfb6470dec3af525c067",
-      "title": "জ্বালানি নিরাপত্তায় নতুন বিনিয়োগ , প্রশ্ন উঠছে সংস্কার নিয়ে",
-      "url": "https://www.dhakatimes24.com/2026/09/05/412126",
-      "domain": "dhakatimes24.com",
-      "language": "Bengali",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-09-05T13:30:00Z",
-      "firstSeenAt": "2026-09-05T13:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e809bcec3fe53fa288e3",
-      "title": "Wall Street week ahead : The market focuses on key inflation updates",
-      "url": "https://abcnews.com/Business/wireStory/wall-street-week-ahead-market-focuses-key-inflation-136221835",
+      "id": "6aa66bca8ca32b1bfb03",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://abcnews.com/US/wireStory/iran-claims-strike-us-ship-strait-hormuz-fighting-136236826",
       "domain": "abcnews.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-05T13:30:00Z",
-      "firstSeenAt": "2026-09-05T13:30:00Z",
+      "seenAt": "2026-09-06T09:00:00Z",
+      "firstSeenAt": "2026-09-06T09:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 14,
+      "materialityScore": 30,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "e7d3660417b5145d42c9",
-      "title": "La falacia de los precios estables",
-      "url": "https://panampost.com/imises/2026/09/05/la-falacia-de-los-precios-estables/",
-      "domain": "panampost.com",
+      "id": "8055f841107fd5bdb017",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.stcatharinesstandard.ca/business/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates/article_3bf93320-2b82-57dd-883a-755e33b8fbfc.html",
+      "domain": "stcatharinesstandard.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-06T09:00:00Z",
+      "firstSeenAt": "2026-09-06T09:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 30,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8920e7a808055d9c5559",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://isp.netscape.com:443/news/world/story/0001/20260906/a52beec77dc90af3d040d0553837ad20",
+      "domain": "isp.netscape.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-06T09:00:00Z",
+      "firstSeenAt": "2026-09-06T09:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 30,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "97e53c7033a2e2e98583",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://isp.netscape.com:443/pf/story/0001/20260906/a52beec77dc90af3d040d0553837ad20",
+      "domain": "isp.netscape.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-06T09:00:00Z",
+      "firstSeenAt": "2026-09-06T09:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 30,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cacfd41412a9eb73d245",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.newsday.com/news/nation/iran-us-war-strait-hormuz-ship-attack-v65531",
+      "domain": "newsday.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-06T08:45:00Z",
+      "firstSeenAt": "2026-09-06T08:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 30,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f7d9f8846ca294d87fdb",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.news4jax.com/business/2026/09/06/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates/",
+      "domain": "news4jax.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-06T08:30:00Z",
+      "firstSeenAt": "2026-09-06T08:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 30,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b87e3ab970e0527a42cc",
+      "title": "L Île - de - France va bientôt accueillir le plus grand datacenter dEurope . Les opposants contre - attaquent !",
+      "url": "https://sciencepost.fr/lile-de-france-va-bientot-accueillir-le-plus-grand-datacenter-deurope-les-opposants-contre-attaquent/",
+      "domain": "sciencepost.fr",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-09-06T13:45:00Z",
+      "firstSeenAt": "2026-09-06T13:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1859ec20b26edec69d3f",
+      "title": "OPEC+ keeps oil output policy unchanged for October",
+      "url": "https://asia.nikkei.com/business/energy/opec-keeps-oil-output-policy-unchanged-for-october",
+      "domain": "asia.nikkei.com",
+      "language": "English",
+      "sourceCountry": "Japan",
+      "seenAt": "2026-09-06T13:45:00Z",
+      "firstSeenAt": "2026-09-06T13:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fea6603c0c82c9a22948",
+      "title": "Opec+ set to keep October oil output policy unchanged",
+      "url": "https://www.freemalaysiatoday.com/category/business/2026/09/06/opec-set-to-keep-oil-output-policy-unchanged-on-sunday",
+      "domain": "freemalaysiatoday.com",
+      "language": "English",
+      "sourceCountry": "Malaysia",
+      "seenAt": "2026-09-06T13:45:00Z",
+      "firstSeenAt": "2026-09-06T13:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b11eb61ac1d6e690eb1d",
+      "title": "MHP Konya Kongresinde lider ülke vurgusu",
+      "url": "https://www.haberler.com/politika/mhp-genel-baskan-yardimcisi-kalayci-konya-il-20212542-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-06T13:15:00Z",
+      "firstSeenAt": "2026-09-06T13:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bb66d072a57efd1956fe",
+      "title": "Expansión del gasoducto TGN y su importancia para Bolivia",
+      "url": "https://www.lostiempos.com/actualidad/opinion/20260906/columna/expansion-del-gasoducto-tgn-su-importancia-bolivia",
+      "domain": "lostiempos.com",
       "language": "Spanish",
-      "sourceCountry": "Venezuela",
-      "seenAt": "2026-09-05T13:30:00Z",
-      "firstSeenAt": "2026-09-05T13:30:00Z",
+      "sourceCountry": "Bolivia",
+      "seenAt": "2026-09-06T13:15:00Z",
+      "firstSeenAt": "2026-09-06T13:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 14,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "77b9cec59ee79b70e36b",
-      "title": "Barclays says rates and energy prices regain influence over equity markets",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/barclays-says-rates-energy-prices-120700013.html",
+      "id": "aa665f92f22f45e4ba98",
+      "title": "OPEC+ sticks with plan to keep oil output quotas unchanged",
+      "url": "https://www.moneycontrol.com/news/business/commodities/opec-sticks-with-plan-to-keep-oil-output-quotas-unchanged-14023718.html",
+      "domain": "moneycontrol.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-06T13:00:00Z",
+      "firstSeenAt": "2026-09-06T13:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8124bc7acbd566b0834a",
+      "title": "Cập nhật giá vàng hôm nay 6 / 9 : Vàng trong nước kém tích cực , dự báo bất ngờ về tuần tới",
+      "url": "https://www.techz.vn/216-926-1-cap-nhat-gia-vang-hom-nay-6-9-vang-trong-nuoc-kem-tich-cuc-du-bao-bat-ngo-ve-tuan-toi-ylt707915.html",
+      "domain": "techz.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-06T12:45:00Z",
+      "firstSeenAt": "2026-09-06T12:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fd15654360a7086c3c0c",
+      "title": "Казахстан завоевал уже 32 золотые медали на Всемирных играх кочевников",
+      "url": "https://kazpravda.kz/n/kazahstan-zavoeval-uzhe-32-zolotye-medali-na-vsemirnyh-igrah-kochevnikov/",
+      "domain": "kazpravda.kz",
+      "language": "Russian",
+      "sourceCountry": "Kazakhstan",
+      "seenAt": "2026-09-06T12:45:00Z",
+      "firstSeenAt": "2026-09-06T12:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "db73e037c8d8a727c4d8",
+      "title": "India steps up semiconductor push , seeks to turn Make in India into Engineer in India",
+      "url": "https://ianslive.in/india-steps-up-semiconductor-push-seeks-to-turn-make-in-india-into-engineer-in-india--20260906175335",
+      "domain": "ianslive.in",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-06T12:45:00Z",
+      "firstSeenAt": "2026-09-06T12:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0123359d07077391daac",
+      "title": "OPEC+ set to keep oil output policy unchanged : Here why",
+      "url": "https://www.thenews.com.pk/latest/1415102-opec-set-to-keep-oil-output-policy-unchanged-heres-why",
+      "domain": "thenews.com.pk",
+      "language": "English",
+      "sourceCountry": "Pakistan",
+      "seenAt": "2026-09-06T12:30:00Z",
+      "firstSeenAt": "2026-09-06T12:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "16233b06a44ead84f745",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "https://www.clickondetroit.com/business/2026/09/06/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates/",
+      "domain": "clickondetroit.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-06T08:00:00Z",
+      "firstSeenAt": "2026-09-06T08:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 24,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1befe5c0f8d08685928e",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates",
+      "url": "http://www.somdnews.com/ap/world/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates/article_128f02e9-b0f1-59f3-86d0-43842bebc19e.html",
+      "domain": "somdnews.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-06T07:45:00Z",
+      "firstSeenAt": "2026-09-06T07:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 24,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4fab22c69f6be08e28c9",
+      "title": "Iran claims strike on US ship in Strait of Hormuz as fighting escalates – Winnipeg Free Press",
+      "url": "https://www.winnipegfreepress.com/business/2026/09/06/iran-claims-strike-on-us-ship-in-strait-of-hormuz-as-fighting-escalates",
+      "domain": "winnipegfreepress.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-06T07:30:00Z",
+      "firstSeenAt": "2026-09-06T07:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 24,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d854357ca0891dc7f1fc",
+      "title": "高市原運選拔最強代表隊 TAKAO HERO邁向巔峰 進軍116全原運",
+      "url": "https://n.yam.com/Article/20260906169779",
+      "domain": "n.yam.com",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-09-06T12:00:00Z",
+      "firstSeenAt": "2026-09-06T12:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2af92349a151dfdc379c",
+      "title": "Prediction : Nvidia Will Join the Vanguard Russell 1000 Value ETF Before the End of the Year . Here Why the ETF Is an Excellent Buy Now .",
+      "url": "https://www.aol.com/articles/prediction-nvidia-join-vanguard-russell-112700000.html",
+      "domain": "aol.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-06T12:00:00Z",
+      "firstSeenAt": "2026-09-06T12:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6d131a1e7c3c7fd80d3d",
+      "title": "Piper Serica plans to deploy ₹180 - 220 crore in 4 - 6 deeptech startups",
+      "url": "https://www.business-standard.com/companies/news/piper-serica-plans-to-deploy-180-220-crore-in-4-6-deeptech-startups-126090600245_1.html",
+      "domain": "business-standard.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-06T12:00:00Z",
+      "firstSeenAt": "2026-09-06T12:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f5781678f268ae9d5346",
+      "title": "South Korea Weighs Military Deployment to Strait of Hormuz , Presidential Office Says – NaturalNews . com",
+      "url": "https://www.naturalnews.com/2026-09-06-south-korea-weighs-military-deployment-to-hormuz.html",
+      "domain": "naturalnews.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-06T12:00:00Z",
+      "firstSeenAt": "2026-09-06T12:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b2c5b2632ca00d112c61",
+      "title": "مصر تحصد 6 ميداليات في اليوم الأول من البطولة العربية للناشئين لألعاب القوى",
+      "url": "https://akhbarelyom.com/news/newdetails/4874272/1/%D9%85%D8%B5%D8%B1-%D8%AA%D8%AD%D8%B5%D8%AF-6-%D9%85%D9%8A%D8%AF%D8%A7%D9%84%D9%8A%D8%A7%D8%AA-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84",
+      "domain": "akhbarelyom.com",
+      "language": "Arabic",
+      "sourceCountry": "Egypt",
+      "seenAt": "2026-09-06T11:45:00Z",
+      "firstSeenAt": "2026-09-06T11:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8cc3dc4df46d276f7916",
+      "title": "废旧手机里藏着多少黄金 ？ 解码手机回收背后的资源大循环",
+      "url": "https://tech.ifeng.com/c/8wCWePQJrXx",
+      "domain": "tech.ifeng.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-06T11:15:00Z",
+      "firstSeenAt": "2026-09-06T11:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4fdc89f826dbc0f4c267",
+      "title": "Јовановић : Србија постаје регионални ИТ центар , нови објекат у Нишу значајан за земљу",
+      "url": "https://www.politika.rs/scc/clanak/783493/jovanovic-srbija-postaje-regionalni-it-centar-novi-objekat-u-nisu-znacajan-za-zemlju",
+      "domain": "politika.rs",
+      "language": "Serbian",
+      "sourceCountry": "Serbia",
+      "seenAt": "2026-09-06T10:15:00Z",
+      "firstSeenAt": "2026-09-06T10:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b570292d831914461b03",
+      "title": "Opec+ set to keep October oil output policy unchanged as quota talks loom : sources",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/opec-set-keep-october-oil-output-policy-unchanged-quota-talks-loom-sources",
+      "domain": "businesstimes.com.sg",
+      "language": "English",
+      "sourceCountry": "Singapore",
+      "seenAt": "2026-09-06T10:00:00Z",
+      "firstSeenAt": "2026-09-06T10:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "34f1f8bf129125b67255",
+      "title": "县人民政府 写成 县人民币政府 …… 紫金矿业道歉 - 新闻中心 - 中国宁波网",
+      "url": "http://news.cnnb.com.cn/system/2026/09/06/030811622.shtml",
+      "domain": "news.cnnb.com.cn",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-06T09:45:00Z",
+      "firstSeenAt": "2026-09-06T09:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "34fa4ae1aa1413652434",
+      "title": "Zimbabwe Mining Regularisation Deadline Extended",
+      "url": "https://www.riotimesonline.com/zimbabwe-small-scale-miners-deadline-2026/",
+      "domain": "riotimesonline.com",
+      "language": "English",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-09-06T09:45:00Z",
+      "firstSeenAt": "2026-09-06T09:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "51785a80b011b4bf8108",
+      "title": "Ampo Poyam Valves supplies 5 , 550 valves for Qatar North Field South LNG project",
+      "url": "https://tradearabia.com:443/News/467614/Ampo-Poyam-Valves-supplies-5-550-valves-for-Qatar%E2%80%99s-North-Field-South-LNG-project",
+      "domain": "tradearabia.com",
+      "language": "English",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-09-06T09:45:00Z",
+      "firstSeenAt": "2026-09-06T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2870639312a20eeca441",
+      "title": "OPEC+ set to keep oil output policy unchanged on Sunday , sources say",
+      "url": "https://economictimes.indiatimes.com/news/international/business/opec-set-to-keep-oil-output-policy-unchanged-on-sunday-sources-say/articleshow/133831081.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-06T09:45:00Z",
+      "firstSeenAt": "2026-09-06T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d1a0061e5965e1c1959c",
+      "title": "Türkiye at energy crossroads as IEA urges faster investment in infrastructure",
+      "url": "https://tradearabia.com:443/News/467613/T%C3%BCrkiye-at-energy-crossroads-as-IEA-urges-faster-investment-in-infrastructure",
+      "domain": "tradearabia.com",
+      "language": "English",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-09-06T09:45:00Z",
+      "firstSeenAt": "2026-09-06T09:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fb38bd250b76e6ba5400",
+      "title": "央视解码手机回收 ： 一台现代手机黄金含量仅 0 . 02 0 . 03 克",
+      "url": "https://finance.sina.com.cn/tech/digi/2026-09-06/doc-iniqwssv0048885.shtml",
+      "domain": "finance.sina.com.cn",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-06T09:30:00Z",
+      "firstSeenAt": "2026-09-06T09:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "36d211f28190e75bc42d",
+      "title": "央视解码手机回收 ： 一台现代手机黄金含量仅0 . 02 0 . 03克",
+      "url": "https://www.163.com/dy/article/L65JF2120511B8LM.html",
+      "domain": "163.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-06T09:30:00Z",
+      "firstSeenAt": "2026-09-06T09:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "582d08a981d52afa5a72",
+      "title": "দেশের বাজারে স্বর্ণের দামে পতন",
+      "url": "https://www.dhakatimes24.com/2026/09/06/412147",
+      "domain": "dhakatimes24.com",
+      "language": "Bengali",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-09-06T09:30:00Z",
+      "firstSeenAt": "2026-09-06T09:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d70513386c138a75a3ba",
+      "title": "বড় লাফের পর দেশের বাজারে কমল সোনার দাম",
+      "url": "https://www.arthosuchak.com/archives/972717/%E0%A6%AC%E0%A7%9C-%E0%A6%B2%E0%A6%BE%E0%A6%AB%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%B0-%E0%A6%A6%E0%A7%87%E0%A6%B6%E0%A7%87%E0%A6%B0-%E0%A6%AC%E0%A6%BE%E0%A6%9C%E0%A6%BE%E0%A6%B0%E0%A7%87-%E0%A6%95/",
+      "domain": "arthosuchak.com",
+      "language": "Bengali",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-09-06T09:30:00Z",
+      "firstSeenAt": "2026-09-06T09:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "39057a38df31568a2dad",
+      "title": "Gold Silver Rate Today 6 September 2026 : संडे को सस्ती हुई चांदी , 1 , 54 , 950 रूपये हुआ सोना , जानें दिल्ली - मुंबई समेत टॉप 10 शहरों के लेटेस्ट प्राइस",
+      "url": "https://www.punjabkesari.com/business-news/gold-silver-rate-today-6-september-2026/",
+      "domain": "punjabkesari.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-06T09:30:00Z",
+      "firstSeenAt": "2026-09-06T09:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9f1d2d25c2137668ab3c",
+      "title": "Monolithic Power Revenue Jumped 48 %. Can AI Power Chips Keep the Momentum Going ?",
+      "url": "https://finance.yahoo.com/technology/ai/articles/monolithic-power-revenue-jumped-48-102200069.html",
       "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-05T13:30:00Z",
-      "firstSeenAt": "2026-09-05T13:30:00Z",
+      "seenAt": "2026-09-06T09:30:00Z",
+      "firstSeenAt": "2026-09-06T09:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "41558adbd21ad8eeaf82",
-      "title": "金价涨 、 收益率也涨 ， 背后藏着同一个风险 ？ 景顺 ： 黄金正从 交易品 转向 战略资产 _ 金市直播 _ 黄金网 _ 中金在线",
-      "url": "http://gold.cnfol.com/jinshizhibo/20260905/32361156.shtml",
-      "domain": "gold.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-05T13:00:00Z",
-      "firstSeenAt": "2026-09-05T13:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d361f0cf342d290da397",
-      "title": "متانة مالية تحمي قطر من خفض التصنيف",
-      "url": "https://middle-east-online.com/%D9%85%D8%AA%D8%A7%D9%86%D8%A9-%D9%85%D8%A7%D9%84%D9%8A%D8%A9-%D8%AA%D8%AD%D9%85%D9%8A-%D9%82%D8%B7%D8%B1-%D9%85%D9%86-%D8%AE%D9%81%D8%B6-%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81",
-      "domain": "middle-east-online.com",
-      "language": "Arabic",
-      "sourceCountry": "Iraq",
-      "seenAt": "2026-09-05T12:00:00Z",
-      "firstSeenAt": "2026-09-05T12:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5cf459340d5cfb12e984",
-      "title": "Greetings on the opening of the 8th Russia - China Energy Business Forum",
-      "url": "https://www.globalsecurity.org/wmd/library/news/russia/2026/09/russia-260904-kremlin02.htm",
-      "domain": "globalsecurity.org",
-      "language": "English",
-      "sourceCountry": "Syria",
-      "seenAt": "2026-09-05T12:00:00Z",
-      "firstSeenAt": "2026-09-05T12:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2437d55a6af8d56a12bf",
-      "title": "El otro negocio de Vaca Muerta que puede sumar US$2000 millones",
-      "url": "https://www.diariopanorama.com/noticia/565426/otro-negocio-vaca-muerta-puede-sumar-us2000-millones",
-      "domain": "diariopanorama.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-09-05T12:00:00Z",
-      "firstSeenAt": "2026-09-05T12:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8428bf38c574308792da",
-      "title": "Najdroższy od lat gaz uderzy w kolejny sektor . Rynek pod presją",
-      "url": "https://www.money.pl/gospodarka/najdrozszy-od-lat-gaz-uderzy-w-kolejny-sektor-rynek-pod-presja-7326090764400800a.html",
-      "domain": "money.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-09-05T12:00:00Z",
-      "firstSeenAt": "2026-09-05T12:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f0dfabbb80ac0822b83a",
-      "title": "Dow Jones pierde 272 puntos mientras el empleo en EE . UU . desafía a la Fed contra la inflación",
-      "url": "https://www.negocios.com/articulo/mercados/mercado-laboral-ee-uu-solido-desafia-estrategia-reserva-federal-frente-inflacion/20260905094837493290.html",
-      "domain": "negocios.com",
-      "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-09-05T12:00:00Z",
-      "firstSeenAt": "2026-09-05T12:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d13accf2f516aa275acd",
-      "title": "Wall Street week ahead : The market focuses on key inflation updates",
-      "url": "http://www.cecildaily.com/ap/nation/wall-street-week-ahead-the-market-focuses-on-key-inflation-updates/article_939a9a66-89c1-5733-b4ec-b1ed94b594c9.html",
-      "domain": "cecildaily.com",
+      "id": "caac94805de17a06528b",
+      "title": "Labour tax raids make US gas cheaper than North Sea supplies",
+      "url": "https://finance.yahoo.com/energy/articles/labour-tax-raids-us-gas-053000103.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-05T11:45:00Z",
-      "firstSeenAt": "2026-09-05T11:45:00Z",
+      "seenAt": "2026-09-06T09:30:00Z",
+      "firstSeenAt": "2026-09-06T09:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "94329cf10a43dd1df9ee",
-      "title": "Τζ . Βόλτς ( απεστ . υπ . Ενέργειας ΗΠΑ ): Η σημαντική ελληνική συμβολή στον ...",
-      "url": "https://www.capital.gr/oikonomia/4014747/tz-bolts-apest-up-energeias-ipa-i-simantiki-elliniki-sumboli-ston-katheto-diadromo-ti-eipe-gia-aktor-kai-a-exarxou/",
-      "domain": "capital.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-09-05T11:30:00Z",
-      "firstSeenAt": "2026-09-05T11:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "4b094baa0ac865c372d7",
-      "title": "Qatar removed from Fitch negative watch list as risks to LNG sites ease | Business and Economy News",
-      "url": "https://www.aljazeera.com/economy/2026/9/5/fitch-removes-qatar-from-rating-watch-as-lng-risks-ease",
-      "domain": "aljazeera.com",
+      "id": "98bc171aad2ae9ea7a27",
+      "title": "OPEC+ set to keep oil output policy unchanged on Sunday",
+      "url": "https://www.omanobserver.om/article/1195672/business/energy/opec-set-to-keep-oil-output-policy-unchanged-on-sunday",
+      "domain": "omanobserver.om",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-05T11:30:00Z",
-      "firstSeenAt": "2026-09-05T11:30:00Z",
+      "sourceCountry": "Oman",
+      "seenAt": "2026-09-06T09:30:00Z",
+      "firstSeenAt": "2026-09-06T09:30:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 14,
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "78f11a76fe306a6588c0",
+      "title": "Fitch affirms Qatar credit rating at AA amid outlook for strong economic rebound in 2027 and 2028",
+      "url": "http://thepeninsulaqatar.com/article/06/09/2026/fitch-affirms-qatars-credit-rating-at-aa-amid-outlook-for-strong-economic-rebound-in-2027-and-2028",
+      "domain": "thepeninsulaqatar.com",
+      "language": "English",
+      "sourceCountry": "Qatar",
+      "seenAt": "2026-09-06T09:15:00Z",
+      "firstSeenAt": "2026-09-06T09:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1285,11 +1425,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-09-06T05:30:00Z",
-      "lastSuccessfulAt": "2026-09-06T05:56:03Z",
+      "observationDate": "2026-09-06T13:45:00Z",
+      "lastSuccessfulAt": "2026-09-06T14:09:15Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
+      "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
