@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-09-09T21:40:52Z",
+  "generatedAtUtc": "2026-09-10T09:41:29Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -8,14 +8,14 @@
     "documentationUrl": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
   },
   "collection": {
-    "status": "stale",
+    "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 0,
-    "rawArticleCount": 0,
+    "successfulQueryCount": 2,
+    "rawArticleCount": 100,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-09-09T18:34:08Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-09-10T09:41:29Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,23 +52,23 @@
   ],
   "articles": [
     {
-      "id": "b0885f797bb0b2bb1915",
-      "title": "Egitto , Grecia e Cipro sostengono il piano per portare il gas cipriota in Europa",
-      "url": "https://it.euronews.com/business/2026/09/09/egitto-grecia-e-cipro-sostengono-il-piano-per-portare-il-gas-cipriota-in-europa",
-      "domain": "it.euronews.com",
-      "language": "Italian",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-09T16:45:00Z",
-      "firstSeenAt": "2026-09-09T16:45:00Z",
+      "id": "20d5a8ee2f79f08fc2a6",
+      "title": "문서 자동화 넘어 품질 예측까지 … 포티투마루 , 제조 AX 방안 제시",
+      "url": "https://zdnet.co.kr/view/?no=20260910164105",
+      "domain": "zdnet.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T08:15:00Z",
+      "firstSeenAt": "2026-09-10T08:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Gas markets"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -77,1193 +77,464 @@
       "duplicateCount": 1
     },
     {
-      "id": "dd042d2298e8e6987c74",
-      "title": "У Європі дорожчає газ - уже понад 80 євро вперше з січня 2023 року",
-      "url": "https://lb.ua/world/2026/09/09/764918_tsini_gaz_ievropi_vpershe_z_2023.html",
-      "domain": "lb.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-09-09T16:15:00Z",
-      "firstSeenAt": "2026-09-09T16:15:00Z",
+      "id": "397f6cc405f5fd7a5846",
+      "title": "AI 반도체 꺾이는 신호 , 채권시장에 먼저 온다 [ fn마켓워치 ]",
+      "url": "https://www.fnnews.com/news/202609101558090364",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T08:15:00Z",
+      "firstSeenAt": "2026-09-10T08:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "70badef4871c849bb845",
-      "title": "Рыночные цены на газ для Европы превысили 900 долларов за тысячу кубометров",
-      "url": "https://www.bfm.ru/news/617482",
-      "domain": "bfm.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-09T16:15:00Z",
-      "firstSeenAt": "2026-09-09T16:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c52b3702b3ca925e67a6",
-      "title": "مصر واليونان وقبرص تدعم خطة لنقل الغاز القبرصي إلى أوروبا",
-      "url": "https://arabic.euronews.com/business/2026/09/09/egypt-greece-and-cyprus-support-plans-to-bring-cypriot-gas-to-europe",
-      "domain": "arabic.euronews.com",
-      "language": "Arabic",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-09T15:30:00Z",
-      "firstSeenAt": "2026-09-09T15:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0e19feb72eaeb377891f",
-      "title": "أسعار الغاز الأوروبية تواصل الارتفاع ووكالة الطاقة تدعو إلى احتياطيات طارئة",
-      "url": "https://arabic.euronews.com/business/2026/09/09/european-gas-prices-continue-to-rise-as-the-iea-urges-the-creation-of-emergency-reserves",
-      "domain": "arabic.euronews.com",
-      "language": "Arabic",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-09T15:30:00Z",
-      "firstSeenAt": "2026-09-09T15:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7de98aa94f4019b9ef4e",
-      "title": "Россия вновь предлагает Европе газ – как Кремль пытается вернуть европейский рынок",
-      "url": "https://24tv.ua/economy/ru/rossija-vnov-predlagaet-evrope-gaz-kak-kreml-pytaetsja-vernut-evropejskij-rynok_n3139064",
-      "domain": "24tv.ua",
-      "language": "Russian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-09-09T15:00:00Z",
-      "firstSeenAt": "2026-09-09T15:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a266116570ee7598640a",
-      "title": "Dieser Winter wird teuer werden : Gaspreis klettert auf mehr als 79 Euro !",
-      "url": "https://www.marktspiegel.de/nuernberg/c-panorama/gaspreis-klettert-auf-mehr-als-79-euro_a136795",
-      "domain": "marktspiegel.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T15:00:00Z",
-      "firstSeenAt": "2026-09-09T15:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "02287a7a3412a34816d8",
-      "title": "Egypt , Greece and Cyprus back plans to bring Cypriot gas to Europe",
-      "url": "https://www.euronews.com/business/2026/09/09/egypt-greece-and-cyprus-back-plans-to-bring-cypriot-gas-to-europe",
-      "domain": "euronews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-09T14:45:00Z",
-      "firstSeenAt": "2026-09-09T14:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "01c9b902385b375d8651",
-      "title": "« Новатэк » начнет первые отгрузки СПГ во Вьетнам в следующем году",
-      "url": "https://www.vedomosti.ru/business/news/2026/09/09/1227568-otgruzki-spg",
-      "domain": "vedomosti.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-09T14:45:00Z",
-      "firstSeenAt": "2026-09-09T14:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0685f4c1821d7111f8e3",
-      "title": "Eldorado Skouries turns years of setbacks into copper",
-      "url": "https://www.mining.com/eldorados-skouries-turns-years-of-setbacks-into-copper/",
-      "domain": "mining.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-09-09T13:30:00Z",
-      "firstSeenAt": "2026-09-09T13:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ee8797d243e8782147ab",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.epochtimes.de/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-a5604860.html",
-      "domain": "epochtimes.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T13:00:00Z",
-      "firstSeenAt": "2026-09-09T13:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "625c24bb0d40e75bb6b3",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "http://www.kreisbote.de/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-zr-94482462.html",
-      "domain": "kreisbote.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T12:45:00Z",
-      "firstSeenAt": "2026-09-09T12:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "984de1543788f13bf755",
-      "title": "What resource nationalism means for Africa miners",
-      "url": "https://www.miningmx.com/news/markets/67120-what-resource-nationalism-means-for-africas-miners/",
-      "domain": "miningmx.com",
-      "language": "English",
-      "sourceCountry": "South Africa",
-      "seenAt": "2026-09-09T12:30:00Z",
-      "firstSeenAt": "2026-09-09T12:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "82cffedc37b1c2b2f934",
-      "title": "แค่ได้น้ำมัน ไม่เพียงพอ สหรัฐเล็ง ขุมทอง - แร่ ในเวเนซุเอลาต่อ",
-      "url": "https://www.bangkokbiznews.com/world/economics/1251163",
-      "domain": "bangkokbiznews.com",
-      "language": "Thai",
-      "sourceCountry": "Thailand",
-      "seenAt": "2026-09-09T12:30:00Z",
-      "firstSeenAt": "2026-09-09T12:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9d25807da0dcf6a256d3",
-      "title": "Royal Gold Eyes New Buy Point As AI Data Centers Fuel Demand | Investor Business Daily",
-      "url": "https://www.investors.com/research/breakout-stocks-technical-analysis/royal-gold-eyes-new-buy-point-as-ai-data-centers-fuel-demand/",
-      "domain": "investors.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-09T12:30:00Z",
-      "firstSeenAt": "2026-09-09T12:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
         "ai-infrastructure",
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "semiconductors"
       ],
-      "materialityScore": 14,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "df58d20e59ba7a044f67",
-      "title": "Rohstoffe : Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022 - Wirtschaft",
-      "url": "https://www.rhein-zeitung.de/deutschland-welt/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022_arid-4153813.html",
-      "domain": "rhein-zeitung.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T12:15:00Z",
-      "firstSeenAt": "2026-09-09T12:15:00Z",
+      "id": "8256591710279a6f3173",
+      "title": "민주연구원 , AI 고용불안에 로봇세 도입 논의 시작해야",
+      "url": "https://www.edaily.co.kr/News/Read?newsId=04733046645578808&mediaCodeNo=257",
+      "domain": "edaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T08:15:00Z",
+      "firstSeenAt": "2026-09-10T08:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Gas markets"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 14,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "e56e36eec5799df93b55",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://web.de/magazine/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-2022-42705802",
-      "domain": "web.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T12:15:00Z",
-      "firstSeenAt": "2026-09-09T12:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e32409d90eb9cf3881a7",
-      "title": "Governments Urged to Bolster Gas Security Post Shocks",
-      "url": "https://www.miragenews.com/governments-urged-to-bolster-gas-security-post-1741160/",
-      "domain": "miragenews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-09T12:15:00Z",
-      "firstSeenAt": "2026-09-09T12:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3204e3805b6854c3fd86",
-      "title": "Gas in Europa , prezzi in rialzo : lAie chiede riserve demergenza",
-      "url": "https://it.euronews.com/business/2026/09/09/gas-in-europa-prezzi-in-rialzo-laie-chiede-riserve-demergenza",
-      "domain": "it.euronews.com",
-      "language": "Italian",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-09T12:15:00Z",
-      "firstSeenAt": "2026-09-09T12:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "459cb575c887fb301eda",
-      "title": "CanCambria Energy Corp .: CanCambria Energy to Participate in World Energies Summit 2026",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-09/69533247-cancambria-energy-corp-cancambria-energy-to-participate-in-world-energies-summit-2026-296.htm",
-      "domain": "finanznachrichten.de",
-      "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T12:15:00Z",
-      "firstSeenAt": "2026-09-09T12:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "691e2127a93c9652783b",
-      "title": "Giá vàng đảo chiều tăng mạnh",
-      "url": "https://thanhnien.vn/gia-vang-dao-chieu-tang-manh-185260909160652664.htm",
-      "domain": "thanhnien.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-09-09T12:00:00Z",
-      "firstSeenAt": "2026-09-09T12:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0a5e9824a60fe0035495",
-      "title": "Americas Gold and Silver Corporation : Americas Gold and Silver Recognized as a Top Performer in the 2026 TSX30",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-09/69533101-americas-gold-and-silver-corporation-americas-gold-and-silver-recognized-as-a-top-performer-in-the-2026-tsx30-296.htm",
-      "domain": "finanznachrichten.de",
-      "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T12:00:00Z",
-      "firstSeenAt": "2026-09-09T12:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3f7295e0842ea75f48c9",
-      "title": "Giá vàng chiều 9 / 9 : Vàng SJC đảo chiều tăng 1 , 2 triệu đồng / lượng",
-      "url": "https://baomoi.com/gia-vang-chieu-9-9-vang-sjc-dao-chieu-tang-1-2-trieu-dong-luong-c56012950.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-09-09T12:00:00Z",
-      "firstSeenAt": "2026-09-09T12:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "17e40d1550ffa18d7ae3",
-      "title": "First copper - gold concentrate produced at Eldorado Skouries site",
-      "url": "https://www.mining-technology.com/news/first-copper-gold-concentrate-eldorados-skouries-site/",
-      "domain": "mining-technology.com",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-09-09T11:30:00Z",
-      "firstSeenAt": "2026-09-09T11:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8ef2b3bc87b4f8dc1e0c",
-      "title": "Ellis Martin Report : Bonanza Silver in Utah as Diablo Resources ( ASX : DBO ) Begins Maiden Drilling at North Star",
-      "url": "https://www.abnnewswire.net/press/en/143116/Ellis-Martin-Report-Bonanza-Silver-in-Utah-as-Diablo-Resources-%28ASX-DBO%29-Begins-Maiden-Drilling-at-North-Star.html",
-      "domain": "abnnewswire.net",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-09-09T11:30:00Z",
-      "firstSeenAt": "2026-09-09T11:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2049e6102a560f11e926",
-      "title": "Hormuz tensions push European gas prices to 3 . 5 - year high",
-      "url": "https://news.az/news/hormuz-tensions-push-european-gas-prices-to-35-year-high",
-      "domain": "news.az",
-      "language": "English",
-      "sourceCountry": "Azerbaijan",
-      "seenAt": "2026-09-09T11:30:00Z",
-      "firstSeenAt": "2026-09-09T11:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "febbf9b3183bb57a6add",
-      "title": "Додека Турција го засилува производството на бакар , Македонија сè уште не го користи потенцијалот од Иловица",
-      "url": "https://libertas.mk/dodeka-turci-a-go-zasiluva-proizvodstvoto-na-bakar-makedoni-a-se-ushte-ne-go-koristi-potenci-alot-od-ilovica/",
-      "domain": "libertas.mk",
-      "language": "Macedonian",
-      "sourceCountry": "Macedonia",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d8e4289c8cda900af4c9",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.onvista.de/news/2026/09-09-europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-0-10-26551691",
-      "domain": "onvista.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "27bd8feab233c2598616",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.freiepresse.de/nachrichten/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-artikel14402057",
-      "domain": "freiepresse.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5afe234398a7c7311cbf",
-      "title": "Rohstoffe : Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.volksstimme.de/deutschland-und-welt/wirtschaft/europaischer-gaspreis-erreicht-hochsten-stand-seit-ende-2022-4316685",
-      "domain": "volksstimme.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "41005a6d053e4172813f",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.die-glocke.de/blickindiewelt/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-1788949504",
-      "domain": "die-glocke.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8c717ddd9227d7b35cc0",
-      "title": "Europäischer Gaspreis steigt auf höchsten Stand seit Ende 2022",
-      "url": "https://www.finanzen.ch/nachrichten/rohstoffe/europaischer-gaspreis-steigt-auf-hoechsten-stand-seit-ende-2022-1036531497",
-      "domain": "finanzen.ch",
-      "language": "German",
-      "sourceCountry": "Switzerland",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "362a6eb94b853898dca7",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "http://www.fnp.de/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-zr-94482462.html",
-      "domain": "fnp.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "64d5989a02f7ab333cfa",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.az-online.de/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-zr-94482462.html",
-      "domain": "az-online.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2c016ad1e8ec3353085b",
-      "title": "Rohstoffe : Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.mz.de/deutschland-und-welt/wirtschaft/europaischer-gaspreis-erreicht-hochsten-stand-seit-ende-2022-4316686",
-      "domain": "mz.de",
-      "language": "German",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f089f2d155985a24da09",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022 - Wirtschafts - Nachrichten - Reutlinger General - Anzeiger",
-      "url": "https://www.gea.de/welt/wirtschaft_artikel,-europ%C3%A4ischer-gaspreis-erreicht-h%C3%B6chsten-stand-seit-ende-2022-_arid,7167587.html",
-      "domain": "gea.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T11:00:00Z",
-      "firstSeenAt": "2026-09-09T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "66b3120d41a03c50d99d",
-      "title": "Programma Nazionale di esplorazione Mineraria e risorse dellArco Calabro - Peloritano",
-      "url": "https://zoomsud.it/pileggi/",
-      "domain": "zoomsud.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-09-09T10:45:00Z",
-      "firstSeenAt": "2026-09-09T10:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "202fa5f4f3653a117358",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.shz.de/deutschland-welt/wirtschaft/artikel/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-51400801",
-      "domain": "shz.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T10:45:00Z",
-      "firstSeenAt": "2026-09-09T10:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "86de33eacb751abed70c",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "https://www.gmx.ch/magazine/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-2022-42705802",
-      "domain": "gmx.ch",
-      "language": "German",
-      "sourceCountry": "Switzerland",
-      "seenAt": "2026-09-09T10:45:00Z",
-      "firstSeenAt": "2026-09-09T10:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "57dad804638e5f3802ab",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "http://www.come-on.de/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-zr-94482462.html",
-      "domain": "come-on.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T10:45:00Z",
-      "firstSeenAt": "2026-09-09T10:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c06923524ef1ea47db96",
-      "title": "Europäischer Gaspreis erreicht höchsten Stand seit Ende 2022",
-      "url": "http://www.op-online.de/wirtschaft/europaeischer-gaspreis-erreicht-hoechsten-stand-seit-ende-2022-zr-94482462.html",
-      "domain": "op-online.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T10:45:00Z",
-      "firstSeenAt": "2026-09-09T10:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "287593c10fa1bc40a8cd",
-      "title": "Зимний ад для Европы : Как дорогой газ уничтожает экономику ЕС и возвращает Россию в игру",
-      "url": "https://runews24.ru/articles/09/09/2026/zimnij-ad-dlya-evropyi-kak-dorogoj-gaz-unichtozhaet-ekonomiku-es-i-vozvrashhaet-rossiyu-v-igru",
-      "domain": "runews24.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-09T10:45:00Z",
-      "firstSeenAt": "2026-09-09T10:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "25a42855f590bfdd5778",
-      "title": "Weshalb die Ölpreise weiter anziehen - Brent überspringt 100 - Dollar - Marke - Gaspreis mit Höchstsand seit 2022",
-      "url": "https://www.finanzen.net/nachricht/rohstoffe/iran-im-blick-darum-steigen-die-oelpreise-brent-klettert-ueber-100-us-dollar-gaspreis-mit-hoechstsand-seit-2022-15924841",
-      "domain": "finanzen.net",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T10:45:00Z",
-      "firstSeenAt": "2026-09-09T10:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "aa1e476a5d4df318acbf",
-      "title": "ILC Critical Minerals Ltd .: ILC Critical Minerals Ltd . Reports Results of 2026 Annual General Meeting",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-09/69531694-ilc-critical-minerals-ltd-ilc-critical-minerals-ltd-reports-results-of-2026-annual-general-meeting-296.htm",
-      "domain": "finanznachrichten.de",
-      "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T10:30:00Z",
-      "firstSeenAt": "2026-09-09T10:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9cfabd0b09f3fa526d16",
-      "title": "Europäischer Gaspreis steigt über 79 Euro - Höchster Stand seit Ende 2022",
-      "url": "https://www.finanzen.net/nachricht/aktien/europaeischer-gaspreis-steigt-ueber-79-euro-hoechster-stand-seit-ende-2022-15925331",
-      "domain": "finanzen.net",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-09T10:30:00Z",
-      "firstSeenAt": "2026-09-09T10:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9796da7fb0945fcce721",
-      "title": "Węgiel odchodzi w cień , czas na nowe złoto . To przyszłość polskiego górnictwa",
-      "url": "https://www.bankier.pl/wiadomosc/Wegiel-odchodzi-w-cien-czas-na-nowe-zloto-To-przyszlosc-polskiego-gornictwa-9194256.html",
-      "domain": "bankier.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-09-09T10:15:00Z",
-      "firstSeenAt": "2026-09-09T10:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0151e37526db480cb12c",
-      "title": "Almanyada doğal gaz depolarındaki dolulukta tarihi düşüş",
-      "url": "https://uzmanpara.milliyet.com.tr/uzmanpara/almanyada-dogal-gaz-depolarindaki-dolulukta-tarihi-dusus-7657056",
-      "domain": "uzmanpara.milliyet.com.tr",
+      "id": "1f5ffea47e98b6cf5870",
+      "title": "Yapay zekâ sunucularında parça krizi büyüdü : Açık yüzde 20 ye ulaştı",
+      "url": "https://www.dunya.com/ekonomi/yapay-zeka-sunucularinda-parca-krizi-buyudu-acik-yuzde-20ye-ulasti-haberi-839464",
+      "domain": "dunya.com",
       "language": "Turkish",
       "sourceCountry": "Turkey",
-      "seenAt": "2026-09-09T09:00:00Z",
-      "firstSeenAt": "2026-09-09T09:00:00Z",
+      "seenAt": "2026-09-10T08:15:00Z",
+      "firstSeenAt": "2026-09-10T08:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "19e36106eb4e1fb2b332",
+      "title": "Оценена готовность Европы к отопительному сезону - Новости на Вести . ru",
+      "url": "https://www.vesti.ru/ns/ocenena-gotovnost-evropy-k-otopitelnomu-sezonu",
+      "domain": "vesti.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-10T07:00:00Z",
+      "firstSeenAt": "2026-09-10T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d579a3e5e6dcf3eb54c4",
+      "title": "Reuters : Стратегия отказа ЕС от российского газа терпит неудачу",
+      "url": "https://www.nakanune.ru/news/2026/09/10/22886541/",
+      "domain": "nakanune.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-10T06:15:00Z",
+      "firstSeenAt": "2026-09-10T06:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0a79a80179f542b898f8",
+      "title": "Britain faces winter with soaring gas prices , thin reserves",
+      "url": "https://www.freemalaysiatoday.com/category/world/2026/09/10/britain-faces-winter-with-soaring-gas-prices-thin-reserves",
+      "domain": "freemalaysiatoday.com",
+      "language": "English",
+      "sourceCountry": "Malaysia",
+      "seenAt": "2026-09-10T06:15:00Z",
+      "firstSeenAt": "2026-09-10T06:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e926d7090e4b961190a0",
+      "title": "최태원 , 울산서 AX 현장경영 … AI 데이터센터 · 제조 혁신 점검",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026091012022062042",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T06:15:00Z",
+      "firstSeenAt": "2026-09-10T06:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c993aba2861714b47213",
+      "title": "엔비디아 독주 뚫으려면 국내서 먼저 써야 … K - 팹리스 , NPU 수출 지원 호소",
+      "url": "http://inews24.com/view/2004194",
+      "domain": "inews24.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-09-10T06:15:00Z",
+      "firstSeenAt": "2026-09-10T06:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7cb30c0a8cb17d0b2f4e",
+      "title": "Ново поскъпване на газа , България е с 65 % запълнени хранилища",
+      "url": "https://frognews.bg/novini/novo-poskapvane-gaza-balgariya-65-zapalneni-hranilishta.html",
+      "domain": "frognews.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-09-10T06:00:00Z",
+      "firstSeenAt": "2026-09-10T06:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2caf192c8e7b3bd10774",
+      "title": "Abundant US Nat - Gas Supplies Pressure Prices",
+      "url": "https://finance.yahoo.com/markets/commodities/articles/abundant-us-nat-gas-supplies-191222842.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-10T06:00:00Z",
+      "firstSeenAt": "2026-09-10T06:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f33db49adcaae637f25e",
+      "title": "Jutarnji list - Nvidia planira proširenje kapaciteta podatkovnih centara u Australiji",
+      "url": "https://www.jutarnji.hr/vijesti/svijet/nvidia-prosiruje-ai-kapacitete-u-australiji-na-2-gw-do-2027-15745033",
+      "domain": "jutarnji.hr",
+      "language": "Croatian",
+      "sourceCountry": "Croatia",
+      "seenAt": "2026-09-10T06:00:00Z",
+      "firstSeenAt": "2026-09-10T06:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "97293fd12f7cedea0b93",
+      "title": "반도체 호황 이끈 AI 투자⋯ 수익성 의구심 · 자금악화 땐 급랭 위험 [ 통화신용보고서 ]",
+      "url": "https://www.etoday.co.kr/news/view/2623933",
+      "domain": "etoday.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T04:15:00Z",
+      "firstSeenAt": "2026-09-10T04:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8eeb18d7daeb11c79046",
+      "title": "Prediction : Micron Stock Could Turn $10 , 000 Into a Much Larger Sum by 2030",
+      "url": "https://www.fool.com/investing/2026/09/09/prediction-micron-stock-could-turn-10000-into-a-mu/",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-10T04:15:00Z",
+      "firstSeenAt": "2026-09-10T04:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "921c68b280df35d22362",
+      "title": "SK Hynix Jumps 7 % as AI Diverts Memory From Phones ; Micron Holds Steady , Apple Slips",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-jumps-7-ai-155806927.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-10T04:00:00Z",
+      "firstSeenAt": "2026-09-10T04:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "28ad5fb7561b7d44cb3f",
+      "title": "한은 수도권 집값 상승 · 가계 빚 증가로 금융부문 위험성 커져",
+      "url": "https://www.hani.co.kr/arti/economy/economy_general/1277151.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T04:00:00Z",
+      "firstSeenAt": "2026-09-10T04:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f3421e7c7459b0c428b4",
+      "title": "넉 달 만에 서울 4년치 전기 가 생겨났다",
+      "url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003265910&PAGE_CD=N0002&CMPT_CD=M0111",
+      "domain": "ohmynews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T03:45:00Z",
+      "firstSeenAt": "2026-09-10T03:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "165afeb6d4a0e03f9f0b",
+      "title": "Dow Jones Top Company Headlines at 11 PM ET : Star AI Researcher Is Leaving Meta | Ford ...",
+      "url": "https://www.morningstar.com/news/dow-jones/2026090910458/dow-jones-top-company-headlines-at-11-pm-et-star-ai-researcher-is-leaving-meta-ford",
+      "domain": "morningstar.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-10T03:45:00Z",
+      "firstSeenAt": "2026-09-10T03:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "aecf389ed8a92f69e318",
+      "title": "K - 팹리스 , 해외 PoC 감당 한계 … 마중물 정책 호소",
+      "url": "https://zdnet.co.kr/view/?no=20260910115738",
+      "domain": "zdnet.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T03:45:00Z",
+      "firstSeenAt": "2026-09-10T03:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "af259aee78ac729cb0b8",
+      "title": "Dangote power plant : Firm plans 1 , 000MW facility in Kenya",
+      "url": "https://punchng.com/dangote-plans-1000mw-power-plant-in-kenya/",
+      "domain": "punchng.com",
+      "language": "English",
+      "sourceCountry": "Nigeria",
+      "seenAt": "2026-09-10T03:30:00Z",
+      "firstSeenAt": "2026-09-10T03:30:00Z",
       "topicIds": [
         "gas-markets"
       ],
@@ -1281,27 +552,698 @@
       "duplicateCount": 1
     },
     {
-      "id": "d5b757e43b1af4993ac2",
-      "title": "Η Eldorado Gold ανακοινώνει την παραγωγή του πρώτου συμπυκνώματος χαλκού - χρυσού στις Σκουριές",
-      "url": "https://www.topontiki.gr/2026/09/09/i-eldorado-gold-advertorial-anakinoni-tin-paragogi-tou-protou-simpiknomatos-chalkou-chrisou-stis-skouries/",
-      "domain": "topontiki.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-09-09T08:45:00Z",
-      "firstSeenAt": "2026-09-09T08:45:00Z",
+      "id": "abd9a798385969c2055e",
+      "title": "최태원 , 울산 데이터센터 · CLX 현장경영",
+      "url": "https://biz.heraldcorp.com/article/10869076",
+      "domain": "biz.heraldcorp.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T03:00:00Z",
+      "firstSeenAt": "2026-09-10T03:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Strategic materials"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0812b72b1d8301997878",
+      "title": "최태원 일본 반도체 투자 검토 중 … 끝나는 대로 공개",
+      "url": "http://www.newstomato.com/ReadNews.aspx?no=1312003",
+      "domain": "newstomato.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T03:00:00Z",
+      "firstSeenAt": "2026-09-10T03:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "667e2c2fd3f0d4cef33e",
+      "title": "최태원 , 울산서 AX 현장경영 … AI 데이터센터 · CLX 점검",
+      "url": "http://www.newstomato.com/ReadNews.aspx?no=1313210",
+      "domain": "newstomato.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T03:00:00Z",
+      "firstSeenAt": "2026-09-10T03:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "649b29b871f468e0579b",
+      "title": "AI Could Eventually Crack Cancer and Drug Discovery , Says Arm CEO But This Is What Holding It Back",
+      "url": "https://finance.yahoo.com/technology/ai/articles/ai-could-eventually-crack-cancer-143646678.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-10T02:45:00Z",
+      "firstSeenAt": "2026-09-10T02:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "af1a9f2e3a7268b8b5a5",
+      "title": "34 , 5 % : lAlgérie signe une troisième année de leadership gazier en Espagne",
+      "url": "https://lanouvelletribune.info/2026/09/345-lalgerie-signe-une-troisieme-annee-de-leadership-gazier-en-espagne/",
+      "domain": "lanouvelletribune.info",
+      "language": "French",
+      "sourceCountry": "Benin",
+      "seenAt": "2026-09-10T02:15:00Z",
+      "firstSeenAt": "2026-09-10T02:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "edac66a0164a34535570",
+      "title": "美 AMD도 HBM 품귀 호소 … 인텔 파운드리 협력엔 선 긋기 [ 비즈360 ]",
+      "url": "https://biz.heraldcorp.com/article/10868854",
+      "domain": "biz.heraldcorp.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T02:15:00Z",
+      "firstSeenAt": "2026-09-10T02:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a9766959b201c7a5e0eb",
+      "title": "Російський газ у ЄС - аудитори заявили про проблеми з планом відмови від РФ - новини енергетики",
+      "url": "https://zn.ua/ukr/energetics/auditori-jes-poperedili-pro-problemi-z-vidmovoju-vid-rosijskikh-enerhonosijiv.html",
+      "domain": "zn.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-09-10T01:45:00Z",
+      "firstSeenAt": "2026-09-10T01:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "13cb54d59c45b402d48f",
+      "title": "Євросоюз не готовий повністю відмовитися від енергоносіїв РФ – Reuters",
+      "url": "https://glavcom.ua/world/world-politics/jevrosojuz-ne-hotovij-povnistju-vidmovitisja-vid-enerhonosijiv-rf-reuters-1141918.html",
+      "domain": "glavcom.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-09-10T01:00:00Z",
+      "firstSeenAt": "2026-09-10T01:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "64489e8c897c1c0785ba",
+      "title": "당진에 AI 데이터센터 건립 … 1조2405억 투자 - 국민일보",
+      "url": "https://www.kmib.co.kr/article/view.asp?arcid=9000010688&code=11131100&sid1=soc",
+      "domain": "kmib.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T00:30:00Z",
+      "firstSeenAt": "2026-09-10T00:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "acce0a48c5a1c2bd555c",
+      "title": "HBM Nigeria Commissions High - Capacity CNG Station . – THISDAYLIVE",
+      "url": "https://www.thisdaylive.com/2026/09/10/hbm-nigeria-commissions-high-capacity-cng-station/",
+      "domain": "thisdaylive.com",
+      "language": "English",
+      "sourceCountry": "Nigeria",
+      "seenAt": "2026-09-10T00:30:00Z",
+      "firstSeenAt": "2026-09-10T00:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8674b9a196c5d2327d7c",
+      "title": "하락장에서도 뜨거운 미국 메모리주 … SK 하닉 ADR 7 % 급등 · 마이크론 2 . 8 % 상승",
+      "url": "https://www.fnnews.com/news/202609100653416479",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T00:15:00Z",
+      "firstSeenAt": "2026-09-10T00:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "75ec822c2cb837385806",
+      "title": "구글 , 핀란드에 20조원 AI 인프라 투자 [ 글로벌AI브리핑 ]",
+      "url": "https://www.fnnews.com/news/202609100801416555",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T00:15:00Z",
+      "firstSeenAt": "2026-09-10T00:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b559a47866974e5d321d",
+      "title": "메모리 , 반도체산업의 제왕 지위 더 유지된다 .... 반도체 전체 매출의 절반 이상 차지",
+      "url": "https://www.fnnews.com/news/202609100747370534",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T00:15:00Z",
+      "firstSeenAt": "2026-09-10T00:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "51e1a59fe4ff2f6699c1",
+      "title": "메모리 , 반도체산업의 왕 … 전체 매출의 50~55 % 차지",
+      "url": "http://www.koreatimes.com/article/20260909/1629045",
+      "domain": "koreatimes.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-10T00:00:00Z",
+      "firstSeenAt": "2026-09-10T00:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "66ea59987e54b96a3d46",
+      "title": "[ 中 거인의 공급망 ] ①반도체 검측 장비 정측전자 없으면 CXMT 도 없다",
+      "url": "https://www.newspim.com/news/view/20260909001060",
+      "domain": "newspim.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-09T23:45:00Z",
+      "firstSeenAt": "2026-09-09T23:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4f2efc815f3043e88c30",
+      "title": "What to know about the Southcentral Alaska gas crunch",
+      "url": "https://alaskapublic.org/programs/alaska-economic-report/2026-09-09/what-to-know-about-the-southcentral-alaska-gas-crunch",
+      "domain": "alaskapublic.org",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-09T23:30:00Z",
+      "firstSeenAt": "2026-09-09T23:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a5e40cbda80ca038a8b3",
+      "title": "১৮ কার্গো এলএনজি আমদানির অনুমোদন",
+      "url": "https://www.ntvbd.com/bangladesh/news-1801249",
+      "domain": "ntvbd.com",
+      "language": "Bengali",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-09-09T23:15:00Z",
+      "firstSeenAt": "2026-09-09T23:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ef32b27d3a29ddbd0134",
+      "title": "SMIC Outgrows TSMC and Samsung With 20 % Surge , Overtaking GlobalFoundries as World Third - Largest Foundry",
+      "url": "https://wccftech.com/smic-outgrows-tsmc-and-samsung-with-20-surge-overtaking-globalfoundries-as-worlds-third-largest-foundry/",
+      "domain": "wccftech.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-09T23:15:00Z",
+      "firstSeenAt": "2026-09-09T23:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "64151717af3750fc3075",
+      "title": "European gas spikes to 2023 highs as expanding Iran war threatens LNG supply | Hellenic Shipping News Worldwide",
+      "url": "https://www.hellenicshippingnews.com/european-gas-spikes-to-2023-highs-as-expanding-iran-war-threatens-lng-supply/",
+      "domain": "hellenicshippingnews.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-09T22:45:00Z",
+      "firstSeenAt": "2026-09-09T22:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "eabb66ba708459ed79ca",
+      "title": "EU should loosen gas storage requirements after 2027 : market watchers | Hellenic Shipping News Worldwide",
+      "url": "https://www.hellenicshippingnews.com/eu-should-loosen-gas-storage-requirements-after-2027-market-watchers/",
+      "domain": "hellenicshippingnews.com",
+      "language": "English",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-09T22:45:00Z",
+      "firstSeenAt": "2026-09-09T22:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "728cb67dd266f2858da6",
+      "title": "Юшков назвал « космической » проблему Европы с запасами газа",
+      "url": "https://tvzvezda.ru/news/2026992315-0ArLo.html",
+      "domain": "tvzvezda.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-09T22:30:00Z",
+      "firstSeenAt": "2026-09-09T22:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "13a37b0870e228f5cc29",
+      "title": "Amkor increases investment in new Arizona facility to $12 billion",
+      "url": "https://azbigmedia.com/business/amkor-increases-investment-in-new-arizona-facility-to-12-billion/",
+      "domain": "azbigmedia.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-09T22:15:00Z",
+      "firstSeenAt": "2026-09-09T22:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e8a09779edae888f9c1f",
+      "title": "Qualcomm Shares Surge 9 . 5 % on Amazon AI Partnership and 25 Million - Share Warrant",
+      "url": "https://finance.yahoo.com/technology/ai/articles/qualcomm-shares-surge-9-5-134728116.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-09T22:15:00Z",
+      "firstSeenAt": "2026-09-09T22:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "082bdf149e037581fd00",
+      "title": "الإمارات وألمانيا .. تعاون متزايد في العمل المناخي والطاقة المتجددة",
+      "url": "https://www.albayan.ae/news/uae/government/1551034",
+      "domain": "albayan.ae",
+      "language": "Arabic",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-09-09T22:00:00Z",
+      "firstSeenAt": "2026-09-09T22:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e14066bf98b6527e29b0",
+      "title": "Apple unveils iPhone 18 Pro series : What new , how much they cost",
+      "url": "http://thepeninsulaqatar.com/article/09/09/2026/apple-unveils-iphone-18-pro-series-whats-new-how-much-they-cost",
+      "domain": "thepeninsulaqatar.com",
+      "language": "English",
+      "sourceCountry": "Qatar",
+      "seenAt": "2026-09-09T21:00:00Z",
+      "firstSeenAt": "2026-09-09T21:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f7e11f28323aa9c024b3",
+      "title": "Argent LNG , Albania sign MoU for 5 - MMtpa LNG terminal",
+      "url": "https://www.worldoil.com/news/2026/9/9/argent-lng-albania-sign-mou-for-5-mmtpa-lng-terminal/",
+      "domain": "worldoil.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-09T20:45:00Z",
+      "firstSeenAt": "2026-09-09T20:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "90760e811c8392af14eb",
+      "title": "GITEX Ai Türkiye nin ilk gününde yapay zeka ekosisteminin geleceği konuşuldu",
+      "url": "https://www.aa.com.tr/tr/bilim-teknoloji/gitex-ai-turkiyenin-ilk-gununde-yapay-zeka-ekosisteminin-gelecegi-konusuldu/4052434",
+      "domain": "aa.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-09T20:30:00Z",
+      "firstSeenAt": "2026-09-09T20:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "20c3b80d1b750ff28518",
+      "title": "В ЕС признали провал плана по отказу от энергоресурсов из России :: Новости дня / ВЗГЛЯД",
+      "url": "https://vz.ru/news/2026/9/9/1450131.html",
+      "domain": "vz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-09T19:45:00Z",
+      "firstSeenAt": "2026-09-09T19:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1314,12 +1256,12 @@
     {
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
-      "status": "stale",
-      "observationDate": "2026-09-09T16:45:00Z",
-      "lastSuccessfulAt": "2026-09-09T18:34:08Z",
+      "status": "partial",
+      "observationDate": "2026-09-10T08:15:00Z",
+      "lastSuccessfulAt": "2026-09-10T09:41:29Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 0 returned records across 0/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
