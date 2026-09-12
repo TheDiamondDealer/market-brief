@@ -1,3 +1,17 @@
+> **11 September 2026 amendment — VERDICT: ACUTE STAGFLATION INTACT; DISORDERLY RISK-OFF EXPRESSION RE-STRENGTHENING, NOT FULLY RESTORED.**
+> - **Physical/policy core:** Brent closed **$104.61**, above the explicit $100 re-strengthening rule, with physical-flow impairment; the US 10-year finished near **4.974%**, the latest 10-year real yield reached **2.55%** on Thursday, and September Fed hike pricing rose to roughly **85–90%**.
+> - **Risk transmission:** gold fell **1.4%** Monday-to-Friday; the S&P 500 and Nasdaq fell **0.8%/0.7%** on the reported week; the ASX 200 fell **3.0%** Monday-to-Friday and closed below **8,780**.
+> - **Offsets:** DXY closed **99.09**, USD/JPY closed **153.55**, US equities rebounded Friday and broad credit widening was not verified. Strong-dollar and weak-yen pillars therefore remain invalidated.
+> - **China/carry:** copper and Dalian iron ore weakened despite energy-led Chinese PPI acceleration; yen strength signals deteriorating carry health, not a confirmed disorderly unwind.
+>
+> **Active interpretation:** the acute energy and long-duration stagflation core has re-strengthened enough to shift the live state, but the disorderly expression is not fully restored. Continue to exclude strong USD and weak yen as confirming pillars.
+>
+> **Restore full disorderly risk-off if:** the energy/rates shock gains joint confirmation from DXY above 101.5, Nasdaq below 25,900 with weak breadth and observable credit widening, or an equivalent multi-session liquidation cluster.
+>
+> **Escalate the re-strengthening call if:** Brent closes above $110, the US 10-year closes above 5.00%, or Fed/BOJ tightening produces further equity, credit and carry deterioration.
+>
+> **De-escalate toward the fractured/stabilising state if:** Brent falls below $95 and then $85 with verified physical-flow repair, the US 10-year falls below 4.75% and then 4.45%, policy pricing eases and equity breadth repairs while DXY stays below 100.
+
 # Regime State
 
 > **31 July 2026 amendment — VERDICT: ACUTE STAGFLATION INTACT; DISORDERLY RISK-OFF EXPRESSION FRACTURED BY INTERVENTION AND AI CONCENTRATION.**
