@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-09-12T17:07:47Z",
+  "generatedAtUtc": "2026-09-12T19:18:52Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-09-12T17:07:47Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-09-12T19:18:52Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,50 +52,50 @@
   ],
   "articles": [
     {
-      "id": "c6ef316132f8155c6287",
-      "title": "US House of Representatives to vote on Russia sanctions bill that could hit India with tariffs",
-      "url": "https://www.moneycontrol.com/world/us-house-of-representatives-to-vote-on-russia-sanctions-bill-that-could-hit-india-with-tariffs-article-14028262.html",
-      "domain": "moneycontrol.com",
+      "id": "72e836fbb27680c3fc72",
+      "title": "Behind Iran record wheat harvest amid drought , sanctions and war",
+      "url": "https://www.presstv.co.uk/Detail/2026/09/10/776031/Behind-Iran",
+      "domain": "presstv.co.uk",
       "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-12T03:30:00Z",
-      "firstSeenAt": "2026-09-12T03:30:00Z",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-09-12T09:30:00Z",
+      "firstSeenAt": "2026-09-12T09:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 36,
+      "materialityScore": 38,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "9741f242700b9413ac1a",
-      "title": "Набиуллина заявила об ускорении роста цен в России",
-      "url": "https://sib.fm:443/news/2026/09/12/nabiullina-zayavila-ob-uskorenii-rosta-tsen-v-rossii",
-      "domain": "sib.fm",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-12T16:45:00Z",
-      "firstSeenAt": "2026-09-12T16:45:00Z",
+      "id": "8ad4a7c411ea11abebd8",
+      "title": "Las exportaciones argentinas crecieron casi 50 % en los últimos tres años por el impulso de la minería y la energía",
+      "url": "https://tn.com.ar/economia/2026/09/12/las-exportaciones-argentinas-crecieron-casi-50-en-los-ultimos-tres-anos-por-el-impulso-de-la-mineria-y-la-energia/",
+      "domain": "tn.com.ar",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-09-12T18:45:00Z",
+      "firstSeenAt": "2026-09-12T18:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -104,99 +104,206 @@
       "duplicateCount": 1
     },
     {
-      "id": "9e96606f62698222e575",
-      "title": "Positron AI Raises $875M to Prove Commodity Memory Can Beat HBM in Inference",
-      "url": "https://www.techtimes.com/articles/327400/20260912/positron-ai-raises-875m-prove-commodity-memory-can-beat-hbm-inference.htm",
-      "domain": "techtimes.com",
+      "id": "12d2468fcfcaa725d245",
+      "title": "Argentina Braces for an El Nino That Peaks Over Its Harvest",
+      "url": "https://www.riotimesonline.com/argentina-el-nino-parana-flood-risk-harvest-2026/",
+      "domain": "riotimesonline.com",
+      "language": "English",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-09-12T18:00:00Z",
+      "firstSeenAt": "2026-09-12T18:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f8b14adfb7feefc775a9",
+      "title": "Southern Plains Wheat Faces Drought Before El Niño",
+      "url": "https://www.rfdtv.com/southern-plains-wheat-faces-drought-before-el-nino",
+      "domain": "rfdtv.com",
       "language": "English",
       "sourceCountry": "United States",
+      "seenAt": "2026-09-11T19:30:00Z",
+      "firstSeenAt": "2026-09-11T19:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0bb2e1d2a35d795f1c67",
+      "title": "Konyada TMOdan 2 milyon tona yakın hububat alımı",
+      "url": "https://www.yenikonya.com.tr/konya/konya_da_tmo_dan_2_milyon_tona_yakin_hububat_alimi-1984665",
+      "domain": "yenikonya.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-12T17:15:00Z",
+      "firstSeenAt": "2026-09-12T17:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "32380bec5e591d289f87",
+      "title": "Culturile agricole europene ajung la maturitate cu până la 20 de zile mai devreme . Mai repede nu înseamnă și mai bine",
+      "url": "https://www.antenasatelor.ro/fermier-in-romania/agricultura-in-lume/culturile-agricole-europene-ajung-la-maturitate-cu-pana-la-20-de-zile-mai-devreme-mai-repede-nu-inseamna-si-mai-bine-id44576.html",
+      "domain": "antenasatelor.ro",
+      "language": "Romanian",
+      "sourceCountry": "Romania",
+      "seenAt": "2026-09-12T16:15:00Z",
+      "firstSeenAt": "2026-09-12T16:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4c749dcda6a6bf1271ee",
+      "title": "Arabica ή Robusta ; Ποιος καφές έχει περισσότερη καφεΐνη",
+      "url": "https://pelop.gr/arabica-robusta-diafores-kafes/",
+      "domain": "pelop.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-09-12T16:15:00Z",
+      "firstSeenAt": "2026-09-12T16:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fd2abfeca16e7cc78ac8",
+      "title": "Productores de arroz en Portuguesa confirman el arrime de sus cosechas a los silos",
+      "url": "https://www.globovision.com/regiones/61631/productores-de-arroz-en-portuguesa-confirman-el-arrime-de-sus-cosechas-a-los-silos",
+      "domain": "globovision.com",
+      "language": "Spanish",
+      "sourceCountry": "Venezuela",
       "seenAt": "2026-09-12T16:00:00Z",
       "firstSeenAt": "2026-09-12T16:00:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "21f5b8ad4bc74a41abb7",
-      "title": "ABM Industrie ( ABM ) Cash Flow Jump Masks A Split Business Story",
-      "url": "https://www.insidermonkey.com/blog/abm-industries-abm-cash-flow-jump-masks-a-split-business-story-1836478/",
-      "domain": "insidermonkey.com",
-      "language": "English",
-      "sourceCountry": "United States",
+      "id": "983a4c6946559b2d9ce8",
+      "title": "Konyada tarladan depoya : TMO yaklaşık 2 milyon ton hububat alımını tamamladı",
+      "url": "http://www.haberport.com/haber/konyada-tarladan-depoya-tmo-yaklasik-2-milyon-ton-hububat-alimini-tamamladi/27504",
+      "domain": "haberport.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
       "seenAt": "2026-09-12T15:15:00Z",
       "firstSeenAt": "2026-09-12T15:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "2723c9718232a6452bb2",
-      "title": "Inflation heated up last month , boosting the case for a Fed rate hike",
-      "url": "https://www.kitv.com/news/business/inflation-heated-up-last-month-boosting-the-case-for-a-fed-rate-hike/article_6e85b165-ecc5-5b96-b20a-706123da894c.html",
-      "domain": "kitv.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T04:30:00Z",
-      "firstSeenAt": "2026-09-12T04:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "07e26e88d155183f35f6",
-      "title": "H Nvidia εξετάζει επένδυση έως $10 δισ . στην Anthropic",
-      "url": "https://www.euro2day.gr/news/world/article/2368730/h-nvidia-exetazei-ependysh-eos-10-dis-sthn-anthrop.html",
-      "domain": "euro2day.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
+      "id": "4196da989ba9425b2000",
+      "title": "Qué es la Black Magic Cake : la torta de chocolate de 50 años que se prepara en 6 pasos",
+      "url": "https://tn.com.ar/cocina/recetas/2026/09/12/que-es-la-black-magic-cake-la-torta-de-chocolate-de-50-anos-que-se-prepara-en-6-pasos/",
+      "domain": "tn.com.ar",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
       "seenAt": "2026-09-12T15:00:00Z",
       "firstSeenAt": "2026-09-12T15:00:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -205,23 +312,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "a135c54443df1b94c8da",
-      "title": "جريدة الرياض | السواحه يعزز شراكات المملكة في البنية التحتية للذكاء الاصطناعي وأشباه الموصلات والاستثمار التقني",
-      "url": "https://www.alriyadh.com/2206312",
-      "domain": "alriyadh.com",
-      "language": "Arabic",
-      "sourceCountry": "Saudi Arabia",
-      "seenAt": "2026-09-12T14:30:00Z",
-      "firstSeenAt": "2026-09-12T14:30:00Z",
+      "id": "2ba6b87780e5ca214342",
+      "title": "Los agricultores ucranianos luchan por sobrevivir ante el bloqueo ruso de exportaciones",
+      "url": "https://www.elmundo.es/internacional/2026/09/12/6aa56352e9cf4ac6238b4583.html",
+      "domain": "elmundo.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-09-12T15:00:00Z",
+      "firstSeenAt": "2026-09-12T15:00:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -230,48 +338,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "38a58c893866b8d14737",
-      "title": "Apple and Taiwan Semiconductor Manufacturing Just Announced a Cutting - Edge Chip . 1 Stock Offers Far Greater Upside .",
-      "url": "https://www.aol.com/articles/apple-taiwan-semiconductor-manufacturing-just-134400000.html",
-      "domain": "aol.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T14:30:00Z",
-      "firstSeenAt": "2026-09-12T14:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4bfc44b39e673bf54c6b",
-      "title": "Microsoft veri merkezi kapasitesini e katlayacak",
-      "url": "https://www.teknoblog.com/microsoft-veri-merkezi-kapasitesi-38-gw/",
-      "domain": "teknoblog.com",
+      "id": "60981c3620b2bab16c20",
+      "title": "TMO , Konyada 92 noktada yaklaşık 2 milyon ton hububat teslim aldı",
+      "url": "https://www.yeniakit.com.tr/haber/tmo-konyada-92-noktada-yaklasik-2-milyon-ton-hububat-teslim-aldi-2022414.html",
+      "domain": "yeniakit.com.tr",
       "language": "Turkish",
       "sourceCountry": "Turkey",
       "seenAt": "2026-09-12T14:30:00Z",
       "firstSeenAt": "2026-09-12T14:30:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -280,98 +364,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "a59e2f44cab370eff8a6",
-      "title": "Apple and Taiwan Semiconductor Manufacturing Just Announced a Cutting - Edge Chip . 1 Stock Offers Far Greater Upside .",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/apple-taiwan-semiconductor-manufacturing-just-134400785.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T14:15:00Z",
-      "firstSeenAt": "2026-09-12T14:15:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6cadaf0b3f14a56a14e9",
-      "title": "Oracleda işten çıkarma maliyeti 2 , 8 milyar dolara çıktı",
-      "url": "https://www.dunya.com/dunya/oracleda-isten-cikarma-maliyeti-28-milyar-dolara-cikti-haberi-839777",
-      "domain": "dunya.com",
+      "id": "d849d7660a143acdb247",
+      "title": "Konyada TMOdan 2 milyon tona yakın hububat alımı",
+      "url": "https://www.konhaber.com/guncel/konya_da_tmo_dan_2_milyon_tona_yakin_hububat_alimi-2008934h",
+      "domain": "konhaber.com",
       "language": "Turkish",
       "sourceCountry": "Turkey",
-      "seenAt": "2026-09-12T14:15:00Z",
-      "firstSeenAt": "2026-09-12T14:15:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "323ca159570a55425508",
-      "title": "Pax Silica offers opportunity but raises questions for Bangladesh",
-      "url": "https://www.prokerala.com/news/articles/a1811528.html",
-      "domain": "prokerala.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-12T14:15:00Z",
-      "firstSeenAt": "2026-09-12T14:15:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "46ac9ecd73a070587b19",
-      "title": "Япония насочва бъдещите си инвестиции в САЩ към енергетиката ᐉ Новини от Fakti . bg - Бизнес",
-      "url": "https://fakti.bg/biznes/1080407-aponia-nasochva-badeshtite-si-investicii-v-sasht-kam-energetikata",
-      "domain": "fakti.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
       "seenAt": "2026-09-12T14:00:00Z",
       "firstSeenAt": "2026-09-12T14:00:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -380,24 +390,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "aa4c4497f2997c620dd0",
-      "title": "Nervepirrende rentethriller : – Kan vippe det",
-      "url": "https://e24.no/norsk-oekonomi/i/zO3z54/nervepirrende-rentethriller-kan-vippe-det",
-      "domain": "e24.no",
-      "language": "Norwegian",
-      "sourceCountry": "Norway",
-      "seenAt": "2026-09-12T13:30:00Z",
-      "firstSeenAt": "2026-09-12T13:30:00Z",
+      "id": "790d450b7e2bf1abb3da",
+      "title": "Konyada TMOdan 2 milyon tona yakın hububat alımı",
+      "url": "https://haber.mynet.com/konyada-tmodan-2-milyon-tona-yakin-hububat-alimi-110107311123",
+      "domain": "haber.mynet.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-12T14:00:00Z",
+      "firstSeenAt": "2026-09-12T14:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -406,333 +416,50 @@
       "duplicateCount": 1
     },
     {
-      "id": "0566fe389efdde90f537",
-      "title": "فيتش تتوقع تثبيت أسعار الفائدة في مصر حتى نهاية 2026",
-      "url": "https://www.shorouknews.com/news/view.aspx?cdate=12092026&id=5308a0a8-2b99-4359-96d2-944454ebb01a",
-      "domain": "shorouknews.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
+      "id": "84c13b9dd3dddf9e4255",
+      "title": "Konyada hasat bereketi ! TMOdan 2 milyona yakın alım",
+      "url": "https://www.pusulahaber.com.tr/konyada-hasat-bereketi-tmodan-2-milyona-yakin-alim-1836769h.htm",
+      "domain": "pusulahaber.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
       "seenAt": "2026-09-12T13:15:00Z",
       "firstSeenAt": "2026-09-12T13:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "149ce079055ba4c40f6d",
-      "title": "한기대 2027학년도 수시 경쟁률 13 . 20대 1 ... 35년 개교 역사 최대",
-      "url": "https://zdnet.co.kr/view/?no=20260912182058",
-      "domain": "zdnet.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-12T12:45:00Z",
-      "firstSeenAt": "2026-09-12T12:45:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fc57bde7b6690caa8958",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.wfmj.com/news/consumer/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_2d21165d-9c2a-554b-96e5-e6fb420a40ce.html",
-      "domain": "wfmj.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T12:45:00Z",
-      "firstSeenAt": "2026-09-12T12:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "56abbc8aacc957c03213",
-      "title": "Stiglitz yapay zekâ balonu için uyardı servet birkaç elde toplanabilir",
-      "url": "https://www.dunya.com/ekonomi/stiglitz-yapay-zeka-balonu-icin-uyardi-servet-birkac-elde-toplanabilir-haberi-839762",
-      "domain": "dunya.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-09-12T12:00:00Z",
-      "firstSeenAt": "2026-09-12T12:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dd92cb2f8c2c7b67d663",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.wfmz.com/business/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_d0771c40-7518-5831-9f4f-dabf0b2c13cb.html",
-      "domain": "wfmz.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T12:00:00Z",
-      "firstSeenAt": "2026-09-12T12:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ec0b6981967ad10e1879",
-      "title": "Klaus Schmidt - Hebbel : El crecimiento de este año será muy mediocre por la herencia de Boric y los shocks negativos de oferta y demanda",
-      "url": "https://www.latercera.com/pulso/noticia/klaus-schmidt-hebbel-el-crecimiento-de-este-ano-sera-muy-mediocre-por-la-herencia-de-boric-y-los-shocks-negativos-de-oferta-y-demanda/",
-      "domain": "latercera.com",
-      "language": "Spanish",
-      "sourceCountry": "Chile",
+      "id": "8a1976a15f00d4d2cd22",
+      "title": "Tiramisu je zrazu všade . Za jeho obrovským návratom je viac než len chuť",
+      "url": "https://www.noviny.sk/zahranicie/1257943-tiramisu-ovladlo-kaviarne-svadby-aj-socialne-siete-preco-sa-z-klasickeho-dezertu-stal-hit-roka-2026",
+      "domain": "noviny.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
       "seenAt": "2026-09-12T11:45:00Z",
       "firstSeenAt": "2026-09-12T11:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "95dd113167615588ac8a",
-      "title": "Lam Research Sees Sold - Out Chip Demand , Targets Capacity and AI Service Gains",
-      "url": "https://www.tickerreport.com/banking-finance/13582761/lam-research-sees-sold-out-chip-demand-targets-capacity-and-ai-service-gains.html",
-      "domain": "tickerreport.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T11:30:00Z",
-      "firstSeenAt": "2026-09-12T11:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "975d617c6c93ccd4490e",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.therecord.com/business/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_8a861397-e2f0-5efd-8d6e-3e9405a2df47.html",
-      "domain": "therecord.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-09-12T11:30:00Z",
-      "firstSeenAt": "2026-09-12T11:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5b80c2c19d7866ce2143",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://abcnews.com/Business/wireStory/wall-street-week-ahead-federal-reserve-decision-interest-136385447",
-      "domain": "abcnews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T11:30:00Z",
-      "firstSeenAt": "2026-09-12T11:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cde1cdc55f17b941ee09",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.gjsentinel.com/news/us/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_6ca41e1c-b4f7-5af1-ac3e-30fafd06e170.html",
-      "domain": "gjsentinel.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T11:30:00Z",
-      "firstSeenAt": "2026-09-12T11:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b772d27db2932164acf1",
-      "title": "UBS WM : 76 mesi e non sentirli - PAROLA AL MERCATO",
-      "url": "https://www.borsaitaliana.it/borsa/notizie/radiocor/finanza/dettaglio/ubs-wm-76-mesi-e-non-sentirli-parola-al-mercato-nRC_12092026_1223_231202059.html",
-      "domain": "borsaitaliana.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-09-12T11:15:00Z",
-      "firstSeenAt": "2026-09-12T11:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0ad2232347ce37c194f7",
-      "title": "Central bank under pressure to raise rates at upcoming meeting : Economists",
-      "url": "https://focustaiwan.tw:443/business/202609120009",
-      "domain": "focustaiwan.tw",
-      "language": "English",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-09-12T11:15:00Z",
-      "firstSeenAt": "2026-09-12T11:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1b1607b96938542ed22b",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.wral.com/news/ap/f6341-wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/",
-      "domain": "wral.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T10:15:00Z",
-      "firstSeenAt": "2026-09-12T10:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -741,23 +468,102 @@
       "duplicateCount": 1
     },
     {
-      "id": "40db3f7e4ac90be1c9c0",
-      "title": "Europa kasni za svijetom : Provedeno tek 15 , 7 posto Draghijevih preporuka",
-      "url": "https://www.poslovni.hr/europska-unija/europa-kasni-za-svijetom-provedeno-tek-157-posto-draghijevih-preporuka-4554511",
-      "domain": "poslovni.hr",
-      "language": "Croatian",
-      "sourceCountry": "Croatia",
+      "id": "3ca4b1141674351dfbb6",
+      "title": "Todo lo que necesitás saber para celebrar el Día del Chocolate como un experto",
+      "url": "https://www.elsol.com.ar/de-revista/todo-lo-que-necesitas-saber-para-celebrar-el-dia-del-chocolate-como-un-experto/",
+      "domain": "elsol.com.ar",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-09-12T11:45:00Z",
+      "firstSeenAt": "2026-09-12T11:45:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c2001c186e08a3cd5ce3",
+      "title": "Grūdai atpigo trečdaliu , tačiau duona – gerokai mažiau . Kodėl ?",
+      "url": "https://ve.lt/gyvenimas/grudai-atpigo-trecdaliu-taciau-duona-gerokai-maziau-kodel",
+      "domain": "ve.lt",
+      "language": "Lithuanian",
+      "sourceCountry": "Lithuania",
+      "seenAt": "2026-09-12T11:30:00Z",
+      "firstSeenAt": "2026-09-12T11:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1cfa3fe276cc224367c4",
+      "title": "Урожай зерна в южных регионах России превысил 44 млн тонн",
+      "url": "https://profile.ru/news/economy/urozhaj-zerna-v-juzhnyh-regionah-rossii-prevysil-44-mln-tonn-1900762/",
+      "domain": "profile.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-12T11:00:00Z",
+      "firstSeenAt": "2026-09-12T11:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2730e17ceb289854de92",
+      "title": "В Кушониёне стартовала кампания по сбору хлопка и зерновой кукурузы",
+      "url": "https://khovar.tj/rus/2026/09/v-kushoniyone-startovala-kampaniya-po-sboru-hlopka-i-zernovoj-kukuruzy/",
+      "domain": "khovar.tj",
+      "language": "Russian",
+      "sourceCountry": "Tajikistan",
       "seenAt": "2026-09-12T10:00:00Z",
       "firstSeenAt": "2026-09-12T10:00:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -766,24 +572,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "e0b8fd4b58a4adb3326c",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.stcatharinesstandard.ca/business/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_13613425-d80d-58ca-b37f-10a71c6a7ae9.html",
-      "domain": "stcatharinesstandard.ca",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-09-12T09:30:00Z",
-      "firstSeenAt": "2026-09-12T09:30:00Z",
+      "id": "0ec9415bbf108871ca79",
+      "title": "Кофе , кефир , немного масла : нежнейший кофейный пирог , который тает во рту рецепт из простых ингредиентов",
+      "url": "https://echo.msk.ru/news/obschestvo/kofe-kefir-nemnogo-masla-nezhneyshiy-kofeynyy-pirog-kotoryy-taet-vo-rtu-retsept-iz-prostyh-ingredientov/",
+      "domain": "echo.msk.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-12T09:15:00Z",
+      "firstSeenAt": "2026-09-12T09:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -792,24 +598,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "d1dd194d80004b7257fe",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "http://www.somdnews.com/ap/nation/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_666db85c-5f2f-5ad2-b7c5-ad6836e634cd.html",
-      "domain": "somdnews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T09:30:00Z",
-      "firstSeenAt": "2026-09-12T09:30:00Z",
+      "id": "8ba661d1b3b5ee87fa1a",
+      "title": "Nghi án người đàn ông ở Cà Mau sát hại tình nhân rồi treo cổ",
+      "url": "https://danviet.vn/nghi-an-nguoi-dan-ong-o-ca-mau-sat-hai-tinh-nhan-roi-treo-co-d1458879.html",
+      "domain": "danviet.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-12T09:15:00Z",
+      "firstSeenAt": "2026-09-12T09:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -818,178 +624,50 @@
       "duplicateCount": 1
     },
     {
-      "id": "d527974f9fefbd27d14a",
-      "title": "下周開盤前 五件值得回顧的國際大事 | 全球財經 | 全球",
-      "url": "https://udn.com/news/story/6811/9750592",
-      "domain": "udn.com",
+      "id": "886a70dee171cc4dbe23",
+      "title": "В Кыргызстане собрали на 190 тысяч тонн больше зерна , чем годом ранее » Gazeta . kg новости Кыргызстана и Бишкека сегодня",
+      "url": "https://gazeta.kg/economika/219366-v-kyrgyzstane-sobrali-na-190-tysjach-tonn-bolshe-zerna-chem-godom-ranee.html",
+      "domain": "gazeta.kg",
+      "language": "Russian",
+      "sourceCountry": "Kyrgyzstan",
+      "seenAt": "2026-09-12T08:30:00Z",
+      "firstSeenAt": "2026-09-12T08:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b96732066456099c55bf",
+      "title": "金属内部分家 ， 美债短长背离 ， 这周持仓表最刺眼的反差暗示下一根导火索在这 _ 期市动态 _ 期货 _ 中金在线",
+      "url": "http://futures.cnfol.com/qishidongtai/20260912/32368120.shtml",
+      "domain": "futures.cnfol.com",
       "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-09-12T09:30:00Z",
-      "firstSeenAt": "2026-09-12T09:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4f5ce76a18fc3e8ab12d",
-      "title": "Is Micron Stock the Next Nvidia ? The Answer May Shock Investors .",
-      "url": "https://www.fool.com/investing/2026/09/12/micron-stock-next-nvidia-answer-may-shock-investors/",
-      "domain": "fool.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T09:15:00Z",
-      "firstSeenAt": "2026-09-12T09:15:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7e52cca6fcd2a8e9a961",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "http://www.dailyadvance.com/news/national/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_ba669ced-7ab5-5497-9c3e-5d0f1178911d.html",
-      "domain": "dailyadvance.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T09:15:00Z",
-      "firstSeenAt": "2026-09-12T09:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ead110fc2f1a1f7a29a6",
-      "title": "Ще заложи ли ЯЦБ на скромни повишения на лихвите , за да избегне по - голям шок по - късно ?",
-      "url": "https://www.investor.bg/a/539-banki-i-zastrahovateli/436220-shte-zalozhi-li-yatsb-na-skromni-povisheniya-na-lihvite-za-da-izbegne-po-golyam-shok-po-kasno",
-      "domain": "investor.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-09-12T09:15:00Z",
-      "firstSeenAt": "2026-09-12T09:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "38d4ae9d0795428ca24c",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "http://www.idahostatejournal.com/news/national/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_9aa3e1e9-7774-58b7-a5e4-8c979ce2ce11.html",
-      "domain": "idahostatejournal.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T09:00:00Z",
-      "firstSeenAt": "2026-09-12T09:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "022bb8cc4d45896d376e",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update – Winnipeg Free Press",
-      "url": "https://www.winnipegfreepress.com/business/2026/09/12/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update",
-      "domain": "winnipegfreepress.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-09-12T09:00:00Z",
-      "firstSeenAt": "2026-09-12T09:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "eb09a4b7cb3e7b29b707",
-      "title": "AI 수학풀이 , 인류 지적활동 위협 ⋯필즈상 25인의 경고",
-      "url": "http://inews24.com/view/2004918",
-      "domain": "inews24.com",
-      "language": "Korean",
-      "sourceCountry": "Unknown",
+      "sourceCountry": "China",
       "seenAt": "2026-09-12T08:30:00Z",
       "firstSeenAt": "2026-09-12T08:30:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -998,24 +676,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "309bba3ff3575318d3bd",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.newsday.com/business/federal-reserve-inflation-interest-rates-y23116",
-      "domain": "newsday.com",
+      "id": "a09e586851d1e194a1b9",
+      "title": "Soybeans Lead Grains Rebound on China Demand",
+      "url": "https://www.riotimesonline.com/grains-soy-corn-latam-saturday-september-12-2026/",
+      "domain": "riotimesonline.com",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T08:30:00Z",
-      "firstSeenAt": "2026-09-12T08:30:00Z",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-09-12T07:00:00Z",
+      "firstSeenAt": "2026-09-12T07:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1024,23 +702,102 @@
       "duplicateCount": 1
     },
     {
-      "id": "c95f659306d5d2a4770d",
-      "title": "Michael Burry reduce drásticamente el riesgo y aumenta su liquidez : Este otoño será interesante",
-      "url": "https://www.bolsamania.com/capitalbolsa/noticias/gurus-de-mercado/michael-burry-reduce-drasticamente-el-riesgo-y-aumenta-su-liquidez-este-otono-sera-interesante--23537782.html",
-      "domain": "bolsamania.com",
+      "id": "d674ca3150cf2995e350",
+      "title": "LUSDA revoit la production mondiale de blé à la hausse",
+      "url": "https://www.lafranceagricole.fr/conjoncture-cultures/article/903388/l-usda-revoit-la-production-mondiale-de-ble-a-la-hausse",
+      "domain": "lafranceagricole.fr",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-09-12T06:00:00Z",
+      "firstSeenAt": "2026-09-12T06:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "13cc09e1db5135a13398",
+      "title": "На юге России урожай ранних зерновых превысил показатели 2025 года",
+      "url": "https://news.mail.ru/economics/72331226/",
+      "domain": "news.mail.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-12T04:30:00Z",
+      "firstSeenAt": "2026-09-12T04:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "038116fd3ff7f92a054d",
+      "title": "Chuẩn bị mang thai có thể duy trì chế độ ăn chay ? - Báo VnExpress",
+      "url": "https://vnexpress.net/chuan-bi-mang-thai-co-the-duy-tri-che-do-an-chay-5119448.html",
+      "domain": "vnexpress.net",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-12T04:30:00Z",
+      "firstSeenAt": "2026-09-12T04:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "50dcb86b096c784173e6",
+      "title": "De Tlaquepaque a San Sebastián : la ruta artesanal para celebrar el Día del Chocolate en Jalisco",
+      "url": "https://almomento.mx/dia-del-chocolate-en-jalisco/",
+      "domain": "almomento.mx",
       "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-09-12T08:15:00Z",
-      "firstSeenAt": "2026-09-12T08:15:00Z",
+      "sourceCountry": "Mexico",
+      "seenAt": "2026-09-12T04:15:00Z",
+      "firstSeenAt": "2026-09-12T04:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1049,24 +806,76 @@
       "duplicateCount": 1
     },
     {
-      "id": "1dcd71a256b9b4a68614",
-      "title": "欧洲央行官员警告 ： 若油价持续站上100美元 将不得不进一步加息 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202609123872720292.html",
+      "id": "f2d5e97597a8b0cf0774",
+      "title": "Πόλεμος και καύσωνες εκτοξεύουν το σιτάρι – Ο φόβος για νέα ακρίβεια",
+      "url": "https://economytoday.sigmalive.com/polemos-kai-kaysones-ektokseyoyn-to-sitari-%E2%80%93-o-fobos-gia-nea-akribeia/",
+      "domain": "economytoday.sigmalive.com",
+      "language": "Greek",
+      "sourceCountry": "Cyprus",
+      "seenAt": "2026-09-12T03:45:00Z",
+      "firstSeenAt": "2026-09-12T03:45:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "96b84a6ba14197eb90a3",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.illawarramercury.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "illawarramercury.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-12T02:15:00Z",
+      "firstSeenAt": "2026-09-12T02:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7b18310d144c536bf66a",
+      "title": "厄尔尼诺扰动供给 农产品期货价格升温 _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202609123872500487.html",
       "domain": "finance.eastmoney.com",
       "language": "Chinese",
       "sourceCountry": "China",
-      "seenAt": "2026-09-12T08:15:00Z",
-      "firstSeenAt": "2026-09-12T08:15:00Z",
+      "seenAt": "2026-09-12T02:00:00Z",
+      "firstSeenAt": "2026-09-12T02:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1075,74 +884,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "4554f25db348f352dd12",
-      "title": "La France va - t - elle entrer en récession ? Comment l éviter ?",
-      "url": "https://www.radiofrance.fr/franceinfo/podcasts/les-informes-de-l-eco/les-informes-de-l-eco-du-samedi-12-septembre-2026-2641901",
-      "domain": "radiofrance.fr",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-09-12T08:15:00Z",
-      "firstSeenAt": "2026-09-12T08:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "758cd4061c812025dcec",
-      "title": "„ Brains on Silicon : Expertin : KI soll Umsätze im Mittelstand ankurbeln",
-      "url": "https://www.wiwo.de/technologie/digitale-welt/brains-on-silicon-expertin-ki-soll-umsaetze-im-mittelstand-ankurbeln/100254030.html",
-      "domain": "wiwo.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-12T08:00:00Z",
-      "firstSeenAt": "2026-09-12T08:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "91db03794517e34ef7c3",
-      "title": "Dell enters the S & P 100 index after monstrous three - year rally",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/dell-enters-p-100-index-000300412.html",
-      "domain": "finance.yahoo.com",
+      "id": "73f2274e4d676d4a88c6",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.examiner.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "examiner.com.au",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T07:15:00Z",
-      "firstSeenAt": "2026-09-12T07:15:00Z",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-12T01:15:00Z",
+      "firstSeenAt": "2026-09-12T01:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1151,75 +910,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "0529ce30955b6e852c11",
-      "title": "Οι Αμερικάνοι βλέπουν Κύπρο – Δύο εταιρείες στον Invest Cyprus",
-      "url": "https://www.philenews.com/oikonomia/kypros/article/1769499/i-amerikani-vlepoun-kipro-dio-eteries-ston-invest-cyprus/",
-      "domain": "philenews.com",
-      "language": "Greek",
-      "sourceCountry": "Cyprus",
-      "seenAt": "2026-09-12T06:45:00Z",
-      "firstSeenAt": "2026-09-12T06:45:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "75473583a08ffe645541",
-      "title": "Del Rodrigazo al colchón : más de medio siglo de desconfianza en el peso",
-      "url": "https://www.perfil.com/noticias/columnistas/del-rodrigazo-al-colchon-mas-de-medio-siglo-de-desconfianza-en-el-peso-por-carlos-burgueno.phtml",
-      "domain": "perfil.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-09-12T06:45:00Z",
-      "firstSeenAt": "2026-09-12T06:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7299a2c2dc273fb06a1c",
-      "title": "S & P 500 ends higher as strong inflation data cements rate - hike bets",
-      "url": "https://www.moneycontrol.com/news/business/markets/14028303-14028303.html",
-      "domain": "moneycontrol.com",
+      "id": "6b9afeb79804f2e043d6",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.bendigoadvertiser.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "bendigoadvertiser.com.au",
       "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-12T06:45:00Z",
-      "firstSeenAt": "2026-09-12T06:45:00Z",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-12T01:15:00Z",
+      "firstSeenAt": "2026-09-12T01:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1228,23 +936,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "d0e1f941ded944571445",
-      "title": "„ Brains on Silicon : Expertin : KI soll Umsätze im Mittelstand ankurbeln",
-      "url": "https://www.handelsblatt.com/technik/it-internet/brains-on-silicon-expertin-ki-soll-umsaetze-im-mittelstand-ankurbeln/100254029.html",
-      "domain": "handelsblatt.com",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-12T06:15:00Z",
-      "firstSeenAt": "2026-09-12T06:15:00Z",
+      "id": "0dd3ff0c685b30c0cd07",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.nynganobserver.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "nynganobserver.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-12T01:15:00Z",
+      "firstSeenAt": "2026-09-12T01:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1253,24 +962,336 @@
       "duplicateCount": 1
     },
     {
-      "id": "dede8731292d66b5150a",
-      "title": "Руската централна банка под натиска на Кремъл",
-      "url": "https://news.bg/konflikti/ruskata-tsentralna-banka-pod-natiska-na-kremal.html",
-      "domain": "news.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-09-12T06:15:00Z",
-      "firstSeenAt": "2026-09-12T06:15:00Z",
+      "id": "e992a6df293e181787c2",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.macleayargus.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "macleayargus.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-12T01:15:00Z",
+      "firstSeenAt": "2026-09-12T01:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b262fea07089d96485c8",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.goulburnpost.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "goulburnpost.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-12T01:15:00Z",
+      "firstSeenAt": "2026-09-12T01:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c34b2bccae6535419cd9",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.irrigator.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "irrigator.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:45:00Z",
+      "firstSeenAt": "2026-09-11T23:45:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "469db85bbb0d3e2c0f85",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.narrominenewsonline.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "narrominenewsonline.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:30:00Z",
+      "firstSeenAt": "2026-09-11T23:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "939e703cfeae83254bca",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.southcoastregister.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "southcoastregister.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:30:00Z",
+      "firstSeenAt": "2026-09-11T23:30:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "52bfd1e11eee90645139",
+      "title": "« Известия »: продажи кофе стали снижаться впервые после многолетнего роста",
+      "url": "https://news.mail.ru/economics/72330418/",
+      "domain": "news.mail.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-11T23:15:00Z",
+      "firstSeenAt": "2026-09-11T23:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "941771f127cb29bcfe6e",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.katherinetimes.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "katherinetimes.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:15:00Z",
+      "firstSeenAt": "2026-09-11T23:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cf4634a5a6cfaa84bc35",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.bunburymail.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "bunburymail.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:15:00Z",
+      "firstSeenAt": "2026-09-11T23:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4a2e2a0924ea873f18f6",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.braidwoodtimes.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "braidwoodtimes.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:15:00Z",
+      "firstSeenAt": "2026-09-11T23:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b0337fe3847622102c49",
+      "title": "Soja registra forte queda em Chicago com previsão de safra maior nos EUA",
+      "url": "https://globorural.globo.com/cotacoes/noticia/2026/09/soja-registra-forte-queda-em-chicago-com-previsao-de-safra-maior-nos-eua.ghtml",
+      "domain": "globorural.globo.com",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-09-11T23:00:00Z",
+      "firstSeenAt": "2026-09-11T23:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "58e31b90764c3c9ab5f3",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.canberratimes.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "canberratimes.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:00:00Z",
+      "firstSeenAt": "2026-09-11T23:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b312bf812466787caaaa",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.theadvocate.com.au/story/9348810/pretty-awesome-canola-fields-burst-into-colour/",
+      "domain": "theadvocate.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:00:00Z",
+      "firstSeenAt": "2026-09-11T23:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0a0231ae72931da3e400",
+      "title": "Pretty awesome : canola fields burst into colour",
+      "url": "https://www.perthnow.com.au/news/business/pretty-awesome-canola-fields-burst-into-colour-c-22860171",
+      "domain": "perthnow.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-11T23:00:00Z",
+      "firstSeenAt": "2026-09-11T23:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1284,11 +1305,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-09-12T16:45:00Z",
-      "lastSuccessfulAt": "2026-09-12T17:07:47Z",
+      "observationDate": "2026-09-12T18:45:00Z",
+      "lastSuccessfulAt": "2026-09-12T19:18:52Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
