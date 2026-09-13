@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-09-13T00:00:45Z",
+  "generatedAtUtc": "2026-09-13T10:15:53Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-09-13T00:00:45Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-09-13T10:15:53Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,76 +52,298 @@
   ],
   "articles": [
     {
-      "id": "c6ef316132f8155c6287",
-      "title": "US House of Representatives to vote on Russia sanctions bill that could hit India with tariffs",
-      "url": "https://www.moneycontrol.com/world/us-house-of-representatives-to-vote-on-russia-sanctions-bill-that-could-hit-india-with-tariffs-article-14028262.html",
-      "domain": "moneycontrol.com",
+      "id": "bc12ee6ac1bf19c20a57",
+      "title": "HD Hyundai , Hanwha Ocean to showcase next - gen gas tech in Bangkok",
+      "url": "https://www.koreatimes.co.kr/business/companies/20260913/hd-hyundai-hanwha-ocean-to-showcase-next-gen-gas-tech-in-bangkok",
+      "domain": "koreatimes.co.kr",
       "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-12T03:30:00Z",
-      "firstSeenAt": "2026-09-12T03:30:00Z",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-13T09:15:00Z",
+      "firstSeenAt": "2026-09-13T09:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
-      "materialityScore": 36,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "2723c9718232a6452bb2",
-      "title": "Inflation heated up last month , boosting the case for a Fed rate hike",
-      "url": "https://www.kitv.com/news/business/inflation-heated-up-last-month-boosting-the-case-for-a-fed-rate-hike/article_6e85b165-ecc5-5b96-b20a-706123da894c.html",
-      "domain": "kitv.com",
+      "id": "3de88d86a0ade60fc300",
+      "title": "Türkiye , Azerbaijan seek deeper cooperation , says energy minister",
+      "url": "https://www.hurriyetdailynews.com/turkiye-azerbaijan-seek-deeper-cooperation-says-energy-minister-226810",
+      "domain": "hurriyetdailynews.com",
+      "language": "English",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7f755c640de64cb56440",
+      "title": "España llega a la recta final antes del invierno con menos gas almacenado y el precio disparado hasta 80 euros por la guerra de Irán",
+      "url": "https://www.larazon.es/economia/espana-llega-recta-final-antes-invierno-menos-gas-almacenado-precio-disparado-80-euros-guerra-iran_202609136aa6597f7486a40f2c9c3201.html",
+      "domain": "larazon.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6c2ecced05abb5d8bf0f",
+      "title": "Enerji güvenliği baskısı Avrupa ve Asyayı yenilenebilir enerjiye yöneltiyor",
+      "url": "https://www.haberler.com/ekonomi/enerji-guvenligi-baskisi-avrupa-ve-asya-yi-20232737-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d9f213f39707e878af79",
+      "title": "Iran - Krieg : Deutsche Haushalte erwartet weiterer Anstieg der Gaspreise im Winter",
+      "url": "https://www.rtl.de/news/iran-krieg-deutsche-haushalte-erwartet-weiterer-anstieg-der-gaspreise-im-winter-id31298018.html",
+      "domain": "rtl.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-09-12T11:45:00Z",
+      "firstSeenAt": "2026-09-12T11:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "00817f0f845acfea5dee",
+      "title": "Tom Tiffany accepted political donations from Enbridge , voted to weaken approval process as Line 5 faces new scrutiny",
+      "url": "https://whsm.com/news/2026/09/12/tom-tiffany-accepted-political-donations-from-enbridge-voted-to-weaken-approval-process-as-line-5-faces-new-scrutiny",
+      "domain": "whsm.com",
+      "language": "English",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-09-12T22:00:00Z",
+      "firstSeenAt": "2026-09-12T22:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 22,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bcc1789eee67f9d442bd",
+      "title": "Tom Tiffany accepted political donations from Enbridge , voted to weaken approval process as Line 5 faces new scrutiny",
+      "url": "https://wrco.com/news/2026/09/12/tom-tiffany-accepted-political-donations-from-enbridge-voted-to-weaken-approval-process-as-line-5-faces-new-scrutiny",
+      "domain": "wrco.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-12T04:30:00Z",
-      "firstSeenAt": "2026-09-12T04:30:00Z",
+      "seenAt": "2026-09-12T20:15:00Z",
+      "firstSeenAt": "2026-09-12T20:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
-      "materialityScore": 25,
+      "materialityScore": 22,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "70bf1e3010d5a19a4323",
-      "title": "欧洲央行行长拉加德 ： 价格冲击将持续更长时间 AI领域估值非常高",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-13/doc-inirrpak7996680.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-12T21:45:00Z",
-      "firstSeenAt": "2026-09-12T21:45:00Z",
+      "id": "567e23e1c8d375293420",
+      "title": "Tom Tiffany accepted political donations from Enbridge , voted to weaken approval process as Line 5 faces new scrutiny",
+      "url": "https://mix93.fm/news/2026/09/12/tom-tiffany-accepted-political-donations-from-enbridge-voted-to-weaken-approval-process-as-line-5-faces-new-scrutiny",
+      "domain": "mix93.fm",
+      "language": "English",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-09-12T19:30:00Z",
+      "firstSeenAt": "2026-09-12T19:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 22,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4fd9fed97bf91557e9d3",
+      "title": "Tom Tiffany accepted political donations from Enbridge , voted to weaken approval process as Line 5 faces new scrutiny",
+      "url": "https://wrjn.com/news/2026/09/12/tom-tiffany-accepted-political-donations-from-enbridge-voted-to-weaken-approval-process-as-line-5-faces-new-scrutiny",
+      "domain": "wrjn.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-12T18:45:00Z",
+      "firstSeenAt": "2026-09-12T18:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 22,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cfc072ab1cf005facf7d",
+      "title": "Tom Tiffany accepted political donations from Enbridge , voted to weaken approval process as Line 5 faces new scrutiny",
+      "url": "https://milwaukeecourier.com/news/2026/09/12/tom-tiffany-accepted-political-donations-from-enbridge-voted-to-weaken-approval-process-as-line-5-faces-new-scrutiny",
+      "domain": "milwaukeecourier.com",
+      "language": "English",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-09-12T18:30:00Z",
+      "firstSeenAt": "2026-09-12T18:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 22,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4b9797d8e31112c36196",
+      "title": "A Texas LNG plant pumps out chronic , unpermitted pollution , a watchdog finds",
+      "url": "https://www.sacurrent.com/news/texas-news/a-texas-lng-plant-pumps-out-chronic-unpermitted-pollution-a-watchdog-finds/",
+      "domain": "sacurrent.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-12T17:15:00Z",
+      "firstSeenAt": "2026-09-12T17:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 21,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "630a6fbde135ed38062f",
+      "title": "New PNG incentive scheme to accelerate domestic connections , cut payback period to nearly 3 years : Govt",
+      "url": "https://www.prokerala.com/news/articles/a1811707.html",
+      "domain": "prokerala.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -130,24 +352,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "a594d072af8edc66dde9",
-      "title": "المركزي الأوروبي يرفع الفائدة إلى 2 . 50 %",
-      "url": "https://www.alwatan.com.sa/article/1185462",
-      "domain": "alwatan.com.sa",
-      "language": "Arabic",
-      "sourceCountry": "Saudi Arabia",
-      "seenAt": "2026-09-12T21:00:00Z",
-      "firstSeenAt": "2026-09-12T21:00:00Z",
+      "id": "080d311e0972e2ab8bef",
+      "title": "Gasspeicher so leer wie nie : Versorgung sicher , Preise steigen drastisch",
+      "url": "https://www.wallstreet-online.de/nachricht/21372113-gasspeicher-nie-versorgung-sicher-preise-drastisch",
+      "domain": "wallstreet-online.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -156,26 +377,251 @@
       "duplicateCount": 1
     },
     {
-      "id": "1cf9215bbcbbb4ea03ec",
-      "title": "الشهادة الثابتة أم المتغيرة ؟.. مقارنة العائد وأفضل اختيار للادخار",
-      "url": "https://www.dostor.org/5699826",
-      "domain": "dostor.org",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-09-12T21:00:00Z",
-      "firstSeenAt": "2026-09-12T21:00:00Z",
+      "id": "dc48db6149b5b532fa23",
+      "title": "Українські дрони встановили рекорд – це може поставити хрест на російській газовій промисловості",
+      "url": "https://24tv.ua/ukrayinski-droni-vstanovili-rekord-tse-mozhe-postaviti-hrest_n3140504",
+      "domain": "24tv.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-09-13T07:15:00Z",
+      "firstSeenAt": "2026-09-13T07:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "af8839cef171a555fbd2",
+      "title": "How vulnerable are European stocks to natural gas price shocks ?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/vulnerable-european-stocks-natural-gas-061538812.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-13T07:00:00Z",
+      "firstSeenAt": "2026-09-13T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3d81b5ba6833fbe3f5a7",
+      "title": "Middle East Business : UAE , Germany unveil energy , tech deals worth over $5 . 8bn",
+      "url": "https://www.gdnonline.com:443/Details/1406231",
+      "domain": "gdnonline.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-13T07:00:00Z",
+      "firstSeenAt": "2026-09-13T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "93635d8067c982e010a3",
+      "title": "Нова атака разтърси Ормузкия проток . Светът чака отговор кой стреля",
+      "url": "https://www.standartnews.com/svyat/nova-ataka-raztarsi-ormuzkiya-protok-svetat-chaka-otgovor-koy-strelya-646774.html",
+      "domain": "standartnews.com",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-09-13T06:15:00Z",
+      "firstSeenAt": "2026-09-13T06:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4aaa7b4ac1ecf3f11228",
+      "title": "HD현대 , 가스텍 2026 서 친환경 선박 기술 청사진 제시 … 정기선 회장도 참석",
+      "url": "https://www.ddaily.co.kr:443/page/view/2026091312561218798",
+      "domain": "ddaily.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-13T06:00:00Z",
+      "firstSeenAt": "2026-09-13T06:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1cc79b0e7e0669597efd",
+      "title": "Vessel struck by a projectile in the Strait of Hormuz",
+      "url": "https://www.standard.net.au/story/9349038/vessel-struck-by-a-projectile-in-the-strait-of-hormuz/",
+      "domain": "standard.net.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-13T02:45:00Z",
+      "firstSeenAt": "2026-09-13T02:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9b044d03baebac771d9b",
+      "title": "Vessel struck by a projectile in the Strait of Hormuz",
+      "url": "https://www.illawarramercury.com.au/story/9349038/vessel-struck-by-a-projectile-in-the-strait-of-hormuz/",
+      "domain": "illawarramercury.com.au",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-09-13T02:45:00Z",
+      "firstSeenAt": "2026-09-13T02:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2603a26794ab2791dc4b",
+      "title": "Moonilal : Most Point Lisas disruptions unrelated to gas",
+      "url": "https://trinidadexpress.com/business/local/moonilal-most-point-lisas-disruptions-unrelated-to-gas/article_d783d72f-caaa-41bc-b613-e4f989ae455c.html",
+      "domain": "trinidadexpress.com",
+      "language": "English",
+      "sourceCountry": "Trinidad and Tobago",
+      "seenAt": "2026-09-13T01:00:00Z",
+      "firstSeenAt": "2026-09-13T01:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "234d68d8db8be29fa6a1",
+      "title": "Europe boosts LNG trade ahead of the ban | Peak Oil News and Message Boards",
+      "url": "https://peakoil.com/publicpolicy/europe-boosts-lng-trade-ahead-of-the-ban",
+      "domain": "peakoil.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-13T00:30:00Z",
+      "firstSeenAt": "2026-09-13T00:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4b50e49ae8f2820776b9",
+      "title": "Gás mais barato entra na mira do governo federal",
+      "url": "https://jmonline.com.br/colunas/semanadogas/gas-mais-barato-entra-na-mira-do-governo-federal-1.664880",
+      "domain": "jmonline.com.br",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-09-12T23:30:00Z",
+      "firstSeenAt": "2026-09-12T23:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -191,96 +637,39 @@
       "seenAt": "2026-09-12T20:30:00Z",
       "firstSeenAt": "2026-09-12T20:30:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "dd69b8f2955864c5d53e",
-      "title": "US inflation steady in August",
-      "url": "https://www.thedailystar.net/business/global-economy/news/us-inflation-steady-august-4271181",
-      "domain": "thedailystar.net",
-      "language": "English",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-09-12T19:00:00Z",
-      "firstSeenAt": "2026-09-12T19:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "967ec3344aaa446182e1",
-      "title": "Европската централна банка ги зголеми каматите – ќе плаќаат ли граѓаните повисоки рати за кредитите ?!",
-      "url": "https://time.mk/c/1c4b0deb7e/mk/evropskata-centralna-banka-gi-zgolemi-kamatite-ke-plakaat-li-gragjanite-povisoki-rati-za-kreditite.html",
-      "domain": "time.mk",
-      "language": "Macedonian",
-      "sourceCountry": "Macedonia",
+      "id": "1cbf8df7919fa287fdd2",
+      "title": "Comment Ormuz et Bab el - Mandeb menacent - ils lapprovisionnement énergétique mondial ?",
+      "url": "https://sana.sy/fr/economy/2329192/",
+      "domain": "sana.sy",
+      "language": "French",
+      "sourceCountry": "Syria",
       "seenAt": "2026-09-12T18:30:00Z",
       "firstSeenAt": "2026-09-12T18:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9741f242700b9413ac1a",
-      "title": "Набиуллина заявила об ускорении роста цен в России",
-      "url": "https://sib.fm:443/news/2026/09/12/nabiullina-zayavila-ob-uskorenii-rosta-tsen-v-rossii",
-      "domain": "sib.fm",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-12T16:45:00Z",
-      "firstSeenAt": "2026-09-12T16:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -298,44 +687,14 @@
       "seenAt": "2026-09-12T16:15:00Z",
       "firstSeenAt": "2026-09-12T16:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3097c2ae6f64bcf18085",
-      "title": "TUMBAR AL TÓTEM , columna de Rafael Zacnich",
-      "url": "https://diariocorreo.pe/opinion/tumbar-al-totem-columna-de-rafael-zacnich-noticia/",
-      "domain": "diariocorreo.pe",
-      "language": "Spanish",
-      "sourceCountry": "Peru",
-      "seenAt": "2026-09-12T15:30:00Z",
-      "firstSeenAt": "2026-09-12T15:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -353,18 +712,14 @@
       "seenAt": "2026-09-12T15:30:00Z",
       "firstSeenAt": "2026-09-12T15:30:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -382,18 +737,14 @@
       "seenAt": "2026-09-12T15:00:00Z",
       "firstSeenAt": "2026-09-12T15:00:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -411,47 +762,14 @@
       "seenAt": "2026-09-12T15:00:00Z",
       "firstSeenAt": "2026-09-12T15:00:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6313a094bc4582ae2e5a",
-      "title": "Συναγερμός στις αγορές ενέργειας : Το ράλι στις τιμές απειλεί με νέο κύμα ακρίβειας",
-      "url": "https://www.sofokleousin.gr/agores/synagermos-stis-agores-energeias-to-rali-stis-times-apeilei-me-ne",
-      "domain": "sofokleousin.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-09-12T14:30:00Z",
-      "firstSeenAt": "2026-09-12T14:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -469,18 +787,14 @@
       "seenAt": "2026-09-12T14:30:00Z",
       "firstSeenAt": "2026-09-12T14:30:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -498,18 +812,14 @@
       "seenAt": "2026-09-12T14:30:00Z",
       "firstSeenAt": "2026-09-12T14:30:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -518,24 +828,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "a0076c9af08b0cc375bd",
-      "title": "أسباب عمليات الشراء ضخمة الحجم للعملات الأجنبية من قبل البنك المركزي الأذربيجاني",
-      "url": "https://azertag.az/ar/xeber/arabic-4407505",
-      "domain": "azertag.az",
-      "language": "Arabic",
-      "sourceCountry": "Azerbaijan",
-      "seenAt": "2026-09-12T14:15:00Z",
-      "firstSeenAt": "2026-09-12T14:15:00Z",
+      "id": "dd83ccc1869fc737eb50",
+      "title": "Trump rechaza auxiliar a Arabia Saudí en el mar Rojo pese al cierre de un oleoducto clave",
+      "url": "https://elpais.com/internacional/2026-09-12/trump-rechaza-auxiliar-a-arabia-saudi-en-el-mar-rojo-pese-al-cierre-de-un-oleoducto-clave.html",
+      "domain": "elpais.com",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-09-12T14:30:00Z",
+      "firstSeenAt": "2026-09-12T14:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -544,27 +853,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "4af9849fefb5f715ecd8",
-      "title": "ارتفاع إنتاج أوبك من النفط الخام خلال أغسطس إلى 24 مليون برميل يومياً",
-      "url": "https://azertag.az/ar/xeber/arabic-4408117",
-      "domain": "azertag.az",
-      "language": "Arabic",
-      "sourceCountry": "Azerbaijan",
-      "seenAt": "2026-09-12T14:15:00Z",
-      "firstSeenAt": "2026-09-12T14:15:00Z",
+      "id": "6313a094bc4582ae2e5a",
+      "title": "Συναγερμός στις αγορές ενέργειας : Το ράλι στις τιμές απειλεί με νέο κύμα ακρίβειας",
+      "url": "https://www.sofokleousin.gr/agores/synagermos-stis-agores-energeias-to-rali-stis-times-apeilei-me-ne",
+      "domain": "sofokleousin.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-09-12T14:30:00Z",
+      "firstSeenAt": "2026-09-12T14:30:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -573,27 +878,48 @@
       "duplicateCount": 1
     },
     {
-      "id": "26e4611f4e3375cafcc3",
-      "title": "أوبك تكشف عن توقعاتها للطلب العالمي على النفط للعامين الحالي والمقبل",
-      "url": "https://azertag.az/ar/xeber/arabic-4408009",
-      "domain": "azertag.az",
-      "language": "Arabic",
-      "sourceCountry": "Azerbaijan",
+      "id": "81948a372dd0e0c0b03a",
+      "title": "Autoridades alemãs revelam prejuízos causados pelo corte do fornecimento de gás da Rússia",
+      "url": "https://noticiabrasil.net.br/20260912/autoridades-alemas-revelam-prejuizos-causados-pelo-corte-do-fornecimento-de-gas-da-russia-54070805.html",
+      "domain": "noticiabrasil.net.br",
+      "language": "Portuguese",
+      "sourceCountry": "Unknown",
       "seenAt": "2026-09-12T14:15:00Z",
       "firstSeenAt": "2026-09-12T14:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e45887882c032c76e9ec",
+      "title": "Critical Comparison : RGC Resources ( NASDAQ : RGCO ) versus Northwest Natural Gas ( NYSE : NWN )",
+      "url": "https://www.themarketsdaily.com/2026/09/12/critical-comparison-rgc-resources-nasdaqrgco-versus-northwest-natural-gas-nysenwn.html",
+      "domain": "themarketsdaily.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-12T14:15:00Z",
+      "firstSeenAt": "2026-09-12T14:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -611,18 +937,14 @@
       "seenAt": "2026-09-12T14:15:00Z",
       "firstSeenAt": "2026-09-12T14:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -631,27 +953,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "73076dcc355703efb70f",
-      "title": "Mở rộng hợp tác toàn diện và đột phá trong quan hệ kinh tế Việt - Nga",
-      "url": "https://baotintuc.vn/phan-tichnhan-dinh/mo-rong-hop-tac-toan-dien-va-dot-pha-trong-quan-he-kinh-te-viet-nga-20260912203128965.htm",
-      "domain": "baotintuc.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-09-12T14:00:00Z",
-      "firstSeenAt": "2026-09-12T14:00:00Z",
+      "id": "72de7880acb784b11a8c",
+      "title": "Nemecké zásoby plynu sú vyššie , ako bola spotreba za celú minulú zimu .",
+      "url": "https://hn24.hnonline.sk/hn24/96301949-nemecke-zasoby-plynu-su-vyssie-ako-bola-spotreba-za-celu-minulu-zimu",
+      "domain": "hn24.hnonline.sk",
+      "language": "Slovak",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-09-12T14:15:00Z",
+      "firstSeenAt": "2026-09-12T14:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -660,105 +978,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "0eace0b9ccfb97578d0e",
-      "title": "Türkiye ve Azerbaycandan enerjide yeni işbirliği",
-      "url": "https://www.bloomberght.com/turkiye-ve-azerbaycandan-enerjide-yeni-isbirligi-3788091",
-      "domain": "bloomberght.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-09-12T14:00:00Z",
-      "firstSeenAt": "2026-09-12T14:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "aa4c4497f2997c620dd0",
-      "title": "Nervepirrende rentethriller : – Kan vippe det",
-      "url": "https://e24.no/norsk-oekonomi/i/zO3z54/nervepirrende-rentethriller-kan-vippe-det",
-      "domain": "e24.no",
-      "language": "Norwegian",
-      "sourceCountry": "Norway",
+      "id": "9fec704879114f3681ef",
+      "title": "Iran - Krieg und Gaspreis : Verivox rechnet mit bis zu 20 Prozent höheren Kosten",
+      "url": "https://www.spiegel.de/wirtschaft/service/iran-krieg-und-gaspreis-verivox-rechnet-mit-bis-zu-20-prozent-hoeheren-kosten-a-14cf04d5-5859-415b-bfea-b89ba55c9f6d",
+      "domain": "spiegel.de",
+      "language": "German",
+      "sourceCountry": "Germany",
       "seenAt": "2026-09-12T13:30:00Z",
       "firstSeenAt": "2026-09-12T13:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d090eddd0bc889a6f25f",
-      "title": "Julius Baer : Turchia , la banca centrale mantiene invariato il tasso di riferimento - PAROLA AL MERCATO - 2 -",
-      "url": "https://www.borsaitaliana.it/borsa/notizie/radiocor/finanza/dettaglio/julius-baer-turchia-la-banca-centrale-mantiene-invariato-il-tasso-di-riferimento-parola-al-mercato-2-nRC_12092026_1223_232202059.html",
-      "domain": "borsaitaliana.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-09-12T13:30:00Z",
-      "firstSeenAt": "2026-09-12T13:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0566fe389efdde90f537",
-      "title": "فيتش تتوقع تثبيت أسعار الفائدة في مصر حتى نهاية 2026",
-      "url": "https://www.shorouknews.com/news/view.aspx?cdate=12092026&id=5308a0a8-2b99-4359-96d2-944454ebb01a",
-      "domain": "shorouknews.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-09-12T13:15:00Z",
-      "firstSeenAt": "2026-09-12T13:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -776,125 +1012,14 @@
       "seenAt": "2026-09-12T13:15:00Z",
       "firstSeenAt": "2026-09-12T13:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fc57bde7b6690caa8958",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.wfmj.com/news/consumer/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_2d21165d-9c2a-554b-96e5-e6fb420a40ce.html",
-      "domain": "wfmj.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T12:45:00Z",
-      "firstSeenAt": "2026-09-12T12:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dd92cb2f8c2c7b67d663",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.wfmz.com/business/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_d0771c40-7518-5831-9f4f-dabf0b2c13cb.html",
-      "domain": "wfmz.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T12:00:00Z",
-      "firstSeenAt": "2026-09-12T12:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5efe83e0b27e50b41996",
-      "title": "FTSE 100 Live : FTSE 100 slides as ECB raises rates and oil surges above $105",
-      "url": "http://www.proactiveinvestors.co.uk/companies/news/1098333/ftse-100-live-ftse-100-slides-as-ecb-raises-rates-and-oil-surges-above-105-1098333.html",
-      "domain": "proactiveinvestors.co.uk",
-      "language": "English",
-      "sourceCountry": "United Kingdom",
-      "seenAt": "2026-09-12T12:00:00Z",
-      "firstSeenAt": "2026-09-12T12:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cc0f7968c537445bf189",
-      "title": "Канада виділить Україні близько $546 млн на закупівлю газу та створення запасів перед зимою",
-      "url": "https://unn.ua/news/kanada-vydilyt-ukraini-blyzko-dollar546-mln-na-zakupivliu-hazu-ta-stvorennia-zapasiv-pered-zymoiu",
-      "domain": "unn.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-09-12T12:00:00Z",
-      "firstSeenAt": "2026-09-12T12:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -912,18 +1037,39 @@
       "seenAt": "2026-09-12T12:00:00Z",
       "firstSeenAt": "2026-09-12T12:00:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1b88251cb1eb09f7f29a",
+      "title": "Bayraktar outlines three power projects with Azerbaijan",
+      "url": "https://www.hurriyetdailynews.com/bayraktar-outlines-three-power-projects-with-azerbaijan-226793",
+      "domain": "hurriyetdailynews.com",
+      "language": "English",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-12T12:00:00Z",
+      "firstSeenAt": "2026-09-12T12:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -941,18 +1087,14 @@
       "seenAt": "2026-09-12T12:00:00Z",
       "firstSeenAt": "2026-09-12T12:00:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -961,24 +1103,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "ec0b6981967ad10e1879",
-      "title": "Klaus Schmidt - Hebbel : El crecimiento de este año será muy mediocre por la herencia de Boric y los shocks negativos de oferta y demanda",
-      "url": "https://www.latercera.com/pulso/noticia/klaus-schmidt-hebbel-el-crecimiento-de-este-ano-sera-muy-mediocre-por-la-herencia-de-boric-y-los-shocks-negativos-de-oferta-y-demanda/",
-      "domain": "latercera.com",
-      "language": "Spanish",
-      "sourceCountry": "Chile",
-      "seenAt": "2026-09-12T11:45:00Z",
-      "firstSeenAt": "2026-09-12T11:45:00Z",
+      "id": "cc0f7968c537445bf189",
+      "title": "Канада виділить Україні близько $546 млн на закупівлю газу та створення запасів перед зимою",
+      "url": "https://unn.ua/news/kanada-vydilyt-ukraini-blyzko-dollar546-mln-na-zakupivliu-hazu-ta-stvorennia-zapasiv-pered-zymoiu",
+      "domain": "unn.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-09-12T12:00:00Z",
+      "firstSeenAt": "2026-09-12T12:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -987,128 +1128,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "975d617c6c93ccd4490e",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.therecord.com/business/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_8a861397-e2f0-5efd-8d6e-3e9405a2df47.html",
-      "domain": "therecord.com",
-      "language": "English",
-      "sourceCountry": "Canada",
+      "id": "9091beffc5814172430e",
+      "title": "Bundesnetzagentur : Gasversorgung im Winter gesichert",
+      "url": "https://www.epochtimes.de/politik/deutschland/bundesnetzagentur-gasversorgung-im-winter-gesichert-a5607414.html",
+      "domain": "epochtimes.de",
+      "language": "German",
+      "sourceCountry": "Germany",
       "seenAt": "2026-09-12T11:30:00Z",
       "firstSeenAt": "2026-09-12T11:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5b80c2c19d7866ce2143",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://abcnews.com/Business/wireStory/wall-street-week-ahead-federal-reserve-decision-interest-136385447",
-      "domain": "abcnews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T11:30:00Z",
-      "firstSeenAt": "2026-09-12T11:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cde1cdc55f17b941ee09",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.gjsentinel.com/news/us/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_6ca41e1c-b4f7-5af1-ac3e-30fafd06e170.html",
-      "domain": "gjsentinel.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T11:30:00Z",
-      "firstSeenAt": "2026-09-12T11:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b772d27db2932164acf1",
-      "title": "UBS WM : 76 mesi e non sentirli - PAROLA AL MERCATO",
-      "url": "https://www.borsaitaliana.it/borsa/notizie/radiocor/finanza/dettaglio/ubs-wm-76-mesi-e-non-sentirli-parola-al-mercato-nRC_12092026_1223_231202059.html",
-      "domain": "borsaitaliana.it",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-09-12T11:15:00Z",
-      "firstSeenAt": "2026-09-12T11:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0ad2232347ce37c194f7",
-      "title": "Central bank under pressure to raise rates at upcoming meeting : Economists",
-      "url": "https://focustaiwan.tw:443/business/202609120009",
-      "domain": "focustaiwan.tw",
-      "language": "English",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-09-12T11:15:00Z",
-      "firstSeenAt": "2026-09-12T11:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1126,18 +1162,39 @@
       "seenAt": "2026-09-12T11:15:00Z",
       "firstSeenAt": "2026-09-12T11:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "318914b91a0b056bfa6a",
+      "title": "I - Mab ( NASDAQ : NBP ) Insider Sean Wuxiong Cao Sells 107 , 978 Shares",
+      "url": "https://www.dailypolitical.com/2026/09/12/i-mab-nasdaqnbp-insider-sean-wuxiong-cao-sells-107978-shares.html",
+      "domain": "dailypolitical.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-12T11:15:00Z",
+      "firstSeenAt": "2026-09-12T11:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1155,18 +1212,14 @@
       "seenAt": "2026-09-12T11:15:00Z",
       "firstSeenAt": "2026-09-12T11:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1184,184 +1237,14 @@
       "seenAt": "2026-09-12T11:00:00Z",
       "firstSeenAt": "2026-09-12T11:00:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1b1607b96938542ed22b",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.wral.com/news/ap/f6341-wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/",
-      "domain": "wral.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T10:15:00Z",
-      "firstSeenAt": "2026-09-12T10:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "84fe696f9a19c3d109ee",
-      "title": "Канада надасть Україні 757 млн CAD через ЄБРР і ще 200 млн на енергопроєкти LB . ua",
-      "url": "https://lb.ua/economics/2026/09/12/765626_shmigal_kanada_vidilit_757_mln.html",
-      "domain": "lb.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-09-12T10:15:00Z",
-      "firstSeenAt": "2026-09-12T10:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "57148d9e72a938c929a3",
-      "title": "Çinde 2025 yılında 200 yeni maden yatağı keşfedildi",
-      "url": "https://www.haberler.com/guncel/cin-de-2025-yilinda-200-yeni-maden-yatagi-20230951-haberi/",
-      "domain": "haberler.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-09-12T10:15:00Z",
-      "firstSeenAt": "2026-09-12T10:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "us-dollar",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6dbce6c6029db8171a9c",
-      "title": "Trump has prioritized oil and minerals . Lower prices havent followed .",
-      "url": "https://www.csmonitor.com/Business/2026/0912/trump-gas-prices-energy-policy",
-      "domain": "csmonitor.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T09:45:00Z",
-      "firstSeenAt": "2026-09-12T09:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e0b8fd4b58a4adb3326c",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "https://www.stcatharinesstandard.ca/business/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_13613425-d80d-58ca-b37f-10a71c6a7ae9.html",
-      "domain": "stcatharinesstandard.ca",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-09-12T09:30:00Z",
-      "firstSeenAt": "2026-09-12T09:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d1dd194d80004b7257fe",
-      "title": "Wall Street week ahead : Federal Reserve decision on interest rates , retail sales update",
-      "url": "http://www.somdnews.com/ap/nation/wall-street-week-ahead-federal-reserve-decision-on-interest-rates-retail-sales-update/article_666db85c-5f2f-5ad2-b7c5-ad6836e634cd.html",
-      "domain": "somdnews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-12T09:30:00Z",
-      "firstSeenAt": "2026-09-12T09:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1375,11 +1258,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-09-12T21:45:00Z",
-      "lastSuccessfulAt": "2026-09-13T00:00:45Z",
+      "observationDate": "2026-09-13T09:15:00Z",
+      "lastSuccessfulAt": "2026-09-13T10:15:53Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
