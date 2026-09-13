@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-09-13T14:24:22Z",
+  "generatedAtUtc": "2026-09-13T18:11:08Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -14,8 +14,8 @@
     "successfulQueryCount": 3,
     "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-09-13T14:24:22Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-09-13T18:11:08Z",
+    "error": "gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -61,15 +61,15 @@
       "seenAt": "2026-09-13T08:00:00Z",
       "firstSeenAt": "2026-09-13T08:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -78,54 +78,55 @@
       "duplicateCount": 1
     },
     {
-      "id": "4b9797d8e31112c36196",
-      "title": "A Texas LNG plant pumps out chronic , unpermitted pollution , a watchdog finds",
-      "url": "https://www.sacurrent.com/news/texas-news/a-texas-lng-plant-pumps-out-chronic-unpermitted-pollution-a-watchdog-finds/",
-      "domain": "sacurrent.com",
+      "id": "862eb3727e50a57428a6",
+      "title": "Why Did Freeport - McMoRan Stock Drop On Doubts Over A Tariff It Would Gain From ?",
+      "url": "https://finance.yahoo.com/markets/commodities/articles/why-did-freeport-mcmoran-stock-212508528.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-12T17:15:00Z",
-      "firstSeenAt": "2026-09-12T17:15:00Z",
+      "seenAt": "2026-09-13T05:30:00Z",
+      "firstSeenAt": "2026-09-13T05:30:00Z",
       "topicIds": [
-        "energy-security"
+        "strategic-materials"
       ],
       "topics": [
-        "Energy & security"
+        "Strategic materials"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 21,
+      "materialityScore": 24,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "2b19b75ffe506b1fcb70",
-      "title": "SK chairman says Ulsan AI data center expansion nearing 900 megawatts",
-      "url": "https://www.koreatimes.co.kr/business/tech-science/20260913/sk-chairman-says-ulsan-ai-data-center-expansion-nearing-900-megawatts",
-      "domain": "koreatimes.co.kr",
-      "language": "English",
-      "sourceCountry": "South Korea",
+      "id": "40a45decea5ca83a5498",
+      "title": "Sind die Äpfel in diesem Jahr wirklich kleiner als sonst ?",
+      "url": "https://www.bild.de/leben-wissen/wohnen-living/sind-die-aepfel-in-diesem-jahr-wirklich-kleiner-als-sonst-6aa121a1181cb962d4889111",
+      "domain": "bild.de",
+      "language": "German",
+      "sourceCountry": "Germany",
       "seenAt": "2026-09-13T09:15:00Z",
       "firstSeenAt": "2026-09-13T09:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -141,106 +142,198 @@
       "seenAt": "2026-09-13T09:15:00Z",
       "firstSeenAt": "2026-09-13T09:15:00Z",
       "topicIds": [
-        "energy-security",
-        "semiconductors-ai"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Semiconductors & AI infrastructure"
+        "Energy & security"
       ],
       "assets": [
-        "ai-infrastructure",
         "brent",
         "defence",
         "gas-uk",
         "gas-us",
-        "semiconductors",
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
-      "id": "79d98d4411ea31804269",
-      "title": "This is the test : All eyes on US Fed to tackle high inflation",
-      "url": "https://www.hurriyetdailynews.com/this-is-the-test-all-eyes-on-us-fed-to-tackle-high-inflation-226812",
-      "domain": "hurriyetdailynews.com",
+      "id": "42653007785fbaf66dec",
+      "title": "Korea nuclear - powered submarines could take on broader Indo - Pacific role",
+      "url": "https://www.koreatimes.co.kr/southkorea/defense/20260913/koreas-nuclear-powered-submarines-could-take-on-broader-indo-pacific-role",
+      "domain": "koreatimes.co.kr",
       "language": "English",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-13T09:15:00Z",
+      "firstSeenAt": "2026-09-13T09:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "098085e2a518a1792e29",
+      "title": "Deccan Gold opens Altyn Tor plant , marks overseas production milestone",
+      "url": "https://www.business-standard.com/companies/news/companies-news-deccan-gold-starts-processing-unit-at-altyn-tor-126091300135_1.html",
+      "domain": "business-standard.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-13T09:00:00Z",
+      "firstSeenAt": "2026-09-13T09:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c73fd282b2da2f395c80",
+      "title": "Weizen , Gerste , Hafer und Triticale schmücken die Krembzer Erntekrone",
+      "url": "https://www.nordkurier.de/regional/nordwestmecklenburg/weizen-gerste-hafer-und-triticale-schmuecken-die-krembzer-erntekrone-4858591",
+      "domain": "nordkurier.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-09-13T09:00:00Z",
+      "firstSeenAt": "2026-09-13T09:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a9858ccf8d3dfb2a0285",
+      "title": "Princess Kate just wore her go - to £3k Cartier earrings and weve found three alternatives",
+      "url": "https://www.aol.co.uk/articles/princess-kate-just-wore-her-080000000.html",
+      "domain": "aol.co.uk",
+      "language": "English",
+      "sourceCountry": "United Kingdom",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fc6961165939bf86f0c8",
+      "title": "Country food stock increased by 148 , 484 MT in six months",
+      "url": "https://www.bssnews.net/at-a-glance/423653",
+      "domain": "bssnews.net",
+      "language": "English",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5df7bb61b430a8b0c3d8",
+      "title": "Fede ilişkin faiz artırım beklentisi emtia piyasasında satış baskısını yükseltti",
+      "url": "https://www.haberler.com/ekonomi/fed-e-iliskin-faiz-artirim-beklentisi-emtia-20232738-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
       "sourceCountry": "Turkey",
       "seenAt": "2026-09-13T08:45:00Z",
       "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs",
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs",
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "cocoa",
+        "coffee",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "us-dollar",
+        "wheat",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b5a529f9d30fa513a38b",
-      "title": "All eyes on Kevin Warsh as rate - hike fever spreads across G7 central banks",
-      "url": "https://www.moneycontrol.com/world/all-eyes-on-kevin-warsh-as-rate-hike-fever-spreads-across-g7-central-banks-article-14028837.html",
-      "domain": "moneycontrol.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bdd474ed1f025d3930b2",
-      "title": "所有目光聚焦沃什 ， 下周 央行超级周 迎来G7加息潮 ？- CFi . CN 中财网",
-      "url": "http://www.cfi.net.cn/p20260913000085.html",
-      "domain": "cfi.net.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
+      "duplicateCount": 2
     },
     {
       "id": "7f755c640de64cb56440",
@@ -265,7 +358,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -294,7 +387,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -323,7 +416,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -352,30 +445,34 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "0781ea65e59b935f4b76",
-      "title": "샌디스크 , 韓서 낸드 엔지니어 채용 … 반도체 인재 확보전 가열",
-      "url": "https://www.edaily.co.kr/News/Read?newsId=02227126645579792&mediaCodeNo=257",
-      "domain": "edaily.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "id": "f7f55f1644bac6508ea1",
+      "title": "Türkiye to boost mining investment to strengthen energy security",
+      "url": "https://www.hurriyetdailynews.com/turkiye-to-boost-mining-investment-to-strengthen-energy-security-226806",
+      "domain": "hurriyetdailynews.com",
+      "language": "English",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "energy-security"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Energy & security"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -384,23 +481,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "3de6bc8bf8c59c02e999",
-      "title": "美 규제에도 … 현대차 BD 출신 설립 美 로봇업체 , 중국산 몸체 추진",
-      "url": "https://www.edaily.co.kr/News/Read?newsId=02240246645579792&mediaCodeNo=257",
-      "domain": "edaily.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "id": "2a5b891c1a59821094e6",
+      "title": "Νέο ράλι στην ενέργεια : Έρχονται αυξήσεις στα πρατήρια - Πάνω από 107 δολάρια το πετρέλαιο",
+      "url": "https://www.tanea.gr/2026/09/13/economy/neo-rali-stin-energeia-erxontai-ayksiseis-sta-pratiria-pano-apo-107-dolaria-to-petrelaio/",
+      "domain": "tanea.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "energy-security"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Energy & security"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -409,24 +510,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "96399ad426928c8b3f5c",
-      "title": "所有目光聚焦沃什 ， 下周 央行超级周 迎来G7加息潮 ？",
-      "url": "https://wallstreetcn.com/articles/3781642",
-      "domain": "wallstreetcn.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "id": "7bd878c464a81f74dc4d",
+      "title": "Минобороны РФ заявило о продвижении группировки Восток в глубину обороны ВСУ",
+      "url": "https://www.interfax.ru/russia/1115823",
+      "domain": "interfax.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -435,24 +539,221 @@
       "duplicateCount": 1
     },
     {
-      "id": "b9d895e03baf05fba118",
-      "title": "Аналитик Гойхман : « Реакция рубля на сохранение ключевой ставки стала парадоксальной »",
-      "url": "https://www.mk.ru/economics/2026/09/13/analitik-goykhman-reakciya-rublya-na-sokhranenie-klyuchevoy-stavki-stala-paradoksalnoy.html",
-      "domain": "mk.ru",
+      "id": "04a8505b6b2fc200e82c",
+      "title": "One Reportedly Killed After Iranian Commercial Vessel Hit Near Qeshm",
+      "url": "http://www.israelherald.com/news/279304278/one-reportedly-killed-after-iranian-commercial-vessel-hit-near-qeshm",
+      "domain": "israelherald.com",
+      "language": "English",
+      "sourceCountry": "Israel",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0235d043d948ddcc0cc3",
+      "title": "Kupfer - Hammer aus Mexiko : Neubewertung voraus ? Die Börse stoppt den Handel : Was steckt hinter dieser Kupfer - News ?",
+      "url": "https://www.finanznachrichten.de/nachrichten-2026-09/69562923-kupfer-hammer-aus-mexiko-neubewertung-voraus-die-boerse-stoppt-den-handel-was-steckt-hinter-dieser-kupfer-news-601.htm",
+      "domain": "finanznachrichten.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "30deb31f341b8235dc0b",
+      "title": "Rozmowa netTG . pl - odcinek 58 - Wojciech Balczun . Co dalej …",
+      "url": "https://nettg.pl/rozmowa-nettg-pl-odcinek-58-wojciech-balczun-co-dalej-z-jsw-i-rola-wegla-w-miksie",
+      "domain": "nettg.pl",
+      "language": "Polish",
+      "sourceCountry": "Poland",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b101d27a1e933c9a7dc4",
+      "title": "Giá vàng hôm nay mới nhất ( 13 / 9 ) ở mức thấp : Người mua tuần trước lỗ nặng gần 7 triệu đồng / lượng",
+      "url": "https://danviet.vn/gia-vang-hom-nay-moi-nhat-13-9-o-muc-thap-nguoi-mua-tuan-truoc-lo-nang-gan-7-trieu-dong-luong-d1459051.html",
+      "domain": "danviet.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d3f50e078026db790055",
+      "title": "Gold price today : స్థిరంగా కొనసాగుతున్న పసిడి రేట్లు",
+      "url": "https://vaartha.com/today-gold-and-silver-rate/gold-and-silver-prices-sep-13-2026/776679/",
+      "domain": "vaartha.com",
+      "language": "Telugu",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6eacce385d409feb0f9a",
+      "title": "Секрет вкусного кофе оказался на кухне : халва и апельсин меняют напиток до неузнаваемости",
+      "url": "https://www.pravda.ru/news/recipes/2407563-coffee-recipes-home-experiments/",
+      "domain": "pravda.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
       "seenAt": "2026-09-13T08:15:00Z",
       "firstSeenAt": "2026-09-13T08:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0e3688ed2d21bbbd84c9",
+      "title": "La récolte de pommes sannonce historiquement basse cette année à cause de la sécheresse , en baisse denviron 30 % par rapport à lan dernier",
+      "url": "https://www.ladepeche.fr/2026/09/13/la-recolte-de-pommes-sannonce-historiquement-basse-cette-annee-a-cause-de-la-secheresse-en-baisse-denviron-30-par-rapport-a-lan-dernier-13548173.php",
+      "domain": "ladepeche.fr",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f659d9819119124cb0da",
+      "title": "Ben & Jerry : Global Warming Is Changing The Flavor Of Ice Cream",
+      "url": "http://science20.com/news_articles/ben_jerrys_global_warming_is_changing_the_flavor_of_ice_cream-180459",
+      "domain": "science20.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -577,23 +878,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "def1362d52e0e85b66dd",
-      "title": "일 후지쓰 , AI용 CPU 내년부터 수출 … 반도체 부활 신호탄될까",
-      "url": "https://www.hani.co.kr/arti/international/international_general/1277528.html",
-      "domain": "hani.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T08:00:00Z",
-      "firstSeenAt": "2026-09-13T08:00:00Z",
+      "id": "ef4a6b71a98df0478570",
+      "title": "特朗普就贸易 、 能源和移民问题抨击欧洲盟友 ： 你们现在做的事情简直就是在 自取灭亡",
+      "url": "https://baijiahao.baidu.com/s?id=1876202037881892800",
+      "domain": "baijiahao.baidu.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "energy-security"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Energy & security"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -602,23 +907,137 @@
       "duplicateCount": 1
     },
     {
-      "id": "bc1840f354ab85a4c561",
-      "title": "한화오션 , AI 데이터센터 바다로 옮긴다60MW급 FDC 공개",
-      "url": "https://newsway.co.kr/news/view?ud=2026091313222871922",
-      "domain": "newsway.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
+      "id": "65bb3e26dd63cc5c2436",
+      "title": "特朗普就贸易 、 能源和移民问题抨击欧洲盟友 ： 你们现在做的事情简直就是在 自取灭亡",
+      "url": "https://hqtime.huanqiu.com/share/article/4TC36SJOROt",
+      "domain": "hqtime.huanqiu.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f97dfafac5dcd09a7bfd",
+      "title": "સોનું 2900 તો ચાંદી 6500 રૂપિયાથી વધુ ગબડી , અઠવાડિયામાં ભાવમાં કેટલો ફેર પડ્યો ?",
+      "url": "https://www.gujaratsamachar.com/news/business/gold-fell-by-2900-rupees-and-silver-by-more-than-6500-rupees-how-much-did-the-price-change-in-a-week-69377157009",
+      "domain": "gujaratsamachar.com",
+      "language": "Gujarati",
+      "sourceCountry": "India",
       "seenAt": "2026-09-13T08:00:00Z",
       "firstSeenAt": "2026-09-13T08:00:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4b15e4458414ffcd52b5",
+      "title": "99 % China . Jetzt kommt Atlantico",
+      "url": "https://www.wallstreet-online.de/nachricht/21372206-99-china-atlantico",
+      "domain": "wallstreet-online.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0ddff826684c79cc1c5c",
+      "title": "从 门票经济 到 产业经济 湖南新化千年梯田 上新 引客来|雪峰|紫鹊界|农耕",
+      "url": "https://www.163.com/news/article/L6NFFI3B000189FH.html",
+      "domain": "163.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c4b7410d7629b1f5b9a5",
+      "title": "Des vendanges à la main comme autrefois : la belle histoire dune bande de copains qui sest lancée dans le vin à Carry",
+      "url": "https://www.laprovence.com/article/economie/4854337030901414/des-vendanges-a-la-main-comme-autrefois-la-belle-histoire-d-une-bande-de-copains-qui-s-est-lancee-dans-le-vin-a-carry",
+      "domain": "laprovence.com",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
+      "topicIds": [
+        "ags-softs"
+      ],
+      "topics": [
+        "Agriculture & softs"
+      ],
+      "assets": [
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -656,24 +1075,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "62c2dcb6c91894e81595",
-      "title": "每经热评｜全球流动性收紧不改A股基本面 ， 增强市场韧性可从三方面入手",
-      "url": "https://www.nbd.com.cn/articles/2026-09-13/4580026.html",
-      "domain": "nbd.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
+      "id": "f66c715f20d9f1c5796e",
+      "title": "Think of the parable of a frog in boiling water . That us dithering as the unprecedented weather becomes more extreme | Helen Pilcher",
+      "url": "https://www.theguardian.com/commentisfree/2026/sep/13/extreme-weather-unprecedented-feel-normal",
+      "domain": "theguardian.com",
+      "language": "English",
+      "sourceCountry": "United Kingdom",
       "seenAt": "2026-09-13T07:45:00Z",
       "firstSeenAt": "2026-09-13T07:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -682,23 +1101,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "47590b6aa6bce447e3b3",
-      "title": "[ ESG 칼럼 ] 도시광산 강국으로 가는 길",
-      "url": "https://www.etnews.com/20260911000072",
-      "domain": "etnews.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T07:30:00Z",
-      "firstSeenAt": "2026-09-13T07:30:00Z",
+      "id": "d7d94441c86014d15814",
+      "title": "Любите погорячее ? Ученые из Оксфорда : кофе и чай вызывают рак пищевода",
+      "url": "https://aif.ru/health/life/lyubite-pogoryachee-uchenye-iz-oksforda-kofe-i-chay-vyzyvayut-rak-pishchevoda",
+      "domain": "aif.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-13T07:45:00Z",
+      "firstSeenAt": "2026-09-13T07:45:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -707,23 +1127,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "c10e5408e04ff1047698",
-      "title": "최태원 SK 회장 , 울산 AI 데이터센터 협의 , 900㎿까지 진척",
-      "url": "https://www.etnews.com/20260912000027",
-      "domain": "etnews.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
+      "id": "fa7df3b624ede508c606",
+      "title": "Tỷ giá USD hôm nay 13 / 9 khối ngân hàng và chợ đen trầm lắng",
+      "url": "https://giadinh.suckhoedoisong.vn/ty-gia-usd-hom-nay-13-9-dong-do-la-my-khoi-ngan-hang-va-cho-den-tram-lang-17226091308262085.htm",
+      "domain": "giadinh.suckhoedoisong.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Unknown",
       "seenAt": "2026-09-13T07:30:00Z",
       "firstSeenAt": "2026-09-13T07:30:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -732,23 +1156,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "8e07ac70b64395be21e5",
-      "title": "워런 버핏도 너무 비싸게 샀다 후회한 기업 , 10년 만에 몸값 대반전",
-      "url": "https://www.etnews.com/20260913000066",
-      "domain": "etnews.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
+      "id": "82854f89a7efa4a8f80d",
+      "title": "Gold Silver Rate Today 13 September 2026 : सोना 1 , 41 , 850 रूपये , चांदी 2 . 45 लाख , जानें आपके शहर में क्या है लेटेस्ट प्राइस",
+      "url": "https://www.punjabkesari.com/business-news/gold-silver-rate-today-13-september-2026/",
+      "domain": "punjabkesari.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
       "seenAt": "2026-09-13T07:30:00Z",
       "firstSeenAt": "2026-09-13T07:30:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -757,24 +1185,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "d99d788312fe739e7d93",
-      "title": "ČNB na čtvrtečním jednání úrokové sazby nezmění , odhadují analytici",
-      "url": "https://www.ceskenoviny.cz/zpravy/cnb-na-ctvrtecnim-jednani-urokove-sazby-nezmeni-odhaduji-analytici/2873808",
-      "domain": "ceskenoviny.cz",
-      "language": "Czech",
-      "sourceCountry": "Czech Republic",
+      "id": "5e38d401c0be1fdaabf2",
+      "title": "Za plon , chleb i trud rolników . Diecezjalno - gminne dożynki w Łomży",
+      "url": "https://4lomza.pl/index.php?wiad=73455",
+      "domain": "4lomza.pl",
+      "language": "Polish",
+      "sourceCountry": "Poland",
       "seenAt": "2026-09-13T07:30:00Z",
       "firstSeenAt": "2026-09-13T07:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -783,24 +1211,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "f9d095688493abb0c1a3",
-      "title": "加息25个基点 ？ 美联储 ， 重磅来袭 ！",
-      "url": "https://www.stcn.com/article/detail/4183049.html",
-      "domain": "stcn.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
+      "id": "70c7de8776732554cab7",
+      "title": "Erzurumda çocuklar COP31 kapsamında serada fidan dikti , hasat yapıp pazarda sattı",
+      "url": "https://www.haberler.com/guncel/erzurum-da-cocuklar-cop31-kapsaminda-serada-fidan-20232550-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
       "seenAt": "2026-09-13T07:30:00Z",
       "firstSeenAt": "2026-09-13T07:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "ags-softs"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Agriculture & softs"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -838,23 +1266,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "3edd353b6b4f825d8d2b",
-      "title": "[ 과기원NOW ] KAIST , 붙이는 마이크로니들 전자약 개발 外",
-      "url": "https://www.dongascience.com:443/ko/news/79893",
-      "domain": "dongascience.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
+      "id": "36467b70dd4c4a377487",
+      "title": "सुनचाँदीको मूल्य बढ्यो , आज कतिमा हुँदैछ कारोबार ? | Nepal first 24 - hour updated news portal",
+      "url": "https://www.ratopati.com/story/591805/the-price-of-gold-and-silver-has-increased-what-is-the-trading-price-today",
+      "domain": "ratopati.com",
+      "language": "Nepali",
+      "sourceCountry": "Nepal",
       "seenAt": "2026-09-13T07:15:00Z",
       "firstSeenAt": "2026-09-13T07:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -863,243 +1295,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "dc48db6149b5b532fa23",
-      "title": "Українські дрони встановили рекорд – це може поставити хрест на російській газовій промисловості",
-      "url": "https://24tv.ua/ukrayinski-droni-vstanovili-rekord-tse-mozhe-postaviti-hrest_n3140504",
-      "domain": "24tv.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-09-13T07:15:00Z",
-      "firstSeenAt": "2026-09-13T07:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3d81b5ba6833fbe3f5a7",
-      "title": "Middle East Business : UAE , Germany unveil energy , tech deals worth over $5 . 8bn",
-      "url": "https://www.gdnonline.com:443/Details/1406231",
-      "domain": "gdnonline.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-13T07:00:00Z",
-      "firstSeenAt": "2026-09-13T07:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "765eb7a2bbea973d0c43",
-      "title": "Κλιμακώνεται η ενεργειακή κρίση λόγω των εντάσεων στη Μέση Ανατολή",
-      "url": "https://www.madata.gr/epikairotita/economy/979048-klimakonetai-i-energeiaki-krisi-logo-ton-entaseon-sti-mesi-anatoli.html",
-      "domain": "madata.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-09-13T07:00:00Z",
-      "firstSeenAt": "2026-09-13T07:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "480c8545720cee4bfae1",
-      "title": "현대硏 , 올해 성장률 3 . 5 % 로 상향 … 내년 2 . 4 % 전망",
-      "url": "https://www.fnnews.com/news/202609131113126328",
-      "domain": "fnnews.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T06:45:00Z",
-      "firstSeenAt": "2026-09-13T06:45:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8bc5c123c72c690fb540",
-      "title": "全球央行超級週來了 ！ 瑞銀料Fed年底前升2碼 台央行跟進升息機率高",
-      "url": "https://news.tvbs.com.tw/money/4021617",
-      "domain": "news.tvbs.com.tw",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-09-13T06:45:00Z",
-      "firstSeenAt": "2026-09-13T06:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cd44c13223536aa077c3",
-      "title": "加息25个基点 ？ 美联储 ， 重磅来袭 ！",
-      "url": "https://finance.sina.com.cn/stock/zqgd/2026-09-13/doc-inirscya7867952.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-13T06:45:00Z",
-      "firstSeenAt": "2026-09-13T06:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4a194d2b58d6bf943cb8",
-      "title": "This is the test : All eyes on US Fed to tackle high inflation",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/this-is-the-test-all-eyes-on-us-fed-to-tackle-high-inflation/articleshow/134177098.cms",
-      "domain": "economictimes.indiatimes.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-13T06:15:00Z",
-      "firstSeenAt": "2026-09-13T06:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "40c6020bf89e8cbb133d",
-      "title": "Charting the global economy : Oil surge fans global inflation",
-      "url": "https://economictimes.indiatimes.com/small-biz/trade/exports/insights/charting-the-global-economy-oil-surge-fans-global-inflation/articleshow/134175593.cms",
-      "domain": "economictimes.indiatimes.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-13T06:15:00Z",
-      "firstSeenAt": "2026-09-13T06:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a75c2aaad672fac36f55",
-      "title": "Khủng hoảng Hormuz : Nhật Bản tái cấu trúc an ninh năng lượng",
-      "url": "https://vneconomy.vn/khung-hoang-hormuz-buoc-nhat-ban-tinh-lai-bai-toan-an-ninh-nang-luong.htm",
-      "domain": "vneconomy.vn",
+      "id": "6372e59192fda0e4c79e",
+      "title": "Giá gạo xuất khẩu vẫn duy trì trạng thái ổn định",
+      "url": "https://stockbiz.vn/tin-tuc/gia-gao-xuat-khau-van-duy-tri-trang-thai-on-dinh/41762996",
+      "domain": "stockbiz.vn",
       "language": "Vietnamese",
       "sourceCountry": "Vietnam",
-      "seenAt": "2026-09-13T06:15:00Z",
-      "firstSeenAt": "2026-09-13T06:15:00Z",
+      "seenAt": "2026-09-13T07:15:00Z",
+      "firstSeenAt": "2026-09-13T07:15:00Z",
       "topicIds": [
-        "energy-security"
+        "ags-softs"
       ],
       "topics": [
-        "Energy & security"
+        "Agriculture & softs"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1108,27 +1321,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "93635d8067c982e010a3",
-      "title": "Нова атака разтърси Ормузкия проток . Светът чака отговор кой стреля",
-      "url": "https://www.standartnews.com/svyat/nova-ataka-raztarsi-ormuzkiya-protok-svetat-chaka-otgovor-koy-strelya-646774.html",
-      "domain": "standartnews.com",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-09-13T06:15:00Z",
-      "firstSeenAt": "2026-09-13T06:15:00Z",
+      "id": "4bea2934baf1f49ee8ad",
+      "title": "Kementan alokasikan AUTP 100 ribu ha , lindungi petani saat El Nino",
+      "url": "https://www.antaranews.com/berita/5738616/kementan-alokasikan-autp-100-ribu-ha-lindungi-petani-saat-el-nino",
+      "domain": "antaranews.com",
+      "language": "Indonesian",
+      "sourceCountry": "Indonesia",
+      "seenAt": "2026-09-13T07:15:00Z",
+      "firstSeenAt": "2026-09-13T07:15:00Z",
       "topicIds": [
-        "energy-security"
+        "ags-softs"
       ],
       "topics": [
-        "Energy & security"
+        "Agriculture & softs"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1137,23 +1347,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "6d9084865bfa8c7a92d3",
-      "title": "TSM Just Posted Record Sales . Nvidia May Be Both the Winner and the One Paying for It",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/tsm-just-posted-record-sales-225826905.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-13T06:00:00Z",
-      "firstSeenAt": "2026-09-13T06:00:00Z",
+      "id": "cd8fadcb8c673c2ccfe7",
+      "title": "Попугаю нельзя давать еду со стола : какие продукты могут стать для птицы ядом - новости за сентябрь 2026",
+      "url": "https://24smi.org/article/479829-nikogda-ne-kormite-popugaia-so-stola-produkty-koto.html",
+      "domain": "24smi.org",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-13T07:15:00Z",
+      "firstSeenAt": "2026-09-13T07:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1162,174 +1373,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "7908a4884e3fc6a5cd2f",
-      "title": "한주간 원전 · 건설 ETF 쑥 … 대미투자 1호 기대에 들썩 [ 펀드와치 ]",
-      "url": "https://www.edaily.co.kr/News/Read?newsId=01951606645579792&mediaCodeNo=257",
-      "domain": "edaily.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T06:00:00Z",
-      "firstSeenAt": "2026-09-13T06:00:00Z",
+      "id": "e155f802c7e9c0cfe6c2",
+      "title": "中国男子 挨一巴掌 倒地 抢救15天仍死亡 ＊ 阿波罗新闻网",
+      "url": "https://www.aboluowang.com/2026/0913/2432901.html",
+      "domain": "aboluowang.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-13T07:15:00Z",
+      "firstSeenAt": "2026-09-13T07:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "ags-softs"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Agriculture & softs"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b5c69b5ffe881bedd812",
-      "title": "한화오션 , 60㎿급 부유식 데이터센터 첫선 … 육상 데이터센터 한계 극복",
-      "url": "https://www.ddaily.co.kr:443/page/view/2026091312214978743",
-      "domain": "ddaily.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T06:00:00Z",
-      "firstSeenAt": "2026-09-13T06:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c9ff1919f306d6cd390b",
-      "title": "롯데 · KAIST , 100억원 투입 R _ xC13C _ 터 준공 … AI 활용 산학협력 확대",
-      "url": "https://www.ddaily.co.kr:443/page/view/2026091310365777446",
-      "domain": "ddaily.co.kr",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T06:00:00Z",
-      "firstSeenAt": "2026-09-13T06:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4b9d0a9582501dd914f5",
-      "title": "Honam seen as key test for Korea regional AI - industrial strategy : ministry official",
-      "url": "https://www.koreaherald.com/article/10871627",
-      "domain": "koreaherald.com",
-      "language": "English",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-13T06:00:00Z",
-      "firstSeenAt": "2026-09-13T06:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "33063bb9b637286c48ef",
-      "title": "TSM Record Month Confirms AMD AI Ramp , but Its Pricing Power Could Take Some of the Upside Back",
-      "url": "https://finance.yahoo.com/technology/ai/articles/tsm-record-month-confirms-amd-230905086.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-13T06:00:00Z",
-      "firstSeenAt": "2026-09-13T06:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5da1a272619a2281c07f",
-      "title": "Oracle Is Spending Tens of Billions on AI Infrastructure . Where Does the Physical Money Go ?",
-      "url": "https://finance.yahoo.com/technology/ai/articles/oracle-spending-tens-billions-ai-224727577.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-13T06:00:00Z",
-      "firstSeenAt": "2026-09-13T06:00:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5223443174b5728ff4cd",
-      "title": "Los bancos centrales vuelven a la carga contra la inflación ( esta vez será diferente )",
-      "url": "https://elpais.com/economia/2026-09-13/los-bancos-centrales-vuelven-a-la-carga-contra-la-inflacion-esta-vez-sera-diferente.html",
-      "domain": "elpais.com",
-      "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-09-13T06:00:00Z",
-      "firstSeenAt": "2026-09-13T06:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "cocoa",
+        "coffee",
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1344,10 +1405,10 @@
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
       "observationDate": "2026-09-13T09:15:00Z",
-      "lastSuccessfulAt": "2026-09-13T14:24:22Z",
+      "lastSuccessfulAt": "2026-09-13T18:11:08Z",
       "expectedCadence": "Hourly",
       "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests",
+      "error": "gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
