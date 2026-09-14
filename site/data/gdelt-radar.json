@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-09-13T18:11:08Z",
+  "generatedAtUtc": "2026-09-14T01:02:35Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 3,
-    "rawArticleCount": 150,
+    "successfulQueryCount": 2,
+    "rawArticleCount": 100,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-09-13T18:11:08Z",
-    "error": "gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-09-14T01:02:35Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,6 +52,32 @@
   ],
   "articles": [
     {
+      "id": "d9b91cca68e6f5063e5d",
+      "title": "Loan interest rates , EMIs to rise ? Two back - to - back 25 bps repo rate hike from RBI soon ?",
+      "url": "https://www.livemint.com/money/loan-interest-rates-emis-to-rise-two-back-to-back-25-bps-repo-rate-hike-from-rbi-soon-11789280033749.html",
+      "domain": "livemint.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 31,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "2653ee267d6f7db8c4c7",
       "title": "Hungary monetary policy review amid drought – Shafaqna English | International Shia News & Fatwas",
       "url": "https://en.shafaqna.com/476762/hungarys-monetary-policy-review-amid-drought/",
@@ -61,72 +87,17 @@
       "seenAt": "2026-09-13T08:00:00Z",
       "firstSeenAt": "2026-09-13T08:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "862eb3727e50a57428a6",
-      "title": "Why Did Freeport - McMoRan Stock Drop On Doubts Over A Tariff It Would Gain From ?",
-      "url": "https://finance.yahoo.com/markets/commodities/articles/why-did-freeport-mcmoran-stock-212508528.html",
-      "domain": "finance.yahoo.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-13T05:30:00Z",
-      "firstSeenAt": "2026-09-13T05:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 24,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "40a45decea5ca83a5498",
-      "title": "Sind die Äpfel in diesem Jahr wirklich kleiner als sonst ?",
-      "url": "https://www.bild.de/leben-wissen/wohnen-living/sind-die-aepfel-in-diesem-jahr-wirklich-kleiner-als-sonst-6aa121a1181cb962d4889111",
-      "domain": "bild.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-13T09:15:00Z",
-      "firstSeenAt": "2026-09-13T09:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -142,18 +113,14 @@
       "seenAt": "2026-09-13T09:15:00Z",
       "firstSeenAt": "2026-09-13T09:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -162,27 +129,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "42653007785fbaf66dec",
-      "title": "Korea nuclear - powered submarines could take on broader Indo - Pacific role",
-      "url": "https://www.koreatimes.co.kr/southkorea/defense/20260913/koreas-nuclear-powered-submarines-could-take-on-broader-indo-pacific-role",
-      "domain": "koreatimes.co.kr",
-      "language": "English",
-      "sourceCountry": "South Korea",
+      "id": "1d0b0b2f5f4c39e091bd",
+      "title": "Трамп може опинитися в епіцентрі нових гучних розслідувань з боку демократів",
+      "url": "https://www.rbc.ua/rus/news/demokrati-gotuyut-masshtabni-rozsliduvannya-1789279162.html",
+      "domain": "rbc.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
       "seenAt": "2026-09-13T09:15:00Z",
       "firstSeenAt": "2026-09-13T09:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -191,82 +154,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "098085e2a518a1792e29",
-      "title": "Deccan Gold opens Altyn Tor plant , marks overseas production milestone",
-      "url": "https://www.business-standard.com/companies/news/companies-news-deccan-gold-starts-processing-unit-at-altyn-tor-126091300135_1.html",
-      "domain": "business-standard.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-13T09:00:00Z",
-      "firstSeenAt": "2026-09-13T09:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c73fd282b2da2f395c80",
-      "title": "Weizen , Gerste , Hafer und Triticale schmücken die Krembzer Erntekrone",
-      "url": "https://www.nordkurier.de/regional/nordwestmecklenburg/weizen-gerste-hafer-und-triticale-schmuecken-die-krembzer-erntekrone-4858591",
-      "domain": "nordkurier.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-13T09:00:00Z",
-      "firstSeenAt": "2026-09-13T09:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a9858ccf8d3dfb2a0285",
-      "title": "Princess Kate just wore her go - to £3k Cartier earrings and weve found three alternatives",
-      "url": "https://www.aol.co.uk/articles/princess-kate-just-wore-her-080000000.html",
-      "domain": "aol.co.uk",
+      "id": "869c6852280e2fe61380",
+      "title": "Bank set to hold interest rates but needs to be ready to act on inflation",
+      "url": "https://www.lbc.co.uk/article/092f5f97f79e4e5b9cf7304cc7b30d43-5HjdhLC_2/",
+      "domain": "lbc.co.uk",
       "language": "English",
       "sourceCountry": "United Kingdom",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "seenAt": "2026-09-13T09:15:00Z",
+      "firstSeenAt": "2026-09-13T09:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "macro-policy"
       ],
       "topics": [
-        "Strategic materials"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -275,117 +180,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "fc6961165939bf86f0c8",
-      "title": "Country food stock increased by 148 , 484 MT in six months",
-      "url": "https://www.bssnews.net/at-a-glance/423653",
-      "domain": "bssnews.net",
+      "id": "2067b91bc273d96d7eb4",
+      "title": "President Donald Trump Interest - Rate Ultimatum Will Likely Fall on Deaf Ears Due to 3 Factors , One of Which Is Trumpflation",
+      "url": "https://finance.yahoo.com/economy/policy/articles/president-donald-trumps-interest-rate-082602228.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
-      "sourceCountry": "Bangladesh",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-13T09:00:00Z",
+      "firstSeenAt": "2026-09-13T09:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5df7bb61b430a8b0c3d8",
-      "title": "Fede ilişkin faiz artırım beklentisi emtia piyasasında satış baskısını yükseltti",
-      "url": "https://www.haberler.com/ekonomi/fed-e-iliskin-faiz-artirim-beklentisi-emtia-20232738-haberi/",
-      "domain": "haberler.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
-      "topicIds": [
-        "ags-softs",
-        "energy-security"
-      ],
-      "topics": [
-        "Agriculture & softs",
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "cocoa",
-        "coffee",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "us-dollar",
-        "wheat",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "7f755c640de64cb56440",
-      "title": "España llega a la recta final antes del invierno con menos gas almacenado y el precio disparado hasta 80 euros por la guerra de Irán",
-      "url": "https://www.larazon.es/economia/espana-llega-recta-final-antes-invierno-menos-gas-almacenado-precio-disparado-80-euros-guerra-iran_202609136aa6597f7486a40f2c9c3201.html",
-      "domain": "larazon.es",
-      "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6c2ecced05abb5d8bf0f",
-      "title": "Enerji güvenliği baskısı Avrupa ve Asyayı yenilenebilir enerjiye yöneltiyor",
-      "url": "https://www.haberler.com/ekonomi/enerji-guvenligi-baskisi-avrupa-ve-asya-yi-20232737-haberi/",
-      "domain": "haberler.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -403,18 +215,14 @@
       "seenAt": "2026-09-13T08:45:00Z",
       "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -423,27 +231,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "1c2baab1b7fe1d1229f9",
-      "title": "НПЗ Славянск - ЭКО в России , атака сегодня 13 сентября - какие последствия , новости Украины",
-      "url": "https://24tv.ua/ru/gur-i-sily-oborony-nanesli-udar-po-npz-slavjansk-jeko-v-rossii-podrobnosti-ataki_n3141129",
-      "domain": "24tv.ua",
-      "language": "Russian",
-      "sourceCountry": "Ukraine",
+      "id": "7f755c640de64cb56440",
+      "title": "España llega a la recta final antes del invierno con menos gas almacenado y el precio disparado hasta 80 euros por la guerra de Irán",
+      "url": "https://www.larazon.es/economia/espana-llega-recta-final-antes-invierno-menos-gas-almacenado-precio-disparado-80-euros-guerra-iran_202609136aa6597f7486a40f2c9c3201.html",
+      "domain": "larazon.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
       "seenAt": "2026-09-13T08:45:00Z",
       "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -452,27 +256,49 @@
       "duplicateCount": 1
     },
     {
-      "id": "f7f55f1644bac6508ea1",
-      "title": "Türkiye to boost mining investment to strengthen energy security",
-      "url": "https://www.hurriyetdailynews.com/turkiye-to-boost-mining-investment-to-strengthen-energy-security-226806",
-      "domain": "hurriyetdailynews.com",
-      "language": "English",
+      "id": "6c2ecced05abb5d8bf0f",
+      "title": "Enerji güvenliği baskısı Avrupa ve Asyayı yenilenebilir enerjiye yöneltiyor",
+      "url": "https://www.haberler.com/ekonomi/enerji-guvenligi-baskisi-avrupa-ve-asya-yi-20232737-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
       "sourceCountry": "Turkey",
       "seenAt": "2026-09-13T08:45:00Z",
       "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5df7bb61b430a8b0c3d8",
+      "title": "Fede ilişkin faiz artırım beklentisi emtia piyasasında satış baskısını yükseltti",
+      "url": "https://www.haberler.com/ekonomi/fed-e-iliskin-faiz-artirim-beklentisi-emtia-20232738-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
         "gas-uk",
         "gas-us",
-        "uranium",
-        "wti"
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -490,18 +316,14 @@
       "seenAt": "2026-09-13T08:45:00Z",
       "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -510,114 +332,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "7bd878c464a81f74dc4d",
-      "title": "Минобороны РФ заявило о продвижении группировки Восток в глубину обороны ВСУ",
-      "url": "https://www.interfax.ru/russia/1115823",
-      "domain": "interfax.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "04a8505b6b2fc200e82c",
-      "title": "One Reportedly Killed After Iranian Commercial Vessel Hit Near Qeshm",
-      "url": "http://www.israelherald.com/news/279304278/one-reportedly-killed-after-iranian-commercial-vessel-hit-near-qeshm",
-      "domain": "israelherald.com",
-      "language": "English",
-      "sourceCountry": "Israel",
-      "seenAt": "2026-09-13T08:45:00Z",
-      "firstSeenAt": "2026-09-13T08:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0235d043d948ddcc0cc3",
-      "title": "Kupfer - Hammer aus Mexiko : Neubewertung voraus ? Die Börse stoppt den Handel : Was steckt hinter dieser Kupfer - News ?",
-      "url": "https://www.finanznachrichten.de/nachrichten-2026-09/69562923-kupfer-hammer-aus-mexiko-neubewertung-voraus-die-boerse-stoppt-den-handel-was-steckt-hinter-dieser-kupfer-news-601.htm",
-      "domain": "finanznachrichten.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "30deb31f341b8235dc0b",
-      "title": "Rozmowa netTG . pl - odcinek 58 - Wojciech Balczun . Co dalej …",
-      "url": "https://nettg.pl/rozmowa-nettg-pl-odcinek-58-wojciech-balczun-co-dalej-z-jsw-i-rola-wegla-w-miksie",
-      "domain": "nettg.pl",
+      "id": "b194c1e711ff62bbac52",
+      "title": "Ofensywa Huti przybiera na sile . Masowa ucieczka przez morską granicę",
+      "url": "https://www.bankier.pl/wiadomosc/Ofensywa-Huti-przybiera-na-sile-Masowa-ucieczka-przez-morska-granice-9196232.html",
+      "domain": "bankier.pl",
       "language": "Polish",
       "sourceCountry": "Poland",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "strategic-materials"
+        "gas-markets"
       ],
       "topics": [
-        "Strategic materials"
+        "Gas markets"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -626,134 +357,76 @@
       "duplicateCount": 1
     },
     {
-      "id": "b101d27a1e933c9a7dc4",
-      "title": "Giá vàng hôm nay mới nhất ( 13 / 9 ) ở mức thấp : Người mua tuần trước lỗ nặng gần 7 triệu đồng / lượng",
-      "url": "https://danviet.vn/gia-vang-hom-nay-moi-nhat-13-9-o-muc-thap-nguoi-mua-tuan-truoc-lo-nang-gan-7-trieu-dong-luong-d1459051.html",
-      "domain": "danviet.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d3f50e078026db790055",
-      "title": "Gold price today : స్థిరంగా కొనసాగుతున్న పసిడి రేట్లు",
-      "url": "https://vaartha.com/today-gold-and-silver-rate/gold-and-silver-prices-sep-13-2026/776679/",
-      "domain": "vaartha.com",
-      "language": "Telugu",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6eacce385d409feb0f9a",
-      "title": "Секрет вкусного кофе оказался на кухне : халва и апельсин меняют напиток до неузнаваемости",
-      "url": "https://www.pravda.ru/news/recipes/2407563-coffee-recipes-home-experiments/",
-      "domain": "pravda.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0e3688ed2d21bbbd84c9",
-      "title": "La récolte de pommes sannonce historiquement basse cette année à cause de la sécheresse , en baisse denviron 30 % par rapport à lan dernier",
-      "url": "https://www.ladepeche.fr/2026/09/13/la-recolte-de-pommes-sannonce-historiquement-basse-cette-annee-a-cause-de-la-secheresse-en-baisse-denviron-30-par-rapport-a-lan-dernier-13548173.php",
-      "domain": "ladepeche.fr",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f659d9819119124cb0da",
-      "title": "Ben & Jerry : Global Warming Is Changing The Flavor Of Ice Cream",
-      "url": "http://science20.com/news_articles/ben_jerrys_global_warming_is_changing_the_flavor_of_ice_cream-180459",
-      "domain": "science20.com",
+      "id": "79d98d4411ea31804269",
+      "title": "This is the test : All eyes on US Fed to tackle high inflation",
+      "url": "https://www.hurriyetdailynews.com/this-is-the-test-all-eyes-on-us-fed-to-tackle-high-inflation-226812",
+      "domain": "hurriyetdailynews.com",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b5a529f9d30fa513a38b",
+      "title": "All eyes on Kevin Warsh as rate - hike fever spreads across G7 central banks",
+      "url": "https://www.moneycontrol.com/world/all-eyes-on-kevin-warsh-as-rate-hike-fever-spreads-across-g7-central-banks-article-14028837.html",
+      "domain": "moneycontrol.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bdd474ed1f025d3930b2",
+      "title": "所有目光聚焦沃什 ， 下周 央行超级周 迎来G7加息潮 ？- CFi . CN 中财网",
+      "url": "http://www.cfi.net.cn/p20260913000085.html",
+      "domain": "cfi.net.cn",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-13T08:45:00Z",
+      "firstSeenAt": "2026-09-13T08:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -771,76 +444,14 @@
       "seenAt": "2026-09-13T08:15:00Z",
       "firstSeenAt": "2026-09-13T08:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9bc4030842108312b59c",
-      "title": "Cena ropy znovu letí nahor a Európe chýba plyn . Prečo nás už čoskoro čaká zdražovanie všetkého ?",
-      "url": "https://www.aktuality.sk/clanok/OWjiOAw/cena-ropy-znovu-leti-nahor-a-europe-chyba-plyn-preco-nas-uz-coskoro-caka-zdrazovanie-vsetkeho/",
-      "domain": "aktuality.sk",
-      "language": "Slovak",
-      "sourceCountry": "Slovak Republic",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "829e89419fd4d6adcbc5",
-      "title": "Ο γρίφος της θέρμανσης για τη σεζόν 2026 - 2027 : Οι παγίδες υπερχρέωσης και ...",
-      "url": "https://www.thetoc.gr/oikonomia/article/o-grifos-tis-thermansis-gia-ti-sezon-2026-2027-oi-pagides-uperxreosis-kai-oi-eukairies/",
-      "domain": "thetoc.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-09-13T08:15:00Z",
-      "firstSeenAt": "2026-09-13T08:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -858,18 +469,14 @@
       "seenAt": "2026-09-13T08:15:00Z",
       "firstSeenAt": "2026-09-13T08:15:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -878,27 +485,124 @@
       "duplicateCount": 1
     },
     {
-      "id": "ef4a6b71a98df0478570",
-      "title": "特朗普就贸易 、 能源和移民问题抨击欧洲盟友 ： 你们现在做的事情简直就是在 自取灭亡",
-      "url": "https://baijiahao.baidu.com/s?id=1876202037881892800",
-      "domain": "baijiahao.baidu.com",
+      "id": "9bc4030842108312b59c",
+      "title": "Cena ropy znovu letí nahor a Európe chýba plyn . Prečo nás už čoskoro čaká zdražovanie všetkého ?",
+      "url": "https://www.aktuality.sk/clanok/OWjiOAw/cena-ropy-znovu-leti-nahor-a-europe-chyba-plyn-preco-nas-uz-coskoro-caka-zdrazovanie-vsetkeho/",
+      "domain": "aktuality.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "829e89419fd4d6adcbc5",
+      "title": "Ο γρίφος της θέρμανσης για τη σεζόν 2026 - 2027 : Οι παγίδες υπερχρέωσης και ...",
+      "url": "https://www.thetoc.gr/oikonomia/article/o-grifos-tis-thermansis-gia-ti-sezon-2026-2027-oi-pagides-uperxreosis-kai-oi-eukairies/",
+      "domain": "thetoc.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2172757a06ad9faab2c0",
+      "title": "Defensa legítima o agresión híbrida , una lectura moral",
+      "url": "https://www.lahaine.org/mundo.php/defensa-legitima-o-agresion-hibrida-una-lectura",
+      "domain": "lahaine.org",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2e968934d3dd64acd2a1",
+      "title": "Arabia Saudite mbyll tubacionin e naftës pasi u g - Syri",
+      "url": "https://www.syri.net/bote/916281/arabia-saudite-mbyll-tubacionin-e-naftes-pasi-u-godit-nga-disa-sulme-ajrore/",
+      "domain": "syri.net",
+      "language": "Albanian",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-09-13T08:15:00Z",
+      "firstSeenAt": "2026-09-13T08:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "96399ad426928c8b3f5c",
+      "title": "所有目光聚焦沃什 ， 下周 央行超级周 迎来G7加息潮 ？",
+      "url": "https://wallstreetcn.com/articles/3781642",
+      "domain": "wallstreetcn.com",
       "language": "Chinese",
       "sourceCountry": "China",
       "seenAt": "2026-09-13T08:15:00Z",
       "firstSeenAt": "2026-09-13T08:15:00Z",
       "topicIds": [
-        "energy-security"
+        "macro-policy"
       ],
       "topics": [
-        "Energy & security"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -907,137 +611,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "65bb3e26dd63cc5c2436",
-      "title": "特朗普就贸易 、 能源和移民问题抨击欧洲盟友 ： 你们现在做的事情简直就是在 自取灭亡",
-      "url": "https://hqtime.huanqiu.com/share/article/4TC36SJOROt",
-      "domain": "hqtime.huanqiu.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
+      "id": "b9d895e03baf05fba118",
+      "title": "Аналитик Гойхман : « Реакция рубля на сохранение ключевой ставки стала парадоксальной »",
+      "url": "https://www.mk.ru/economics/2026/09/13/analitik-goykhman-reakciya-rublya-na-sokhranenie-klyuchevoy-stavki-stala-paradoksalnoy.html",
+      "domain": "mk.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
       "seenAt": "2026-09-13T08:15:00Z",
       "firstSeenAt": "2026-09-13T08:15:00Z",
       "topicIds": [
-        "energy-security"
+        "macro-policy"
       ],
       "topics": [
-        "Energy & security"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f97dfafac5dcd09a7bfd",
-      "title": "સોનું 2900 તો ચાંદી 6500 રૂપિયાથી વધુ ગબડી , અઠવાડિયામાં ભાવમાં કેટલો ફેર પડ્યો ?",
-      "url": "https://www.gujaratsamachar.com/news/business/gold-fell-by-2900-rupees-and-silver-by-more-than-6500-rupees-how-much-did-the-price-change-in-a-week-69377157009",
-      "domain": "gujaratsamachar.com",
-      "language": "Gujarati",
-      "sourceCountry": "India",
-      "seenAt": "2026-09-13T08:00:00Z",
-      "firstSeenAt": "2026-09-13T08:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4b15e4458414ffcd52b5",
-      "title": "99 % China . Jetzt kommt Atlantico",
-      "url": "https://www.wallstreet-online.de/nachricht/21372206-99-china-atlantico",
-      "domain": "wallstreet-online.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-13T08:00:00Z",
-      "firstSeenAt": "2026-09-13T08:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0ddff826684c79cc1c5c",
-      "title": "从 门票经济 到 产业经济 湖南新化千年梯田 上新 引客来|雪峰|紫鹊界|农耕",
-      "url": "https://www.163.com/news/article/L6NFFI3B000189FH.html",
-      "domain": "163.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-13T08:00:00Z",
-      "firstSeenAt": "2026-09-13T08:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c4b7410d7629b1f5b9a5",
-      "title": "Des vendanges à la main comme autrefois : la belle histoire dune bande de copains qui sest lancée dans le vin à Carry",
-      "url": "https://www.laprovence.com/article/economie/4854337030901414/des-vendanges-a-la-main-comme-autrefois-la-belle-histoire-d-une-bande-de-copains-qui-s-est-lancee-dans-le-vin-a-carry",
-      "domain": "laprovence.com",
-      "language": "French",
-      "sourceCountry": "France",
-      "seenAt": "2026-09-13T08:00:00Z",
-      "firstSeenAt": "2026-09-13T08:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1055,18 +646,14 @@
       "seenAt": "2026-09-13T08:00:00Z",
       "firstSeenAt": "2026-09-13T08:00:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1075,50 +662,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "f66c715f20d9f1c5796e",
-      "title": "Think of the parable of a frog in boiling water . That us dithering as the unprecedented weather becomes more extreme | Helen Pilcher",
-      "url": "https://www.theguardian.com/commentisfree/2026/sep/13/extreme-weather-unprecedented-feel-normal",
-      "domain": "theguardian.com",
-      "language": "English",
-      "sourceCountry": "United Kingdom",
-      "seenAt": "2026-09-13T07:45:00Z",
-      "firstSeenAt": "2026-09-13T07:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d7d94441c86014d15814",
-      "title": "Любите погорячее ? Ученые из Оксфорда : кофе и чай вызывают рак пищевода",
-      "url": "https://aif.ru/health/life/lyubite-pogoryachee-uchenye-iz-oksforda-kofe-i-chay-vyzyvayut-rak-pishchevoda",
-      "domain": "aif.ru",
+      "id": "a197e74701f60058629e",
+      "title": "Война в Йемене 2026 : что значит захват побережья Красного моря и удар по Саудовской Аравии ?",
+      "url": "https://vestikavkaza.ru/analytics/vojna-v-jemene-2026-cto-znacit-zahvat-pobereza-krasnogo-mora-i-udar-po-saudovskoj-aravii.html",
+      "domain": "vestikavkaza.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
-      "seenAt": "2026-09-13T07:45:00Z",
-      "firstSeenAt": "2026-09-13T07:45:00Z",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "gas-markets"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Gas markets"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1127,27 +687,174 @@
       "duplicateCount": 1
     },
     {
-      "id": "fa7df3b624ede508c606",
-      "title": "Tỷ giá USD hôm nay 13 / 9 khối ngân hàng và chợ đen trầm lắng",
-      "url": "https://giadinh.suckhoedoisong.vn/ty-gia-usd-hom-nay-13-9-dong-do-la-my-khoi-ngan-hang-va-cho-den-tram-lang-17226091308262085.htm",
-      "domain": "giadinh.suckhoedoisong.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Unknown",
+      "id": "b03f84f8b3ad86fb16b9",
+      "title": "Давление на Россию : Джонатан Пауэлл заявил , что Европа должна пережить сложную зиму ради давления на РФ",
+      "url": "https://www.unian.net/world/davlenie-na-rossiyu-dzhonatan-pauell-zayavil-chto-evropa-dolzhna-perezhit-slozhnuyu-zimu-radi-davleniya-na-rf-13498089.html",
+      "domain": "unian.net",
+      "language": "Russian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6a917fa39ee9d1be5c07",
+      "title": "ইউরোপে গ্যাসের মূল্যবৃদ্ধি বিশ্বায়ন নীতির ব্যর্থতা : দিমিত্রিভ",
+      "url": "https://dailyinqilab.com/international/news/939546",
+      "domain": "dailyinqilab.com",
+      "language": "Bengali",
+      "sourceCountry": "Bangladesh",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "25634318a2da19e1ce97",
+      "title": "FICO UPOZORAVA : Situacija sa gasom u Evropi će se dodatno pogoršavati",
+      "url": "https://www.novosti.rs/ekonomija/vesti/1648010/fico-upozorava-situacija-gasom-evropi-dodatno-pogorsavati",
+      "domain": "novosti.rs",
+      "language": "Serbian",
+      "sourceCountry": "Serbia",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bfc6cf7f18af5bf1b8b2",
+      "title": "La Gran Fractura Geopolítica : Navegando el Nuevo Orden Mundial y su Impacto en RD",
+      "url": "https://acento.com.do/opinion/la-gran-fractura-geopolitica-navegando-el-nuevo-orden-mundial-y-su-impacto-en-rd-9749987.html",
+      "domain": "acento.com.do",
+      "language": "Spanish",
+      "sourceCountry": "Dominican Republic",
+      "seenAt": "2026-09-13T08:00:00Z",
+      "firstSeenAt": "2026-09-13T08:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3712c6df1f592064ff11",
+      "title": "Κυκλοφοριακές ρυθμίσεις σε οδούς της Καλαμπάκας για εργασίες στο δίκτυο φυσικού αερίου",
+      "url": "https://www.tameteora.gr/topika/dimos-meteoron/696986/kykloforiakes-rythmiseis-se-odoys-tis-kalampakas-gia-ergasies-sto-diktyo-fysikoy-aerioy/",
+      "domain": "tameteora.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-09-13T07:45:00Z",
+      "firstSeenAt": "2026-09-13T07:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "62c2dcb6c91894e81595",
+      "title": "每经热评｜全球流动性收紧不改A股基本面 ， 增强市场韧性可从三方面入手",
+      "url": "https://www.nbd.com.cn/articles/2026-09-13/4580026.html",
+      "domain": "nbd.com.cn",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-13T07:45:00Z",
+      "firstSeenAt": "2026-09-13T07:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "032e27f5d3fdae4e0470",
+      "title": "Energy Transfer LP ( NYSE : ET ) Receives $24 . 17 Average PT from Brokerages",
+      "url": "https://www.tickerreport.com/banking-finance/13583236/energy-transfer-lp-nyseet-receives-24-17-average-pt-from-brokerages.html",
+      "domain": "tickerreport.com",
+      "language": "English",
+      "sourceCountry": "United States",
       "seenAt": "2026-09-13T07:30:00Z",
       "firstSeenAt": "2026-09-13T07:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "gas-markets"
       ],
       "topics": [
-        "Strategic materials"
+        "Gas markets"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1156,27 +863,102 @@
       "duplicateCount": 1
     },
     {
-      "id": "82854f89a7efa4a8f80d",
-      "title": "Gold Silver Rate Today 13 September 2026 : सोना 1 , 41 , 850 रूपये , चांदी 2 . 45 लाख , जानें आपके शहर में क्या है लेटेस्ट प्राइस",
-      "url": "https://www.punjabkesari.com/business-news/gold-silver-rate-today-13-september-2026/",
-      "domain": "punjabkesari.com",
+      "id": "d99d788312fe739e7d93",
+      "title": "ČNB na čtvrtečním jednání úrokové sazby nezmění , odhadují analytici",
+      "url": "https://www.ceskenoviny.cz/zpravy/cnb-na-ctvrtecnim-jednani-urokove-sazby-nezmeni-odhaduji-analytici/2873808",
+      "domain": "ceskenoviny.cz",
+      "language": "Czech",
+      "sourceCountry": "Czech Republic",
+      "seenAt": "2026-09-13T07:30:00Z",
+      "firstSeenAt": "2026-09-13T07:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f9d095688493abb0c1a3",
+      "title": "加息25个基点 ？ 美联储 ， 重磅来袭 ！",
+      "url": "https://www.stcn.com/article/detail/4183049.html",
+      "domain": "stcn.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-13T07:30:00Z",
+      "firstSeenAt": "2026-09-13T07:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fa9aaf7f7c2f7beb3cbc",
+      "title": "Αναταραχή στις αγορές ομολόγων : Γιατί η Ελλάδα αντέχει καλύτερα από Γαλλία και Ιταλία",
+      "url": "https://newpost.gr/eidiseis/anatarachi-stis-agores-omologon-giati-i-ellada-antechei-kalytera-apo-gallia-kai-italia/",
+      "domain": "newpost.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-09-13T07:30:00Z",
+      "firstSeenAt": "2026-09-13T07:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e880c4ef6b2134a36f94",
+      "title": "BRICS Summit : ईरान और UAE को एक मंच पर कैसे लाया भारत ? न्यू दिल्ली डिक्लेरेशन की बड़ी बातें",
+      "url": "https://www.prabhatkhabar.com/national/brics-summit-iran-uae-new-delhi-declaration-key-highlights",
+      "domain": "prabhatkhabar.com",
       "language": "Hindi",
       "sourceCountry": "India",
       "seenAt": "2026-09-13T07:30:00Z",
       "firstSeenAt": "2026-09-13T07:30:00Z",
       "topicIds": [
-        "strategic-materials"
+        "macro-policy"
       ],
       "topics": [
-        "Strategic materials"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1185,24 +967,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "5e38d401c0be1fdaabf2",
-      "title": "Za plon , chleb i trud rolników . Diecezjalno - gminne dożynki w Łomży",
-      "url": "https://4lomza.pl/index.php?wiad=73455",
-      "domain": "4lomza.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
+      "id": "efe4dccbd97860ce968c",
+      "title": "Ομόλογα : Η μείωση του ελληνικού χρέους ασπίδα στην αύξηση του κόστους δανεισμού διεθνώς",
+      "url": "https://www.skai.gr/news/finance/omologa-i-meiosi-tou-ellinikou-xreous-aspida-stin-ayksisi-tou-kostous-daneismou-diethnos",
+      "domain": "skai.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
       "seenAt": "2026-09-13T07:30:00Z",
       "firstSeenAt": "2026-09-13T07:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1211,53 +993,249 @@
       "duplicateCount": 1
     },
     {
-      "id": "70c7de8776732554cab7",
-      "title": "Erzurumda çocuklar COP31 kapsamında serada fidan dikti , hasat yapıp pazarda sattı",
-      "url": "https://www.haberler.com/guncel/erzurum-da-cocuklar-cop31-kapsaminda-serada-fidan-20232550-haberi/",
-      "domain": "haberler.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-09-13T07:30:00Z",
-      "firstSeenAt": "2026-09-13T07:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f43e97590026b34b6fb1",
-      "title": "Украинские дроны установили рекорд – это может поставить крест на российской газовой промышленности",
-      "url": "https://24tv.ua/ru/ukrainskie-drony-ustanovili-rekord-jeto-mozhet-postavit-krest_n3140508",
+      "id": "dc48db6149b5b532fa23",
+      "title": "Українські дрони встановили рекорд – це може поставити хрест на російській газовій промисловості",
+      "url": "https://24tv.ua/ukrayinski-droni-vstanovili-rekord-tse-mozhe-postaviti-hrest_n3140504",
       "domain": "24tv.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-09-13T07:15:00Z",
+      "firstSeenAt": "2026-09-13T07:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b0fc6ace5da47e5f926e",
+      "title": "كيف يؤثر التعليق المؤقت للرسوم على المواطن والاقتصاد الإيراني ؟",
+      "url": "https://www.aljazeera.net/ebusiness/2026/9/13/%D9%83%D9%8A%D9%81-%D9%8A%D8%A4%D8%AB%D8%B1-%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%A4%D9%82%D8%AA-%D9%84%D9%84%D8%B1%D8%B3%D9%88%D9%85-%D8%B9%D9%84%D9%89",
+      "domain": "aljazeera.net",
+      "language": "Arabic",
+      "sourceCountry": "Israel",
+      "seenAt": "2026-09-13T07:15:00Z",
+      "firstSeenAt": "2026-09-13T07:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "122ede653267a15c4b6d",
+      "title": "고유가 · 고물 압박 지속 … 미국 연준 , 9월 기준금리 인상 나서나",
+      "url": "https://www.hani.co.kr/arti/economy/economy_general/1277538.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-13T07:15:00Z",
+      "firstSeenAt": "2026-09-13T07:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "af8839cef171a555fbd2",
+      "title": "How vulnerable are European stocks to natural gas price shocks ?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/vulnerable-european-stocks-natural-gas-061538812.html",
+      "domain": "finance.yahoo.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-13T07:00:00Z",
+      "firstSeenAt": "2026-09-13T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3d81b5ba6833fbe3f5a7",
+      "title": "Middle East Business : UAE , Germany unveil energy , tech deals worth over $5 . 8bn",
+      "url": "https://www.gdnonline.com:443/Details/1406231",
+      "domain": "gdnonline.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-13T07:00:00Z",
+      "firstSeenAt": "2026-09-13T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "765eb7a2bbea973d0c43",
+      "title": "Κλιμακώνεται η ενεργειακή κρίση λόγω των εντάσεων στη Μέση Ανατολή",
+      "url": "https://www.madata.gr/epikairotita/economy/979048-klimakonetai-i-energeiaki-krisi-logo-ton-entaseon-sti-mesi-anatoli.html",
+      "domain": "madata.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-09-13T07:00:00Z",
+      "firstSeenAt": "2026-09-13T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "69c01ba9dabada967211",
+      "title": "Νέο ράλι στην ενέργεια : Έρχονται αυξήσεις στα πρατήρια – Πάνω από 107 δολάρια το πετρέλαιο",
+      "url": "https://www.inewsgr.com/27/neo-rali-stin-energeia-erchontai-afxiseis-sta-pratiria--pano-apo-107-dolaria-to-petrelaio.htm",
+      "domain": "inewsgr.com",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-09-13T07:00:00Z",
+      "firstSeenAt": "2026-09-13T07:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "73b1615c1989b560fe78",
+      "title": "RWE - Strategie : 3 Milliarden Euro für Offshore - Windkraft mit VAE",
+      "url": "https://www.boerse-express.com/news/articles/rwe-strategie-3-milliarden-euro-fuer-offshore-windkraft-mit-vae-946835",
+      "domain": "boerse-express.com",
+      "language": "German",
+      "sourceCountry": "Austria",
+      "seenAt": "2026-09-13T06:45:00Z",
+      "firstSeenAt": "2026-09-13T06:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "971292f7cb38d147fb24",
+      "title": "La puerta de las lamentaciones",
+      "url": "https://www.prensalibre.com/opinion/columnasdiarias/la-puerta-de-las-lamentaciones/",
+      "domain": "prensalibre.com",
+      "language": "Spanish",
+      "sourceCountry": "Guatemala",
+      "seenAt": "2026-09-13T06:45:00Z",
+      "firstSeenAt": "2026-09-13T06:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fcf493ff947cc7b28e41",
+      "title": "Трамп обвинил Иран в атаке на нефтепровод Саудовской Аравии",
+      "url": "https://korrespondent.net/world/4911292-tramp-obvynyl-yran-v-atake-na-nefteprovod-saudovskoi-aravyy",
+      "domain": "korrespondent.net",
       "language": "Russian",
       "sourceCountry": "Ukraine",
-      "seenAt": "2026-09-13T07:30:00Z",
-      "firstSeenAt": "2026-09-13T07:30:00Z",
+      "seenAt": "2026-09-13T06:45:00Z",
+      "firstSeenAt": "2026-09-13T06:45:00Z",
       "topicIds": [
-        "energy-security"
+        "gas-markets"
       ],
       "topics": [
-        "Energy & security"
+        "Gas markets"
       ],
       "assets": [
-        "brent",
-        "defence",
         "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1266,131 +1244,24 @@
       "duplicateCount": 1
     },
     {
-      "id": "36467b70dd4c4a377487",
-      "title": "सुनचाँदीको मूल्य बढ्यो , आज कतिमा हुँदैछ कारोबार ? | Nepal first 24 - hour updated news portal",
-      "url": "https://www.ratopati.com/story/591805/the-price-of-gold-and-silver-has-increased-what-is-the-trading-price-today",
-      "domain": "ratopati.com",
-      "language": "Nepali",
-      "sourceCountry": "Nepal",
-      "seenAt": "2026-09-13T07:15:00Z",
-      "firstSeenAt": "2026-09-13T07:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6372e59192fda0e4c79e",
-      "title": "Giá gạo xuất khẩu vẫn duy trì trạng thái ổn định",
-      "url": "https://stockbiz.vn/tin-tuc/gia-gao-xuat-khau-van-duy-tri-trang-thai-on-dinh/41762996",
-      "domain": "stockbiz.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-09-13T07:15:00Z",
-      "firstSeenAt": "2026-09-13T07:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4bea2934baf1f49ee8ad",
-      "title": "Kementan alokasikan AUTP 100 ribu ha , lindungi petani saat El Nino",
-      "url": "https://www.antaranews.com/berita/5738616/kementan-alokasikan-autp-100-ribu-ha-lindungi-petani-saat-el-nino",
-      "domain": "antaranews.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-09-13T07:15:00Z",
-      "firstSeenAt": "2026-09-13T07:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "cd8fadcb8c673c2ccfe7",
-      "title": "Попугаю нельзя давать еду со стола : какие продукты могут стать для птицы ядом - новости за сентябрь 2026",
-      "url": "https://24smi.org/article/479829-nikogda-ne-kormite-popugaia-so-stola-produkty-koto.html",
-      "domain": "24smi.org",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-13T07:15:00Z",
-      "firstSeenAt": "2026-09-13T07:15:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e155f802c7e9c0cfe6c2",
-      "title": "中国男子 挨一巴掌 倒地 抢救15天仍死亡 ＊ 阿波罗新闻网",
-      "url": "https://www.aboluowang.com/2026/0913/2432901.html",
-      "domain": "aboluowang.com",
+      "id": "8bc5c123c72c690fb540",
+      "title": "全球央行超級週來了 ！ 瑞銀料Fed年底前升2碼 台央行跟進升息機率高",
+      "url": "https://news.tvbs.com.tw/money/4021617",
+      "domain": "news.tvbs.com.tw",
       "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-13T07:15:00Z",
-      "firstSeenAt": "2026-09-13T07:15:00Z",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-09-13T06:45:00Z",
+      "firstSeenAt": "2026-09-13T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1405,10 +1276,10 @@
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
       "observationDate": "2026-09-13T09:15:00Z",
-      "lastSuccessfulAt": "2026-09-13T18:11:08Z",
+      "lastSuccessfulAt": "2026-09-14T01:02:35Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
-      "error": "gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
