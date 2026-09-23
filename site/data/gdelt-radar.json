@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-09-23T00:30:20Z",
+  "generatedAtUtc": "2026-09-23T05:56:45Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 4,
-    "rawArticleCount": 200,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-09-23T00:30:20Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-09-23T05:56:45Z",
+    "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,150 +52,27 @@
   ],
   "articles": [
     {
-      "id": "67df249395bdb75a0202",
-      "title": "Canola , wheat prices show long - term strength despite harvest pressure",
-      "url": "https://www.620ckrm.com/2026/09/22/canola-wheat-prices-show-long-term-strength-despite-harvest-pressure/",
-      "domain": "620ckrm.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-09-22T23:30:00Z",
-      "firstSeenAt": "2026-09-22T23:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c3ab35a13da156581f29",
-      "title": "Record sheep prices have farmers running more stock and fewer crops in mixed NSW season",
-      "url": "https://www.abc.net.au/news/rural/2026-09-23/record-sheep-prices-have-farmers-running-more-stock/107165564",
-      "domain": "abc.net.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-09-22T23:30:00Z",
-      "firstSeenAt": "2026-09-22T23:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8a0532676b171771f7c4",
-      "title": "Мадрид сожжет мосты : Испания откажется от российского СПГ , несмотря на долгосрочные контракты",
-      "url": "https://runews24.ru/politics/23/09/2026/madrid-sozhzhet-mostyi-ispaniya-otkazhetsya-ot-rossijskogo-spg-nesmotrya-na-dolgosrochnyie-kontraktyi",
-      "domain": "runews24.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-22T23:30:00Z",
-      "firstSeenAt": "2026-09-22T23:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a6ff65106e0d79685adc",
-      "title": "Глава МИД Испании заявил о намерении страны отказаться от СПГ РФ с 1 января",
-      "url": "https://iz.ru/2171813/vlasti-ispanii-namereny-prekratit-import-szhizhennogo-gaza-iz-rossii-izi",
-      "domain": "iz.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-22T23:30:00Z",
-      "firstSeenAt": "2026-09-22T23:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "21acd16bef8c3d7814c1",
-      "title": "메가특구 노동특례 노사정 대화 첫발 … 주 1~2회 실무협의",
-      "url": "http://inews24.com/view/2008570",
-      "domain": "inews24.com",
-      "language": "Korean",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-09-22T23:30:00Z",
-      "firstSeenAt": "2026-09-22T23:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2835de17021c1e52418c",
-      "title": "Испания введет запрет на поставки российского СПГ с 1 января",
-      "url": "https://tvzvezda.ru/news/202692317-lh253.html",
+      "id": "83fb9552664a64b4c1ce",
+      "title": "Дмитриев назвал медь новым золотом из - за рекордных цен",
+      "url": "https://tvzvezda.ru/news/2026923627-RPQLI.html",
       "domain": "tvzvezda.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
-      "seenAt": "2026-09-22T23:15:00Z",
-      "firstSeenAt": "2026-09-22T23:15:00Z",
+      "seenAt": "2026-09-23T05:30:00Z",
+      "firstSeenAt": "2026-09-23T05:30:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -204,153 +81,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "4dd38ad8d4c1bca892bb",
-      "title": "Donald Trump Iran conflict fuels record global diesel prices | Stock Journal",
-      "url": "https://www.stockjournal.com.au/story/9354746/donald-trump-iran-conflict-fuels-record-global-diesel-prices/",
-      "domain": "stockjournal.com.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-09-22T23:00:00Z",
-      "firstSeenAt": "2026-09-22T23:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c0cf307c534cf580255f",
-      "title": "Nuvoil impulsa innovación tecnológica fortalecer seguridad energética",
-      "url": "https://www.milenio.com/negocios/nuvoil-impulsa-innovacion-tecnologica-fortalecer-seguridad-energetica",
-      "domain": "milenio.com",
-      "language": "Spanish",
-      "sourceCountry": "Mexico",
-      "seenAt": "2026-09-22T22:45:00Z",
-      "firstSeenAt": "2026-09-22T22:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "27ff8e4f53afa02a6e52",
-      "title": "România are o pondere de 30 % a creditului în valută în total , faţă de 20 % în ...",
-      "url": "https://www.zf.ro/banci-si-asigurari/romania-pondere-30-creditului-valuta-total-fata-20-cehia-15-polonia-bancile-au-devenit-expuse-riscul-valutar-odata-creditarea-corporate-valuta-prins-viteza-depasind-50-stocul-creditelor-firmelor-23243387",
-      "domain": "zf.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-09-22T22:45:00Z",
-      "firstSeenAt": "2026-09-22T22:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b39321d8521b0ae09052",
-      "title": "RDEco : Guido Zack analizó el desafío de bajar la inflación sin profundizar la caída de la actividad",
-      "url": "https://www.perfil.com/noticias/masperfil/inflacion-y-dolar-en-rdeco-los-desafios-del-plan-economico-de-javier-milei-antes-de-las-elecciones.phtml",
-      "domain": "perfil.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-09-22T22:45:00Z",
-      "firstSeenAt": "2026-09-22T22:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4b2e1a7275ddfe183c69",
-      "title": "Zimbabwean farmers adopt drought - tolerant crops for resilience - Xinhua",
-      "url": "https://english.news.cn/20260922/98e1c02228a2429285ab367f2707aa27/c.html",
-      "domain": "english.news.cn",
-      "language": "English",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-09-22T16:00:00Z",
-      "firstSeenAt": "2026-09-22T16:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1924965c10ed160a7cf1",
-      "title": "( Hello Africa ) Zimbabwean farmers adopt drought - tolerant crops for resilience",
-      "url": "http://www.heraldglobe.com/news/279323473/hello-africa-zimbabwean-farmers-adopt-drought-tolerant-crops-for-resilience",
-      "domain": "heraldglobe.com",
+      "id": "5f630fb89b1eccd2a22d",
+      "title": "USAR Stock Alert : united states Rare Earths Jumps on Trump Greenland Deal Announcement",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/usar-stock-alert-usa-rare-175912959.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-22T14:45:00Z",
-      "firstSeenAt": "2026-09-22T14:45:00Z",
+      "seenAt": "2026-09-23T05:15:00Z",
+      "firstSeenAt": "2026-09-23T05:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -359,24 +110,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "9c12cdf7597d823dbf57",
-      "title": "Zimbabwean farmers adopt drought - tolerant crops for resilience",
-      "url": "https://www.newzimbabwe.com/zimbabwean-farmers-adopt-drought-tolerant-crops-for-resilience/",
-      "domain": "newzimbabwe.com",
-      "language": "English",
-      "sourceCountry": "Zimbabwe",
-      "seenAt": "2026-09-22T02:45:00Z",
-      "firstSeenAt": "2026-09-22T02:45:00Z",
+      "id": "f4db4d686290c979b8b0",
+      "title": "Giá vàng đồng loạt giảm",
+      "url": "https://eva.vn/tin-tuc/gia-vang-dong-loat-giam-c73a683987.html",
+      "domain": "eva.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T05:15:00Z",
+      "firstSeenAt": "2026-09-23T05:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -385,282 +139,259 @@
       "duplicateCount": 1
     },
     {
-      "id": "0b596b3060a65666b47d",
-      "title": "US inflation pressures may require further Fed rate hikes : St . Louis Fed President Alberto Musalem",
-      "url": "http://www.europesun.com/news/279323056/us-inflation-pressures-may-require-further-fed-rate-hikes-st-louis-fed-president-alberto-musalem",
-      "domain": "europesun.com",
-      "language": "English",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-22T14:45:00Z",
-      "firstSeenAt": "2026-09-22T14:45:00Z",
+      "id": "b3228bee31878e3d01f6",
+      "title": "Giá vàng hôm nay 23 / 9 bất ngờ tăng mạnh",
+      "url": "https://soha.vn/gia-vang-hom-nay-23-9-dao-chieu-bat-ngo-198260923093906555.htm",
+      "domain": "soha.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T05:15:00Z",
+      "firstSeenAt": "2026-09-23T05:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 25,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "c921ec4c735a84a823e7",
-      "title": "US inflation pressures may require further Fed rate hikes : St . Louis Fed President Alberto Musalem",
-      "url": "http://www.zimbabwestar.com/news/279323056/us-inflation-pressures-may-require-further-fed-rate-hikes-st-louis-fed-president-alberto-musalem",
-      "domain": "zimbabwestar.com",
-      "language": "English",
-      "sourceCountry": "Zimbabwe",
-      "seenAt": "2026-09-22T14:45:00Z",
-      "firstSeenAt": "2026-09-22T14:45:00Z",
+      "id": "25900c4a169e87c23486",
+      "title": "Giá vàng đồng loạt giảm",
+      "url": "https://kenh14.vn/gia-vang-dong-loat-giam-21526092310292163.chn",
+      "domain": "kenh14.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T04:30:00Z",
+      "firstSeenAt": "2026-09-23T04:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 25,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "5528388bf0b493b31476",
-      "title": "US inflation pressures may require further Fed rate hikes : St . Louis Fed President Alberto Musalem",
-      "url": "http://www.northkoreatimes.com/news/279323056/us-inflation-pressures-may-require-further-fed-rate-hikes-st-louis-fed-president-alberto-musalem",
-      "domain": "northkoreatimes.com",
-      "language": "English",
-      "sourceCountry": "North Korea",
-      "seenAt": "2026-09-22T11:00:00Z",
-      "firstSeenAt": "2026-09-22T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5c2743cd1acba1cf90c1",
-      "title": "US inflation pressures may require further Fed rate hikes : St . Louis Fed President Alberto Musalem",
-      "url": "http://www.middleeaststar.com/news/279323056/us-inflation-pressures-may-require-further-fed-rate-hikes-st-louis-fed-president-alberto-musalem",
-      "domain": "middleeaststar.com",
-      "language": "English",
-      "sourceCountry": "Syria",
-      "seenAt": "2026-09-22T11:00:00Z",
-      "firstSeenAt": "2026-09-22T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a755f602373aaf7aa1c9",
-      "title": "US inflation pressures may require further Fed rate hikes : St . Louis Fed President Alberto Musalem",
-      "url": "http://www.thailandnews.net/news/279323056/us-inflation-pressures-may-require-further-fed-rate-hikes-st-louis-fed-president-alberto-musalem",
-      "domain": "thailandnews.net",
-      "language": "English",
-      "sourceCountry": "Thailand",
-      "seenAt": "2026-09-22T11:00:00Z",
-      "firstSeenAt": "2026-09-22T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "343909cb9cef313f98e7",
-      "title": "US inflation pressures may require further Fed rate hikes : St . Louis Fed President Alberto Musalem",
-      "url": "http://www.bignewsnetwork.com/news/279323056/us-inflation-pressures-may-require-further-fed-rate-hikes-st-louis-fed-president-alberto-musalem",
-      "domain": "bignewsnetwork.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-22T11:00:00Z",
-      "firstSeenAt": "2026-09-22T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dabbbc4fb2ae645c7027",
-      "title": "Asia - Pacific feels heat of Fed rate hike",
-      "url": "http://global.chinadaily.com.cn/a/202609/22/WS6ab1dfe7e4b06d4aa055f6d6.html",
-      "domain": "global.chinadaily.com.cn",
-      "language": "English",
+      "id": "8842e3b0956ed235aa56",
+      "title": "比了76年 ！ 全世界都来上海比 手艺活 ， 比的到底是啥",
+      "url": "http://news.cyol.com/gb/jiaoyu/articles/2026-09/23/content_v6vKnotP2V.html",
+      "domain": "news.cyol.com",
+      "language": "Chinese",
       "sourceCountry": "China",
-      "seenAt": "2026-09-22T06:45:00Z",
-      "firstSeenAt": "2026-09-22T06:45:00Z",
+      "seenAt": "2026-09-23T04:30:00Z",
+      "firstSeenAt": "2026-09-23T04:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 25,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "0bd71f9ec6cefd8e2c95",
-      "title": "Fed official says Iran war pushed her toward backing rate hike – NBC10 Philadelphia",
-      "url": "https://www.nbcphiladelphia.com/news/national-international/federal-reserve-official-says-iran-war-pushed-her-toward-supporting-rate-hike/4466912/",
-      "domain": "nbcphiladelphia.com",
+      "id": "bd96ac46f151a32eff40",
+      "title": "Giá bạc trong nước lên mức 61 , 22 triệu đồng / kg",
+      "url": "http://vov.vn/thi-truong/gia-bac-hom-nay-gia-bac-trong-nuoc-len-muc-6122-trieu-dongkg-post1335135.vov",
+      "domain": "vov.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T04:00:00Z",
+      "firstSeenAt": "2026-09-23T04:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "df8e76e04b43d923f808",
+      "title": "Giá vàng đồng loạt giảm",
+      "url": "https://baomoi.com/gia-vang-dong-loat-giam-c56111332.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T04:00:00Z",
+      "firstSeenAt": "2026-09-23T04:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e13c497061e12acbc483",
+      "title": "FireFly releases Independent Technical Report for Preliminary Economic Assessment and Resource Estimate",
+      "url": "https://www.thewhig.com/press-releases/globe-newswire/firefly-releases-independent-technical-report-for-preliminary-economic-assessment-and-resource-estimate/",
+      "domain": "thewhig.com",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-22T02:00:00Z",
-      "firstSeenAt": "2026-09-22T02:00:00Z",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-23T04:00:00Z",
+      "firstSeenAt": "2026-09-23T04:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 25,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "d26adf3a7b12d8983b67",
-      "title": "Fed official says Iran war pushed her toward backing rate hike – NBC New York",
-      "url": "https://www.nbcnewyork.com/news/national-international/federal-reserve-official-says-iran-war-pushed-her-toward-supporting-rate-hike/6550351/",
-      "domain": "nbcnewyork.com",
+      "id": "417f884072379fb0b375",
+      "title": "Bridge Green и Hartree заключили восьмилетнюю сделку по вторичному литию",
+      "url": "https://pronedra.ru/bridge-green-hartree-recycled-lithium-deal-832943.html",
+      "domain": "pronedra.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-23T04:00:00Z",
+      "firstSeenAt": "2026-09-23T04:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "47941b39dfed09ba73d7",
+      "title": "Mont Royal Holds First Public Information Meeting in Kuujjuaq for the Ashram Project",
+      "url": "https://www.thewhig.com/press-releases/newsfile/mont-royal-holds-first-public-information-meeting-in-kuujjuaq-for-the-ashram-project/",
+      "domain": "thewhig.com",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-22T01:00:00Z",
-      "firstSeenAt": "2026-09-22T01:00:00Z",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-23T04:00:00Z",
+      "firstSeenAt": "2026-09-23T04:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 25,
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "00c8d6295724f283148d",
-      "title": "Calgary - based TC Energy strikes $560M deal to sell Mexican natural gas pipeline",
-      "url": "https://www.castanetkamloops.net/news/Business/632008/Calgary-based-TC-Energy-strikes-560M-deal-to-sell-Mexican-natural-gas-pipeline",
-      "domain": "castanetkamloops.net",
-      "language": "English",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-09-22T18:00:00Z",
-      "firstSeenAt": "2026-09-22T18:00:00Z",
+      "id": "107ab11143a8d5860c97",
+      "title": "有色 / 贵金属 | 供应扰动增强 镍价低位修复 _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202609233882093351.html",
+      "domain": "finance.eastmoney.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-23T03:45:00Z",
+      "firstSeenAt": "2026-09-23T03:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 24,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d309b0e62fd12a64529e",
-      "title": "Yapay zekânın gizli faturası : Elektrik parasını kim ödeyecek ?",
-      "url": "https://www.timeturk.com/yapay-zeknin-gizli-faturasi-elektrik-parasini-kim-odeyecek",
-      "domain": "timeturk.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-09-22T22:30:00Z",
-      "firstSeenAt": "2026-09-22T22:30:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 20,
       "sourceTier": "discovery",
@@ -669,608 +400,1044 @@
       "duplicateCount": 1
     },
     {
-      "id": "6cc8692a9fc3753c8c05",
-      "title": "Sask . NDP calls for emergency relief for farmers as wet harvest drags on",
-      "url": "https://www.cbc.ca/news/canada/saskatchewan/ndp-emergency-relief-farmers-9.7354196",
-      "domain": "cbc.ca",
+      "id": "31d74767c39d1be7f735",
+      "title": "有色 / 贵金属 | 市场期待减产兑现 多晶硅走强 _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202609233882028218.html",
+      "domain": "finance.eastmoney.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-23T03:45:00Z",
+      "firstSeenAt": "2026-09-23T03:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "36d87292585060df1430",
+      "title": "Giá vàng đồng loạt giảm",
+      "url": "https://tienphong.vn/gia-vang-dong-loat-giam-post1878790.tpo",
+      "domain": "tienphong.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T03:15:00Z",
+      "firstSeenAt": "2026-09-23T03:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "db1a817df0546bf2fdac",
+      "title": "Giá vàng ngày 23 / 9 : Bảng giá tại các công ty vàng bạc đá quý trong nước",
+      "url": "https://baomoi.com/gia-vang-ngay-23-9-bang-gia-tai-cac-cong-ty-vang-bac-da-quy-trong-nuoc-c56110763.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T03:15:00Z",
+      "firstSeenAt": "2026-09-23T03:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a259c5750780c7c7e939",
+      "title": "FireFly releases Independent Technical Report for Preliminary Economic Assessment and Resource Estimate",
+      "url": "https://www.owensoundsuntimes.com/press-releases/globe-newswire/firefly-releases-independent-technical-report-for-preliminary-economic-assessment-and-resource-estimate/",
+      "domain": "owensoundsuntimes.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-23T03:15:00Z",
+      "firstSeenAt": "2026-09-23T03:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c58baae7d639e99c46d1",
+      "title": "FireFly Metals files Green Bay technical report with project NPV unchanged",
+      "url": "https://www.proactiveinvestors.com/companies/news/1098928/firefly-metals-files-green-bay-technical-report-with-project-npv-unchanged-1098928.html",
+      "domain": "proactiveinvestors.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-23T02:45:00Z",
+      "firstSeenAt": "2026-09-23T02:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e715c4165541cfc614e1",
+      "title": "Giá vàng hôm nay ( 23 - 9 ): Giá vàng miếng và vàng nhẫn tiếp tục giảm",
+      "url": "https://www.qdnd.vn/kinh-te/tin-tuc/gia-vang-hom-nay-23-9-gia-vang-mieng-va-vang-nhan-tiep-tuc-giam-1057914",
+      "domain": "qdnd.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T02:45:00Z",
+      "firstSeenAt": "2026-09-23T02:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "922e73b72924a57ad25f",
+      "title": "一张图看商品支撑阻力 ： 金银油气+铂钯铜农产品期货 ( 2026年9月23日 )_ 期市动态 _ 期货 _ 中金在线",
+      "url": "http://futures.cnfol.com/qishidongtai/20260923/32378459.shtml",
+      "domain": "futures.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-23T02:15:00Z",
+      "firstSeenAt": "2026-09-23T02:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e9637fd5fbb86085b954",
+      "title": "Giá vàng hôm nay 23 . 9 . 2026 : Trong nước ngược chiều thế giới",
+      "url": "https://thanhnien.vn/gia-vang-hom-nay-2392026-trong-nuoc-nguoc-chieu-the-gioi-185260923084825364.htm",
+      "domain": "thanhnien.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T02:15:00Z",
+      "firstSeenAt": "2026-09-23T02:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fb5dfc5f162f1401f38a",
+      "title": "交易随行 ： 铜今多强势20260923 _ 期货评论 _ 期货 _ 中金在线",
+      "url": "http://futures.cnfol.com/mingjialunshi/20260923/32378386.shtml",
+      "domain": "futures.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-23T02:15:00Z",
+      "firstSeenAt": "2026-09-23T02:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6f47024b8e05c535c40b",
+      "title": "Mont Royal Resources Limited : Mont Royal Holds First Public Information Meeting in Kuujjuaq for the Ashram Project",
+      "url": "https://www.finanznachrichten.de/nachrichten-2026-09/69649649-mont-royal-resources-limited-mont-royal-holds-first-public-information-meeting-in-kuujjuaq-for-the-ashram-project-296.htm",
+      "domain": "finanznachrichten.de",
+      "language": "English",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-09-23T02:15:00Z",
+      "firstSeenAt": "2026-09-23T02:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5d60f5df478d4e83709b",
+      "title": "烟台代表团在省残运会上实现历史性突破 斩获52金36银37铜 - 烟台社会 - 水母网",
+      "url": "https://news.shm.com.cn/2026-09/23/content_5507309.htm",
+      "domain": "news.shm.com.cn",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-23T02:15:00Z",
+      "firstSeenAt": "2026-09-23T02:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6bdfc3ad960ed52bf52b",
+      "title": "Giá vàng thế giới tiếp đà giảm trong phiên giao dịch ngày 22 / 9",
+      "url": "https://baomoi.com/gia-vang-the-gioi-tiep-da-giam-trong-phien-giao-dich-ngay-22-9-c56110099.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T01:45:00Z",
+      "firstSeenAt": "2026-09-23T01:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0f2d46ce972c952c6069",
+      "title": "FireFly releases Independent Technical Report for Preliminary Economic Assessment and Resource Estimate",
+      "url": "https://www.standard-freeholder.com/press-releases/globe-newswire/firefly-releases-independent-technical-report-for-preliminary-economic-assessment-and-resource-estimate/",
+      "domain": "standard-freeholder.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-23T01:15:00Z",
+      "firstSeenAt": "2026-09-23T01:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "df4c006ce9bddf104859",
+      "title": "Giá vàng hôm nay 23 / 9 / 2026 : Giá vàng miếng và vàng nhẫn tiếp tục giảm",
+      "url": "https://ngoisao.vn/theo-dong-su-kien/tin-nong-trong-ngay/gia-vang-hom-nay-23-9-2026-gia-vang-mieng-va-vang-nhan-tiep-tuc-giam-d492511.html",
+      "domain": "ngoisao.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-23T00:45:00Z",
+      "firstSeenAt": "2026-09-23T00:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b2800c815243a6fc3229",
+      "title": "FireFly Metals releases Independent Technical Report for Preliminary Economic Assessment and Resource Estimate",
+      "url": "https://www.juniorminingnetwork.com/junior-miner-news/press-releases/3390-tsx/ffm/211595-firefly-releases-independent-technical-report-for-preliminary-economic-assessment-and-resource-estimate.html",
+      "domain": "juniorminingnetwork.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-23T00:30:00Z",
+      "firstSeenAt": "2026-09-23T00:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fbadc225fd82f5c6b515",
+      "title": "FireFly releases Independent Technical Report for Preliminary Economic Assessment and Resource Estimate",
+      "url": "https://www.recorder.ca/press-releases/globe-newswire/firefly-releases-independent-technical-report-for-preliminary-economic-assessment-and-resource-estimate/",
+      "domain": "recorder.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-23T00:15:00Z",
+      "firstSeenAt": "2026-09-23T00:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d38909fbb1bca62d464a",
+      "title": "FireFly releases Independent Technical Report for Preliminary Economic Assessment and Resource Estimate",
+      "url": "https://www.intelligencer.ca/press-releases/globe-newswire/firefly-releases-independent-technical-report-for-preliminary-economic-assessment-and-resource-estimate/",
+      "domain": "intelligencer.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-23T00:15:00Z",
+      "firstSeenAt": "2026-09-23T00:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0b53d3554c5f4840d702",
+      "title": "FireFly releases Independent Technical Report for Preliminary Economic Assessment and Resource Estimate",
+      "url": "https://www.chathamdailynews.ca/press-releases/globe-newswire/firefly-releases-independent-technical-report-for-preliminary-economic-assessment-and-resource-estimate/",
+      "domain": "chathamdailynews.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-23T00:15:00Z",
+      "firstSeenAt": "2026-09-23T00:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d2486b4edb8d64fa6a75",
+      "title": "Trump - Xi Summit Underscores China Rare - Earth Trade Leverage",
+      "url": "https://foreignpolicy.com/2026/09/22/china-rare-earth-xi-trump-meeting-summit/",
+      "domain": "foreignpolicy.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-22T23:30:00Z",
+      "firstSeenAt": "2026-09-22T23:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7eb7a88cc1ac18935309",
+      "title": "Coeur Provides Exploration Update for New Afton and Rainy River",
+      "url": "https://www.thewhig.com/press-releases/business-wire/coeur-provides-exploration-update-for-new-afton-and-rainy-river/",
+      "domain": "thewhig.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-22T23:00:00Z",
+      "firstSeenAt": "2026-09-22T23:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f6e9f721d65a2dede3de",
+      "title": "Nth Cycle signs 10 - year , $1 billion offtake deal with Glencore",
+      "url": "https://www.mining.com/nth-cycle-signs-10-year-1-billion-offtake-deal-with-glencore/",
+      "domain": "mining.com",
       "language": "English",
       "sourceCountry": "Canada",
       "seenAt": "2026-09-22T22:15:00Z",
       "firstSeenAt": "2026-09-22T22:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "83bf8f1d27d8096fc1b3",
-      "title": "Cafeteros ajustan precio de compra del café pasilla para enfrentar el Fenómeno de El Niño , hay un mejor valor",
-      "url": "https://www.lapatria.com/economia/cafeteros-ajustan-precio-de-compra-del-cafe-pasilla-para-enfrentar-el-fenomeno-de-el-nino",
-      "domain": "lapatria.com",
-      "language": "Spanish",
-      "sourceCountry": "Colombia",
+      "id": "0bc55d978b28c593f829",
+      "title": "Selkirk Copper $494M value for Minto nearly triple its costs",
+      "url": "https://www.mining.com/selkirk-coppers-494m-value-for-minto-nearly-triple-its-costs/",
+      "domain": "mining.com",
+      "language": "English",
+      "sourceCountry": "Canada",
       "seenAt": "2026-09-22T22:15:00Z",
       "firstSeenAt": "2026-09-22T22:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "55e7946a1097f7fbec63",
-      "title": "Del cafetal al laboratorio : así educan a los jóvenes en una escuela de Caldas",
-      "url": "https://www.lapatria.com/creer-en-caldas/del-cafetal-al-laboratorio-asi-educan-los-jovenes-en-una-escuela-de-caldas",
-      "domain": "lapatria.com",
-      "language": "Spanish",
-      "sourceCountry": "Colombia",
+      "id": "aa2b91e489fb6644d29d",
+      "title": "Meridian Cabaçal value doubles on higher prices",
+      "url": "https://www.mining.com/meridians-cabacal-value-doubles-on-higher-prices/",
+      "domain": "mining.com",
+      "language": "English",
+      "sourceCountry": "Canada",
       "seenAt": "2026-09-22T22:15:00Z",
       "firstSeenAt": "2026-09-22T22:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "5e48eba589dd51c5baa1",
-      "title": "Испания намерена с 1 января отказаться от российского СПГ",
-      "url": "https://news.mail.ru/economics/72460395/",
-      "domain": "news.mail.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
+      "id": "10afdc283538f8741fb4",
+      "title": "Barrick , Equinox among TD Cowen best stock picks",
+      "url": "https://www.mining.com/barrick-equinox-among-td-cowens-best-stock-picks/",
+      "domain": "mining.com",
+      "language": "English",
+      "sourceCountry": "Canada",
       "seenAt": "2026-09-22T22:15:00Z",
       "firstSeenAt": "2026-09-22T22:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "9e123e8cecb0a379122b",
-      "title": "[ 미국 특징주 ] 엔비디아 밸류에이션 뚝 … 이익 성장 지속성에 경고음",
-      "url": "https://www.newspim.com/news/view/20260923000002",
-      "domain": "newspim.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
+      "id": "cfdc5d726e71e9c0c55a",
+      "title": "USA Rare Earth ( NASDAQ : USAR ) Stock Price Up 1 . 3 % – Time to Buy ?",
+      "url": "https://www.tickerreport.com/banking-finance/13592023/usa-rare-earth-nasdaqusar-stock-price-up-1-3-time-to-buy.html",
+      "domain": "tickerreport.com",
+      "language": "English",
+      "sourceCountry": "United States",
       "seenAt": "2026-09-22T22:15:00Z",
       "firstSeenAt": "2026-09-22T22:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "1d993f239f2e57c381ef",
-      "title": "Yapay zekânın yolu - YENİ ASYA",
-      "url": "https://www.yeniasya.com.tr/faruk-cakir/yapay-zekanin-yolu_626556",
-      "domain": "yeniasya.com.tr",
+      "id": "904b2e4c0334c1ebfa1c",
+      "title": "Türkiyeden yeni nesil nükleer hamlesi : Dev toryum rezervleri teknolojiye dönüşüyor",
+      "url": "https://www.yenisafak.com/teknoloji/turkiyeden-yeni-nesil-nukleer-hamlesi-dev-toryum-rezervleri-teknolojiye-donusuyor-4858118",
+      "domain": "yenisafak.com",
       "language": "Turkish",
       "sourceCountry": "Turkey",
-      "seenAt": "2026-09-22T22:15:00Z",
-      "firstSeenAt": "2026-09-22T22:15:00Z",
+      "seenAt": "2026-09-22T18:15:00Z",
+      "firstSeenAt": "2026-09-22T18:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "36e4056badd6e4316fd8",
-      "title": "Por que o preço dos grãos está em alta no mercado internacional e qual o reflexo para o Brasil ?",
-      "url": "https://www.estadao.com.br/economia/por-que-o-preco-dos-graos-esta-em-alta-no-mercado-internacional-e-qual-o-reflexo-para-o-brasil/",
-      "domain": "estadao.com.br",
-      "language": "Portuguese",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-09-22T22:00:00Z",
-      "firstSeenAt": "2026-09-22T22:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "71fc400d0a5a79954396",
-      "title": "Germany growing reliance on US LNG raises supply concerns",
-      "url": "https://themunicheye.com/germany-s-growing-reliance-on-us-lng-raises-supply-concerns-35002",
-      "domain": "themunicheye.com",
-      "language": "English",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-09-22T22:00:00Z",
-      "firstSeenAt": "2026-09-22T22:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0ed9123fbb377f709bf6",
-      "title": "SK Hynix CEO Says That AI Industry Cannot Exist Without Memory As the Company Builds Next - Gen Memory Across A Fleet of Global Production Bases to Maintain Market Dominance",
-      "url": "https://wccftech.com/sk-hynix-ai-industry-cannot-exist-without-memory-builds-next-gen-memory/",
-      "domain": "wccftech.com",
+      "id": "d9a21476901e972a5566",
+      "title": "Tag : critical _ minerals",
+      "url": "https://newsroomamerica.com/tag/critical_minerals",
+      "domain": "newsroomamerica.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-22T22:00:00Z",
-      "firstSeenAt": "2026-09-22T22:00:00Z",
+      "seenAt": "2026-09-22T18:15:00Z",
+      "firstSeenAt": "2026-09-22T18:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "a9b3c30c6f5c1521d4a3",
-      "title": "以实干实绩推动乡村全面振兴 习近平总书记在 中国农民丰收节 到来之际的节日祝贺和诚挚问候凝聚 三农 发展合力 _ 中国网",
-      "url": "http://news.china.com.cn/2026-09/23/content_118708838.shtml",
-      "domain": "news.china.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-22T21:45:00Z",
-      "firstSeenAt": "2026-09-22T21:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3d4e16d4cce8beef7b84",
-      "title": "줄여봤자 도루묵 ?… 데이터센터가 뿜는 온실가스 연간 1 , 225만톤 - 경제ㅣ한국일보",
-      "url": "https://www.hankookilbo.com/news/article/A2026091413130001179",
-      "domain": "hankookilbo.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-22T21:45:00Z",
-      "firstSeenAt": "2026-09-22T21:45:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2d5767de992723be6297",
-      "title": "AI 열풍 시들 ? 미국인 컴퓨터업 평가 급락 - 오피니언ㅣ한국일보",
-      "url": "https://www.hankookilbo.com/news/article/A2026092210040002382",
-      "domain": "hankookilbo.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-09-22T21:45:00Z",
-      "firstSeenAt": "2026-09-22T21:45:00Z",
-      "topicIds": [
-        "semiconductors-ai"
-      ],
-      "topics": [
-        "Semiconductors & AI infrastructure"
-      ],
-      "assets": [
-        "ai-infrastructure",
-        "semiconductors"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c9d327e819cd101c5e15",
-      "title": "Donald Trump Iran conflict fuels record global diesel prices | The Land",
-      "url": "https://www.theland.com.au/story/9354746/donald-trump-iran-conflict-fuels-record-global-diesel-prices/",
-      "domain": "theland.com.au",
+      "id": "f8d983e2bcc4b1af7ad7",
+      "title": "Selkirk Copper $494M value for Minto mine nearly triple its costs",
+      "url": "https://www.northernminer.com/news/selkirk-coppers-494m-value-for-minto-mine-nearly-triple-its-costs/1003895034/",
+      "domain": "northernminer.com",
       "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-09-22T20:45:00Z",
-      "firstSeenAt": "2026-09-22T20:45:00Z",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-09-22T18:15:00Z",
+      "firstSeenAt": "2026-09-22T18:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "791bf23b9b0a5afe33d7",
-      "title": "Abu Dhabi XRG explores LNG Canada stake as partners weigh expansion",
-      "url": "https://www.worldoil.com/news/2026/9/22/abu-dhabi-s-xrg-explores-lng-canada-stake-as-partners-weigh-expansion/",
-      "domain": "worldoil.com",
+      "id": "ea794ccfe7043d4e9a95",
+      "title": "Silver Made America Critical Minerals List . This ETF Is the Easiest Way In",
+      "url": "https://www.aol.com/articles/silver-made-america-critical-minerals-170320000.html",
+      "domain": "aol.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-22T20:30:00Z",
-      "firstSeenAt": "2026-09-22T20:30:00Z",
+      "seenAt": "2026-09-22T17:45:00Z",
+      "firstSeenAt": "2026-09-22T17:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "38e6ec4fd2d526ae882e",
-      "title": "فيتش تتوقع تراجع برنت مع عودة خط شرق - غرب السعودي",
-      "url": "https://www.aljazeera.net/ebusiness/2026/9/22/%D9%81%D9%8A%D8%AA%D8%B4-%D8%AA%D8%AA%D9%88%D9%82%D8%B9-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A8%D8%B1%D9%86%D8%AA-%D9%85%D8%B9-%D8%B9%D9%88%D8%AF%D8%A9-%D8%AE%D8%B7-%D8%B4%D8%B1%D9%82-%D8%BA%D8%B1%D8%A8",
-      "domain": "aljazeera.net",
-      "language": "Arabic",
-      "sourceCountry": "Israel",
-      "seenAt": "2026-09-22T20:15:00Z",
-      "firstSeenAt": "2026-09-22T20:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a8c4170a8f5f7254e26c",
-      "title": "Exxon Just Set a Bold 2030 Target for LNG Sales . Here What 50 Million Tons Actually Means .",
-      "url": "https://www.fool.com/investing/2026/09/22/exxon-just-set-a-bold-2030-target-for-lng-sales-here-s-what-50-million-tons-actually-means/?source=iedfolrf0000001",
-      "domain": "fool.com",
+      "id": "ea51cca945b9e9697c42",
+      "title": "EXCLUSIVE : Texas Plants First Rare - Earth Mining District In Hudspeth County",
+      "url": "https://dailycaller.com/2026/09/22/texas-rare-earth-mining-district-dawn-buckingham-hudspeth-county/",
+      "domain": "dailycaller.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-22T20:15:00Z",
-      "firstSeenAt": "2026-09-22T20:15:00Z",
+      "seenAt": "2026-09-22T16:00:00Z",
+      "firstSeenAt": "2026-09-22T16:00:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "1bda4fdacbd059aa3225",
-      "title": "Saudi Aramco plans reorganisation to create gas division , sources say",
-      "url": "https://economictimes.indiatimes.com/industry/energy/oil-gas/saudi-aramco-plans-reorganisation-to-create-gas-division-sources-say/articleshow/134419732.cms",
-      "domain": "economictimes.indiatimes.com",
+      "id": "975086beb51560648379",
+      "title": "Bridge Green Upcycle signs $1 billion deal for lithium carbonate supply",
+      "url": "https://www.thehindubusinessline.com/companies/bridge-green-upcycle-signs-1-billion-deal-for-lithium-carbonate-supply/article71495867.ece",
+      "domain": "thehindubusinessline.com",
       "language": "English",
       "sourceCountry": "India",
-      "seenAt": "2026-09-22T20:15:00Z",
-      "firstSeenAt": "2026-09-22T20:15:00Z",
+      "seenAt": "2026-09-22T15:30:00Z",
+      "firstSeenAt": "2026-09-22T15:30:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "13b157ec618ab12c96ec",
-      "title": "أسعار الفائدة على مفترق طرق ، ماذا ينتظر الاقتصاد المصري من اجتماع المركزي ؟",
-      "url": "https://www.vetogate.com/5736769",
-      "domain": "vetogate.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-09-22T20:15:00Z",
-      "firstSeenAt": "2026-09-22T20:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "644dd73ffe91c1f70830",
-      "title": "Ez a pontos dátum , mikortól nem jön orosz gáz Magyarországra ? - Itt vannak a valós részletek",
-      "url": "https://www.atv.hu/belfold/20260922/orosz-gaz-magyarorszag/",
-      "domain": "atv.hu",
-      "language": "Hungarian",
-      "sourceCountry": "Hungary",
-      "seenAt": "2026-09-22T20:00:00Z",
-      "firstSeenAt": "2026-09-22T20:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9909bdfbec5d375da066",
-      "title": "Greater Utica Chamber of Commerce Names 2026 Businessperson of the Year",
-      "url": "https://www.wktv.com/news/local-business/greater-utica-chamber-of-commerce-names-2026-businessperson-of-the-year/article_07ddbfdb-39ce-4b26-9394-8afd2a221faf.html",
-      "domain": "wktv.com",
+      "id": "5f32f39bf65f4a0d0a11",
+      "title": "Critical Metals Drops 6 % as Greenland Surge Meets Profit Taking ; united states Rare Earth Slips , MP Materials Eases",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/critical-metals-drops-6-greenland-145701838.html",
+      "domain": "finance.yahoo.com",
       "language": "English",
       "sourceCountry": "United States",
-      "seenAt": "2026-09-22T20:00:00Z",
-      "firstSeenAt": "2026-09-22T20:00:00Z",
+      "seenAt": "2026-09-22T15:30:00Z",
+      "firstSeenAt": "2026-09-22T15:30:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "47297ad0fa84752d8173",
-      "title": "Avrupada doğal gaz fiyatları haftanın en düşük seviyesine geriled",
-      "url": "https://www.kibrispostasi.com/c50-EKONOMI/n614566-avrupada-dogal-gaz-fiyatlari-uc-haftanin-en-dusuk-seviyesine-geriledi",
-      "domain": "kibrispostasi.com",
+      "id": "7ea49f1e675a029a5cbc",
+      "title": "Türkiyenin toryum kaynakları yeni nesil nükleer teknolojiler için değerlendirilecek",
+      "url": "https://www.trthaber.com/haber/ekonomi/turkiyenin-toryum-kaynaklari-yeni-nesil-nukleer-teknolojiler-icin-degerlendirilecek-957651.html",
+      "domain": "trthaber.com",
       "language": "Turkish",
-      "sourceCountry": "Cyprus",
-      "seenAt": "2026-09-22T19:45:00Z",
-      "firstSeenAt": "2026-09-22T19:45:00Z",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-22T11:00:00Z",
+      "firstSeenAt": "2026-09-22T11:00:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "fb87d73bc6292ae1a72a",
-      "title": "АдГ побеждает в Мекленбурге - Передней Померании : сможет ли она действительно вернуть Северный поток ? ( Berliner Zeitung , Германия )",
-      "url": "https://inosmi.ru/20260922/germaniya-280277827.html",
-      "domain": "inosmi.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-22T19:45:00Z",
-      "firstSeenAt": "2026-09-22T19:45:00Z",
+      "id": "afd7f1dd419587ce708d",
+      "title": "Giá vàng hôm nay mới nhất ( 22 / 9 ) giảm không ngừng : Người mua săn vàng giá rẻ , cửa hàng đông trở lại",
+      "url": "https://danviet.vn/gia-vang-hom-nay-moi-nhat-22-9-giam-khong-ngung-nguoi-mua-san-vang-gia-re-cua-hang-dong-tro-lai-d1461457.html",
+      "domain": "danviet.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-22T08:45:00Z",
+      "firstSeenAt": "2026-09-22T08:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "strategic-materials"
       ],
       "topics": [
-        "Gas markets"
+        "Strategic materials"
       ],
       "assets": [
-        "gas-uk",
-        "gas-us"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "704aac5ea8603759354a",
-      "title": "Purdue , Illinois to partner on semiconductor workforce development – Inside INdiana Business",
-      "url": "https://www.insideindianabusiness.com/articles/purdue-illinois-to-partner-on-semiconductor-workforce-development",
-      "domain": "insideindianabusiness.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-22T19:45:00Z",
-      "firstSeenAt": "2026-09-22T19:45:00Z",
+      "id": "75ae505009be372da968",
+      "title": "Giá bạc ngày 22 / 9 : Bạc thế giới đi lên , bạc trong nước tăng giảm trái chiều",
+      "url": "https://baophapluat.vn/gia-bac-ngay-22-9-bac-the-gioi-di-len-bac-trong-nuoc-tang-giam-trai-chieu.html",
+      "domain": "baophapluat.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-22T07:15:00Z",
+      "firstSeenAt": "2026-09-22T07:15:00Z",
       "topicIds": [
-        "semiconductors-ai"
+        "strategic-materials"
       ],
       "topics": [
-        "Semiconductors & AI infrastructure"
+        "Strategic materials"
       ],
       "assets": [
-        "ai-infrastructure",
-        "semiconductors"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "d790653d55fb08ef0737",
-      "title": "Dólar hoy , dólar blue hoy : a cuánto cerró este martes 22 de septiembre",
-      "url": "https://www.cadena3.com/noticia/politica-y-economia/dolar-hoy-dolar-blue-hoy-a-cuanto-cerro-este-martes-22-de-septiembre_596704",
-      "domain": "cadena3.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-09-22T19:45:00Z",
-      "firstSeenAt": "2026-09-22T19:45:00Z",
+      "id": "bea21c3a3823a3a56f39",
+      "title": "Giá vàng nhẫn trơn , vàng miếng chiều 22 / 9 đồng loạt giảm tại SJC , PNJ , DOJI , Bảo Tín Minh Châu và Phú Quý",
+      "url": "https://cafef.vn/gia-vang-nhan-tron-vang-mieng-chieu-22-9-dong-loat-giam-tai-sjc-pnj-doji-bao-tin-minh-chau-va-phu-quy-188260922072408812.chn",
+      "domain": "cafef.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-09-22T07:15:00Z",
+      "firstSeenAt": "2026-09-22T07:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "strategic-materials"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Strategic materials"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1282,11 +1449,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-09-22T23:30:00Z",
-      "lastSuccessfulAt": "2026-09-23T00:30:20Z",
+      "observationDate": "2026-09-23T05:30:00Z",
+      "lastSuccessfulAt": "2026-09-23T05:56:45Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 200 returned records across 4/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
