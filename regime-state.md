@@ -1,5 +1,22 @@
 # Regime State
 
+> **25 September 2026 amendment — VERDICT: ACUTE STAGFLATION INTACT; DURATION DISORDER ESCALATED; BROAD DISORDERLY RISK-OFF NOT FULLY RESTORED.**
+> - **Duration escalation:** the US 10-year closed near **5.17%** after a **5.23%** high, above the explicit 5.00% escalation rule; the 10-year real yield rose from **2.62% to 2.83%**, while the 10-year breakeven stayed at **2.34%** and the MOVE index rose about **30%**.
+> - **Physical core:** Brent closed **$104.32** and TTF **€72.07/MWh**. Saudi Arabia restarted the East–West pipeline only at reduced rates, with full restoration estimated at six to eight weeks; verified physical repair remains absent.
+> - **Risk transmission:** gold fell about **1.3%**, silver **2.6%**, the ASX 200 **0.8%** and AUD/USD **1.3%** Monday-to-Friday. The ASX remained below 8,780.
+> - **Offsets:** DXY ended **101.01**, below the 101.5 trigger; Nasdaq closed **27,068.72**, above 26,400; US equities gained Friday-to-Friday and broad credit widening was not verified.
+> - **Carry/China:** USD/JPY ended near **157.22** after a sharp Friday yen rally and AUD/JPY fell about **1.4%**, but no equity/credit liquidation confirmed an unwind. Copper held firm while iron ore and lithium weakened; China demand remains unconfirmed.
+>
+> **Active interpretation:** the explicit duration-escalation condition has been met inside the acute stagflation regime. Treat sovereign-bond volatility and real-yield pressure as active disorder, but do not describe the tape as fully restored broad risk-off while equities, credit and the dollar fail the joint confirmation test.
+>
+> **Restore full disorderly risk-off if:** DXY closes above 101.5 and Nasdaq falls below 25,900 with weak breadth and observable credit widening, or an equivalent multi-session equity/credit/carry liquidation cluster develops.
+>
+> **Further escalate if:** Brent closes above $110, the US 10-year sustains above 5.25%, or RBA/Fed/BOJ tightening produces simultaneous equity, credit and carry deterioration.
+>
+> **De-escalate toward the prior re-strengthening state if:** the US 10-year closes below 5.00% and then 4.75%, Brent falls below $95 with verified flow repair, DXY falls below 100 and equity breadth broadens.
+>
+> Sources: [Reuters global markets, 25 Sep](https://www.reuters.com/world/china/global-markets-warpup-1-pix-2026-09-25/); [Reuters Saudi pipeline, 22 Sep](https://www.reuters.com/business/energy/saudi-arabia-restarts-east-west-oil-pipeline-resume-exports-yanbu-sources-say-2026-09-22/); [FRED 10-year breakeven](https://fred.stlouisfed.org/series/T10YIE); [weekly review](weekly-log/weekly-2026-W39.md).
+
 > **11 September 2026 amendment — VERDICT: ACUTE STAGFLATION INTACT; DISORDERLY RISK-OFF EXPRESSION RE-STRENGTHENING, NOT FULLY RESTORED.**
 > - **Physical/policy core:** Brent closed **$104.61**, above the explicit $100 re-strengthening rule, with physical-flow impairment; the US 10-year finished near **4.974%**, the latest 10-year real yield reached **2.55%** on Thursday, and September Fed hike pricing rose to roughly **85–90%**.
 > - **Risk transmission:** gold fell **1.4%** Monday-to-Friday; the S&P 500 and Nasdaq fell **0.8%/0.7%** on the reported week; the ASX 200 fell **3.0%** Monday-to-Friday and closed below **8,780**.
