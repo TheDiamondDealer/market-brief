@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-09-30T06:40:55Z",
+  "generatedAtUtc": "2026-09-30T13:40:30Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 3,
-    "rawArticleCount": 150,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-09-30T06:40:55Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-09-30T13:40:30Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,6 +52,35 @@
   ],
   "articles": [
     {
+      "id": "f28e3dc4269f9d28041e",
+      "title": "TERI study finds CNG has lower lifecycle environmental burden than EVs under India current power mix",
+      "url": "https://news.webindia123.com/news/Articles/Business/20260930/4505371.html",
+      "domain": "news.webindia123.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-30T12:00:00Z",
+      "firstSeenAt": "2026-09-30T12:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "f9c5f82e3214fd5ed263",
       "title": "Power tariff hike may add Rs29 . 5b burden",
       "url": "https://tribune.com.pk/story/2632164/power-tariff-hike-may-add-rs295b-burden",
@@ -74,85 +103,268 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 36,
+      "materialityScore": 24,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "7d01a6f63ee7a28cad18",
-      "title": "金价短期承压 ！ 外资公募 ： 央行购金逻辑未破 中长期看好黄金 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202609303887525164.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-30T06:00:00Z",
-      "firstSeenAt": "2026-09-30T06:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "08f6f3c651a9d67692f7",
-      "title": "Breitbart Business Digest : Bleak Economic Sentiment Haunts Republican Midterm Hopes",
-      "url": "https://www.breitbart.com/economy/2026/09/29/breitbart-business-digest-bleak-economic-sentiment-haunts-republican-midterm-hopes/",
-      "domain": "breitbart.com",
+      "id": "c5ac9d1d3dbd970327cd",
+      "title": "Mideast Stocks : Most Gulf equities end lower amid cautious response to renewed US - Iran talks",
+      "url": "https://www.zawya.com/en/capital-markets/mideast-stocks-most-gulf-equities-end-lower-amid-cautious-response-to-renewed-us-iran-talks-1428553",
+      "domain": "zawya.com",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-30T06:00:00Z",
-      "firstSeenAt": "2026-09-30T06:00:00Z",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-09-30T11:15:00Z",
+      "firstSeenAt": "2026-09-30T11:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "b3df1e49d8fe5f3a78fa",
-      "title": "මහ බැංකුවේ ප්‍රතිපත්ති පොලී අනුපාතිකය වෙනස් නොකිරීමට තීරණය කෙරේ",
-      "url": "https://hirunews.lk/business/491485/central-bank-decides-not-to-change-policy-interest-rate",
-      "domain": "hirunews.lk",
-      "language": "Sinhalese",
-      "sourceCountry": "Sri Lanka",
-      "seenAt": "2026-09-30T05:45:00Z",
-      "firstSeenAt": "2026-09-30T05:45:00Z",
+      "id": "1139bce793cd4091a30f",
+      "title": "Ормуз добил Европу : Макрон вскрыл правду о кризисе",
+      "url": "https://www.mk.ru/politics/2026/09/30/ormuz-dobil-evropu-makron-vskryl-pravdu-o-krizise.html",
+      "domain": "mk.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-09-30T11:15:00Z",
+      "firstSeenAt": "2026-09-30T11:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "02e79b625d24963af989",
+      "title": "С 6 % по - скъп газ през октомври иска Булгаргаз",
+      "url": "https://news.bg/energy/s-6-po-skap-gaz-prez-oktomvri-iska-bulgargaz.html",
+      "domain": "news.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-09-30T11:00:00Z",
+      "firstSeenAt": "2026-09-30T11:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b75ff821fc188a87b53e",
+      "title": "Petrobras Signs Long - Term LNG Supply Deal with Cheniere",
+      "url": "https://www.oedigital.com/news/543349-petrobras-signs-long-term-lng-supply-deal-with-cheniere",
+      "domain": "oedigital.com",
+      "language": "English",
+      "sourceCountry": "Norway",
+      "seenAt": "2026-09-30T08:00:00Z",
+      "firstSeenAt": "2026-09-30T08:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "585790eaa3a371579a21",
+      "title": "[ 르포 ] 14년 만에 韓 도입 성공 … SK이노 E & S , 호주서 생산기반 확보",
+      "url": "https://www.etnews.com/20260930000229",
+      "domain": "etnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-30T07:45:00Z",
+      "firstSeenAt": "2026-09-30T07:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "63f5855b97bc98f3552d",
+      "title": "ABD ve Rusya savaş sonrası enerji işbirliği için masaya oturdu",
+      "url": "https://www.dunya.com/gundem/abd-ve-rusya-savas-sonrasi-enerji-isbirligi-icin-masaya-oturdu-haberi-841977",
+      "domain": "dunya.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-30T07:45:00Z",
+      "firstSeenAt": "2026-09-30T07:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "05008c51c5535ecb22b3",
+      "title": "[ 르포 ] 14년 투자 결실 … 다윈서 본 SK이노 E & S 연 130만t LNG 공급망",
+      "url": "https://www.fnnews.com/news/202609301449373902",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-30T07:45:00Z",
+      "firstSeenAt": "2026-09-30T07:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4e033e800833f6f9187d",
+      "title": "전쟁에도 걱정 없는 韓 소유 가스가 이곳에 … SK 호주 다윈 터미널 가보니",
+      "url": "https://biz.chosun.com/industry/company/2026/09/30/L4XZFPUJIFA7XFUUMVFYYXTTWQ/",
+      "domain": "biz.chosun.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-09-30T07:15:00Z",
+      "firstSeenAt": "2026-09-30T07:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "81ba440f57d1ac71ec01",
+      "title": "Канада збудує другий за обсягом термінал скрапленого газу у світі",
+      "url": "https://glavcom.ua/world/world-politics/kanada-zbuduje-druhij-za-obsjahom-terminal-skraplenoho-hazu-u-sviti-1146099.html",
+      "domain": "glavcom.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-09-30T07:15:00Z",
+      "firstSeenAt": "2026-09-30T07:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -181,7 +393,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -210,156 +422,21 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "373a768bb18e4b9ccece",
-      "title": "Partners sanction massive expansion of LNG Canada",
-      "url": "https://calgaryherald.com:443/commodities/energy/oil-gas/carney-in-vancouver-for-energy-deal-as-industry-watchers-hope-for-expansion-of-lng-canada/wcm/a19e7eee-6ad9-45a2-bd0c-2c7babbc7758",
-      "domain": "calgaryherald.com",
-      "language": "English",
-      "sourceCountry": "Canada",
-      "seenAt": "2026-09-29T13:30:00Z",
-      "firstSeenAt": "2026-09-29T13:30:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "b0205dac313fdf155fc4",
-      "title": "Could the RBA rate hikes tip Australia into recession ?",
-      "url": "https://www.abc.net.au/listen/programs/abc-news-top-stories/what-the-rbas-rate-rise-means-for-recession-fears/107208782",
-      "domain": "abc.net.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-09-29T10:15:00Z",
-      "firstSeenAt": "2026-09-29T10:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7cf34374166b41818768",
-      "title": "RBA rate hike : Australia cash rate hits 15 - year high",
-      "url": "https://en.shafaqna.com/480815/rba-rate-hike-15-year-high/",
-      "domain": "en.shafaqna.com",
-      "language": "English",
-      "sourceCountry": "Saudi Arabia",
-      "seenAt": "2026-09-29T08:30:00Z",
-      "firstSeenAt": "2026-09-29T08:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b01915095fb7317fa94b",
-      "title": "What an interest rate hike means for your mortgage , savings account and the Australian dollar",
-      "url": "https://www.abc.net.au/news/2026-09-29/what-the-rba-cash-rate-hike-means-for-mortgages-rents-savings/107203364",
-      "domain": "abc.net.au",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-09-29T07:30:00Z",
-      "firstSeenAt": "2026-09-29T07:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dcd87393a789a09d8f2b",
-      "title": "More rate hikes possible , economist warns after BOJ move",
-      "url": "https://www.jamaicaobserver.com/2026/09/29/rate-hikes-possible-economist-warns-boj-move/",
-      "domain": "jamaicaobserver.com",
-      "language": "English",
-      "sourceCountry": "Jamaica",
-      "seenAt": "2026-09-29T07:30:00Z",
-      "firstSeenAt": "2026-09-29T07:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 25,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7a908577b56d569186d6",
-      "title": "Power tariff increase sought for consumers across Pakistan",
-      "url": "https://dunyanews.tv/en/Business/975229-power-tariff-increase-sought-for-consumers-across-pakistan",
-      "domain": "dunyanews.tv",
-      "language": "English",
-      "sourceCountry": "Pakistan",
-      "seenAt": "2026-09-29T10:30:00Z",
-      "firstSeenAt": "2026-09-29T10:30:00Z",
+      "id": "c72da300d1dfbf213c44",
+      "title": "美债长端收益率触及24年来高点 美联储官员集体发声 ！ 美军被曝将有重大改革 ！ _ 东方财富网",
+      "url": "https://finance.eastmoney.com/a/202609303887583337.html",
+      "domain": "finance.eastmoney.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-09-30T05:45:00Z",
+      "firstSeenAt": "2026-09-30T05:45:00Z",
       "topicIds": [
         "energy-security"
       ],
@@ -374,42 +451,11 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 24,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
-    },
-    {
-      "id": "a20db2b9faa33411974d",
-      "title": "NEPRA likely to raise electricity tariff by Rs 1 . 73 per Unit for August fuel adjustment",
-      "url": "https://arynews.tv/nepra-likely-to-raise-electricity-tariff-by-rs-1-73-per-unit-for-august-fuel-adjustment",
-      "domain": "arynews.tv",
-      "language": "English",
-      "sourceCountry": "Pakistan",
-      "seenAt": "2026-09-29T10:15:00Z",
-      "firstSeenAt": "2026-09-29T10:15:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 24,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
     },
     {
       "id": "454134bfd810e60d402f",
@@ -421,12 +467,10 @@
       "seenAt": "2026-09-30T03:45:00Z",
       "firstSeenAt": "2026-09-30T03:45:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -436,111 +480,65 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "13993deba4f1e611fd5f",
-      "title": "Kannattaako valita 3 kk vai 12 kk euribor ? Pahimmillaan pidempi korko on tuottanut vuodessa 2800 euron tappion",
-      "url": "https://yle.fi/a/74-20246323",
-      "domain": "yle.fi",
-      "language": "Finnish",
-      "sourceCountry": "Finland",
-      "seenAt": "2026-09-30T03:45:00Z",
-      "firstSeenAt": "2026-09-30T03:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "4d1574d66645f5b16430",
-      "title": "黄金下一站3500还是5250美元 ？ Natixis给出三大情景 ， 关键看霍尔木兹海峡 _ 金市直播 _ 黄金网 _ 中金在线",
-      "url": "http://gold.cnfol.com/jinshizhibo/20260930/32384897.shtml",
-      "domain": "gold.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-09-30T03:45:00Z",
-      "firstSeenAt": "2026-09-30T03:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5312581b264fa577976e",
-      "title": "RBA lifts cash rate to 4 . 6 per cent to reach 15 - year high | The Canberra Times",
-      "url": "https://www.canberratimes.com.au/story/9359728/rba-lifts-cash-rate-to-46-per-cent-to-reach-15-year-high/",
-      "domain": "canberratimes.com.au",
+      "id": "54c45c75c718a6507ff7",
+      "title": "Oil New Normal Is Higher Prices",
+      "url": "https://oilprice.com/Energy/Energy-General/Oils-New-Normal-Is-Higher-Prices.html",
+      "domain": "oilprice.com",
       "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-09-30T00:45:00Z",
-      "firstSeenAt": "2026-09-30T00:45:00Z",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-30T01:15:00Z",
+      "firstSeenAt": "2026-09-30T01:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "d5b6299a620563a95328",
-      "title": "国际金融市场早知道 ： 9月30日 _ 东方财富网",
-      "url": "https://finance.eastmoney.com/a/202609303887087140.html",
-      "domain": "finance.eastmoney.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
+      "id": "c6e9ed7034d476ae1c54",
+      "title": "Opec+ likely to stick with plan for steady quotas , delegates say",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/opec-likely-stick-plan-steady-quotas-delegates-say",
+      "domain": "businesstimes.com.sg",
+      "language": "English",
+      "sourceCountry": "Singapore",
       "seenAt": "2026-09-30T00:45:00Z",
       "firstSeenAt": "2026-09-30T00:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -556,12 +554,10 @@
       "seenAt": "2026-09-29T22:00:00Z",
       "firstSeenAt": "2026-09-29T22:00:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -575,7 +571,7 @@
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
       "id": "14ed320b1b5881f22263",
@@ -587,12 +583,10 @@
       "seenAt": "2026-09-29T22:00:00Z",
       "firstSeenAt": "2026-09-29T22:00:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -606,7 +600,7 @@
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
       "id": "d1c05d6ac885db333ee0",
@@ -615,6 +609,35 @@
       "domain": "tribune.com.pk",
       "language": "English",
       "sourceCountry": "Pakistan",
+      "seenAt": "2026-09-29T22:00:00Z",
+      "firstSeenAt": "2026-09-29T22:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "971e689c5ba428b968a3",
+      "title": "Petróleo : por que o preço que sai no jornal é diferente do que você negociaria",
+      "url": "https://jornaldebrasilia.com.br/brasil-7/petroleo-por-que-o-preco-que-sai-no-jornal-e-diferente-do-que-voce-negociaria/",
+      "domain": "jornaldebrasilia.com.br",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
       "seenAt": "2026-09-29T22:00:00Z",
       "firstSeenAt": "2026-09-29T22:00:00Z",
       "topicIds": [
@@ -647,12 +670,10 @@
       "seenAt": "2026-09-29T18:30:00Z",
       "firstSeenAt": "2026-09-29T18:30:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -661,32 +682,6 @@
         "gas-us",
         "uranium",
         "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "c228f60eb848a3c01aad",
-      "title": "Stocks slip on Wall Street as rising Treasury yields pressure the market",
-      "url": "http://www.rockymounttelegram.com/news/world/stocks-slip-on-wall-street-as-rising-treasury-yields-pressure-the-market/article_a1019188-d8d9-55b8-9658-053181771307.html",
-      "domain": "rockymounttelegram.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T18:30:00Z",
-      "firstSeenAt": "2026-09-29T18:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -704,12 +699,10 @@
       "seenAt": "2026-09-29T17:45:00Z",
       "firstSeenAt": "2026-09-29T17:45:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -718,56 +711,6 @@
         "gas-us",
         "uranium",
         "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "31b89e116a771145a231",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.floridastatesman.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "floridastatesman.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T17:45:00Z",
-      "firstSeenAt": "2026-09-29T17:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "40d7afd689c2e8d5d561",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.ohiostandard.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "ohiostandard.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T17:45:00Z",
-      "firstSeenAt": "2026-09-29T17:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -785,12 +728,10 @@
       "seenAt": "2026-09-29T17:45:00Z",
       "firstSeenAt": "2026-09-29T17:45:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -804,7 +745,65 @@
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
+    },
+    {
+      "id": "31b89e116a771145a231",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.floridastatesman.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "floridastatesman.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-29T17:45:00Z",
+      "firstSeenAt": "2026-09-29T17:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "40d7afd689c2e8d5d561",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.ohiostandard.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "ohiostandard.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-29T17:45:00Z",
+      "firstSeenAt": "2026-09-29T17:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
     },
     {
       "id": "6f55582a2ea24982e921",
@@ -816,12 +815,10 @@
       "seenAt": "2026-09-29T17:30:00Z",
       "firstSeenAt": "2026-09-29T17:30:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -830,56 +827,6 @@
         "gas-us",
         "uranium",
         "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "b0b0d3abf238cc32fbba",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.europesun.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "europesun.com",
-      "language": "English",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-09-29T17:00:00Z",
-      "firstSeenAt": "2026-09-29T17:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dee86830f803eefcb7ea",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.arabherald.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "arabherald.com",
-      "language": "English",
-      "sourceCountry": "Syria",
-      "seenAt": "2026-09-29T17:00:00Z",
-      "firstSeenAt": "2026-09-29T17:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -897,12 +844,10 @@
       "seenAt": "2026-09-29T17:00:00Z",
       "firstSeenAt": "2026-09-29T17:00:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -916,27 +861,59 @@
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
-      "id": "408cb7750ab3b8c650df",
-      "title": "Markets today : U . S . stocks slip as oil prices swing sharply",
-      "url": "https://www.bnnbloomberg.ca/markets/dow-jones/2026/09/29/us-indexes-edge-mostly-higher-in-early-trading-on-wall-street/",
-      "domain": "bnnbloomberg.ca",
+      "id": "b0b0d3abf238cc32fbba",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.europesun.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "europesun.com",
       "language": "English",
-      "sourceCountry": "Canada",
+      "sourceCountry": "Russia",
       "seenAt": "2026-09-29T17:00:00Z",
       "firstSeenAt": "2026-09-29T17:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dee86830f803eefcb7ea",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.arabherald.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "arabherald.com",
+      "language": "English",
+      "sourceCountry": "Syria",
+      "seenAt": "2026-09-29T17:00:00Z",
+      "firstSeenAt": "2026-09-29T17:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -954,12 +931,10 @@
       "seenAt": "2026-09-29T16:15:00Z",
       "firstSeenAt": "2026-09-29T16:15:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -973,7 +948,7 @@
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
       "id": "fd9052e2afeba9478699",
@@ -985,65 +960,18 @@
       "seenAt": "2026-09-29T16:15:00Z",
       "firstSeenAt": "2026-09-29T16:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2f76c4d9679bd240fb4e",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.middleeaststar.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "middleeaststar.com",
-      "language": "English",
-      "sourceCountry": "Syria",
-      "seenAt": "2026-09-29T16:15:00Z",
-      "firstSeenAt": "2026-09-29T16:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1c99be9b17d26fbb9948",
-      "title": "Tutkija paljastaa Kremlin vilunkipelin Venäjän sisällä – Vladimir Putinilla käynnissä suuri taistelu",
-      "url": "https://www.uusisuomi.fi/uutiset/a/0e91b676-3d5e-42a8-bdda-2c14638ab164",
-      "domain": "uusisuomi.fi",
-      "language": "Finnish",
-      "sourceCountry": "Finland",
-      "seenAt": "2026-09-29T16:15:00Z",
-      "firstSeenAt": "2026-09-29T16:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1061,14 +989,18 @@
       "seenAt": "2026-09-29T16:00:00Z",
       "firstSeenAt": "2026-09-29T16:00:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1086,14 +1018,18 @@
       "seenAt": "2026-09-29T15:45:00Z",
       "firstSeenAt": "2026-09-29T15:45:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1108,37 +1044,6 @@
       "domain": "offshore-technology.com",
       "language": "English",
       "sourceCountry": "United Kingdom",
-      "seenAt": "2026-09-29T15:15:00Z",
-      "firstSeenAt": "2026-09-29T15:15:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "d2ce4bd38b30af074295",
-      "title": "İrandan Körfez enerji altyapısına saldırı tehdidi",
-      "url": "https://www.dw.com/tr/i%CC%87randan-k%C3%B6rfez-enerji-altyap%C4%B1s%C4%B1na-sald%C4%B1r%C4%B1-tehdidi/a-79473093",
-      "domain": "dw.com",
-      "language": "Turkish",
-      "sourceCountry": "Germany",
       "seenAt": "2026-09-29T15:15:00Z",
       "firstSeenAt": "2026-09-29T15:15:00Z",
       "topicIds": [
@@ -1162,149 +1067,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "79a33a898d8cbc204361",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.birminghamstar.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "birminghamstar.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T14:45:00Z",
-      "firstSeenAt": "2026-09-29T14:45:00Z",
+      "id": "d2ce4bd38b30af074295",
+      "title": "İrandan Körfez enerji altyapısına saldırı tehdidi",
+      "url": "https://www.dw.com/tr/i%CC%87randan-k%C3%B6rfez-enerji-altyap%C4%B1s%C4%B1na-sald%C4%B1r%C4%B1-tehdidi/a-79473093",
+      "domain": "dw.com",
+      "language": "Turkish",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-09-29T15:15:00Z",
+      "firstSeenAt": "2026-09-29T15:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7e79ae880de98820d4fb",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.bignewsnetwork.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "bignewsnetwork.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T14:45:00Z",
-      "firstSeenAt": "2026-09-29T14:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "689c08c47adab4c17fdf",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.mexicostar.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "mexicostar.com",
-      "language": "English",
-      "sourceCountry": "Mexico",
-      "seenAt": "2026-09-29T14:45:00Z",
-      "firstSeenAt": "2026-09-29T14:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ec0388c1a665c302c70c",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.massachusettssun.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "massachusettssun.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T14:45:00Z",
-      "firstSeenAt": "2026-09-29T14:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "636ec5656c111ae5497d",
-      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
-      "url": "http://www.cincinnatisun.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
-      "domain": "cincinnatisun.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T14:45:00Z",
-      "firstSeenAt": "2026-09-29T14:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e77ad18817b364a2987b",
-      "title": "Small - cap stocks : Why they are underperforming by the largest margin since 2020",
-      "url": "https://www.cnbc.com/2026/09/29/small-cap-stocks-russell-2000-sp500.html",
-      "domain": "cnbc.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T14:45:00Z",
-      "firstSeenAt": "2026-09-29T14:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1342,21 +1125,19 @@
       "duplicateCount": 1
     },
     {
-      "id": "5c29325a5649ab86270d",
-      "title": "TC Energy Advances Coastal GasLink Expansion After LNG Canada FID",
-      "url": "https://oilprice.com/Company-News/TC-Energy-Advances-Coastal-GasLink-Expansion-After-LNG-Canada-FID.html",
-      "domain": "oilprice.com",
+      "id": "08fb35a2d86623dfd1f5",
+      "title": "Blue - water force : Rajnath Singh hails Indian Navy presence in South China Sea , Atlantic",
+      "url": "https://www.prokerala.com/news/articles/a1818294.html",
+      "domain": "prokerala.com",
       "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-09-29T14:30:00Z",
-      "firstSeenAt": "2026-09-29T14:30:00Z",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-29T14:45:00Z",
+      "firstSeenAt": "2026-09-29T14:45:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -1370,7 +1151,297 @@
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
+    },
+    {
+      "id": "689c08c47adab4c17fdf",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.mexicostar.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "mexicostar.com",
+      "language": "English",
+      "sourceCountry": "Mexico",
+      "seenAt": "2026-09-29T14:45:00Z",
+      "firstSeenAt": "2026-09-29T14:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ec0388c1a665c302c70c",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.massachusettssun.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "massachusettssun.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-29T14:45:00Z",
+      "firstSeenAt": "2026-09-29T14:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "636ec5656c111ae5497d",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.cincinnatisun.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "cincinnatisun.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-29T14:45:00Z",
+      "firstSeenAt": "2026-09-29T14:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "79a33a898d8cbc204361",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.birminghamstar.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "birminghamstar.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-29T14:45:00Z",
+      "firstSeenAt": "2026-09-29T14:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "09e6778250ef79b8e696",
+      "title": "Petrobras assina acordo de GNL com a Cheniere - 29 / 09 / 2026 - Negócios",
+      "url": "https://c-level.folha.uol.com.br/negocios/2026/09/petrobras-assina-acordo-de-22-anos-com-a-americana-cheniere-para-compra-e-venda-de-gas-natural.shtml",
+      "domain": "c-level.folha.uol.com.br",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-09-29T14:30:00Z",
+      "firstSeenAt": "2026-09-29T14:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3617b57c8af914d7f46a",
+      "title": "Petrobras assina contrato de 22 anos para compra e venda de GNL com companhia norte - americana",
+      "url": "https://www.brasil247.com/brasil/petrobras-assina-contrato-de-22-anos-para-compra-e-venda-de-gnl-com-companhia-norte-americana/",
+      "domain": "brasil247.com",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-09-29T14:30:00Z",
+      "firstSeenAt": "2026-09-29T14:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5c29325a5649ab86270d",
+      "title": "TC Energy Advances Coastal GasLink Expansion After LNG Canada FID",
+      "url": "https://oilprice.com/Company-News/TC-Energy-Advances-Coastal-GasLink-Expansion-After-LNG-Canada-FID.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-29T14:30:00Z",
+      "firstSeenAt": "2026-09-29T14:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8662fb5404bd9503339d",
+      "title": "Bakan Bayraktar : Türkiye petrol ve doğal gazda kendi kendine yeten ülke olacak",
+      "url": "https://www.ahaber.com.tr/ekonomi/2026/09/29/bayraktar-acikladi-turkiye-enerjide-kendi-kendine-yeten-ulke-olacak",
+      "domain": "ahaber.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-09-29T14:30:00Z",
+      "firstSeenAt": "2026-09-29T14:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dede18fba4d254b1853c",
+      "title": "If seas are secure , India will be secure : Rajnath Singh tells Navy commanders to elevate surveillance",
+      "url": "https://www.tribuneindia.com/news/defence/if-seas-are-secure-india-will-be-secure-rajnath-singh-tells-navy-commanders-to-elevate-surveillance/",
+      "domain": "tribuneindia.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-09-29T14:30:00Z",
+      "firstSeenAt": "2026-09-29T14:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "67605d40abbbdba25ec7",
+      "title": "Xinhua Headlines : Europe braces for costly winter as gas buffer thins , energy shock persists",
+      "url": "http://www.texasguardian.com/news/279340368/xinhua-headlines-europe-braces-for-costly-winter-as-gas-buffer-thins-energy-shock-persists",
+      "domain": "texasguardian.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-09-29T14:30:00Z",
+      "firstSeenAt": "2026-09-29T14:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
     }
   ],
   "sourceStatus": [
@@ -1378,11 +1449,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-09-30T06:00:00Z",
-      "lastSuccessfulAt": "2026-09-30T06:40:55Z",
+      "observationDate": "2026-09-30T12:00:00Z",
+      "lastSuccessfulAt": "2026-09-30T13:40:30Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
