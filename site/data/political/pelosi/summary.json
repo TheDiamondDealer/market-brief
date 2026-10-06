@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T11:59:10+11:00",
+  "generatedAt": "2026-10-06T13:19:56+11:00",
   "politicianId": "pelosi",
   "name": "Nancy Pelosi",
   "chamber": "House",
   "status": "Partial — previous verified records retained",
-  "updated": "05 October 2026, 11:59 AEDT",
-  "tradeCount": 101,
+  "updated": "06 October 2026, 13:19 AEDT",
+  "tradeCount": 102,
   "years": [
     2026,
     2025,
@@ -22,9 +22,27 @@
     2015,
     2014
   ],
-  "latestTrade": "2026-07-28",
-  "latestFiling": "2026-08-21",
+  "latestTrade": "2026-09-08",
+  "latestFiling": "2026-10-02",
   "recentTrades": [
+    {
+      "id": "058342a58571c0d86832c6b5",
+      "filingId": "20035553",
+      "asset": "REOF XXX, LLC [AB]",
+      "ticker": "",
+      "type": "Purchase",
+      "owner": "SP",
+      "traded": "2026-09-08",
+      "filed": "2026-10-02",
+      "lag": "24 days",
+      "lagDays": 24,
+      "amount": "$500,001 - $1,000,000",
+      "source": "Official House Periodic Transaction Report",
+      "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035553.pdf",
+      "page": 1,
+      "filingContentHash": "a818e74d3e058a307ce73be76d4ac8a805346b9638db0cc54521c6abaed28bd7",
+      "parserVersion": "political-ptr-v3"
+    },
     {
       "id": "ce1b1f365153d79957bc5722",
       "filingId": "20035143",
@@ -496,30 +514,23 @@
       "source": "Official House Periodic Transaction Report",
       "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2023/20022260.pdf",
       "page": 1
-    },
-    {
-      "id": "5d361a16e5ffc98b1c498d2f",
-      "filingId": "20022260",
-      "asset": "Alphabet Inc. - Class A (GOOGL) [ST]",
-      "ticker": "GOOGL",
-      "type": "Sale (partial)",
-      "owner": "SP",
-      "traded": "2022-12-28",
-      "filed": "2023-01-12",
-      "lag": "15 days",
-      "lagDays": 15,
-      "amount": "$500,001 - $1,000,000",
-      "source": "Official House Periodic Transaction Report",
-      "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2023/20022260.pdf",
-      "page": 1
     }
   ],
   "portfolio": {
-    "updated": "05 October 2026, 11:59 AEDT",
+    "updated": "06 October 2026, 13:19 AEDT",
     "status": "Transaction-derived estimate",
     "basis": "Built from verified Periodic Transaction Reports. It does not yet include a complete annual holdings baseline, so sales and pre-existing positions may be unresolved.",
     "valuation": "Amounts are statutory disclosure ranges, not share counts or current market values.",
     "holdings": [
+      {
+        "asset": "REOF XXX, LLC [AB]",
+        "owner": "SP",
+        "amount": "$500,001–$1,000,000 disclosed activity",
+        "status": "Transaction-derived open",
+        "lastActivity": "2026-09-08",
+        "confidence": "Low — PTR-derived only",
+        "sourceUrl": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035553.pdf"
+      },
       {
         "asset": "Bloom Energy Corporation Class A Common Stock (BE) [OP]",
         "owner": "SP",
@@ -822,6 +833,7 @@
   "emptyMessage": "",
   "sourceStatus": {
     "errors": [
+      "House pelosi 8214491: no transaction rows parsed",
       "House pelosi 20012343: no transaction rows parsed",
       "House pelosi 20016155: no transaction rows parsed",
       "House pelosi 20017123: no transaction rows parsed",
@@ -831,6 +843,6 @@
       "House pelosi 20022320: no transaction rows parsed",
       "House pelosi 20033337: no transaction rows parsed"
     ],
-    "newTrades": 0
+    "newTrades": 1
   }
 }
