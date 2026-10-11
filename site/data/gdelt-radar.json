@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-10T22:29:21Z",
+  "generatedAtUtc": "2026-10-11T01:51:02Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 117,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-10-10T22:29:21Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-10-11T01:51:02Z",
+    "error": "semiconductors-ai: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,607 +52,27 @@
   ],
   "articles": [
     {
-      "id": "69f6e32dfd1170165144",
-      "title": "Donald Trump Makes BIG Announcement , Strikes Diesel Deal With Putin , Says Prices Will Come Down Fast",
-      "url": "https://www.oneindia.com/international/donald-trump-makes-big-announcement-strikes-diesel-deal-with-putin-says-prices-will-come-down-fas-8230651.html",
-      "domain": "oneindia.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 24,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "57b02f3660f7aa6e8122",
-      "title": "Новосибирские аграрии намолотили почти 2 млн тонн : 11 районов уже закрыли уборку зерновых",
-      "url": "https://runews24.ru/novosibirsk/10/10/2026/novosibirskie-agrarii-namolotili-pochti-2-mln-tonn-11-rajonov-uzhe-zakryili-uborku-zernovyix",
-      "domain": "runews24.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "57d21b71b71dbb9b1ade",
-      "title": "राज्यात अन्नधान्याचा तुटवडा निर्माण होण्याची शक्यता",
-      "url": "https://www.saamana.com/maharashtra-faces-possible-food-grain-shortage-amid-drought/",
-      "domain": "saamana.com",
-      "language": "Marathi",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ea779e20eef59d08741a",
-      "title": "आणखी 18 तालुके दुष्काळी",
-      "url": "https://www.saamana.com/18-more-talukas-added-to-drought-affected-list/",
-      "domain": "saamana.com",
-      "language": "Marathi",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9d0829d71c00b7428ca9",
-      "title": "केंद्रीय पथक मराठवाड्यात ; हवालदिल शेतकऱ्यांनी मांडल्या व्यथा . कोरड्या नद्या , आटलेल्या विहिरी , वाळलेल्या पिकांची केली पाहणी",
-      "url": "https://www.saamana.com/central-team-visits-drought-hit-marathwada/",
-      "domain": "saamana.com",
-      "language": "Marathi",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "670b9470c4717ee4109c",
-      "title": "Gran Teran 2021 . Morena Coronice s pravom nosi ime velik",
-      "url": "https://www.vecernji.hr/barkod/gran-teran-2021-morena-coronice-s-pravom-nosi-ime-velik-2003062",
-      "domain": "vecernji.hr",
-      "language": "Bosnian",
-      "sourceCountry": "Croatia",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3d801ce74de153654710",
-      "title": "कृषिमा बर्सेनि प्राकृतिक विपत्तिको धक्का",
-      "url": "https://www.onlinekhabar.com/2026/10/2036170/agriculture-is-constantly-hit-by-natural-disasters",
-      "domain": "onlinekhabar.com",
-      "language": "Nepali",
-      "sourceCountry": "Nepal",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4a0d07ab9680414585e0",
-      "title": "Weekend trending în București , 10 - 11 octombrie : festivalul luminii pe Calea Victoriei , Bărbați pe Mătăsari , mașini tari la Romexpo și „ Teambuilding 2 pe marile ecrane",
-      "url": "https://hotnews.ro/weekend-trending-in-bucuresti-10-11-octombrie-festivalul-luminii-pe-calea-victoriei-barbati-pe-matasari-masini-tari-la-romexpo-si-teambuilding-2-pe-marile-ecrane-2371230",
-      "domain": "hotnews.ro",
-      "language": "Romanian",
-      "sourceCountry": "Romania",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4e1421135ede4cdc3c93",
-      "title": "A comfortable Diwali , an uncomfortable 2027 : India sugar balance sheet is running thin",
-      "url": "https://www.thehindubusinessline.com/economy/agri-business/a-comfortable-diwali-an-uncomfortable-2027-indias-sugar-balance-sheet-is-running-thin/article71565441.ece",
-      "domain": "thehindubusinessline.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "af7aaeb5638a9af383c1",
-      "title": "Світовий банк погіршив прогноз зростання ВВП України Finance . ua",
-      "url": "https://news.finance.ua/ua/svitovyy-bank-pohirshyv-prohnoz-zrostannya-vvp-ukrainy-1791361762",
-      "domain": "news.finance.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "13473c84e437e699cf47",
-      "title": "Dussehra 2026 : Navaratri Recipes , Latest News , Celebrations , Traditions & More",
-      "url": "https://www.oneindia.com/dussehra/?ref_source=OI-EN&ref_medium=Banner&ref_campaign=Dussehra-2026",
-      "domain": "oneindia.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6a519515aafa5a4f43be",
-      "title": "Dussehra 2026 : Navaratri Recipes , Latest News , Celebrations , Traditions & More",
-      "url": "https://www.oneindia.com/dussehra?ref_source=OI-EN&ref_medium=Header&ref_campaign=Dussehra-2026",
-      "domain": "oneindia.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "600af1aa28b5a89dae6c",
-      "title": "影 ／ 苗栗最強演唱會10月下旬連兩晚在小巨蛋登場 網友索票販售將法辦 | 桃竹苗 | 地方",
-      "url": "https://udn.com/news/story/7324/9806471",
-      "domain": "udn.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8290be82dddddac801e3",
-      "title": "नुकसानभरपाई सोडा पायाखालची जमीन गमावण्याचे संकट , वाटद मिरवणे , कळझोंडी , कोळीसरे , गडनरळमध्ये एमआयडीसीसाठी भूसंपादन",
-      "url": "https://www.saamana.com/farmers-face-land-loss-amid-land-acquisition-drive/",
-      "domain": "saamana.com",
-      "language": "Marathi",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d8da6a526fb5b2923b47",
-      "title": "Ураганът „ Исаяс връхлетя Флорида : Наводнения , разрушения и над 600 000 домакинства без ток",
-      "url": "https://www.vesti.bg/sviat/uraganyt-isaias-vryhletia-florida-navodneniia-razrusheniia-i-nad-600-000-domakinstva-bez-tok-6272550",
-      "domain": "vesti.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs",
-        "energy-security"
-      ],
-      "topics": [
-        "Agriculture & softs",
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "cocoa",
-        "coffee",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wheat",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "4c760a7f5b61089088ef",
-      "title": "متى يبلغ إل نينيو ذروته وينتهي ؟ جدول زمني كامل لظاهرة جوية تجتاح العالم",
-      "url": "https://arabic.euronews.com/2026/10/10/when-will-el-nino-peak-and-end-a-complete-timeline-of-the-weather-phenomenon-affecting-the",
-      "domain": "arabic.euronews.com",
-      "language": "Arabic",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e2c93d20f0ab190edbe3",
-      "title": "USA , Ukrajina a Európa diskutovali v Miami o možnostiach ukončenia vojny",
-      "url": "https://hnonline.sk/svet/96307105-usa-ukrajina-a-europa-diskutovali-v-miami-o-moznostiach-ukoncenia-vojny",
-      "domain": "hnonline.sk",
-      "language": "Slovak",
-      "sourceCountry": "Slovak Republic",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "37356f831f6538e4a9fe",
-      "title": "मनुष्य कितना भी प्रयास कर ले , पर नियति का विधान नहीं बदल सकता",
-      "url": "https://navbharattimes.indiatimes.com/astro/others/no-matter-how-much-one-tries-final-destiny-cannot-be-changed/articleshow/134848313.cms",
-      "domain": "navbharattimes.indiatimes.com",
-      "language": "Hindi",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ce8eb253d9ad0633e6b4",
-      "title": "Receta de sopa turca tradicional de pollo",
-      "url": "https://www.publico.es/culturas/recetas/receta-sopa-turca-tradicional-pollo.html",
-      "domain": "publico.es",
-      "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "58c01a08bba0f1491898",
-      "title": "ΜΝΗΜΟΣΥΝΟ ΔΗΜΗΤΡΙΟΥ ΣΤΕΡΓΙΟΥ - e - thessalia . gr",
-      "url": "https://e-thessalia.gr/mnimosyno-dimitrioy-stergioy-2/",
-      "domain": "e-thessalia.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "89d028da84ccc55d225e",
-      "title": "ΜΝΗΜΟΣΥΝΟ ΧΡΗΣΤΟΥ ΦΛΕΡΗ - e - thessalia . gr",
-      "url": "https://e-thessalia.gr/mnimosyno-christoy-fleri/",
-      "domain": "e-thessalia.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "687858106204f0c55a35",
-      "title": "上海一男子骑车时眼睛扎入近100根细刺 ， 还带倒钩 ； 近期频发 ， 专家提醒",
-      "url": "https://baijiahao.baidu.com/s?id=1878642547696146381",
-      "domain": "baijiahao.baidu.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "31ac797ebfc636fca7c9",
-      "title": "Nữ NSND từng đỗ thủ khoa , chưa kịp nhập học đã nhận học bổng sang Úc , giờ làm lãnh đạo tại Học viện Múa Việt Nam",
-      "url": "https://kenh14.vn/nu-nsnd-tung-do-thu-khoa-chua-kip-nhap-hoc-da-nhan-hoc-bong-sang-uc-gio-lam-lanh-dao-tai-hoc-vien-mua-viet-nam-215261009105426787.chn",
-      "domain": "kenh14.vn",
+      "id": "a0e3b8bfb00533605d83",
+      "title": "Giá vàng trong nước cao nhất hai tuần",
+      "url": "https://baomoi.com/gia-vang-trong-nuoc-cao-nhat-hai-tuan-c56238761.epi",
+      "domain": "baomoi.com",
       "language": "Vietnamese",
       "sourceCountry": "Vietnam",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -661,24 +81,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "97e41bbcf24e7f6025cd",
-      "title": "iCAR V27长续航版上市 售价18 . 98 - 20 . 38万元",
-      "url": "https://auto.sina.com.cn/newcar/2026-09-30/detail-inisqriz7767502.shtml?oaid=00114",
-      "domain": "auto.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
+      "id": "a40e0ffa552b0a829d7d",
+      "title": "Gold Price Today : सोना इस हफ्ते हुआ महंगा , चांदी का दाम गिरा ? गोल्ड खरीदने या बेचने से पहले जान लें एक्सपर्ट की बात",
+      "url": "https://www.livehindustan.com/business/personal-investments/gold-price-today-yellew-metal-rates-jumped-in-last-5-days-silver-get-cheaper-check-201791612624645.html",
+      "domain": "livehindustan.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -687,24 +110,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "287c94badf76a3b6fe84",
-      "title": "赛沙迪贝拉婚礼聘礼成焦点 10万公积金 、 按摩椅 、 大学深造配套光华日报 | 1910年创刊 创新每一天生活",
-      "url": "https://www.kwongwah.com.my/20261010/%E8%B5%9B%E6%B2%99%E8%BF%AA%E8%B4%9D%E6%8B%89%E5%A9%9A%E7%A4%BC%E8%81%98%E7%A4%BC%E6%88%90%E7%84%A6%E7%82%B9%E3%80%8010%E4%B8%87%E5%85%AC%E7%A7%AF%E9%87%91%E3%80%81%E6%8C%89%E6%91%A9%E6%A4%85%E3%80%81/",
-      "domain": "kwongwah.com.my",
-      "language": "Chinese",
-      "sourceCountry": "Malaysia",
+      "id": "b7f9312f572d8693d0ec",
+      "title": "Nhà đầu tư thở phào với giá vàng",
+      "url": "https://baomoi.com/nha-dau-tu-tho-phao-voi-gia-vang-c56238753.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -713,24 +139,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "5baf9091ca1a35baff96",
-      "title": "Bucks County Wine Trail Harvest Celebration",
-      "url": "https://princetonol.com/events/2026-10-10/bucks-county-wine-trail-harvest-celebration",
-      "domain": "princetonol.com",
-      "language": "English",
-      "sourceCountry": "United States",
+      "id": "3c842cd4230dc7cd6ba8",
+      "title": "Ue - Cina : intesa su auto ibride , dazi e terre rare",
+      "url": "https://www.motorionline.com/ue-cina-intesa-su-auto-ibride-dazi-e-terre-rare/",
+      "domain": "motorionline.com",
+      "language": "Italian",
+      "sourceCountry": "Italy",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -739,24 +168,114 @@
       "duplicateCount": 1
     },
     {
-      "id": "bcca2cdd2526bb4eb81a",
-      "title": "Moselle . La Cravate solidaire , une association sur mesure qui habille les demandeurs demploi",
-      "url": "https://www.lalsace.fr/societe/2026/10/10/la-cravate-solidaire-une-association-sur-mesure-qui-habille-les-demandeurs-d-emploi",
+      "id": "c5763fc36c8cd150d52b",
+      "title": "Materie critiche , la Ue lancia 17 progetti . Séjourné : « Italia in prima linea nel riciclo »",
+      "url": "https://www.ilmessaggero.it/economia/materie_critiche_ue_46_progetti_italia_porto_marghera-9814909.html",
+      "domain": "ilmessaggero.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4d7e6b6b392bc50cab3e",
+      "title": "Московские школьники завоевали шесть медалей на первенстве Азии по шахматам",
+      "url": "https://www.mskagency.ru/materials/3569617",
+      "domain": "mskagency.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "6d5262705016515f4f05",
+      "title": "Москвич завоевал медаль юниорского Кубка мира по фехтованию",
+      "url": "https://www.mskagency.ru/materials/3569619",
+      "domain": "mskagency.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "539b9985b6e9af5909ef",
+      "title": "Ruralité . Cette coopérative lutte contre la désertification en aidant des entrepreneurs à sinstaller",
+      "url": "https://www.lalsace.fr/societe/2026/10/10/cette-cooperative-lutte-contre-la-desertification-en-aidant-des-entrepreneurs-a-s-installer",
       "domain": "lalsace.fr",
       "language": "French",
       "sourceCountry": "France",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -774,335 +293,23 @@
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9b96be9acfb27376d6d1",
-      "title": "As Russia escalates its war , the EU realises its support for Ukraine wont be enough",
-      "url": "https://www.euronews.com/2026/10/10/as-russia-escalates-its-war-the-eu-admits-its-support-for-ukraine-wont-be-enough",
-      "domain": "euronews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6f61fc9accb858b543d9",
-      "title": "AI冒充刘欢妻子带货 ， 平台怎能坐等家人来举报 | 新京报快评",
-      "url": "https://finance.sina.com.cn/tech/roll/2026-10-10/doc-iniutkcp7439728.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fba227e7efdad287ed9f",
-      "title": "Sau 2 năm ở mới thấy 6 kiểu tủ này đáng tiền đến mức nào : Không cần đóng nhiều , sức chứa vẫn có thể tăng gấp đôi",
-      "url": "https://kenh14.vn/sau-2-nam-o-moi-thay-6-kieu-tu-nay-dang-tien-den-muc-nao-khong-can-dong-nhieu-suc-chua-van-co-the-tang-gap-doi-215261010121259367.chn",
-      "domain": "kenh14.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9f75b34bf9e4178b2a04",
-      "title": "When will El Niño peak and end ? A full timeline of the weather phenomenon taking the world by storm",
-      "url": "https://www.euronews.com/2026/10/10/when-will-el-nino-peak-and-end-a-full-timeline-of-the-weather-phenomenon-taking-the-world-",
-      "domain": "euronews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1eb0d07baf6a52b990e4",
-      "title": "搭逾25趟郵輪悟出省錢術 ！ 旅遊老手揭 「 5項加購 」 不值得 - 國際",
-      "url": "https://www.chinatimes.com/realtimenews/20261010001795-260408",
-      "domain": "chinatimes.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9ffaf7c052a18748681d",
-      "title": "How Museum of the Home is adapting gardens to climate change",
-      "url": "https://www.hackneygazette.co.uk/news/26611577.museum-home-adapting-gardens-climate-change/",
-      "domain": "hackneygazette.co.uk",
-      "language": "English",
-      "sourceCountry": "United Kingdom",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e0fdb71155e4bc7d9f37",
-      "title": "Nur in einer intakten Umwelt können wir gut leben",
-      "url": "https://www.tlz.de/kultur/article413354712/nur-in-einer-intakten-umwelt-koennen-wir-gut-leben.html",
-      "domain": "tlz.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "0a79cc3270da0ea3c921",
-      "title": "Koji biste od ova četiri puta odabrali ? Vaš izbor otkriva što vam je u životu najvažnije",
-      "url": "https://www.vecernji.hr/lifestyle/koji-biste-od-ova-cetiri-puta-odabrali-vas-izbor-otkriva-sto-vam-je-u-zivotu-najvaznije-2002773",
-      "domain": "vecernji.hr",
-      "language": "Croatian",
-      "sourceCountry": "Croatia",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ce34342dc84be30c4f10",
-      "title": "Tener trabajo o pensión en la ciudad de Ourense ya no evita dormir en la calle",
-      "url": "https://www.lavozdegalicia.es/noticia/ourense/ourense/2026/10/09/tener-trabajo-pension-ciudad-ourense-evita-dormir-calle/00031791562555677838525.htm",
-      "domain": "lavozdegalicia.es",
-      "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1a2417b1ac1b7d7b4ac1",
-      "title": "Chàng trai Hà Nam lấy cô gái Bắc Phi , bố mẹ vợ cho nhà 77 tỷ nhưng anh từ chối : Câu chuyện phía sau mới đáng nói",
-      "url": "https://kenh14.vn/chang-trai-ha-nam-lay-co-gai-bac-phi-bo-me-vo-cho-nha-77-ty-nhung-anh-tu-choi-cau-chuyen-phia-sau-moi-dang-noi-215261010120934903.chn",
-      "domain": "kenh14.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b9cbd3ce1d9841c073c2",
-      "title": "Un siglo de Rafael Azcona , crítico implacable y mordaz de las miserias de la sociedad",
-      "url": "https://www.publico.es/culturas/cine-tv/siglo-rafael-azcona-critico-implacable-mordaz-miserias-sociedad.html",
-      "domain": "publico.es",
-      "language": "Spanish",
-      "sourceCountry": "Spain",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "819989786a1a4936cc42",
-      "title": "Resep Keripik Balado Poll Pedas yang Renyah Tahan Lama",
-      "url": "https://www.liputan6.com/lifestyle/read/8302173/resep-keripik-balado-poll-pedas",
-      "domain": "liputan6.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
         "ags-softs",
-        "energy-security"
+        "strategic-materials"
       ],
       "topics": [
         "Agriculture & softs",
-        "Energy & security"
+        "Strategic materials"
       ],
       "assets": [
-        "brent",
         "cocoa",
         "coffee",
-        "defence",
-        "gas-uk",
-        "gas-us",
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
         "uranium",
-        "wheat",
-        "wti"
+        "wheat"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1111,128 +318,27 @@
       "duplicateCount": 2
     },
     {
-      "id": "c7ad048c27de594301a3",
-      "title": "投用满一个月出租率过半 ， 门头沟这里的青年公寓为何能吸引年轻人 ？",
-      "url": "https://www.163.com/dy/article/L8SS60O105568W0A.html",
-      "domain": "163.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "97ad56d70e02c09904a2",
-      "title": "安徽巢湖 ： 薄殼山核桃喜豐收 - 香港商報",
-      "url": "https://www.hkcd.com/hkcdweb/content/2026/10/10/content_8779292.html",
-      "domain": "hkcd.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "63feb2b483b5b816872a",
-      "title": "Singapore wife drops 100 - page PDF accusing husband of cheating and lying : Here the TL ; DR",
-      "url": "https://www.asiaone.com/singapore/singapore-wife-drops-100-page-pdf-accusing-husband-cheating-and-lying-heres-tldr",
-      "domain": "asiaone.com",
-      "language": "English",
-      "sourceCountry": "Singapore",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "beba494e31eafcde77ce",
-      "title": "Поехать на Черное море осенью и не пожалеть . Как я провела отпуск в Анапе , Краснодаре и Сочи",
-      "url": "https://rg.ru/2026/10/10/reg-ufo/soobshcheniia-o-bespilotnoj-opasnosti-prihodiat-v-sochi-i-anape-pochti-kazhdyj-den.html",
-      "domain": "rg.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-10T06:45:00Z",
-      "firstSeenAt": "2026-10-10T06:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6bb3d2a1a29b08c22272",
-      "title": "Pound for Pink to support local women facing cancer",
-      "url": "https://www.newsandsentinel.com/news/community-news/2026/10/pound-for-pink-to-support-local-women-facing-cancer/",
-      "domain": "newsandsentinel.com",
+      "id": "92f7fbc1507b19768226",
+      "title": "The Victimhood Olympics : Charting the Woke Hierarchy",
+      "url": "https://townhall.com/columnists/jeffdavidson/2026/10/10/the-victimhood-olympics-charting-the-woke-hierarchy-n2684374",
+      "domain": "townhall.com",
       "language": "English",
       "sourceCountry": "United States",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1241,24 +347,230 @@
       "duplicateCount": 1
     },
     {
-      "id": "42fcc8e74b77b6ba329f",
-      "title": "全球首次 ！ 杭州具身黑马比肩Figure ， 全身协同自主叠衣",
-      "url": "https://tech.ifeng.com/c/8x6UpDNnKZz",
-      "domain": "tech.ifeng.com",
+      "id": "ce583dae50b307d69a90",
+      "title": "Từ 15 / 11 , chuyển tiền trên 10 triệu đồng , 50 triệu đồng trong có thêm quy định mới liên quan đến AI",
+      "url": "https://kenh14.vn/tu-15-11-chuyen-tien-tren-10-trieu-dong-50-trieu-dong-trong-co-them-quy-dinh-moi-lien-quan-den-ai-215261010123639104.chn",
+      "domain": "kenh14.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c920671e3b51e90cb0fa",
+      "title": "Missing herder found dead in Kwale forest in suspected snake bite",
+      "url": "https://www.the-star.co.ke/news/2026-10-10-missing-herder-found-dead-in-kwale-forest",
+      "domain": "the-star.co.ke",
+      "language": "English",
+      "sourceCountry": "Kenya",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "728cb9644a6b3b7b4c59",
+      "title": "Oxidized Bangles Set , सिल्वर चूड़ियों से सजाएं कलाई , कश्मीरी घुंघरू बैंगल्स छाईं , देखें गरबा - डांडिया लुक को खास बनाने वाले 8 डिजाइन - trendy and latest oxidized bangles set design for garba and dandiya look navratri 2026 - Fashion News",
+      "url": "https://navbharattimes.indiatimes.com/lifestyle/fashion/trendy-and-latest-oxidized-bangles-set-design-for-garba-and-dandiya-look-navratri-2026/articleshow/134848199.cms",
+      "domain": "navbharattimes.indiatimes.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9a8ab81a4e33279057cd",
+      "title": "КИНА СЕ СОГЛАСИ ЗА ПРЕПОЛОВУВАЊЕ НА ИЗВОЗОТ НА ХИБРИДНИ ВОЗИЛА ВО ЕУ , трговскиот спор околу кинеските електрични возила се прошири и на извозот на други производи",
+      "url": "https://time.mk/c/7c93d407fc/mk/kina-se-soglasi-za-prepolovuvanje-na-izvozot-na-hibridni-vozila-vo-eu-trgovskiot-spor-okolu-kineskite-elektricni-vozila-se-prosiri-i-na-izvozot-na-drugi-proizvodi.html",
+      "domain": "time.mk",
+      "language": "Macedonian",
+      "sourceCountry": "Macedonia",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "73243d7d5a11f868ed79",
+      "title": "Helene Fischer tritt überraschend bei Florian Silbereisens „ Schlagerbooom auf",
+      "url": "https://www.focus.de/kultur/kino-tv/helene-fischer-tritt-ueberraschend-bei-florian-silbereisens-schlagerbooom-auf_9c00b150-af15-4847-a511-1f4cc4e68d12.html",
+      "domain": "focus.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1b38f450c3122b73c6ef",
+      "title": "Công an phối hợp ngân hàng VietinBank rà soát giao dịch 15 . 000 . 000 đồng của Nguyễn Văn Tráng SN 1972",
+      "url": "https://kenh14.vn/cong-an-phoi-hop-ngan-hang-vietinbank-ra-soat-giao-dich-15000000-dong-cua-nguyen-van-trang-sn-1972-215261010114915631.chn",
+      "domain": "kenh14.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "276cbe3a55a0c672e91e",
+      "title": "Nguyễn Thị Lệ Na SN 1986 chuyển khoản 270 . 000 . 000 đồng vào tài khoản của Nguyễn Thị Huyền SN 1995 : Công an rà soát giao dịch",
+      "url": "https://kenh14.vn/nguyen-thi-le-na-sn-1986-chuyen-khoan-270000000-dong-vao-tai-khoan-cua-nguyen-thi-huyen-sn-1995-cong-an-ra-soat-giao-dich-215261009214011585.chn",
+      "domain": "kenh14.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "63df580e1757db10047e",
+      "title": "金饰价格连涨两日 ！ 周生生 、 老庙单日再涨8 - 9元 / 克 _ 新闻频道 _ 中华网",
+      "url": "https://news.china.com/socialgd/10000169/20261010/49786933.html",
+      "domain": "news.china.com",
       "language": "Chinese",
       "sourceCountry": "China",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1267,24 +579,114 @@
       "duplicateCount": 1
     },
     {
-      "id": "f108f47bcde10d35d0c6",
-      "title": "ST25 rice finishes second in world best rice competition",
-      "url": "https://vietnamnews.vn/economy/1801683/st25-rice-finishes-second-in-world-s-best-rice-competition.html",
-      "domain": "vietnamnews.vn",
-      "language": "English",
+      "id": "4c5e74a1fcded17ff965",
+      "title": "Sofia Goggia : « Devo ascoltare il mio corpo . Non posso utilizzare quelle che sono state sempre le mie armi migliori con gli infortuni , perché non è con la forza di volontà che si scaccia un virus »",
+      "url": "https://www.vanityfair.it/article/sofia-goggia-devo-ascoltare-il-mio-corpo",
+      "domain": "vanityfair.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2ca929f86b395639fc4b",
+      "title": "Harga Emas Antam Sabtu 10 Oktober 2026 Naik Jadi Rp2 . 592 . 000 per Gram : Okezone Economy",
+      "url": "https://economy.okezone.com/read/2026/10/10/320/3247047/harga-emas-antam-sabtu-10-oktober-2026-naik-jadi-rp2-592-000-per-gram",
+      "domain": "economy.okezone.com",
+      "language": "Indonesian",
+      "sourceCountry": "Indonesia",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "40af51131bd502bb8368",
+      "title": "घूसखोर महिला डॉक्टर निगरानी के हत्थे चढ़ी , घर से मिले 15 लाख कैश ; बैंक में 1 करोड़ , जेवर - फ्लैट भी",
+      "url": "https://www.livehindustan.com/bihar/lady-doctor-of-vaishali-bihar-nabbed-by-vigilance-bureau-15-lakh-cash-found-a-home-1-crore-in-the-bank-201791609248907.html",
+      "domain": "livehindustan.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "90fd77c6d70cfd634741",
+      "title": "Vỏ lãi đang chạy bất ngờ gãy đôi , nam thanh niên tử vong",
+      "url": "https://baomoi.com/vo-lai-dang-chay-bat-ngo-gay-doi-nam-thanh-nien-tu-vong-c56238802.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
       "sourceCountry": "Vietnam",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1293,27 +695,752 @@
       "duplicateCount": 1
     },
     {
-      "id": "1c89683a95f8616c4238",
-      "title": "Это щелчок по носу . Решение Путина и Трампа вызвало бурную реакцию в ФРГ",
-      "url": "https://ria.ru/20261010/sdelka-2123633882.html",
-      "domain": "ria.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
+      "id": "bfd2d622abf7281a712d",
+      "title": "Entregaron títulos a los egresados de la Escuela de Hotelería y Gastronomía Diario La Capital de Mar del Plata",
+      "url": "https://www.lacapitalmdp.com/noticias/La-Ciudad/2011/05/27/184105.htm",
+      "domain": "lacapitalmdp.com",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
       "seenAt": "2026-10-10T06:45:00Z",
       "firstSeenAt": "2026-10-10T06:45:00Z",
       "topicIds": [
-        "energy-security"
+        "strategic-materials"
       ],
       "topics": [
-        "Energy & security"
+        "Strategic materials"
       ],
       "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5bd691c77290a1940adb",
+      "title": "मौत का मतलब संत बन जाना है ? सोना ने किया तनुश्री दत्ता को सपोर्ट , नाना पाटेकर के निधन पर बोलीं - मरने से किसी के …",
+      "url": "https://www.livehindustan.com/entertainment/bollywood/sona-mohapatra-support-tanushree-dutta-after-nana-patekar-death-how-can-death-can-become-sainthood-201791610361014.html",
+      "domain": "livehindustan.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f1ce4e573fde178814b6",
+      "title": "Spa bliss in the Alps : hot springs and hiking in the shadow of Mont Blanc",
+      "url": "https://www.theguardian.com/travel/2026/oct/10/spa-mountain-town-saint-gervais-les-bains-france-mont-blanc",
+      "domain": "theguardian.com",
+      "language": "English",
+      "sourceCountry": "United Kingdom",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "349c62974374f2ab402b",
+      "title": "Triệt phá đường dây lừa đảo đầu tư vàng ảo qua ứng dụng Phantom",
+      "url": "https://tienphong.vn/triet-pha-duong-day-lua-dao-dau-tu-vang-ao-qua-ung-dung-phantom-post1883978.tpo",
+      "domain": "tienphong.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0bf492eeeb5f37de4aa9",
+      "title": "ASCII . jp ： アスキーが秋葉原でイベント開催中 。 秋晴れ 、 ゲーミングガジェット日和 。",
+      "url": "https://ascii.jp/elem/000/004/441/4441725/",
+      "domain": "ascii.jp",
+      "language": "Japanese",
+      "sourceCountry": "Japan",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2284a84f895251fc741c",
+      "title": "Gold könnte auf 3750 Dollar fallen – dann winken neue Rekorde",
+      "url": "https://www.focus.de/finanzen/boerse/gold-koennte-auf-3750-dollar-fallen-dann-winken-neue-rekorde_dffce674-13a5-4744-be9f-40474cc4ef33.html",
+      "domain": "focus.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7fe4cc8cd02030439847",
+      "title": "Denizin dibinden hazine çıktı ! – Güncel Haberler , Son Dakika Haberleri , Turktime Haber Portalı",
+      "url": "https://www.turktime.com/haber/denizin-dibinden-hazine-cikti/755935",
+      "domain": "turktime.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "65dacaa798f8cf8282c4",
+      "title": "India forex reserves fall by $12 . 95 billion to $734 . 61 billion in week ended Oct 2 : RBI",
+      "url": "https://timesofoman.com/article/177845-indias-forex-reserves-fall-by-1295-billion-to-73461-billion-in-week-ended-oct-2",
+      "domain": "timesofoman.com",
+      "language": "English",
+      "sourceCountry": "Oman",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "359c18dc122d55373e71",
+      "title": "Doãn Hải My đam mê làm một việc trong căn biệt thự của Văn Hậu",
+      "url": "https://kenh14.vn/doan-hai-my-dam-me-lam-mot-viec-trong-can-biet-thu-cua-van-hau-215261010073622.chn",
+      "domain": "kenh14.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "efaba0b880af04a2bbc1",
+      "title": "Calcutta VFD marks National Fire Prevention Week",
+      "url": "https://www.reviewonline.com/news/local-news/2026/10/calcutta-vfd-marks-national-fire-prevention-week/",
+      "domain": "reviewonline.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cdf6fe575f60ffc3456e",
+      "title": "Altında en kritik çarşamba ! Fiyatların yönü için kırılma haftası",
+      "url": "https://www.turkiyegazetesi.com.tr/tasarruf-ortagim/altinda-en-kritik-carsamba-fiyatlarin-yonu-icin-kirilma-haftasi-1821747",
+      "domain": "turkiyegazetesi.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "84319ea0628b2a85f08c",
+      "title": "Hướng tới đô thị thông minh : Nên thí điểm AI Agent ở những lĩnh vực nào ?",
+      "url": "https://baomoi.com/huong-toi-do-thi-thong-minh-nen-thi-diem-ai-agent-o-nhung-linh-vuc-nao-c56238864.epi",
+      "domain": "baomoi.com",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e458a6f2542b2cce7247",
+      "title": "US President Donald Trump calls Nobel Peace Prize pick disgraceful",
+      "url": "https://www.nzherald.co.nz/world/us-president-donald-trump-calls-nobel-peace-prize-pick-disgraceful/USZJT5EZDFFMDP2FOC2UWVTTAQ/",
+      "domain": "nzherald.co.nz",
+      "language": "English",
+      "sourceCountry": "New Zealand",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "fa497f5a1dfd01b00cb1",
+      "title": "This 90s Kate Moss Essential Is Now A Favourite Among Fine Jewellers",
+      "url": "https://www.vogue.co.uk/article/90s-leather-cord-necklace-trend",
+      "domain": "vogue.co.uk",
+      "language": "English",
+      "sourceCountry": "United Kingdom",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "83ecf2e428c056418941",
+      "title": "ב - Winner קבעו : היחס לניצחון ק ש מול הפועל ת א",
+      "url": "https://www.one.co.il/Article/535557.html",
+      "domain": "one.co.il",
+      "language": "Hebrew",
+      "sourceCountry": "Israel",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a355a7e4c64a382ff578",
+      "title": "Sorpresa Juli nella classifica radio , Serenamente con Bresh è primo : È un periodo della mia vita veramente pieno di cose da ricordare",
+      "url": "https://www.ilfattoquotidiano.it/2026/10/10/sorpresa-juli-nella-classifica-radio-serenamente-con-bresh-e-primo-e-un-periodo-della-mia-vita-veramente-pieno-di-cose-da-ricordare/8532983/",
+      "domain": "ilfattoquotidiano.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bd4210ec2ecfac0cc8db",
+      "title": "单亲妈妈仅退款童装勒索3千被刑拘 恶意索赔套路揭秘 _ 新闻频道 _ 中华网",
+      "url": "https://news.china.com/socialgd/10000169/20261010/49786930.html",
+      "domain": "news.china.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "88b3d07e745dad982582",
+      "title": "恶意索赔女子被刑拘 伪造证据多次敲诈 _ 新闻频道 _ 中华网",
+      "url": "https://news.china.com/socialgd/10000169/20261010/49786818.html",
+      "domain": "news.china.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f57cee9a3a584c4bc58d",
+      "title": "Rubionun Atinadaki Pers sözlerine İrandan tarihi cevap : Diz ken Romayı unutma",
+      "url": "https://www.turkiyegazetesi.com.tr/dunya/rubionun-atinadaki-pers-sozlerine-irandan-tarihi-cevap-diz-coken-romayi-unutma-1821749",
+      "domain": "turkiyegazetesi.com.tr",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3600f9461c08edb0864a",
+      "title": "ASCII . jp ：【 発売記念価格 ！ 楽天限定 】 Headwolf F9 8 . 8インチ 2 . 5K 90Hz 4G simフリー タブレット Android16 24+128GB 特別価格21 , 999円 レビューで特典",
+      "url": "https://ascii.jp/elem/000/004/441/4441739/",
+      "domain": "ascii.jp",
+      "language": "Japanese",
+      "sourceCountry": "Japan",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "100fd8f649d11a748312",
+      "title": "ASCII . jp ：【 SmallRig 】 Amazon秋セール開催 ！ カメラアクセサリーや撮影機材が最大40 % OFF",
+      "url": "https://ascii.jp/elem/000/004/441/4441740/",
+      "domain": "ascii.jp",
+      "language": "Japanese",
+      "sourceCountry": "Japan",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ce32281f9d86ea758f32",
+      "title": "Als 16 - jarige alleen naar Duitsland , nu ineens goud waard bij Feyenoord : Nacho Ferri is geen gewone Spanjaard",
+      "url": "https://drimble.nl/regio/zeeland/108246796/als-16-jarige-alleen-naar-duitsland-nu-ineens-goud-waard-bij-feyenoord-nacho-ferri-is-geen-gewone-spanjaard.html",
+      "domain": "drimble.nl",
+      "language": "Dutch",
+      "sourceCountry": "Netherlands",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8da1acda5434a28318ac",
+      "title": "Voor ons is het de weg naar de bakker , voor regisseurs en reclamemakers is het een geschenk uit de hemel",
+      "url": "https://drimble.nl/regio/noord-holland/amsterdam/108246543/voor-ons-is-het-de-weg-naar-de-bakker-voor-regisseurs-en-reclamemakers-is-het-een-geschenk-uit-de-hemel.html",
+      "domain": "drimble.nl",
+      "language": "Dutch",
+      "sourceCountry": "Netherlands",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "612120bf46736f150c58",
+      "title": "分到2400萬秒給前妻 ！ 罹癌翁裝窮討每月2 . 5萬扶養費 - 社會",
+      "url": "https://www.chinatimes.com/realtimenews/20261010000787-260402",
+      "domain": "chinatimes.com",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9edd463f825acc974892",
+      "title": "Migori miners challenged to plant trees to help restore degraded land",
+      "url": "https://www.standardmedia.co.ke/nyanza/article/2001559833/migori-miners-challenged-to-plant-trees-to-help-restore-degraded-land",
+      "domain": "standardmedia.co.ke",
+      "language": "English",
+      "sourceCountry": "Kenya",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f4880d6b2f3c11cb1190",
+      "title": "鄭麗文 、 柯志恩果貿升旗喊團結 柯志恩 ： 高雄贏 、 台灣就會贏",
+      "url": "https://n.yam.com/Article/20261010904510",
+      "domain": "n.yam.com",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-10-10T06:45:00Z",
+      "firstSeenAt": "2026-10-10T06:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1328,10 +1455,10 @@
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
       "observationDate": "2026-10-10T06:45:00Z",
-      "lastSuccessfulAt": "2026-10-10T22:29:21Z",
+      "lastSuccessfulAt": "2026-10-11T01:51:02Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 117 returned records across 3/6 successful queries.",
+      "error": "semiconductors-ai: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; macro-policy: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
