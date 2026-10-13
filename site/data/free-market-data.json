@@ -1,6 +1,6 @@
 {
-  "generatedAt": "10 October 2026, 7:26 PM AEDT",
-  "generatedAtUtc": "2026-10-10T08:26:42+00:00",
+  "generatedAt": "13 October 2026, 1:37 PM AEDT",
+  "generatedAtUtc": "2026-10-13T02:37:37+00:00",
   "rates": [
     {
       "id": "DGS2",
@@ -4594,7 +4594,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "EURO FX/BRITISH POUND XRATE - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -6309,7 +6309,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "BRAZILIAN REAL - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -8375,23 +8375,17 @@
       "name": "Palladium",
       "market": "PALLADIUM - NEW YORK MERCANTILE EXCHANGE",
       "category": "Managed money",
-      "reportDate": "2026-09-29",
-      "long": 3740,
-      "short": 11702,
-      "net": -7962,
-      "weekChange": -1956,
-      "fourWeekChange": -3343,
-      "openInterest": 18602,
-      "netPercentile5y": 30.8,
+      "reportDate": "2026-10-06",
+      "long": 4485,
+      "short": 13870,
+      "net": -9385,
+      "weekChange": -1423,
+      "fourWeekChange": -5046,
+      "openInterest": 21060,
+      "netPercentile5y": 25.8,
       "crowding": "Mid-range",
       "historyCount": 260,
       "history52": [
-        {
-          "date": "2025-10-07",
-          "long": 7362,
-          "short": 11425,
-          "net": -4063
-        },
         {
           "date": "2025-10-14",
           "long": 7076,
@@ -8697,6 +8691,12 @@
           "long": 3740,
           "short": 11702,
           "net": -7962
+        },
+        {
+          "date": "2026-10-06",
+          "long": 4485,
+          "short": 13870,
+          "net": -9385
         }
       ],
       "source": "CFTC Commitments of Traders",
@@ -8710,7 +8710,7 @@
         "exchange": "NEW YORK MERCANTILE EXCHANGE",
         "marketName": "PALLADIUM - NEW YORK MERCANTILE EXCHANGE"
       },
-      "dataState": "stale-retained",
+      "dataState": "current",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -11454,7 +11454,7 @@
         "exchange": "CHICAGO BOARD OF TRADE",
         "marketName": "ULTRA UST BOND - CHICAGO BOARD OF TRADE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -15584,7 +15584,7 @@
     {
       "source": "CFTC Commitments of Traders",
       "status": "partial",
-      "detail": "palladium: <urlopen error _ssl.c:993: The handshake operation timed out> Retained previously verified rows for: palladium.",
+      "detail": "eur-gbp: The read operation timed out; brazilian-real: The read operation timed out; ultra-us-bond: The read operation timed out Retained previously verified rows for: eur-gbp, brazilian-real, ultra-us-bond.",
       "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
     }
   ],
