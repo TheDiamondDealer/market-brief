@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAtUtc": "2026-10-13T23:19:37Z",
+  "generatedAtUtc": "2026-10-14T01:58:13Z",
   "model": "claude-haiku-4-5",
   "items": [
     {
@@ -4371,9 +4371,16 @@
       "topic": "U.S. Department of War — Releases",
       "tagState": "tagged",
       "attempts": 0,
-      "taggedAtUtc": "2026-10-13T23:19:37Z",
-      "note": "",
-      "tags": []
+      "taggedAtUtc": "2026-10-14T01:58:13Z",
+      "note": "U.S. defense spending on counter-drone directed-energy systems supports semiconductor manufacturers supplying specialized electronics for military applications.",
+      "tags": [
+        {
+          "assetId": "semis",
+          "direction": "up",
+          "confidence": "medium",
+          "mechanism": "Defense procurement for directed-energy systems likely drives semiconductor demand for advanced components and sensors."
+        }
+      ]
     },
     {
       "id": "220ed128ca56a9fc",
@@ -4385,14 +4392,20 @@
       "topic": "United Nations News — Middle East",
       "tagState": "tagged",
       "attempts": 0,
-      "taggedAtUtc": "2026-10-13T23:19:37Z",
-      "note": "Deepening food security crisis in Yemen signals potential supply constraints and regional instability that support wheat prices.",
+      "taggedAtUtc": "2026-10-14T01:58:13Z",
+      "note": "Deepening food security crisis in Yemen from conflict restricts wheat supplies and elevates risk sentiment given humanitarian deterioration in a key region.",
       "tags": [
         {
           "assetId": "wheat",
           "direction": "up",
+          "confidence": "high",
+          "mechanism": "Regional food security crisis driven by conflict reduces wheat supply and increases price pressures as production and distribution are disrupted."
+        },
+        {
+          "assetId": "risk-assets",
+          "direction": "down",
           "confidence": "medium",
-          "mechanism": "Yemen food security crisis reflects broader regional supply disruptions and conflict-driven scarcity concerns affecting grain markets."
+          "mechanism": "Escalating regional conflict and humanitarian crisis typically trigger risk-off sentiment and capital reallocation away from equities."
         }
       ]
     }
