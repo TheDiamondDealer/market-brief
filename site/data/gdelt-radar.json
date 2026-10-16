@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-16T14:49:59Z",
+  "generatedAtUtc": "2026-10-16T18:47:41Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 4,
-    "rawArticleCount": 200,
+    "successfulQueryCount": 1,
+    "rawArticleCount": 50,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-10-16T14:49:59Z",
-    "error": "semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-10-16T18:47:41Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,23 +52,27 @@
   ],
   "articles": [
     {
-      "id": "bc370805f1ef4f8b203e",
-      "title": "Фон дер Ляйен выступила за создание стратегических запасов газа в Евросоюзе",
-      "url": "https://pronedra.ru/es-nuzhen-rezerv-gaza-fon-der-lyajen-predlozhila-sozdat-strategicheskij-zapas-835485.html",
-      "domain": "pronedra.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-16T14:15:00Z",
-      "firstSeenAt": "2026-10-16T14:15:00Z",
+      "id": "aacf039dd532ff823e89",
+      "title": "Avrupada doğal gaz fiyatları Aralık 2022 den bu yana en yüksek seviy",
+      "url": "https://www.kibrispostasi.com/c50-EKONOMI/n616953-avrupada-dogal-gaz-fiyatlari-aralik-2022den-bu-yana-en-yuksek-seviyesinde",
+      "domain": "kibrispostasi.com",
+      "language": "Turkish",
+      "sourceCountry": "Cyprus",
+      "seenAt": "2026-10-16T17:15:00Z",
+      "firstSeenAt": "2026-10-16T17:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -77,52 +81,174 @@
       "duplicateCount": 1
     },
     {
-      "id": "6ffe3754b8421f01ec64",
-      "title": "План озимого сева в России выполнили на 70 % :: Новости дня / ВЗГЛЯД",
-      "url": "https://vz.ru/news/2026/10/16/1463866.html",
-      "domain": "vz.ru",
+      "id": "355b092d8bd37dbdbdb5",
+      "title": "Rusya , ABD ile nükleer santrallerden yararlanılacak ortak veri merkezlerini görüşüyor",
+      "url": "https://www.haberler.com/guncel/rusya-abd-ile-nukleer-santrallerden-yararlanilacak-20337802-haberi/",
+      "domain": "haberler.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-10-16T16:45:00Z",
+      "firstSeenAt": "2026-10-16T16:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ab478883e44d779bf6ec",
+      "title": "India crude imports rise 7 % in September , bill surges 47 %",
+      "url": "https://www.thehindu.com/business/Economy/indias-crude-imports-rise-7-in-september-bill-surges-47/article71593638.ece",
+      "domain": "thehindu.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-16T16:45:00Z",
+      "firstSeenAt": "2026-10-16T16:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ba4e7e39453c07c1dc31",
+      "title": "Україна накопичила рекордний обсяг газу і навіть продала його за кордон",
+      "url": "https://www.unian.ua/economics/energetics/ukrajina-nakopichila-rekordniy-obsyag-gazu-i-navit-prodala-yogo-za-kordon-13531224.html",
+      "domain": "unian.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-10-16T16:45:00Z",
+      "firstSeenAt": "2026-10-16T16:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5356f02d5e9afc309faf",
+      "title": "Кобяков заявил , что мир входит в « золотой век » природного газа",
+      "url": "https://life.ru/p/gaz-bolshe-ne-perehodnoe-toplivo-kobyakov-obyasnil-peremeny-na-mirovom",
+      "domain": "life.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
-      "seenAt": "2026-10-16T14:00:00Z",
-      "firstSeenAt": "2026-10-16T14:00:00Z",
+      "seenAt": "2026-10-16T16:00:00Z",
+      "firstSeenAt": "2026-10-16T16:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "8c84bb6d852670b36da3",
-      "title": "Kukurydza mokra po 650 zł / t . Czy warto czekać na wyższe ceny ?",
-      "url": "https://www.topagrar.pl/articles/aktualnosci/kukurydza-mokra-po-650-zl-t-czy-warto-czekac-na-wyzsze-ceny-podcast-czekal-a-na-urbana-odc-78-2692907",
-      "domain": "topagrar.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-10-16T14:00:00Z",
-      "firstSeenAt": "2026-10-16T14:00:00Z",
+      "id": "2abea42921175c279772",
+      "title": "Brace for a blowtorch winter : Super El Niño threatens Canadian gas producers and provincial coffers",
+      "url": "https://calgaryherald.com:443/commodities/energy/oil-gas/blowtorch-winter-wild-weather-forecasts-threaten-canadian-gas-producers-provincial-coffers/wcm/8032aa8a-9ea0-4019-bd71-859b7778e749",
+      "domain": "calgaryherald.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-16T16:00:00Z",
+      "firstSeenAt": "2026-10-16T16:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "194eaf7164ef987503e5",
+      "title": "Kurz vor Importverbot : EU kauft 60 Prozent mehr LNG aus Russland",
+      "url": "https://www.berliner-zeitung.de:443/article/eu-will-russisches-gas-verbannen-doch-die-lng-importe-steigen-um-60-prozent-10502528",
+      "domain": "berliner-zeitung.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-10-16T14:45:00Z",
+      "firstSeenAt": "2026-10-16T14:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -138,12 +264,10 @@
       "seenAt": "2026-10-16T14:00:00Z",
       "firstSeenAt": "2026-10-16T14:00:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -153,32 +277,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "a567926fd9f465faea99",
-      "title": "10 - 16 - 26 KUAC MORNING NEWS",
-      "url": "https://fm.kuac.org/KUAC%20Newscasts/2026-10-16/10-15-26-kuac-morning-news",
-      "domain": "fm.kuac.org",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-16T14:00:00Z",
-      "firstSeenAt": "2026-10-16T14:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -207,203 +306,36 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "782ae9d589155573cb11",
-      "title": "Giá vàng hôm nay 16 / 10 chốt phiên : Vàng SJC vàng 9999 vừa tăng vừa giảm khó lường , giá cả khó đoán !",
-      "url": "https://www.techz.vn/216-1026-1-gia-vang-hom-nay-16-10-chot-phien-vang-sjc-vang-9999-vua-tang-vua-giam-kho-luong-gia-ca-kho-doan-ylt713655.html",
-      "domain": "techz.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-16T13:30:00Z",
-      "firstSeenAt": "2026-10-16T13:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "88e1ca3c2aa26fa39242",
-      "title": "Как выбрать идеальную серебряную цепочку : гид по плетениям , длине и трендам",
-      "url": "https://www.facenews.ua/press/2026/543151/",
-      "domain": "facenews.ua",
+      "id": "70e13143e5e25d290722",
+      "title": "Евросоюз в сентябре увеличил импорт российского СПГ на 60 %",
+      "url": "https://www.korabel.ru/news/comments/evrosoyuz_v_sentyabre_uvelichil_import_rossiyskogo_spg_na_60.html",
+      "domain": "korabel.ru",
       "language": "Russian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-10-16T13:30:00Z",
-      "firstSeenAt": "2026-10-16T13:30:00Z",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-16T13:15:00Z",
+      "firstSeenAt": "2026-10-16T13:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f1855c45bd70245b2f61",
-      "title": "Bảng giá vàng hôm nay 16 / 10 : Vàng SJC bất ngờ đảo chiều phi nước đại , nhưng vẫn còn nguy cơ giảm ?",
-      "url": "https://www.techz.vn/216-1026-1-bang-gia-vang-hom-nay-16-10-vang-sjc-bat-ngo-dao-chieu-phi-nuoc-dai-nhung-van-con-nguy-co-giam-ylt713653.html",
-      "domain": "techz.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-16T13:30:00Z",
-      "firstSeenAt": "2026-10-16T13:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "48d849029f6accbfb2d2",
-      "title": "端牢中国饭碗 底气从何而来 创新与制度共筑稳粮根基 _ 新闻频道 _ 中华网",
-      "url": "https://news.china.com/socialgd/10000169/20261016/49798983.html",
-      "domain": "news.china.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-16T13:30:00Z",
-      "firstSeenAt": "2026-10-16T13:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6fcd0de14d87438db8d3",
-      "title": "PLINSKI ŠOK TRESE EVROPU : Cijene se više nego udvostručile , a stručnjaci upozoravaju na novi problem !",
-      "url": "https://www.slobodna-bosna.ba/vijest/510611/plinski_sok_trese_evropu_cijene_se_vise_nego_udvostruchile_a_struchnjaci_upozoravaju_na_novi_problem.html",
-      "domain": "slobodna-bosna.ba",
-      "language": "Croatian",
-      "sourceCountry": "Bosnia-Herzegovina",
-      "seenAt": "2026-10-16T13:30:00Z",
-      "firstSeenAt": "2026-10-16T13:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c6bca919b8e041d3d813",
-      "title": "Vụ kế toán PNJ tham ô hơn 20 tỷ đồng chơi tài xỉu online : Vì sao chưa bị xử lý về hành vi đánh bạc ?",
-      "url": "https://vtv.vn/vu-ke-toan-pnj-tham-o-hon-20-ty-dong-choi-tai-xiu-online-vi-sao-chua-bi-xu-ly-ve-hanh-vi-danh-bac-10026101610152893.htm",
-      "domain": "vtv.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-16T13:15:00Z",
-      "firstSeenAt": "2026-10-16T13:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5d6c290b7a5e75619b35",
-      "title": "Quartz Closes $1 . 7 Million Unit Financing",
-      "url": "https://www.pr-inside.com/quartz-closes-1-7-million-unit-financing-r5234111.htm",
-      "domain": "pr-inside.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-16T13:15:00Z",
-      "firstSeenAt": "2026-10-16T13:15:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 26,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -419,12 +351,10 @@
       "seenAt": "2026-10-16T13:15:00Z",
       "firstSeenAt": "2026-10-16T13:15:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -434,118 +364,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "70e13143e5e25d290722",
-      "title": "Евросоюз в сентябре увеличил импорт российского СПГ на 60 %",
-      "url": "https://www.korabel.ru/news/comments/evrosoyuz_v_sentyabre_uvelichil_import_rossiyskogo_spg_na_60.html",
-      "domain": "korabel.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-16T13:15:00Z",
-      "firstSeenAt": "2026-10-16T13:15:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "aa2ba4c3ab8f23bb8e66",
-      "title": "We are seen as disposable : Rural residents fight a proposed gas pipeline – Scranton Times - Tribune",
-      "url": "https://www.thetimes-tribune.com/2026/10/16/residents-fight-enbridge-gas-north-carolina-pipeline/",
-      "domain": "thetimes-tribune.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-16T13:15:00Z",
-      "firstSeenAt": "2026-10-16T13:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "138d3b7ad0341af08418",
-      "title": "Tharis on the move as drought drives livestock exodus",
-      "url": "https://tribune.com.pk/story/2635145/tharis-on-the-move-as-drought-drives-livestock-exodus",
-      "domain": "tribune.com.pk",
-      "language": "English",
-      "sourceCountry": "Pakistan",
-      "seenAt": "2026-10-16T04:45:00Z",
-      "firstSeenAt": "2026-10-16T04:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a31373a8c4c0383015d6",
-      "title": "Faraday Copper Closes the Acquisition of the San Manuel Project in ...",
-      "url": "https://www.pr-inside.com/faraday-copper-closes-the-acquisition-of-the-san-manuel-project-in-r5234004.htm",
-      "domain": "pr-inside.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-16T00:30:00Z",
-      "firstSeenAt": "2026-10-16T00:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 24,
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -561,12 +380,10 @@
       "seenAt": "2026-10-16T12:45:00Z",
       "firstSeenAt": "2026-10-16T12:45:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -576,11 +393,11 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
       "id": "c07871b7c2a95dfba35a",
@@ -592,12 +409,10 @@
       "seenAt": "2026-10-16T12:30:00Z",
       "firstSeenAt": "2026-10-16T12:30:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -607,33 +422,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "6d0934f8c5aba72c14cc",
-      "title": "秋粮收购有序展开 中晚稻收购量达1800万吨",
-      "url": "https://finance.sina.com.cn/tech/roll/2026-10-16/doc-inivmprc7630999.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-16T11:45:00Z",
-      "firstSeenAt": "2026-10-16T11:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -662,36 +451,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ec204a9856072601b539",
-      "title": "India , Japan eye joint ventures in Africa critical mineral sector : Report",
-      "url": "https://www.prokerala.com/news/articles/a1825216.html",
-      "domain": "prokerala.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-16T11:30:00Z",
-      "firstSeenAt": "2026-10-16T11:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -707,12 +467,10 @@
       "seenAt": "2026-10-16T11:15:00Z",
       "firstSeenAt": "2026-10-16T11:15:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -722,116 +480,36 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "560cafc3a93b4f893649",
-      "title": "Россия заняла третье место по доле в импорте газа Евросоюзом",
-      "url": "https://profile.ru/news/economy/rossiya-zanyala-trete-mesto-po-dole-v-importe-gaza-evrosojuzom-1913337/",
-      "domain": "profile.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-16T11:15:00Z",
-      "firstSeenAt": "2026-10-16T11:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "a6d132e90f9d9ac1c143",
-      "title": "Giá vàng bật tăng sau vài ngày bất động",
-      "url": "https://thanhnien.vn/gia-vang-bat-tang-sau-vai-ngay-bat-dong-185261016164258972.htm",
-      "domain": "thanhnien.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-16T11:00:00Z",
-      "firstSeenAt": "2026-10-16T11:00:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a739155b76b2f4a3db88",
-      "title": "India , Japan eye joint ventures in Africa critical mineral sector : Report",
-      "url": "https://ianslive.in/india-japan-eye-joint-ventures-in-africas-critical-mineral-sector--20261016143303",
-      "domain": "ianslive.in",
+      "id": "355ba9266794bd797320",
+      "title": "China Builds Gas Buffer for Winter",
+      "url": "https://www.rigzone.com/news/wire/china_builds_gas_buffer_for_winter-16-oct-2026-184861-article/",
+      "domain": "rigzone.com",
       "language": "English",
-      "sourceCountry": "India",
+      "sourceCountry": "United States",
       "seenAt": "2026-10-16T11:00:00Z",
       "firstSeenAt": "2026-10-16T11:00:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "369da67b8ad1c4e88970",
-      "title": "МСЗ снизил прогноз экспорта пшеницы из России в 2026 / 27 сельхозгоду до 39 , 4 млн т",
-      "url": "https://www.interfax.ru/business/1122958",
-      "domain": "interfax.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-16T11:00:00Z",
-      "firstSeenAt": "2026-10-16T11:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -847,12 +525,10 @@
       "seenAt": "2026-10-16T11:00:00Z",
       "firstSeenAt": "2026-10-16T11:00:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -862,42 +538,11 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "355ba9266794bd797320",
-      "title": "China Builds Gas Buffer for Winter",
-      "url": "https://www.rigzone.com/news/wire/china_builds_gas_buffer_for_winter-16-oct-2026-184861-article/",
-      "domain": "rigzone.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-16T11:00:00Z",
-      "firstSeenAt": "2026-10-16T11:00:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
       "id": "88fe7d3434ea42cbb6b2",
@@ -909,12 +554,10 @@
       "seenAt": "2026-10-16T11:00:00Z",
       "firstSeenAt": "2026-10-16T11:00:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -924,57 +567,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "7cc843a01e455dbb09b4",
-      "title": "Россия поднялась на третье место среди основных поставщиков газа в ЕС",
-      "url": "https://1prime.ru/20261016/rossija-874334371.html",
-      "domain": "1prime.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-16T11:00:00Z",
-      "firstSeenAt": "2026-10-16T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d9f4e82b1ccd3ad4b0ae",
-      "title": "The 2026 gas shock delays the LNG glut , but export routes will decide how long it lasts",
-      "url": "https://www.offshore-technology.com/analysis/gas-shock-delays-lng-glut-export-routes/",
-      "domain": "offshore-technology.com",
-      "language": "English",
-      "sourceCountry": "United Kingdom",
-      "seenAt": "2026-10-16T11:00:00Z",
-      "firstSeenAt": "2026-10-16T11:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1003,155 +596,11 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
-    },
-    {
-      "id": "bdc29908086315bc78bb",
-      "title": "Giá vàng hôm nay chiều 16 / 10 : Vàng SJC quay đầu tăng mạnh 600 . 000 đồng , OPPO Find X9 Ultra có rẻ ?",
-      "url": "https://www.techz.vn/225-1026-1-gia-vang-hom-nay-chieu-16-10-vang-sjc-quay-dau-tang-manh-600000-dong-oppo-find-x9-ultra-co-re-ylt713651.html",
-      "domain": "techz.vn",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-16T10:45:00Z",
-      "firstSeenAt": "2026-10-16T10:45:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c2455f11f1f2651ead9f",
-      "title": "Yerin 180 metre altında eşi benzeri görülmemiş altın tanecikleri bulundu",
-      "url": "https://www.sozcu.com.tr/yerin-180-metre-altinda-esi-benzeri-gorulmemis-altin-tanecikleri-bulundu-p369803",
-      "domain": "sozcu.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-16T10:30:00Z",
-      "firstSeenAt": "2026-10-16T10:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "991947184b29bb20b340",
-      "title": "Giá vàng chiều 16 / 10 : Vàng SJC đảo chiều đi lên",
-      "url": "https://baomoi.com/gia-vang-chieu-16-10-vang-sjc-dao-chieu-di-len-c56284743.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-16T10:30:00Z",
-      "firstSeenAt": "2026-10-16T10:30:00Z",
-      "topicIds": [
-        "strategic-materials"
-      ],
-      "topics": [
-        "Strategic materials"
-      ],
-      "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e4d0b2b3f167e1dccb6f",
-      "title": "Илия Проданов : Кораби вече отказаха да дойдат до нашите пристанища за износ на зърно , а имаме за изнасяне 5 млн . тона пшеница",
-      "url": "https://www.cross.bg/bulgariya-pshenitza-miliona-1808292.html",
-      "domain": "cross.bg",
-      "language": "Bulgarian",
-      "sourceCountry": "Bulgaria",
-      "seenAt": "2026-10-16T10:30:00Z",
-      "firstSeenAt": "2026-10-16T10:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f1f97e96cd3393258725",
-      "title": "Венгрия вернула второе место по импорту российского газа в Евросоюзе :: Новости дня / ВЗГЛЯД",
-      "url": "https://vz.ru/news/2026/10/16/1463775.html",
-      "domain": "vz.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-16T10:30:00Z",
-      "firstSeenAt": "2026-10-16T10:30:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
     },
     {
       "id": "f63cd7e90463df33a6de",
@@ -1163,12 +612,10 @@
       "seenAt": "2026-10-16T10:30:00Z",
       "firstSeenAt": "2026-10-16T10:30:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -1178,32 +625,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "b0e6d40b9bcf1118743a",
-      "title": "Baku - Tbilisi - Erzurum pipeline transports nearly 17 bcm in nine months",
-      "url": "https://www.trend.az/business/energy/4235605.html",
-      "domain": "trend.az",
-      "language": "English",
-      "sourceCountry": "Azerbaijan",
-      "seenAt": "2026-10-16T10:30:00Z",
-      "firstSeenAt": "2026-10-16T10:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1232,61 +654,94 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "29a1e9829fd650301511",
-      "title": "Alaska Graphite Creek could break US reliance on China graphite",
-      "url": "https://www.foxnews.com/opinion/america-depends-too-much-china-essential-minerals-need-dig-future",
-      "domain": "foxnews.com",
-      "language": "English",
-      "sourceCountry": "United States",
+      "id": "f1f97e96cd3393258725",
+      "title": "Венгрия вернула второе место по импорту российского газа в Евросоюзе :: Новости дня / ВЗГЛЯД",
+      "url": "https://vz.ru/news/2026/10/16/1463775.html",
+      "domain": "vz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-16T10:30:00Z",
+      "firstSeenAt": "2026-10-16T10:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0e70079db84e3014ebf6",
+      "title": "Франция в сентябре вдвое увеличила импорт российского СПГ",
+      "url": "https://ria.ru/20261016/frantsija-2124908272.html",
+      "domain": "ria.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
       "seenAt": "2026-10-16T10:15:00Z",
       "firstSeenAt": "2026-10-16T10:15:00Z",
       "topicIds": [
-        "strategic-materials"
+        "energy-security"
       ],
       "topics": [
-        "Strategic materials"
+        "Energy & security"
       ],
       "assets": [
-        "copper",
-        "gold",
-        "lithium",
-        "rare-earths",
-        "silver",
-        "uranium"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "c37324abd4132bd9fad6",
-      "title": "Поставки российского газа в ЕС в августе выросли на 32 , 5 %",
-      "url": "https://1prime.ru/20261016/postavki-874331084.html",
+      "id": "96d8a03b3a34ba1622e4",
+      "title": "ЕС увеличил импорт российского СПГ на 60 %, сообщает CREA",
+      "url": "https://1prime.ru/20261016/crea-874329984.html",
       "domain": "1prime.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
       "seenAt": "2026-10-16T10:15:00Z",
       "firstSeenAt": "2026-10-16T10:15:00Z",
       "topicIds": [
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
+        "brent",
+        "defence",
         "gas-uk",
-        "gas-us"
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1302,12 +757,10 @@
       "seenAt": "2026-10-16T10:15:00Z",
       "firstSeenAt": "2026-10-16T10:15:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -1317,59 +770,26 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
-      "id": "0e70079db84e3014ebf6",
-      "title": "Франция в сентябре вдвое увеличила импорт российского СПГ",
-      "url": "https://ria.ru/20261016/frantsija-2124908272.html",
-      "domain": "ria.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-16T10:15:00Z",
-      "firstSeenAt": "2026-10-16T10:15:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "96d8a03b3a34ba1622e4",
-      "title": "ЕС увеличил импорт российского СПГ на 60 %, сообщает CREA",
-      "url": "https://1prime.ru/20261016/crea-874329984.html",
+      "id": "c37324abd4132bd9fad6",
+      "title": "Поставки российского газа в ЕС в августе выросли на 32 , 5 %",
+      "url": "https://1prime.ru/20261016/postavki-874331084.html",
       "domain": "1prime.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
       "seenAt": "2026-10-16T10:15:00Z",
       "firstSeenAt": "2026-10-16T10:15:00Z",
       "topicIds": [
-        "energy-security",
-        "gas-markets"
+        "energy-security"
       ],
       "topics": [
-        "Energy & security",
-        "Gas markets"
+        "Energy & security"
       ],
       "assets": [
         "brent",
@@ -1379,33 +799,646 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
+      "duplicateCount": 1
     },
     {
-      "id": "c5550a683b6f1569983e",
-      "title": "端牢中国饭碗 共护大国粮仓 _ 广州日报大洋网",
-      "url": "https://news.dayoo.com/china/202610/16/139997_55013528.htm",
-      "domain": "news.dayoo.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-16T10:00:00Z",
-      "firstSeenAt": "2026-10-16T10:00:00Z",
+      "id": "201e553106730699f270",
+      "title": "Nafta v 41 . týždni zlacnela , ceny benzínov zostali takmer nezmenené",
+      "url": "https://www.teraz.sk/ekonomika/nafta-v-41-tyzdni-zlacnela-ceny-benz/1000219-clanok.html",
+      "domain": "teraz.sk",
+      "language": "Slovak",
+      "sourceCountry": "Slovak Republic",
+      "seenAt": "2026-10-16T08:15:00Z",
+      "firstSeenAt": "2026-10-16T08:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b75395e2832d82c05194",
+      "title": "Ρωσικό LNG : Η ενεργειακή κρίση πιέζει το σχέδιο της ΕΕ",
+      "url": "https://www.philenews.com/oikonomia/capital/forbes/article/1782840/rosiko-lng-i-energiaki-krisi-dokimazi-to-schedio-apexartisis-tis-ee-enopsi-chimona/",
+      "domain": "philenews.com",
+      "language": "Greek",
+      "sourceCountry": "Cyprus",
+      "seenAt": "2026-10-16T08:00:00Z",
+      "firstSeenAt": "2026-10-16T08:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9563763ae29b52d713ad",
+      "title": "Financial Analysis : Clean Energy Fuels ( NASDAQ : CLNE ) vs . Venture Global ( NYSE : VG )",
+      "url": "https://www.dailypolitical.com/2026/10/16/financial-analysis-clean-energy-fuels-nasdaqclne-vs-venture-global-nysevg.html",
+      "domain": "dailypolitical.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-16T08:00:00Z",
+      "firstSeenAt": "2026-10-16T08:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "56eafeb8bb7122bc31dc",
+      "title": "Πάνω από τα 105 δολάρια το Brent και τα 85 ευρώ το φυσικό αέριο",
+      "url": "https://www.topontiki.gr/2026/10/16/pano-apo-ta-105-dolaria-to-brent-ke-ta-85-evro-to-fisiko-aerio/",
+      "domain": "topontiki.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-10-16T06:15:00Z",
+      "firstSeenAt": "2026-10-16T06:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e96110306f0a4aba2695",
+      "title": "Πάνω από τα 105 δολάρια το Brent και τα 85 ευρώ το φυσικό αέριο - Ανησυχία για τις τιμές στην Ευρώπη ενόψει χειμώνα",
+      "url": "https://www.newsit.gr/oikonomia/agores/pano-apo-ta-105-dolaria-to-brent-kai-ta-85-eyro-to-fysiko-aerio-anisyxia-gia-tis-times-stin-eyropi-enopsei-xeimona/4799582/",
+      "domain": "newsit.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-10-16T06:00:00Z",
+      "firstSeenAt": "2026-10-16T06:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "721ab4ba7d8a1c5b5398",
+      "title": "Czy zimą zabraknie gazu ? Kryzys energetyczny nam nie grozi , ale będzie drogo",
+      "url": "https://www.pb.pl/czy-zima-zabraknie-gazu-kryzys-energetyczny-nam-nie-grozi-ale-bedzie-drogo-1268937",
+      "domain": "pb.pl",
+      "language": "Polish",
+      "sourceCountry": "Poland",
+      "seenAt": "2026-10-16T05:45:00Z",
+      "firstSeenAt": "2026-10-16T05:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "90ee195f251a84512b57",
+      "title": "Πάνω από τα 105 δολάρια το Brent και τα 85 ευρώ το φυσικό αέριο – Ανησυχία για τις τιμές στην Ευρώπη ενόψει χειμώνα",
+      "url": "https://www.inewsgr.com/93/pano-apo-ta-105-dolaria-to-Brent-kai-ta-85-evro-to-fysiko-aerio--anisychia-gia-tis-times-stin-evropi-enopsei-cheimona.htm",
+      "domain": "inewsgr.com",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-10-16T04:45:00Z",
+      "firstSeenAt": "2026-10-16T04:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9b6ff1ad30321dc59e7c",
+      "title": "藍青年助講團成軍下鄉 備戰核能公投 宣講車下周彰化起跑 | 縣市長議員選戰 | 要聞",
+      "url": "https://udn.com/news/story/124652/9818733",
+      "domain": "udn.com",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-10-16T04:15:00Z",
+      "firstSeenAt": "2026-10-16T04:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "bb4a049765a3e4af271b",
+      "title": "Venture Global Targets 10 GW of Gas - Fired Power for AI Data Centers",
+      "url": "https://oilprice.com/Company-News/Venture-Global-Targets-10-GW-of-Gas-Fired-Power-for-AI-Data-Centers.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-16T02:15:00Z",
+      "firstSeenAt": "2026-10-16T02:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "95dd3ba5901f620448b7",
+      "title": "总台记者观察丨面对能源危机 欧盟峰会凸显成员国分歧",
+      "url": "https://baijiahao.baidu.com/s?id=1879160658141836687",
+      "domain": "baijiahao.baidu.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-10-16T02:00:00Z",
+      "firstSeenAt": "2026-10-16T02:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9a8ed1d9c3d5c1e03c82",
+      "title": "Exxon Oil Boom Could Keep Guyana Gas at Home",
+      "url": "https://oilprice.com/Energy/Natural-Gas/Exxons-Oil-Boom-Could-Keep-Guyanas-Gas-at-Home.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-15T23:00:00Z",
+      "firstSeenAt": "2026-10-15T23:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "764283fd569f698ad833",
+      "title": "Explainer : Taiwan Alaska LNG Bet",
+      "url": "https://www.voanews.com/a/8211677.html",
+      "domain": "voanews.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-15T23:00:00Z",
+      "firstSeenAt": "2026-10-15T23:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "da581332e3d468e1a199",
+      "title": "3 Innu communities want pause on LNG project linking Ontario to Quebec",
+      "url": "https://www.cbc.ca/news/canada/montreal/innu-communities-lng-natural-gas-project-9.7381812",
+      "domain": "cbc.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-15T23:00:00Z",
+      "firstSeenAt": "2026-10-15T23:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "82dd65a3a453d8546031",
+      "title": "Экс - посол Британии в Сирии прокомментировал отказ ЕС от российского газа",
+      "url": "https://ria.ru/20261016/evrosoyuz-2124816358.html",
+      "domain": "ria.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-15T22:15:00Z",
+      "firstSeenAt": "2026-10-15T22:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ff96ad763e48fe63c5d7",
+      "title": "Экс - посол Британии в Сирии прокомментировал отказ ЕС от российского газа",
+      "url": "https://1prime.ru/20261016/eks-posol-874312937.html",
+      "domain": "1prime.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-15T22:15:00Z",
+      "firstSeenAt": "2026-10-15T22:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "870bbf6328ccf55f4426",
+      "title": "Environmental activist raises concerns about proposed Galveston LNG facility – Houston Public Media",
+      "url": "https://www.houstonpublicmedia.org/articles/environment/2026/10/15/564486/environmental-activist-raises-concerns-about-proposed-galveston-lng-facility/",
+      "domain": "houstonpublicmedia.org",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-15T21:45:00Z",
+      "firstSeenAt": "2026-10-15T21:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "39c2c18581f6627ff716",
+      "title": "Africa needs $125bn in refining investment through 2050 , says OPEC",
+      "url": "https://tradearabia.com:443/News/488120/Africa-needs-$125bn-in-refining-investment-through-2050-says-OPEC/IND",
+      "domain": "tradearabia.com",
+      "language": "English",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-10-15T21:30:00Z",
+      "firstSeenAt": "2026-10-15T21:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "9931c01ed78f19ddc709",
+      "title": "Africa needs $125bn in refining investment through 2050 , says OPEC",
+      "url": "https://tradearabia.com:443/News/488120/Africa-needs-%24125bn-in-refining-investment-through-2050-says-OPEC",
+      "domain": "tradearabia.com",
+      "language": "English",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-10-15T21:30:00Z",
+      "firstSeenAt": "2026-10-15T21:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1a9611de8658c5dd9288",
+      "title": "Africa needs $125bn in refining investment through 2050 , says OPEC",
+      "url": "https://tradearabia.com:443/News/488120/Africa-needs-$125bn-in-refining-investment-through-2050-says-OPEC/OGN",
+      "domain": "tradearabia.com",
+      "language": "English",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-10-15T21:30:00Z",
+      "firstSeenAt": "2026-10-15T21:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "115f792c7985fe85c41c",
+      "title": "Africa needs $125bn in refining investment through 2050 , says OPEC",
+      "url": "https://tradearabia.com:443/News/488120/Africa-needs-$125bn-in-refining-investment-through-2050-says-OPEC",
+      "domain": "tradearabia.com",
+      "language": "English",
+      "sourceCountry": "United Arab Emirates",
+      "seenAt": "2026-10-15T21:30:00Z",
+      "firstSeenAt": "2026-10-15T21:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8981cdd224452eb92270",
+      "title": "6 Countries Pledge Faster Cargo Transfers on Eurasia - Europe Land Bridge",
+      "url": "https://oilprice.com/Geopolitics/International/6-Countries-Pledge-Faster-Cargo-Transfers-on-Eurasia-Europe-Land-Bridge.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-15T21:15:00Z",
+      "firstSeenAt": "2026-10-15T21:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "23e3d7c299d05073c79c",
+      "title": "Hürmüzden Bab el - Mendebe : Küresel ekonominin iki kritik boğazı",
+      "url": "https://www.dunya.com/kose-yazisi/hurmuzden-bab-el-mendebe-kuresel-ekonominin-iki-kritik-bogazi/844022",
+      "domain": "dunya.com",
+      "language": "Turkish",
+      "sourceCountry": "Turkey",
+      "seenAt": "2026-10-15T21:15:00Z",
+      "firstSeenAt": "2026-10-15T21:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -1417,11 +1450,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-10-16T14:15:00Z",
-      "lastSuccessfulAt": "2026-10-16T14:49:59Z",
+      "observationDate": "2026-10-16T17:15:00Z",
+      "lastSuccessfulAt": "2026-10-16T18:47:41Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 200 returned records across 4/6 successful queries.",
-      "error": "semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
