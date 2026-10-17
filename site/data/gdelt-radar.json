@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-17T19:22:27Z",
+  "generatedAtUtc": "2026-10-17T22:16:17Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-10-17T19:22:27Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-10-17T22:16:17Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -70,7 +70,33 @@
         "gas-uk",
         "gas-us"
       ],
-      "materialityScore": 40,
+      "materialityScore": 34,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ed665b05bfd8fa981250",
+      "title": "Bank of Canada Signals Higher Inflation Forecast as Oil Prices Surge",
+      "url": "https://econotimes.com/Bank-of-Canada-Signals-Higher-Inflation-Forecast-as-Oil-Prices-Surge-1756048",
+      "domain": "econotimes.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-17T21:00:00Z",
+      "firstSeenAt": "2026-10-17T21:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -101,262 +127,11 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 32,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "40b689d5c7d022ca6180",
-      "title": "A bridge to Africa alla Spezia . Gozzi sul Piano Mattei : Possibile sfruttare lempatia culturale verso lItalia",
-      "url": "https://www.cittadellaspezia.com/2024/11/14/a-bridge-to-africa-alla-spezia-gozzi-sul-piano-mattei-possibile-sfruttare-lempatia-culturale-verso-litalia-571915",
-      "domain": "cittadellaspezia.com",
-      "language": "Italian",
-      "sourceCountry": "Italy",
-      "seenAt": "2026-10-17T19:00:00Z",
-      "firstSeenAt": "2026-10-17T19:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "07e4897b7be6ac52747c",
-      "title": "Targeted News Service",
-      "url": "https://targetednews.com/pr_disp.php?pr_id=9789345",
-      "domain": "targetednews.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-17T19:00:00Z",
-      "firstSeenAt": "2026-10-17T19:00:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
       "materialityScore": 26,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 2
-    },
-    {
-      "id": "c5610df3b0c17aa68a7c",
-      "title": "Венгрия попросила США продлить исключение из санкций на российскую нефть",
-      "url": "https://expert.ru/news/vengriya-poprosila-ssha-prodlit-isklyuchenie-iz-sanktsiy-na-rossiyskuyu-neft",
-      "domain": "expert.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-17T19:00:00Z",
-      "firstSeenAt": "2026-10-17T19:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d5828cd65b156f005977",
-      "title": "Венгрия просит США продлить исключение из санкций за импорт российской нефти что об этом известно - 17 октября 2026",
-      "url": "https://www.fontanka.ru/2026/10/17/76707980/",
-      "domain": "fontanka.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-17T18:00:00Z",
-      "firstSeenAt": "2026-10-17T18:00:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "4db0afadc855d73b8ef8",
-      "title": "Critical Review : New Fortress Energy ( NASDAQ : NFE ) versus OPAL Fuels ( NASDAQ : OPAL )",
-      "url": "https://www.tickerreport.com/banking-finance/13623938/critical-review-new-fortress-energy-nasdaqnfe-versus-opal-fuels-nasdaqopal.html",
-      "domain": "tickerreport.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-17T18:00:00Z",
-      "firstSeenAt": "2026-10-17T18:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "19e425e4df5b02fef910",
-      "title": "UK : LNG tanker attacked off Yemen coast",
-      "url": "https://www.azernews.az/region/265746.html",
-      "domain": "azernews.az",
-      "language": "English",
-      "sourceCountry": "Azerbaijan",
-      "seenAt": "2026-10-17T18:00:00Z",
-      "firstSeenAt": "2026-10-17T18:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3e99703cdd90d4e2a263",
-      "title": "Імпорт російського газу в ЄС - скільки мільярдів заплатила Європа - новини світу",
-      "url": "https://zn.ua/ukr/energetics/jevropa-zbilshila-zakupivli-rosijskoho-hazu-chomu-krajini-sojuzu-prodovzhujut-finansuvati-moskvu.html",
-      "domain": "zn.ua",
-      "language": "Ukrainian",
-      "sourceCountry": "Ukraine",
-      "seenAt": "2026-10-17T18:00:00Z",
-      "firstSeenAt": "2026-10-17T18:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dc054a6779cda10d056e",
-      "title": "Sheinbaum descarta daño ambiental por la planta de gas natural Amigo GNL en Guaymas , Sonora , mientras dos suspensiones judiciales mantienen frenadas las obras",
-      "url": "https://www.elimparcial.com/mexico/2026/10/17/sheinbaum-descarta-dano-ambiental-por-la-planta-de-gas-natural-amigo-gnl-en-guaymas-sonora-mientras-dos-suspensiones-judiciales-mantienen-frenadas-las-obras/",
-      "domain": "elimparcial.com",
-      "language": "Spanish",
-      "sourceCountry": "Mexico",
-      "seenAt": "2026-10-17T17:45:00Z",
-      "firstSeenAt": "2026-10-17T17:45:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "51e46c583cd4dde7ee40",
-      "title": "Катар планирует поставлять Ливану электроэнергию и газ",
-      "url": "https://www.newsru.co.il/finance/17oct2026/lebanon508.html",
-      "domain": "newsru.co.il",
-      "language": "Russian",
-      "sourceCountry": "Israel",
-      "seenAt": "2026-10-17T17:45:00Z",
-      "firstSeenAt": "2026-10-17T17:45:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
     },
     {
       "id": "d2b0c90b1680e13d6381",
@@ -415,6 +190,32 @@
       "duplicateCount": 1
     },
     {
+      "id": "9c2d37d818a0f1780dd9",
+      "title": "US tariff waiver on Russian crude a comforting relief , but trade uncertainties persist : CareEdge Chief Economist Rajani Sinha",
+      "url": "https://economictimes.indiatimes.com/industry/energy/oil-gas/us-tariff-waiver-on-russian-crude-a-comforting-relief-but-trade-uncertainties-persist-careedge-chief-economist-rajani-sinha/articleshow/135011027.cms",
+      "domain": "economictimes.indiatimes.com",
+      "language": "English",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-17T10:00:00Z",
+      "firstSeenAt": "2026-10-17T10:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 24,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "bc3ed740f6b37585dda7",
       "title": "India - US Trade Deal : Market Access for US Fruits , Soybeans , and Wine in Exchange for Tariff Reductions",
       "url": "https://www.khaskhabar.com/news/world-news/news-india-us-trade-deal-market-access-for-us-fruits-soybeans-and-wine-in-exchange-for-tariff-reductions-news-hindi-1-853866-KKN.html",
@@ -438,6 +239,638 @@
         "wti"
       ],
       "materialityScore": 24,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3fa3a4af98b462c9352e",
+      "title": "ЕС увеличи покупките на руски газ преди забраната",
+      "url": "https://fakti.bg/world/1091163-the-times-es-uvelichi-pokupkite-na-ruski-gaz-vapreki-obeshtaniata-da-se-otkaje-ot-nego",
+      "domain": "fakti.bg",
+      "language": "Bulgarian",
+      "sourceCountry": "Bulgaria",
+      "seenAt": "2026-10-17T19:30:00Z",
+      "firstSeenAt": "2026-10-17T19:30:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "d5c6c2ade76a1066152e",
+      "title": "Европа наращивает закупки газа из России",
+      "url": "https://haqqin.az/newsarchive/395855",
+      "domain": "haqqin.az",
+      "language": "Russian",
+      "sourceCountry": "Azerbaijan",
+      "seenAt": "2026-10-17T19:30:00Z",
+      "firstSeenAt": "2026-10-17T19:30:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "0796b84cf4cf0f51a374",
+      "title": "Попри обіцянки відмовитися від газу з рф , ЄС наростив імпорт російського СПГ",
+      "url": "https://www.5.ua/svit/popry-obitsianky-vidmovytysia-vid-hazu-z-rf-yes-narostyv-import-rosiiskoho-sph-384885.html",
+      "domain": "5.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-10-17T19:30:00Z",
+      "firstSeenAt": "2026-10-17T19:30:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "abab815955f878c06e8c",
+      "title": "Öl , Gas und Sprit : Energie - Vergleich zeigt , wie teuer der Winter wird",
+      "url": "http://www.merkur.de/wirtschaft/energiepreise-steigen-drastisch-und-setzen-deutschland-unter-druck-94546130.html",
+      "domain": "merkur.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-10-17T19:30:00Z",
+      "firstSeenAt": "2026-10-17T19:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4c354bb3c82a3025e811",
+      "title": "Holoda Attila : Végleg el kell felejteni , hogy az energia újra olcsó lesz",
+      "url": "https://www.portfolio.hu/gazdasag/20261017/holoda-attila-vegleg-el-kell-felejteni-hogy-az-energia-ujra-olcso-lesz-870404",
+      "domain": "portfolio.hu",
+      "language": "Hungarian",
+      "sourceCountry": "Hungary",
+      "seenAt": "2026-10-17T19:30:00Z",
+      "firstSeenAt": "2026-10-17T19:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "40b689d5c7d022ca6180",
+      "title": "A bridge to Africa alla Spezia . Gozzi sul Piano Mattei : Possibile sfruttare lempatia culturale verso lItalia",
+      "url": "https://www.cittadellaspezia.com/2024/11/14/a-bridge-to-africa-alla-spezia-gozzi-sul-piano-mattei-possibile-sfruttare-lempatia-culturale-verso-litalia-571915",
+      "domain": "cittadellaspezia.com",
+      "language": "Italian",
+      "sourceCountry": "Italy",
+      "seenAt": "2026-10-17T19:00:00Z",
+      "firstSeenAt": "2026-10-17T19:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "07e4897b7be6ac52747c",
+      "title": "Targeted News Service",
+      "url": "https://targetednews.com/pr_disp.php?pr_id=9789345",
+      "domain": "targetednews.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-17T19:00:00Z",
+      "firstSeenAt": "2026-10-17T19:00:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "c5610df3b0c17aa68a7c",
+      "title": "Венгрия попросила США продлить исключение из санкций на российскую нефть",
+      "url": "https://expert.ru/news/vengriya-poprosila-ssha-prodlit-isklyuchenie-iz-sanktsiy-na-rossiyskuyu-neft",
+      "domain": "expert.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-17T19:00:00Z",
+      "firstSeenAt": "2026-10-17T19:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dd0f22b18aab9d003bff",
+      "title": "Bank of Canada Macklem warns global resilience under strain",
+      "url": "https://www.chroniclejournal.com/news/national/bank-of-canadas-macklem-warns-global-resilience-under-strain/article_5889c350-cdc4-52fd-9d28-2253465672d9.html",
+      "domain": "chroniclejournal.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-17T18:30:00Z",
+      "firstSeenAt": "2026-10-17T18:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d5828cd65b156f005977",
+      "title": "Венгрия просит США продлить исключение из санкций за импорт российской нефти что об этом известно - 17 октября 2026",
+      "url": "https://www.fontanka.ru/2026/10/17/76707980/",
+      "domain": "fontanka.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-17T18:00:00Z",
+      "firstSeenAt": "2026-10-17T18:00:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "4db0afadc855d73b8ef8",
+      "title": "Critical Review : New Fortress Energy ( NASDAQ : NFE ) versus OPAL Fuels ( NASDAQ : OPAL )",
+      "url": "https://www.tickerreport.com/banking-finance/13623938/critical-review-new-fortress-energy-nasdaqnfe-versus-opal-fuels-nasdaqopal.html",
+      "domain": "tickerreport.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-17T18:00:00Z",
+      "firstSeenAt": "2026-10-17T18:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "19e425e4df5b02fef910",
+      "title": "UK : LNG tanker attacked off Yemen coast",
+      "url": "https://www.azernews.az/region/265746.html",
+      "domain": "azernews.az",
+      "language": "English",
+      "sourceCountry": "Azerbaijan",
+      "seenAt": "2026-10-17T18:00:00Z",
+      "firstSeenAt": "2026-10-17T18:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c0ab2d6af9e69138ab42",
+      "title": "Bank of Canada warns energy costs threaten inflation targets",
+      "url": "https://www.ckom.com/2026/10/17/bank-of-canadas-macklem-warns-global-resilience-under-strain-2/",
+      "domain": "ckom.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-17T18:00:00Z",
+      "firstSeenAt": "2026-10-17T18:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3e99703cdd90d4e2a263",
+      "title": "Імпорт російського газу в ЄС - скільки мільярдів заплатила Європа - новини світу",
+      "url": "https://zn.ua/ukr/energetics/jevropa-zbilshila-zakupivli-rosijskoho-hazu-chomu-krajini-sojuzu-prodovzhujut-finansuvati-moskvu.html",
+      "domain": "zn.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-10-17T18:00:00Z",
+      "firstSeenAt": "2026-10-17T18:00:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "dc054a6779cda10d056e",
+      "title": "Sheinbaum descarta daño ambiental por la planta de gas natural Amigo GNL en Guaymas , Sonora , mientras dos suspensiones judiciales mantienen frenadas las obras",
+      "url": "https://www.elimparcial.com/mexico/2026/10/17/sheinbaum-descarta-dano-ambiental-por-la-planta-de-gas-natural-amigo-gnl-en-guaymas-sonora-mientras-dos-suspensiones-judiciales-mantienen-frenadas-las-obras/",
+      "domain": "elimparcial.com",
+      "language": "Spanish",
+      "sourceCountry": "Mexico",
+      "seenAt": "2026-10-17T17:45:00Z",
+      "firstSeenAt": "2026-10-17T17:45:00Z",
+      "topicIds": [
+        "energy-security",
+        "gas-markets"
+      ],
+      "topics": [
+        "Energy & security",
+        "Gas markets"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
+    },
+    {
+      "id": "51e46c583cd4dde7ee40",
+      "title": "Катар планирует поставлять Ливану электроэнергию и газ",
+      "url": "https://www.newsru.co.il/finance/17oct2026/lebanon508.html",
+      "domain": "newsru.co.il",
+      "language": "Russian",
+      "sourceCountry": "Israel",
+      "seenAt": "2026-10-17T17:45:00Z",
+      "firstSeenAt": "2026-10-17T17:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4578f603894b3aa14cb7",
+      "title": "Imitar a Milei perjudicaría a Brasil",
+      "url": "https://vanguardia.com.mx/opinion/imitar-a-milei-perjudicaria-a-brasil-CE24200112",
+      "domain": "vanguardia.com.mx",
+      "language": "Spanish",
+      "sourceCountry": "Mexico",
+      "seenAt": "2026-10-17T17:45:00Z",
+      "firstSeenAt": "2026-10-17T17:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "42ca1100ad6e1d67a3f3",
+      "title": "Interest on the National Debt Just Hit a Record $1 . 36 Trillion",
+      "url": "https://247wallst.com/investing/2026/10/17/interest-on-the-national-debt-just-hit-a-record-1-36-trillion/",
+      "domain": "247wallst.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-17T17:45:00Z",
+      "firstSeenAt": "2026-10-17T17:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d0ebb86e258af29d1a16",
+      "title": "Tiff Macklem met en garde contre une résilience mondiale « mise à rude épreuve »",
+      "url": "https://www.ledevoir.com/economie/1017683/tiff-macklem-met-garde-contre-resilience-mondiale-mise-rude-epreuve",
+      "domain": "ledevoir.com",
+      "language": "French",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-17T17:30:00Z",
+      "firstSeenAt": "2026-10-17T17:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7acdb01b78672100f613",
+      "title": "Bank of Canada warns energy costs threaten inflation targets",
+      "url": "https://www.cjme.com/2026/10/17/bank-of-canadas-macklem-warns-global-resilience-under-strain/",
+      "domain": "cjme.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-17T17:00:00Z",
+      "firstSeenAt": "2026-10-17T17:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "3a787b59146eefee90fb",
+      "title": "Bank of Canada Macklem warns global resilience under strain",
+      "url": "https://www.kelownadailycourier.ca/news/national_news/article_0744ace5-81d4-5dc8-89ca-24fd7ddca73d.html",
+      "domain": "kelownadailycourier.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-17T16:45:00Z",
+      "firstSeenAt": "2026-10-17T16:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "196f6a53e19a7a0b02c9",
+      "title": "Эстонская оппозиция потребует отставки правительства",
+      "url": "https://lenta.ru/news/2026/10/17/estonskaya-oppozitsiya-potrebuet-otstavki-pravitelstva/",
+      "domain": "lenta.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-17T16:30:00Z",
+      "firstSeenAt": "2026-10-17T16:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "04c72b3a07afae566cff",
+      "title": "川普為何和拜登一樣也栽在通膨 ？ 因為未記取4個教訓 | 美國新聞 | 全球",
+      "url": "https://udn.com/news/story/6813/9821476",
+      "domain": "udn.com",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-10-17T16:30:00Z",
+      "firstSeenAt": "2026-10-17T16:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -468,7 +901,7 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -499,11 +932,167 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 2
+    },
+    {
+      "id": "9a52ed06511f51b654e1",
+      "title": "Bank of Canada Macklem warns global resilience under strain",
+      "url": "https://www.stcatharinesstandard.ca/business/bank-of-canada-s-macklem-warns-global-resilience-under-strain/article_b075880b-5d52-5f5f-9b6e-05c0c6afebd8.html",
+      "domain": "stcatharinesstandard.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-17T15:30:00Z",
+      "firstSeenAt": "2026-10-17T15:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a7bf97f7e357fed782e9",
+      "title": "كريستين لاجارد تؤكد على أهمية التعاون الدولي لمواجهة التحديات الاقتصادية العالمية",
+      "url": "https://www.dostor.org/5742345",
+      "domain": "dostor.org",
+      "language": "Arabic",
+      "sourceCountry": "Egypt",
+      "seenAt": "2026-10-17T15:30:00Z",
+      "firstSeenAt": "2026-10-17T15:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ebd77addf8d8b2b29aa8",
+      "title": "Bank of Canada Macklem warns global resilience under strain",
+      "url": "https://www.niagarafallsreview.ca/business/bank-of-canada-s-macklem-warns-global-resilience-under-strain/article_a95edd84-b1e3-5f45-80ca-9b41446ec864.html",
+      "domain": "niagarafallsreview.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-17T15:15:00Z",
+      "firstSeenAt": "2026-10-17T15:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "116acaefa7101491a113",
+      "title": "Bank of Canada Macklem expects higher inflation outlook as oil prices remain elevated",
+      "url": "https://www.theglobeandmail.com/business/article-bank-of-canada-interest-rate-macklem-inflation-oil-prices-imf/",
+      "domain": "theglobeandmail.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-17T15:15:00Z",
+      "firstSeenAt": "2026-10-17T15:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "70179913eae0a3eafd06",
+      "title": "França pateix pel deute públic",
+      "url": "https://www.ara.cat/economia/macroeconomia/franca-pateix-pel-deute-public_1_5880868.html",
+      "domain": "ara.cat",
+      "language": "Catalan",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-10-17T15:00:00Z",
+      "firstSeenAt": "2026-10-17T15:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "30afd651ce464de45b3c",
+      "title": "看懂今年的诺奖经济学奖 才能看懂政策的关键",
+      "url": "https://www.wenxuecity.com/news/2026/10/17/126807339.html",
+      "domain": "wenxuecity.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-10-17T15:00:00Z",
+      "firstSeenAt": "2026-10-17T15:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
     },
     {
       "id": "3b3cdd42e3ac7e4e7438",
@@ -530,11 +1119,37 @@
         "uranium",
         "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 2
+    },
+    {
+      "id": "a101796fe02a2e4a8536",
+      "title": "President Donald Trump Claims Gasoline Prices Will Drop Like a Rock When the Iran War Ends , but He Completely Missed the Bigger Picture",
+      "url": "https://www.fool.com/investing/2026/10/17/donald-trump-claims-gas-prices-drop-like-a-rock-when-iran-war-ends-completely-miss-bigger-picture/",
+      "domain": "fool.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-17T14:45:00Z",
+      "firstSeenAt": "2026-10-17T14:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
     },
     {
       "id": "ccb4aec47a3f46129fb3",
@@ -555,7 +1170,59 @@
         "gas-uk",
         "gas-us"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f7ce1df88e5c82f62650",
+      "title": "拉加德 : 債券拋售拖累經濟增長並將抑制通脹",
+      "url": "https://finance.now.com/news/post.php?id=990279",
+      "domain": "finance.now.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-10-17T13:45:00Z",
+      "firstSeenAt": "2026-10-17T13:45:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e378d85ebb7c7c4f7a49",
+      "title": "ECB Lagarde says bond selloff will slow inflation",
+      "url": "https://www.cnbc.com/2026/10/17/ecbs-lagarde-says-bond-selloff-will-slow-inflation.html",
+      "domain": "cnbc.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-17T13:00:00Z",
+      "firstSeenAt": "2026-10-17T13:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -700,709 +1367,6 @@
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
-    },
-    {
-      "id": "6a3a61d864cd803f3139",
-      "title": "Trump , Rus Petrol Gelirlerini Hedef Alan Yaptırım ve Gümrük Vergilerini Askıya Aldı",
-      "url": "https://sana.sy/tr/economy/2329015/",
-      "domain": "sana.sy",
-      "language": "Turkish",
-      "sourceCountry": "Syria",
-      "seenAt": "2026-10-17T12:15:00Z",
-      "firstSeenAt": "2026-10-17T12:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8a2250b7f0c2b991a383",
-      "title": "Gabarda petrol keşiflerine bir yenisi eklenebilir",
-      "url": "https://mansethaber.com/enerji/gabardan-yeni-petrol-haberi-icin-geri-sayim",
-      "domain": "mansethaber.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T12:00:00Z",
-      "firstSeenAt": "2026-10-17T12:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a8553ad5ec7272e19fde",
-      "title": "Bakan Bayraktar : Gabardan yakın zamanda yeni bir müjde verebiliriz",
-      "url": "https://www.bursahakimiyet.com.tr/ekonomi/bakan-bayraktar-gabar-dan-yakin-zamanda-yeni-bir-mujde-verebiliriz-1731635",
-      "domain": "bursahakimiyet.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T11:30:00Z",
-      "firstSeenAt": "2026-10-17T11:30:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "9ace994bb4b2324b8661",
-      "title": "Bakan Bayraktar : Hedefimiz günlük petrol üretimini 1 milyon varile çıkarmak",
-      "url": "https://www.konhaber.com/guncel/bakan_bayraktar_hedefimiz_gunluk_petrol_uretimini_1_milyon_varile_cikarmak-2011533h",
-      "domain": "konhaber.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T11:30:00Z",
-      "firstSeenAt": "2026-10-17T11:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "55b4b3b2a2aafb2d3b30",
-      "title": "Gabardan yakın zamanda yeni bir keşif müjdesi gelebilir !",
-      "url": "https://www.f5haber.com/ekonomi/gabardan-yakin-zamanda-yeni-bir-kesif-mujdesi-gelebilir-6989488",
-      "domain": "f5haber.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T11:15:00Z",
-      "firstSeenAt": "2026-10-17T11:15:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "77ef2c3f2d0f881fda48",
-      "title": "Ο Αλέξανδρος Εξάρχου κρούει καμπανάκι για την ενεργειακή κρίση τον χειμώνα",
-      "url": "https://www.madata.gr/epikairotita/economy/987783-o-alexandros-exarchoy-kroyei-kampanaki-gia-tin-energeiaki-krisi-ton-cheimona.html",
-      "domain": "madata.gr",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-10-17T11:15:00Z",
-      "firstSeenAt": "2026-10-17T11:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d183023f1848e8bb82bf",
-      "title": "Iran IRGC warns Strait of Hormuz is closed after supertanker catches fire",
-      "url": "https://www.moneycontrol.com/world/iran-s-irgc-warns-strait-of-hormuz-is-closed-after-supertanker-catches-fire-article-14054478.html",
-      "domain": "moneycontrol.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-17T11:15:00Z",
-      "firstSeenAt": "2026-10-17T11:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9643f1ecad2f2e20dd98",
-      "title": "藍營中部造勢 ！ 鄭麗文籲團結 ： 要拚就拚這局 中台灣不能 「 缺角 」",
-      "url": "https://udn.com/vote2026/story/124652/9821149",
-      "domain": "udn.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-10-17T11:15:00Z",
-      "firstSeenAt": "2026-10-17T11:15:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d587539b43cb7404cf96",
-      "title": "PM Wong to visit Qatar , UAE in first trip to Middle East since taking office",
-      "url": "https://www.channelnewsasia.com/singapore/lawrence-wong-qatar-uae-middle-east-visit-6468046",
-      "domain": "channelnewsasia.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-17T11:00:00Z",
-      "firstSeenAt": "2026-10-17T11:00:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "e51f2bf6cdb43ee157a0",
-      "title": "Enerji bağımsızlığı yolunda dev adım ! Osman Gazi görev yerine uğurlandı",
-      "url": "https://www.milliyet.com.tr/ekonomi/enerji-bagimsizligi-yolunda-dev-adim-osman-gazi-gorev-yerine-ugurlandi-7681757",
-      "domain": "milliyet.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T10:30:00Z",
-      "firstSeenAt": "2026-10-17T10:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ea4b73aae558ada61811",
-      "title": "Bakırköyde LNG yüklü tanker devrildi : Bölge trafiğe kapatıldı",
-      "url": "https://anlatilaninotesi.com.tr/20261017/bakirkoyde-lng-yuklu-tanker-devrildi-bolge-trafige-kapatildi-1109625468.html",
-      "domain": "anlatilaninotesi.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-10-17T10:30:00Z",
-      "firstSeenAt": "2026-10-17T10:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c05d88675b736583a513",
-      "title": "Bakırköyde LNG yüklü tanker devrildi : Bölge trafiğe kapatıldı",
-      "url": "https://ogunhaber.com/asayis/bakirkoyde-lng-yuklu-tanker-devrildi-bolge-trafige-kapatildi-3002953h.html",
-      "domain": "ogunhaber.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T10:00:00Z",
-      "firstSeenAt": "2026-10-17T10:00:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "b8d94023bcb17b94946b",
-      "title": "Bakırköyde LNG yüklü tanker devrildi : Bölge trafiğe kapatıldı",
-      "url": "https://www.ogunhaber.com/asayis/bakirkoyde-lng-yuklu-tanker-devrildi-bolge-trafige-kapatildi-3002953h.html",
-      "domain": "ogunhaber.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T10:00:00Z",
-      "firstSeenAt": "2026-10-17T10:00:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "c779069283226b20be46",
-      "title": "12 states push for pipeline to be constructed in N . M . | The Arkansas Democrat - Gazette",
-      "url": "https://www.arkansasonline.com/news/2026/oct/17/12-states-push-for-pipeline-to-be-constructed-in/",
-      "domain": "arkansasonline.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-17T10:00:00Z",
-      "firstSeenAt": "2026-10-17T10:00:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "fb5dd2820b6b2eedb2b1",
-      "title": "Bakan Bayraktar Yakın zamanda yeni bir müjde verebiliriz diyerek duyurdu",
-      "url": "https://www.yenisafak.com/ekonomi/bakan-bayraktar-yakin-zamanda-yeni-bir-mujde-verebiliriz-diyerek-duyurdu-4865066",
-      "domain": "yenisafak.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T10:00:00Z",
-      "firstSeenAt": "2026-10-17T10:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "00c1a39f0724668b509a",
-      "title": "Bakan Bayraktar : Gabardan yakın zamanda yeni bir müjde verebiliriz",
-      "url": "https://ekonomi.haber7.com/ekonomi/haber/3668827-bakan-bayraktar-gabardan-yakin-zamanda-yeni-bir-mujde-verebiliriz",
-      "domain": "ekonomi.haber7.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T09:45:00Z",
-      "firstSeenAt": "2026-10-17T09:45:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "b75fa4a5ba5b5b2c58e0",
-      "title": "Trump Rusya için düğmeye bastı ! Yaptırımları askıya aldı , Putini G20 ye çağırdı",
-      "url": "https://www.turkiyegazetesi.com.tr/dunya/trump-rusya-icin-dugmeye-basti-yaptirimlari-askiya-aldi-putini-g20ye-cagirdi-1823302",
-      "domain": "turkiyegazetesi.com.tr",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T09:30:00Z",
-      "firstSeenAt": "2026-10-17T09:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bb3466e3d64de757ad78",
-      "title": "Bakırköyde devrilen LNG yüklü tankerin sürücüsü yaralandı",
-      "url": "https://www.haber1.com/guncel/bakirkoyde-devrilen-lng-yuklu-tankerin-surucusu-yaralandi/",
-      "domain": "haber1.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-17T08:15:00Z",
-      "firstSeenAt": "2026-10-17T08:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "57527581db0859a4453e",
-      "title": "الجزائر تبحث شراكات جديدة مع شركات الطاقة الأمريكية – الشروق أونلاين",
-      "url": "https://www.echoroukonline.com/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%AA%D8%A8%D8%AD%D8%AB-%D8%B4%D8%B1%D8%A7%D9%83%D8%A7%D8%AA-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D8%B9-%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A7%D9%84%D8%B7",
-      "domain": "echoroukonline.com",
-      "language": "Arabic",
-      "sourceCountry": "Algeria",
-      "seenAt": "2026-10-17T08:00:00Z",
-      "firstSeenAt": "2026-10-17T08:00:00Z",
-      "topicIds": [
-        "energy-security",
-        "gas-markets"
-      ],
-      "topics": [
-        "Energy & security",
-        "Gas markets"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 2
-    },
-    {
-      "id": "7aed1c78cddc13e19a74",
-      "title": "US Treasury Secretary Scott Bessent has called on the World Bank Group to formally end its prohibition on financing upstream oil and gas projects .",
-      "url": "https://www.thehindubusinessline.com/news/world/us-seeks-end-to-world-banks-oil-gas-financing-restrictions-calls-for-energy-policy-overhaul/article71595634.ece",
-      "domain": "thehindubusinessline.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-17T08:00:00Z",
-      "firstSeenAt": "2026-10-17T08:00:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2535f1d206655e86f622",
-      "title": "Αλέξανδρος Εξάρχου για την ενεργειακή κρίση τον χειμώνα : Απαιτούνται περισσότερες παρεμβάσεις από την ΕΕ σε φυσικό αέριο και ηλεκτρική ενέργεια – Τι αναφέρει για τον Κάθετο Διάδρομο",
-      "url": "https://www.inewsgr.com/182/alexandros-exarchou-gia-tin-energeiaki-krisi-ton-cheimona-apaitountai-perissoteres-paremvaseis-apo-tin-ee-se-fysiko-aerio-kai-ilektriki-energeia--ti-anaferei-gia-ton-katheto-diadromo.htm",
-      "domain": "inewsgr.com",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-10-17T07:15:00Z",
-      "firstSeenAt": "2026-10-17T07:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "597dac19a2a29949c442",
-      "title": "« Καμπανάκι » Εξάρχου : Ζητεί περισσότερες παρεμβάσεις από την Ε . Ε . στο φυσικό αέριο και την ηλεκτρική ενέργεια ενόψει του χειμώνα – Τι αναφέρει για τον Κάθετο Διάδρομο",
-      "url": "https://www.inewsgr.com/227/kabanaki-exarchou-zitei-perissoteres-paremvaseis-apo-tin-ee-sto-fysiko-aerio-kai-tin-ilektriki-energeia-enopsei-tou-cheimona--ti-anaferei-gia-ton-katheto-diadromo.htm",
-      "domain": "inewsgr.com",
-      "language": "Greek",
-      "sourceCountry": "Greece",
-      "seenAt": "2026-10-17T07:15:00Z",
-      "firstSeenAt": "2026-10-17T07:15:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "4b3cd6e34afe11493d92",
-      "title": "Russlands Öl - und Gas - Einnahmen rauschen in die Höhe",
-      "url": "https://www.merkur.de/wirtschaft/russlands-wirtschaf-oel-und-gas-einnahmen-rauschen-in-die-hoehe-zr-94545689.html",
-      "domain": "merkur.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-17T05:45:00Z",
-      "firstSeenAt": "2026-10-17T05:45:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "94ab09cf8a1420711186",
-      "title": "Шредер рассказал , кто стал вторым после Киева проигравшим в конфликте с РФ",
-      "url": "https://rg.ru/2026/10/17/shreder-rasskazal-kto-stal-vtorym-posle-kieva-proigravshim-v-konflikte-s-rf.html",
-      "domain": "rg.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-17T05:30:00Z",
-      "firstSeenAt": "2026-10-17T05:30:00Z",
-      "topicIds": [
-        "gas-markets"
-      ],
-      "topics": [
-        "Gas markets"
-      ],
-      "assets": [
-        "gas-uk",
-        "gas-us"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "82198b9f59c1cd9b8f16",
-      "title": "Russlands Öl - und Gas - Einnahmen rauschen in die Höhe",
-      "url": "http://www.come-on.de/wirtschaft/russlands-wirtschaf-oel-und-gas-einnahmen-rauschen-in-die-hoehe-zr-94545689.html",
-      "domain": "come-on.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-17T05:30:00Z",
-      "firstSeenAt": "2026-10-17T05:30:00Z",
-      "topicIds": [
-        "energy-security"
-      ],
-      "topics": [
-        "Energy & security"
-      ],
-      "assets": [
-        "brent",
-        "defence",
-        "gas-uk",
-        "gas-us",
-        "uranium",
-        "wti"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
     }
   ],
   "sourceStatus": [
@@ -1410,11 +1374,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-10-17T19:00:00Z",
-      "lastSuccessfulAt": "2026-10-17T19:22:27Z",
+      "observationDate": "2026-10-17T21:00:00Z",
+      "lastSuccessfulAt": "2026-10-17T22:16:17Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; macro-policy: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
