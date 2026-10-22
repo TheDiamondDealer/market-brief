@@ -1,6 +1,6 @@
 {
-  "generatedAt": "21 October 2026, 10:57 AM AEDT",
-  "generatedAtUtc": "2026-10-20T23:57:29+00:00",
+  "generatedAt": "22 October 2026, 11:02 AM AEDT",
+  "generatedAtUtc": "2026-10-22T00:02:41+00:00",
   "rates": [
     {
       "id": "DGS2",
@@ -10768,7 +10768,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "SO AFRICAN RAND - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "stale-retained",
+      "dataState": "current",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -15577,14 +15577,14 @@
   "sourceStatus": [
     {
       "source": "FRED / Federal Reserve data",
-      "status": "current",
-      "detail": "Latest non-missing observation loaded for each series.",
+      "status": "stale fallback",
+      "detail": "DGS2: No usable observations for DGS2; DGS5: No usable observations for DGS5; DGS10: No usable observations for DGS10; DGS30: No usable observations for DGS30",
       "url": "https://fred.stlouisfed.org/docs/api/fred/"
     },
     {
       "source": "CFTC Commitments of Traders",
       "status": "partial",
-      "detail": "silver: <urlopen error _ssl.c:993: The handshake operation timed out>; south-african-rand: The read operation timed out Retained previously verified rows for: silver, south-african-rand.",
+      "detail": "silver: <urlopen error _ssl.c:993: The handshake operation timed out> Retained previously verified rows for: silver.",
       "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
     }
   ],
