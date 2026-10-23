@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-22T22:18:10Z",
+  "generatedAtUtc": "2026-10-23T01:28:27Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 1,
-    "rawArticleCount": 50,
+    "successfulQueryCount": 3,
+    "rawArticleCount": 150,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-10-22T22:18:10Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-10-23T01:28:27Z",
+    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,50 +52,48 @@
   ],
   "articles": [
     {
-      "id": "d9ae4b0d79f36f9c7f70",
-      "title": "Milei no se hace cargo de la recesión y culpó al shock externo por la caída de la actividad económica",
-      "url": "https://urgente24.com/actualidad/milei-no-se-hace-cargo-la-recesion-y-culpo-al-shock-externo-la-caida-la-actividad-economica-n635262",
-      "domain": "urgente24.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-10-22T22:00:00Z",
-      "firstSeenAt": "2026-10-22T22:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 26,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "db8c50ac397a8edce0ee",
-      "title": "The Federal Reserve at a Time of Uncertainty",
-      "url": "https://www.aei.org/economics/the-federal-reserve-at-a-time-of-uncertainty/",
-      "domain": "aei.org",
+      "id": "0e4b6cc5e5f69ede1891",
+      "title": "MaxLinear sinks even as Q3 results , guidance top estimates ( MXL : NASDAQ )",
+      "url": "https://seekingalpha.com/news/4656037-maxlinear-sinks-even-as-q3-results-guidance-top-estimates",
+      "domain": "seekingalpha.com",
       "language": "English",
       "sourceCountry": "United States",
       "seenAt": "2026-10-22T21:15:00Z",
       "firstSeenAt": "2026-10-22T21:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 28,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "87ea77e1efba6b3ff963",
+      "title": "Президент Франции нашел 10 % нужного зимой газа и дизтоплива у арабов",
+      "url": "https://www.vedomosti.ru/economics/articles/2026/10/23/1239431-prezident-frantsii-nashel-nuzhnogo-gaza",
+      "domain": "vedomosti.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-23T01:00:00Z",
+      "firstSeenAt": "2026-10-23T01:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -104,14 +102,89 @@
       "duplicateCount": 1
     },
     {
-      "id": "8ec791e9e9c66ec44fc5",
-      "title": "Will Tiff Macklem play with economic fire ?",
-      "url": "https://financialpost.com/news/economy/david-rosenberg-tiff-macklem-economic-fire",
-      "domain": "financialpost.com",
+      "id": "11fe1c032317b0fa1c38",
+      "title": "इंदौर में सेमीकंडक्टर समिट का उद्घाटन करेंगे सीएम मोहन यादव , निवेशकों से करेंगे संवाद",
+      "url": "https://www.deshbandhu.co.in/madhyapardesh/cm-mohan-yadav-will-inaugurate-the-semiconductor-summit-in-indore-and-engage-with-investors-327546",
+      "domain": "deshbandhu.co.in",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-23T01:00:00Z",
+      "firstSeenAt": "2026-10-23T01:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "015aaaf6b27f47fefae2",
+      "title": "LNG Canada Doubles Capacity as Asia Looks Beyond the Gulf",
+      "url": "https://oilprice.com/Energy/Natural-Gas/LNG-Canada-Doubles-Capacity-as-Asia-Looks-Beyond-the-Gulf.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-23T00:15:00Z",
+      "firstSeenAt": "2026-10-23T00:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "926dab8bacbfc5643384",
+      "title": "Nvidia CEO Does Not Expect Memory Supply to Outrun Demand by 2029 as Stocks Slide",
+      "url": "https://econotimes.com/Nvidia-CEO-Does-Not-Expect-Memory-Supply-to-Outrun-Demand-by-2029-as-Stocks-Slide-1760726",
+      "domain": "econotimes.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-23T00:00:00Z",
+      "firstSeenAt": "2026-10-23T00:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "df2959f80aa52cb6bbaa",
+      "title": "Will the BoC hike next week ? Nail - biter decision awaits variable mortgage rate holders",
+      "url": "https://www.theglobeandmail.com/investing/personal-finance/article-best-mortgage-rates-fixed-variable-boc-oct-22/",
+      "domain": "theglobeandmail.com",
       "language": "English",
       "sourceCountry": "Canada",
-      "seenAt": "2026-10-22T21:00:00Z",
-      "firstSeenAt": "2026-10-22T21:00:00Z",
+      "seenAt": "2026-10-23T00:00:00Z",
+      "firstSeenAt": "2026-10-23T00:00:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -130,24 +203,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "5139c549f10d94559427",
-      "title": "Merkez Bankası nın faiz indirimi işe yarayacak mı ?",
-      "url": "https://www.dw.com/tr/merkez-bankas%C4%B1n%C4%B1n-faiz-indirimi-i%C5%9Fe-yarayacak-m%C4%B1/a-79736063",
-      "domain": "dw.com",
-      "language": "Turkish",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-22T21:00:00Z",
-      "firstSeenAt": "2026-10-22T21:00:00Z",
+      "id": "e351b28b9d24d9a42ccf",
+      "title": "Поставки СПГ из США в ЕС в августе выросли на 36 %",
+      "url": "https://1prime.ru/20261023/postavki-874539199.html",
+      "domain": "1prime.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-22T23:45:00Z",
+      "firstSeenAt": "2026-10-22T23:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -156,14 +228,14 @@
       "duplicateCount": 1
     },
     {
-      "id": "0fb4c4993df47e5403de",
-      "title": "MinComercio podría firmar este año acuerdo con Estados Unidos para suspender el cobro de aranceles a productos colombianos",
-      "url": "https://www.semana.com/economia/macroeconomia/articulo/mincomercio-podria-firmar-este-ano-acuerdo-con-estados-unidos-para-suspender-el-cobro-de-aranceles-a-productos-colombianos/202638/",
-      "domain": "semana.com",
+      "id": "06280298091a17bb23dd",
+      "title": "Efecto Puerta Doce : se disparó a 6 , 1 % la comisión para llevarse los dólares del país",
+      "url": "http://www.eldestapeweb.com/politica/efecto-puerta-doce-disparo-6-1-comision-llevarse-dolares-pais-2026102219408",
+      "domain": "eldestapeweb.com",
       "language": "Spanish",
-      "sourceCountry": "Colombia",
-      "seenAt": "2026-10-21T23:15:00Z",
-      "firstSeenAt": "2026-10-21T23:15:00Z",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-10-22T23:45:00Z",
+      "firstSeenAt": "2026-10-22T23:45:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -174,6 +246,56 @@
         "global-equities",
         "rates",
         "us-dollar"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "321625d641f2914d396f",
+      "title": "Energy system stable for winter despite overseas gas reliance , analysis finds",
+      "url": "https://www.lbc.co.uk/article/1bc261c5fade49268b22583e62b26355-5HjdkLG_2/",
+      "domain": "lbc.co.uk",
+      "language": "English",
+      "sourceCountry": "United Kingdom",
+      "seenAt": "2026-10-22T23:30:00Z",
+      "firstSeenAt": "2026-10-22T23:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 26,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b81fac721a0f50219fa2",
+      "title": "Micron DDR6 Doubles DDR5 Bandwidth , LPDDR6 Gains 35 % Power Efficiency",
+      "url": "https://www.eteknix.com/micron-ddr6-doubles-ddr5-bandwidth-lpddr6-gains-35-power-efficiency/",
+      "domain": "eteknix.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-22T23:30:00Z",
+      "firstSeenAt": "2026-10-22T23:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -234,6 +356,410 @@
       "duplicateCount": 1
     },
     {
+      "id": "2c0e50cbb956829e8fa6",
+      "title": "Taiwan first - ever chip workers strike begins at Micron plant",
+      "url": "https://asia.nikkei.com/business/tech/semiconductors/taiwan-s-first-ever-chip-workers-strike-begins-at-micron-plant",
+      "domain": "asia.nikkei.com",
+      "language": "English",
+      "sourceCountry": "Japan",
+      "seenAt": "2026-10-22T03:30:00Z",
+      "firstSeenAt": "2026-10-22T03:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 24,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1747347e2ca2469967ec",
+      "title": "Tech Ausverkauf an der Wall Street : Warum Aktien fallen",
+      "url": "https://deutsche-wirtschafts-nachrichten.de/722929/us-boersenbericht-coreweave-und-sandisk-im-tech-ausverkauf-schwer-getroffen",
+      "domain": "deutsche-wirtschafts-nachrichten.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-10-22T23:15:00Z",
+      "firstSeenAt": "2026-10-22T23:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0ca6b39ac5be5d0b1de2",
+      "title": "QatarEnergy Turns to Cheniere for U . S . LNG as Iran War Disrupts Exports",
+      "url": "https://oilprice.com/Company-News/QatarEnergy-Turns-to-Cheniere-for-US-LNG-as-Iran-War-Disrupts-Exports.html",
+      "domain": "oilprice.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-22T23:00:00Z",
+      "firstSeenAt": "2026-10-22T23:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5045bf421b2109167156",
+      "title": "الدوحة توقّع مذكرة « بدر » الدفاعية مع إسلام آباد وأنقرة وجاكرتا",
+      "url": "https://www.alquds.co.uk/%D8%A7%D9%84%D8%AF%D9%88%D8%AD%D8%A9-%D8%AA%D9%88%D9%82%D9%91%D8%B9-%D9%85%D8%B0%D9%83%D8%B1%D8%A9-%D8%A8%D8%AF%D8%B1-%D8%A7%D9%84%D8%AF%D9%81%D8%A7%D8%B9%D9%8A%D8%A9-%D9%85%D8%B9-%D8%A5/",
+      "domain": "alquds.co.uk",
+      "language": "Arabic",
+      "sourceCountry": "United Kingdom",
+      "seenAt": "2026-10-22T23:00:00Z",
+      "firstSeenAt": "2026-10-22T23:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "68f306086cda0509c313",
+      "title": "Report : Elon Musk Chases Jensen Huang As Tesla Bankrolls $830 Million Of Samsung Substrate Plant To Lock 5 Years Of Supply For Its Humanoid Robots And Self - Driving Cars",
+      "url": "https://wccftech.com/report-elon-musk-chases-jensen-huang-as-tesla-bankrolls-830-million-of-samsungs-substrate-plant-to-lock-5-years-of-supply-for-its-humanoid-robots-and-self-driving-cars/",
+      "domain": "wccftech.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-22T23:00:00Z",
+      "firstSeenAt": "2026-10-22T23:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1f8ba7535c7c484d0968",
+      "title": "뉴욕증시 , AI 수익성 우려에 기술주 급락 … 반도체지수 6 . 7 % ↓",
+      "url": "http://inews24.com/view/2018129",
+      "domain": "inews24.com",
+      "language": "Korean",
+      "sourceCountry": "Unknown",
+      "seenAt": "2026-10-22T22:45:00Z",
+      "firstSeenAt": "2026-10-22T22:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2272537da4195f6ba66a",
+      "title": "Ukraine Expands Satellite Cooperation With Finland as Starlink Doubts Linger",
+      "url": "https://www.kyivpost.com/post/87903",
+      "domain": "kyivpost.com",
+      "language": "English",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-10-22T22:30:00Z",
+      "firstSeenAt": "2026-10-22T22:30:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "abaf2913b2dad4c96e95",
+      "title": "[ 뉴욕증시 ] AI 매도 속 기술주 된서리 … 속슬 20 % 폭락",
+      "url": "https://www.fnnews.com/news/202610230524047876",
+      "domain": "fnnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-10-22T22:00:00Z",
+      "firstSeenAt": "2026-10-22T22:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d9ae4b0d79f36f9c7f70",
+      "title": "Milei no se hace cargo de la recesión y culpó al shock externo por la caída de la actividad económica",
+      "url": "https://urgente24.com/actualidad/milei-no-se-hace-cargo-la-recesion-y-culpo-al-shock-externo-la-caida-la-actividad-economica-n635262",
+      "domain": "urgente24.com",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-10-22T22:00:00Z",
+      "firstSeenAt": "2026-10-22T22:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "cb0121e820d89972f141",
+      "title": "Labour Case of Gas Under Attack",
+      "url": "https://hotair.com/tree-hugging-sister/2026/10/22/labours-case-of-gas-under-attack-n3820211",
+      "domain": "hotair.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-22T21:15:00Z",
+      "firstSeenAt": "2026-10-22T21:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e56a7770ce4b9efa6250",
+      "title": "Europe Braces for a Winter Energy Crisis as Gas Reserves Run Low",
+      "url": "https://hotair.com/headlines/2026/10/22/europe-braces-for-a-winter-energy-crisis-as-gas-reserves-run-low-n3820163",
+      "domain": "hotair.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-22T21:15:00Z",
+      "firstSeenAt": "2026-10-22T21:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "db8c50ac397a8edce0ee",
+      "title": "The Federal Reserve at a Time of Uncertainty",
+      "url": "https://www.aei.org/economics/the-federal-reserve-at-a-time-of-uncertainty/",
+      "domain": "aei.org",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-22T21:15:00Z",
+      "firstSeenAt": "2026-10-22T21:15:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "323e427c68889f717b72",
+      "title": "ASX to fall ; Wall Street slides ; oil hits five - month high",
+      "url": "https://www.afr.com/markets/equity-markets/asx-to-fall-wall-street-slides-oil-hits-five-month-high-20261023-p617ye",
+      "domain": "afr.com",
+      "language": "English",
+      "sourceCountry": "Australia",
+      "seenAt": "2026-10-22T21:00:00Z",
+      "firstSeenAt": "2026-10-22T21:00:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "8ec791e9e9c66ec44fc5",
+      "title": "Will Tiff Macklem play with economic fire ?",
+      "url": "https://financialpost.com/news/economy/david-rosenberg-tiff-macklem-economic-fire",
+      "domain": "financialpost.com",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-22T21:00:00Z",
+      "firstSeenAt": "2026-10-22T21:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5139c549f10d94559427",
+      "title": "Merkez Bankası nın faiz indirimi işe yarayacak mı ?",
+      "url": "https://www.dw.com/tr/merkez-bankas%C4%B1n%C4%B1n-faiz-indirimi-i%C5%9Fe-yarayacak-m%C4%B1/a-79736063",
+      "domain": "dw.com",
+      "language": "Turkish",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-10-22T21:00:00Z",
+      "firstSeenAt": "2026-10-22T21:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "2364b99c8f8f55645de8",
+      "title": "Garrison Venture Richard Brook Featured on CBS New 60 Minutes Examining Global Helium Supply Crisis",
+      "url": "http://www.tennesseedaily.com/news/279392619/garrison-ventures-richard-brook-featured-on-cbs-news-60-minutes-examining-global-helium-supply-crisis",
+      "domain": "tennesseedaily.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-22T19:30:00Z",
+      "firstSeenAt": "2026-10-22T19:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 20,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "ac11599cfcddb732505d",
       "title": "南韓下月升息機率大增 | 全球財經 | 全球",
       "url": "https://udn.com/news/story/6811/9832463",
@@ -253,7 +779,32 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "d37a6a31eead0d7f3035",
+      "title": "Garrison Venture Richard Brook Featured on CBS New 60 Minutes Examining Global Helium Supply Crisis",
+      "url": "http://www.hawaiitelegraph.com/news/279392619/garrison-ventures-richard-brook-featured-on-cbs-news-60-minutes-examining-global-helium-supply-crisis",
+      "domain": "hawaiitelegraph.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-22T17:45:00Z",
+      "firstSeenAt": "2026-10-22T17:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -279,7 +830,132 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "a449a60326a1a02cf544",
+      "title": "В России призвали Европу пересмотреть решение по экспорту СПГ",
+      "url": "https://ura.news/news/1053138294",
+      "domain": "ura.news",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-22T17:15:00Z",
+      "firstSeenAt": "2026-10-22T17:15:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "89214fbc68b7be03fe31",
+      "title": "Глава « Новатэка » Михельсон пообещал найти новые рынки сбыта СПГ вместо Евросоюза",
+      "url": "https://iz.ru/2188836/glava-novateka-mikhelson-poobeshchal-naiti-novye-rynki-sbyta-spg-vmesto-evrosoiuza-izi",
+      "domain": "iz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-22T16:00:00Z",
+      "firstSeenAt": "2026-10-22T16:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "5c959f38312efb97f0ea",
+      "title": "New Economic Impact Study Highlights Woodfibre LNG Benefits for Canada and B . C .",
+      "url": "https://www.elliotlakestandard.ca/press-releases/pr-newswire/new-economic-impact-study-highlights-woodfibre-lngs-benefits-for-canada-and-b-c/",
+      "domain": "elliotlakestandard.ca",
+      "language": "English",
+      "sourceCountry": "Canada",
+      "seenAt": "2026-10-22T16:00:00Z",
+      "firstSeenAt": "2026-10-22T16:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "451af5d66d03c8b773b0",
+      "title": "Vaca Muerta exige más capacidad : la visión de TGN , TGS y Oldelval para acompañar el crecimiento",
+      "url": "https://www.rionegro.com.ar/energia/vaca-muerta-exige-mas-capacidad-la-vision-de-tgn-tgs-y-oldelval-para-acompanar-el-crecimiento-4768274/",
+      "domain": "rionegro.com.ar",
+      "language": "Spanish",
+      "sourceCountry": "Argentina",
+      "seenAt": "2026-10-22T16:00:00Z",
+      "firstSeenAt": "2026-10-22T16:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "1bf1b1e3328ed5b59396",
+      "title": "Issenheim . Une station de gaz naturel pour véhicules en réflexion",
+      "url": "https://www.dna.fr/economie/2026/10/22/une-station-de-gaz-naturel-pour-vehicules-en-reflexion",
+      "domain": "dna.fr",
+      "language": "French",
+      "sourceCountry": "France",
+      "seenAt": "2026-10-22T16:00:00Z",
+      "firstSeenAt": "2026-10-22T16:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -290,6 +966,32 @@
       "title": "油价推升通胀预期叠加流动性挤兑 ， 黄金短期承压 _ 金市直播 _ 黄金网 _ 中金在线",
       "url": "http://gold.cnfol.com/jinshizhibo/20261022/32405881.shtml",
       "domain": "gold.cnfol.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-10-22T16:00:00Z",
+      "firstSeenAt": "2026-10-22T16:00:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "84000fe6bf6becfc3046",
+      "title": "日本20年期国债拍卖认购倍数创历史新高 ， 多期限日债收益率走低",
+      "url": "https://finance.jrj.com.cn/2026/10/22220258826703.shtml",
+      "domain": "finance.jrj.com.cn",
       "language": "Chinese",
       "sourceCountry": "China",
       "seenAt": "2026-10-22T16:00:00Z",
@@ -338,6 +1040,57 @@
       "duplicateCount": 1
     },
     {
+      "id": "8e82ac7bda3bf54608d2",
+      "title": "Депутат Аксаков допустил снижение ключевой ставки на 0 , 25 п . п . на заседании ЦБ",
+      "url": "https://www.pnp.ru/economics/deputat-aksakov-dopustil-snizhenie-klyuchevoy-stavki-cb-na-025-pp.html",
+      "domain": "pnp.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-22T15:30:00Z",
+      "firstSeenAt": "2026-10-22T15:30:00Z",
+      "topicIds": [
+        "macro-policy"
+      ],
+      "topics": [
+        "Macro, trade & policy"
+      ],
+      "assets": [
+        "global-equities",
+        "rates",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "39a2902e4a4624de18d3",
+      "title": "QatarEnergy signs deal to buy 4 million tons of US LNG annually",
+      "url": "https://news.az/news/qatarenergy-signs-deal-to-buy-4-million-tons-of-us-lng-annually",
+      "domain": "news.az",
+      "language": "English",
+      "sourceCountry": "Azerbaijan",
+      "seenAt": "2026-10-22T15:00:00Z",
+      "firstSeenAt": "2026-10-22T15:00:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
       "id": "5a8d08466cdf3628a1b3",
       "title": "Централна банка Турске снизила референтну каматну стопу",
       "url": "https://www.politika.rs/scc/clanak/795904/centralna-banka-turske-snizila-referentnu-kamatnu-stopu",
@@ -356,6 +1109,56 @@
         "global-equities",
         "rates",
         "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "e743bb99eb95cc16a593",
+      "title": "قطر للطاقة توقع اتفاقيتين لشراء 4 ملايين طن سنويا من الغاز المسال الأمريكي",
+      "url": "https://www.aljazeera.net/ebusiness/2026/10/22/%D9%82%D8%B7%D8%B1-%D9%84%D9%84%D8%B7%D8%A7%D9%82%D8%A9-%D8%AA%D9%88%D9%82%D8%B9-%D8%A7%D8%AA%D9%81%D8%A7%D9%82%D9%8A%D8%AA%D9%8A%D9%86-%D9%84%D8%B4%D8%B1%D8%A7%D8%A1-4",
+      "domain": "aljazeera.net",
+      "language": "Arabic",
+      "sourceCountry": "Israel",
+      "seenAt": "2026-10-22T14:45:00Z",
+      "firstSeenAt": "2026-10-22T14:45:00Z",
+      "topicIds": [
+        "gas-markets"
+      ],
+      "topics": [
+        "Gas markets"
+      ],
+      "assets": [
+        "gas-uk",
+        "gas-us"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "17ed5355dd1764af59fd",
+      "title": "Building Out Advanced Packaging Portfolio , JCET Delivers Steady Revenue Growth and Improved Profitability in Q3 YTD 2026",
+      "url": "https://www.manilatimes.net/2026/10/22/tmt-newswire/pr-newswire/building-out-advanced-packaging-portfolio-jcet-delivers-steady-revenue-growth-and-improved-profitability-in-q3-ytd-2026/2452006",
+      "domain": "manilatimes.net",
+      "language": "English",
+      "sourceCountry": "Philippines",
+      "seenAt": "2026-10-22T14:45:00Z",
+      "firstSeenAt": "2026-10-22T14:45:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -390,24 +1193,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "2f386ac69c25ebe89f52",
-      "title": "Turecká centrálna banka znížila hlavnú úrokovú sadzbu",
-      "url": "https://www.teraz.sk/ekonomika/turecka-centralna-banka-znizila-hlav/1001843-clanok.html",
-      "domain": "teraz.sk",
-      "language": "Slovak",
-      "sourceCountry": "Slovak Republic",
+      "id": "adc812a044f8059a756d",
+      "title": "QatarEnergy signs LNG purchase deals with Cheniere for up to 4 mtpa",
+      "url": "https://www.trend.az/world/arab/4238098.html",
+      "domain": "trend.az",
+      "language": "English",
+      "sourceCountry": "Azerbaijan",
       "seenAt": "2026-10-22T14:30:00Z",
       "firstSeenAt": "2026-10-22T14:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -416,24 +1218,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "c1e3a4273263480a0e1b",
-      "title": "A cuánto llegarán el dólar y la inflación a fin de año , según proyecciones de especialistas",
-      "url": "https://www.lanacion.com.ar/economia/a-cuanto-llegarian-la-inflacion-y-el-dolar-a-fin-de-ano-segun-proyecciones-de-especialistas-nid22102026/",
-      "domain": "lanacion.com.ar",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
+      "id": "3b2da03b6bfbdb01146b",
+      "title": "Sullivan cites hard working record during Chamber forum",
+      "url": "https://www.newsminer.com/news/local_news/sullivan-cites-hard-working-record-during-chamber-forum/article_bfaacdce-3746-419a-9aed-fd44c97de41e.html",
+      "domain": "newsminer.com",
+      "language": "English",
+      "sourceCountry": "United States",
       "seenAt": "2026-10-22T14:30:00Z",
       "firstSeenAt": "2026-10-22T14:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "gas-markets"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Gas markets"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "gas-uk",
+        "gas-us"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -442,856 +1243,23 @@
       "duplicateCount": 1
     },
     {
-      "id": "655d5771ffdd0d892b3c",
-      "title": "AI会带来什么 ？ 全球央行直面最大未知变量",
-      "url": "https://finance.sina.com.cn/roll/2026-10-22/doc-iniwchpc5184435.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T14:00:00Z",
-      "firstSeenAt": "2026-10-22T14:00:00Z",
+      "id": "1aa937ad3c57ec3afe98",
+      "title": "Іран готується до затяжної війни на виснаження проти США",
+      "url": "https://ua.korrespondent.net/world/4922477-iran-hotuietsia-do-zatiazhnoi-viiny-na-vysnazhennia-proty-ssha",
+      "domain": "ua.korrespondent.net",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-10-22T14:30:00Z",
+      "firstSeenAt": "2026-10-22T14:30:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9ed60bb531235fce28c5",
-      "title": "Forbes editor urges Fed to cut printing , shrink balance sheet and appreciate dollar to combat import - driven inflation",
-      "url": "https://www.aol.com/articles/forbes-editor-urges-fed-cut-125044000.html",
-      "domain": "aol.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-22T13:45:00Z",
-      "firstSeenAt": "2026-10-22T13:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ad59dfabcec4cbfb0202",
-      "title": "Por qué hoy la economía crece un cuarto que hace un año : las cinco razones de un frenazo mayor al esperado",
-      "url": "https://www.clarin.com/economia/hoy-economia-crece-cuarto-hace-ano-razones-frenazo-mayor-esperado_0_Sekk6blH7n.html",
-      "domain": "clarin.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-10-22T11:15:00Z",
-      "firstSeenAt": "2026-10-22T11:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "09b32c1beea9a691880e",
-      "title": "Dollar Pauses as Five Central Banks Prepare Rate Decisions",
-      "url": "https://econotimes.com/Dollar-Pauses-as-Five-Central-Banks-Prepare-Rate-Decisions-1760116",
-      "domain": "econotimes.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-22T11:15:00Z",
-      "firstSeenAt": "2026-10-22T11:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "a355864bdbebfd0e2290",
-      "title": "野村警告 ： 当前AI信用风险与互联网泡沫 、 雷曼危机前惊人相似 ， 一切都取决于油价",
-      "url": "https://wallstreetcn.com/articles/3784197",
-      "domain": "wallstreetcn.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T10:15:00Z",
-      "firstSeenAt": "2026-10-22T10:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8844a7a74b13737b6463",
-      "title": "Philippine central bank hikes key rate by 50 bps amid inflation woes",
-      "url": "https://bworldonline.com/top-stories/2026/10/22/788621/philippine-central-bank-hikes-key-rate-by-50-bps-amid-inflation-woes/",
-      "domain": "bworldonline.com",
-      "language": "English",
-      "sourceCountry": "Philippines",
-      "seenAt": "2026-10-22T09:15:00Z",
-      "firstSeenAt": "2026-10-22T09:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "727e18d23f78e6b4b087",
-      "title": "اقتصاد ألمانيا يواجه الركود وسط تراجع تنافسيته الصناعية",
-      "url": "https://www.aljazeera.net/ebusiness/2026/10/22/%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A7-%D9%8A%D9%88%D8%A7%D8%AC%D9%87-%D8%A7%D9%84%D8%B1%D9%83%D9%88%D8%AF-%D9%88%D8%B3%D8%B7-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9",
-      "domain": "aljazeera.net",
-      "language": "Arabic",
-      "sourceCountry": "Israel",
-      "seenAt": "2026-10-22T08:15:00Z",
-      "firstSeenAt": "2026-10-22T08:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "459f27690d83a2e15c9f",
-      "title": "Таран : тариф на электроэнергию в Молдавии вырастет до 15 %",
-      "url": "https://1prime.ru/20261022/moldavija-874501957.html",
-      "domain": "1prime.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-22T08:00:00Z",
-      "firstSeenAt": "2026-10-22T08:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d6ae0d49fa1bda4ce839",
-      "title": "韓央行連2升後喘口氣 ！ 通膨房價壓不住 下次恐重啟升息 - 財經",
-      "url": "https://www.chinatimes.com/realtimenews/20261022002698-260410",
-      "domain": "chinatimes.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-10-22T07:00:00Z",
-      "firstSeenAt": "2026-10-22T07:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "ac48cb32f9b5d96ba084",
-      "title": "韩国央行 ： 芯片热潮持续提振经济 ， 芯片价格有望进一步增长",
-      "url": "https://finance.ifeng.com/c/8xQcrnzmFgs",
-      "domain": "finance.ifeng.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T07:00:00Z",
-      "firstSeenAt": "2026-10-22T07:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "badfabce56b7c4674944",
-      "title": "Global Market : Bank of Korea holds interest rates at 3 % after back - to - back hikes",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-bank-of-korea-holds-interest-rates-at-3-after-back-to-back-hikes/articleshow/135109341.cms",
-      "domain": "economictimes.indiatimes.com",
-      "language": "English",
-      "sourceCountry": "India",
-      "seenAt": "2026-10-22T07:00:00Z",
-      "firstSeenAt": "2026-10-22T07:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e340a0ef35f591cee31a",
-      "title": "韩国央行进入数据依赖观察期 政策重心从 速度 转向 耐力 - CFi . CN 中财网",
-      "url": "http://www.cfi.net.cn/p20261022000364.html",
-      "domain": "cfi.net.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T06:45:00Z",
-      "firstSeenAt": "2026-10-22T06:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dc142eb306156ea26f09",
-      "title": "Timely advice to Treasurer Chalmers : Stop relying on the RBA",
-      "url": "http://www.australianherald.com/news/279390938/timely-advice-to-treasurer-chalmers-stop-relying-on-the-rba",
-      "domain": "australianherald.com",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-10-22T06:30:00Z",
-      "firstSeenAt": "2026-10-22T06:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "aeb78c66ef698dff9aee",
-      "title": "Kenya Inflation Rises to 6 . 8 % as CBK Survey Warns of Continued Pressure Through November",
-      "url": "https://nairobiwire.com/2026/10/kenya-inflation-september-2026-cbk-survey-pressure.html",
-      "domain": "nairobiwire.com",
-      "language": "English",
-      "sourceCountry": "Kenya",
-      "seenAt": "2026-10-22T06:30:00Z",
-      "firstSeenAt": "2026-10-22T06:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "bc86f922a9afac3f6853",
-      "title": "Ключевую ставку пересмотрят в пятницу : что будет с вкладами , кредитами и ипотекой до конца 2026 года | Приморский край",
-      "url": "https://fedpress.ru/article/3456900",
-      "domain": "fedpress.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-22T06:00:00Z",
-      "firstSeenAt": "2026-10-22T06:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "af870606fea39dc6eb32",
-      "title": "Центробанк может ухудшить прогноз : что будет с ключевой ставкой | Москва",
-      "url": "https://fedpress.ru/news/77/economy/3456903",
-      "domain": "fedpress.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-22T06:00:00Z",
-      "firstSeenAt": "2026-10-22T06:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d7df0363c722d67a2763",
-      "title": "连续加息两次后 ， 韩国央行本月按兵不动 ， 行长 ： 暂停不等于紧缩终结",
-      "url": "https://wallstreetcn.com/articles/3784178",
-      "domain": "wallstreetcn.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T05:15:00Z",
-      "firstSeenAt": "2026-10-22T05:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f1e92bb6b0e6d9746139",
-      "title": "韩国央行大幅上调今明两年经济增长预测 通胀预期同步走高 - CFi . CN 中财网",
-      "url": "http://www.cfi.net.cn/p20261022000270.html",
-      "domain": "cfi.net.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T03:45:00Z",
-      "firstSeenAt": "2026-10-22T03:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "66ef145348582448b7b9",
-      "title": "调查显示 ： 超八成经济学家预计日本央行12月加息 ， 10月按兵不动成共识",
-      "url": "https://forex.jrj.com.cn/2026/10/22091958816581.shtml",
-      "domain": "forex.jrj.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T03:15:00Z",
-      "firstSeenAt": "2026-10-22T03:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "46cdbfa866b7eee1e996",
-      "title": "南韓央行利率按兵不動 經濟成長上修 、 11月仍可能升息 | 全球財經 | 全球",
-      "url": "https://udn.com/news/story/6811/9830459",
-      "domain": "udn.com",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-10-22T03:15:00Z",
-      "firstSeenAt": "2026-10-22T03:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "3ff6faa1e208ec50e9b8",
-      "title": "AI新云巨头CoreWeave深陷信任风暴 ， 华尔街正重新审视这只 最脆弱的AI交易 _ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20261022/32404817.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T03:00:00Z",
-      "firstSeenAt": "2026-10-22T03:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "d4c76b48750897acc185",
-      "title": "鲍威尔预判应验 ： 高利率困住美国楼市 _ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20261022/32404687.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T03:00:00Z",
-      "firstSeenAt": "2026-10-22T03:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b8b438b2b058cc0f7824",
-      "title": "一张图看18个直盘外汇支撑阻力 ： 美元+欧系日系+商品货币+新兴货币 ( 2026年10月22日 )_ 汇市观察 _ 外汇 _ 中金在线",
-      "url": "http://forex.cnfol.com/jingjiyaowen/20261022/32404715.shtml",
-      "domain": "forex.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T03:00:00Z",
-      "firstSeenAt": "2026-10-22T03:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2024c0f841f2f982f631",
-      "title": "韩国央行将基准利率维持在3 . 00 % 不变 符合预期 - CFi . CN 中财网",
-      "url": "http://www.cfi.net.cn/p20261022000167.html",
-      "domain": "cfi.net.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T02:45:00Z",
-      "firstSeenAt": "2026-10-22T02:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5713f4ba4228daee7790",
-      "title": "Bank of Korea holds rates , upbeat outlook points to future hikes",
-      "url": "https://www.aol.com/articles/bank-korea-holds-rates-back-010642000.html",
-      "domain": "aol.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-22T02:45:00Z",
-      "firstSeenAt": "2026-10-22T02:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8306d6dbcc450dd5e90f",
-      "title": "Timely advice to Treasurer Chalmers : Stop relying on the RBA",
-      "url": "http://www.sydneysun.com/news/279390938/timely-advice-to-treasurer-chalmers-stop-relying-on-the-rba",
-      "domain": "sydneysun.com",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-10-22T02:45:00Z",
-      "firstSeenAt": "2026-10-22T02:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "479ec1df1208349d649f",
-      "title": "韓国中銀 、 政策金利3 . 00 ％ に据え置き 連続利上げを休止 | ニューズウィーク日本版 オフィシャルサイト",
-      "url": "https://www.newsweekjapan.jp/articles/-/337662",
-      "domain": "newsweekjapan.jp",
-      "language": "Japanese",
-      "sourceCountry": "Japan",
-      "seenAt": "2026-10-22T02:00:00Z",
-      "firstSeenAt": "2026-10-22T02:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "65a11bf80bd7d5bc8ebb",
-      "title": "Timely advice to Treasurer Chalmers : Stop relying on the RBA",
-      "url": "http://www.australiannews.net/news/279390938/timely-advice-to-treasurer-chalmers-stop-relying-on-the-rba",
-      "domain": "australiannews.net",
-      "language": "English",
-      "sourceCountry": "Australia",
-      "seenAt": "2026-10-22T01:45:00Z",
-      "firstSeenAt": "2026-10-22T01:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "1b15b1a6d66954bef766",
-      "title": "黄金展望 ： 现货黄金多空持续拉锯 ， 支撑位再度守住",
-      "url": "https://finance.sina.com.cn/money/nmetal/hjzx/2026-10-22/doc-inivziwc6118079.shtml",
-      "domain": "finance.sina.com.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T01:30:00Z",
-      "firstSeenAt": "2026-10-22T01:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c9aa5be4e76269a65885",
-      "title": "What driving persistent inflation ?",
-      "url": "https://www.interest.co.nz/economy/140783/%C5%9Febnem-kalemli-%C3%B6zcan-argues-concerns-over-ai-buildout-bond-yields-and-public-debt",
-      "domain": "interest.co.nz",
-      "language": "English",
-      "sourceCountry": "New Zealand",
-      "seenAt": "2026-10-22T01:15:00Z",
-      "firstSeenAt": "2026-10-22T01:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "dbe2872902f6a23e69cb",
-      "title": "Chuyên gia : Thuế quan Mỹ có thể gây thiệt hại nặng cho kinh tế Canada",
-      "url": "https://baomoi.com/chuyen-gia-thue-quan-my-co-the-gay-thiet-hai-nang-cho-kinh-te-canada-c56323975.epi",
-      "domain": "baomoi.com",
-      "language": "Vietnamese",
-      "sourceCountry": "Vietnam",
-      "seenAt": "2026-10-22T01:00:00Z",
-      "firstSeenAt": "2026-10-22T01:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6d56834d09d613290555",
-      "title": "黄金展望 ： 现货黄金多空持续拉锯 ， 支撑位再度守住 _ 金市直播 _ 黄金网 _ 中金在线",
-      "url": "http://gold.cnfol.com/jinshizhibo/20261022/32404643.shtml",
-      "domain": "gold.cnfol.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-22T01:00:00Z",
-      "firstSeenAt": "2026-10-22T01:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "7fd5941ab351f2b4bce4",
-      "title": "할당관세 1천586억원 감면했지만 … 가격 인하효과 제한적",
-      "url": "https://www.fnnews.com/news/202610220603528974",
-      "domain": "fnnews.com",
-      "language": "Korean",
-      "sourceCountry": "South Korea",
-      "seenAt": "2026-10-21T23:15:00Z",
-      "firstSeenAt": "2026-10-21T23:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1305,11 +1273,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-10-22T22:00:00Z",
-      "lastSuccessfulAt": "2026-10-22T22:18:10Z",
+      "observationDate": "2026-10-23T01:00:00Z",
+      "lastSuccessfulAt": "2026-10-23T01:28:27Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 50 returned records across 1/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 150 returned records across 3/6 successful queries.",
+      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; ags-softs: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
