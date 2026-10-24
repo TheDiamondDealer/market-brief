@@ -1,6 +1,6 @@
 {
-  "generatedAt": "24 October 2026, 10:52 AM AEDT",
-  "generatedAtUtc": "2026-10-23T23:52:54+00:00",
+  "generatedAt": "24 October 2026, 6:14 PM AEDT",
+  "generatedAtUtc": "2026-10-24T07:14:46+00:00",
   "rates": [
     {
       "id": "DGS2",
@@ -4251,7 +4251,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -4594,7 +4594,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "EURO FX/BRITISH POUND XRATE - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -5974,23 +5974,17 @@
       "name": "Brazilian Real",
       "market": "BRAZILIAN REAL - CHICAGO MERCANTILE EXCHANGE",
       "category": "Leveraged funds",
-      "reportDate": "2026-10-13",
-      "long": 63918,
-      "short": 36304,
-      "net": 27614,
-      "weekChange": 218,
-      "fourWeekChange": 11509,
-      "openInterest": 139056,
-      "netPercentile5y": 99.6,
+      "reportDate": "2026-10-20",
+      "long": 60777,
+      "short": 42100,
+      "net": 18677,
+      "weekChange": -8937,
+      "fourWeekChange": 3760,
+      "openInterest": 135679,
+      "netPercentile5y": 97.3,
       "crowding": "Crowded long",
       "historyCount": 260,
       "history52": [
-        {
-          "date": "2025-10-21",
-          "long": 22648,
-          "short": 21967,
-          "net": 681
-        },
         {
           "date": "2025-10-28",
           "long": 22444,
@@ -6296,6 +6290,12 @@
           "long": 63918,
           "short": 36304,
           "net": 27614
+        },
+        {
+          "date": "2026-10-20",
+          "long": 60777,
+          "short": 42100,
+          "net": 18677
         }
       ],
       "source": "CFTC Commitments of Traders",
@@ -6309,7 +6309,7 @@
         "exchange": "CHICAGO MERCANTILE EXCHANGE",
         "marketName": "BRAZILIAN REAL - CHICAGO MERCANTILE EXCHANGE"
       },
-      "dataState": "stale-retained",
+      "dataState": "current",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -12826,7 +12826,7 @@
         "exchange": "CHICAGO BOARD OF TRADE",
         "marketName": "CORN - CHICAGO BOARD OF TRADE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -14198,7 +14198,7 @@
         "exchange": "CHICAGO BOARD OF TRADE",
         "marketName": "FED FUNDS - CHICAGO BOARD OF TRADE"
       },
-      "dataState": "current",
+      "dataState": "stale-retained",
       "dataMethod": "CFTC public reporting API exact contract registry"
     },
     {
@@ -15584,7 +15584,7 @@
     {
       "source": "CFTC Commitments of Traders",
       "status": "partial",
-      "detail": "brazilian-real: IncompleteRead(0 bytes read) Retained previously verified rows for: brazilian-real.",
+      "detail": "sp500-emini: IncompleteRead(406701 bytes read); eur-gbp: The read operation timed out; fed-funds: IncompleteRead(224827 bytes read); corn: The read operation timed out Retained previously verified rows for: sp500-emini, eur-gbp, fed-funds, corn.",
       "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm"
     }
   ],
