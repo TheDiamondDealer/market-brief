@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-25T16:13:32Z",
+  "generatedAtUtc": "2026-10-25T19:02:30Z",
   "provider": {
     "id": "gdelt-doc-2",
     "name": "GDELT DOC 2.0 API",
@@ -11,11 +11,11 @@
     "status": "partial",
     "expectedCadence": "Hourly",
     "queryCount": 6,
-    "successfulQueryCount": 2,
-    "rawArticleCount": 100,
+    "successfulQueryCount": 4,
+    "rawArticleCount": 200,
     "selectedArticleCount": 48,
-    "lastSuccessfulAt": "2026-10-25T16:13:32Z",
-    "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests"
+    "lastSuccessfulAt": "2026-10-25T19:02:30Z",
+    "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests"
   },
   "disclaimer": "Unverified discovery radar. A GDELT match is evidence that media coverage exists, not proof that the underlying claim is true or financially material.",
   "topics": [
@@ -52,40 +52,14 @@
   ],
   "articles": [
     {
-      "id": "171046308fd3db14489a",
-      "title": "Blei : WHO alarmiert wegen anhaltender Gesundheitsgefahren",
-      "url": "https://www.t-online.de/gesundheit/aktuelles/id_101496046/blei-who-alarmiert-wegen-anhaltender-gesundheitsgefahren.html",
-      "domain": "t-online.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-25T10:45:00Z",
-      "firstSeenAt": "2026-10-25T10:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 32,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "01671988eaf3922345f7",
-      "title": "Brasil no puede permitirse los recortes de gasto de Bolsonaro",
-      "url": "https://www.perfil.com/noticias/internacional/brasil-no-puede-permitirse-los-recortes-de-gasto-de-bolsonaro.phtml",
-      "domain": "perfil.com",
-      "language": "Spanish",
-      "sourceCountry": "Argentina",
-      "seenAt": "2026-10-25T10:30:00Z",
-      "firstSeenAt": "2026-10-25T10:30:00Z",
+      "id": "c9e3c67b3da3eb8c3c64",
+      "title": "AFP : Tre explosioner hörda i saudiska Riyad",
+      "url": "https://www.di.se/nyheter/afp-tre-explosioner-horda-i-saudiska-riyad/",
+      "domain": "di.se",
+      "language": "Swedish",
+      "sourceCountry": "Sweden",
+      "seenAt": "2026-10-25T08:30:00Z",
+      "firstSeenAt": "2026-10-25T08:30:00Z",
       "topicIds": [
         "macro-policy"
       ],
@@ -97,31 +71,34 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 27,
+      "materialityScore": 28,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "eedb566776b9c9239807",
-      "title": "Ethiopia Drought Damages 250 , 000 Hectares",
-      "url": "https://www.riotimesonline.com/ethiopia-drought-250000-hectares-2026/",
-      "domain": "riotimesonline.com",
-      "language": "English",
-      "sourceCountry": "Brazil",
-      "seenAt": "2026-10-25T09:45:00Z",
-      "firstSeenAt": "2026-10-25T09:45:00Z",
+      "id": "a316a7f1e03136c868b2",
+      "title": "Литва инициирует голосование в ЕС по отказу от сезонного времени",
+      "url": "https://iz.ru/2190417/2026-10-25/litva-initciiruet-golosovanie-v-es-po-otkazu-ot-sezonnogo-vremeni",
+      "domain": "iz.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-25T18:00:00Z",
+      "firstSeenAt": "2026-10-25T18:00:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 26,
       "sourceTier": "discovery",
@@ -156,82 +133,205 @@
       "duplicateCount": 1
     },
     {
-      "id": "c41507ac7c557bc2ec20",
-      "title": "Altın ve gümüş sert düşüş ! Temmuzdan bu yana ilk",
-      "url": "https://ekonomi.haber7.com/ekonomi/haber/3671308-altin-ve-gumus-sert-dusus-temmuzdan-bu-yana-ilk",
-      "domain": "ekonomi.haber7.com",
-      "language": "Turkish",
-      "sourceCountry": "Turkey",
-      "seenAt": "2026-10-25T12:45:00Z",
-      "firstSeenAt": "2026-10-25T12:45:00Z",
+      "id": "1b24501ea9d480941cab",
+      "title": "Exclusive : राजस्थान के खंडेला में बनेगा पहला यूरेनियम प्लांट , 500 बीघा जमीन अधिग्रहण की तैयारी | Rajasthan First Uranium Plant To Come Up In Khandela Sikar Land Acquisition Planned",
+      "url": "https://www.patrika.com/sikar-news/rajasthan-first-uranium-plant-to-come-up-in-khandela-sikar-land-acquisition-planned-21006615",
+      "domain": "patrika.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-25T03:30:00Z",
+      "firstSeenAt": "2026-10-25T03:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 24,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "83910da56d972de03d75",
-      "title": "Emtia piyasasında bu hafta dalga boyu yükseldi",
-      "url": "https://www.kibrispostasi.com/c50-EKONOMI/n617712-emtia-piyasasinda-bu-hafta-dalga-boyu-yukseldi",
-      "domain": "kibrispostasi.com",
-      "language": "Turkish",
-      "sourceCountry": "Cyprus",
-      "seenAt": "2026-10-25T12:45:00Z",
-      "firstSeenAt": "2026-10-25T12:45:00Z",
+      "id": "b68b64f2b150e9a4fc02",
+      "title": "Tehran warns of nuclear options and infrastructure strikes if US attacks Iran",
+      "url": "https://www.jpost.com/middle-east/iran-news/article-912728",
+      "domain": "jpost.com",
+      "language": "English",
+      "sourceCountry": "Israel",
+      "seenAt": "2026-10-25T03:30:00Z",
+      "firstSeenAt": "2026-10-25T03:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 24,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "f84ba7cdd117d240b9e8",
-      "title": "Carrera con obstáculos : heladas y enfermedades mantienen en vilo a los productores de trigo",
-      "url": "https://www.clarin.com/rural/carrera-obstaculos-heladas-enfermedades-mantienen-vilo-productores-trigo_0_DLjfBum9xA.html",
-      "domain": "clarin.com",
+      "id": "01671988eaf3922345f7",
+      "title": "Brasil no puede permitirse los recortes de gasto de Bolsonaro",
+      "url": "https://www.perfil.com/noticias/internacional/brasil-no-puede-permitirse-los-recortes-de-gasto-de-bolsonaro.phtml",
+      "domain": "perfil.com",
       "language": "Spanish",
       "sourceCountry": "Argentina",
-      "seenAt": "2026-10-25T12:45:00Z",
-      "firstSeenAt": "2026-10-25T12:45:00Z",
+      "seenAt": "2026-10-25T10:30:00Z",
+      "firstSeenAt": "2026-10-25T10:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "macro-policy"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Macro, trade & policy"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "global-equities",
+        "rates",
+        "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 21,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
+    },
+    {
+      "id": "48fa4e2705918fa30cca",
+      "title": "La decadencia de EE . UU . y la UE",
+      "url": "https://elnacional.com.do/opinion/decadencia-ee-uu-ue_584335.html",
+      "domain": "elnacional.com.do",
+      "language": "Spanish",
+      "sourceCountry": "Dominican Republic",
+      "seenAt": "2026-10-25T12:45:00Z",
+      "firstSeenAt": "2026-10-25T12:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c18059dbf46c9fcfe18e",
+      "title": "蒯曼王艺迪亚锦赛女双冠军 逆转夺冠证明实力 _ 新闻频道 _ 中华网",
+      "url": "https://news.china.com/socialgd/10000169/20261025/49816729.html",
+      "domain": "news.china.com",
+      "language": "Chinese",
+      "sourceCountry": "China",
+      "seenAt": "2026-10-25T12:45:00Z",
+      "firstSeenAt": "2026-10-25T12:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "c6397891c472ef4b1626",
+      "title": "Los museos de ciudades como Nueva York o Londres exhiben la cerámica que se fabrica desde hace siglos en este pequeño pueblo valenciano",
+      "url": "https://www.eldiario.es/spin/museos-ciudades-nueva-york-londres-exhiben-ceramica-fabrica-siglos-pequeno-pueblo-valenciano-pm_1_13612509.html",
+      "domain": "eldiario.es",
+      "language": "Spanish",
+      "sourceCountry": "Spain",
+      "seenAt": "2026-10-25T12:45:00Z",
+      "firstSeenAt": "2026-10-25T12:45:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "4f4e6f269caa5efc6fad",
+      "title": "As vote nears , Trump AI gamble fuels economic uncertainty",
+      "url": "https://www.aol.com/articles/vote-nears-trumps-ai-gamble-100000000.html",
+      "domain": "aol.com",
+      "language": "English",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-25T12:45:00Z",
+      "firstSeenAt": "2026-10-25T12:45:00Z",
+      "topicIds": [
+        "macro-policy",
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Macro, trade & policy",
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "global-equities",
+        "rates",
+        "semiconductors",
+        "us-dollar"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 2
     },
     {
       "id": "a4f27f5b884230a4742f",
@@ -253,7 +353,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -279,7 +379,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -305,111 +405,281 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "4f4e6f269caa5efc6fad",
-      "title": "As vote nears , Trump AI gamble fuels economic uncertainty",
-      "url": "https://www.aol.com/articles/vote-nears-trumps-ai-gamble-100000000.html",
-      "domain": "aol.com",
-      "language": "English",
-      "sourceCountry": "United States",
+      "id": "518a39733e8949e983ea",
+      "title": "Carburanti e combustibili : prezzi medi settimanali",
+      "url": "https://www.borsaitaliana.it/borsa/notizie/radiocor/economia/dettaglio/carburanti-e-combustibili-prezzi-medi-settimanali-nRC_25102026_1000_139795964.html",
+      "domain": "borsaitaliana.it",
+      "language": "Italian",
+      "sourceCountry": "Italy",
       "seenAt": "2026-10-25T12:45:00Z",
       "firstSeenAt": "2026-10-25T12:45:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "1698dcbd3e396a210eb2",
-      "title": "Славско жито за Свету Петку : Један зачин даје му посебан укус , вече пре прављења потопите пшеницу",
-      "url": "https://www.dnevnik.rs/magazin/gastro/slavsko-zito-za-svetu-petku-jedan-zacin-daje-mu-poseban-ukus-vece-pre-pravljenja-potopite-psenicu-2026-10-25",
-      "domain": "dnevnik.rs",
+      "id": "9642da16ab394de8f290",
+      "title": "Джон Хоуг – американский Нострадамус сделал прогноз о 27 - летней войне и 2028 годе",
+      "url": "https://www.unian.net/curiosities/dzhon-houg-amerikanskiy-nostradamus-sdelal-prognoz-o-27-letney-voyne-i-2028-gode-13539522.html",
+      "domain": "unian.net",
+      "language": "Russian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-10-25T12:45:00Z",
+      "firstSeenAt": "2026-10-25T12:45:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "31e4061b40301a91e24b",
+      "title": "Medvedev pozvao Trampa da reši problem Zelenskog",
+      "url": "https://informer.rs/planeta/vesti/1164030/dmitrij-medvedev-donald-tramp-ukrajina",
+      "domain": "informer.rs",
       "language": "Serbian",
       "sourceCountry": "Serbia",
-      "seenAt": "2026-10-25T12:30:00Z",
-      "firstSeenAt": "2026-10-25T12:30:00Z",
+      "seenAt": "2026-10-25T12:45:00Z",
+      "firstSeenAt": "2026-10-25T12:45:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "6acfb016fdb042c51d4c",
-      "title": "51 % تراجع بواردات مصر من القمح و12 % من الذرة و34 % من الزيوت في يوليو الماضي",
-      "url": "https://www.youm7.com/story/2026/10/25/51-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A8%D9%88%D8%A7%D8%B1%D8%AF%D8%A7%D8%AA-%D9%85%D8%B5%D8%B1-%D9%85%D9%86-%D8%A7%D9%84%D9%82%D9%85%D8%AD-%D9%8812-%D9%85%D9%86-%D8%A7%D9%84%D8%B0%D8%B1%D8%A9-%D9%8834/7592922",
-      "domain": "youm7.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
+      "id": "67bef83e39f489e4314d",
+      "title": "台中全民運勇奪67金191面獎牌 總積分全國第三",
+      "url": "https://n.yam.com/Article/20261025678686",
+      "domain": "n.yam.com",
+      "language": "Chinese",
+      "sourceCountry": "Taiwan",
       "seenAt": "2026-10-25T12:30:00Z",
       "firstSeenAt": "2026-10-25T12:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "8be282c80fe09c050a48",
-      "title": "Centre extends AIF scheme to boost farm infrastructure investments",
-      "url": "https://www.livemint.com/economy/centre-extends-aif-scheme-to-boost-farm-infrastructure-investments-11792919083732.html",
-      "domain": "livemint.com",
+      "id": "0810e9ef686fa9643d3c",
+      "title": "Diversifikasi ke Mineral , Pendapatan BUMI Diproyeksi Tembus Rp 41 , 76 T",
+      "url": "https://www.beritasatu.com/ekonomi/3036396/diversifikasi-ke-mineral-pendapatan-bumi-diproyeksi-tembus-rp-4176-t",
+      "domain": "beritasatu.com",
+      "language": "Indonesian",
+      "sourceCountry": "Indonesia",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "f7fa5969c04556a8a15f",
+      "title": "Eldorado Gold 2027 Outlook : Two New Mines Turning On at Once , With 40 % Production Growth Guided",
+      "url": "https://www.fool.com/coverage/moneyball/2026/10/25/eldorado-gold-s-2027-outlook-two-new-mines-turning-on-at-once-with-40-production-growth-guided/",
+      "domain": "fool.com",
       "language": "English",
-      "sourceCountry": "India",
+      "sourceCountry": "United States",
       "seenAt": "2026-10-25T12:30:00Z",
       "firstSeenAt": "2026-10-25T12:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "strategic-materials"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Strategic materials"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "7e8b0151411117860e66",
+      "title": "Nvidia - Chef besucht Berliner Döner - Imbiss – und gibt riesiges Trinkgeld",
+      "url": "https://www.hna.de/welt/nvidia-chef-besucht-berliner-doener-imbiss-und-gibt-riesiges-trinkgeld-zr-94557194.html",
+      "domain": "hna.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "b0045730689e2dca4296",
+      "title": "ШІ - перегони США проти Китаю - як інші країни намагаються обрати сторону і не програти",
+      "url": "https://zn.ua/ukr/WORLD/ssha-i-kitaj-formujut-protiborchi-shi-aljansi-jak-inshi-krajini-namahajutsja-uniknuti-prohrashu-ap.html",
+      "domain": "zn.ua",
+      "language": "Ukrainian",
+      "sourceCountry": "Ukraine",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "641a96e944811efc5c46",
+      "title": "Nvidia - Chef besucht Berliner Döner - Imbiss – und gibt riesiges Trinkgeld",
+      "url": "https://www.az-online.de/deutschland/nvidia-chef-besucht-berliner-doener-imbiss-und-gibt-riesiges-trinkgeld-zr-94557194.html",
+      "domain": "az-online.de",
+      "language": "German",
+      "sourceCountry": "Germany",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "49e12b5d9d18c10d255e",
+      "title": "Ν . Χαρδαλιάς : Η τεχνολογία πρέπει να υπηρετεί τον άνθρωπο",
+      "url": "https://www.capital.gr/politiki/4025624/n-xardalias-i-texnologia-prepei-na-upiretei-ton-anthropo/",
+      "domain": "capital.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -435,7 +705,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -461,7 +731,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -487,85 +757,252 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "8efb23ca1af1643ca744",
-      "title": "Orta Doğu gerilimi piyasaları vurdu ! Altın ve gümüşte sert kayıp !",
-      "url": "https://www.sozcu.com.tr/orta-dogu-gerilimi-piyasalari-vurdu-altin-ve-gumuste-sert-kayip-p372547",
-      "domain": "sozcu.com.tr",
+      "id": "873322bcb16cde640c43",
+      "title": "Nikkei прогнозирует рост спроса на СПГ в Японии на 10 % к 2040 году",
+      "url": "https://pronedra.ru/yaponii-ponadobitsya-bolshe-spg-nikkei-zhdet-rost-sprosa-na-10-k-2040-godu-836336.html",
+      "domain": "pronedra.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "832ae4c6e0235cc6def3",
+      "title": "Ormuz , Moscú y el gas norteamericano : la nueva cartografía energética que deja la guerra con Irán",
+      "url": "https://www.elojodigital.com/contenido/19894-ormuz-moscu-y-el-gas-norteamericano-la-nueva-cartografia-energetica-que-deja-la-guerra-con-iran",
+      "domain": "elojodigital.com",
+      "language": "Spanish",
+      "sourceCountry": "United States",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "0d0ce8b8cae250fbde28",
+      "title": "Putin , Avrupadaki protestoları Rusyanın kışkırttığı suçlamasını reddetti",
+      "url": "https://www.haberler.com/guncel/putin-avrupa-daki-protestolari-rusya-nin-20364453-haberi/",
+      "domain": "haberler.com",
       "language": "Turkish",
       "sourceCountry": "Turkey",
-      "seenAt": "2026-10-25T11:15:00Z",
-      "firstSeenAt": "2026-10-25T11:15:00Z",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "68bf92cba488282ca2bd",
-      "title": "Bourgogne 2026 : un millésime hors tempo",
-      "url": "https://www.lavenir.net/lifestyle/2026/10/25/bourgogne-2026-un-millesime-hors-tempo-KNUCKVK5OJA7HGH46QOP44GKVI/",
-      "domain": "lavenir.net",
-      "language": "French",
-      "sourceCountry": "Belgium",
-      "seenAt": "2026-10-25T11:15:00Z",
-      "firstSeenAt": "2026-10-25T11:15:00Z",
+      "id": "c9f278ff51446159291c",
+      "title": "США перенаправили поставки СПГ из Азии в Европу в августе",
+      "url": "https://pronedra.ru/spg-poshel-v-evropu-vmesto-azii-ssha-pereorientirovali-postavki-v-avguste-836338.html",
+      "domain": "pronedra.ru",
+      "language": "Russian",
+      "sourceCountry": "Russia",
+      "seenAt": "2026-10-25T12:30:00Z",
+      "firstSeenAt": "2026-10-25T12:30:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "e95eb15605b1e14afcc1",
-      "title": "Una mejor fertilización puede sumar 403 dólares por hectárea en maíz y hasta duplicar el margen en soja",
-      "url": "https://www.lacapital.com.ar/agro/una-mejor-fertilizacion-puede-sumar-403-dolares-hectarea-maiz-y-duplicar-el-margen-soja-n10287963.html",
-      "domain": "lacapital.com.ar",
+      "id": "8645daffd745e5a1facb",
+      "title": "Giá vàng miếng , vàng nhẫn chiều 25 / 10 tại SJC , DOJI , PNJ , Bảo Tín Minh Châu và Phú Quý",
+      "url": "https://cafef.vn/gia-vang-mieng-vang-nhan-chieu-25-10-tai-sjc-doji-pnj-bao-tin-minh-chau-va-phu-quy-188261024225039643.chn",
+      "domain": "cafef.vn",
+      "language": "Vietnamese",
+      "sourceCountry": "Vietnam",
+      "seenAt": "2026-10-25T11:15:00Z",
+      "firstSeenAt": "2026-10-25T11:15:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "04a3ed91eace3fa3d4c0",
+      "title": "[ 사설 ] 독 · 일 합계도 넘어선 경상흑자 , 반도체 이후 준비를",
+      "url": "https://www.hani.co.kr/arti/opinion/editorial/1284075.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-10-25T11:15:00Z",
+      "firstSeenAt": "2026-10-25T11:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "20c7375927b48d532b74",
+      "title": "주식 열풍 잦아들었는데 코인 여전히 잠잠한 이유는 ?",
+      "url": "https://www.hani.co.kr/arti/economy/finance/1284064.html",
+      "domain": "hani.co.kr",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-10-25T11:15:00Z",
+      "firstSeenAt": "2026-10-25T11:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ba8f7e0d66cb9ff09ac1",
+      "title": "갤럭시A 20 % 감산 … 삼성 , 칩플레이션 대응",
+      "url": "https://www.etnews.com/20261023000235",
+      "domain": "etnews.com",
+      "language": "Korean",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-10-25T11:15:00Z",
+      "firstSeenAt": "2026-10-25T11:15:00Z",
+      "topicIds": [
+        "semiconductors-ai"
+      ],
+      "topics": [
+        "Semiconductors & AI infrastructure"
+      ],
+      "assets": [
+        "ai-infrastructure",
+        "semiconductors"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "477b58fb5cfefdddb864",
+      "title": "Casa 1800 , el hotel con más encanto de Granada según la inteligencia artificial : cuatro de las cinco grandes IAs lo eligen",
+      "url": "https://www.ideal.es/granada/casa-1800-hotel-encanto-granada-segun-inteligencia-20261025101914-nt.html",
+      "domain": "ideal.es",
       "language": "Spanish",
-      "sourceCountry": "Argentina",
+      "sourceCountry": "Spain",
       "seenAt": "2026-10-25T11:15:00Z",
       "firstSeenAt": "2026-10-25T11:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -591,7 +1028,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -617,7 +1054,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -643,7 +1080,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -669,7 +1106,7 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
@@ -695,447 +1132,34 @@
         "rates",
         "us-dollar"
       ],
-      "materialityScore": 20,
+      "materialityScore": 14,
       "sourceTier": "discovery",
       "verificationStatus": "unverified",
       "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
       "duplicateCount": 1
     },
     {
-      "id": "36f8c0ebf4f529aa877a",
-      "title": "看秋粮丰收里的 中国饭碗 颗粒归仓农机护航 _ 新闻频道 _ 中华网",
-      "url": "https://news.china.com/socialgd/10000169/20261025/49816711.html",
-      "domain": "news.china.com",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-25T11:00:00Z",
-      "firstSeenAt": "2026-10-25T11:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "00e07dae2919ba19b733",
-      "title": "Bertanam Sayuran , Petani di Lebak Berpenghasilan Rp15 juta per Bulan",
-      "url": "https://www.jpnn.com/news/bertanam-sayuran-petani-di-lebak-berpenghasilan-rp15-juta-per-bulan",
-      "domain": "jpnn.com",
-      "language": "Indonesian",
-      "sourceCountry": "Indonesia",
-      "seenAt": "2026-10-25T11:00:00Z",
-      "firstSeenAt": "2026-10-25T11:00:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "8b1ce40125b79361fa08",
-      "title": "Bis 4 , 5 % aufs Tagesgeld : Die aktuell höchsten Zinsen und die Bedingungen",
-      "url": "https://www.infranken.de/ratgeber/karriere-geld/tagesgeld-zinsen-ezb-leitzins-inflation-sparer-lockangebote-kredit-neukunden-tmr-1-art-6405048",
-      "domain": "infranken.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-25T11:00:00Z",
-      "firstSeenAt": "2026-10-25T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "887bcd890cb90d1a47b4",
-      "title": "As vote nears , Trump AI gamble fuels economic uncertainty",
-      "url": "https://www.latimes.com/politics/story/2026-10-25/as-vote-nears-trumps-ai-gamble-fuels-economic-uncertainty",
-      "domain": "latimes.com",
-      "language": "English",
-      "sourceCountry": "United States",
-      "seenAt": "2026-10-25T11:00:00Z",
-      "firstSeenAt": "2026-10-25T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "2914ccb1c9a6c85a6ab5",
-      "title": "Fed , EBC i wybory . Co czeka rynki w nadchodzącym tygodniu ?",
-      "url": "https://www.pb.pl/fed-ebc-i-wybory-co-czeka-rynki-w-nadchodzacym-tygodniu-1269390",
-      "domain": "pb.pl",
-      "language": "Polish",
-      "sourceCountry": "Poland",
-      "seenAt": "2026-10-25T11:00:00Z",
-      "firstSeenAt": "2026-10-25T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f3c48568f256b9d28185",
-      "title": "Kdo si polepší nejvíc ? Kolik dostanou učitelé , zdravotníci a senioři",
-      "url": "https://www.novinky.cz/clanek/ekonomika-kdo-si-polepsi-nejvic-kolik-dostanou-ucitele-zdravotnici-a-seniori-40604346",
-      "domain": "novinky.cz",
-      "language": "Czech",
-      "sourceCountry": "Czech Republic",
-      "seenAt": "2026-10-25T11:00:00Z",
-      "firstSeenAt": "2026-10-25T11:00:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "f8d72433dcac47fa8012",
-      "title": "金浪翻涌神州大地 看秋粮丰收里的 中国饭碗 _ 正北方网",
-      "url": "https://www.northnews.cn/news/2026/1025/2530120.html",
-      "domain": "northnews.cn",
-      "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-25T10:45:00Z",
-      "firstSeenAt": "2026-10-25T10:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "6dd1090d55c6dc586b55",
-      "title": "Nicht bestellen : In diesem Land gibt es den schlechtesten Kaffee",
-      "url": "https://www.t-online.de/leben/aktuelles/id_101480316/nicht-bestellen-in-diesem-land-gibt-es-den-schlechtesten-kaffee.html",
-      "domain": "t-online.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-25T10:45:00Z",
-      "firstSeenAt": "2026-10-25T10:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b87ca68ca5eaa860ee0e",
-      "title": "تعرّف على 5 أسباب تجعلك تُصاب برفّة العين ؟ – الشروق أونلاين",
-      "url": "https://www.echoroukonline.com/%D8%AA%D8%B9%D8%B1%D9%91%D9%81-%D8%B9%D9%84%D9%89-5-%D8%A3%D8%B3%D8%A8%D8%A7%D8%A8-%D8%AA%D8%AC%D8%B9%D9%84%D9%83-%D8%AA%D9%8F%D8%B5%D8%A7%D8%A8-%D8%A8%D8%B1%D9%81%D9%91%D8%A9-%D8%A7%D9%84%D8%B9%D9%8A",
-      "domain": "echoroukonline.com",
-      "language": "Arabic",
-      "sourceCountry": "Algeria",
-      "seenAt": "2026-10-25T10:45:00Z",
-      "firstSeenAt": "2026-10-25T10:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "5c0938e007409e2d9fe2",
-      "title": "Um den Cholesterinspiegel zu senken , müssen Kohlenhydrate ersetzt werden – so das Ergebnis einer Studie",
-      "url": "https://www.focus.de/gesundheit/ratgeber/um-den-cholesterinspiegel-zu-senken-muessen-kohlenhydrate-ersetzt-werden-so-das-ergebnis-einer-studie_f2092bfe-a408-4c7c-8159-b713e5962eb0.html",
-      "domain": "focus.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-25T10:45:00Z",
-      "firstSeenAt": "2026-10-25T10:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c54bbf112f8229d4f809",
-      "title": "埃鎊續貶創歷史新低 埃及央行總裁籲民眾勿恐慌 | 國際",
-      "url": "https://www.cna.com.tw/news/aopl/202610250122.aspx",
-      "domain": "cna.com.tw",
-      "language": "Chinese",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-10-25T10:45:00Z",
-      "firstSeenAt": "2026-10-25T10:45:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "e1e71357b972712343e3",
-      "title": "Аргентинские агрономы оценили ущерб от октябрьских заморозков на стадии цветения пшеницы",
-      "url": "https://www.pravda.ru/news/world/2432184-argentina-wheat-frost-impact/",
-      "domain": "pravda.ru",
+      "id": "d7a4dc4e55f8083f9cc9",
+      "title": "Путин указал , что Европа до сих пор получает немало российского СПГ",
+      "url": "https://www.vesti.ru/ns/putin-ukazal-chto-evropa-do-sikh-por-poluchaet-nemalo-rossijskogo-spg",
+      "domain": "vesti.ru",
       "language": "Russian",
       "sourceCountry": "Russia",
-      "seenAt": "2026-10-25T10:30:00Z",
-      "firstSeenAt": "2026-10-25T10:30:00Z",
+      "seenAt": "2026-10-25T11:15:00Z",
+      "firstSeenAt": "2026-10-25T11:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "c57736ee07ac2df67d8f",
-      "title": "5 Taiwanese cacao farmers to represent Taiwan in world competition",
-      "url": "https://focustaiwan.tw:443/society/202610250008",
-      "domain": "focustaiwan.tw",
-      "language": "English",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-10-25T10:30:00Z",
-      "firstSeenAt": "2026-10-25T10:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b297785a2cd65ea08683",
-      "title": "5 Taiwanese cacao farmers to represent Taiwan in world competition",
-      "url": "https://focustaiwan.tw/society/202610250008",
-      "domain": "focustaiwan.tw",
-      "language": "English",
-      "sourceCountry": "Taiwan",
-      "seenAt": "2026-10-25T10:30:00Z",
-      "firstSeenAt": "2026-10-25T10:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "24a5d9573795e0da43c7",
-      "title": "Zdrave čokoladne trufle od samo dva sastojka koje se ne peku",
-      "url": "https://superzena.b92.net/kuhinja/recepti/279356/zdrave-cokoladne-trufle-od-samo-dva-sastojka-koje-se-ne-peku/vest",
-      "domain": "superzena.b92.net",
-      "language": "Serbian",
-      "sourceCountry": "Serbia",
-      "seenAt": "2026-10-25T10:30:00Z",
-      "firstSeenAt": "2026-10-25T10:30:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "9892da2d8dcc877b919d",
-      "title": "La encrucijada monetaria de fin de año del Banco Central",
-      "url": "https://www.latercera.com/pulso/noticia/la-encrucijada-de-fin-de-ano-del-banco-central/",
-      "domain": "latercera.com",
-      "language": "Spanish",
-      "sourceCountry": "Chile",
-      "seenAt": "2026-10-25T10:30:00Z",
-      "firstSeenAt": "2026-10-25T10:30:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 20,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "67ca22e037962ad8a154",
-      "title": "Vladimir Putinin ahdinko syvenee – Erittäin synkkä arvio ensi vuodesta",
-      "url": "https://www.uusisuomi.fi/uutiset/a/1e0298e8-4513-495b-8bd7-cdd91ccc5369",
-      "domain": "uusisuomi.fi",
-      "language": "Finnish",
-      "sourceCountry": "Finland",
-      "seenAt": "2026-10-25T10:15:00Z",
-      "firstSeenAt": "2026-10-25T10:15:00Z",
-      "topicIds": [
-        "macro-policy"
-      ],
-      "topics": [
-        "Macro, trade & policy"
-      ],
-      "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1144,24 +1168,27 @@
       "duplicateCount": 1
     },
     {
-      "id": "db890818779631208792",
-      "title": "Аналитик Гойхман : « ЦБ удивил не ставкой , а пессимизмом прогнозов »",
-      "url": "https://www.mk.ru/economics/2026/10/25/analitik-goykhman-cb-udivil-ne-stavkoy-a-pessimizmom-prognozov.html",
-      "domain": "mk.ru",
-      "language": "Russian",
-      "sourceCountry": "Russia",
-      "seenAt": "2026-10-25T10:15:00Z",
-      "firstSeenAt": "2026-10-25T10:15:00Z",
+      "id": "004e835f385c59a82124",
+      "title": "Ενεργειακός συναγερμός στην Ευρώπη : Brent στα $117 δολάρια , φυσικό αέριο στα €94 και νέος γύρος ακρίβειας",
+      "url": "https://www.sofokleousin.gr/agores/energeiakos-synagermos-stin-eyropi-brent-sta-11672-dolaria-fysiko",
+      "domain": "sofokleousin.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-10-25T11:15:00Z",
+      "firstSeenAt": "2026-10-25T11:15:00Z",
       "topicIds": [
-        "macro-policy"
+        "energy-security"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Energy & security"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1170,24 +1197,56 @@
       "duplicateCount": 1
     },
     {
-      "id": "426f6985cf872733516a",
-      "title": "金浪翻涌神州大地 看秋粮丰收里的 中国饭碗 |水稻|稻谷|冬小麦|复种",
-      "url": "https://www.163.com/news/article/LA3PTQBP000189FH.html",
-      "domain": "163.com",
+      "id": "846e01fd546fb00de26c",
+      "title": "Nostradamus americano prevê guerra mundial que vai durar 27 anos",
+      "url": "https://extra.globo.com/blogs/page-not-found/post/2026/10/nostradamus-americano-preve-guerra-mundial-que-vai-durar-27-anos.ghtml",
+      "domain": "extra.globo.com",
+      "language": "Portuguese",
+      "sourceCountry": "Brazil",
+      "seenAt": "2026-10-25T11:15:00Z",
+      "firstSeenAt": "2026-10-25T11:15:00Z",
+      "topicIds": [
+        "energy-security"
+      ],
+      "topics": [
+        "Energy & security"
+      ],
+      "assets": [
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "efead3ccc17991b2d3c1",
+      "title": "薔琵颱風期間中油維持高庫存 1 , 900座加油站正常營運",
+      "url": "https://n.yam.com/Article/20261025294315",
+      "domain": "n.yam.com",
       "language": "Chinese",
-      "sourceCountry": "China",
-      "seenAt": "2026-10-25T10:00:00Z",
-      "firstSeenAt": "2026-10-25T10:00:00Z",
+      "sourceCountry": "Taiwan",
+      "seenAt": "2026-10-25T11:15:00Z",
+      "firstSeenAt": "2026-10-25T11:15:00Z",
       "topicIds": [
-        "ags-softs"
+        "energy-security"
       ],
       "topics": [
-        "Agriculture & softs"
+        "Energy & security"
       ],
       "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "brent",
+        "defence",
+        "gas-uk",
+        "gas-us",
+        "uranium",
+        "wti"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1196,102 +1255,110 @@
       "duplicateCount": 1
     },
     {
-      "id": "aba48c141d65e662138c",
-      "title": "오바마 · 트럼프 , 美 중간선거 앞두고 격돌 … 격전지서 맞불 유세",
-      "url": "http://inews24.com/view/2018670",
-      "domain": "inews24.com",
+      "id": "10c731d54056cbb31644",
+      "title": "धनतेरस से पहले सोने - चांदी के दाम धड़ाम ! चांदी ₹26 , 020 सस्ती , जानें ताजा भाव",
+      "url": "https://www.livehindustan.com/business/gold-silver-price-crash-dhanteras-diwali-2026-check-all-details-201792918820674.html",
+      "domain": "livehindustan.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-25T11:00:00Z",
+      "firstSeenAt": "2026-10-25T11:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "278b754688d993816e08",
+      "title": "Rajasthan : सोने - चांदी में आई गिरावट , त्योहारों पर खरीद का सुनहरा मौका , कारोबारियों ने दी ये सलाह | Udaipur Gold Silver Prices Fall Businessmen Said Golden Opportunity To Buy",
+      "url": "https://www.patrika.com/udaipur-news/udaipur-gold-silver-prices-fall-businessmen-said-golden-opportunity-to-buy-21007505",
+      "domain": "patrika.com",
+      "language": "Hindi",
+      "sourceCountry": "India",
+      "seenAt": "2026-10-25T11:00:00Z",
+      "firstSeenAt": "2026-10-25T11:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "666db1b6512092bf79de",
+      "title": "Χρυσές δουλειές για τους κολοσσούς εμπορίας μετάλλων – Κέρδη - ρεκόρ δισεκατομμυρίων δολαρίων",
+      "url": "https://www.mikrometoxos.gr/chryses-douleies-gia-tous-kolossous-eborias-metallon-kerdi-rekor-disekatommyrion-dolarion/",
+      "domain": "mikrometoxos.gr",
+      "language": "Greek",
+      "sourceCountry": "Greece",
+      "seenAt": "2026-10-25T11:00:00Z",
+      "firstSeenAt": "2026-10-25T11:00:00Z",
+      "topicIds": [
+        "strategic-materials"
+      ],
+      "topics": [
+        "Strategic materials"
+      ],
+      "assets": [
+        "copper",
+        "gold",
+        "lithium",
+        "rare-earths",
+        "silver",
+        "uranium"
+      ],
+      "materialityScore": 14,
+      "sourceTier": "discovery",
+      "verificationStatus": "unverified",
+      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
+      "duplicateCount": 1
+    },
+    {
+      "id": "ecac5aab9d514ec3f0a4",
+      "title": "삼성 , 하반기 GSAT 실시 … 19개 관계사 신입사원 채용",
+      "url": "https://www.newspim.com/news/view/20261025000085",
+      "domain": "newspim.com",
       "language": "Korean",
-      "sourceCountry": "Unknown",
-      "seenAt": "2026-10-25T10:00:00Z",
-      "firstSeenAt": "2026-10-25T10:00:00Z",
+      "sourceCountry": "South Korea",
+      "seenAt": "2026-10-25T11:00:00Z",
+      "firstSeenAt": "2026-10-25T11:00:00Z",
       "topicIds": [
-        "macro-policy"
+        "semiconductors-ai"
       ],
       "topics": [
-        "Macro, trade & policy"
+        "Semiconductors & AI infrastructure"
       ],
       "assets": [
-        "global-equities",
-        "rates",
-        "us-dollar"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "787fb7eb1b43f88dde4e",
-      "title": "مشروبات يجب تقليلها عند المعاناة من الحموضة وارتجاع المريء",
-      "url": "https://www.vetogate.com/5757186",
-      "domain": "vetogate.com",
-      "language": "Arabic",
-      "sourceCountry": "Egypt",
-      "seenAt": "2026-10-25T09:45:00Z",
-      "firstSeenAt": "2026-10-25T09:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "b02b3fcba089485e9ec6",
-      "title": "Koliko hleba dnevno je u redu pojesti ? Evo šta kažu stručnjaci za ishranu",
-      "url": "https://www.prva.rs/zivot/zdravlje-lepota/21202/koliko-hleba-dnevno-je-u-redu-pojesti-evo-sta-kazu-strucnjaci-za-ishranu/vest",
-      "domain": "prva.rs",
-      "language": "Serbian",
-      "sourceCountry": "Serbia",
-      "seenAt": "2026-10-25T09:45:00Z",
-      "firstSeenAt": "2026-10-25T09:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
-      ],
-      "materialityScore": 14,
-      "sourceTier": "discovery",
-      "verificationStatus": "unverified",
-      "verificationNote": "Discovery lead only. Confirm against an official filing, company release, government source or trusted financial wire.",
-      "duplicateCount": 1
-    },
-    {
-      "id": "eefd82002676a686c5ac",
-      "title": "Zuckerrüben - Ernte teils drastisch eingebrochen",
-      "url": "https://www.proplanta.de/agrar-nachrichten/pflanze/zuckerrueben-ernte-teils-drastisch-eingebrochen_article1792918501.html",
-      "domain": "proplanta.de",
-      "language": "German",
-      "sourceCountry": "Germany",
-      "seenAt": "2026-10-25T09:45:00Z",
-      "firstSeenAt": "2026-10-25T09:45:00Z",
-      "topicIds": [
-        "ags-softs"
-      ],
-      "topics": [
-        "Agriculture & softs"
-      ],
-      "assets": [
-        "cocoa",
-        "coffee",
-        "wheat"
+        "ai-infrastructure",
+        "semiconductors"
       ],
       "materialityScore": 14,
       "sourceTier": "discovery",
@@ -1305,11 +1372,11 @@
       "id": "gdelt-doc-2",
       "source": "GDELT DOC 2.0 public API",
       "status": "partial",
-      "observationDate": "2026-10-25T12:45:00Z",
-      "lastSuccessfulAt": "2026-10-25T16:13:32Z",
+      "observationDate": "2026-10-25T18:00:00Z",
+      "lastSuccessfulAt": "2026-10-25T19:02:30Z",
       "expectedCadence": "Hourly",
-      "detail": "48 discovery leads selected from 100 returned records across 2/6 successful queries.",
-      "error": "strategic-materials: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests; semiconductors-ai: HTTPError: HTTP Error 429: Too Many Requests; energy-security: HTTPError: HTTP Error 429: Too Many Requests",
+      "detail": "48 discovery leads selected from 200 returned records across 4/6 successful queries.",
+      "error": "ags-softs: HTTPError: HTTP Error 429: Too Many Requests; gas-markets: HTTPError: HTTP Error 429: Too Many Requests",
       "url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/"
     }
   ],
