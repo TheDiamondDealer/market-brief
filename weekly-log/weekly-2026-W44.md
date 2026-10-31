@@ -16,7 +16,7 @@
 | Oil vs inflation expectations | **Physical shock still feeding product inflation** | Brent finished near $113.43 and TTF near €103/MWh; Australian transport inflation rose 8.7% y/y and US headline PCE reached 3.6% y/y. Market-implied inflation compensation was N/V. |
 | Yen carry | **Stable, with BOJ tightening risk rising** | USDJPY was essentially flat near 157.55, below the 160/162 stress bands. BOJ held at 1.25% but declared underlying inflation consistent with target and signalled further hikes. |
 | China demand | **Unconfirmed / weak** | The plenum prioritised discipline rather than a new demand package; iron ore closed near CNY672/t and lithium near CNY93,600/t, both below live downside thresholds. Copper remained above its $6.30 bullish price line, but lacked China physical-breadth confirmation. |
-| Confirmation score | **7/10 for acute stagflation; 4/10 for broad disorderly risk-off** | Energy, inflation, USD and Nasdaq confirm the acute frame. Yields below 5%, stable yen, resilient small caps/ASX and unverified credit stress block the broader disorderly classification. |
+| Price-confirmation score | **6 aligned / 2 diverged / 2 incomplete** | Energy, inflation, Fed tone, US growth/PCE, Nasdaq and weak China proxies aligned. Gold versus real yields and BOJ versus yen diverged. Credit/breadth and PBOC transmission remained incomplete. |
 
 **Coming-week complex biases:** precious metals **bearish/oversold**; energy **bullish but headline-fragile**; transition metals **split** (copper constructive, lithium/nickel weak); bulk **bearish China demand**; US equities **defensive/dispersion**; ASX **materials-supported but RBA-sensitive**; USD **firm**; JPY **asymmetric upside if BOJ repricing accelerates**.
 
@@ -38,11 +38,11 @@
 |  | Silver spot | $53.97 | $49.13 | **-9.0%** | High-beta precious liquidation; below $50 for the first time in 11 months. |
 |  | Platinum | $1,545.06 | $1,439.70 | **-6.8%** | Cyclical precious weakness. |
 |  | Palladium spot | $1,053.50 | $979.86 | **-7.0%** | Broke below $1,000. |
-| Transition | Copper | $6.506/lb | $6.483/lb | **-0.4%** | Price held above $6.30, but China confirmation remained absent. |
+| Battery & Bulk | Copper | $6.506/lb | $6.483/lb | **-0.4%** | Price held above $6.30, but China confirmation remained absent. |
 |  | Lithium carbonate | N/V | CNY93,600/t | N/V | Well below the CNY150,000 live downside threshold. |
 |  | Nickel | N/V | $15,580/t | N/V | Below the $16,000 downside threshold. |
 |  | Uranium | $89.90/lb | $92.55/lb | **+2.9%** | Weekly close remained above the $88 upside threshold. |
-| Bulk | Dalian iron ore | N/V | CNY672/t | N/V | Below CNY740; weak China-demand confirmation. |
+| Battery & Bulk | Dalian iron ore | N/V | CNY672/t | N/V | Below CNY740; weak China-demand confirmation. |
 |  | Thermal coal | $158.15/t | $156.89/t | **-0.8%** | Elevated but eased. |
 |  | Coking coal | N/V | $268.04/t | N/V | No verified Monday comparator. |
 | Energy | Brent | $110.74/bbl | $113.43/bbl | **+2.4%** | Remained above the regime's $110 escalation line. |
@@ -76,13 +76,13 @@ Sources for closes: [Reuters Monday global markets](https://www.fidelity.com/new
 
 ## REACTION AUDIT
 
-| Event / prior expectation | Actual | Immediate market reaction | Audit |
-|---|---|---|---|
-| Fed: hold at 3.75–4.00%; hawkish bias | Held 10–2; two preferred +25 bp; growth upgraded to “strong” | DXY closed 102.19 Wednesday; US10Y reached 5.05%; equities initially held | **Asymmetric but orderly.** Policy hawkishness confirmed, yet no immediate broad liquidation. |
-| Australia Q3 CPI: headline near 4.0%, trimmed mean near 3.5% y/y | Headline 4.3%; trimmed mean 3.6%; q/q 1.3% and 1.0% | AUD firmed and RBA hike probability rose to 88%; ASX dipped intraday but recovered | **Hotter than expected; local tightening trigger confirmed.** |
-| US Q3 GDP: 3.2% annualised; Sep PCE 3.6% y/y | GDP 3.4%; PCE 3.6%; core +0.3% m/m | Long yields eased after the initial repricing; tech fell on earnings/capex risk | **Growth beat, inflation matched; earnings dominated equities.** |
-| Hyperscalers: cloud growth expected to justify capex | Microsoft self-funded; Alphabet/Amazon cash burn disappointed | Alphabet -12%+ Thursday; Amazon -2% Friday; Intel nearly -29%; Nasdaq -2.86% Friday | **Bad reaction, fundamental.** Funding quality became the marginal AI factor. |
-| BOJ: hold 1.25%, signal later tightening | Held 8–1; upgraded inflation; accelerated ETF sales; next hike could be December | USDJPY ended near 157.55, little changed | **Hawkish message, muted FX reaction.** Carry stress did not confirm. |
+| Catalyst | Expected under live regime | Actual cross-asset reaction | Verdict | What it reveals |
+|---|---|---|---|---|
+| Fed hold at 3.75–4.00% with hawkish bias | Firm DXY/real yields; downward pressure on gold and Nasdaq | Held 10–2; two preferred +25 bp; DXY closed 102.19 Wednesday, US10Y reached 5.05%, gold weakened and equities initially held | **Confirmed, then dispersed** | Policy hawkishness transmitted, but did not create an immediate broad liquidation. |
+| Australia Q3 CPI near 4.0% headline / 3.5% trimmed mean | A hot print should lift RBA pricing and AUD while pressuring rate-sensitive ASX sectors | Headline 4.3%, trimmed mean 3.6%; AUD firmed, hike probability rose to 88%, ASX dipped intraday then recovered | **Confirmed** | Local tightening risk rose, but resource-sector breadth absorbed the index shock. |
+| US Q3 GDP 3.2% and Sep PCE 3.6% y/y consensus | Strong growth plus hot inflation should lift yields/USD and pressure duration | GDP 3.4%, PCE 3.6%, core +0.3% m/m; yields eased after initial repricing while tech fell on earnings | **Diverged at the long end** | AI cash-flow risk and safe-haven duration demand displaced the simple inflation-yield channel. |
+| Hyperscaler earnings | Cloud growth must fund capex for AI leadership to hold | Microsoft self-funded; Alphabet/Amazon cash burn disappointed; Alphabet -12%+, Amazon -2%, Intel nearly -29%; Nasdaq -2.86% Friday | **Confirmed** | Free cash flow, not gross AI spend, became the marginal equity factor. |
+| BOJ hold 1.25% with tightening guidance | Hawkish guidance should support JPY and weaken carry | Held 8–1, upgraded inflation and accelerated ETF sales; USDJPY ended near 157.55, little changed | **Diverged / too early** | Carry remains healthy for now, but December-hike asymmetry increased. |
 
 ## WHAT CHANGED / THRESHOLDS & REGIME TEST
 
@@ -104,23 +104,23 @@ Sources for closes: [Reuters Monday global markets](https://www.fidelity.com/new
 
 ## THE WEEK AHEAD — 2–6 NOVEMBER 2026
 
-| Day | Verified events | Market relevance |
-|---|---|---|
-| Mon 2 Nov | China NPC Standing Committee begins; global manufacturing PMIs; US ISM manufacturing | China fiscal surprise risk; global growth/inflation check. |
-| Tue 3 Nov | RBA decision and Statement on Monetary Policy, 2:30pm AEDT; US midterm elections; US JOLTS | RBA is expected to raise after hot CPI; elections can change AI, bank, crypto, defence and fiscal risk premia. |
-| Wed 4 Nov | Global services PMIs; US ADP, trade balance, ISM services; Treasury quarterly refunding | Labour/services inflation and duration supply. |
-| Thu 5 Nov | BOE and Norges Bank decisions; BOJ September minutes; Australian trade balance; US productivity/unit labour costs | Reinforces or challenges the synchronised-tightening narrative. |
-| Fri 6 Nov | US October payrolls, unemployment and wages at 8:30am ET; Canada jobs; preliminary US consumer sentiment | Highest-stakes Fed/real-yield/dollar catalyst. |
+| Day | Verified events and time | Consensus / prior | Exposed assets and regime-adjusted logic | Confirmation / invalidation |
+|---|---|---|---|---|
+| Mon 2 Nov | China NPC Standing Committee begins; global manufacturing PMIs; US ISM manufacturing, 10:00am ET / 2:00am AEDT Tue | Consensus/prior N/V at cut-off | Copper, iron ore, AUD and ASX materials need physical-demand breadth; hot US prices can lift DXY/yields and hurt gold/Nasdaq | China package plus copper/iron ore/AUD confirmation; or ISM surprise confirmed by DXY/US10Y |
+| Tue 3 Nov | **RBA decision and SoMP, 2:30pm AEDT**; press conference 3:30pm; US midterms; JOLTS 10:00am ET / 2:00am AEDT Wed | RBA: 88% market probability of +25 bp to 4.85%; prior 4.60%. JOLTS N/V | Highest local stakes for AUD, ASX banks/rate sectors and gold in AUD; elections affect AI regulation, banks, crypto, defence and fiscal risk | AUD above 0.706 and ASX sector rotation confirm hawkish transmission; AUD below 0.700 with broad ASX weakness invalidates a clean hawkish read |
+| Wed 4 Nov | Global services PMIs; US ADP, trade balance, ISM services; Treasury quarterly refunding | Consensus/prior N/V | Services prices and Treasury supply test US10Y 5.00/5.25, DXY and Nasdaq duration | US10Y >5.00 with DXY >102 confirms; US10Y <4.90 and Nasdaq >26,400 invalidates |
+| Thu 5 Nov | BOE and Norges Bank decisions; BOJ September minutes; Australian trade balance; US productivity/unit labour costs, 8:30am ET / 12:30am AEDT Fri | BOE hike expected; other consensus/prior N/V | Global hiking synchronisation pressures duration and precious metals; BOJ detail can move JPY carry | USDJPY <155 confirms JPY tightening transmission; >160 invalidates and restores carry stress |
+| Fri 6 Nov | US October payrolls, unemployment and wages, 8:30am ET / 12:30am AEDT Sat; Canada jobs; preliminary US sentiment | US consensus/prior N/V at cut-off | Payrolls/wages drive Fed pricing, DXY, US10Y, gold and Nasdaq; weak jobs with sticky energy is stagflationary rather than cleanly dovish | DXY/US10Y/Nasdaq breadth must confirm the data surprise; credit widening would upgrade disorder risk |
 
 Calendar sources: [RBA schedule](https://www.rba.gov.au/coming-up/), [BLS employment schedule](https://www.bls.gov/schedule/news_release/empSit.htm), [Reuters global week ahead](https://www.reuters.com/business/take-five/global-markets-themes-2026-10-30/), [Newsquawk week calendar](https://www.newsquawk.com/daily/week-in-focus).
 
-### Highest-stakes scenario map
+### Highest-stakes event: RBA decision, 3 November
 
-| Scenario | Confirmation | Likely expression | Control response |
-|---|---|---|---|
-| **Inflationary policy shock** | RBA hikes; payrolls/wages beat; US10Y reclaims 5.00 then 5.25; DXY >102; Nasdaq remains <25,900 | USD and energy up; tech/precious metals down; AUD initially up then risk-sensitive; ASX duration sectors underperform | Treat broad disorder as restored only if breadth/credit/carry also deteriorate; otherwise retain selective-risk-off label. |
-| **Soft landing / breadth repair** | Payrolls moderate without unemployment jump; US10Y <4.90; Nasdaq >26,400; DXY <101.5; credit stable | Tech rebound, gold stabilises, AUD and copper firm, ASX broadens beyond materials | Reduce disorder confirmation; require DXY <100 and sustained breadth before de-escalating the live regime. |
-| **Growth scare with energy sticky** | Payrolls miss sharply; oil remains >$110/TTF >€100; yen strengthens below 155; spreads widen | Stagflationary risk-off: equities/cyclicals down, duration initially up, gold response decisive | Escalate only with multi-session breadth/credit/carry confirmation; monitor safe-haven override and USDJPY. |
+| Scenario | What would qualify | Regime-adjusted transmission | Exposed assets | Confirmation / invalidation |
+|---|---|---|---|---|
+| **Hawkish hike** | +25 bp to 4.85% and SoMP keeps further tightening open | Local yields and AUD upward; ASX rate-sensitive sectors downward; resources depend on China/commodity offset | AUDUSD, AUDJPY, ASX 200/banks, gold in AUD | Confirm: AUDUSD >0.706 and front-end yields higher. Invalidate: AUDUSD <0.700 with falling yields. |
+| **Base-case hike** | +25 bp with balanced guidance and data dependence | Initial AUD support fades; ASX dispersion persists; global USD/energy regime remains dominant | AUDUSD, ASX 200, materials/energy | Confirm: AUD holds 0.700–0.706 and ASX breadth remains mixed. Invalidate: break outside the range with rates confirmation. |
+| **Dovish hold** | Cash rate remains 4.60% or guidance materially resists another hike | AUD downward; ASX rate-sensitive sectors upward, but a sharp AUD fall can import inflation and signal risk stress | AUDUSD, AUDJPY, ASX banks/rate sectors, DXY | Confirm: AUDUSD <0.700 and local yields fall. Invalidate: AUD recovers >0.706 or statement preserves a near-term hike. |
 
 ## CONVICTION SHIFTS
 
