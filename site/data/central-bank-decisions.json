@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-19T21:00:07Z",
+  "generatedAtUtc": "2026-11-20T07:48:49Z",
   "provider": {
     "id": "polymarket",
     "name": "Polymarket",
@@ -12,7 +12,7 @@
   "collection": {
     "status": "current",
     "banksCovered": 9,
-    "lastSuccessfulAt": "2026-11-19T21:00:07Z",
+    "lastSuccessfulAt": "2026-11-20T07:48:49Z",
     "error": null
   },
   "banks": [
@@ -30,9 +30,9 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.001,
-              "probabilityPercent": 0.1,
-              "probabilitySource": "last trade",
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
+              "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
                   "date": "2026-09-22",
@@ -328,6 +328,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.001
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0015
                 }
               ]
             },
@@ -632,14 +637,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0025
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0025
                 }
               ]
             },
             {
               "label": "No change",
               "bps": 0,
-              "probability": 0.0275,
-              "probabilityPercent": 2.75,
+              "probability": 0.0325,
+              "probabilityPercent": 3.25,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -936,14 +946,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0275
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0325
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.915,
-              "probabilityPercent": 91.5,
+              "probability": 0.925,
+              "probabilityPercent": 92.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -1240,14 +1255,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.915
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.925
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.0605,
-              "probabilityPercent": 6.05,
+              "probability": 0.0395,
+              "probabilityPercent": 3.95,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -1544,15 +1564,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0605
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0395
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.915,
-          "expectedBps": 25.62,
+          "modalProbability": 0.925,
+          "expectedBps": 24.94,
           "impliedDirection": "hawkish",
-          "liquidityUsd": 43111620.04,
+          "liquidityUsd": 44338988.07,
           "marketUrl": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
         },
         {
@@ -1562,8 +1587,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0045,
-              "probabilityPercent": 0.45,
+              "probability": 0.0065,
+              "probabilityPercent": 0.65,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -1860,14 +1885,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0045
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0065
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.0095,
-              "probabilityPercent": 0.95,
+              "probability": 0.013,
+              "probabilityPercent": 1.3,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -2164,14 +2194,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0095
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.013
                 }
               ]
             },
             {
               "label": "No change",
               "bps": 0,
-              "probability": 0.365,
-              "probabilityPercent": 36.5,
+              "probability": 0.375,
+              "probabilityPercent": 37.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -2468,6 +2503,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.365
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.375
                 }
               ]
             },
@@ -2772,14 +2812,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.615
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.615
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.0135,
-              "probabilityPercent": 1.35,
+              "probability": 0.0125,
+              "probabilityPercent": 1.25,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -3076,15 +3121,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0135
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0125
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
           "modalProbability": 0.615,
-          "expectedBps": 15.47,
+          "expectedBps": 15.02,
           "impliedDirection": "hawkish",
-          "liquidityUsd": 4087500.44,
+          "liquidityUsd": 4133962.34,
           "marketUrl": "https://polymarket.com/event/fed-decision-in-january-20260729233815502"
         },
         {
@@ -3094,8 +3144,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0075,
-              "probabilityPercent": 0.75,
+              "probability": 0.01,
+              "probabilityPercent": 1.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -3217,14 +3267,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0075
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.01
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.0345,
-              "probabilityPercent": 3.45,
+              "probability": 0.0535,
+              "probabilityPercent": 5.35,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -3346,14 +3401,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0345
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0535
                 }
               ]
             },
             {
               "label": "No change",
               "bps": 0,
-              "probability": 0.355,
-              "probabilityPercent": 35.5,
+              "probability": 0.365,
+              "probabilityPercent": 36.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -3475,14 +3535,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.355
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.365
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.605,
-              "probabilityPercent": 60.5,
+              "probability": 0.555,
+              "probabilityPercent": 55.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -3604,14 +3669,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.605
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.555
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.0175,
-              "probabilityPercent": 1.75,
+              "probability": 0.016,
+              "probabilityPercent": 1.6,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -3733,15 +3803,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0175
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.016
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.605,
-          "expectedBps": 14.48,
+          "modalProbability": 0.555,
+          "expectedBps": 12.84,
           "impliedDirection": "hawkish",
-          "liquidityUsd": 290409.62,
+          "liquidityUsd": 296026.7,
           "marketUrl": "https://polymarket.com/event/fed-decision-in-march-2027"
         },
         {
@@ -3751,8 +3826,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.027,
-              "probabilityPercent": 2.7,
+              "probability": 0.0345,
+              "probabilityPercent": 3.45,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -3869,14 +3944,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.027
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0345
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.09,
-              "probabilityPercent": 9.0,
+              "probability": 0.095,
+              "probabilityPercent": 9.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -3993,6 +4073,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.09
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.095
                 }
               ]
             },
@@ -4116,6 +4201,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.635
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.635
                 }
               ]
@@ -4241,6 +4331,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.245
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.245
                 }
               ]
             },
@@ -4365,15 +4460,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0195
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0195
                 }
               ]
             }
           ],
           "modalOutcome": "No change",
           "modalProbability": 0.635,
-          "expectedBps": 3.44,
+          "expectedBps": 2.92,
           "impliedDirection": "hold",
-          "liquidityUsd": 89757.81,
+          "liquidityUsd": 89888.21,
           "marketUrl": "https://polymarket.com/event/fed-decision-in-april-2027"
         }
       ]
@@ -4725,6 +4825,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.002
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.002
                 }
               ]
             },
@@ -5064,14 +5169,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0025
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0025
                 }
               ]
             },
             {
               "label": "No change",
               "bps": 0,
-              "probability": 0.0225,
-              "probabilityPercent": 2.25,
+              "probability": 0.022,
+              "probabilityPercent": 2.2,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -5403,14 +5513,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0225
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.022
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.9695,
-              "probabilityPercent": 96.95,
+              "probability": 0.971,
+              "probabilityPercent": 97.1,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -5742,6 +5857,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.9695
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.971
                 }
               ]
             },
@@ -6081,13 +6201,18 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.015
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.9695,
-          "expectedBps": 24.54,
+          "modalProbability": 0.971,
+          "expectedBps": 24.56,
           "impliedDirection": "hawkish",
           "liquidityUsd": 102012.99,
           "marketUrl": "https://polymarket.com/event/ecb-interest-rates-december-2026"
@@ -6207,6 +6332,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.003
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.003
                 }
               ]
             },
@@ -6320,6 +6450,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.0085
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.0085
                 }
               ]
@@ -6435,6 +6570,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.84
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.84
                 }
               ]
             },
@@ -6548,6 +6688,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.155
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.155
                 }
               ]
@@ -6663,6 +6808,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0015
                 }
               ]
             }
@@ -6681,8 +6831,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0395,
-              "probabilityPercent": 3.95,
+              "probability": 0.04,
+              "probabilityPercent": 4.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -6789,14 +6939,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0395
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.04
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.0125,
-              "probabilityPercent": 1.25,
+              "probability": 0.0075,
+              "probabilityPercent": 0.75,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -6903,6 +7058,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0125
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0075
                 }
               ]
             },
@@ -7017,14 +7177,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.375
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.375
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.49,
-              "probabilityPercent": 49.0,
+              "probability": 0.485,
+              "probabilityPercent": 48.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -7131,14 +7296,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.49
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.485
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.027,
-              "probabilityPercent": 2.7,
+              "probability": 0.025,
+              "probabilityPercent": 2.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -7245,15 +7415,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.027
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.025
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.49,
-          "expectedBps": 11.98,
+          "modalProbability": 0.485,
+          "expectedBps": 12.0,
           "impliedDirection": "hawkish",
-          "liquidityUsd": 20019.09,
+          "liquidityUsd": 20039.09,
           "marketUrl": "https://polymarket.com/event/ecb-interest-rates-march-2027"
         }
       ]
@@ -7455,6 +7630,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.001
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.001
                 }
               ]
             },
@@ -7644,14 +7824,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0025
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0025
                 }
               ]
             },
             {
               "label": "No change",
               "bps": 0,
-              "probability": 0.255,
-              "probabilityPercent": 25.5,
+              "probability": 0.23,
+              "probabilityPercent": 23.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -7833,14 +8018,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.255
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.23
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.725,
-              "probabilityPercent": 72.5,
+              "probability": 0.735,
+              "probabilityPercent": 73.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -8022,6 +8212,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.725
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.735
                 }
               ]
             },
@@ -8211,15 +8406,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.005
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.005
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.725,
-          "expectedBps": 18.47,
+          "modalProbability": 0.735,
+          "expectedBps": 19.02,
           "impliedDirection": "hawkish",
-          "liquidityUsd": 136086.99,
+          "liquidityUsd": 137199.37,
           "marketUrl": "https://polymarket.com/event/bank-of-england-decision-in-december-2026"
         },
         {
@@ -8229,8 +8429,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.004,
-              "probabilityPercent": 0.4,
+              "probability": 0.011,
+              "probabilityPercent": 1.1,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -8337,14 +8537,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.004
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.011
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.028,
-              "probabilityPercent": 2.8,
+              "probability": 0.0295,
+              "probabilityPercent": 2.95,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -8451,14 +8656,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.028
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0295
                 }
               ]
             },
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.295,
-              "probabilityPercent": 29.5,
+              "probability": 0.28,
+              "probabilityPercent": 28.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -8565,14 +8775,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.295
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.28
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.625,
-              "probabilityPercent": 62.5,
+              "probability": 0.585,
+              "probabilityPercent": 58.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -8679,14 +8894,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.625
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.585
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.007,
-              "probabilityPercent": 0.7,
+              "probability": 0.016,
+              "probabilityPercent": 1.6,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -8793,15 +9013,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.007
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.016
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.625,
-          "expectedBps": 15.72,
+          "modalProbability": 0.585,
+          "expectedBps": 15.34,
           "impliedDirection": "hawkish",
-          "liquidityUsd": 30955.57,
+          "liquidityUsd": 33848.11,
           "marketUrl": "https://polymarket.com/event/bank-of-england-decision-in-february-2027"
         },
         {
@@ -8811,8 +9036,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0435,
-              "probabilityPercent": 4.35,
+              "probability": 0.042,
+              "probabilityPercent": 4.2,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -8919,6 +9144,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0435
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.042
                 }
               ]
             },
@@ -9032,6 +9262,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.016
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.016
                 }
               ]
@@ -9147,6 +9382,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.64
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.64
                 }
               ]
             },
@@ -9261,14 +9501,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.315
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.315
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.034,
-              "probabilityPercent": 3.4,
+              "probability": 0.04,
+              "probabilityPercent": 4.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -9375,13 +9620,18 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.034
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.04
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
           "modalProbability": 0.64,
-          "expectedBps": 6.68,
+          "expectedBps": 7.0,
           "impliedDirection": "hold",
           "liquidityUsd": 23400.53,
           "marketUrl": "https://polymarket.com/event/bank-of-england-decision-in-march-2027"
@@ -9715,6 +9965,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0015
                 }
               ]
             },
@@ -10034,14 +10289,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0035
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0035
                 }
               ]
             },
             {
               "label": "No change",
               "bps": 0,
-              "probability": 0.115,
-              "probabilityPercent": 11.5,
+              "probability": 0.095,
+              "probabilityPercent": 9.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -10353,14 +10613,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.115
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.095
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.855,
-              "probabilityPercent": 85.5,
+              "probability": 0.875,
+              "probabilityPercent": 87.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -10672,14 +10937,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.855
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.875
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.0055,
-              "probabilityPercent": 0.55,
+              "probability": 0.007,
+              "probabilityPercent": 0.7,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -10991,15 +11261,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0055
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.007
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.855,
-          "expectedBps": 21.91,
+          "modalProbability": 0.875,
+          "expectedBps": 22.47,
           "impliedDirection": "hawkish",
-          "liquidityUsd": 85355.12,
+          "liquidityUsd": 88474.02,
           "marketUrl": "https://polymarket.com/event/bank-of-japan-decision-in-december-20260918"
         },
         {
@@ -11009,8 +11284,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0235,
-              "probabilityPercent": 2.35,
+              "probability": 0.025,
+              "probabilityPercent": 2.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -11117,6 +11392,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0235
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.025
                 }
               ]
             },
@@ -11230,6 +11510,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.007
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.007
                 }
               ]
@@ -11345,6 +11630,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.83
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.83
                 }
               ]
             },
@@ -11458,6 +11748,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.145
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.145
                 }
               ]
@@ -11573,13 +11868,18 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.011
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.011
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
           "modalProbability": 0.83,
-          "expectedBps": 2.78,
+          "expectedBps": 2.7,
           "impliedDirection": "hold",
           "liquidityUsd": 18465.27,
           "marketUrl": "https://polymarket.com/event/bank-of-japan-decision-in-january-2027"
@@ -11591,8 +11891,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0315,
-              "probabilityPercent": 3.15,
+              "probability": 0.02,
+              "probabilityPercent": 2.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -11699,14 +11999,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0315
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.02
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.0125,
-              "probabilityPercent": 1.25,
+              "probability": 0.0145,
+              "probabilityPercent": 1.45,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -11813,6 +12118,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0125
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0145
                 }
               ]
             },
@@ -11926,6 +12236,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.555
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.555
                 }
               ]
@@ -12041,6 +12356,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.405
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.405
                 }
               ]
             },
@@ -12155,13 +12475,18 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0295
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0295
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
           "modalProbability": 0.555,
-          "expectedBps": 9.4,
+          "expectedBps": 10.0,
           "impliedDirection": "hold",
           "liquidityUsd": 10003.92,
           "marketUrl": "https://polymarket.com/event/bank-of-japan-decision-in-march-2027"
@@ -12410,14 +12735,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.001
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.001
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.0025,
-              "probabilityPercent": 0.25,
+              "probability": 0.0015,
+              "probabilityPercent": 0.15,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -12644,14 +12974,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0025
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0015
                 }
               ]
             },
             {
               "label": "No change",
               "bps": 0,
-              "probability": 0.9695,
-              "probabilityPercent": 96.95,
+              "probability": 0.969,
+              "probabilityPercent": 96.9,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -12878,14 +13213,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.9695
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.969
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.0245,
-              "probabilityPercent": 2.45,
+              "probability": 0.024,
+              "probabilityPercent": 2.4,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -13112,6 +13452,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0245
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.024
                 }
               ]
             },
@@ -13346,15 +13691,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.002
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.002
                 }
               ]
             }
           ],
           "modalOutcome": "No change",
-          "modalProbability": 0.9695,
-          "expectedBps": 0.6,
+          "modalProbability": 0.969,
+          "expectedBps": 0.61,
           "impliedDirection": "hold",
-          "liquidityUsd": 55362.1,
+          "liquidityUsd": 55602.98,
           "marketUrl": "https://polymarket.com/event/reserve-bank-of-australia-decision-in-december-2026"
         },
         {
@@ -13364,8 +13714,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.016,
-              "probabilityPercent": 1.6,
+              "probability": 0.009,
+              "probabilityPercent": 0.9,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -13472,14 +13822,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.016
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.009
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.011,
-              "probabilityPercent": 1.1,
+              "probability": 0.033,
+              "probabilityPercent": 3.3,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -13586,6 +13941,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.011
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.033
                 }
               ]
             },
@@ -13700,14 +14060,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.845
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.845
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.125,
-              "probabilityPercent": 12.5,
+              "probability": 0.12,
+              "probabilityPercent": 12.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -13814,6 +14179,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.125
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.12
                 }
               ]
             },
@@ -13928,15 +14298,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0055
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0055
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
           "modalProbability": 0.845,
-          "expectedBps": 2.32,
+          "expectedBps": 1.98,
           "impliedDirection": "hold",
-          "liquidityUsd": 26606.5,
+          "liquidityUsd": 26852.77,
           "marketUrl": "https://polymarket.com/event/reserve-bank-of-australia-decision-in-february-2027"
         },
         {
@@ -13946,8 +14321,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0295,
-              "probabilityPercent": 2.95,
+              "probability": 0.029,
+              "probabilityPercent": 2.9,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -14054,15 +14429,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0295
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.029
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.161,
-              "probabilityPercent": 16.1,
-              "probabilitySource": "last trade",
+              "probability": 0.146,
+              "probabilityPercent": 14.6,
+              "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
                   "date": "2026-10-30",
@@ -14168,14 +14548,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.161
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.146
                 }
               ]
             },
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.725,
-              "probabilityPercent": 72.5,
+              "probability": 0.72,
+              "probabilityPercent": 72.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -14282,14 +14667,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.725
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.72
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.013,
-              "probabilityPercent": 1.3,
+              "probability": 0.022,
+              "probabilityPercent": 2.2,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -14396,14 +14786,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.013
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.022
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.0105,
-              "probabilityPercent": 1.05,
+              "probability": 0.011,
+              "probabilityPercent": 1.1,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -14510,15 +14905,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0105
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.011
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
-          "modalProbability": 0.725,
-          "expectedBps": -4.95,
+          "modalProbability": 0.72,
+          "expectedBps": -4.31,
           "impliedDirection": "hold",
-          "liquidityUsd": 12098.79,
+          "liquidityUsd": 12851.93,
           "marketUrl": "https://polymarket.com/event/reserve-bank-of-australia-decision-in-march-2027"
         }
       ]
@@ -14900,6 +15300,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.001
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.001
                 }
               ]
             },
@@ -15269,14 +15674,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0015
                 }
               ]
             },
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.39,
-              "probabilityPercent": 39.0,
+              "probability": 0.435,
+              "probabilityPercent": 43.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -15638,14 +16048,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.39
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.435
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.605,
-              "probabilityPercent": 60.5,
+              "probability": 0.555,
+              "probabilityPercent": 55.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -16007,6 +16422,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.605
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.555
                 }
               ]
             },
@@ -16376,15 +16796,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0015
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.605,
-          "expectedBps": 15.13,
+          "modalProbability": 0.555,
+          "expectedBps": 13.95,
           "impliedDirection": "hawkish",
-          "liquidityUsd": 273779.85,
+          "liquidityUsd": 275847.21,
           "marketUrl": "https://polymarket.com/event/bank-of-canada-decision-in-december-20260908230600011"
         },
         {
@@ -16394,8 +16819,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0265,
-              "probabilityPercent": 2.65,
+              "probability": 0.029,
+              "probabilityPercent": 2.9,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -16502,14 +16927,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0265
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.029
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.0345,
-              "probabilityPercent": 3.45,
+              "probability": 0.043,
+              "probabilityPercent": 4.3,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -16616,14 +17046,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0345
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.043
                 }
               ]
             },
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.545,
-              "probabilityPercent": 54.5,
+              "probability": 0.53,
+              "probabilityPercent": 53.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -16730,6 +17165,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.545
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.53
                 }
               ]
             },
@@ -16844,14 +17284,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.42
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.42
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.0275,
-              "probabilityPercent": 2.75,
+              "probability": 0.035,
+              "probabilityPercent": 3.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -16958,15 +17403,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0275
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.035
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
-          "modalProbability": 0.545,
+          "modalProbability": 0.53,
           "expectedBps": 9.2,
           "impliedDirection": "hold",
-          "liquidityUsd": 14474.51,
+          "liquidityUsd": 14494.51,
           "marketUrl": "https://polymarket.com/event/bank-of-canada-decision-in-january-2027"
         },
         {
@@ -17084,14 +17534,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0445
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0445
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.0515,
-              "probabilityPercent": 5.15,
+              "probability": 0.0485,
+              "probabilityPercent": 4.85,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -17198,6 +17653,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0515
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0485
                 }
               ]
             },
@@ -17311,6 +17771,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.67
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.67
                 }
               ]
@@ -17426,14 +17891,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.27
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.27
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.044,
-              "probabilityPercent": 4.4,
+              "probability": 0.0485,
+              "probabilityPercent": 4.85,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -17540,13 +18010,18 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.044
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0485
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
           "modalProbability": 0.67,
-          "expectedBps": 5.03,
+          "expectedBps": 5.31,
           "impliedDirection": "hold",
           "liquidityUsd": 13569.02,
           "marketUrl": "https://polymarket.com/event/bank-of-canada-decision-in-march-2027"
@@ -17567,8 +18042,8 @@
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.0195,
-              "probabilityPercent": 1.95,
+              "probability": 0.01,
+              "probabilityPercent": 1.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -17990,6 +18465,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0195
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.01
                 }
               ]
             },
@@ -18418,6 +18898,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.001
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.001
                 }
               ]
@@ -18848,14 +19333,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0015
                 }
               ]
             },
             {
               "label": "25 bps hike",
               "bps": null,
-              "probability": 0.9765,
-              "probabilityPercent": 97.65,
+              "probability": 0.985,
+              "probabilityPercent": 98.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -19277,14 +19767,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.9765
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.985
                 }
               ]
             },
             {
               "label": "50+ bps hike",
               "bps": null,
-              "probability": 0.0075,
-              "probabilityPercent": 0.75,
+              "probability": 0.009,
+              "probabilityPercent": 0.9,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -19706,15 +20201,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0075
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.009
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps hike",
-          "modalProbability": 0.9765,
+          "modalProbability": 0.985,
           "expectedBps": 0.0,
           "impliedDirection": "hold",
-          "liquidityUsd": 50767.12,
+          "liquidityUsd": 52214.57,
           "marketUrl": "https://polymarket.com/event/bank-of-korea-decision-in-november"
         },
         {
@@ -19807,14 +20307,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.017
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.017
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.008,
-              "probabilityPercent": 0.8,
+              "probability": 0.0065,
+              "probabilityPercent": 0.65,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -19896,14 +20401,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.008
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0065
                 }
               ]
             },
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.765,
-              "probabilityPercent": 76.5,
+              "probability": 0.775,
+              "probabilityPercent": 77.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -19985,6 +20495,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.765
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.775
                 }
               ]
             },
@@ -20073,6 +20588,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.215
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.215
                 }
               ]
@@ -20163,12 +20683,17 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0115
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0115
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
-          "modalProbability": 0.765,
+          "modalProbability": 0.775,
           "expectedBps": 4.82,
           "impliedDirection": "hold",
           "liquidityUsd": 24971.12,
@@ -20264,6 +20789,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0015
                 }
               ]
             },
@@ -20352,6 +20882,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.0125
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.0125
                 }
               ]
@@ -20442,6 +20977,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.325
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.325
                 }
               ]
             },
@@ -20530,6 +21070,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.64
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.64
                 }
               ]
@@ -20620,6 +21165,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.011
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.011
                 }
               ]
             }
@@ -20676,14 +21226,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.095
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.095
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.245,
-              "probabilityPercent": 24.5,
+              "probability": 0.24,
+              "probabilityPercent": 24.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -20720,14 +21275,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.245
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.24
                 }
               ]
             },
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.62,
-              "probabilityPercent": 62.0,
+              "probability": 0.47,
+              "probabilityPercent": 47.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -20764,14 +21324,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.62
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.47
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.046,
-              "probabilityPercent": 4.6,
+              "probability": 0.044,
+              "probabilityPercent": 4.4,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -20808,15 +21373,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.046
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.044
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.0365,
-              "probabilityPercent": 3.65,
-              "probabilitySource": "bid-ask midpoint",
+              "probability": 0.36,
+              "probabilityPercent": 36.0,
+              "probabilitySource": "last trade",
               "history": [
                 {
                   "date": "2026-11-13",
@@ -20852,15 +21422,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0365
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.36
                 }
               ]
             }
           ],
           "modalOutcome": "No Change",
-          "modalProbability": 0.62,
-          "expectedBps": -7.58,
+          "modalProbability": 0.47,
+          "expectedBps": 6.91,
           "impliedDirection": "hold",
-          "liquidityUsd": 2542.13,
+          "liquidityUsd": 3971.38,
           "marketUrl": "https://polymarket.com/event/bank-of-korea-decision-in-april-2027"
         }
       ]
@@ -21062,6 +21637,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0025
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0025
                 }
               ]
             },
@@ -21251,14 +21831,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0345
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0345
                 }
               ]
             },
             {
               "label": "No change",
               "bps": 0,
-              "probability": 0.9605,
-              "probabilityPercent": 96.05,
+              "probability": 0.946,
+              "probabilityPercent": 94.6,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -21440,6 +22025,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.9605
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.946
                 }
               ]
             },
@@ -21628,6 +22218,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.0015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.0015
                 }
               ]
@@ -21818,13 +22413,18 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.002
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.002
                 }
               ]
             }
           ],
           "modalOutcome": "No change",
-          "modalProbability": 0.9605,
-          "expectedBps": -0.85,
+          "modalProbability": 0.946,
+          "expectedBps": -0.86,
           "impliedDirection": "hold",
           "liquidityUsd": 34115.58,
           "marketUrl": "https://polymarket.com/event/bank-of-mexico-decision-in-december-2026"
@@ -22208,6 +22808,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.001
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.001
                 }
               ]
             },
@@ -22576,6 +23181,11 @@
                 {
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
+                  "probability": 0.0015
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
                   "probability": 0.0015
                 }
               ]
@@ -22946,14 +23556,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.08
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.08
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.905,
-              "probabilityPercent": 90.5,
+              "probability": 0.9,
+              "probabilityPercent": 90.0,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -23315,6 +23930,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.905
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.9
                 }
               ]
             },
@@ -23684,13 +24304,18 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0025
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0025
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
-          "modalProbability": 0.905,
-          "expectedBps": 22.89,
+          "modalProbability": 0.9,
+          "expectedBps": 22.88,
           "impliedDirection": "hawkish",
           "liquidityUsd": 70391.49,
           "marketUrl": "https://polymarket.com/event/reserve-bank-of-new-zealand-decision-in-december-20260908230600001"
@@ -23702,8 +24327,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.027,
-              "probabilityPercent": 2.7,
+              "probability": 0.0265,
+              "probabilityPercent": 2.65,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -23810,6 +24435,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.027
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0265
                 }
               ]
             },
@@ -23924,14 +24554,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0495
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0495
                 }
               ]
             },
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.34,
-              "probabilityPercent": 34.0,
+              "probability": 0.335,
+              "probabilityPercent": 33.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -24038,6 +24673,11 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.34
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.335
                 }
               ]
             },
@@ -24152,14 +24792,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.605
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.605
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.0275,
-              "probabilityPercent": 2.75,
+              "probability": 0.026,
+              "probabilityPercent": 2.6,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -24266,13 +24911,18 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0275
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.026
                 }
               ]
             }
           ],
           "modalOutcome": "25 bps increase",
           "modalProbability": 0.605,
-          "expectedBps": 13.26,
+          "expectedBps": 13.3,
           "impliedDirection": "hawkish",
           "liquidityUsd": 19977.56,
           "marketUrl": "https://polymarket.com/event/reserve-bank-of-new-zealand-decision-in-february-2027"
@@ -24284,8 +24934,8 @@
             {
               "label": "50+ bps decrease",
               "bps": -50,
-              "probability": 0.0055,
-              "probabilityPercent": 0.55,
+              "probability": 0.0045,
+              "probabilityPercent": 0.45,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -24392,14 +25042,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0055
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0045
                 }
               ]
             },
             {
               "label": "25 bps decrease",
               "bps": -25,
-              "probability": 0.0395,
-              "probabilityPercent": 3.95,
+              "probability": 0.011,
+              "probabilityPercent": 1.1,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -24506,14 +25161,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.0395
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.011
                 }
               ]
             },
             {
               "label": "No Change",
               "bps": 0,
-              "probability": 0.325,
-              "probabilityPercent": 32.5,
+              "probability": 0.515,
+              "probabilityPercent": 51.5,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -24620,15 +25280,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.325
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.515
                 }
               ]
             },
             {
               "label": "25 bps increase",
               "bps": 25,
-              "probability": 0.645,
-              "probabilityPercent": 64.5,
-              "probabilitySource": "bid-ask midpoint",
+              "probability": 0.32,
+              "probabilityPercent": 32.0,
+              "probabilitySource": "last trade",
               "history": [
                 {
                   "date": "2026-10-30",
@@ -24734,14 +25399,19 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.645
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.32
                 }
               ]
             },
             {
               "label": "50+ bps increase",
               "bps": 50,
-              "probability": 0.008,
-              "probabilityPercent": 0.8,
+              "probability": 0.0055,
+              "probabilityPercent": 0.55,
               "probabilitySource": "bid-ask midpoint",
               "history": [
                 {
@@ -24848,15 +25518,20 @@
                   "date": "2026-11-19",
                   "observedAt": "2026-11-19T21:00:07Z",
                   "probability": 0.008
+                },
+                {
+                  "date": "2026-11-20",
+                  "observedAt": "2026-11-20T07:48:49Z",
+                  "probability": 0.0055
                 }
               ]
             }
           ],
-          "modalOutcome": "25 bps increase",
-          "modalProbability": 0.645,
-          "expectedBps": 14.92,
-          "impliedDirection": "hawkish",
-          "liquidityUsd": 31065.58,
+          "modalOutcome": "No Change",
+          "modalProbability": 0.515,
+          "expectedBps": 9.08,
+          "impliedDirection": "hold",
+          "liquidityUsd": 36544.16,
           "marketUrl": "https://polymarket.com/event/reserve-bank-of-new-zealand-decision-in-march-2027"
         }
       ]
@@ -24873,7 +25548,7 @@
       "id": "polymarket-central-bank-decisions",
       "source": "Polymarket public market data",
       "status": "current",
-      "lastSuccessfulAt": "2026-11-19T21:00:07Z",
+      "lastSuccessfulAt": "2026-11-20T07:48:49Z",
       "expectedCadence": "Every six hours",
       "detail": "9 central banks with live decision markets.",
       "error": null,
