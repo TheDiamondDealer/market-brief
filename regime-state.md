@@ -1,5 +1,20 @@
 # Regime State
 
+> **22 November 2026 amendment — VERDICT: ACUTE STAGFLATION INTACT; BROAD DISORDERLY RISK-OFF RESTORED; DURATION STRESS ROTATED INTO A SAFE-HAVEN RALLY.**
+> - **Restoration trigger met:** DXY closed **103.81**, above 101.5; Nasdaq closed **22,617.73**, below 25,900 and fell **10.0% Friday-to-Friday**; every S&P sector fell on Friday; ICE BofA US high-yield OAS widened from **3.23% on 13 November to 3.52% on 19 November**, with the weakest credit tier deteriorating most.
+> - **Cross-asset transmission:** the S&P 500 confirmed a correction, the ASX 200 closed **8,592.6** below 8,780, ASX materials fell **10.4% Monday-to-Friday**, AUD/USD closed **0.6666**, copper **$5.465/lb**, and gold **$3,538.19/oz**.
+> - **Duration rotation:** US10 fell from **5.121% to 4.912%** Monday-to-Friday and the 10-year real yield from about **2.92% to 2.77%** as Treasuries regained safe-haven demand. This de-escalates rising-yield disorder but does not offset the equity/credit restoration.
+> - **Physical/policy core:** Brent closed **$92.61**, below $95, but TTF rose and FOMC minutes showed almost all participants still expected further tightening. The acute stagflation frame therefore remains intact with a weaker crude leg.
+> - **Carry/China:** AUD/JPY fell about **2.2%**, but USD/JPY only eased to **158.54**, so a full yen-funded unwind is not yet confirmed. Weak China activity, copper, nickel, AUD and ASX materials jointly confirm a weakening China-demand impulse.
+>
+> **Active interpretation:** describe the tape as acute stagflation with broad disorderly risk-off restored through AI/equity repricing, weak breadth and credit widening. Treat lower Treasury yields as a risk-off safe-haven response, not automatic easing or regime repair. Gold's failure to benefit from lower real yields shows that dollar/liquidity stress is dominating the haven channel.
+>
+> **Further escalate if:** high-yield and investment-grade spreads continue widening after 20 November, the S&P/Nasdaq liquidation persists, AUD/JPY joins a material yen rally, or Brent reclaims $110 / US10 returns above 5.25%.
+>
+> **De-escalate toward the prior duration-disorder state if:** Nasdaq reclaims 26,400 with broad breadth, high-yield OAS reverses to 3.23% or lower, DXY closes below 100, and the ASX 200 reclaims 8,830. A Treasury rally alone is not sufficient.
+>
+> Sources: [Reuters global markets, 20 Nov](https://www.reuters.com/world/china/global-markets-global-markets-2026-11-20/); [Reuters Nasdaq/AI selloff, 20 Nov](https://www.reuters.com/business/view-nasdaq-plunges-5-day-after-anthropic-debut-investors-still-believe-ai-2026-11-20/); [FRED high-yield OAS](https://fred.stlouisfed.org/series/BAMLH0A0HYM2); [weekly review](weekly-log/weekly-2026-W47.md).
+
 > **25 September 2026 amendment — VERDICT: ACUTE STAGFLATION INTACT; DURATION DISORDER ESCALATED; BROAD DISORDERLY RISK-OFF NOT FULLY RESTORED.**
 > - **Duration escalation:** the US 10-year closed near **5.17%** after a **5.23%** high, above the explicit 5.00% escalation rule; the 10-year real yield rose from **2.62% to 2.83%**, while the 10-year breakeven stayed at **2.34%** and the MOVE index rose about **30%**.
 > - **Physical core:** Brent closed **$104.32** and TTF **€72.07/MWh**. Saudi Arabia restarted the East–West pipeline only at reduced rates, with full restoration estimated at six to eight weeks; verified physical repair remains absent.
